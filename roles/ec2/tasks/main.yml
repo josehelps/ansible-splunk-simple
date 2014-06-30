@@ -1,0 +1,29 @@
+---
+# tasks file for ec2
+
+- name: Provision cluster
+  local_action:
+    module: ec2
+    key_name: "{{ item.value.key }}"
+    instance_type: "{{ item.value.size }}"
+    image: "{{ item.value.image }}"
+    region: "{{ item.value.region }}"
+    wait: true
+    count: "{{ item.value.count }}"
+    instance_tags:
+       Role: "{{ item.key }}"
+       Name: "{{ item.value.name }}"
+  register: ec2
+  with_dict: cluster
+
+# - name: Output
+#   debug: msg="ec2.results = {{ item }}"
+#   with_items: ec2.results
+
+# - name: Output
+#   debug: msg="ec2.results.instances = {{ item.instances }}"
+#   with_items: ec2.results.instances  
+
+# - name: Add new instance to host group
+#   add_host: hostname={{ item.public_dns_name }} groupname=mregan-dev
+#   with_items: ec2.results.instances

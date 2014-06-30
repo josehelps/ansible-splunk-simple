@@ -1,0 +1,20 @@
+---
+# This playbook install the basic files required in a server
+
+- name: set time to UTC
+  tags:
+   - configuration
+   - time
+  shell: ln -Ss /usr/share/zoneinfo/UTC /etc/localtime
+
+- name: copy ntp config
+  tags:
+   - configuration
+   - time
+  copy: src=etc/ntp.conf dest=/etc/ntp.conf owner=root group=root mode=644
+  notify: restart ntp
+  
+- name: ensure ntp is running
+  service: name=ntp state=started
+
+

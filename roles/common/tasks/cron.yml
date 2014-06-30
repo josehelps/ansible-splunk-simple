@@ -1,0 +1,13 @@
+---
+# This playbook install the basic cron jobs required in a server
+
+
+
+- name: install clamav cron
+  template: src=etc/cron.daily/clamav dest=/etc/cron.daily/clamav owner=root group=root mode=755 
+  tags: 
+   - configuration
+   - security 
+
+ 
+

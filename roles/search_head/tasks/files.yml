@@ -1,0 +1,11 @@
+---
+# This playbook install the basic files required in a server
+- name: make tmp directory 
+  tags:
+   - install
+  file: path=/var/tmp/splunk owner=root group=root mode=775 state=directory 
+
+- name: copy splunk binary
+  tags:
+   - install
+  copy: src=splunk_binaries/{{splunk_binary}} dest=/var/tmp/splunk owner=root group=root mode=775 

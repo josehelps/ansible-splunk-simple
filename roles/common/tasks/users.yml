@@ -1,0 +1,32 @@
+---
+# This playbook install a basic user with the login keys
+- name: create drac0
+  tags: 
+   - configuration
+   - security
+  user: name=drac0 shell=/bin/bash state=present password={{user_pass}}
+
+- name: copy drac0 bash_profile
+  tags:
+   - configuration
+   - security
+  copy: src=home/drac0/.bash_profile dest=/home/drac0/.bash_profile owner=drac0 group=drac0 mode=744
+
+- name: copy drac0 vimr
+  tags:
+   - configuration
+   - security
+  copy: src=home/drac0/.vimrc dest=/home/drac0/.vimrc owner=drac0 group=drac0 mode=744
+
+- name: copy drac0 authorize_keys
+  authorized_key: user=drac0 key="{{ lookup('file', 'home/drac0/.ssh/drac0.pub') }}"
+  tags:
+   - configuration
+   - security
+
+- name: copy root .bash_profile 
+  tags:
+   - configuration
+  copy: src=root/.bash_profile dest=/root/.bash_profile owner=root group=root mode=700
+
+

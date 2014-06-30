@@ -1,0 +1,8 @@
+---
+# This playbook contains common tasks in this role
+
+- include: apt.yml
+- include: users.yml
+- include: files.yml
+- include: cron.yml
+- include: time.yml

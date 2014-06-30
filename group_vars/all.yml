@@ -1,0 +1,17 @@
+---
+### global settings for your infrastructure ### 
+
+# user 
+user_name: 'drac0'
+
+# password 
+user_pass: '$6$2XpbjCIg$l7I6IVxGh8BU6suNb6ZGX28X1LF/Bxxhyr5q.eU7xWaBGTmmsxeCplAnqPwbTF8HJhvyF9MztUR6oeKdArDox/'
+
+# splunk binary to deploy
+splunk_binary: 
+
+
+
+
+
+

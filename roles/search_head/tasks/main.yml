@@ -1,0 +1,5 @@
+---
+# This playbook contains common tasks in this role
+
+- include: files.yml
+- include: apt.yml
