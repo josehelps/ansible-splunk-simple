@@ -1,5 +1,5 @@
 ---
-# This playbook deploys all sub playbooks
+# The main playbook to deploy your entire splunk infrastructure from hosts file
 
 - name: apply common configuration to all nodes
   hosts: all
@@ -7,3 +7,7 @@
 
   roles:
     - common
+    - search_head
+    - indexer
+    - license_master
+    - cluster_master

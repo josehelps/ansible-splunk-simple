@@ -9,3 +9,5 @@
   tags:
    - install
   copy: src=splunk_binaries/{{splunk_binary}} dest=/var/tmp/splunk owner=root group=root mode=775 
+
+

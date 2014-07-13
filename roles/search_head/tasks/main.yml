@@ -3,3 +3,6 @@
 
 - include: files.yml
 - include: apt.yml
+- include: web.yml
+- include: security.yml
+- include: first_time.yml

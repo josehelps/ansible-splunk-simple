@@ -1,0 +1,15 @@
+---
+# This playbook runs basic commands for the first time splunk gets installed 
+- name: enable boot-start 
+  tags:
+   - install
+  shell: /opt/splunk/bin/splunk enable boot-start
+
+- name: accept license and start splunk
+  tags:
+   - install
+  shell: /opt/splunk/bin/splunk start --accept-license
+  
+
+
+

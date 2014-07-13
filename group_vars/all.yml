@@ -1,14 +1,28 @@
 ---
 ### global settings for your infrastructure ### 
 
-# user 
-user_name: 'drac0'
+# common user to deploy across the infrastructure
+# the user will be given sudo privilages under role/common/files/etc/sudoers file 
+# ideally your admin user, not root ;-)
+user_name: 'splunk-admin'
 
-# password 
-user_pass: '$6$2XpbjCIg$l7I6IVxGh8BU6suNb6ZGX28X1LF/Bxxhyr5q.eU7xWaBGTmmsxeCplAnqPwbTF8HJhvyF9MztUR6oeKdArDox/'
+# password to set for the user above in encrypted format, similat to /etc/shadow
+user_pass: '$6$MO3mawdB$gQkwyvLLJ3SJzvqcnUK4Tcrzqm1OWdAXqzpMGaM66VKjIkKIDDunHSfShIQHEZSYNWBd4NcSfUbzCitmMsAWw.'
 
-# splunk binary to deploy
-splunk_binary: 
+# ssh key to copy over for the user above
+key_file: '/etc/ansible/roles/common/files/home/splunk-admin/.ssh/id_rsa.pub' 
+
+# splunk binary to install
+splunk_binary: 'splunk-6.1.2-213098-linux-2.6-amd64.deb' 
+
+# passwd file for all splunk instances
+splunk_passwd: 'passwd'
+
+# CA + cert for splunk web 
+splunk_ca: 'cert.pem'
+
+#Splunk server key for splunk web
+splunk_pem: 'server-key.pem'
 
 
 
