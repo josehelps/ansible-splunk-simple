@@ -20,6 +20,7 @@ This ansible package expectes your servers to be ubuntu base OS. The splunk bina
 * git clone ansible from `https://github.com/ansible/ansible`
 
 ## Ansible Structure
+![ansible_structure](images/Ansible.png)
 
 ## Roles Details
 
