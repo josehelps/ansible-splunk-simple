@@ -25,7 +25,7 @@ This ansible package expectes your servers to be ubuntu base OS. The splunk bina
 ## Running for the First Time
 
 * Ansible is installed, see above
-* Make sure you generate your own set of splunk-admin keys for the splunk-admin user. I have included some as an example but **I recommend you to generate your own using `ssh-keygen`**
+* Make sure you generate your own set of splunk-admin keys for the splunk-admin user. I have included some as an example but **I recommend you to generate your own using:** `ssh-keygen`
 * You have root keys copied over to the server you can use `# ssh-copy-id -i ~/.ssh/id_rsa.pub remote-host` or run ansible for the first time with `-k` and it will prompt for the root password and copy the root key over. 
 * Inventory is configured under `hosts` file
 
