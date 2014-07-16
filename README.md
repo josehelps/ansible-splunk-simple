@@ -9,6 +9,7 @@ Simple Splunk deployment using Ansible, see [Splunk Blog Post](http://blogs.splu
 * update common role base on group vars 
 * add roles to ansible galaxy
 * make splunk not run under root
+* Finish UF, license\_master, cluster\_master, indexer roles
 
 ## Expectations
 
@@ -30,9 +31,11 @@ This ansible package expectes your servers to be ubuntu base OS. The splunk bina
 * Inventory is configured under `hosts` file
 
 ## Splunk Account Information
-username: admin 
-password: buttercup
-**https://...**
+**username:** admin 
+
+**password:** buttercup
+
+**user:** https://...
 
 credentials are stored under `playbooks/splunk\_creds` 
 The cert/key pair deployed are in the same folder. Although I highly recommend you generate your on keypairs
