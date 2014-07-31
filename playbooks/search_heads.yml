@@ -2,7 +2,7 @@
 # This playbook deploys all sub playbooks
 
 - name: apply common configuration to all nodes
-  hosts: all
+  hosts: search_head
   user: root
 
   roles:
