@@ -1,0 +1,81 @@
+<form script="system_center.js">
+	<label>System Center</label>
+	
+	<fieldset autoRun="true" submitButton="true">
+        
+		<!-- dest tokens (dest, performance_dest, appstate_dest): see system_center.js -->
+        <input type="text" token="dest_form">
+            <label>Destination</label>
+            <default></default>
+        </input>
+        
+		<!-- bunit tokens (dest_bunit, performance_bunit, appstate_bunit): see system_center.js -->
+        <input type="text" token="bunit">
+            <label>Business Unit</label>
+            <default></default>
+        </input>
+
+		<!-- category tokens (dest_category, performance_bunit, appstate_category): see system_center.js -->
+        <input type="dropdown" token="category">
+            <label>Category</label>
+            <choice value="">All</choice>
+            <populatingSearch fieldForValue="category" fieldForLabel="category">| `categories`</populatingSearch>
+            <default></default>
+        </input>
+        
+		<input type="time">
+			<default>Last 24 hours</default>
+		</input>
+	</fieldset>
+
+	<row>
+	    <chart id="element1">
+            <title>Operating Systems</title>
+            
+            <searchTemplate>| inputlookup append=T system_version_tracker | `get_asset(dest)` | `get_identity4events(dest_owner)` | search $dest$ $dest_bunit$ $dest_category$ | stats count by os</searchTemplate>
+                        
+            <option name="charting.chart">pie</option>
+ 
+            <drilldown>
+                <link>search?q=| `datamodel("Compute_Inventory","OS")` | `drop_dm_object_name("All_Inventory")` | `drop_dm_object_name("OS")` | search os="$click.value$"&amp;earliest=$earliest$&amp;latest=$latest$</link>
+            </drilldown>
+        </chart>
+        
+        <chart id="element2">
+            <title>Top-Average CPU Load By System</title>
+            
+            <searchTemplate>| `tstats` avg(All_Performance.CPU.cpu_load_percent) from datamodel=Performance where nodename=All_Performance.CPU [| `tstats` avg(All_Performance.CPU.cpu_load_percent) from datamodel=Performance where nodename=All_Performance.CPU $performance_dest$ $performance_bunit$ $performance_category$ by All_Performance.dest | stats avg(All_Performance.CPU.cpu_load_percent) as "avg" by All_Performance.dest | sort 10 - "avg" | fields All_Performance.dest | format] by _time,All_Performance.dest span=10m | timechart minspan=10m avg(All_Performance.CPU.cpu_load_percent) as "avg_cpu_load(%)" by All_Performance.dest | `drop_dm_object_name("All_Performance")`</searchTemplate>
+            
+            <option name="charting.axisTitleX.text">time</option>
+            <option name="charting.axisTitleY.text">avg(% cpu)</option>
+            <option name="charting.chart">line</option>
+            <option name="charting.chart.nullValueMode">connect</option>
+ 
+            <drilldown>
+                <link>search?q=| `datamodel("Performance","CPU")` | `drop_dm_object_name("All_Performance")` | `drop_dm_object_name("CPU")` | search dest=$click.name2$&amp;earliest=$earliest$&amp;latest=$latest$</link>
+            </drilldown>
+        </chart>
+    </row>
+
+    <row>
+    	<table id="element3">
+    		<title>Services By System Count</title>
+    		
+    		<searchTemplate>| tstats `summariesonly` dc(All_Application_State.dest) as dest_count from datamodel=Application_State where nodename=All_Application_State.Services $appstate_dest$ $appstate_bunit$ $appstate_category$ by All_Application_State.Services.service | `drop_dm_object_name("All_Application_State")` | `drop_dm_object_name("Services")` | sort 100 - dest_count</searchTemplate>
+    	
+    		<drilldown>
+    			<link>search?q=| `datamodel("Application_State","Services")` | `drop_dm_object_name("All_Application_State")` | `drop_dm_object_name("Services")` | search service="$row.service$"&amp;earliest=$earliest$&amp;latest=$latest$</link>
+    		</drilldown>
+    	</table>
+    	
+    	<table id="element4">
+    		<title>Ports By System Count</title>
+    		
+    		<searchTemplate>| tstats `summariesonly` dc(All_Application_State.dest) as dest_count from datamodel=Application_State where nodename=All_Application_State.Ports $appstate_dest$ $appstate_bunit$ $appstate_category$ by All_Application_State.Ports.transport,All_Application_State.Ports.dest_port | `drop_dm_object_name("All_Application_State")` | `drop_dm_object_name("Ports")` | sort 100 - dest_count</searchTemplate>
+    	
+    		<drilldown>
+    			<link>search?q=| `datamodel("Application_State", "Ports")` | `drop_dm_object_name("All_Application_State")` | `drop_dm_object_name("Ports")` | search dest_port="$row.dest_port$" transport="$row.transport$"&amp;earliest=$earliest$&amp;latest=$latest$</link>
+    		</drilldown>
+    	</table>
+    </row>
+</form>

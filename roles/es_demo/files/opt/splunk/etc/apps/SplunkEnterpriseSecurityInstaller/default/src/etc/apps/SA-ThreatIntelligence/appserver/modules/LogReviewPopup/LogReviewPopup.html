@@ -1,0 +1,325 @@
+<%page args="module"/>
+<%
+import csv
+import os
+import splunk.auth as auth
+import splunk.entity as entity
+import splunk.util as util
+from splunk.appserver.mrsparkle.lib.util import make_splunkhome_path
+
+# set the maximum allowable CSV field size 
+# 
+# The default of the csv module is 128KB; upping to 10MB. See SPL-12117 for 
+# the background on issues surrounding field sizes. 
+# (this method is new in python 2.5) 
+csv.field_size_limit(10485760)
+
+REVIEW_STATUSES_PATH = "/alerts/reviewstatuses"
+
+
+# previous working implementation that was talking to the /admin/users endpoint directly. 
+#def getUsers(roles) :
+#    userEntities = entity.getEntities("admin/users", namespace="-", owner="-", sessionKey=sessionKey, count=-1)
+#    userDicts = []
+#    # TODO - NOTE that this does no role filtering yet...
+#    for userName in userEntities:
+#        label = userEntities[userName]["realname"]
+#        if (not label or label.strip()=="") :
+#            label = userName
+#        userDicts.append({
+#            "value": userName,
+#            "label": label
+#        })
+#    return userDicts
+
+# gets the users and roles from a csv.
+# the csv will be populated by some other process, most likely by a scripted 
+# input that doesnt actually "input" anything.
+def getUsers() :
+    userDicts = []
+    
+    file_path = make_splunkhome_path(["etc", "apps", "SA-ThreatIntelligence", "lookups", "notable_owners.csv"])
+    
+    try:
+	    with open(file_path, "rb") as rFile:
+	        for row in csv.DictReader(rFile):
+	            if row.has_key("realname") and row["realname"] is not None and len(row["realname"]) > 0:
+	                userDicts.append({
+	                    "value": row["owner"],
+	                    "label": row["realname"]
+	                })
+	            else:
+	                userDicts.append({
+	                    "value": row["owner"],
+	                    "label": row["owner"]
+	                })
+	        rFile.close()
+    except IOError:
+        ### Notable owners could not be loaded (this happens when setup has not been executed yet)
+        pass
+           
+    # Sort the array 
+	def compare(a, b):
+		
+	    if a['label'] == 'unassigned':
+	    	return 1
+	    elif b['label'] == 'unassigned':
+	    	return -1
+	    	
+	    return cmp(a['label'], b['label'])
+	    
+	userDicts.sort(compare)
+	
+    # Add an empty option that allows us to leave the user as the default
+    userDicts.insert(0, {
+        "value": "",
+        "label": ""
+    })
+            
+    return userDicts
+
+def getUrgencies() :
+    urgencies = []
+    file_path = make_splunkhome_path(["etc", "apps", "SA-ThreatIntelligence", "lookups", "urgency.csv"])
+    
+    ### get the unique urgencies.
+    try:
+	    with open(file_path, "rb") as rFile:
+	        for row in csv.DictReader(rFile):
+	            if row["urgency"] not in urgencies: 
+	                urgencies.append(row["urgency"])
+	        rFile.close()
+    except IOError:
+        ### The file could be loaded, don't load the urgencies (this happens when setup has not been executed yet)
+        pass
+      
+    ### return them as label,value pairs.
+    urgencyDicts = []
+    
+    # Add an empty option that allows us to leave the urgency as the default
+    urgencyDicts.append({
+        "value": "",
+        "label": ""
+    })
+    
+    for i in range(len(urgencies)):
+        urgencyDicts.append({
+            "value": urgencies[i],
+            "label": urgencies[i].capitalize()
+        })
+        
+    return urgencyDicts
+
+
+# Future nice-to-have::  If for a given status like 'closed',  the user 
+# lacks ALL capabilities that end in 'to_closed',  then we could grey out or 
+# omit the state entirely. 
+def getStatuses() :
+    currentUser = auth.getCurrentUser()['name']
+    
+    sessionKey  = cherrypy.session['sessionKey']
+        
+    try :
+        statusEntities = entity.getEntities(REVIEW_STATUSES_PATH, namespace=app, count=500)
+    
+    except Exception, e:
+        raise e
+    
+    ## Get capabilities for current user    
+    capabilities = getCapabilities4User(currentUser, sessionKey)
+    
+    ## Iterate stanza's in statuses dictionary
+    for stanza in statusEntities:
+        matchFound = False
+        
+        ## Iterate current user's capabilities
+        for capability in capabilities:
+            ## If user has at least one transition capability to the iterated status set matchFound to true
+            ## Note this does not take into consideration the current status of the notable event
+            if capability.startswith('transition_reviewstatus-') and capability.endswith('to_' + stanza):
+                matchFound = True
+        
+        ## If a match was not found delete the status from the dictionary
+        if not matchFound:
+            del statusEntities[stanza]
+    
+    return getSortedStatusArray(statusEntities)
+
+def getSortedStatusArray(statusEntities) :
+    statusSortOrder = ["new","in_progress","pending","resolved","closed"]
+
+    statusArray = []
+
+    for stanzaName in statusEntities:
+        if stanzaName in statusSortOrder :
+            order = statusSortOrder.index(stanzaName)
+        else :
+            order = 100
+            
+        statusArray.append({
+            "value"    : stanzaName,
+            "label"    : statusEntities[stanzaName]['label'],
+            "disabled" : splunk.util.normalizeBoolean(statusEntities[stanzaName]["disabled"]),
+            "order"    : order
+        })
+    
+    # Add an empty option
+    statusArray.append({
+            "value"    : "",
+            "label"    : "",
+            "disabled" : False,
+            "order"    : 0
+    })
+        
+    statusArray.sort(key=lambda x: x["order"])
+   	    
+    return statusArray
+    
+def getCapabilities4User(user=None, session_key=None):
+      roles = []
+      capabilities = []
+      
+      ## Get user info              
+      if user is not None:
+          userDict = entity.getEntities('authentication/users/%s' % (user), count=-1, sessionKey=session_key)
+      
+          for stanza, settings in userDict.items():
+              if stanza == user:
+                  for key, val in settings.items():
+                      if key == 'roles':
+                          roles = val
+           
+      ## Get capabilities
+      for role in roles:
+          roleDict = entity.getEntities('authorization/roles/%s' % (role), count=-1, sessionKey=session_key)
+          
+          for stanza, settings in roleDict.items():
+              if stanza == role:
+                  for key, val in settings.items():
+                      if key == 'capabilities' or key =='imported_capabilities':
+                          capabilities.extend(val)
+          
+      return capabilities
+      
+from LogReviewPopup import LogReviewPopup
+      
+commentLength = LogReviewPopup.commentLengthRequired()
+
+urgencyOverrideAllowed = LogReviewPopup.isUrgencyOverrideAllowed()
+%>
+
+
+<%def name="option(text, value=None, selected=None)">\
+    <% selectedAttr = ('selected="selected"') if selected == str(text) else '' %>
+    % if value:
+        <option value="${value | h}" ${selectedAttr} >${text | h}</option>
+    % else:
+        <option ${selectedAttr} >${text | h}</option>
+    % endif
+</%def>\
+
+
+<fieldset>
+    <p>|&nbsp;&nbsp;&nbsp;<a href="#" class="logReviewPopupLink">${module['label']}</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#" class="logReviewPopupLinkAll">Edit all matching events</a></p>
+    <!--  if you wanted a button instead of a link this would be a small matter of uncommenting the below, and changing what the event handler is bound to in the js.  -->
+    <!-- 
+    <button class="splButton-secondary logReviewPopupButton"><span>Edit...</span></button>
+    -->
+</fieldset>
+
+
+<form method="get" class="entityEditForm" style="display:none" name="LogReview">
+<div class="fieldsetWrapper">
+    <fieldset>
+        <label class="exParam">
+            Status
+        </label>
+        <div>
+
+
+            <select name="status">
+
+<%
+statusArray = getStatuses() 
+%>
+% for i in range(len(statusArray)):
+    % if not statusArray[i]["disabled"] :
+        <%self:option 
+            text="${statusArray[i]['label']}" 
+            value="${statusArray[i]['value']}" />
+    % endif
+% endfor
+            </select>
+        </div>
+
+% if urgencyOverrideAllowed:
+        <label class="exParam">
+            Urgency
+        </label>
+        <div>
+<%
+urgencyArray = getUrgencies()
+%>
+            <select name="urgency">
+% for i in range(len(urgencyArray)):
+        <%self:option 
+            text="${urgencyArray[i]['label']}" 
+            value="${urgencyArray[i]['value']}" />
+% endfor
+            </select>
+
+        </div>
+% endif
+
+        <label class="exParam">
+            Owner
+        </label>
+        <div>
+<%
+userArray = getUsers()
+
+%>
+            <select name="newOwner">
+% for i in range(len(userArray)):
+        <%self:option 
+            text="${userArray[i]['label']}" 
+            value="${userArray[i]['value']}" />
+% endfor
+            </select>
+        </div>
+<script language="javascript">
+commentLength = ${commentLength};
+
+function commentLengthCheck(){
+	moreChars = ${commentLength} - ($(this).val().length);
+	
+	if( moreChars > 0 ){
+		$('.morechars:visible').text(moreChars);
+	}
+	else{
+		$('.morechars:visible').text(0);
+	}
+}
+
+
+$(document).ready( function() {
+	$('textarea[name="comment"]').keyup( commentLengthCheck );
+});
+
+</script>
+
+<input name="commentLength" value="${commentLength}" type="hidden" />
+
+        <label class="exParam">
+            Comment
+        </label>
+        <div>
+            <textarea class="exFilename regular" name="comment"></textarea>
+            % if commentLength > 0:
+            <p class="exampleText"><em>A comment with at least ${commentLength|h} characters is required (you need <span class="morechars">${commentLength|h}</span> more).</em></p>
+            % endif
+        </div>
+        
+    </fieldset>
+</div>
+</form>

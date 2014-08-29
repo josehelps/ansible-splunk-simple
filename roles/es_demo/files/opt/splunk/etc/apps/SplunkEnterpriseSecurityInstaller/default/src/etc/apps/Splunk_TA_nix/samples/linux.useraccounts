@@ -1,0 +1,6 @@
+May 24 2011 20:10:43 user=ntp password=changeme! user_id=38 user_group_id=38 home=/etc/ntp shell=/bin/bash
+May 24 2011 20:10:43 user=sshd password=x user_id=74 user_group_id=74 home=/var/empty/sshd shell=/sbin/nologin
+May 24 2011 20:10:43 user=bin password=x user_id=1 user_group_id=1 home=/bin shell=/sbin/nologin
+May 24 2011 20:10:43 user=root password=x user_id=0 user_group_id=0 home=/root shell=/bin/bash
+May 24 2011 20:12:05 user=jdoe password=* user_id=101 user_group_id=10 home=/export/home/jdoe shell=/bin/bash
+May 24 2011 20:10:43 file_hash=fc1079550739ce0b781f58bad556a9816bae7127

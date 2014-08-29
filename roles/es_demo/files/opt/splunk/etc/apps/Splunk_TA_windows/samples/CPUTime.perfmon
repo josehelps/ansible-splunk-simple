@@ -1,0 +1,27 @@
+04/14/2011 11:53:26.486
+collection="CPU Load"
+object=Processor
+counter="% Processor Time"
+instance=_Total
+Value=@@proc_time
+
+04/14/2011 11:53:26.486
+collection="CPU Load"
+object=Processor
+counter="% User Time"
+instance=_Total
+Value=@@user_time
+
+04/14/2011 11:53:26.486
+collection="CPU Load"
+object=Processor
+counter="% Processor Time"
+instance=_Total
+Value=100
+
+04/14/2011 11:53:26.486
+collection="CPU Load"
+object=Processor
+counter="% User Time"
+instance=_Total
+Value=37

@@ -1,0 +1,73 @@
+
+## To allow additional roles to manage review statuses, append to the write list like so
+## access = read : [ * ], write : [ admin,role2,role3 ]
+[authorize]
+access = read : [ * ], write : [ admin ]
+
+## To allow additional roles to manage correlation searches, 
+## append to the write list like as shown below for each of the
+## following stanzas: savedsearches, correlationsearches
+
+## access = read : [ * ], write : [ admin,role2,role3 ]
+[savedsearches]
+access = read : [ * ], write : [ admin ]
+
+[correlationsearches]
+access = read : [ * ], write : [ admin ]
+
+## To allow additional roles to edit lookups, specify the roles below. Note that allowing others to edit lookups
+## is necessary for some modules such as the blocklist editor, per-panel-filtering module and the lookup editor.
+## Note that the local.meta needs to be modified in the app where the lookup file resides.
+[lookups]
+access = read : [ * ], write : [ admin ]
+
+[]
+access = read : [ * ], write : [ admin ]
+export = system
+version = 6.1.3
+modtime = 1406780857.020142000
+import = DA-ESS-AccessProtection, DA-ESS-EndpointProtection, DA-ESS-IdentityManagement, DA-ESS-NetworkProtection, SA-AccessProtection, SA-AuditAndDataProtection, SA-EndpointProtection, SA-IdentityManagement, SA-NetworkProtection, SA-ThreatIntelligence, SA-Utils, Splunk_SA_CIM, Splunk_TA_bro, Splunk_TA_flowfix, Splunk_TA_mcafee, Splunk_TA_nessus, Splunk_TA_nix, Splunk_TA_norse, Splunk_TA_windows, SplunkEnterpriseSecuritySuite, TA-airdefense, TA-alcatel, TA-bluecoat, TA-cef, TA-fireeye, TA-flowd, TA-fortinet, TA-ftp, TA-ip2location, TA-juniper, TA-ncircle, TA-nmap, TA-oracle, TA-ossec, TA-paloalto, TA-rsa, TA-sav, TA-sep, TA-snort, TA-sophos, TA-splunk, TA-tippingpoint, TA-trendmicro, TA-websense, search
+
+[inputs/identity_manager%3A%2F%2Fadministrative_identities]
+version = 6.1.3
+modtime = 1406780815.668983000
+
+[inputs/identity_manager%3A%2F%2Fdemo_assets]
+version = 6.1.3
+modtime = 1406780815.698333000
+
+[inputs/identity_manager%3A%2F%2Fdemo_identities]
+version = 6.1.3
+modtime = 1406780815.722317000
+
+[inputs/identity_manager%3A%2F%2Fstatic_assets]
+version = 6.1.3
+modtime = 1406780815.745366000
+
+[inputs/identity_manager%3A%2F%2Fstatic_identities]
+version = 6.1.3
+modtime = 1406780815.767091000
+
+[lookups/categories_from_assets.csv]
+version = 6.1.3
+modtime = 1406780819.543145000
+
+[lookups/pci_domains_from_assets.csv]
+version = 6.1.3
+modtime = 1406780819.834731000
+
+[lookups/assets_by_str.csv]
+version = 6.1.3
+modtime = 1406780820.060996000
+
+[lookups/categories_from_identities.csv]
+version = 6.1.3
+modtime = 1406780820.364015000
+
+[lookups/assets_by_cidr.csv]
+version = 6.1.3
+modtime = 1406780820.382915000
+
+[lookups/identities_expanded.csv]
+version = 6.1.3
+modtime = 1406780820.595169000

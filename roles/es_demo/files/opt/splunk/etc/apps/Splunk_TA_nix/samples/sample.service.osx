@@ -1,0 +1,7 @@
+Tue Mar  5 15:06:57 EST 2013 app="VirtualBox" StartMode=Auto StartType=startup file_path="/Library/StartupItems/VirtualBox"
+Tue Mar  5 15:06:57 EST 2013 app="Microsoft Database Daemon" StartMode=Auto StartType=login file_path="/Applications/Microsoft Office 2011/Office/Microsoft Database Daemon.app" user=splunk
+Tue Mar  5 15:06:57 EST 2013 app="iTunesHelper" StartMode=Auto StartType=login file_path="/Applications/iTunes.app/Contents/MacOS/iTunesHelper.app" user=splunk
+Tue Mar  5 15:06:57 EST 2013 app="EvernoteHelper" StartMode=Auto StartType=login file_path="/Applications/Evernote.app/Contents/Resources/EvernoteHelper.app" user=splunk
+Tue Mar  5 15:06:57 EST 2013 app="Google Drive" StartMode=Auto StartType=login file_path="/Applications/Google Drive.app" user=splunk
+Tue Mar  5 15:06:57 EST 2013 app="Dropbox" StartMode=Auto StartType=login file_path="/Applications/Dropbox.app" user=splunk
+Tue Mar  5 15:06:57 EST 2013 app="Splunk" StartMode=Disabled

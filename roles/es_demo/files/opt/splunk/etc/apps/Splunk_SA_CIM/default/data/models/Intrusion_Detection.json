@@ -1,0 +1,392 @@
+{
+	"modelName":	"Intrusion_Detection",
+	"displayName":	"Intrusion Detection",
+	"description":	"Intrusion Detection Data Model",
+	"editable":		false,
+	"objects":		[
+		{
+			"objectName":	"IDS_Attacks",
+			"displayName":	"IDS Attacks",
+			"parentName":	"BaseEvent",
+			"fields":		[
+				{
+					"fieldName":	"action",
+					"displayName":	"action",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"dest_bunit",
+					"displayName":	"dest_bunit",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"dest_category",
+					"displayName":	"dest_category",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	true,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"dest_priority",
+					"displayName":	"dest_priority",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"dvc_bunit",
+					"displayName":	"dvc_bunit",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"dvc_category",
+					"displayName":	"dvc_category",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	true,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"dvc_priority",
+					"displayName":	"dvc_priority",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"src_bunit",
+					"displayName":	"src_bunit",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"src_category",
+					"displayName":	"src_category",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	true,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"src_priority",
+					"displayName":	"src_priority",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"tag",
+					"displayName":	"tag",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	true,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"user_bunit",
+					"displayName":	"user_bunit",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"user_category",
+					"displayName":	"user_category",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	true,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"user_priority",
+					"displayName":	"user_priority",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				}				
+			],
+			"calculations":	[
+				{
+					"calculationID":	"IDS_Attacks_fillnull_dvc",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"dvc",
+							"displayName":	"dvc",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnull(dvc),\"unknown\",dvc)"
+				},
+				{
+					"calculationID":	"IDS_Attacks_fillnull_ids_type",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"ids_type",
+							"displayName":	"ids_type",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnull(ids_type),\"unknown\",ids_type)"
+				},
+				{
+					"calculationID":	"IDS_Attacks_fillnull_category",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"category",
+							"displayName":	"category",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnull(category),\"unknown\",category)"
+				},
+				{
+					"calculationID":	"IDS_Attacks_fillnull_signature",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"signature",
+							"displayName":	"signature",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnull(signature),\"unknown\",signature)"
+				},
+				{
+					"calculationID":	"IDS_Attacks_fillnull_severity",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"severity",
+							"displayName":	"severity",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnull(severity),\"unknown\",severity)"
+				},
+				{
+					"calculationID":	"IDS_Attacks_fillnull_src",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"src",
+							"displayName":	"src",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnull(src),\"unknown\",src)"
+				},				
+				{
+					"calculationID":	"IDS_Attacks_fillnull_dest",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"dest",
+							"displayName":	"dest",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnull(dest),\"unknown\",dest)"
+				},
+				{
+					"calculationID":	"IDS_Attacks_fillnull_user",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"user",
+							"displayName":	"user",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnull(user),\"unknown\",user)"
+				},
+				{
+					"calculationID":	"IDS_Attacks_vendor_product",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"vendor_product",
+							"displayName":	"vendor_product",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"case(isnotnull(vendor_product),vendor_product,isnotnull(vendor) AND vendor!=\"unknown\" AND isnotnull(product) AND product!=\"unknown\",vendor.\" \".product,isnotnull(vendor) AND vendor!=\"unknown\" AND (isnull(product) OR product=\"unknown\"),vendor.\" unknown\",(isnull(vendor) OR vendor=\"unknown\") AND isnotnull(product) AND product!=\"unknown\",\"unknown \".product,isnotnull(sourcetype),sourcetype,1=1,\"unknown\")"
+				}
+			],
+			"constraints":	[
+				{
+					"search":	"tag=ids tag=attack"
+				}			
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Application_IDS_Attacks",
+			"displayName":	"Application Intrusion Detection",
+			"parentName":	"IDS_Attacks",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"ids_type=\"application\""
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Host_IDS_Attacks",
+			"displayName":	"Host Intrusion Detection",
+			"parentName":	"IDS_Attacks",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"ids_type=\"host\""
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Network_IDS_Attacks",
+			"displayName":	"Network Intrusion Detection",
+			"parentName":	"IDS_Attacks",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"ids_type=\"network\""
+				}
+			],
+			"children":		[]
+		},		
+		{
+			"objectName":	"Missing_Extractions_IDS",
+			"displayName":	"Missing Extractions (S.o.S)",
+			"parentName":	"IDS_Attacks",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"(dvc=\"unknown\" OR ids_type=\"unknown\" OR category=\"unknown\" OR signature=\"unknown\" OR severity=\"unknown\" OR src=\"unknown\" OR dest=\"unknown\" OR user=\"unknown\" OR vendor_product=\"unknown\")"
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Untagged_IDS",
+			"displayName":	"Untagged Intrusion Detection (S.o.S)",
+			"parentName":	"BaseSearch",
+			"fields":		[
+				{
+					"fieldName":	"_time",
+					"displayName":	"_time",
+					"type":			"timestamp",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"host",
+					"displayName":	"host",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"source",
+					"displayName":	"source",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"sourcetype",
+					"displayName":	"sourcetype",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				}			
+			],
+			"calculations":	[],
+			"constraints":	[],
+			"baseSearch":   "(sourcetype=*idp* OR sourcetype=*ids* OR intrusion OR hip) sourcetype!=stash NOT (tag=ids tag=attack)",
+			"children":		[]
+		}
+	]
+}

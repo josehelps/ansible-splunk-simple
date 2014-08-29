@@ -1,0 +1,166 @@
+Norse Add-on
+----------------------------------------
+    Author: Splunk
+    Version/Date: 3.1.0/03-03-2014
+    Source type(s): none
+    Input requirements: 
+    Has index-time operations: false
+    Supported product(s): Norse Darklist API, Norse IPViking
+
+Using this Add-on:
+----------------------------------------
+    Configuration: Manual
+    Ports for automatic configuration: None
+    Scripted input setup: Not applicable
+    
+    Usage: This TA adds the following features:
+    
+    Custom search commands
+    ----------------------
+    1. darklist
+    
+        Used to download the full Norse Darklist threat intelligence database.
+
+    2. ipviking
+    
+        Used to perform ad-hoc lookups against the Norse IPViking service.
+    
+    Scheduled Searches
+    ------------------
+    1. Norse - Download Norse Darklist
+    
+        This is the scheduled search that downloads the full Darklist and 
+        populates the "norse_darklist_lookup" lookup table. This scheduled
+        search uses the norse_download_darklist macro described below. To modify
+        the default download settings, modify the macro, and not the scheduled
+        search object.
+    
+    Lookup tables
+    -------------
+    1. norse_darklist_lookup
+    
+        Contains Darklist data. Populated by the "Norse - Download Norse Darklist"
+        scheduled search.
+    
+    2. norse_category_lookup
+    
+        Maps numeric category IDs to human-readable text.
+    
+    3. norse_protocol_lookup
+
+        Maps numeric protocol IDs to human-readable text.
+    
+    Macros
+    ------
+    
+    See the macros.conf file for the exact definition of macro parameters.
+    
+    1. norse_darklist_lookup(1)
+    
+        Used to query Darklist data.
+        
+    2. norse_protocol(1)
+
+        Used to convert numeric protocol codes in Norse data to human-readable text.
+        
+    3. norse_category(1)
+    
+        Used to convert numeric category codes in Norse data to human-readable text.
+
+    4. norse_download_darklist(1)
+    
+        Used to modify default download settings for the "darklist" search
+        command. The default settings are described in macros.conf.
+
+    5. ipviking(1)
+    
+        Used in workflow actions to return IPViking information for a host.
+        Should be modified if the format of data returned by workflow actions
+        is insufficient. 
+        
+    6. ipviking(2)
+    
+        Used to return IPViking information for a host in a particular format.
+        Three formats are available:
+        
+        "full"  - A flattened presentation of the JSON IPVIking response.
+        "short" - A condensed version of the above. Some fields
+                  are eliminated, and others are converted to multi-valued fields
+                  for easier presentation.
+        "json"  - The original JSON response.
+
+    7. ipviking_field_format(0)
+    
+        Used to select particular field for the "short" IPViking format. This is
+        used in the default "ipviking" macro that drives all workflow actions.
+
+    Inputs
+    ------
+    1. threatlist://norse_darklist
+    
+        Integrates Norse Darklist data with the unified threat intelligence
+        system in the Splunk App for Enterprise Security.
+        
+    Workflow Actions
+    ----------------
+    1. ipviking_search_<field>
+    
+        Performs an ad-hoc IPViking query as a workflow action. This action is
+        applied to 5 fields that may be present in event data:
+        
+            src, dest, host, orig_host, dvc. 
+    
+    
+    Installation
+    ------------
+    To use this TA, a valid account with Norse (http://www.norse-corp.com/)
+    must first be obtained for the required products.
+    
+    To configure this add-on:
+    1. From the "Manage Apps" screen, run the Setup for the Splunk Add-on for Norse.
+    2. Enter the API key for the Darklist product, IPViking product, or both.
+    3. Click the "Save button"
+       
+    Upon configuration, the "Norse - Download Norse Darklist" scheduled search
+    will be enabled. The script runs at 3 AM nightly by default. To download the 
+    darklist immediately, you can choose a different schedule via the Manager, 
+    or run this search from the Splunk UI:
+    
+        | savedsearch "Norse - Download Norse Darklist"
+
+    Additionally, a second input stanza will be enabled to permit integration of
+    Darklist data with the Splunk App for Enterprise Security. If the Splunk App
+    for Enterprise Security is not present, this stanza is benign.
+
+Note: this TA should only be installed on search-heads. It should not be
+installed on indexers.  
+    
+
+Known Issues:
+----------------------------------------
+
+1. The full Darklist is over 3 million lines long and may take several minutes to
+download. Incremental downloads are not currently supported. In Splunk 6.0 the 
+following known issue may affect performance of the Darklist lookup table:
+    
+- Distributed searches fail when they invoke a lookup file that is over 10MB in 
+  size. (SPL-74438, SPL-54982) 
+
+As a workaround, increase the value of max_memtable_bytes to a value large enough
+to contain the full Darklist in Splunk's memory (~200MB). This will increase memory
+pressure on the search head as the Darklist will no longer be indexed on disk for
+improved performance.
+
+Also, when using the indexed version of the Darklist lookup table, the first 
+search that accesses the Darklist will perform VERY slowly, as the table will be 
+indexed at that time.
+
+2. Errors may appear at startup that refer to the presence of the "threatlist" 
+input stanza in $SPLUNK_HOME/etc/apps/Splunk_TA_norse/default/inputs.conf. These
+errors are benign and occur because the "threatlist" input type is not supported
+unless this app is coinstalled with the Splunk App for Enterprise Security. To
+eliminate these errors, simply comment out the "threatlist://norse_darklist"
+stanza in the inputs.conf file.
+
+
+Copyright (C) 2009-2014 Splunk Inc. All Rights Reserved.

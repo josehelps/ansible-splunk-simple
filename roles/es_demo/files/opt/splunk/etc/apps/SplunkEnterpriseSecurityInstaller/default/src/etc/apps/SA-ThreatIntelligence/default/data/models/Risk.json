@@ -1,0 +1,119 @@
+{
+	"modelName":	"Risk",
+	"displayName":	"Risk Analysis",
+	"description":	"Risk Analysis Data Model",
+	"editable":		false,
+	"objects":		[
+		{
+			"objectName":	"All_Risk",
+			"displayName":	"All Risk Modifiers",
+			"parentName":	"BaseEvent",
+			"fields":		[
+				{
+					"fieldName":	"tag",
+					"displayName":	"tag",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	true,
+					"hidden":		false
+				}
+			],
+			"calculations":	[
+				{
+					"calculationID":    "All_Risk_0description",
+					"calculationType":  "Lookup",
+					"lookupName":       "correlationsearches_lookup",
+					"lookupInputs":     [
+						{
+							"inputField": "source",
+							"lookupField": "savedsearch"
+						}
+					],
+					"outputFields":     [
+						{
+							"lookupOutputFieldName": "description",
+							"fieldName":	"savedsearch_description",
+							"displayName":	"savedsearch_description",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					]
+				},
+				{
+					"calculationID":	"All_Risk_1description",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"description",
+							"displayName":	"description",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"case(isnotnull(description),description,isnotnull(savedsearch_description),savedsearch_description,1=1,\"unknown\")"
+				},
+				{
+					"calculationID":	"All_Risk_risk_object",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"risk_object",
+							"displayName":	"risk_object",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnull(risk_object),\"unknown\",risk_object)"
+				},
+				{
+					"calculationID":	"All_Risk_risk_object_type",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"risk_object_type",
+							"displayName":	"risk_object_type",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnull(risk_object_type),\"unknown\",risk_object_type)"
+				},
+				{
+					"calculationID":	"All_Risk_risk_score",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"risk_score",
+							"displayName":	"risk_score",
+							"type":			"number",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnull(risk_score),0,risk_score)"
+				}
+			],
+			"constraints":	[
+				{
+					"search":	"index=risk"
+				}
+			],
+			"children":		[]
+		}
+	]
+}

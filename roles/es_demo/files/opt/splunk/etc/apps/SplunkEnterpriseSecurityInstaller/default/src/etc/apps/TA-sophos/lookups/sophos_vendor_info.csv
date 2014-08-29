@@ -1,0 +1,14 @@
+SourceName,vendor,product,source,sourcetype,ids_type
+"Sophos Anti-Virus","Sophos","Anti-Virus",,"WinEventLog:Application:sophos",
+,"Sophos","Enterprise Console","SEC",,
+,"Sophos","Endpoint Protection",,"sophos:appcontrol",
+,"Sophos","Endpoint Protection",,"sophos:computerdata",
+,"Sophos","Endpoint Protection",,"sophos:devicecontrol",
+,"Sophos","Endpoint Protection",,"sophos:firewall",
+,"Sophos","Endpoint Protection",,"sophos:tamperprotection",
+,"Sophos","Endpoint Protection",,"sophos:threats",
+,"Sophos","Endpoint Protection",,"sophos:webdata",
+,"Sophos","Web Appliance","SWA",,
+,"Sophos","UTM Firewall",,"sophos:utm:firewall",
+,"Sophos","UTM Intrusion Provention System",,"sophos:utm:ips","network"
+,"Sophos","UTM VPN",,"sophos:utm:ipsec",

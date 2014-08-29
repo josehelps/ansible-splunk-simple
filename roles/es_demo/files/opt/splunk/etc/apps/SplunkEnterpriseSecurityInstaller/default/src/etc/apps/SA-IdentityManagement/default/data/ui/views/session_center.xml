@@ -1,0 +1,50 @@
+<form script="session_center.js">
+	<label>Session Center</label>
+
+	<fieldset autoRun="true" submitButton="true">
+	    
+	    <input type="text" token="srch_form">
+            <label>Search</label>
+            <default></default>   
+        </input>
+
+  		<input type="time">
+			<default>Last 24 hours</default>
+		</input>
+	</fieldset>
+
+	<row>
+        <chart>
+            <title>Sessions Over Time</title>
+
+            <searchTemplate>| tstats `summariesonly` count from datamodel=Network_Sessions where * $srch$ by _time,nodename span=10m | search nodename!=All_Sessions nodename!=All_Sessions.Session_* | rex field=nodename "All_Sessions.(?&lt;session_type&gt;.*)" | timechart minspan=10m sum(count) as count by session_type</searchTemplate>
+
+            <option name="charting.chart">line</option>
+            <option name="charting.chart.nullValueMode">zero</option>
+            <option name="charting.drilldown">all</option>
+            <option name="charting.axisTitleX.text">time</option>
+            <option name="charting.axisTitleY.text">count</option>
+            
+            <drilldown>
+                <link>search?q=| `datamodel("Network_Sessions","$click.name2$")` | search $srch$ | `drop_dm_object_name("All_Sessions")`&amp;earliest=$earliest$&amp;latest=$latest$</link>
+            </drilldown>
+        </chart>
+    </row>
+    
+    <row>
+    	<table>
+    		<title>Session Details</title>
+    		
+    		<!-- Using session_center.js to dynamically define the following searchTemplate.
+    			 If $srch$ is unspecified, we will use a "| datamodel" search w/ "| head"
+    			 If $srch$ is specified, we will use a "| tstats" search
+    		-->
+            <searchTemplate>$session_details$</searchTemplate>
+
+    		<drilldown>
+                <link>search?q=| `datamodel("Network_Sessions", "All_Sessions")` | `drop_dm_object_name("All_Sessions")` | `unprepend_assets("dest")` | search ip="$row.ip$" mac="$row.mac$" nt_host="$row.nt_host$" dns="$row.dns$" user="$row.user$"</link>
+            </drilldown>
+    	</table>
+    </row>
+    
+</form>

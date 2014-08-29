@@ -1,0 +1,212 @@
+iin,length,iin_issuer
+2014*,15,Diners Club enRoute
+2149*,15,Diners Club enRoute
+300*,14,Diners Club Carte Blanche
+301*,14,Diners Club Carte Blanche
+302*,14,Diners Club Carte Blanche
+303*,14,Diners Club Carte Blanche
+304*,14,Diners Club Carte Blanche
+305*,14,Diners Club Carte Blanche
+34*,15,American Express
+3528*,16,JCB
+3529*,16,JCB
+353*,16,JCB
+354*,16,JCB
+355*,16,JCB
+356*,16,JCB
+357*,16,JCB
+358*,16,JCB
+36*,14,Diners Club International
+37*,15,American Express
+4026*,16,Visa Electron
+417500*,16,Visa Electron
+4508*,16,Visa Electron
+4844*,16,Visa Electron
+4903*,16,Switch
+4905*,16,Switch
+4911*,16,Switch
+4903*,18,Switch
+4905*,18,Switch
+4911*,18,Switch
+4903*,19,Switch
+4905*,19,Switch
+4911*,19,Switch
+4913*,16,Visa Electron
+4917*,16,Visa Electron
+4936*,16,Switch
+4936*,18,Switch
+4936*,19,Switch
+4*,16,Visa
+5018*,12,Maestro
+5020*,12,Maestro
+5038*,12,Maestro
+5018*,13,Maestro
+5020*,13,Maestro
+5038*,13,Maestro
+5018*,14,Maestro
+5020*,14,Maestro
+5038*,14,Maestro
+5018*,15,Maestro
+5020*,15,Maestro
+5038*,15,Maestro
+5018*,16,Maestro
+5020*,16,Maestro
+5038*,16,Maestro
+5018*,17,Maestro
+5020*,17,Maestro
+5038*,17,Maestro
+5018*,18,Maestro
+5020*,18,Maestro
+5038*,18,Maestro
+5018*,19,Maestro
+5020*,19,Maestro
+5038*,19,Maestro
+51*,16,MasterCard
+52*,16,MasterCard
+53*,16,MasterCard
+54*,16,MasterCard
+55*,16,MasterCard
+560221*,16,Bankcard
+560222*,16,Bankcard
+560223*,16,Bankcard
+560224*,16,Bankcard
+560225*,16,Bankcard
+5610*,16,Bankcard
+564182*,16,Switch
+564182*,18,Switch
+564182*,19,Switch
+6011*,16,Discover Card
+622126*,16,Discover Card
+622127*,16,Discover Card
+622128*,16,Discover Card
+622129*,16,Discover Card
+62213*,16,Discover Card
+62214*,16,Discover Card
+62215*,16,Discover Card
+62216*,16,Discover Card
+62217*,16,Discover Card
+62218*,16,Discover Card
+62219*,16,Discover Card
+62220*,16,Discover Card
+62221*,16,Discover Card
+62222*,16,Discover Card
+62223*,16,Discover Card
+62224*,16,Discover Card
+62225*,16,Discover Card
+62226*,16,Discover Card
+62227*,16,Discover Card
+62228*,16,Discover Card
+62229*,16,Discover Card
+62230*,16,Discover Card
+62231*,16,Discover Card
+62232*,16,Discover Card
+62233*,16,Discover Card
+62234*,16,Discover Card
+62235*,16,Discover Card
+62236*,16,Discover Card
+62237*,16,Discover Card
+62238*,16,Discover Card
+62239*,16,Discover Card
+62240*,16,Discover Card
+62241*,16,Discover Card
+62242*,16,Discover Card
+62243*,16,Discover Card
+62244*,16,Discover Card
+62245*,16,Discover Card
+62246*,16,Discover Card
+62247*,16,Discover Card
+62248*,16,Discover Card
+62249*,16,Discover Card
+62250*,16,Discover Card
+62251*,16,Discover Card
+62252*,16,Discover Card
+62253*,16,Discover Card
+62254*,16,Discover Card
+62255*,16,Discover Card
+62256*,16,Discover Card
+62257*,16,Discover Card
+62258*,16,Discover Card
+62259*,16,Discover Card
+62260*,16,Discover Card
+62261*,16,Discover Card
+62262*,16,Discover Card
+62263*,16,Discover Card
+62264*,16,Discover Card
+62265*,16,Discover Card
+62266*,16,Discover Card
+62267*,16,Discover Card
+62268*,16,Discover Card
+62269*,16,Discover Card
+62270*,16,Discover Card
+62271*,16,Discover Card
+62272*,16,Discover Card
+62273*,16,Discover Card
+62274*,16,Discover Card
+62275*,16,Discover Card
+62276*,16,Discover Card
+62277*,16,Discover Card
+62278*,16,Discover Card
+62279*,16,Discover Card
+62280*,16,Discover Card
+62281*,16,Discover Card
+62282*,16,Discover Card
+62283*,16,Discover Card
+62284*,16,Discover Card
+62285*,16,Discover Card
+62286*,16,Discover Card
+62287*,16,Discover Card
+62288*,16,Discover Card
+62289*,16,Discover Card
+62290*,16,Discover Card
+62291*,16,Discover Card
+622921*,16,Discover Card
+622922*,16,Discover Card
+622923*,16,Discover Card
+622924*,16,Discover Card
+622925*,16,Discover Card
+6304*,12,Maestro
+6304*,13,Maestro
+6304*,14,Maestro
+6304*,15,Maestro
+6304*,16,Maestro
+6304*,17,Maestro
+6304*,18,Maestro
+6304*,19,Maestro
+633110*,16,Switch
+633110*,18,Switch
+633110*,19,Switch
+6333*,16,Switch
+6333*,18,Switch
+6333*,19,Switch
+6334*,16,Solo
+6334*,18,Solo
+6334*,19,Solo
+644*,16,Discover Card
+645*,16,Discover Card
+646*,16,Discover Card
+647*,16,Discover Card
+648*,16,Discover Card
+649*,16,Discover Card
+65*,16,Discover Card
+6759*,16,Switch
+6759*,18,Switch
+6759*,19,Switch
+6761*,12,Maestro
+6761*,13,Maestro
+6761*,14,Maestro
+6761*,15,Maestro
+6761*,16,Maestro
+6761*,17,Maestro
+6761*,18,Maestro
+6761*,19,Maestro
+6763*,12,Maestro
+6763*,13,Maestro
+6763*,14,Maestro
+6763*,15,Maestro
+6763*,16,Maestro
+6763*,17,Maestro
+6763*,18,Maestro
+6763*,19,Maestro
+6767*,16,Solo
+6767*,18,Solo
+6767*,19,Solo

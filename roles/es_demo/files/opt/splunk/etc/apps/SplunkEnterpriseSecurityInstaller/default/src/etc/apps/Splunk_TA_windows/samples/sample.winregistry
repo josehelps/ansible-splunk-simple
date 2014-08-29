@@ -1,0 +1,40 @@
+09/09/2010 23:36:32.0128
+event_status="(0)The operation completed successfully."
+pid=1300
+process_image="\Device\HarddiskVolume1\Windows\System32\spoolsv.exe"
+registry_type="CreateKey"
+key_path="\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Print\Providers\Client Side Rendering Print Provider\Servers\DAVID-PC\Printers\{676235CD-B656-42D5-B737-49856E97D072}\PrinterDriverData"
+data_type="REG_NONE"
+data=""
+09/09/2010 23:36:31.0800
+event_status="(0)The operation completed successfully."
+pid=1300
+process_image="\Device\HarddiskVolume1\Windows\System32\spoolsv.exe"
+registry_type="SetValue"
+key_path="\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Print\Providers\Client Side Rendering Print Provider\Servers\DAVID-PC\Printers\{676235CD-B656-42D5-B737-49856E97D072}\DsKeyUpdateForeground"
+data_type="REG_DWORD"
+data="0x00000003(3)"
+09/09/2010 23:36:29.0519
+event_status="(-1073741790)Access is denied."
+pid=2940
+process_image="\Device\HarddiskVolume1\Program Files\VMware\VMware Tools\TPAutoConnect.exe"
+registry_type="CreateKey"
+key_path="\REGISTRY\MACHINE\SOFTWARE\ThinPrint\TPVMW321-2169411598-1000\Software\Microsoft\Windows\CurrentVersion\Ext\Stats\{ED8C108E-4349-11D2-91A4-00C04F7969E8}\iexplore"
+data_type="REG_NONE"
+data=""
+09/09/2010 23:28:36.0860
+event_status="(0)The operation completed successfully."
+pid=1836
+process_image="\Device\HarddiskVolume1\Program Files\Windows Media Player\wmpnetwk.exe"
+registry_type="DeleteKey"
+key_path="\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows Media Player NSS\3.0\Servers\982BF570-9638-D16C-DA56-63BCFA515AD3\DeviceCompatFlags"
+data_type="REG_NONE"
+data=""
+09/09/2010 23:23:44.0542
+event_status="(0)The operation completed successfully."
+pid=4032
+process_image="\Device\HarddiskVolume1\Windows\regedit.exe"
+registry_type="RenameKey"
+key_path="\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\cookies"
+data_type="REG_NONE"
+data=""

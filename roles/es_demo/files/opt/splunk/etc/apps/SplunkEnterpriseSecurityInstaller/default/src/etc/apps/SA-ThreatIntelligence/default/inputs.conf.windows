@@ -1,0 +1,346 @@
+
+#####################
+## Incident Review
+#####################
+[monitor://$SPLUNK_HOME\etc\apps\SA-ThreatIntelligence\lookups\incident_review.csv]
+disabled = false
+index = _audit
+sourcetype = incident_review
+
+
+#####################
+## Notable Events
+#####################
+
+###### Governance ######
+
+## makeCSV
+[script://.\bin\governance_makeCSV.py]
+disabled = false
+passAuth = splunk-system-user
+interval = 86400
+index = _internal
+sourcetype = governance:makeCSV
+
+###### Owners ######
+
+## Make Notable Owners List
+## Usage:    notable_owners.py app=<app> file=<file> capability=<capability>
+## Defaults: notable_owners.py app=SA-ThreatIntelligence file=notable_owners.csv capability=can_own_notable_events
+[script://.\bin\notable_owners.py]
+disabled = false
+passAuth = splunk-system-user
+interval = 600
+index = _internal
+sourcetype = notable_owners
+
+###### Statuses ######
+
+## makeCSV
+[script://.\bin\reviewstatuses_makeCSV.py]
+disabled = false
+passAuth = splunk-system-user
+interval = 86400
+index = _internal
+sourcetype = reviewstatuses:makeCSV
+
+###### Suppressions ######
+
+## autoDisable
+[script://.\bin\suppressions_autoDisable.py]
+disabled = false
+passAuth = splunk-system-user
+interval = 86400
+index = _internal
+sourcetype = notable_event_suppression:autoDisable
+
+
+#####################
+## Threat Lists
+#####################
+
+[threatlist_manager]
+# host = <modify only if this needs to be different from default>
+interval = 300
+master_host =
+
+[threatlist_manager://default]
+# This modular input runs in single instance mode. DO NOT EDIT.
+disabled = true
+index = _internal
+source = ModularInput:ThreatlistManager
+sourcetype = ModularInput:ThreatlistManager
+
+[threatlist]
+## Default parameters that can be overridden in individual stanzas.
+interval = 43200
+proxy_port =
+proxy_server =
+proxy_user =
+retries = 3
+retry_interval = 60
+site_user =
+type =
+weight = 1
+## Parser settings can be configured per-threat list.
+# One of delim_regex or extract_regex is required.
+delim_regex =
+extract_regex =
+fields =
+ignore_regex =
+skip_header_lines = 0
+## Settings below this line should be set as a default
+## for all stanzas and NOT overridden in individual stanzas.
+# host = <modify only if this needs to be different from default>
+index = _internal
+initial_delay = 300
+master_host =
+source = ModularInput:Threatlist
+sourcetype = ModularInput:Threatlist
+target = threatlist
+timeout = 30
+
+[threatlist://iblocklist_logmein]
+delim_regex = :
+description = Addresses that are used by the LogMeIn product to enable unauthorized remote access
+disabled = false
+fields = description:$1,ip:$2
+ignore_regex = (^#|^\s*$)
+type = threatlist
+url = http://list.iblocklist.com/?list=logmein
+
+[threatlist://iblocklist_piratebay]
+delim_regex = :
+description = Addresses that are commonly associated with known PirateBay sites
+disabled = false
+fields = description:$1,ip:$2
+ignore_regex = (^#|^\s*$)
+type = threatlist
+url = http://list.iblocklist.com/?list=nzldzlpkgrcncdomnttb
+
+[threatlist://iblocklist_proxy]
+delim_regex = :
+description = Addresses that are commonly associated with known traffic-proxy sites
+disabled = false
+fields = description:$1,ip:$2
+ignore_regex = (^#|^\s*$)
+type = threatlist
+url = http://list.iblocklist.com/?list=bt_proxy
+
+[threatlist://iblocklist_rapidshare]
+delim_regex = :
+description = Addresses that are commonly associated with known RapidShare sites
+disabled = false
+fields = description:$1,ip:$2
+ignore_regex = (^#|^\s*$)
+type = threatlist
+url = http://list.iblocklist.com/?list=zfucwtjkfwkalytktyiw
+
+[threatlist://sans]
+delim_regex =
+description = SANS blocklist
+disabled = false
+extract_regex = ^(\S+)\t+(\S+)\t+\S+\t+\S+\t*(\S*)
+fields = ip:"$1-$2",description:"$3"
+ignore_regex = (^#|^\s*$|^Start)
+type = threatlist
+url = http://isc.sans.edu/block.txt
+
+[threatlist://iblocklist_spyware]
+delim_regex = :
+description = Addresses that are commonly associated with known spyware sites
+disabled = false
+fields = description:$1,ip:$2
+ignore_regex = (^#|^\s*$)
+type = threatlist
+url = http://list.iblocklist.com/?list=bt_spyware
+
+[threatlist://iblocklist_tor]
+delim_regex = :
+description = Addresses that are commonly associated with known Tor sites
+disabled = false
+fields = description:$1,ip:$2
+ignore_regex = (^#|^\s*$)
+type = threatlist
+url = http://list.iblocklist.com/?list=tor
+
+[threatlist://iblocklist_web_attacker]
+delim_regex = :
+description = Addresses that are commonly associated with known malicious attacker sites
+disabled = false
+fields = description:$1,ip:$2
+ignore_regex = (^#|^\s*$)
+type = threatlist
+url = http://list.iblocklist.com/?list=ghlzqtqxnzctvvajwwag
+
+[threatlist://local_threatlist]
+delim_regex = ,
+description = Custom list of threat IP addresses
+disabled = false
+fields = description:$1,ip:$2
+ignore_regex = (^#|^\s*$)
+skip_header_lines = 1
+type = threatlist
+url = lookup://local_threatlist
+
+[threatlist://local_threatlist_domains]
+delim_regex = ,
+description = Custom list of threat domains
+disabled = false
+fields = description:$1,domain:$2
+ignore_regex = (^#|^\s*$)
+skip_header_lines = 1
+type = threatlist_domain
+url = lookup://local_threatlist_domains
+
+[threatlist://local_threatlist_urls]
+delim_regex = ,
+description = Custom list of threat urls
+disabled = false
+fields = description:$1,url:$2
+ignore_regex = (^#|^\s*$)
+skip_header_lines = 1
+type = threatlist_url
+url = lookup://local_threatlist_urls
+
+[threatlist://malware_domains]
+delim_regex = \t
+description = Malware Domain Blocklist
+disabled = false
+fields = domain:$3,description:"$4 (xref: $5)"
+ignore_regex = (^#|^\s*$)
+type = threatlist_domain
+url = http://mirror1.malwaredomains.com/files/domains.txt
+
+## Optional threat intelligence content (disabled by default)
+[threatlist://emerging_threats_compromised_ip_blocklist]
+delim_regex = :
+description = Emerging Threats compromised IPs blocklist
+disabled = true
+fields = ip:$1,description:Emerging_Threats_Compromised_IP_blocklist
+ignore_regex = (^#|^\s*$)
+type = threatlist
+url = http://rules.emergingthreats.net/blockrules/compromised-ips.txt
+
+[threatlist://emerging_threats_ip_blocklist]
+delim_regex = :
+description = Emerging Threats fwip rules
+disabled = true
+fields = ip:$1,description:Emerging_Threats_IP_blocklist
+ignore_regex = (^#|^\s*$)
+type = threatlist
+url = http://rules.emergingthreats.net/fwrules/emerging-Block-IPs.txt
+
+[threatlist://palevo_ip_blocklist]
+delim_regex = :
+description = abuse.ch Palevo C&C IP Blocklist
+disabled = true
+fields = ip:$1,description:palevo_ip_blocklist
+ignore_regex = (^#|^\s*$)
+type = threatlist
+url = https://palevotracker.abuse.ch/blocklists.php?download=ipblocklist
+
+[threatlist://phishtank]
+delim_regex = ,
+description = Phishtank Database
+disabled = true
+fields = url:$2,description:"Target: $8 (xref: $3)"
+ignore_regex = (^#|^\s*$)
+skip_header_lines = 1
+type = threatlist_url
+# To enable use of an API key for more rapid updates, change url option as shown:
+#url = http://data.phishtank.com/data/<your app key>/online-valid.csv.gz
+url = http://data.phishtank.com/data/online-valid.csv.gz
+
+[threatlist://spyeye_ip_blocklist]
+delim_regex = :
+description = abuse.ch SpyEye IP blocklist
+disabled = true
+fields = ip:$1,description:spyeye_ip_blocklist
+ignore_regex = (^#|^\s*$)
+type = threatlist
+url = https://spyeyetracker.abuse.ch/blocklist.php?download=ipblocklist
+
+[threatlist://zeus_bad_ip_blocklist]
+delim_regex = :
+description = abuse.ch ZeuS blocklist (bad IPs only)
+disabled = true
+fields = ip:$1,description:ZeuS_bad_ip_blocklist
+ignore_regex = (^#|^\s*$)
+type = threatlist
+url = https://zeustracker.abuse.ch/blocklist.php?download=badips
+
+[threatlist://zeus_standard_ip_blocklist]
+delim_regex = :
+description = abuse.ch ZeuS blocklist (standard)
+disabled = true
+fields = ip:$1,description:ZeuS_standard_ip_blocklist
+ignore_regex = (^#|^\s*$)
+type = threatlist
+url = https://zeustracker.abuse.ch/blocklist.php?download=ipblocklist
+
+
+## The following are general sources of IP and domain intelligence and not
+## merged into the primary threatlist.
+
+# Alexa Top 1 Million Sites (updated by provider daily)
+[threatlist://alexa_top_one_million_sites]
+delim_regex = ,
+description = Alexa Top 1 Million Sites, copyright 2014, Alexa Internet (www.alexa.com)
+disabled = false
+fields = rank:$1,domain:$2
+ignore_regex = (^#|^\s*$)
+interval = 86400
+target = alexa
+type = alexa
+url = http://s3.amazonaws.com/alexa-static/top-1m.csv.zip
+
+# ICAAN top-level domains list (updated by provider "at intervals")
+[threatlist://icaan_top_level_domain_list]
+delim_regex = ,
+description = ICAAN Top-level Domains List
+disabled = false
+fields = tld:$1
+ignore_regex = (^#|^\s*$)
+interval = 1296000
+target = tld
+type = tld
+url = http://data.iana.org/TLD/tlds-alpha-by-domain.txt
+
+# ASN IPv4 rankings (updated by provider monthly)
+[threatlist://maxmind_geoip_asn_ipv4]
+delim_regex = ,
+description = MaxMind GeoIP ASN IPv4 database
+disabled = true
+fields = ip:$1-$2,description:$3
+ignore_regex = (^#|^\s*$)
+interval = 1296000
+target = asn
+type = asn
+url = http://download.maxmind.com/download/geoip/database/asnum/GeoIPASNum2.zip
+
+# ASN IPv6 rankings (updated by provider monthly)
+[threatlist://maxmind_geoip_asn_ipv6]
+delim_regex = ,
+description = MaxMind GeoIP ASN IPv6 database
+disabled = true
+fields = ip:$1-$2,description:$3
+ignore_regex = (^#|^\s*$)
+interval = 1296000
+target = asn
+type = asn
+url = http://download.maxmind.com/download/geoip/database/asnum/GeoIPASNum2v6.zip
+
+# Mozilla Public suffix List
+[threatlist://mozilla_public_suffix_list]
+delim_regex =
+description = Mozilla Public Suffix List
+disabled = false
+fields = domain:$2,rule:$1
+extract_regex = ^(\*|\!|\b)?(?:\.)?(.*)$
+ignore_regex = ^(//|\s+).*$
+# Download weekly or at restart.
+interval = 604800
+target = mozilla_psl
+type = mozilla_psl
+url = https://publicsuffix.org/list/effective_tld_names.dat

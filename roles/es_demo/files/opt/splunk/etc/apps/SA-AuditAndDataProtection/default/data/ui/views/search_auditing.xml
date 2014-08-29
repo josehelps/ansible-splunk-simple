@@ -1,0 +1,71 @@
+<form>
+	<label>Search Audit</label>
+	
+	<fieldset autoRun="true" submitButton="true">
+	
+        <input type="dropdown" token="search_type">
+            <label>Search Type</label>
+            <choice value="">All</choice>
+            <choice value="adhoc">Ad hoc</choice>
+            <choice value="dm_acceleration">Data Model Acceleration</choice>
+            <choice value="realtime">Real Time</choice>            
+            <choice value="scheduled">Scheduled</choice>
+            <choice value="summary_director">Subsearch</choice>            
+            <choice value="summary_director">Summary Director</choice>
+            <default></default>
+            <prefix>search_type="</prefix>
+            <suffix>"</suffix>
+        </input>
+        
+        <input type="text" token="srch">
+            <label>Search</label>
+			<default></default>
+			<prefix>search="</prefix>
+			<suffix>"</suffix>
+        </input>
+        
+		<input type="time">
+			<default>Last 24 hours</default>
+		</input>
+
+	</fieldset>
+
+    <row>
+        <chart id="element1">
+            <title>Searches Over Time By Type</title>
+            
+            <searchTemplate>`search_activity` | search $search_type$ $srch$ | timechart usenull=false count by search_type</searchTemplate>
+            
+            <option name="charting.axisTitleX.text">time</option>
+            <option name="charting.axisTitleY.text">count</option>
+            <option name="charting.chart">column</option>
+            <option name="charting.chart.stackMode">stacked</option>
+            <option name="charting.drilldown">all</option>
+        </chart>
+    </row>
+
+    <row>
+        <chart id="element2">
+            <title>Searches Over Time By User</title>
+            
+            <searchTemplate>`search_activity` | search $search_type$ $srch$ | timechart usenull=false count by user</searchTemplate>
+            
+            <option name="charting.axisTitleX.text">time</option>
+            <option name="charting.axisTitleY.text">count</option>
+            <option name="charting.chart">line</option>
+            <option name="charting.chart.nullValueMode">zero</option>
+            <option name="charting.drilldown">all</option>
+        </chart>
+    </row>
+
+    <row>
+        <table id="element3">
+            <title>Top Searches By Run Time</title>
+            <searchTemplate>`search_activity` | search $search_type$ $srch$ | stats max(_time) as _time,min(total_run_time) as "min(run_time)",avg(total_run_time) as "avg(run_time)",max(total_run_time) as "max(run_time)",count by search_type,search,user | sort 500 - "avg(run_time)" | fields _time,search_type,"min(run_time)","avg(run_time)","max(run_time)",count,user,search</searchTemplate>
+
+            <drilldown>
+                <link>search?q=`search_activity` | search search="$row.search$"&amp;earliest=$earliest$&amp;latest=$latest$</link>
+            </drilldown>
+        </table>
+    </row>
+</form>

@@ -1,0 +1,4 @@
+***SPLUNK*** source=vmstat sourcetype=vmstat host=@host index=os
+
+   memTotalMB   memFreeMB   memUsedMB  memFreePct  memUsedPct   pgPageOut swapUsedPct   pgSwapOut   cSwitches  interrupts       forks   processes threads  loadAvg1mi
+

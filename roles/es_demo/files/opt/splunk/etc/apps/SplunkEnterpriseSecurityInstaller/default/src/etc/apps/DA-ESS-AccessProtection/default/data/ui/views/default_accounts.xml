@@ -1,0 +1,62 @@
+<form script="default_accounts.js">
+	<label>Default Account Activity</label>
+	
+	<fieldset autoRun="true" submitButton="true">
+        
+        <input type="text" token="bunit_form">
+            <label>Business Unit</label>
+            <default></default>
+        </input>
+
+        <input type="dropdown" token="category_form">
+            <label>Category</label>
+            <choice value="">All</choice>
+            <populatingSearch fieldForValue="category" fieldForLabel="category">| `categories`</populatingSearch>
+            <default></default>
+        </input>
+        
+		<input type="time">
+			<default>Last 24 hours</default>
+		</input>
+	</fieldset>
+	
+	<row>
+        <chart id="element1">
+            <title>Default Account Usage Over Time By App</title>
+            
+            <searchTemplate>| `tstats` count from datamodel=Authentication where nodename=Authentication.Default_Authentication Authentication.action=success $dm_bunit$ $dm_category$ by _time,Authentication.app span=1h | timechart minspan=1h count by Authentication.app | `drop_dm_object_name("Authentication")`</searchTemplate>
+            
+            <option name="charting.axisTitleX.text">time</option>
+            <option name="charting.axisTitleY.text">count</option>
+            <option name="charting.chart">line</option>
+            <option name="charting.chart.nullValueMode">zero</option>
+
+            <drilldown>
+                <link>search?q=| `datamodel("Authentication", "Default_Authentication")` | `drop_dm_object_name("Authentication")` | search app="$click.name2$"&amp;earliest=$earliest$&amp;latest=$latest$</link>
+            </drilldown>
+        </chart>
+    </row>
+
+	<row>
+		<table id="element2">
+			<title>Default Accounts In Use</title>
+			
+			<searchTemplate>| tstats `summariesonly` max(_time) as _time,values(Authentication.user_category) as user_category,dc(Authentication.dest) as dc(dest) from datamodel=Authentication where Authentication.user_category=default $dm_bunit$ $dm_category$ by Authentication.user | `drop_dm_object_name("Authentication")` | sort 100 - _time | fields _time,user,user_category,dc(dest)</searchTemplate>
+			
+			<drilldown>
+				<link>access_search?form.user=$row.user$&amp;earliest=$earliest$&amp;latest=$latest$</link>
+			</drilldown>
+		</table>
+		
+		<table id="element3">
+			<title>Default Local Accounts</title>
+			
+			<searchTemplate>| `useraccounts_tracker` | search user_category=default $bunit$ $category$ | stats max(lastTime) as _time,values(user_category) as user_category,dc(dest) as dc(dest) by user | sort 100 - _time | fields _time,user,user_category,dc(dest)</searchTemplate>
+			
+			<drilldown>
+				<link>search?q=| `datamodel("Compute_Inventory", "User")` | `drop_dm_object_name("All_Inventory")` | `drop_dm_object_name("User")` | search user="$row.user$"&amp;earliest=$earliest$&amp;latest=$latest$</link>
+			</drilldown>
+		</table>
+	</row>
+
+</form>

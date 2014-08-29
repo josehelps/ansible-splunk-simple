@@ -1,0 +1,118 @@
+{
+	"modelName":	"Threat_Lists",
+	"displayName":	"Threat Lists",
+	"description":	"Threat List Data Model",
+	"editable":		false,
+	"objects":		[
+		{
+			"objectName":	"All_Threat_Lists",
+			"displayName":	"All Threat Lists",
+			"parentName":	"BaseSearch",
+			"fields":		[
+				{
+					"fieldName":	"category",
+					"displayName":	"Category",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	true,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"description",
+					"displayName":	"Description",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	true,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"domain",
+					"displayName":	"Domain",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"ip_count",
+					"displayName":	"IP Count",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	true,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"ip",
+					"displayName":	"ip",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"name",
+					"displayName":	"Name",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"risk",
+					"displayName":	"Risk",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"subnet",
+					"displayName":	"subnet",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"type",
+					"displayName":	"Type",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"url",
+					"displayName":	"URL",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"weight",
+					"displayName":	"weight",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				}
+				],
+			"calculations":	[],
+			"constraints":	[],
+			"baseSearch":	"| `threatlists`",
+			"children":	[]
+		}
+	]
+}

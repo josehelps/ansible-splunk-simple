@@ -1,0 +1,69 @@
+Received: from unknown [194.151.189.201] (EHLO mail-qc0-f175.butercupgames.com)	by
+ p02c11m104.mxlogic.net(mxl_mta-8.0.0-1) over TLS secured channel	with ESMTP
+ id 29005735.0.28942.00-2388.54156.p02c11m104.mxlogic.net (envelope-from
+ <jose.dave@butercupgames.com>);	Tue, 01 Jul 2014 22:54:32 -0600 (MDT)
+Received: by mail-qc0-f175.butercupgames.com with SMTP id w7so2430769qcr.34
+        for <multiple recipients>; Tue, 01 Jul 2014 10:54:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=butercupgames.com; s=20120113;
+        h=mime-version:date:message-id:subject:from:to:content-type;
+        bh=sqlPxKIdP6p/jRuqqjNhmb+83ormapkmkAwP84z62Vs=;
+        b=Wf8EamUFLQPskhph7o4l3PN3iG6v77MrkgQE5zecpb8GCoKuvJXTcZAXm49EAfzopz
+         itLQVXo6gK91okyukm6yGW0C3sjxqK6kZoYvv1cEQ0fZZXTCgdms0gN12EjHEXYopCYQ
+         MLMWDeUMwv+VR2hDGmfgKjK/Uq/Dp8Zh3qNonVzJcUGVL5hTX8v9POkjjXv3GwOapkcu
+         650ShiPeoXxrsiW7DM281TTljdfdtayVuko62lENAPhbrRuVEVpivn7gdbP1wxL7B6Ex
+         CEyaHZH7CH2dSgxzSzG2ZBy38HzBqDfaruVqhLA1PZYsP5BtTVxNAoRNtF0k19iycrF2
+         qiSg==
+MIME-Version: 1.0
+X-Received: by 10.224.165.148 with SMTP id i20mr15590909qay.41.1400176785596;
+ Tue, 01 Jul 2014 10:54:32 -0700 (PDT)
+Received: by 10.224.59.81 with HTTP; Tue, 01 Jul 2014 10:54:32 -0700 (PDT)
+Date: Tue, 01 Jul 2014 10:54:32 -0700
+Message-ID: <CAD-TAVwWW8ZBSR3r==1F2XRqDwq-MiqJtoo5F6r_kKXjemiOcQ@mail.butercupgames.com>
+Subject: new report breakdown
+From: Jose Dave <jose.dave@butercupgames.com>
+To: <chris.gilbert@buttercupgames.com>
+X-AnalysisOut: [v=2.1 cv=csMVkjIi c=1 sm=1 tr=0 a=uiPjGrJLWPPS5B33z+TjKQ==]
+X-AnalysisOut: [:117 a=nDghuxUhq_wA:10 a=BLceEmwcHowA:10 a=pGLkceISAAAA:8 ]
+X-AnalysisOut: [a=1XWaLZrsAAAA:8 a=YlVTAMxIAAAA:8 a=OJyHCS4ACdjBqr311rAA:9]
+X-AnalysisOut: [ a=QEXdDO2ut3YA:10 a=3kyCweq9yhwA:10 a=o5OllKmUxlMA:10 a=v]
+X-AnalysisOut: [zQzytM6VfyF2adlQ24A:9 a=n3BslyFRqc0A:10 a=bhkaYMs-ANYA:10 ]
+X-AnalysisOut: [a=Sf_gFPzhefAA:10]
+Received-SPF: Pass (p02c11m104.mxlogic.net: domain of butercupgames.com designates 209.85.216.175 as permitted sender)
+X-Spam: [F=0.2000000000; B=0.500(0); spf=0.500; spf=0.500; spf=0.500; STSI=0.500(0); STSM=0.500(0); CM=0.500; MH=0.500(2014051516); S=0.200(2014050601); SC=]
+X-MAIL-FROM: <jose.dave@butercupgames.com>
+X-SOURCE-IP: [194.151.189.201]
+Return-Path: jose.dave@butercupgames.com
+X-MS-Exchange-Organization-AuthSource: PFE111-VX-2.pexch111.serverpod.net
+X-MS-Exchange-Organization-AuthAs: Anonymous
+Content-type: multipart/mixed;
+	boundary="B_3482996421_388900"
+
+> This message is in MIME format. Since your mail reader does not understand
+this format, some or all of this message may not be legible.
+
+--B_3482996421_388900
+Content-type: text/plain;
+	charset="US-ASCII"
+Content-transfer-encoding: 7bit
+
+This is your quarterly breakdown. Please review this carefully. Report
+any errors within 2 days.
+
+We had a great quarter. Congratulations to everyone who made their
+numbers!!!
+
+Jose Dave
+VP Operations
+
+
+
+--B_3482996421_388900
+Content-type: application/pdf; name="2nd_qtr_2014_report.pdf"
+Content-ID: <A2C2E5589355C64AB6343AABC1C03B83@internal>
+Content-disposition: attachment;
+	filename="2nd_qtr_2014_report.pdf"
+Content-transfer-encoding: base64
+UmVjZWl2ZWQ6IGZyb20gdW5rbm93biBbMTk0LjE1MS4xODkuMjQyXSAoRUhMTyBtYWlsLXFjMC1mMTc1LmJ1dGVyY3VwZ2FtZXMuY29tKQlieQogcDAyYzExbTEwNC5teGxvZ2ljLm5ldChteGxfbXRhLTguMC4wLTEpIG92ZXIgVExTIHNlY3VyZWQgY2hhbm5lbAl3aXRoIEVTTVRQCiBpZCAyOTAwNTczNS4wLjI4OTQyLjAwLTIzODguNTQxNTYucDAyYzExbTEwNC5teGxvZ2ljLm5ldCAoZW52ZWxvcGUtZnJvbQogPGpvc2UuZGF2ZUBidXRlcmN1cGdhbWVzLmNvbT4pOwlNb24sIDEyIE1heSAyMDE0IDIyOjU0OjMyIC0wNjAwIChNRFQpClJlY2VpdmVkOiBieSBtYWlsLXFjMC1mMTc1LmJ1dGVyY3VwZ2FtZXMuY29tIHdpdGggU01UUCBpZCB3N3NvMjQzMDc2OXFjci4zNAogICAgICAgIGZvciA8bXVsdGlwbGUgcmVjaXBpZW50cz47IE1vbiwgMTIgTWF5IDIwMTQgMjE6NTQ6MzEgLTA3MDAgKFBEVCkKREtJTS1TaWduYXR1cmU6IHY9MTsgYT1yc2Etc2hhMjU2OyBjPXJlbGF4ZWQvcmVsYXhlZDsKICAgICAgICBkPWJ1dGVyY3VwZ2FtZXMuY29tOyBzPTIwMTIwMTEzOwogICAgICAgIGg9bWltZS12ZXJzaW9uOmRhdGU6bWVzc2FnZS1pZDpzdWJqZWN0OmZyb206dG86Y29udGVudC10eXBlOwogICAgICAgIGJoPXNxbFB4S0lkUDZwL2pSdXFxak5obWIrODNvcm1hcGtta0F3UDg0ejYyVnM9OwogICAgICAgIGI9V2Y4RWFtVUZMUVBza2hwaDdvNGwzUE4zaUc2djc3TXJrZ1FFNXplY3BiOEdDb0t1dkpYVGNaQVhtNDlFQWZ6b3B6CiAgICAgICAgIGl0TFFWWG82Z0s5MW9reXVrbTZ5R1cwQzNzanhxSzZrWm9ZdnYxY0VRMGZaWlhUQ2dkbXMwZ04xMkVqSEVYWW9wQ1lRCiAgICAgICAgIE1MTVdEZVVNd3YrVlIyaERHbWZnS2pLL1VxL0RwOFpoM3FOb25WekpjVUdWTDVoVFg4djlQT2tqalh2M0d3T2Fwa2N1CiAgICAgICAgIDY1MFNoaVBlb1h4cnNpVzdETTI4MVRUbGpkZmR0YXlWdWtvNjJsRU5BUGhiclJ1VkVWcGl2bjdnZGJQMXd4TDdCNkV4CiAgICAgICAgIENFeWFIWkg3Q0gyZFNneHpTekcyWkJ5MzhIekJxRGZhcnVWcWhMQTFQWllzUDVCdFRWeE5Bb1JOdEYwazE5aXljckYyCiAgICAgICAgIHFpU2c9PQpNSU1FLVZlcnNpb246IDEuMApYLVJlY2VpdmVkOiBieSAxMC4yMjQuMTY1LjE0OCB3aXRoIFNNVFAgaWQgaTIwbXIxNTU5MDkwOXFheS40MS4xNDAwMTc2Nzg1NTk2OwogTW9uLCAxMiBNYXkgMjAxNCAyMTo1NDozMiAtMDcwMCAoUERUKQpSZWNlaXZlZDogYnkgMTAuMjI0LjU5LjgxIHdpdGggSFRUUDsgTW9uLCAxMiBNYXkgMjAxNCAyMTo1NDozMiAtMDcwMCAoUERUKQpEYXRlOiBNb24sIDEyIE1heSAyMDE0IDIxOjU0OjMyIC0wNzAwCk1lc3NhZ2UtSUQ6IDxDQUQtVEFWd1dXOFpCU1Izcj09MUYyWFJxRHdxLU1pcUp0b281RjZyX2tLWGplbWlPY1FAbWFpbC5idXRlcmN1cGdhbWVzLmNvbT4KU3ViamVjdDogbmV3IGNvbW1pc3Npb24gcmVwb3J0IGJyZWFrZG93bgpGcm9tOiBKb3NlIERhdmUgPGpvc2UuZGF2ZUBidXRlcmN1cGdhbWVzLmNvbT4KVG86IDxjaHJpcy5naWxiZXJ0QGJ1dHRlcmN1cGdhbWVzLmNvbT4KWC1BbmFseXNpc091dDogW3Y9Mi4xIGN2PWNzTVZraklpIGM9MSBzbT0xIHRyPTAgYT11aVBqR3JKTFdQUFM1QjMzeitUaktRPT1dClgtQW5hbHlzaXNPdXQ6IFs6MTE3IGE9bkRnaHV4VWhxX3dBOjEwIGE9QkxjZUVtd2NIb3dBOjEwIGE9cEdMa2NlSVNBQUFBOjggXQpYLUFuYWx5c2lzT3V0OiBbYT0xWFdhTFpyc0FBQUE6OCBhPVlsVlRBTXhJQUFBQTo4IGE9T0p5SENTNEFDZGpCcXIzMTFyQUE6OV0KWC1
+--B_3482996421_388900--
+

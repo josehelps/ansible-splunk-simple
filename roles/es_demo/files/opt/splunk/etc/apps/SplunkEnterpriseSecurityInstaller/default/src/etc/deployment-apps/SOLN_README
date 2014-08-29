@@ -1,0 +1,81 @@
+Installing Splunk Engine for deployment
+
+0.  Python Dependency (Universal Forwarder only)
+Python is not bundled with Splunk's Universal Forwarder and will need to be installed manually if the forwarder will be running python scripted inputs
+(often deployed via Deployment Server).  Also ensure "python" is in your operating system's path.
+
+1A.  Windows Install
+
+Full Splunk (from Administrative Command Prompt):
+# msiexec.exe /i Splunk.msi SPLUNK_APP="" RBG_LOGON_INFO_USER_CONTEXT=1 /quiet
+
+	a.  Replace Splunk.msi with correct path and name of package
+	b.  SPLUNK_APP="" installs with 0 apps enabled (we are going to deploy our own)
+	c.  RBG_LOGON_INFO_USER_CONTEXT=1 installs as Local System user
+	d.  /quiet installs silently
+
+Universal Forwarder (from Administrative Command Prompt):
+#msiexec.exe /i splunkuniversalforwarder.msi MIGRATESPLUNK=0 AGREETOLICENSE=Yes /quiet
+
+	a.  Replace splunkuniversalforwarder.msi with correct path and name of package
+	b.  MIGRATESPLUNK=0 determines whether migration from an existing forwarder will occur during installation. 
+		If MIGRATESPLUNK=1, the installer stops the existing forwarder and copies its checkpoint files to the new universal forwarder.
+	c.  AGREETOLICENSE=Yes agrees to the EULA. This flag must be set to Yes for a silent installation. 
+	d.  /quiet installs silently
+	
+1B.  Nix Install 
+
+Full Splunk (from Administrative Console):
+#cd /opt
+#mv /tmp/Splunk.tgz /opt
+#tar -xvf Splunk.tgz
+
+	a.  Replace /tmp/Splunk.tgz with correct path and name of package
+	
+Universal Forwarder (from Administrative Console):
+#cd /opt
+#mv /tmp/universalforwarder.tgz /opt
+#tar -xvf universalforwarder.tgz
+
+	a.  Replace /tmp/universalforwarder.tgz with correct path and name of package
+	b.  To migrate an existing Full Splunk installation, YOU MUST PERFORM THE FOLLOWING BEFORE STARTING THE UNIVERSAL FORWARDER for the first time:
+		In the universal forwarder's installation directory, $SPLUNK_HOME, create a file named old_splunk.seed; in other words: $SPLUNK_HOME/old_splunk.seed. 
+		This file must contain a single line, consisting of the path of the old forwarder's $SPLUNK_HOME directory. For example: /opt/splunk. 
+	
+	
+2.  Enable boot-start
+	
+	a.  Nix only
+	# /opt/splunk/bin/splunk enable boot-start
+	
+	
+3.  Apply forwarder license (Full Splunk only)
+
+	a.  Windows:
+	# copy %SPLUNK_HOME%\etc\splunk-forwarder.license %SPLUNK_HOME%\etc\splunk.license
+	
+	b.  Nix:
+	# cp $SPLUNK_HOME/etc/splunk-forwarder.license $SPLUNK_HOME/etc/splunk.license
+
+
+4.  Change default password
+This command changes the admin password from changeme to foo:
+# splunk edit user admin -password foo -role admin -auth admin:changeme
+
+
+5.  Configure deployment ($SPLUNK_HOME/etc/system/local/deploymentclient.conf)
+See deploymentclient.conf.local
+See http://www.splunk.com/base/Documentation/latest/Admin/Deploymentclientconf
+
+	a.  #clientName = <clientName>:
+	- Disabled by default
+	- A name that can be used to filter on by deployment server, and takes precedence over dns names.
+
+	b.  phoneHomeIntervalInSecs = 86400
+	- Enabled by default (once per day)
+	- Comment '#' to set phone home interval at default (30 seconds)
+
+	c.  targetUri = <deploymentServerName>:8089
+	- Needs configuration by default
+	- Replace <deploymentServerName> with address of present or future splunk deployment server
+	- Recommend using DNS is possible, such that client's don't need to be reconfigured if you change your deployment server address

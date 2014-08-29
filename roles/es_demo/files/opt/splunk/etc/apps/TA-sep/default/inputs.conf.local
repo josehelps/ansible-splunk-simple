@@ -1,0 +1,42 @@
+## A default listener
+#[udp:516]
+#sourcetype=sep
+# Leave as sep; subsequent transforms will revise to correct sub-sourcetype. Anything 
+# searchable with sourectype of sep is an error
+
+[monitor://c:\Program Files\Symantec\Symantec Endpoint Protection Manager\data\dump\scm_admin.tmp]
+sourcetype = sep:admin
+
+[monitor://c:\Program Files\Symantec\Symantec Endpoint Protection Manager\data\dump\agt_behavior.tmp]
+sourcetype = sep:behavior
+
+[monitor://c:\Program Files\Symantec\Symantec Endpoint Protection Manager\data\dump\scm_agent_act.tmp]
+sourcetype = sep:agent
+
+[monitor://c:\Program Files\Symantec\Symantec Endpoint Protection Manager\data\dump\scm_policy.tmp]
+sourcetype = sep:policy
+
+[monitor://c:\Program Files\Symantec\Symantec Endpoint Protection Manager\data\dump\scm_system.tmp]
+sourcetype = sep:scm_system
+
+#[monitor://c:\Program Files\Symantec\Symantec Endpoint Protection Manager\data\dump\agt_packet.tmp]
+#source = agt_packet.tmp
+#sourcetype = sep:packet
+
+[monitor://c:\Program Files\Symantec\Symantec Endpoint Protection Manager\data\dump\agt_proactive.tmp]
+sourcetype = sep:proactive
+
+[monitor://c:\Program Files\Symantec\Symantec Endpoint Protection Manager\data\dump\agt_risk.tmp]
+sourcetype = sep:risk
+
+[monitor://c:\Program Files\Symantec\Symantec Endpoint Protection Manager\data\dump\agt_scan.tmp]
+sourcetype = sep:scan
+
+[monitor://c:\Program Files\Symantec\Symantec Endpoint Protection Manager\data\dump\agt_security.tmp]
+sourcetype = sep:ids
+
+[monitor://c:\Program Files\Symantec\Symantec Endpoint Protection Manager\data\dump\agt_system.tmp]
+sourcetype = sep:agt_system
+
+[monitor://c:\Program Files\Symantec\Symantec Endpoint Protection Manager\data\dump\agt_traffic.tmp]
+sourcetype = sep:traffic

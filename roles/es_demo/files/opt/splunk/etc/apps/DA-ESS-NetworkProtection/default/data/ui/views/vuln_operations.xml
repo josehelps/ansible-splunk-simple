@@ -1,0 +1,63 @@
+<form script="vuln_operations.js">
+	<label>Vulnerability Operations</label>
+	
+	<fieldset autoRun="true" submitButton="true">
+        
+        <input type="text" token="bunit_form">
+            <label>Business Unit</label>
+            <default></default>
+        </input>
+
+        <input type="dropdown" token="category_form">
+            <label>Category</label>
+            <choice value="">All</choice>
+            <populatingSearch fieldForValue="category" fieldForLabel="category">| `categories`</populatingSearch>
+            <default></default>
+        </input>
+        	        
+		<input type="time">
+			<default>Last year</default>
+		</input>
+	</fieldset>
+	
+	<row>
+        <chart id="element1">
+            <title>Scan Activity Over Time</title>
+            
+            <searchTemplate> | `tstats` dc(Vulnerabilities.dest) from datamodel=Vulnerabilities where * $bunit$ $category$ by _time span=1d | timechart minspan=1d dc(Vulnerabilities.dest) as "dc(dest)"</searchTemplate>
+            
+            <option name="charting.axisTitleX.text">time</option>
+            <option name="charting.axisTitleY.text">count</option>
+            <option name="charting.chart">line</option>
+            <option name="charting.chart.nullValueMode">zero</option>
+
+            <drilldown>
+                <link>vuln_search?earliest=$earliest$&amp;latest=$latest$</link>
+            </drilldown>
+        </chart>
+    </row>
+    
+    <row>
+        <table id="element2">
+            <title>Vulnerabilities By Age</title>
+            
+            <searchTemplate>| tstats `summariesonly` min(_time) as firstTime,max(_time) as lastTime,count from datamodel=Vulnerabilities where (Vulnerabilities.severity!=informational Vulnerabilities.severity!=low) $bunit$ $category$ by Vulnerabilities.signature,Vulnerabilities.dest | `drop_dm_object_name("Vulnerabilities")` | eventstats max(lastTime) as lastScanTime by dest | where lastTime==lastScanTime AND firstTime!=lastTime | eval timeDiff=lastTime-firstTime | sort 100 - timeDiff,lastTime | eval "Age (days)"=round(timeDiff/86400,1) | `uitime(firstTime)` | `uitime(lastTime)` | fields firstTime,lastTime,signature,dest,"Age (days)"</searchTemplate>
+
+            <drilldown>
+                <link>vuln_search?form.signature=$row.signature$&amp;form.dest=$row.dest$&amp;earliest=$earliest$&amp;latest=$latest$</link>
+            </drilldown>
+        </table>
+	</row>
+	
+	<row>
+		<table id="element3">
+			<title>Delinquent Scanning</title>
+			
+			<searchTemplate>| tstats `summariesonly` min(_time) as firstTime,max(_time) as lastTime from datamodel=Vulnerabilities where * $bunit$ $category$ by Vulnerabilities.dest | `drop_dm_object_name("Vulnerabilities")` | `dayDiff(lastTime)` | eval dayDiff=round(dayDiff,1) | `uitime(firstTime)` | `uitime(lastTime)` | sort 100 + lastTime</searchTemplate>
+			
+            <drilldown>
+                <link>vuln_search?form.dest=$row.dest$&amp;earliest=$earliest$&amp;latest=$latest$</link>
+            </drilldown>
+		</table>
+	</row>
+</form>

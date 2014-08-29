@@ -1,0 +1,15 @@
+/*
+ * Special stuff to override splunk's global css
+ */
+.SOLNDropdown input, .SOLNDropdown textarea, .SOLNDropdown select {
+padding: 6px 7px;
+margin-top: 0px;
+margin-right: 0px;
+border-width: 1px;
+border-style: solid;
+float: left;
+}
+.SOLNDropdown .ui-button {
+	height: 26px;
+	float: left;
+}

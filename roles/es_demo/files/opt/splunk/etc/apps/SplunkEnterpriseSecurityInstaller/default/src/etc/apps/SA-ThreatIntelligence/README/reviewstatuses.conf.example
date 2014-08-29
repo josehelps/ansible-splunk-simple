@@ -1,0 +1,31 @@
+
+## reviewstatuses.conf
+
+## Enable status "new" and select value for applicable UI elements.
+[1]
+disabled = 0
+default = 1
+selected = 1
+label = New
+
+## Disable status "in progress"
+[2]
+disabled = 1
+hidden = 1
+label = In Progress
+
+## Enable status "pending"
+[3]
+disabled = 0
+label = Pending
+
+## Enable status "resolved"
+[4]
+disabled = 0
+label = Resolved
+
+## Enable status "closed"
+[5]
+disabled = 0
+label = Closed
+end = 1

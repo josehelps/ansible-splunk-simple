@@ -1,0 +1,58 @@
+
+## Shows information about logical partitions and drives attached to system
+## Overlaps somewhat with Win32_DiskDrive
+## Note:  A USB drive will show up with description "Removable Disk"
+[WMI:InfoLogicalDrives]
+disabled = 1
+## Run every 5 minutes
+interval = 300
+wql = SELECT Name, FileSystem, Description, FreeSpace, Size, ProviderName, VolumeName, VolumeSerialNumber FROM Win32_LogicalDisk
+
+## http://msdn.microsoft.com/en-us/library/aa394132(VS.85).aspx
+## Shows information about the physical drives attached to the system
+## USB drives will have a PNP Device ID starting with "USBSTOR"
+[WMI:InfoPhysicalDrives]
+disabled = 1
+## Run every 5 minutes
+interval = 300
+wql = SELECT Caption, MediaType, Model, PNPDeviceID, Status, Size, SystemName, InterfaceType FROM Win32_DiskDrive
+
+## Gathers performance counters from each logical disk (partition)
+## Performance issues may be less obvious when multiple logical disks on one physical disk 
+[WMI:PerfLogicalDisk]
+disabled = 1
+## Run every 2 minutes
+interval = 120
+wql = SELECT Name, AvgDiskQueueLength, AvgDiskReadQueueLength, AvgDiskWriteQueueLength FROM Win32_PerfFormattedData_PerfDisk_LogicalDisk
+
+## This should show if computers are *connecting* to unexpected SSIDs.. 
+## Systems With WiFi probably will not be running Splunk agent to collect this.. cool but pointless
+[WMI:WiFiConnections]
+disabled = true
+interval = 300
+wql = SELECT Associated, AuthenMode, OpMode, Rate, SSID FROM WiFi_AdapterAssociationInfo
+ 
+## This should show if computers are *connecting* to unexpected SSIDs..
+## Systems With WiFi probably will not be running Splunk agent to collect this.. cool but pointless
+[WMI:WiFiAvailNetworks]
+disabled = true
+interval = 300
+wql = SELECT NetworkName, OperationMode,Encrypted, Band, SettingID, RSSI FROM WiFi_AvailableNetwork
+ 
+[WMI:FileServerStats]
+disabled = true
+interval = 300
+wql = SELECT * from Win32_PerfFormattedData_PerfNet_Server
+
+## http://msdn.microsoft.com/en-us/library/aa394220(VS.85).aspx
+## Lists shareds mapped by the computer
+[WMI:NetworkConnections]
+disabled = true
+interval = 300
+wql = "SELECT * from win32_NetworkConnections"
+ 
+## http://msdn.microsoft.com/en-us/library/aa394298(VS.85).aspx
+[WMI:IIS]
+disabled = true
+interval = 300
+wql = "SELECT * from Win32_PerfFormattedData_W3SVC_WebService"

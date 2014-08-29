@@ -1,0 +1,2 @@
+SA-NetworkProtection/application_protocols.csv,Application Protocols,Known port and protocol service mappings
+SA-NetworkProtection/prohibited_traffic.csv,Prohibited Traffic,Traffic that will generate notable events when detected

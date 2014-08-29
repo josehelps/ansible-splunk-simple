@@ -1,0 +1,1 @@
+Apr 20 02:49:08 192.168.2.1 ns5gt-wlan: NetScreen device_id=ns5gt-wlan  [No Name]system-notification-00257(traffic): start_time="2009-04-20 06:21:22" duration=63 policy_id=1 service=http proto=6 src zone=Trust dst zone=Untrust action=Permit sent=934 rcvd=1159 src=192.168.1.12 dst=207.46.21.124 src_port=4504 dst_port=80 src-xlated ip=71.239.55.211 port=2148

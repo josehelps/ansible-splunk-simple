@@ -1,0 +1,979 @@
+<endpoint name="saved/searches" showAppContext="1">
+  <header>Searches, reports, and alerts</header>
+  <menu name="knowledge_configurations">
+    <label>Searches, reports, and alerts</label>
+    <url>/manager/%(namespace)s/saved/searches</url>
+    <description>View and edit saved searches, reports, and alerts. Set permissions. Set up alerts and summary indexing.</description>
+    <order>20</order>
+    <id>searches</id>
+  </menu>
+  
+  <elements>
+    <element name="basicgroup" type="fieldset">
+      <view name="list"/>
+      <view name="edit"/>
+      <view name="create"/>
+      <view name="modal"/>
+      <elements>
+        <!-- Destination app -->
+        <element name="__ns" type="select" label="Destination app">
+          <view name="create"/>
+          <key name="dynamicOptions" type="dict">
+            <key name="keyName">'%s (%s)' % (entry['label'], title)</key>
+            <key name="keyValue">title</key>
+            <key name="splunkSource">/apps/local</key>
+            <key name="splunkSourceParams" type="dict">
+              <key name="search">'disabled=false'</key>
+              <key name="count">-1</key>
+            </key>
+          </key>
+        </element>
+        
+        <!-- Search name -->
+        <element name="name" label="Search name">
+          <view name="list"/>
+          <view name="create"/>
+          <view name="modal"/>
+        </element>
+        
+        <!-- Rss feed -->
+        <element name="action.rss" label="RSS feed">
+          <view name="list"/>
+          <key name="showRSSLink"></key>
+        </element>
+        
+        <!-- Scheduled time -->
+        <element name="next_scheduled_time" label="Scheduled time">
+          <view name="list"/>
+        </element>
+        
+        <!-- Search -->
+        <element name="search" type="expando_textarea" label="Search">
+          <view name="edit"/>
+          <view name="create"/>
+          <view name="modal"/>
+          <key name="validation">string</key>
+        </element>
+        
+        <!-- Display view -->
+        <element name="displayview" type="hidden" label="Display view">
+          <view name="modal"/>
+          <view name="edit"/>
+          <view name="create"/>
+          <view name="list"/>
+        </element>
+        
+        <!-- This is an ugly(??) hack that fixes SPL-23938. Nick does not approve! -->
+        <element name="request.ui_dispatch_view" type="hidden" label="Which view to show the search in">
+          <view name="modal"/>
+          <view name="edit"/>
+          <view name="create"/>
+        </element>
+
+        <element name="request.ui_dispatch_app" type="hidden" label="Which app to show the search in">
+          <view name="modal"/>
+          <view name="edit"/>
+          <view name="create"/>
+          <key name="submitValueAdd">(entity_namespace if entity_namespace else form_data.get('request.ui_dispatch_app')) if form_data.get('request.ui_dispatch_app') else ''</key>
+        </element>
+        
+        <element name="display.page.pivot.dataModel" type="hidden" label="Which view to show the search in">
+          <view name="modal"/>
+          <view name="edit"/>
+          <view name="create"/>
+        </element>
+
+        <element name="action.populate_lookup" type="hidden" label="">
+          <view name="modal"/>
+          <view name="edit"/>
+        </element>
+        
+        <!-- /ugly hack -->
+        <element name="vsid" type="hidden" label="Default ID of the viewstate to load">
+          <view name="modal"/>
+          <view name="edit"/>
+          <view name="create"/>
+        </element>
+        
+        <!-- Description -->
+        <element name="description" type="textfield" label="Description">
+          <view name="edit"/>
+          <view name="create"/>
+          <view name="modal"/>
+        </element>
+        
+        <element name="timerange" type="fieldset">
+          <view name="edit"/>
+          <view name="create"/>
+          <view name="modal"/>
+          <elements>
+            <!-- Start time -->
+            <element name="dispatch.earliest_time" label="Start time">
+              <view name="edit"/>
+              <view name="create"/>
+              <view name="modal"/>
+              <key name="validation">string</key>
+              <key name="class">short</key>
+              <key name="submitValueAdd">value.strip()</key>
+              <key name="submitValueEdit">value.strip()</key>
+              <key name="exampleText">Time specifiers: y, mon, d, h, m, s &lt;br/&gt; &lt;a href="[[?learnmore.manager.relativetime]]" class="spl-external-link spl-icon-external-link-sm" target="_blank"&gt;Learn more&lt;/a&gt;</key>
+               <onChange>
+                  <key name="_action">showonly</key>
+                 <key name="_matchtype">regex</key>
+                 <key name="/^rt/i">spl-ctrl_alert_comparator_rt</key>
+                  <key name="//">schedulegroup alert_comparator summaryfieldset</key>
+                  <group_set>
+                    <group name="schedulegroup"/>
+                    <group name="alert_comparator"/>
+                    <group name="spl-ctrl_alert_comparator_rt"/>
+                    <group name="summaryfieldset"/>
+                  </group_set>
+               </onChange>
+            </element>
+            <!-- Finish time -->
+            <element name="dispatch.latest_time" label="Finish time">
+              <view name="edit"/>
+              <view name="create"/>
+              <view name="modal"/>
+              <key name="validation">string</key>
+              <key name="class">short</key>
+              <key name="submitValueAdd">value.strip()</key>
+              <key name="submitValueEdit">value.strip()</key>
+            </element>
+          </elements>
+          <key name="legend">Time range</key>
+          <key name="multiColumn">True</key>
+        </element>
+       
+
+        <element name="acceleration" type="fieldset">
+          <view name="edit"/>
+          <view name="create"/>
+          <view name="modal"/>
+
+          <key name="legend">Acceleration</key>
+          <elements>
+            <element name="auto_summarize" type="checkbox" label="Accelerate this search">
+              <view name="list"/>
+              <view name="edit"/>
+              <view name="create"/>
+              <view name="modal"/>
+              <onChange>
+                  <key name="0">NONE</key>
+                  <key name="1">ALL</key>
+                  <key name="_action">showonly</key>
+                  <group_set>
+                      <group name="auto_summarize.timespan"/>
+                      <group name="auto_summarize.dispatch.earliest_time"/>
+                  </group_set>
+              </onChange>
+	      <key name="disableIfNotInEAIAttributes" />
+            </element>  
+
+            <element name="auto_summarize.dispatch.earliest_time" type="select" label="Summary range">
+                  <options>
+                    <opt value="-1d@h"   label="1 Day"/>
+                    <opt value="-7d@d"   label="7 Days"/>
+                    <opt value="-1mon@d" label="1 Month"/>
+                    <opt value="-3mon@d" label="3 Months"/>
+                    <opt value="-1y@d"   label="1 Year"/>
+		    <opt value="0"       label="All Time"/>
+                  </options>
+                  <view name="edit"/>
+                  <view name="create"/>
+                  <view name="modal"/>
+            </element>
+
+
+          </elements>
+        </element>
+        
+
+ 
+        <element name="schedulenalert" type="fieldset">
+          <view name="edit"/>
+          <view name="create"/>
+          <view name="modal"/>
+          <key name="legend">Schedule and alert</key>
+          <elements>
+            <!-- Schedule this search -->
+            <element name="is_scheduled" type="checkbox" label="Schedule this search">
+              <onChange>
+                <key name="0">NONE</key>
+                <key name="1">ALL</key>
+                <key name="_action">showonly</key>
+                <group_set>
+                  <group name="schedulegroupwrapper"/>
+                  <group name="alertgroup"/>
+                  <group name="summarygroup"/>
+                </group_set>
+              </onChange>
+              <view name="list"/>
+              <view name="edit"/>
+              <view name="create"/>
+              <view name="modal"/>
+              <key name="submitValueAdd">1 if form_data.get('is_scheduled') == '1' else 0</key>
+              <key name="submitValueEdit">1 if form_data.get('is_scheduled') == '1' else 0</key>
+              <key name="processValueList">value=="1" and "Enabled" or "Disabled"</key>
+              <key name="processValueEdit">0 if element.get("disabled") else value</key>
+	      	  <key name="disableIfNotInEAIAttributes" />
+            </element>
+          </elements>
+        </element>
+        
+        <element name="schedulegroupwrapper" type="fieldset">
+          <view name="list"/>
+          <view name="edit"/>
+          <view name="create"/>
+          <view name="modal"/>
+          <elements>
+            <element name="schedulegroup" type="fieldset">
+              <view name="list"/>
+              <view name="edit"/>
+              <view name="create"/>
+              <view name="modal"/>
+              <elements>
+                <!-- Schedule type -->
+                <element name="spl-ctrl_schedType" type="select" label="Schedule type">
+                  <onChange>
+                    <key name="_action">showonly</key>
+                    <key name="basic_cron">spl-ctrl_basic_cron</key>
+                    <group_set>
+                      <group name="spl-ctrl_basic_cron"/>
+                      <group name="cron_schedule"/>
+                    </group_set>
+                    <key name="cron_schedule">cron_schedule</key>
+                  </onChange>
+                  <options>
+                    <opt value="basic_cron" label="Basic"/>
+                    <opt value="cron_schedule" label="Cron"/>
+                  </options>
+                  <view name="create"/>
+                  <view name="edit"/>
+                  <view name="modal"/>
+                  <key name="processValueEdit">form_defaults.get('cron_schedule') and form_defaults['cron_schedule'] in [ '* * * * *', '*/5 * * * *', '*/30 * * * *', '0 * * * *' ,'0 */12 * * *', '0 0 * * *', '0 18 * * *', '0 0 * * 6' ] and (form_defaults.__setitem__('spl-ctrl_basic_cron', form_defaults['cron_schedule']) or True) and 'basic_cron' or 'cron_schedule'</key>
+                  <key name="processValueAdd">'basic_cron'</key>
+                </element>
+                
+                <!-- Run every -->
+                <element name="spl-ctrl_basic_cron" type="select" label="Run every">
+                  <options>
+                    <opt value="* * * * *" label="minute"/>
+                    <opt value="*/5 * * * *" label="5 minutes"/>
+                    <opt value="*/15 * * * *" label="15 minutes"/>
+                    <opt value="*/30 * * * *" label="30 minutes"/>
+                    <opt value="0 * * * *" label="hour"/>
+                    <opt value="0 */4 * * *" label="4 hours"/>
+                    <opt value="0 */12 * * *" label="12 hours"/>
+                    <opt value="0 0 * * *" label="day at midnight"/>
+                    <opt value="0 18 * * *" label="day at 6pm"/>
+                    <opt value="0 0 * * 6" label="week (every Saturday at midnight)"/>
+                  </options>
+                  <view name="edit"/>
+                  <view name="create"/>
+                  <view name="modal"/>
+                  <key name="processValueAdd">'0 0 * * *'</key>
+                </element>
+                <!-- Cron schedule -->
+                <element name="cron_schedule" type="textfield" label="Cron schedule">
+                  <view name="edit"/>
+                  <view name="create"/>
+                  <view name="modal"/>
+                  <key name="submitValueAdd">'* * * * *' if form_data['dispatch.earliest_time'].lower().startswith('rt') else (value if form_data['spl-ctrl_schedType']=='cron_schedule' else form_data['spl-ctrl_basic_cron'])</key>
+                  <key name="submitValueEdit">'* * * * *' if form_data['dispatch.earliest_time'].lower().startswith('rt') else (value if form_data['spl-ctrl_schedType']=='cron_schedule' else form_data['spl-ctrl_basic_cron'])</key>
+
+                  <key name="exampleText">Enter a cron-style schedule. &lt;br /&gt; For example '*/5 * * * *' (every 5 minutes) or '0 21 * * *' (every day at 9 PM).</key>
+                  <key name="disableIfNotInEAIAttributes" />
+                </element>
+                <!-- Results retention time -->
+                <element name="dispatch.ttl" type="hidden" label="Results retention time">
+                  <view name="edit"/>
+                  <view name="create"/>
+                  <view name="modal"/>
+                  <key name="exampleText">Set how long to store scheduled search results. &lt;br /&gt; '60' is 60 seconds '10p' is 10 periods.</key>
+                </element>
+              </elements>
+            </element>
+          </elements>
+        </element>
+
+        
+        <element name="alertgroup" type="fieldset">
+          <view name="list"/>
+          <view name="edit"/>
+          <view name="create"/>
+          <view name="modal"/>
+          <key name="legend">Alert</key>
+          <elements>
+            <!-- Condition -->
+            <element name="alert_type" type="select" label="Condition">
+              <onChange>
+                <key name="_action">showonly</key>
+                <key name="">NONE</key>
+                <key name="number of events">alerting_group</key>
+                <key name="always">NONE</key>
+                <key name="custom">alert_condition</key>
+                <key name="number of sources">alerting_group</key>
+                <key name="number of hosts">alerting_group</key>
+                <group_set>
+                  <group name="alerting_group"/>
+                  <group name="alert_condition"/>
+                </group_set>
+              </onChange>
+              <options>
+                <opt value="always" label="always"/>
+                <opt value="number of events" label="if number of events"/>
+                <opt value="number of hosts" label="if number of hosts"/>
+                <opt value="number of sources" label="if number of sources"/>
+                <opt value="custom" label="if custom condition is met"/>
+              </options>
+              <view name="edit"/>
+              <view name="create"/>
+              <view name="modal"/>
+              <key name="exampleText">To enable all the alert conditions, disable summary indexing.</key>
+            </element>
+            <!-- Custom condition search -->
+            <element name="alert_condition" type="textfield" label="Custom condition search">
+              <view name="edit"/>
+              <view name="create"/>
+              <view name="modal"/>
+              <key name="requiredIfVisible" />
+              <key name="submitValueEdit">value if form_data.get('alert_type')=='custom' else ''</key>
+              <key name="submitValueAdd">value if form_data.get('alert_type')=='custom' else ''</key>
+              <key name="exampleText">Custom condition is a conditional search that Splunk applies to the results returned by the scheduled search. &lt;a href="[[?learnmore.manager.conditionalsrch]]" class="spl-external-link spl-icon-external-link-sm" target="_blank"&gt;more&#187;&lt;/a&gt;</key>
+            </element>
+            
+            <element name="alerting_group" type="fieldset">
+              <view name="edit"/>
+              <view name="create"/>
+              <view name="modal"/>
+              <key name="multiColumn">True</key>
+              <elements>
+                <!-- Perform actions condition -->
+                <!-- Comparator used for standard (non-realtime) searches) -->
+                <element name="alert_comparator" type="select">
+                  <options>
+                    <opt value="greater than" label="is greater than"/>
+                    <opt value="less than" label="is less than"/>
+                    <opt value="equal to" label="is equal to"/>
+                    <opt value="not equal to" label="not equal to"/>
+                    <opt value="drops by" label="drops by"/>
+                    <opt value="rises by" label="rises by"/>
+                  </options>
+                  <key name="class">medium</key>
+                  <key name="submitValueEdit">(form_data['spl-ctrl_alert_comparator_rt'] if form_data['dispatch.earliest_time'].lower().startswith('rt') else value) if form_data.get('alert_type') in ('number of events', 'number of hosts', 'number of sources') else None</key>
+                  <key name="submitValueAdd">(form_data['spl-ctrl_alert_comparator_rt'] if form_data['dispatch.earliest_time'].lower().startswith('rt') else value) if form_data.get('alert_type') in ('number of events', 'number of hosts', 'number of sources') else None</key>
+                  <view name="edit"/>
+                  <view name="create"/>
+                  <view name="modal"/>
+                 </element>
+                 <!-- Comparator used for realtime searches -->
+                 <element name="spl-ctrl_alert_comparator_rt" type="select">
+                   <options>
+                     <opt value="greater than" label="is greater than"/>
+                     <opt value="less than" label="is less than"/>
+                     <opt value="equal to" label="is equal to"/>
+                     <opt value="not equal to" label="not equal to"/>
+                   </options>
+                   <key name="class">medium</key>
+                   <key name="processValueEdit">form_defaults['alert_comparator']</key>
+                  <view name="edit"/>
+                  <view name="create"/>
+                  <view name="modal"/>
+                </element>
+                <!-- Perform actions condition -->
+                <element name="alert_threshold" type="textfield">
+                  <view name="edit"/>
+                  <view name="create"/>
+                  <view name="modal"/>
+                  <key name="class">short</key>
+                  <key name="requiredIfVisible" />
+                  <key name="processValueAdd">'0'</key>
+                  <key name="submitValueEdit">value if form_data.get('alert_type') in ('number of events', 'number of hosts', 'number of sources') else None</key>
+                  <key name="submitValueAdd">value if form_data.get('alert_type') in ('number of events', 'number of hosts', 'number of sources') else None</key>
+                </element>
+              </elements>
+            </element>
+
+            <element name="suppressionfieldset" type="fieldset">
+              <view name="edit"/>
+              <view name="create"/>
+              <view name="modal"/>
+              <elements>
+                <element name="alert.digest_mode" type="select" label="Alert mode">
+                  <view name="edit"/>
+                  <view name="create"/>
+                  <view name="modal"/>
+                  <key name="processValueAdd">'1'</key>
+                  <key name="submitValueEdit">value=='1'</key>
+                  <options>
+                    <opt value="1" label="Once per search" />
+                    <opt value="0" label="Once per result" />
+                  </options>
+                  <onChange>
+                    <key name="_action">showonly</key>
+                    <key name="1">NONE</key>
+                    <key name="0">ALL</key>
+                    <group_set>
+                      <group name="alert.suppress.fields" />
+                    </group_set>
+                  </onChange>
+                </element>
+
+                <!-- Throttling -->
+                <element name="alert.suppress" type="checkbox" label="After triggering the alert, don't trigger it again for">
+                  <view name="edit"/>
+                  <view name="create"/>
+                  <view name="modal"/>
+                  <key name="topLabel">Throttling</key>
+                  <key name="submitValueEdit">1 if value == '1' else 0</key>
+                  <key name="submitValueAdd">1 if value == '1' else 0</key>
+                  <onChange>
+                    <key name="_action">showonly</key>
+                    <key name="0">NONE</key>
+                    <key name="1">ALL</key>
+                    <group_set>
+                      <group name="suppressgroup"/>
+                    </group_set>
+                  </onChange>
+                </element>
+                
+                <element name="suppressgroup" type="fieldset">
+                  <view name="edit"/>
+                  <view name="create"/>
+                  <view name="modal"/>
+                  <key name="multiColumn">True</key>
+                  <elements>
+                    <!-- Suppress same alert condition -->
+                    <element name="alert_suppress_period_value" type="textfield">
+                      <view name="edit"/>
+                      <view name="create"/>
+                      <view name="modal"/>
+                      <key name="class">short</key>
+                      <key name="requiredIfVisible" />
+                      <key name="processValueEdit">
+                        re.match("(\d+)", str(entity['alert.suppress.period'])).groups()[0] if re.match("(\d+)", str(entity.get('alert.suppress.period', ''))) else ''
+                      </key>
+                    </element>
+                    <!-- Suppress same alert condition units -->
+                    <element name="alert_suppress_period_unit" type="select">
+                      <options>
+                        <opt value="s" label="second(s)"/>
+                        <opt value="m" label="minute(s)"/>
+                        <opt value="h" label="hour(s)"/>
+                        <opt value="d" label="day(s)"/>
+                      </options>
+                      <view name="edit"/>
+                      <view name="create"/>
+                      <view name="modal"/>
+                      <key name="class">short</key>
+                      <key name="processValueEdit">
+                       re.search("([A-Za-z]+)", str(entity['alert.suppress.period'])).groups()[0] if entity.get('alert.suppress.period') is not None and re.search("([A-Za-z]+)", str(entity.get('alert.suppress.period', ''))) else None
+                      </key>
+                    </element>
+                    <!-- Suppress same alert period -->
+                    <element name="alert.suppress.period" type="hidden">
+                      <view name="edit"/>
+                      <view name="create"/>
+                      <view name="modal"/>
+                      <key name="submitValueEdit">
+                          form_data.get('alert_suppress_period_value') + form_data.get('alert_suppress_period_unit') if form_data.get('alert_suppress_period_value') else ''
+                      </key>
+                      <key name="submitValueAdd">
+                          form_data.get('alert_suppress_period_value') + form_data.get('alert_suppress_period_unit') if form_data.get('alert_suppress_period_value') else ''
+                      </key>
+                    </element>
+                    <!-- Throttle fields -->
+                   <element name="alert.suppress.fields" type="textfield" label="Per result throttling fields">
+                     <view name="edit" />
+                     <view name="create" />
+                     <view name="modal" />
+                     <key name="exampleText">The fields Splunk uses to identify results that should only trigger one alert in the time period chosen above</key>
+                     <key name="submitValueEdit">'' if form_data.get('alert.digest_mode') == '1' else form_data.get('alert.suppress.fields')</key>
+                     <key name="submitValueAdd">'' if form_data.get('alert.digest_mode') == '1' else form_data.get('alert.suppress.fields')</key>
+                   </element>
+                    
+                  </elements>
+                </element>
+              </elements>
+            </element>
+ 
+            <element name="expirationfieldset" type="fieldset">
+              <view name="edit"/>
+              <view name="create"/>
+              <view name="modal"/>
+              <elements>
+                <!-- Alert expires -->
+                <element name="alert.expires" type="hidden">
+                  <view name="edit"/>
+                  <view name="create"/>
+                  <view name="modal"/>
+                  <key name="submitValueEdit">
+                      form_data.get('custom_expiration_value') + form_data.get('custom_expiration_unit') if form_data.get('alertexpiration')=='custom' else form_data.get('alertexpiration', '')
+                  </key>
+                  <key name="submitValueAdd">
+                      form_data.get('custom_expiration_value') + form_data.get('custom_expiration_unit') if form_data.get('alertexpiration')=='custom' else form_data.get('alertexpiration', '')
+                  </key>
+                </element>
+                <!-- Alert expiration -->
+                <element name="alertexpiration" type="select">
+                  <view name="edit"/>
+                  <view name="create"/>
+                  <view name="modal"/>
+                  <options>
+                    <opt value="6h" label="After 6 hours"/>
+                    <opt value="12h" label="After 12 hours"/>
+                    <opt value="24h" label="After 24 hours"/>
+                    <opt value="2d" label="After 2 days"/>
+                    <opt value="7d" label="After 7 days"/>
+                    <opt value="custom" label="Custom time"/>
+                  </options>
+                  <onChange>
+                    <key name="_action">showonly</key>
+                    <key name="6h">NONE</key>
+                    <key name="12h">NONE</key>
+                    <key name="24h">NONE</key>
+                    <key name="2d">NONE</key>
+                    <key name="7d">NONE</key>
+                    <key name="custom">custom_expiration</key>
+                     <group_set>
+                       <group name="custom_expiration"/>
+                     </group_set>
+                  </onChange>
+                  <key name="processValueEdit">
+                    entity.get('alert.expires', '') if entity.get('alert.expires', '') in (None, '', '6h', '12h', '24h', '2d', '7d') else 'custom'
+                  </key>
+                  <key name="processValueAdd">
+                    entity.get('alert.expires', '') if entity.get('alert.expires', '') in (None, '', '6h', '12h', '24h', '2d', '7d') else 'custom'
+                  </key>
+                  <key name="label">Expiration</key>
+                  <key name="exampleText">How long Splunk keeps a record of each triggered alert.</key>
+                </element>
+                
+                <element name="custom_expiration" type="fieldset">
+                  <view name="edit"/>
+                  <view name="create"/>
+                  <view name="modal"/>
+                  <key name="requiredIfVisible" />
+                  <key name="multiColumn">True</key>
+                  <elements>
+                    <!-- Custom expiration -->
+                    <element name="custom_expiration_value" type="textfield">
+                      <view name="edit"/>
+                      <view name="create"/>
+                      <view name="modal"/>
+                      <key name="class">short</key>
+                      <key name="requiredIfVisible" />
+                      <key name="processValueEdit">
+                        re.match("(\d+)", entity['alert.expires']).groups()[0] if re.match("(\d+)", entity.get('alert.expires', '')) else ''
+                      </key>
+                      <key name="processValueAdd">
+                        re.match("(\d+)", entity['alert.expires']).groups()[0] if re.match("(\d+)", entity.get('alert.expires', '')) else ''
+                      </key>
+                    </element>
+                    <!-- Custom expiration unit -->
+                    <element name="custom_expiration_unit" type="select">
+                      <options>
+                        <opt value="s" label="second(s)"/>
+                        <opt value="m" label="minute(s)"/>
+                        <opt value="h" label="hour(s)"/>
+                        <opt value="d" label="day(s)"/>
+                      </options>
+                      <view name="edit"/>
+                      <view name="create"/>
+                      <view name="modal"/>
+                      <key name="class">short</key>
+                      <key name="requiredIfVisible" />
+                      <key name="processValueEdit">
+                        re.search("([A-Za-z]+)", entity['alert.expires']).groups()[0] if re.search("([A-Za-z]+)", entity.get('alert.expires', '')) else ''
+                      </key>
+                      <key name="processValueAdd">
+                        re.search("([A-Za-z]+)", entity['alert.expires']).groups()[0] if re.search("([A-Za-z]+)", entity.get('alert.expires', '')) else ''
+                      </key>
+                    </element>
+                  </elements>
+                </element>
+              </elements>
+            </element>
+
+            <element name="expirationfieldset" type="fieldset">
+              <view name="edit"/>
+              <view name="create"/>
+              <view name="modal"/>
+              <elements>
+                <!-- Severity -->
+                <element name="alert.severity" type="select">
+                  <options>
+                    <opt value="1" label="Info"/>
+                    <opt value="2" label="Low"/>
+                    <opt value="3" label="Medium"/>
+                    <opt value="4" label="High"/>
+                    <opt value="5" label="Critical"/>
+                  </options>
+                  <view name="edit"/>
+                  <view name="create"/>
+                  <view name="modal"/>
+                  <key name="label">Severity</key>
+                  <key name="requiredIfVisible" />
+                </element>
+              </elements>
+            </element>
+
+            <element name="actionsfieldset" type="fieldset">
+              <key name="legend">Alert actions</key>
+              <view name="edit"/>
+              <view name="create"/>
+              <view name="modal"/>
+              <elements>
+                <!-- Actions -->
+                <element name="actions" type="hidden">
+                  <view name="edit"/>
+                  <view name="create"/>
+                  <view name="modal"/>
+                  <key name="submitValueEdit">
+                  ','.join((['email'] if (form_data.get('action.email.to') and form_data.get('spl-ctrl_email_enable')=='1') else []) 
+                      + (['script'] if (form_data.get('action.script.filename') and form_data.get('spl-ctrl_script_enable')=='1') else []) 
+                      + (['summary_index'] if form_data.get('spl-ctrl_summary_index', '0')!='0' else [])
+                      + (['rss'] if form_data.get('spl-ctrl_rss_enable', '0')!='0' else [])
+                      + (['populate_lookup'] if form_data.get('action.populate_lookup', '0')!='0' else [])
+                      + ([k.strip() for k in form_data.get('actions','').split(',') if k.strip() not in ['email','script','summary_index','rss','populate_lookup']])
+                      )
+                  </key>
+                  <key name="submitValueAdd">
+                  ','.join((['email'] if (form_data.get('action.email.to') and form_data.get('spl-ctrl_email_enable')=='1') else []) 
+                      + (['script'] if (form_data.get('action.script.filename') and form_data.get('spl-ctrl_script_enable')=='1') else []) 
+                      + (['summary_index'] if form_data.get('spl-ctrl_summary_index', '0')!='0' else [])
+                      + (['rss'] if form_data.get('spl-ctrl_rss_enable', '0')!='0' else []))
+                  </key>
+                </element>
+                <!-- Email -->
+                <element name="spl-ctrl_email_enable" type="checkbox" label="Enable">
+                  <view name="edit"/>
+                  <view name="create"/>
+                  <view name="modal"/>
+                  <key name="topLabel">Send email</key>
+                  <key name="processValueEdit">entity.get('action.email')</key>
+                  <onChange>
+                    <key name="_action">showonly</key>
+                    <key name="0">NONE</key>
+                    <key name="1">ALL</key>
+                    <group_set>
+                      <group name="emailgroup"/>
+                    </group_set>
+                  </onChange>
+                </element>
+
+                <element name='edit_email_link' type='savedsearchredirectlink'>
+                  <view name="edit"/>
+                </element>
+                
+                <element name="emailgroup" type="fieldset">
+                  <view name="list"/>
+                  <view name="edit"/>
+                  <view name="create"/>
+                  <view name="modal"/>
+                  <elements>                    
+                    <!-- Email to -->
+                    <element name="action.email.to" type="textfield" label="To">
+                      <view name="edit"/>
+                      <view name="create"/>
+                      <view name="modal"/>
+                      <key name="exampleText">Enter a comma-separated list of email addresses. &lt;a href="[[?learnmore.alert.email]]" class="spl-icon-external-link-xsm" target="_blank"&gt;Learn more&lt;/a&gt; &lt;br /&gt; You must use a valid MTA to send email.  Configure this in &lt;a href="../../admin/alert_actions/email?action=edit" class="spl-icon-external-link-xsm" target="_blank"&gt;Email settings&lt;/a&gt;.</key>
+                      <key name="submitValueEdit">value.strip() if form_data.get('spl-ctrl_email_enable')=='1' else None</key>
+                      <key name="submitValueAdd">value.strip() if form_data.get('spl-ctrl_email_enable')=='1' else None</key>
+                      <key name="requiredIfVisible" />
+                    </element>
+                    
+                    <element name="action.email.cc" type="textfield" label="CC">
+                      <view name="edit"/>
+                      <view name="create"/>
+                      <view name="modal"/>
+                      <key name="exampleText">Enter a comma-separated list of email addresses. &lt;a href="[[?learnmore.alert.email]]" class="spl-icon-external-link-xsm" target="_blank"&gt;Learn more&lt;/a&gt; &lt;br /&gt; You must use a valid MTA to send email.  Configure this in &lt;a href="../../admin/alert_actions/email?action=edit" class="spl-icon-external-link-xsm" target="_blank"&gt;Email settings&lt;/a&gt;.</key>
+                      <key name="submitValueEdit">value.strip() if form_data.get('spl-ctrl_email_enable')=='1' else None</key>
+                      <key name="submitValueAdd">value.strip() if form_data.get('spl-ctrl_email_enable')=='1' else None</key>
+                    </element>
+                    
+                    <element name="action.email.bcc" type="textfield" label="BCC">
+                      <view name="edit"/>
+                      <view name="create"/>
+                      <view name="modal"/>
+                      <key name="exampleText">Enter a comma-separated list of email addresses. &lt;a href="[[?learnmore.alert.email]]" class="spl-icon-external-link-xsm" target="_blank"&gt;Learn more&lt;/a&gt; &lt;br /&gt; You must use a valid MTA to send email.  Configure this in &lt;a href="../../admin/alert_actions/email?action=edit" class="spl-icon-external-link-xsm" target="_blank"&gt;Email settings&lt;/a&gt;.</key>
+                      <key name="submitValueEdit">value.strip() if form_data.get('spl-ctrl_email_enable')=='1' else None</key>
+                      <key name="submitValueAdd">value.strip() if form_data.get('spl-ctrl_email_enable')=='1' else None</key>
+                    </element>
+                    
+                    <element name="action.email.subject.alert" type="hidden">
+                      <view name="edit"/>
+                      <view name="create"/>
+                      <view name="modal"/>
+                      <key name="processValueEdit">entity.get('action.email.subject.alert')</key>
+                    </element>
+                       
+                    <element name="action.email.subject.report" type="hidden">
+                      <view name="edit"/>
+                      <view name="create"/>
+                      <view name="modal"/>
+                      <key name="processValueEdit">entity.get('action.email.subject.report')</key>
+                    </element>
+                       
+                    <element name="action.email.message.alert" type="hidden">
+                      <view name="edit"/>
+                      <view name="create"/>
+                      <view name="modal"/>
+                      <key name="processValueEdit">entity.get('action.email.message.alert')</key>
+                    </element>
+                       
+                    <element name="action.email.message.report" type="hidden">
+                      <view name="edit"/>
+                      <view name="create"/>
+                      <view name="modal"/>
+                      <key name="processValueEdit">entity.get('action.email.message.report')</key>
+                    </element>
+                       
+                    <element name="action.email.priority" type="hidden">
+                      <view name="edit"/>
+                      <view name="create"/>
+                      <view name="modal"/>
+                      <key name="processValueEdit">entity.get('action.email.priority')</key>
+                    </element>
+
+                    <element name="action.email.include.results_link" type="hidden">
+                      <view name="edit"/>
+                      <view name="create"/>
+                      <view name="modal"/>
+                      <key name="processValueEdit">entity.get('action.email.include.results_link')</key>
+                    </element>
+                       
+                    <element name="action.email.include.search" type="hidden">
+                      <view name="edit"/>
+                      <view name="create"/>
+                      <view name="modal"/>
+                      <key name="processValueEdit">entity.get('action.email.include.search')</key>
+                    </element>
+                       
+                    <element name="action.email.include.trigger" type="hidden">
+                      <view name="edit"/>
+                      <view name="create"/>
+                      <view name="modal"/>
+                      <key name="processValueEdit">entity.get('action.email.include.trigger')</key>
+                    </element>
+                       
+                    <element name="action.email.include.trigger_time" type="hidden">
+                      <view name="edit"/>
+                      <view name="create"/>
+                      <view name="modal"/>
+                      <key name="processValueEdit">entity.get('action.email.include.trigger_time')</key>
+                    </element>
+                       
+                    <element name="action.email.include.view_link" type="hidden">
+                      <view name="edit"/>
+                      <view name="create"/>
+                      <view name="modal"/>
+                      <key name="processValueEdit">entity.get('action.email.include.view_link')</key>
+                    </element>
+                    
+                    <element name="action.email.sendresults" type="hidden">
+                      <view name="edit"/>
+                      <view name="create"/>
+                      <view name="modal"/>
+                      <key name="processValueEdit">entity.get('action.email.sendresults')</key>
+                    </element>
+                        
+                    <element name="action.email.format" type="hidden">
+                      <view name="edit"/>
+                      <view name="create"/>
+                      <view name="modal"/>
+                      <key name="processValueEdit">entity.get('action.email.format')</key>
+                    </element>
+                          
+                    <element name="action.email.inline" type="hidden">
+                      <view name="edit"/>
+                      <view name="create"/>
+                      <view name="modal"/>
+                      <key name="processValueEdit">entity.get('action.email.inline')</key>
+                    </element>
+                        
+                    <element name="action.email.sendpdf" type="hidden">
+                      <view name="edit"/>
+                      <view name="create"/>
+                      <view name="modal"/>
+                      <key name="processValueEdit">entity.get('action.email.sendpdf')</key> 
+                    </element>
+                        
+                    <element name="action.email.sendcsv" type="hidden">
+                      <view name="edit"/>
+                      <view name="create"/>
+                      <view name="modal"/>
+                      <key name="processValueEdit">entity.get('action.email.sendcsv')</key> 
+                    </element>
+                       
+                    <element name="action.email.command" type="hidden">
+                      <view name="edit"/>
+                      <view name="create"/>
+                      <view name="modal"/>
+                      <key name="processValueEdit">entity.get('action.email.command')</key> 
+                    </element>
+                  </elements>
+                </element>
+                
+                <!-- RSS feed -->
+                <element name="spl-ctrl_rss_enable" type="checkbox" label="Enable">
+                  <view name="edit"/>
+                  <view name="create"/>
+                  <view name="modal"/>
+                  <key name="topLabel">Add to RSS</key>
+                  <key name="exampleText">The RSS link is available in Settings &gt; Searches, reports, and alerts.</key>
+                  <key name="processValueEdit">1 if 'rss' in form_defaults.get('actions',[]) else 0</key>
+                  <key name="processValueAdd">1 if 'rss' in form_defaults.get('actions',[]) else 0</key>
+                </element>
+                
+                <!-- Script -->
+                <element name="spl-ctrl_script_enable" type="checkbox" label="Enable">
+                  <view name="edit"/>
+                  <view name="create"/>
+                  <view name="modal"/>
+                  <key name="topLabel">Run a script</key>
+                  <key name="processValueEdit">1 if 'script' in form_defaults.get('actions',[]) else 0</key>
+                  <key name="processValueAdd">1 if 'script' in form_defaults.get('actions',[]) else 0</key>
+                  <onChange>
+                    <key name="_action">showonly</key>
+                    <key name="0">NONE</key>
+                    <key name="1">ALL</key>
+                    <group_set>
+                      <group name="action.script.filename"/>
+                    </group_set>
+                  </onChange>
+                </element>
+                
+                <!-- Script filename -->
+                <element name="action.script.filename" type="textfield" label="File name of shell script to run">
+                  <view name="edit"/>
+                  <view name="create"/>
+                  <view name="modal"/>
+                  <key name="submitValueEdit">value if form_data.get('spl-ctrl_script_enable')=='1' else ''</key>
+                  <key name="submitValueAdd">value if form_data.get('spl-ctrl_script_enable')=='1' else ''</key>
+                  <key name="exampleText">Splunk runs the script from $SPLUNK_HOME/bin/scripts/</key>
+                </element>
+                
+                <!-- Tracking -->
+                <element name="alert.track" type="checkbox" label="Enable">
+                  <view name="edit"/>
+                  <view name="create"/>
+                  <view name="modal"/>
+                  <key name="topLabel">List in Triggered Alerts</key>
+                  <key name="exampleText">Triggered Alerts are available in Activity located in the upper right navigation.</key>
+                  <key name="processValueEdit">1 if value == '1' else 0</key>
+                  <key name="processValueAdd">1 if value == '1' else 0</key>
+                  <key name="submitValueEdit">1 if value == '1' else 0</key>
+                  <key name="submitValueAdd">1 if value == '1' else 0</key>
+                </element>
+
+              </elements>
+            </element> <!-- /actionfieldset -->
+            
+            
+            <element name="summaryfieldset" type="fieldset">
+              <key name="legend">Summary indexing</key>
+              <view name="edit"/>
+              <view name="create"/>
+              <view name="modal"/>
+              <elements>
+                <!-- Summary indexing -->
+                <element name="spl-ctrl_summary_index" type="checkbox" label="Enable">
+                  <view name="edit"/>
+                  <view name="create"/>
+                  <view name="modal"/>
+                  <key name="exampleText">Enabling summary indexing will set the alert condition to 'always'.</key>
+                  <key name="processValueEdit">1 if 'summary_index' in form_defaults.get('actions',[]) else 0</key>
+                  <key name="processValueAdd">1 if 'summary_index' in form_defaults.get('actions',[]) else 0</key>
+                  <onChange>
+                    <key name="0">NONE</key>
+                    <key name="1">ALL</key>
+                    <key name="_action">showonly</key>
+                    <group_set>
+                      <group name="summary_fields"/>
+                      <group name="action.summary_index._name"/>
+                    </group_set>
+                  </onChange>
+                  <onChange>
+                    <key name="_action">setElementValue</key>
+                    <key name="target">alert_type</key>
+                    <value_map>
+                        <key name="1">always</key>
+                    </value_map>
+                  </onChange>
+                  <onChange>
+                    <key name="_action">updateElementState</key>
+                    <key name="target">alert_type</key>
+                    <value_map>
+                        <key name="always">enable</key>
+                        <key name="number of events">disable</key>
+                        <key name="number of hosts">disable</key>
+                        <key name="number of sources">disable</key>
+                        <key name="custom">disable</key>
+                    </value_map>
+                  </onChange>
+                </element>
+                
+                <!-- Summary index -->                
+                <element name="action.summary_index._name" type="select" label="Select the summary index">
+                  <view name="edit"/>
+                  <view name="create"/>
+                  <view name="modal"/>
+                  <key name="dynamicOptions" type="dict">
+                     <key name="keyName">entry.properties.get('index', 'index key not found')</key>
+                     <key name="keyValue">entry.properties.get('index', 'index key not found')</key>
+                     <key name="splunkSource">/search/jobs/oneshot</key>
+                     <key name="splunkSourceParams" type="dict">
+                       <key name="output_mode">"atom"</key>
+                       <key name="count">"1000"</key>
+                       <key name="search">"| eventcount summarize=false index=* index=_* | dedup index"</key>
+                     </key>
+                  </key>
+                 <key name="exampleText">Only indexes that you can write to are listed.</key>
+                </element>               
+                
+                <!-- Add fields -->
+                <element name="summary_fields" type="repeatable" label="Add fields">
+                  <view name="edit"/>
+                  <view name="create"/>
+                  <view name="modal"/>
+                  <key name="mincount">0</key>
+                  <key name="maxcount">10</key>
+                  <key name="deleteable">True</key> <!-- user can remove items -->
+                  <key name="expandable">True</key> <!-- user can add more items -->
+                  <!-- if fieldPrefix is set then find all elements beginning with it and pass each of those to the listed element -->
+                  <key name="fieldprefix">action.summary_index.</key>
+                  <key name="ignorepattern">action\.summary_index\.(_name|inline|command|ttl|hostname|track_alert|maxresults|maxtime)</key>
+                  <element name="template" type="fieldmapping">
+                    <key name="hideLabel">True</key>
+                  </element>
+                </element>                
+              </elements> 
+            </element>
+            
+          </elements> 
+        </element> <!-- /alertgroup -->
+        
+        <!-- Owner -->
+        <element name="eai:acl.owner" label="Owner">
+          <view name="list"/>
+          <key name="processValueList">entity['eai:acl']['owner'] == 'nobody' and _('No owner') or entity['eai:acl']['owner']</key>
+        </element>
+        
+        <!-- App -->
+        <element name="eai:acl.app" label="App">
+          <view name="list"/>
+          <key name="processValueList">entity['eai:acl']['app'] or ""</key>
+        </element>
+        
+        <!-- Alerts -->
+        <element name="triggered_alert_count" label="Alerts">
+          <view name="list"/>
+          <key name="showAlertsLink"/>
+        </element>
+        
+      </elements>
+    </element>
+  </elements>
+</endpoint>

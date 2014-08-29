@@ -1,0 +1,12 @@
+## A default listener
+#[udp:516]
+#sourcetype=pan
+# Leave as pan; subsequent transforms will revise to correct sub-sourcetype. Anything 
+# searchable with sourcetype of pan is an error
+
+## A default listener. Use this if compatibility with a separate installation of
+## the SplunkforPaloAltoNetworks app is required.
+#[udp:516]
+#sourcetype=pan_log
+# Leave as pan_log; subsequent transforms will revise to correct sub-sourcetype. Anything 
+# searchable with sourcetype of pan is an error

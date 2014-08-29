@@ -1,0 +1,83 @@
+<form script="account_management.js">
+	<label>Account Management</label>
+	
+	<fieldset autoRun="true" submitButton="true">
+        
+        <input type="text" token="bunit_form">
+            <label>Business Unit</label>
+            <default></default>
+        </input>
+
+        <input type="dropdown" token="category_form">
+            <label>Category</label>
+            <choice value="">All</choice>
+            <populatingSearch fieldForValue="category" fieldForLabel="category">| `categories`</populatingSearch>
+            <default></default>
+        </input>
+        	        
+        <input type="dropdown" token="special_form">
+            <label>Special Accounts</label>
+            <choice value="">All</choice>
+            <choice value="privileged">Privileged</choice>
+            <choice value="default">Default</choice>
+            <default></default>
+        </input>
+        
+		<input type="time">
+			<default>Last 24 hours</default>
+		</input>
+	</fieldset>
+	
+	<row>
+        <chart id="element1">
+            <title>Account Management Over Time</title>
+            
+            <searchTemplate>| `tstats` count from datamodel=Change_Analysis where nodename=All_Changes.Account_Management $bunit$ $category$ $special$ by _time,All_Changes.action span=10m | timechart minspan=10m useother=`useother` count by All_Changes.action | `drop_dm_object_name("All_Changes")`</searchTemplate>
+            
+            <option name="charting.axisTitleX.text">time</option>
+            <option name="charting.axisTitleY.text">count</option>
+            <option name="charting.chart">line</option>
+            <option name="charting.chart.nullValueMode">zero</option>
+            <option name="height">310px</option>
+
+            <drilldown>
+                <link>search?q=| `datamodel("Change_Analysis", "Account_Management")` | `drop_dm_object_name("All_Changes")` | `drop_dm_object_name("Account_Management")` | search action="$click.name2$"&amp;earliest=$earliest$&amp;latest=$latest$</link>
+            </drilldown>
+        </chart>
+    
+		<table id="element2">
+			<title>Account Lockouts</title>
+			
+			<searchTemplate>| tstats `summariesonly` count from datamodel=Change_Analysis where nodename=All_Changes.Account_Management All_Changes.result="lockout" $bunit$ $category$ $special$ by All_Changes.src,All_Changes.Account_Management.src_nt_domain,All_Changes.user | sort 100 - count | `drop_dm_object_name("All_Changes")` |  `drop_dm_object_name("Account_Management")`</searchTemplate>
+			
+			<drilldown>
+				<link>search?q=| `datamodel("Change_Analysis", "Account_Management")` | `drop_dm_object_name("All_Changes")` |  `drop_dm_object_name("Account_Management")` | search result="lockout" src="$row.src$" src_nt_domain="$row.src_nt_domain$" user="$row.user$"&amp;earliest=$earliest$&amp;latest=$latest$</link>
+			</drilldown>
+		</table>
+	</row>
+	
+	<row>
+        <chart id="element3">
+            <title>Account Management By Source User</title>
+            
+            <searchTemplate>| tstats `summariesonly` count from datamodel=Change_Analysis where nodename=All_Changes.Account_Management $bunit$ $category$ $special$ by All_Changes.Account_Management.src_user| `drop_dm_object_name("All_Changes")` | `drop_dm_object_name("Account_Management")` | sort 10 - count</searchTemplate>
+            
+            <option name="charting.chart">bar</option>
+            <option name="charting.legend.placement">none</option>
+
+            <drilldown>
+                <link>search?q=| `datamodel("Change_Analysis", "Account_Management")` | `drop_dm_object_name("All_Changes")` | `drop_dm_object_name("Account_Management")` | search src_user="$click.value$"&amp;earliest=$earliest$&amp;latest=$latest$</link>
+            </drilldown>
+        </chart>
+        
+        <table id="element4">
+			<title>Top Account Management Events</title>
+			
+			<searchTemplate>| tstats `summariesonly` count from datamodel=Change_Analysis where nodename=All_Changes.Account_Management $bunit$ $category$ $special$ by _time,All_Changes.action span=1h | `drop_dm_object_name("All_Changes")` | stats sparkline(sum(count),1h) as sparkline,sum(count) as count by action | sort 10 - count</searchTemplate>
+			
+			<drilldown>
+				<link>search?q=| `datamodel("Change_Analysis", "Account_Management")` | `drop_dm_object_name("All_Changes")` |  `drop_dm_object_name("Account_Management")` | search action="$row.action$"&amp;earliest=$earliest$&amp;latest=$latest$</link>
+			</drilldown>
+		</table>
+	</row>
+</form>

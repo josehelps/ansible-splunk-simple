@@ -1,0 +1,14 @@
+priorities,priority
+informational,
+low,
+medium,
+high,
+critical,
+information|low,
+informational|critical,
+low|medium|high,
+asdfasdf,
+medium|critical,
+critical|low,
+high|low|medium,
+,high

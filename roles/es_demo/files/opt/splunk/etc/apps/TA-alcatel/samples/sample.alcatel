@@ -1,0 +1,1000 @@
+Sep  4 10:47:24 172.22.88.4 %STP-W-PORTSTATUS: e14: STP status Forwarding
+Sep  4 10:46:54 172.22.88.4 %LINK-I-Up:  e14
+Sep  4 10:46:51 172.22.88.4 %LINK-W-Down:  e14
+Sep  4 10:46:51 172.22.88.4 %LINK-I-Up:  e14
+Sep  4 10:46:49 172.22.88.4 %LINK-W-Down:  e14
+Sep  4 10:43:39 172.22.68.4 %STP-W-PORTSTATUS: e1: STP status Forwarding
+Sep  4 10:43:09 172.22.68.4 %LINK-I-Up:  e1
+Sep  4 10:43:02 172.22.68.4 %LINK-W-Down:  e1
+Sep  4 10:32:00 172.22.105.4 %STP-W-PORTSTATUS: e13: STP status Forwarding
+Sep  4 10:32:00 172.22.105.4 %LINK-I-Up:  e13
+Sep  4 10:31:56 172.22.105.4 %LINK-W-Down:  e13
+Sep  4 10:27:22 172.22.82.4 %LINK-I-Up:  e23
+Sep  4 10:27:22 172.22.82.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  4 10:27:20 172.22.82.4 %LINK-W-Down:  e23
+Sep  4 10:27:18 172.22.82.4 %LINK-I-Up:  e23
+Sep  4 10:27:18 172.22.82.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  4 10:27:12 172.22.82.4 %LINK-W-Down:  e23
+Sep  4 10:00:26 172.22.18.4 %LINK-I-Up:  e3
+Sep  4 10:00:26 172.22.18.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 10:00:21 172.22.18.4 %LINK-W-Down:  e3
+Sep  4 09:59:43 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 09:59:43 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 09:55:03 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 09:54:44 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 09:54:44 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 09:54:41 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 09:17:00 172.22.33.4 %LINK-I-Up:  e2
+Sep  4 09:17:00 172.22.33.4 %STP-W-PORTSTATUS: e2: STP status Forwarding
+Sep  4 09:16:49 172.22.33.4 %LINK-W-Down:  e2
+Sep  4 09:15:29 172.22.68.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 09:14:59 172.22.68.4 %LINK-I-Up:  e3
+Sep  4 09:14:56 172.22.68.4 %LINK-W-Down:  e3
+Sep  4 09:11:55 172.22.88.4 %STP-W-PORTSTATUS: e13: STP status Forwarding
+Sep  4 09:11:25 172.22.88.4 %LINK-I-Up:  e13
+Sep  4 09:11:22 172.22.88.4 %LINK-W-Down:  e13
+Sep  4 09:10:41 172.22.88.4 %STP-W-PORTSTATUS: e13: STP status Forwarding
+Sep  4 09:10:11 172.22.88.4 %LINK-I-Up:  e13
+Sep  4 09:10:07 172.22.88.4 %LINK-W-Down:  e13
+Sep  4 09:07:36 172.22.7.4 %LINK-I-Up:  e13
+Sep  4 09:07:36 172.22.7.4 %STP-W-PORTSTATUS: e13: STP status Forwarding
+Sep  4 09:07:16 172.22.7.4 %LINK-W-Down:  e13
+Sep  4 09:02:39 172.22.104.4 %LINK-I-Up:  e20
+Sep  4 09:02:39 172.22.104.4 %STP-W-PORTSTATUS: e20: STP status Forwarding
+Sep  4 09:02:37 172.22.104.4 %LINK-W-Down:  e20
+Sep  4 09:02:29 172.22.24.4 %LINK-I-Up:  e18
+Sep  4 09:02:29 172.22.24.4 %STP-W-PORTSTATUS: e18: STP status Forwarding
+Sep  4 09:02:23 172.22.24.4 %LINK-W-Down:  e18
+Sep  4 08:56:14 172.22.104.4 %LINK-I-Up:  e20
+Sep  4 08:56:14 172.22.104.4 %STP-W-PORTSTATUS: e20: STP status Forwarding
+Sep  4 08:56:05 172.22.104.4 %LINK-W-Down:  e20
+Sep  4 08:48:00 172.22.70.4 %STP-W-PORTSTATUS: e11: STP status Forwarding
+Sep  4 08:47:30 172.22.70.4 %LINK-I-Up:  e11
+Sep  4 08:47:27 172.22.70.4 %LINK-W-Down:  e11
+Sep  4 08:31:31 172.22.52.4 %STP-W-PORTSTATUS: e20: STP status Forwarding
+Sep  4 08:31:21 172.22.2.4 %STP-W-PORTSTATUS: e47: STP status Forwarding
+Sep  4 08:31:01 172.22.52.4 %LINK-I-Up:  e20
+Sep  4 08:30:51 172.22.2.4 %LINK-I-Up:  e47
+Sep  4 08:30:29 172.22.52.4 %LINK-W-Down:  e20
+Sep  4 08:27:14 172.22.52.4 %STP-W-PORTSTATUS: e20: STP status Forwarding
+Sep  4 08:26:59 172.22.88.4 %STP-W-PORTSTATUS: e13: STP status Forwarding
+Sep  4 08:26:44 172.22.52.4 %LINK-I-Up:  e20
+Sep  4 08:26:42 172.22.52.4 %LINK-W-Down:  e20
+Sep  4 08:26:29 172.22.88.4 %LINK-I-Up:  e13
+Sep  4 08:26:27 172.22.88.4 %LINK-W-Down:  e13
+Sep  4 08:23:30 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 08:23:30 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 08:23:24 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 08:23:04 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 08:23:04 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 08:23:01 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 08:21:48 172.22.2.4 %LINK-W-Down:  e47
+Sep  4 08:21:40 172.22.2.4 %LINK-I-Up:  e47
+Sep  4 08:21:35 172.22.2.4 %LINK-W-Down:  e47
+Sep  4 08:19:25 172.22.98.4 %LINK-I-Up:  e4
+Sep  4 08:19:25 172.22.98.4 %STP-W-PORTSTATUS: e4: STP status Forwarding
+Sep  4 08:19:24 172.22.98.4 %LINK-W-Down:  e4
+Sep  4 08:19:19 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 08:19:19 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 08:19:18 172.22.98.4 %LINK-I-Up:  e4
+Sep  4 08:19:18 172.22.98.4 %STP-W-PORTSTATUS: e4: STP status Forwarding
+Sep  4 08:19:16 172.22.98.4 %LINK-W-Down:  e4
+Sep  4 08:19:15 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 08:18:52 172.22.98.4 %LINK-I-Up:  e4
+Sep  4 08:18:52 172.22.98.4 %STP-W-PORTSTATUS: e4: STP status Forwarding
+Sep  4 08:18:48 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 08:18:48 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 08:18:46 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 08:18:28 172.22.98.4 %LINK-W-Down:  e4
+Sep  4 08:14:03 172.22.18.4 %LINK-I-Up:  e21
+Sep  4 08:14:03 172.22.18.4 %STP-W-PORTSTATUS: e21: STP status Forwarding
+Sep  4 08:14:01 172.22.18.4 %LINK-W-Down:  e21
+Sep  4 08:14:01 172.22.18.4 %LINK-I-Up:  e21
+Sep  4 08:14:01 172.22.18.4 %STP-W-PORTSTATUS: e21: STP status Forwarding
+Sep  4 08:13:44 172.22.18.4 %LINK-W-Down:  e21
+Sep  4 08:01:16 172.22.105.4 %LINK-I-Up:  e8
+Sep  4 08:01:16 172.22.105.4 %STP-W-PORTSTATUS: e8: STP status Forwarding
+Sep  4 08:01:14 172.22.105.4 %LINK-W-Down:  e8
+Sep  4 08:01:12 172.22.105.4 %LINK-I-Up:  e8
+Sep  4 08:01:12 172.22.105.4 %STP-W-PORTSTATUS: e8: STP status Forwarding
+Sep  4 07:24:01 172.22.105.4 %LINK-W-Down:  e8
+Sep  4 07:19:33 172.22.82.4 %LINK-I-Up:  e1
+Sep  4 07:19:33 172.22.82.4 %STP-W-PORTSTATUS: e1: STP status Forwarding
+Sep  4 07:19:30 172.22.82.4 %LINK-W-Down:  e1
+Sep  4 07:17:38 172.22.84.4 %LINK-I-Up:  e3
+Sep  4 07:17:38 172.22.84.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 07:17:19 172.22.89.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  4 07:17:19 172.22.84.4 %LINK-W-Down:  e3
+Sep  4 07:16:49 172.22.89.4 %LINK-I-Up:  e23
+Sep  4 07:16:42 172.22.89.4 %LINK-W-Down:  e23
+Sep  4 07:15:38 172.22.105.4 %LINK-I-Up:  e8
+Sep  4 07:15:38 172.22.105.4 %STP-W-PORTSTATUS: e8: STP status Forwarding
+Sep  4 07:15:37 172.22.105.4 %LINK-W-Down:  e8
+Sep  4 07:14:25 172.22.33.4 %LINK-I-Up:  e1
+Sep  4 07:14:25 172.22.33.4 %STP-W-PORTSTATUS: e1: STP status Forwarding
+Sep  4 07:14:16 172.22.33.4 %LINK-W-Down:  e1
+Sep  4 07:12:42 172.22.105.4 %LINK-I-Up:  e8
+Sep  4 07:12:42 172.22.105.4 %STP-W-PORTSTATUS: e8: STP status Forwarding
+Sep  4 07:12:11 172.22.105.4 %LINK-W-Down:  e8
+Sep  4 07:09:23 172.22.124.4 %STP-W-PORTSTATUS: e5: STP status Forwarding
+Sep  4 07:08:53 172.22.124.4 %LINK-I-Up:  e5
+Sep  4 07:08:50 172.22.124.4 %LINK-W-Down:  e5
+Sep  4 07:08:37 172.22.67.4 %STP-W-PORTSTATUS: e9: STP status Forwarding
+Sep  4 07:08:35 172.22.124.4 %STP-W-PORTSTATUS: e5: STP status Forwarding
+Sep  4 07:08:07 172.22.67.4 %LINK-I-Up:  e9
+Sep  4 07:08:05 172.22.124.4 %LINK-I-Up:  e5
+Sep  4 07:08:02 172.22.67.4 %LINK-W-Down:  e9
+Sep  4 07:08:01 172.22.124.4 %LINK-W-Down:  e5
+Sep  4 06:57:39 172.22.117.4 %LINK-I-Up:  e21
+Sep  4 06:57:39 172.22.117.4 %STP-W-PORTSTATUS: e21: STP status Forwarding
+Sep  4 06:57:35 172.22.117.4 %LINK-W-Down:  e21
+Sep  4 06:56:21 172.22.105.4 %LINK-I-Up:  e8
+Sep  4 06:56:21 172.22.105.4 %STP-W-PORTSTATUS: e8: STP status Forwarding
+Sep  4 06:56:05 172.22.105.4 %LINK-W-Down:  e8
+Sep  4 06:55:52 172.22.105.4 %LINK-I-Up:  e8
+Sep  4 06:55:52 172.22.105.4 %STP-W-PORTSTATUS: e8: STP status Forwarding
+Sep  4 06:55:51 172.22.105.4 %LINK-W-Down:  e8
+Sep  4 06:36:56 172.22.117.4 %LINK-I-Up:  e19
+Sep  4 06:36:56 172.22.117.4 %STP-W-PORTSTATUS: e19: STP status Forwarding
+Sep  4 06:36:52 172.22.117.4 %LINK-W-Down:  e19
+Sep  4 06:31:11 172.22.106.4 %LINK-I-Up:  e11
+Sep  4 06:31:11 172.22.106.4 %STP-W-PORTSTATUS: e11: STP status Forwarding
+Sep  4 06:31:06 172.22.106.4 %LINK-W-Down:  e11
+Sep  4 06:12:48 172.22.117.4 %LINK-I-Up:  e21
+Sep  4 06:12:48 172.22.117.4 %STP-W-PORTSTATUS: e21: STP status Forwarding
+Sep  4 06:12:44 172.22.117.4 %LINK-W-Down:  e21
+Sep  4 06:11:54 172.22.82.4 %LINK-I-Up:  e3
+Sep  4 06:11:54 172.22.82.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 06:11:46 172.22.82.4 %LINK-W-Down:  e3
+Sep  4 06:10:59 172.22.117.4 %LINK-I-Up:  e19
+Sep  4 06:10:59 172.22.117.4 %STP-W-PORTSTATUS: e19: STP status Forwarding
+Sep  4 06:10:55 172.22.117.4 %LINK-W-Down:  e19
+Sep  4 06:03:25 172.22.111.4 %LINK-I-Up:  e2
+Sep  4 06:03:25 172.22.111.4 %STP-W-PORTSTATUS: e2: STP status Forwarding
+Sep  4 06:03:21 172.22.111.4 %LINK-W-Down:  e2
+Sep  4 05:50:09 172.22.111.4 %LINK-I-Up:  e2
+Sep  4 05:50:09 172.22.111.4 %STP-W-PORTSTATUS: e2: STP status Forwarding
+Sep  4 05:50:06 172.22.111.4 %LINK-W-Down:  e2
+Sep  4 05:50:05 172.22.111.4 %LINK-I-Up:  e2
+Sep  4 05:50:05 172.22.111.4 %STP-W-PORTSTATUS: e2: STP status Forwarding
+Sep  4 05:50:03 172.22.111.4 %LINK-W-Down:  e2
+Sep  4 04:19:24 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 04:19:24 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 04:19:21 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 03:39:15 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 03:39:15 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 03:39:12 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 03:30:26 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 03:30:26 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 03:30:23 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 03:25:04 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 03:25:04 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 03:25:01 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 03:23:07 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 03:23:07 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 03:23:04 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 03:22:22 172.22.36.4 %STP-W-PORTSTATUS: e24: STP status Forwarding
+Sep  4 03:21:52 172.22.36.4 %LINK-I-Up:  e24
+Sep  4 03:21:49 172.22.36.4 %LINK-W-Down:  e24
+Sep  4 03:21:08 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 03:21:08 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 03:21:05 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 03:17:22 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 03:17:22 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 03:17:18 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 03:12:53 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 03:12:53 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 03:12:50 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 03:12:13 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 03:12:13 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 03:12:10 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 03:02:47 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 03:02:47 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 03:02:44 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 03:01:19 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 03:01:19 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 03:01:16 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 02:57:29 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 02:57:29 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 02:57:26 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 02:52:48 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 02:52:48 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 02:52:45 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 02:52:00 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 02:52:00 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 02:51:57 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 02:42:07 172.22.52.4 %STP-W-PORTSTATUS: e5: STP status Forwarding
+Sep  4 02:41:37 172.22.52.4 %LINK-I-Up:  e5
+Sep  4 02:41:35 172.22.52.4 %LINK-W-Down:  e5
+Sep  4 02:41:29 172.22.65.4 %STP-W-PORTSTATUS: e22: STP status Forwarding
+Sep  4 02:40:59 172.22.65.4 %LINK-I-Up:  e22
+Sep  4 02:40:57 172.22.65.4 %LINK-W-Down:  e22
+Sep  4 02:36:37 172.22.105.4 %LINK-I-Up:  e20
+Sep  4 02:36:37 172.22.105.4 %STP-W-PORTSTATUS: e20: STP status Forwarding
+Sep  4 02:36:34 172.22.105.4 %LINK-W-Down:  e20
+Sep  4 02:34:50 172.22.104.4 %LINK-I-Up:  e2
+Sep  4 02:34:50 172.22.104.4 %STP-W-PORTSTATUS: e2: STP status Forwarding
+Sep  4 02:34:49 172.22.94.4 %STP-W-PORTSTATUS: e6: STP status Forwarding
+Sep  4 02:34:47 172.22.104.4 %LINK-W-Down:  e2
+Sep  4 02:34:19 172.22.94.4 %LINK-I-Up:  e6
+Sep  4 02:34:17 172.22.94.4 %LINK-W-Down:  e6
+Sep  4 02:29:03 172.22.1.4 %LINK-I-Up:  e23
+Sep  4 02:29:03 172.22.1.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  4 02:29:00 172.22.1.4 %LINK-W-Down:  e23
+Sep  4 02:25:02 172.22.2.4 %STP-W-PORTSTATUS: e31: STP status Forwarding
+Sep  4 02:24:44 172.22.68.4 %STP-W-PORTSTATUS: e17: STP status Forwarding
+Sep  4 02:24:43 172.22.64.4 %LINK-I-Up:  e17
+Sep  4 02:24:43 172.22.64.4 %STP-W-PORTSTATUS: e17: STP status Forwarding
+Sep  4 02:24:41 172.22.64.4 %LINK-W-Down:  e17
+Sep  4 02:24:32 172.22.2.4 %LINK-I-Up:  e31
+Sep  4 02:24:30 172.22.2.4 %LINK-W-Down:  e31
+Sep  4 02:24:17 172.22.23.4 %STP-W-PORTSTATUS: e16: STP status Forwarding
+Sep  4 02:24:14 172.22.68.4 %LINK-I-Up:  e17
+Sep  4 02:24:11 172.22.68.4 %LINK-W-Down:  e17
+Sep  4 02:23:47 172.22.23.4 %LINK-I-Up:  e16
+Sep  4 02:23:45 172.22.23.4 %LINK-W-Down:  e16
+Sep  4 02:23:38 172.22.89.4 %STP-W-PORTSTATUS: e18: STP status Forwarding
+Sep  4 02:23:35 172.22.28.4 %STP-W-PORTSTATUS: e2: STP status Forwarding
+Sep  4 02:23:29 172.22.51.4 %STP-W-PORTSTATUS: e20: STP status Forwarding
+Sep  4 02:23:29 172.22.51.4 %LINK-I-Up:  e20
+Sep  4 02:23:26 172.22.51.4 %LINK-W-Down:  e20
+Sep  4 02:23:08 172.22.89.4 %LINK-I-Up:  e18
+Sep  4 02:23:05 172.22.89.4 %LINK-W-Down:  e18
+Sep  4 02:23:05 172.22.28.4 %LINK-I-Up:  e2
+Sep  4 02:23:02 172.22.28.4 %LINK-W-Down:  e2
+Sep  4 02:22:31 172.22.26.4 %LINK-I-Up:  e2
+Sep  4 02:22:31 172.22.26.4 %STP-W-PORTSTATUS: e2: STP status Forwarding
+Sep  4 02:22:29 172.22.26.4 %LINK-W-Down:  e2
+Sep  4 02:22:20 172.22.24.4 %LINK-I-Up:  e6
+Sep  4 02:22:20 172.22.24.4 %STP-W-PORTSTATUS: e6: STP status Forwarding
+Sep  4 02:22:17 172.22.24.4 %LINK-W-Down:  e6
+Sep  4 02:20:51 172.22.57.4 %STP-W-PORTSTATUS: e13: STP status Forwarding
+Sep  4 02:20:21 172.22.57.4 %LINK-I-Up:  e13
+Sep  4 02:20:18 172.22.57.4 %LINK-W-Down:  e13
+Sep  4 02:20:05 172.22.63.4 %STP-W-PORTSTATUS: e16: STP status Forwarding
+Sep  4 02:19:35 172.22.63.4 %LINK-I-Up:  e16
+Sep  4 02:19:32 172.22.63.4 %LINK-W-Down:  e16
+Sep  4 02:19:31 172.22.53.4 %STP-W-PORTSTATUS: e31: STP status Forwarding
+Sep  4 02:19:01 172.22.53.4 %LINK-I-Up:  e31
+Sep  4 02:18:56 172.22.53.4 %LINK-W-Down:  e31
+Sep  4 02:18:44 172.22.21.4 %STP-W-PORTSTATUS: e1: STP status Forwarding
+Sep  4 02:18:14 172.22.21.4 %LINK-I-Up:  e1
+Sep  4 02:18:11 172.22.21.4 %LINK-W-Down:  e1
+Sep  4 02:17:51 172.22.82.4 %LINK-I-Up:  e8
+Sep  4 02:17:51 172.22.82.4 %STP-W-PORTSTATUS: e8: STP status Forwarding
+Sep  4 02:17:48 172.22.82.4 %LINK-W-Down:  e8
+Sep  4 02:17:14 172.22.81.4 %LINK-I-Up:  e9
+Sep  4 02:17:14 172.22.81.4 %STP-W-PORTSTATUS: e9: STP status Forwarding
+Sep  4 02:17:11 172.22.81.4 %LINK-W-Down:  e9
+Sep  4 02:16:01 172.22.45.4 %LINK-I-Up:  e2
+Sep  4 02:16:01 172.22.45.4 %STP-W-PORTSTATUS: e2: STP status Forwarding
+Sep  4 02:15:59 172.22.45.4 %LINK-W-Down:  e2
+Sep  4 02:15:55 172.22.59.4 %LINK-I-Up:  e15
+Sep  4 02:15:55 172.22.59.4 %STP-W-PORTSTATUS: e15: STP status Forwarding
+Sep  4 02:15:52 172.22.59.4 %LINK-W-Down:  e15
+Sep  4 02:14:49 172.22.80.4 %LINK-I-Up:  e18
+Sep  4 02:14:49 172.22.80.4 %STP-W-PORTSTATUS: e18: STP status Forwarding
+Sep  4 02:14:46 172.22.80.4 %LINK-W-Down:  e18
+Sep  4 02:13:25 172.22.88.4 %STP-W-PORTSTATUS: e24: STP status Forwarding
+Sep  4 02:12:55 172.22.88.4 %LINK-I-Up:  e24
+Sep  4 02:12:54 172.22.88.4 %LINK-W-Down:  e24
+Sep  4 02:12:33 172.22.19.4 %STP-W-PORTSTATUS: e17: STP status Forwarding
+Sep  4 02:12:03 172.22.19.4 %LINK-I-Up:  e17
+Sep  4 02:12:01 172.22.66.4 %LINK-I-Up:  e11
+Sep  4 02:12:01 172.22.66.4 %STP-W-PORTSTATUS: e11: STP status Forwarding
+Sep  4 02:12:00 172.22.19.4 %LINK-W-Down:  e17
+Sep  4 02:12:00 172.22.18.4 %LINK-I-Up:  e18
+Sep  4 02:12:00 172.22.18.4 %STP-W-PORTSTATUS: e18: STP status Forwarding
+Sep  4 02:11:59 172.22.66.4 %LINK-W-Down:  e11
+Sep  4 02:11:57 172.22.18.4 %LINK-W-Down:  e18
+Sep  4 02:03:34 172.22.89.4 %STP-W-PORTSTATUS: e20: STP status Forwarding
+Sep  4 02:03:04 172.22.89.4 %LINK-I-Up:  e20
+Sep  4 02:03:02 172.22.89.4 %LINK-W-Down:  e20
+Sep  4 02:02:48 172.22.89.4 %LINK-I-Up:  e20
+Sep  4 02:02:46 172.22.89.4 %LINK-W-Down:  e20
+Sep  4 02:02:34 172.22.89.4 %LINK-I-Up:  e20
+Sep  4 02:02:33 172.22.89.4 %LINK-W-Down:  e20
+Sep  4 01:57:50 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 01:57:50 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 01:57:47 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 01:56:16 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 01:56:16 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 01:56:13 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 01:54:27 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 01:54:27 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 01:54:24 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 01:48:52 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 01:48:52 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 01:48:49 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 01:46:16 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 01:46:16 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 01:46:13 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 01:23:32 172.22.95.4 %STP-W-PORTSTATUS: e19: STP status Forwarding
+Sep  4 01:23:02 172.22.95.4 %LINK-I-Up:  e19
+Sep  4 01:23:00 172.22.95.4 %LINK-W-Down:  e19
+Sep  4 01:06:09 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 01:06:09 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 01:06:06 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 01:01:24 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 01:01:24 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 01:01:21 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 00:59:48 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 00:59:48 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 00:59:45 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 00:58:54 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 00:58:54 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 00:58:51 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 00:58:14 172.22.96.4 %STP-W-PORTSTATUS: e18: STP status Forwarding
+Sep  4 00:57:44 172.22.96.4 %LINK-I-Up:  e18
+Sep  4 00:57:42 172.22.96.4 %LINK-W-Down:  e18
+Sep  4 00:57:08 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 00:57:08 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 00:57:05 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 00:56:58 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 00:56:58 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 00:56:55 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 00:53:58 172.22.204.4 %STP-W-PORTSTATUS: e9: STP status Forwarding
+Sep  4 00:53:58 172.22.204.4 %LINK-I-Up:  e9
+Sep  4 00:53:54 172.22.204.4 %LINK-W-Down:  e9
+Sep  4 00:50:35 172.22.117.4 %LINK-I-Up:  e23
+Sep  4 00:50:35 172.22.117.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  4 00:50:34 172.22.117.4 %LINK-W-Down:  e23
+Sep  4 00:50:19 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 00:50:19 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 00:50:16 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 00:48:11 172.22.124.4 %STP-W-PORTSTATUS: e2: STP status Forwarding
+Sep  4 00:47:41 172.22.124.4 %LINK-I-Up:  e2
+Sep  4 00:47:36 172.22.124.4 %LINK-W-Down:  e2
+Sep  4 00:46:18 172.22.118.4 %LINK-I-Up:  e12
+Sep  4 00:46:18 172.22.118.4 %STP-W-PORTSTATUS: e12: STP status Forwarding
+Sep  4 00:46:16 172.22.118.4 %LINK-W-Down:  e12
+Sep  4 00:42:58 172.22.111.4 %LINK-I-Up:  e18
+Sep  4 00:42:58 172.22.111.4 %STP-W-PORTSTATUS: e18: STP status Forwarding
+Sep  4 00:42:56 172.22.111.4 %LINK-W-Down:  e18
+Sep  4 00:41:00 172.22.103.4 %LINK-I-Up:  e12
+Sep  4 00:41:00 172.22.103.4 %STP-W-PORTSTATUS: e12: STP status Forwarding
+Sep  4 00:40:57 172.22.103.4 %LINK-W-Down:  e12
+Sep  4 00:39:48 172.22.116.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  4 00:39:18 172.22.116.4 %LINK-I-Up:  e23
+Sep  4 00:39:16 172.22.116.4 %LINK-W-Down:  e23
+Sep  4 00:39:05 172.22.15.4 %LINK-I-Up:  e21
+Sep  4 00:39:05 172.22.15.4 %STP-W-PORTSTATUS: e21: STP status Forwarding
+Sep  4 00:39:03 172.22.15.4 %LINK-W-Down:  e21
+Sep  4 00:38:34 172.22.99.4 %STP-W-PORTSTATUS: e14: STP status Forwarding
+Sep  4 00:38:10 172.22.33.4 %LINK-I-Up:  e22
+Sep  4 00:38:10 172.22.33.4 %STP-W-PORTSTATUS: e22: STP status Forwarding
+Sep  4 00:38:08 172.22.33.4 %LINK-W-Down:  e22
+Sep  4 00:38:08 172.22.11.4 %STP-W-PORTSTATUS: e22: STP status Forwarding
+Sep  4 00:38:04 172.22.99.4 %LINK-I-Up:  e14
+Sep  4 00:38:03 172.22.99.4 %LINK-W-Down:  e14
+Sep  4 00:37:38 172.22.11.4 %LINK-I-Up:  e22
+Sep  4 00:37:34 172.22.11.4 %LINK-W-Down:  e22
+Sep  4 00:35:44 172.22.72.4 %LINK-I-Up:  e4
+Sep  4 00:35:44 172.22.72.4 %STP-W-PORTSTATUS: e4: STP status Forwarding
+Sep  4 00:35:40 172.22.72.4 %LINK-W-Down:  e4
+Sep  4 00:28:47 172.22.119.4 %LINK-I-Up:  e4
+Sep  4 00:28:47 172.22.119.4 %STP-W-PORTSTATUS: e4: STP status Forwarding
+Sep  4 00:28:44 172.22.119.4 %LINK-W-Down:  e4
+Sep  4 00:28:00 172.22.115.4 %LINK-I-Up:  e1
+Sep  4 00:28:00 172.22.115.4 %STP-W-PORTSTATUS: e1: STP status Forwarding
+Sep  4 00:27:57 172.22.115.4 %LINK-W-Down:  e1
+Sep  4 00:27:40 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 00:27:40 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 00:27:37 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 00:26:46 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 00:26:46 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 00:26:43 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 00:26:41 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 00:26:41 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 00:26:37 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 00:26:02 172.22.121.4 %STP-W-PORTSTATUS: e16: STP status Forwarding
+Sep  4 00:25:57 172.22.11.4 %STP-W-PORTSTATUS: e24: STP status Forwarding
+Sep  4 00:25:52 172.22.110.4 %STP-W-PORTSTATUS: e24: STP status Forwarding
+Sep  4 00:25:32 172.22.121.4 %LINK-I-Up:  e16
+Sep  4 00:25:28 172.22.121.4 %LINK-W-Down:  e16
+Sep  4 00:25:27 172.22.7.4 %LINK-I-Up:  e20
+Sep  4 00:25:27 172.22.7.4 %STP-W-PORTSTATUS: e20: STP status Forwarding
+Sep  4 00:25:27 172.22.11.4 %LINK-I-Up:  e24
+Sep  4 00:25:25 172.22.11.4 %LINK-W-Down:  e24
+Sep  4 00:25:25 172.22.7.4 %LINK-W-Down:  e20
+Sep  4 00:25:22 172.22.110.4 %LINK-I-Up:  e24
+Sep  4 00:25:18 172.22.110.4 %LINK-W-Down:  e24
+Sep  4 00:22:54 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 00:22:54 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 00:22:51 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 00:21:40 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 00:21:40 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 00:21:37 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 00:21:16 172.22.70.4 %STP-W-PORTSTATUS: e21: STP status Forwarding
+Sep  4 00:21:10 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 00:21:10 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 00:21:07 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 00:20:57 172.22.3.4 %LINK-I-Up:  e17
+Sep  4 00:20:57 172.22.3.4 %STP-W-PORTSTATUS: e17: STP status Forwarding
+Sep  4 00:20:55 172.22.3.4 %LINK-W-Down:  e17
+Sep  4 00:20:47 172.22.76.4 %LINK-I-Up:  e3
+Sep  4 00:20:47 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  4 00:20:46 172.22.70.4 %LINK-I-Up:  e21
+Sep  4 00:20:44 172.22.76.4 %LINK-W-Down:  e3
+Sep  4 00:20:43 172.22.70.4 %LINK-W-Down:  e21
+Sep  4 00:20:25 172.22.12.4 %LINK-I-Up:  e8
+Sep  4 00:20:25 172.22.12.4 %STP-W-PORTSTATUS: e8: STP status Forwarding
+Sep  4 00:20:23 172.22.4.4 %STP-W-PORTSTATUS: e2: STP status Forwarding
+Sep  4 00:20:22 172.22.12.4 %LINK-W-Down:  e8
+Sep  4 00:20:16 172.22.84.4 %LINK-I-Up:  e24
+Sep  4 00:20:16 172.22.84.4 %STP-W-PORTSTATUS: e24: STP status Forwarding
+Sep  4 00:20:14 172.22.113.4 %STP-W-PORTSTATUS: e21: STP status Forwarding
+Sep  4 00:20:14 172.22.84.4 %LINK-W-Down:  e24
+Sep  4 00:19:53 172.22.4.4 %LINK-I-Up:  e2
+Sep  4 00:19:50 172.22.4.4 %LINK-W-Down:  e2
+Sep  4 00:19:47 172.22.201.4 %STP-W-PORTSTATUS: e17: STP status Forwarding
+Sep  4 00:19:44 172.22.113.4 %LINK-I-Up:  e21
+Sep  4 00:19:42 172.22.113.4 %LINK-W-Down:  e21
+Sep  4 00:19:33 172.22.107.4 %STP-W-PORTSTATUS: e2: STP status Forwarding
+Sep  4 00:19:22 172.22.61.4 %LINK-I-Up:  e2
+Sep  4 00:19:22 172.22.61.4 %STP-W-PORTSTATUS: e2: STP status Forwarding
+Sep  4 00:19:19 172.22.61.4 %LINK-W-Down:  e2
+Sep  4 00:19:17 172.22.201.4 %LINK-I-Up:  e17
+Sep  4 00:19:15 172.22.67.4 %STP-W-PORTSTATUS: e12: STP status Forwarding
+Sep  4 00:19:13 172.22.201.4 %LINK-W-Down:  e17
+Sep  4 00:19:11 172.22.102.4 %STP-W-PORTSTATUS: e20: STP status Forwarding
+Sep  4 00:19:03 172.22.107.4 %LINK-I-Up:  e2
+Sep  4 00:18:58 172.22.107.4 %LINK-W-Down:  e2
+Sep  4 00:18:51 172.22.85.4 %STP-W-PORTSTATUS: e14: STP status Forwarding
+Sep  4 00:18:45 172.22.67.4 %LINK-I-Up:  e12
+Sep  4 00:18:43 172.22.67.4 %LINK-W-Down:  e12
+Sep  4 00:18:41 172.22.102.4 %LINK-I-Up:  e20
+Sep  4 00:18:39 172.22.102.4 %LINK-W-Down:  e20
+Sep  4 00:18:28 172.22.60.4 %LINK-I-Up:  e20
+Sep  4 00:18:28 172.22.60.4 %STP-W-PORTSTATUS: e20: STP status Forwarding
+Sep  4 00:18:25 172.22.60.4 %LINK-W-Down:  e20
+Sep  4 00:18:21 172.22.85.4 %LINK-I-Up:  e14
+Sep  4 00:18:18 172.22.85.4 %LINK-W-Down:  e14
+Sep  4 00:17:25 172.22.92.4 %LINK-I-Up:  e18
+Sep  4 00:17:25 172.22.92.4 %STP-W-PORTSTATUS: e18: STP status Forwarding
+Sep  4 00:17:22 172.22.92.4 %LINK-W-Down:  e18
+Sep  4 00:16:58 172.22.38.4 %STP-W-PORTSTATUS: e18: STP status Forwarding
+Sep  4 00:16:46 172.22.106.4 %LINK-I-Up:  e24
+Sep  4 00:16:46 172.22.106.4 %STP-W-PORTSTATUS: e24: STP status Forwarding
+Sep  4 00:16:44 172.22.120.4 %LINK-I-Up:  e18
+Sep  4 00:16:44 172.22.120.4 %STP-W-PORTSTATUS: e18: STP status Forwarding
+Sep  4 00:16:43 172.22.106.4 %LINK-W-Down:  e24
+Sep  4 00:16:40 172.22.120.4 %LINK-W-Down:  e18
+Sep  4 00:16:28 172.22.38.4 %LINK-I-Up:  e18
+Sep  4 00:16:26 172.22.47.4 %LINK-I-Up:  e2
+Sep  4 00:16:26 172.22.47.4 %STP-W-PORTSTATUS: e2: STP status Forwarding
+Sep  4 00:16:26 172.22.38.4 %LINK-W-Down:  e18
+Sep  4 00:16:25 172.22.47.4 %LINK-W-Down:  e2
+Sep  4 00:15:58 172.22.75.4 %STP-W-PORTSTATUS: e16: STP status Forwarding
+Sep  4 00:15:30 172.22.46.4 %STP-W-PORTSTATUS: e20: STP status Forwarding
+Sep  4 00:15:28 172.22.75.4 %LINK-I-Up:  e16
+Sep  4 00:15:26 172.22.75.4 %LINK-W-Down:  e16
+Sep  4 00:15:07 172.22.16.4 %STP-W-PORTSTATUS: e20: STP status Forwarding
+Sep  4 00:15:00 172.22.46.4 %LINK-I-Up:  e20
+Sep  4 00:14:58 172.22.46.4 %BRG_AMAP-N-AMAP_STATUS: AMAP status: Port e20 was deleted.
+Sep  4 00:14:58 172.22.46.4 %LINK-W-Down:  e20
+Sep  4 00:14:52 172.22.109.4 %LINK-I-Up:  e2
+Sep  4 00:14:52 172.22.109.4 %STP-W-PORTSTATUS: e2: STP status Forwarding
+Sep  4 00:14:50 172.22.109.4 %LINK-W-Down:  e2
+Sep  4 00:14:37 172.22.16.4 %LINK-I-Up:  e20
+Sep  4 00:14:35 172.22.16.4 %LINK-W-Down:  e20
+Sep  4 00:14:23 172.22.98.4 %LINK-I-Up:  e2
+Sep  4 00:14:23 172.22.98.4 %STP-W-PORTSTATUS: e2: STP status Forwarding
+Sep  4 00:14:21 172.22.98.4 %LINK-W-Down:  e2
+Sep  4 00:13:32 172.22.71.4 %STP-W-PORTSTATUS: e13: STP status Forwarding
+Sep  4 00:13:02 172.22.71.4 %LINK-I-Up:  e13
+Sep  4 00:13:00 172.22.71.4 %LINK-W-Down:  e13
+Sep  4 00:12:31 172.22.22.4 %LINK-I-Up:  e13
+Sep  4 00:12:31 172.22.22.4 %STP-W-PORTSTATUS: e13: STP status Forwarding
+Sep  4 00:12:28 172.22.22.4 %LINK-W-Down:  e13
+Sep  3 23:56:55 172.22.105.4 %LINK-I-Up:  e8
+Sep  3 23:56:55 172.22.105.4 %STP-W-PORTSTATUS: e8: STP status Forwarding
+Sep  3 23:56:43 172.22.105.4 %LINK-W-Down:  e8
+Sep  3 23:56:32 172.22.105.4 %LINK-I-Up:  e8
+Sep  3 23:56:32 172.22.105.4 %STP-W-PORTSTATUS: e8: STP status Forwarding
+Sep  3 23:56:30 172.22.105.4 %LINK-W-Down:  e8
+Sep  3 23:55:55 172.22.105.4 %LINK-I-Up:  e23
+Sep  3 23:55:55 172.22.105.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 23:55:50 172.22.105.4 %LINK-W-Down:  e23
+Sep  3 23:10:49 172.22.105.4 %LINK-I-Up:  e23
+Sep  3 23:10:49 172.22.105.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 23:10:37 172.22.105.4 %LINK-W-Down:  e23
+Sep  3 23:08:22 172.22.124.4 %STP-W-PORTSTATUS: e5: STP status Forwarding
+Sep  3 23:07:52 172.22.124.4 %LINK-I-Up:  e5
+Sep  3 22:59:12 172.22.124.4 %LINK-W-Down:  e5
+Sep  3 22:58:36 172.22.105.4 %LINK-I-Up:  e8
+Sep  3 22:58:36 172.22.105.4 %STP-W-PORTSTATUS: e8: STP status Forwarding
+Sep  3 22:58:22 172.22.105.4 %LINK-W-Down:  e8
+Sep  3 22:57:19 172.22.105.4 %LINK-I-Up:  e8
+Sep  3 22:57:19 172.22.105.4 %STP-W-PORTSTATUS: e8: STP status Forwarding
+Sep  3 22:57:18 172.22.105.4 %LINK-W-Down:  e8
+Sep  3 22:56:42 172.22.105.4 %STP-W-PORTSTATUS: e6: STP status Forwarding
+Sep  3 22:56:42 172.22.105.4 %LINK-I-Up:  e6
+Sep  3 22:56:15 172.22.105.4 %LINK-W-Down:  e6
+Sep  3 22:51:51 172.22.124.4 %STP-W-PORTSTATUS: e5: STP status Forwarding
+Sep  3 22:51:21 172.22.124.4 %LINK-I-Up:  e5
+Sep  3 22:51:18 172.22.124.4 %LINK-W-Down:  e5
+Sep  3 21:43:46 172.22.120.4 %LINK-I-Up:  e1
+Sep  3 21:43:46 172.22.120.4 %STP-W-PORTSTATUS: e1: STP status Forwarding
+Sep  3 21:43:40 172.22.120.4 %LINK-W-Down:  e1
+Sep  3 21:38:26 172.22.47.4 %LINK-I-Up:  e3
+Sep  3 21:38:26 172.22.47.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  3 21:38:24 172.22.47.4 %LINK-I-Up:  e22
+Sep  3 21:38:24 172.22.47.4 %STP-W-PORTSTATUS: e22: STP status Forwarding
+Sep  3 21:38:19 172.22.47.4 %LINK-W-Down:  e22
+Sep  3 21:38:19 172.22.47.4 %LINK-W-Down:  e3
+Sep  3 21:11:08 172.22.16.4 %STP-W-PORTSTATUS: e24: STP status Forwarding
+Sep  3 21:10:38 172.22.16.4 %LINK-I-Up:  e24
+Sep  3 21:10:36 172.22.16.4 %LINK-W-Down:  e24
+Sep  3 21:10:23 172.22.16.4 %LINK-I-Up:  e24
+Sep  3 21:10:21 172.22.16.4 %LINK-W-Down:  e24
+Sep  3 21:10:08 172.22.16.4 %LINK-I-Up:  e24
+Sep  3 21:10:06 172.22.16.4 %LINK-W-Down:  e24
+Sep  3 21:08:31 172.22.47.4 %LINK-I-Up:  e3
+Sep  3 21:08:31 172.22.47.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  3 21:08:29 172.22.47.4 %LINK-I-Up:  e22
+Sep  3 21:08:29 172.22.47.4 %STP-W-PORTSTATUS: e22: STP status Forwarding
+Sep  3 21:08:19 172.22.47.4 %LINK-W-Down:  e22
+Sep  3 21:08:19 172.22.47.4 %LINK-W-Down:  e3
+Sep  3 21:07:39 172.22.109.4 %LINK-I-Up:  e7
+Sep  3 21:07:39 172.22.109.4 %STP-W-PORTSTATUS: e7: STP status Forwarding
+Sep  3 21:07:33 172.22.109.4 %LINK-W-Down:  e7
+Sep  3 20:51:18 172.22.45.4 %LINK-I-Up:  e6
+Sep  3 20:51:18 172.22.45.4 %STP-W-PORTSTATUS: e6: STP status Forwarding
+Sep  3 20:51:16 172.22.45.4 %LINK-W-Down:  e6
+Sep  3 20:50:49 172.22.45.4 %LINK-I-Up:  e6
+Sep  3 20:50:49 172.22.45.4 %STP-W-PORTSTATUS: e6: STP status Forwarding
+Sep  3 20:50:47 172.22.45.4 %LINK-W-Down:  e6
+Sep  3 20:50:46 172.22.45.4 %LINK-I-Up:  e6
+Sep  3 20:50:46 172.22.45.4 %STP-W-PORTSTATUS: e6: STP status Forwarding
+Sep  3 20:50:44 172.22.45.4 %LINK-W-Down:  e6
+Sep  3 20:45:39 172.22.38.4 %STP-W-PORTSTATUS: e17: STP status Forwarding
+Sep  3 20:45:15 172.22.111.4 %LINK-I-Up:  e2
+Sep  3 20:45:15 172.22.111.4 %STP-W-PORTSTATUS: e2: STP status Forwarding
+Sep  3 20:45:14 172.22.111.4 %LINK-W-Down:  e2
+Sep  3 20:45:11 172.22.111.4 %LINK-I-Up:  e2
+Sep  3 20:45:11 172.22.111.4 %STP-W-PORTSTATUS: e2: STP status Forwarding
+Sep  3 20:45:09 172.22.38.4 %LINK-I-Up:  e17
+Sep  3 20:44:56 172.22.111.4 %LINK-W-Down:  e2
+Sep  3 20:44:45 172.22.111.4 %LINK-I-Up:  e2
+Sep  3 20:44:45 172.22.111.4 %STP-W-PORTSTATUS: e2: STP status Forwarding
+Sep  3 20:44:43 172.22.111.4 %LINK-W-Down:  e2
+Sep  3 20:44:28 172.22.38.4 %LINK-W-Down:  e17
+Sep  3 20:44:22 172.22.106.4 %LINK-I-Up:  e14
+Sep  3 20:44:22 172.22.106.4 %STP-W-PORTSTATUS: e14: STP status Forwarding
+Sep  3 20:44:19 172.22.106.4 %LINK-W-Down:  e14
+Sep  3 20:44:18 172.22.106.4 %LINK-I-Up:  e17
+Sep  3 20:44:18 172.22.106.4 %STP-W-PORTSTATUS: e17: STP status Forwarding
+Sep  3 20:44:17 172.22.106.4 %LINK-I-Up:  e14
+Sep  3 20:44:17 172.22.106.4 %STP-W-PORTSTATUS: e14: STP status Forwarding
+Sep  3 20:44:16 172.22.106.4 %LINK-W-Down:  e14
+Sep  3 20:44:11 172.22.106.4 %LINK-W-Down:  e17
+Sep  3 20:35:46 172.22.18.4 %LINK-I-Up:  e21
+Sep  3 20:35:46 172.22.18.4 %STP-W-PORTSTATUS: e21: STP status Forwarding
+Sep  3 20:35:42 172.22.18.4 %LINK-W-Down:  e21
+Sep  3 20:34:43 172.22.38.4 %STP-W-PORTSTATUS: e17: STP status Forwarding
+Sep  3 20:34:13 172.22.38.4 %LINK-I-Up:  e17
+Sep  3 20:34:04 172.22.38.4 %LINK-W-Down:  e17
+Sep  3 20:09:56 172.22.106.4 %LINK-I-Up:  e14
+Sep  3 20:09:56 172.22.106.4 %STP-W-PORTSTATUS: e14: STP status Forwarding
+Sep  3 20:09:52 172.22.106.4 %LINK-W-Down:  e14
+Sep  3 20:06:17 172.22.107.4 %STP-W-PORTSTATUS: e21: STP status Forwarding
+Sep  3 20:05:47 172.22.107.4 %LINK-I-Up:  e21
+Sep  3 20:05:41 172.22.107.4 %LINK-W-Down:  e21
+Sep  3 20:00:37 172.22.106.4 %LINK-I-Up:  e14
+Sep  3 20:00:37 172.22.106.4 %STP-W-PORTSTATUS: e14: STP status Forwarding
+Sep  3 20:00:34 172.22.106.4 %LINK-W-Down:  e14
+Sep  3 20:00:31 172.22.106.4 %LINK-I-Up:  e14
+Sep  3 20:00:31 172.22.106.4 %STP-W-PORTSTATUS: e14: STP status Forwarding
+Sep  3 20:00:29 172.22.106.4 %LINK-W-Down:  e14
+Sep  3 19:57:01 172.22.107.4 %STP-W-PORTSTATUS: e21: STP status Forwarding
+Sep  3 19:56:31 172.22.107.4 %LINK-I-Up:  e21
+Sep  3 19:56:19 172.22.107.4 %LINK-W-Down:  e21
+Sep  3 19:52:51 172.22.109.4 %LINK-I-Up:  e14
+Sep  3 19:52:51 172.22.109.4 %STP-W-PORTSTATUS: e14: STP status Forwarding
+Sep  3 19:52:47 172.22.109.4 %LINK-W-Down:  e14
+Sep  3 19:39:22 172.22.121.4 %STP-W-PORTSTATUS: e7: STP status Forwarding
+Sep  3 19:38:52 172.22.121.4 %LINK-I-Up:  e7
+Sep  3 19:38:45 172.22.121.4 %LINK-W-Down:  e7
+Sep  3 19:35:27 172.22.120.4 %LINK-I-Up:  e1
+Sep  3 19:35:27 172.22.120.4 %STP-W-PORTSTATUS: e1: STP status Forwarding
+Sep  3 19:35:18 172.22.120.4 %LINK-W-Down:  e1
+Sep  3 19:22:24 172.22.89.4 %STP-W-PORTSTATUS: e1: STP status Forwarding
+Sep  3 19:21:54 172.22.89.4 %LINK-I-Up:  e1
+Sep  3 19:21:45 172.22.89.4 %LINK-W-Down:  e1
+Sep  3 19:18:45 172.22.26.4 %LINK-I-Up:  e7
+Sep  3 19:18:45 172.22.26.4 %STP-W-PORTSTATUS: e7: STP status Forwarding
+Sep  3 19:18:01 172.22.26.4 %LINK-W-Down:  e7
+Sep  3 19:12:27 172.22.89.4 %STP-W-PORTSTATUS: e19: STP status Forwarding
+Sep  3 19:11:57 172.22.89.4 %LINK-I-Up:  e19
+Sep  3 19:11:13 172.22.89.4 %LINK-W-Down:  e19
+Sep  3 19:10:50 172.22.89.4 %LINK-I-Up:  e19
+Sep  3 19:10:48 172.22.89.4 %LINK-W-Down:  e19
+Sep  3 18:59:22 172.22.36.4 %STP-W-PORTSTATUS: e16: STP status Forwarding
+Sep  3 18:58:52 172.22.36.4 %LINK-I-Up:  e16
+Sep  3 18:58:48 172.22.36.4 %LINK-W-Down:  e16
+Sep  3 18:57:55 172.22.94.4 %STP-W-PORTSTATUS: e5: STP status Forwarding
+Sep  3 18:57:25 172.22.94.4 %LINK-I-Up:  e5
+Sep  3 18:57:21 172.22.94.4 %LINK-W-Down:  e5
+Sep  3 18:49:49 172.22.36.4 %STP-W-PORTSTATUS: e16: STP status Forwarding
+Sep  3 18:49:19 172.22.36.4 %LINK-I-Up:  e16
+Sep  3 18:49:16 172.22.36.4 %LINK-W-Down:  e16
+Sep  3 18:49:09 172.22.36.4 %LINK-I-Up:  e16
+Sep  3 18:49:07 172.22.36.4 %LINK-W-Down:  e16
+Sep  3 18:44:29 172.22.106.4 %LINK-I-Up:  e18
+Sep  3 18:44:29 172.22.106.4 %STP-W-PORTSTATUS: e18: STP status Forwarding
+Sep  3 18:44:25 172.22.106.4 %LINK-W-Down:  e18
+Sep  3 18:43:00 172.22.120.4 %LINK-I-Up:  e5
+Sep  3 18:43:00 172.22.120.4 %STP-W-PORTSTATUS: e5: STP status Forwarding
+Sep  3 18:42:52 172.22.120.4 %LINK-W-Down:  e5
+Sep  3 18:27:52 172.22.63.4 %STP-W-PORTSTATUS: e8: STP status Forwarding
+Sep  3 18:27:22 172.22.63.4 %LINK-I-Up:  e8
+Sep  3 18:27:02 172.22.63.4 %LINK-W-Down:  e8
+Sep  3 18:15:28 172.22.120.4 %LINK-I-Up:  e3
+Sep  3 18:15:28 172.22.120.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  3 18:15:23 172.22.120.4 %LINK-W-Down:  e3
+Sep  3 18:09:51 172.22.63.4 %STP-W-PORTSTATUS: e8: STP status Forwarding
+Sep  3 18:09:21 172.22.63.4 %LINK-I-Up:  e8
+Sep  3 18:06:32 172.22.63.4 %LINK-W-Down:  e8
+Sep  3 18:06:08 172.22.12.4 %LINK-I-Up:  e9
+Sep  3 18:06:08 172.22.12.4 %STP-W-PORTSTATUS: e9: STP status Forwarding
+Sep  3 18:06:04 172.22.12.4 %LINK-W-Down:  e9
+Sep  3 18:01:49 172.22.107.4 %STP-W-PORTSTATUS: e4: STP status Forwarding
+Sep  3 18:01:19 172.22.107.4 %LINK-I-Up:  e4
+Sep  3 18:01:11 172.22.107.4 %LINK-W-Down:  e4
+Sep  3 17:50:47 172.22.36.4 %STP-W-PORTSTATUS: e16: STP status Forwarding
+Sep  3 17:50:17 172.22.36.4 %LINK-I-Up:  e16
+Sep  3 17:50:14 172.22.36.4 %LINK-W-Down:  e16
+Sep  3 17:40:18 172.22.120.4 %LINK-I-Up:  e5
+Sep  3 17:40:18 172.22.120.4 %STP-W-PORTSTATUS: e5: STP status Forwarding
+Sep  3 17:40:13 172.22.120.4 %LINK-W-Down:  e5
+Sep  3 17:34:29 172.22.65.4 %STP-W-PORTSTATUS: e19: STP status Forwarding
+Sep  3 17:33:59 172.22.65.4 %LINK-I-Up:  e19
+Sep  3 17:33:39 172.22.65.4 %LINK-W-Down:  e19
+Sep  3 17:27:02 172.22.116.4 %STP-W-PORTSTATUS: e21: STP status Forwarding
+Sep  3 17:26:32 172.22.116.4 %LINK-I-Up:  e21
+Sep  3 17:26:24 172.22.116.4 %LINK-W-Down:  e21
+Sep  3 17:00:19 172.22.33.4 %LINK-I-Up:  e15
+Sep  3 17:00:19 172.22.33.4 %STP-W-PORTSTATUS: e15: STP status Forwarding
+Sep  3 17:00:17 172.22.33.4 %LINK-W-Down:  e15
+Sep  3 16:59:14 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 16:59:14 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 16:59:12 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 16:58:41 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 16:58:41 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 16:58:40 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 16:54:46 172.22.124.4 %STP-W-PORTSTATUS: e21: STP status Forwarding
+Sep  3 16:54:16 172.22.124.4 %LINK-I-Up:  e21
+Sep  3 16:54:05 172.22.124.4 %LINK-W-Down:  e21
+Sep  3 16:51:16 172.22.76.4 %LINK-I-Up:  e3
+Sep  3 16:51:16 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  3 16:51:13 172.22.76.4 %LINK-W-Down:  e3
+Sep  3 16:50:10 172.22.76.4 %LINK-I-Up:  e3
+Sep  3 16:50:10 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  3 16:50:08 172.22.76.4 %LINK-W-Down:  e3
+Sep  3 16:46:42 172.22.76.4 %LINK-I-Up:  e3
+Sep  3 16:46:42 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  3 16:46:37 172.22.76.4 %LINK-W-Down:  e3
+Sep  3 16:46:06 172.22.76.4 %LINK-I-Up:  e3
+Sep  3 16:46:06 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  3 16:46:03 172.22.76.4 %LINK-W-Down:  e3
+Sep  3 16:41:29 172.22.67.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 16:40:59 172.22.67.4 %LINK-I-Up:  e23
+Sep  3 16:40:40 172.22.67.4 %LINK-W-Down:  e23
+Sep  3 16:40:00 172.22.76.4 %LINK-I-Up:  e3
+Sep  3 16:40:00 172.22.76.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  3 16:39:57 172.22.76.4 %LINK-W-Down:  e3
+Sep  3 16:36:19 172.22.33.4 %LINK-I-Up:  e15
+Sep  3 16:36:19 172.22.33.4 %STP-W-PORTSTATUS: e15: STP status Forwarding
+Sep  3 16:36:17 172.22.33.4 %LINK-W-Down:  e15
+Sep  3 16:28:47 172.22.105.4 %LINK-I-Up:  e23
+Sep  3 16:28:47 172.22.105.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 16:28:40 172.22.105.4 %LINK-W-Down:  e23
+Sep  3 16:27:07 172.22.124.4 %STP-W-PORTSTATUS: e21: STP status Forwarding
+Sep  3 16:27:00 172.22.19.4 %STP-W-PORTSTATUS: e5: STP status Forwarding
+Sep  3 16:26:37 172.22.124.4 %LINK-I-Up:  e21
+Sep  3 16:26:31 172.22.124.4 %LINK-W-Down:  e21
+Sep  3 16:26:30 172.22.19.4 %LINK-I-Up:  e5
+Sep  3 16:26:24 172.22.19.4 %LINK-W-Down:  e5
+Sep  3 16:22:12 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 16:22:12 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 16:22:11 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 16:21:40 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 16:21:40 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 16:21:38 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 16:17:39 172.22.120.4 %LINK-I-Up:  e7
+Sep  3 16:17:39 172.22.120.4 %STP-W-PORTSTATUS: e7: STP status Forwarding
+Sep  3 16:17:33 172.22.120.4 %LINK-W-Down:  e7
+Sep  3 16:12:47 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 16:12:47 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 16:12:45 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 16:12:14 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 16:12:14 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 16:12:12 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 16:11:53 172.22.15.4 %LINK-I-Up:  e11
+Sep  3 16:11:53 172.22.15.4 %STP-W-PORTSTATUS: e11: STP status Forwarding
+Sep  3 16:11:51 172.22.15.4 %LINK-W-Down:  e11
+Sep  3 16:11:47 172.22.111.4 %LINK-I-Up:  e10
+Sep  3 16:11:47 172.22.111.4 %STP-W-PORTSTATUS: e10: STP status Forwarding
+Sep  3 16:11:44 172.22.111.4 %LINK-W-Down:  e10
+Sep  3 16:11:26 172.22.38.4 %STP-W-PORTSTATUS: e19: STP status Forwarding
+Sep  3 16:11:13 172.22.15.4 %LINK-I-Up:  e11
+Sep  3 16:11:13 172.22.15.4 %STP-W-PORTSTATUS: e11: STP status Forwarding
+Sep  3 16:11:05 172.22.15.4 %LINK-W-Down:  e11
+Sep  3 16:10:56 172.22.38.4 %LINK-I-Up:  e19
+Sep  3 16:10:26 172.22.38.4 %LINK-W-Down:  e19
+Sep  3 16:05:19 172.22.98.4 %LINK-I-Up:  e6
+Sep  3 16:05:19 172.22.98.4 %STP-W-PORTSTATUS: e6: STP status Forwarding
+Sep  3 16:05:17 172.22.98.4 %LINK-W-Down:  e6
+Sep  3 16:05:12 172.22.98.4 %LINK-I-Up:  e6
+Sep  3 16:05:12 172.22.98.4 %STP-W-PORTSTATUS: e6: STP status Forwarding
+Sep  3 16:05:10 172.22.98.4 %LINK-W-Down:  e6
+Sep  3 16:04:43 172.22.98.4 %LINK-I-Up:  e6
+Sep  3 16:04:43 172.22.98.4 %STP-W-PORTSTATUS: e6: STP status Forwarding
+Sep  3 16:04:19 172.22.98.4 %LINK-W-Down:  e6
+Sep  3 16:02:02 172.22.15.4 %LINK-I-Up:  e11
+Sep  3 16:02:02 172.22.15.4 %STP-W-PORTSTATUS: e11: STP status Forwarding
+Sep  3 16:02:00 172.22.15.4 %LINK-W-Down:  e11
+Sep  3 16:01:21 172.22.15.4 %LINK-I-Up:  e11
+Sep  3 16:01:21 172.22.15.4 %STP-W-PORTSTATUS: e11: STP status Forwarding
+Sep  3 16:00:32 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 16:00:32 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 16:00:30 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 15:59:59 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 15:59:59 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 15:59:58 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 15:55:20 172.22.88.4 %STP-W-PORTSTATUS: e7: STP status Forwarding
+Sep  3 15:55:19 172.22.104.4 %LINK-I-Up:  e20
+Sep  3 15:55:19 172.22.104.4 %STP-W-PORTSTATUS: e20: STP status Forwarding
+Sep  3 15:55:18 172.22.104.4 %LINK-W-Down:  e20
+Sep  3 15:55:16 172.22.104.4 %LINK-I-Up:  e20
+Sep  3 15:55:16 172.22.104.4 %STP-W-PORTSTATUS: e20: STP status Forwarding
+Sep  3 15:54:54 172.22.104.4 %LINK-W-Down:  e20
+Sep  3 15:54:50 172.22.88.4 %LINK-I-Up:  e7
+Sep  3 15:54:12 172.22.88.4 %LINK-W-Down:  e7
+Sep  3 15:53:59 172.22.88.4 %STP-W-PORTSTATUS: e7: STP status Forwarding
+Sep  3 15:53:29 172.22.88.4 %LINK-I-Up:  e7
+Sep  3 15:53:27 172.22.15.4 %LINK-W-Down:  e11
+Sep  3 15:53:23 172.22.88.4 %LINK-W-Down:  e7
+Sep  3 15:38:02 172.22.23.4 %STP-W-PORTSTATUS: e11: STP status Forwarding
+Sep  3 15:37:32 172.22.23.4 %LINK-I-Up:  e11
+Sep  3 15:37:30 172.22.23.4 %LINK-W-Down:  e11
+Sep  3 15:36:41 172.22.88.4 %STP-W-PORTSTATUS: e7: STP status Forwarding
+Sep  3 15:36:11 172.22.88.4 %LINK-I-Up:  e7
+Sep  3 15:35:17 172.22.117.4 %LINK-I-Up:  e19
+Sep  3 15:35:17 172.22.117.4 %STP-W-PORTSTATUS: e19: STP status Forwarding
+Sep  3 15:34:51 172.22.88.4 %STP-W-PORTSTATUS: e6: STP status Forwarding
+Sep  3 15:34:47 172.22.117.4 %LINK-W-Down:  e19
+Sep  3 15:34:21 172.22.88.4 %LINK-I-Up:  e6
+Sep  3 15:26:08 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 15:26:08 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 15:26:06 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 15:25:36 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 15:25:36 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 15:25:34 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 15:25:33 172.22.124.4 %STP-W-PORTSTATUS: e21: STP status Forwarding
+Sep  3 15:25:03 172.22.124.4 %LINK-I-Up:  e21
+Sep  3 15:24:48 172.22.124.4 %LINK-W-Down:  e21
+Sep  3 15:14:35 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 15:14:35 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 15:14:33 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 15:14:02 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 15:14:02 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 15:14:00 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 15:08:48 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 15:08:48 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 15:08:46 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 15:08:14 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 15:08:14 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 15:08:13 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 15:04:36 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 15:04:05 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 15:04:05 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 15:04:03 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 15:01:46 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 15:01:46 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 15:01:44 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 15:01:13 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 15:01:13 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 15:01:11 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 14:59:49 172.22.117.4 %LINK-I-Up:  e19
+Sep  3 14:59:49 172.22.117.4 %STP-W-PORTSTATUS: e19: STP status Forwarding
+Sep  3 14:59:45 172.22.117.4 %LINK-W-Down:  e19
+Sep  3 14:57:22 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 14:57:22 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 14:57:20 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 14:56:49 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 14:56:49 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 14:56:47 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 14:56:44 172.22.104.4 %LINK-I-Up:  e7
+Sep  3 14:56:44 172.22.104.4 %STP-W-PORTSTATUS: e7: STP status Forwarding
+Sep  3 14:56:35 172.22.104.4 %LINK-W-Down:  e7
+Sep  3 14:52:55 172.22.124.4 %STP-W-PORTSTATUS: e21: STP status Forwarding
+Sep  3 14:52:32 172.22.96.4 %STP-W-PORTSTATUS: e8: STP status Forwarding
+Sep  3 14:52:25 172.22.124.4 %LINK-I-Up:  e21
+Sep  3 14:52:22 172.22.124.4 %LINK-W-Down:  e21
+Sep  3 14:52:02 172.22.96.4 %LINK-I-Up:  e8
+Sep  3 14:52:00 172.22.96.4 %LINK-W-Down:  e8
+Sep  3 14:51:33 172.22.96.4 %LINK-I-Up:  e8
+Sep  3 14:51:31 172.22.96.4 %LINK-W-Down:  e8
+Sep  3 14:51:30 172.22.96.4 %LINK-I-Up:  e8
+Sep  3 14:51:28 172.22.96.4 %LINK-W-Down:  e8
+Sep  3 14:51:12 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 14:51:12 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 14:51:10 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 14:50:39 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 14:50:39 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 14:50:38 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 14:46:49 172.22.98.4 %LINK-I-Up:  e6
+Sep  3 14:46:49 172.22.98.4 %STP-W-PORTSTATUS: e6: STP status Forwarding
+Sep  3 14:46:47 172.22.98.4 %LINK-W-Down:  e6
+Sep  3 14:46:42 172.22.98.4 %LINK-I-Up:  e6
+Sep  3 14:46:42 172.22.98.4 %STP-W-PORTSTATUS: e6: STP status Forwarding
+Sep  3 14:46:40 172.22.98.4 %LINK-W-Down:  e6
+Sep  3 14:46:21 172.22.98.4 %LINK-I-Up:  e6
+Sep  3 14:46:21 172.22.98.4 %STP-W-PORTSTATUS: e6: STP status Forwarding
+Sep  3 14:46:20 172.22.98.4 %LINK-W-Down:  e6
+Sep  3 14:44:47 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 14:44:47 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 14:44:45 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 14:44:38 172.22.66.4 %LINK-I-Up:  e22
+Sep  3 14:44:38 172.22.66.4 %STP-W-PORTSTATUS: e22: STP status Forwarding
+Sep  3 14:44:30 172.22.66.4 %LINK-W-Down:  e22
+Sep  3 14:44:15 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 14:44:15 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 14:44:13 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 14:40:56 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 14:40:56 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 14:40:54 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 14:40:21 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 14:40:21 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 14:40:20 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 14:26:48 172.22.88.4 %STP-W-PORTSTATUS: e8: STP status Forwarding
+Sep  3 14:26:18 172.22.88.4 %LINK-I-Up:  e8
+Sep  3 14:26:08 172.22.88.4 %LINK-W-Down:  e8
+Sep  3 14:19:31 172.22.116.4 %STP-W-PORTSTATUS: e9: STP status Forwarding
+Sep  3 14:19:01 172.22.116.4 %LINK-I-Up:  e9
+Sep  3 14:18:53 172.22.116.4 %LINK-W-Down:  e9
+Sep  3 14:10:14 172.22.113.4 %STP-W-PORTSTATUS: e3: STP status Forwarding
+Sep  3 14:09:44 172.22.113.4 %LINK-I-Up:  e3
+Sep  3 14:09:10 172.22.113.4 %LINK-W-Down:  e3
+Sep  3 14:01:00 172.22.109.4 %LINK-I-Up:  e23
+Sep  3 14:01:00 172.22.109.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 14:00:52 172.22.109.4 %LINK-W-Down:  e23
+Sep  3 13:47:12 172.22.2.4 %STP-W-PORTSTATUS: e45: STP status Forwarding
+Sep  3 13:46:42 172.22.2.4 %LINK-I-Up:  e45
+Sep  3 13:46:38 172.22.2.4 %LINK-W-Down:  e45
+Sep  3 13:37:58 172.22.121.4 %STP-W-PORTSTATUS: e8: STP status Forwarding
+Sep  3 13:37:28 172.22.121.4 %LINK-I-Up:  e8
+Sep  3 13:37:27 172.22.121.4 %LINK-W-Down:  e8
+Sep  3 13:37:22 172.22.121.4 %LINK-I-Up:  e8
+Sep  3 13:37:08 172.22.121.4 %LINK-W-Down:  e8
+Sep  3 13:36:44 172.22.121.4 %LINK-I-Up:  e8
+Sep  3 13:36:42 172.22.121.4 %LINK-W-Down:  e8
+Sep  3 13:36:02 172.22.38.4 %STP-W-PORTSTATUS: e19: STP status Forwarding
+Sep  3 13:35:32 172.22.38.4 %LINK-I-Up:  e19
+Sep  3 13:35:15 172.22.38.4 %LINK-W-Down:  e19
+Sep  3 13:34:34 172.22.107.4 %STP-W-PORTSTATUS: e15: STP status Forwarding
+Sep  3 13:34:04 172.22.107.4 %LINK-I-Up:  e15
+Sep  3 13:33:57 172.22.107.4 %LINK-W-Down:  e15
+Sep  3 13:33:04 172.22.21.4 %STP-W-PORTSTATUS: e5: STP status Forwarding
+Sep  3 13:32:47 172.22.107.4 %STP-W-PORTSTATUS: e15: STP status Forwarding
+Sep  3 13:32:34 172.22.21.4 %LINK-I-Up:  e5
+Sep  3 13:32:31 172.22.21.4 %LINK-W-Down:  e5
+Sep  3 13:32:17 172.22.107.4 %LINK-I-Up:  e15
+Sep  3 13:32:10 172.22.107.4 %LINK-W-Down:  e15
+Sep  3 13:24:19 172.22.107.4 %STP-W-PORTSTATUS: e20: STP status Forwarding
+Sep  3 13:23:49 172.22.107.4 %LINK-I-Up:  e20
+Sep  3 13:23:09 172.22.107.4 %LINK-W-Down:  e20
+Sep  3 13:19:46 172.22.104.4 %LINK-I-Up:  e11
+Sep  3 13:19:46 172.22.104.4 %STP-W-PORTSTATUS: e11: STP status Forwarding
+Sep  3 13:19:39 172.22.104.4 %LINK-W-Down:  e11
+Sep  3 13:15:47 172.22.1.4 %LINK-I-Up:  e1
+Sep  3 13:15:47 172.22.1.4 %STP-W-PORTSTATUS: e1: STP status Forwarding
+Sep  3 13:15:44 172.22.1.4 %LINK-W-Down:  e1
+Sep  3 13:11:42 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 13:11:42 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 13:11:40 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 13:11:09 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 13:11:09 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 13:11:08 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 13:08:36 172.22.26.4 %LINK-I-Up:  e17
+Sep  3 13:08:36 172.22.26.4 %STP-W-PORTSTATUS: e17: STP status Forwarding
+Sep  3 13:08:31 172.22.26.4 %LINK-W-Down:  e17
+Sep  3 13:05:56 172.22.98.4 %LINK-I-Up:  e4
+Sep  3 13:05:56 172.22.98.4 %STP-W-PORTSTATUS: e4: STP status Forwarding
+Sep  3 13:05:54 172.22.98.4 %LINK-W-Down:  e4
+Sep  3 13:05:49 172.22.98.4 %LINK-I-Up:  e4
+Sep  3 13:05:49 172.22.98.4 %STP-W-PORTSTATUS: e4: STP status Forwarding
+Sep  3 13:05:47 172.22.98.4 %LINK-W-Down:  e4
+Sep  3 13:05:22 172.22.98.4 %LINK-I-Up:  e4
+Sep  3 13:05:22 172.22.98.4 %STP-W-PORTSTATUS: e4: STP status Forwarding
+Sep  3 13:04:58 172.22.98.4 %LINK-W-Down:  e4
+Sep  3 12:56:07 172.22.46.4 %STP-W-PORTSTATUS: e1: STP status Forwarding
+Sep  3 12:55:37 172.22.46.4 %LINK-I-Up:  e1
+Sep  3 12:55:35 172.22.46.4 %LINK-W-Down:  e1
+Sep  3 12:55:08 172.22.46.4 %LINK-I-Up:  e1
+Sep  3 12:55:06 172.22.46.4 %LINK-W-Down:  e1
+Sep  3 12:55:05 172.22.46.4 %LINK-I-Up:  e1
+Sep  3 12:55:03 172.22.46.4 %BRG_AMAP-N-AMAP_STATUS: AMAP status: Port e1 was deleted.
+Sep  3 12:55:03 172.22.46.4 %LINK-W-Down:  e1
+Sep  3 12:54:48 172.22.104.4 %LINK-I-Up:  e11
+Sep  3 12:54:48 172.22.104.4 %STP-W-PORTSTATUS: e11: STP status Forwarding
+Sep  3 12:54:43 172.22.104.4 %LINK-W-Down:  e11
+Sep  3 12:51:42 172.22.98.4 %LINK-I-Up:  e4
+Sep  3 12:51:42 172.22.98.4 %STP-W-PORTSTATUS: e4: STP status Forwarding
+Sep  3 12:51:40 172.22.98.4 %LINK-W-Down:  e4
+Sep  3 12:51:35 172.22.98.4 %LINK-I-Up:  e4
+Sep  3 12:51:35 172.22.98.4 %STP-W-PORTSTATUS: e4: STP status Forwarding
+Sep  3 12:51:33 172.22.98.4 %LINK-W-Down:  e4
+Sep  3 12:51:14 172.22.98.4 %LINK-I-Up:  e4
+Sep  3 12:51:14 172.22.98.4 %STP-W-PORTSTATUS: e4: STP status Forwarding
+Sep  3 12:51:12 172.22.98.4 %LINK-W-Down:  e4
+Sep  3 12:43:52 172.22.104.4 %LINK-I-Up:  e11
+Sep  3 12:43:52 172.22.104.4 %STP-W-PORTSTATUS: e11: STP status Forwarding
+Sep  3 12:43:48 172.22.104.4 %LINK-W-Down:  e11
+Sep  3 12:43:36 172.22.104.4 %LINK-I-Up:  e11
+Sep  3 12:43:36 172.22.104.4 %STP-W-PORTSTATUS: e11: STP status Forwarding
+Sep  3 12:43:05 172.22.104.4 %LINK-W-Down:  e11
+Sep  3 12:36:55 172.22.33.4 %LINK-I-Up:  e21
+Sep  3 12:36:55 172.22.33.4 %STP-W-PORTSTATUS: e21: STP status Forwarding
+Sep  3 12:36:53 172.22.33.4 %LINK-W-Down:  e21
+Sep  3 12:36:15 172.22.33.4 %LINK-I-Up:  e21
+Sep  3 12:36:15 172.22.33.4 %STP-W-PORTSTATUS: e21: STP status Forwarding
+Sep  3 12:36:11 172.22.33.4 %LINK-W-Down:  e21
+Sep  3 12:32:04 172.22.57.4 %STP-W-PORTSTATUS: e7: STP status Forwarding
+Sep  3 12:31:34 172.22.57.4 %LINK-I-Up:  e7
+Sep  3 12:31:28 172.22.57.4 %LINK-W-Down:  e7
+Sep  3 12:28:56 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 12:28:56 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 12:28:54 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 12:28:23 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 12:28:23 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 12:28:21 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 12:24:30 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 12:24:30 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 12:24:28 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 12:22:23 172.22.57.4 %STP-W-PORTSTATUS: e7: STP status Forwarding
+Sep  3 12:21:53 172.22.57.4 %LINK-I-Up:  e7
+Sep  3 12:20:30 172.22.57.4 %LINK-W-Down:  e7
+Sep  3 12:15:53 172.22.88.4 %STP-W-PORTSTATUS: e10: STP status Forwarding
+Sep  3 12:15:23 172.22.88.4 %LINK-I-Up:  e10
+Sep  3 12:15:21 172.22.88.4 %LINK-W-Down:  e10
+Sep  3 12:14:10 172.22.88.4 %STP-W-PORTSTATUS: e10: STP status Forwarding
+Sep  3 12:13:40 172.22.88.4 %LINK-I-Up:  e10
+Sep  3 12:13:03 172.22.88.4 %LINK-W-Down:  e10
+Sep  3 12:11:34 172.22.88.4 %STP-W-PORTSTATUS: e10: STP status Forwarding
+Sep  3 12:11:04 172.22.88.4 %LINK-I-Up:  e10
+Sep  3 12:10:13 172.22.88.4 %LINK-W-Down:  e10
+Sep  3 12:09:38 172.22.88.4 %STP-W-PORTSTATUS: e10: STP status Forwarding
+Sep  3 12:09:08 172.22.88.4 %LINK-I-Up:  e10
+Sep  3 12:08:37 172.22.88.4 %LINK-W-Down:  e10
+Sep  3 12:07:59 172.22.57.4 %STP-W-PORTSTATUS: e7: STP status Forwarding
+Sep  3 12:07:29 172.22.57.4 %LINK-I-Up:  e7
+Sep  3 12:07:24 172.22.57.4 %LINK-W-Down:  e7
+Sep  3 11:49:17 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 11:49:17 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 11:49:16 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 11:48:45 172.22.33.4 %LINK-I-Up:  e23
+Sep  3 11:48:45 172.22.33.4 %STP-W-PORTSTATUS: e23: STP status Forwarding
+Sep  3 11:48:43 172.22.33.4 %LINK-W-Down:  e23
+Sep  3 11:46:31 172.22.2.4 %STP-W-PORTSTATUS: e33: STP status Forwarding
+Sep  3 11:46:01 172.22.2.4 %LINK-I-Up:  e33
+Sep  3 11:45:57 172.22.2.4 %LINK-W-Down:  e33
+Sep  3 11:43:08 172.22.82.4 %LINK-I-Up:  e17
+Sep  3 11:43:08 172.22.82.4 %STP-W-PORTSTATUS: e17: STP status Forwarding
+Sep  3 11:42:57 172.22.82.4 %LINK-W-Down:  e17
+Sep  3 11:35:23 172.22.82.4 %LINK-I-Up:  e17
+Sep  3 11:35:23 172.22.82.4 %STP-W-PORTSTATUS: e17: STP status Forwarding
+Sep  3 11:35:09 172.22.82.4 %LINK-W-Down:  e17
+Sep  3 11:32:48 172.22.124.4 %STP-W-PORTSTATUS: e1: STP status Forwarding
+Sep  3 11:32:41 172.22.82.4 %LINK-I-Up:  e17
+Sep  3 11:32:41 172.22.82.4 %STP-W-PORTSTATUS: e17: STP status Forwarding
+Sep  3 11:32:25 172.22.82.4 %LINK-W-Down:  e17
+Sep  3 11:32:18 172.22.124.4 %LINK-I-Up:  e1
+Sep  3 11:32:13 172.22.124.4 %LINK-W-Down:  e1
+Sep  3 11:27:08 172.22.116.4 %STP-W-PORTSTATUS: e2: STP status Forwarding
+Sep  3 11:26:38 172.22.116.4 %LINK-I-Up:  e2
+Sep  3 11:26:33 172.22.116.4 %LINK-W-Down:  e2
+Sep  3 11:24:52 172.22.99.4 %STP-W-PORTSTATUS: e21: STP status Forwarding
+Sep  3 11:24:22 172.22.99.4 %LINK-I-Up:  e21

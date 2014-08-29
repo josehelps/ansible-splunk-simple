@@ -1,0 +1,16 @@
+<quickstart>
+
+    <title>email data</title>
+    <optiongroup>
+        <option>
+            <title>E-mail data your Splunk server can access</title>
+            <summary>Configure Splunk to index the contents of /var/log.</summary>
+            <action type="add_monitor">
+                <label>Next</label>
+            </action>
+            <!-- <doctarget>http:/...</doctarget> -->
+        </option>
+
+    </optiongroup>
+
+</quickstart>

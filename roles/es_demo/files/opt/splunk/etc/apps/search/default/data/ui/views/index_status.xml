@@ -1,0 +1,192 @@
+<view template="dashboard.html" isDashboard="False">
+  <label>Index activity overview</label>
+  <module name="AccountBar" layoutPanel="appHeader"/>
+  <module name="AppBar" layoutPanel="navigationHeader"/>
+  <module name="Message" layoutPanel="messaging">
+    <param name="filter">*</param>
+    <param name="clearOnJobDispatch">False</param>
+    <param name="maxSize">1</param>
+  </module>
+  <module name="TitleBar" layoutPanel="viewHeader">
+    <param name="actionsMenuFilter">dashboard</param>
+  </module>
+ 
+ 
+  <module name="ServerSideInclude" layoutPanel="panel_row1_col1">
+    <param name="src">IndexingStatusIntroText1.html</param>
+  </module>
+
+
+<!--index="_internal" source="*metrics*" group=per_index_thruput NOT series="_*" | stats sum(kb) as KB_indexed by date_month ,date_mday,date_year,splunk_server-->
+
+  <module name="HiddenSearch" layoutPanel="panel_row2_col1" group="Total events indexed and index sizes" autoRun="True">
+    <param name="search">| eventcount summarize=false report_size=true index=* | fields index count server size_bytes | sort - count </param>
+    <module name="Paginator">
+      <param name="count">7</param>
+      <param name="entityName">results</param>
+      <param name="maxPages">20</param>
+      <module name="SimpleResultsTable">
+        <param name="drilldown">row</param>
+
+        <!-- drilling down into the eventcount command is pointless.   -->
+        <!-- so we switch the base search to be *  -->
+        <module name="HiddenSearch">
+          <param name="search">*</param>
+          <module name="ConvertToDrilldownSearch">
+            <module name="ViewRedirector">
+              <param name="viewTarget">flashtimeline</param>
+            </module>
+          </module>
+        </module>
+        
+      </module>
+      <module name="ViewRedirectorLink">
+        <param name="viewTarget">report_builder_display</param>
+        <param name="label">View full results</param>
+      </module>
+    </module>
+  </module>
+  
+  <module name="HiddenSavedSearch" layoutPanel="panel_row2_col2" group="Top five sourcetypes (by total KB indexed) in the last 24 hours" autoRun="True">
+    <param name="savedSearch">Top five sourcetypes</param>
+    <module name="HiddenChartFormatter">
+      <param name="chart">bar</param>
+      <param name="chart.stackMode">stacked</param>
+      <param name="primaryAxisTitle.text">Sourcetype</param>
+      <param name="secondaryAxisTitle.text">KB Indexed</param>
+      <param name="legend.placement">None</param>
+      <module name="JSChart">
+        <param name="width">100%</param>
+        <param name="height">200px</param>
+        <module name="ConvertToDrilldownSearch">
+          <module name="ViewRedirector">
+            <param name="viewTarget">flashtimeline</param>
+          </module>
+        </module>
+      </module>
+    </module>
+  </module>
+
+  <module name="HiddenSavedSearch" layoutPanel="panel_row3_col1" group="Indexing rate over time by sourcetype (including internal indexes)" autoRun="True">
+    <param name="savedSearch">Indexing workload</param>
+    <module name="HiddenChartFormatter">
+      <param name="chart">area</param>
+      <param name="chart.stackMode">stacked</param>
+      <param name="primaryAxisTitle.text">Time</param>
+      <param name="secondaryAxisTitle.text">KB/s</param>
+      <module name="JSChart">
+        <param name="width">100%</param>
+        <param name="height">200px</param>
+        <module name="ConvertToDrilldownSearch">
+          <module name="ViewRedirector">
+            <param name="viewTarget">flashtimeline</param>
+          </module>
+        </module>
+      </module>          
+    </module>
+  </module>
+
+  <!-- This was integrated from si-staging to current, but this search runs over all time which can take hours or days. -->
+  <!-- Commenting it out for now cause it basically just sits there and runs forever and preview isnt even turned on.  -->
+  <!-- 
+  <module name="HiddenSearch" layoutPanel="panel_row3_col2" group="Indexing amount per server" autoRun="True">
+    
+    <param name="search">index="_internal" source="*metrics*" group=per_index_thruput NOT series="_*" | stats sum(kb) as kb_indexed by date_month,date_mday,date_year,splunk_server</param>
+    <param name="earliest">-1h</param>
+    <module name="Paginator">
+      <param name="count">7</param>
+      <param name="entityName">results</param>
+      <param name="maxPages">20</param>
+      <module name="SimpleResultsTable">
+        <module name="ConvertToDrilldownSearch">
+          <module name="ViewRedirector">
+            <param name="viewTarget">flashtimeline</param>
+          </module>
+        </module>
+      </module>
+      <module name="ViewRedirectorLink">
+        <param name="viewTarget">report_builder_display</param>
+        <param name="label">View full results</param>
+      </module>
+    </module>
+  </module>
+  -->
+   
+  <module name="ServerSideInclude" layoutPanel="panel_row4_col1" group="CPU utilization by index-time processor in the last 1 hour">
+    <param name="src">CpuUtilText.html</param>
+    <module name="HiddenSearch" layoutPanel="panel_row4_col1_grp1" autoRun="True">
+      <param name="search">index=_internal metrics group=pipeline NOT sendout | timechart per_second(cpu_seconds) by processor</param>
+      <param name="earliest">-65m</param>
+      <param name="latest">-5m</param>
+      <module name="HiddenChartFormatter">
+        <param name="chart">line</param>
+        <param name="primaryAxisTitle.text">Time</param>
+        <param name="secondaryAxisTitle.text">Load (%)</param>
+        <module name="JSChart">
+          <param name="width">700px</param>
+          <param name="height">200px</param>
+          <module name="ConvertToDrilldownSearch">
+            <module name="ViewRedirector">
+              <param name="viewTarget">flashtimeline</param>
+            </module>
+          </module>
+        </module>
+        <module name="ViewRedirectorLink">
+          <param name="viewTarget">report_builder_display</param>
+          <param name="label">View full results</param>
+        </module>
+      </module>
+    </module>
+    
+    <module name="HiddenSearch" layoutPanel="panel_row4_col1_grp2">
+      <param name="search">index=_internal metrics group=pipeline NOT sendout</param>
+      <module name="Sorter">
+        <param name="sortKey">cpu_seconds</param>
+        <param name="sortDir">desc</param>
+        <param name="fields">
+          <list>
+            <param name="label">Processor</param>
+            <param name="value">processor</param>
+          </list>
+          <list>
+            <param name="label">CPU Seconds</param>
+            <param name="value">cpu_seconds</param>
+          </list>
+        </param>
+        <module name="Paginator" >
+           <param name="count">10</param>
+           <param name="entityName">settings</param>
+           <param name="maxPages">10</param>
+           <module name="SearchLinkLister">
+             <param name="settingToCreate">list1</param>
+             <param name="search">index=_internal metrics group=pipeline NOT sendout | stats sum(cpu_seconds) as cpu_seconds by processor | eval cpu_seconds = cpu_seconds/3.600e3</param>
+             <param name="earliest">-1h</param>
+             <param name="searchFieldsToDisplay">
+               <list>
+                 <param name="label">processor</param>
+                 <param name="value">processor</param>
+               </list>
+               <list>
+                 <param name="label">cpu_seconds</param>
+               </list>
+             </param>
+               <module name="ConvertToIntention">
+                 <param name="settingToConvert">list1</param>
+                 <param name="intention">
+                   <param name="name">addterm</param>
+                   <param name="arg">
+                     <param name="processor">$target$</param>
+                   </param>
+                 </param>
+                 <module name="ViewRedirector">
+                 <param name="viewTarget">flashtimeline</param>
+              </module>
+            </module>
+          </module>
+        </module>
+      </module>
+    </module>
+  </module>
+  
+ </view>
+

@@ -1,0 +1,62 @@
+<div style="float: right" class="input form-submit splunk-view splunk-submit-button" id="ppf_btn">
+    <button id="openPerPanelFilteringDialog" class="btn" style="display: inline-block;"><%= link_title %></button>
+</div>
+
+<div id="ppfNoResults" class="modal hide fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>No Results Selected</h3>
+    </div>
+    <div class="modal-body">
+        <p>No rows were selected; select some rows to filter and try again.</p>
+    </div>
+    <div class="modal-footer">
+        <div class="pull-left">
+            <% if (lookup_edit_link){ %>
+            <div style="padding-top: 5px; margin-left: 12px;" id="lookup-link">
+                <a target="_blank" href="<%= lookup_edit_link %>">View/edit lookup file</a>
+            </div>
+            <% } %>
+        </div>
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+</div>
+
+<div id="ppfOptions" class="modal hide fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>Per-Panel Filter</h3>
+    </div>
+    <div class="modal-body">
+        <p>
+                What would you like to do with the <span id="row-count">1 result</span> selected:
+                
+                <p>
+                    <label class="radio" id="filter-radio">
+                         <input style="margin-top: 1px;" type="radio" name="filter" id="filter-whitelist" value="whitelist" checked>
+                         <strong>Filter them</strong> so that they no longer appear on this dashboard
+                    </label>
+                    <label class="radio" id="highlight-radio">
+                         <input style="margin-top: 1px;" type="radio" name="filter" id="filter-blacklist" value="blacklist">
+                         <strong>Highlight them</strong> so that are flagged as important on this dashboard
+                    </label>
+                    <label class="radio" id="unhighlight-radio">
+                         <input style="margin-top: 1px;" type="radio" name="filter" id="filter-unblacklist" value="unblacklist">
+                         <strong>Unhighlight them</strong> so that are they are not longer flagged as important on this dashboard
+                    </label>
+                </p>
+        </p>
+    </div>
+    <div class="modal-footer">
+        <div class="pull-left">
+            <% if (lookup_edit_link){ %>
+            <div style="padding-top: 5px; margin-left: 12px;" id="lookup-link">
+                <a target="_blank" href="<%= lookup_edit_link %>">View/edit lookup file</a>
+            </div>
+            <% } %>
+        </div>
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <button id="ppfDialogSave" class="btn btn-primary">Save</button>
+    </div>
+</div>
+ 

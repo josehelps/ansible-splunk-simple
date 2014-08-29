@@ -2,11 +2,8 @@
 # Here you would define each host and their catergory for deployment
 
 [search_head]
-sh1.josehelps.com
-
 
 [indexer]
-idx1.josehelps.com
 
 [license_master]
 

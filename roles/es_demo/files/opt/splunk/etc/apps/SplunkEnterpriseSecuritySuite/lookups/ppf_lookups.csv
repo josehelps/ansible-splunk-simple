@@ -1,0 +1,7 @@
+path,label,description
+DA-ESS-NetworkProtection/ppf_http_user_agent.csv,HTTP User Agent Analysis,Filter for the "HTTP User Agent Analysis" dashboard
+DA-ESS-NetworkProtection/ppf_traffic_size.csv,Traffic Size Analysis,Filter for the "Traffic Size Analysis" dashboard
+DA-ESS-NetworkProtection/ppf_http_category.csv,HTTP Category Analysis,Filter for the "HTTP Category Analysis" summary panel
+DA-ESS-NetworkProtection/ppf_http_category_detail.csv,HTTP Category Analysis Details,Filter for the "HTTP Category Analysis" details panel
+DA-ESS-NetworkProtection/ppf_new_domains.csv,New Domain Analysis,Filter for the "New Domain Analysis" dashboard
+DA-ESS-NetworkProtection/ppf_url_length.csv,URL Length Analysis,Filter for the "URL Length Analysis" dashboard

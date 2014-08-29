@@ -1,0 +1,1 @@
+<endpoint name="accesscontrols">  <header></header>  <menu name="auth_configurations">    <label>Access controls</label>    <url>/manager/%(namespace)s/accesscontrols</url>    <description>Specify authentication method, create or modify users, and manage roles.</description>    <order>80</order>    <id>access</id>  </menu></endpoint>

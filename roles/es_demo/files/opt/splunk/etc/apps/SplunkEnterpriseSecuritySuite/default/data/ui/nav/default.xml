@@ -1,0 +1,138 @@
+<nav search_view="search" color="#979797">
+  <view name="ess_home" default="true" />
+  
+  <view name="ess_security_posture" />
+  
+  <view name="incident_review" />
+  
+  <view name="predictive_analytics" />
+
+  <collection label="Event Investigators">
+    <a href='/app/SplunkEnterpriseSecuritySuite/asset_investigator'>Asset Investigator</a>
+    <a href='/app/SplunkEnterpriseSecuritySuite/identity_investigator'>Identity Investigator</a>
+  </collection>
+
+  <collection label="Advanced Threat">
+    <view name="risk_analysis" />
+    <view name="threatlist_activity" />
+    <divider />
+    <view name="http_category_analysis" />
+    <view name="http_user_agent_analysis" />
+    <view name="new_domain_analysis" />
+    
+    <!-- per SPL-74563 using a hyperlink in order to seed stdev -->
+    <a href='/app/SplunkEnterpriseSecuritySuite/traffic_size_analysis?form.Z_form=2'>Traffic Size Analysis</a>
+    <a href='/app/SplunkEnterpriseSecuritySuite/url_length_analysis?form.Z_form=2'>URL Length Analysis</a>
+  </collection>
+
+  <collection label="Security Domains">
+    <collection label="Access">
+      <view name="access_center" />
+      <view name="access_tracker" />
+      <view name="access_search" />
+      <divider />
+      <view name="account_management" />
+      <view name="default_accounts" />
+    </collection>
+
+    <collection label="Endpoint">
+      <view name="malware_center" />
+      <view name="malware_search" />
+      <view name="malware_operations" />
+      <divider />
+      <view name="system_center" />
+      <view name="time_center" />
+      <view name="endpoint_changes" />
+      <divider />
+      <view name="update_center" />
+      <view name="update_search" />
+    </collection>
+
+    <collection label="Network">
+      <view name="traffic_center" />
+      <view name="traffic_search" />
+      <divider />
+      <view name="ids_center" />
+      <view name="ids_search" />
+      <divider />
+      <view name="vuln_center" />
+      <view name="vuln_operations" />
+      <view name="vuln_search" />
+      <divider />
+      <view name="web_center" />
+      <view name="web_search" />
+      <divider />
+      <view name="network_changes" />
+      <view name="port_protocol_tracker" />
+    </collection>
+
+    <collection label="Identity">
+      <view name="asset_center" />
+      <divider />
+      <view name="identity_center" />
+      <divider />
+      <view name="session_center" />
+    </collection>
+  </collection>
+
+  <collection label="Audit">
+    <view name="incident_review_audit" />
+    <view name="suppression_audit" />
+    <divider />
+    <view name="datamodel_audit" />
+    <view name="forwarder_auditing" />
+    <view name="per_panel_filtering_audit" />
+    <view name="search_auditing" />
+    <view name="threat_list_audit" />
+    <view name="ess_view_auditing" />
+    <divider />
+    <view name="data_protection" />
+  </collection>
+
+<!--
+  <collection label="Resources">
+    <a href='http://docs.splunk.com/Documentation/Splunk/latest/Knowledge/UnderstandandusetheCommonInformationModel' target="_blank">Common Information Model Overview</a>
+    <a href='http://docs.splunk.com/Documentation/ES/latest/Install/Addendum1' target="_blank">Deployment Application Overview</a>
+    <divider />
+    <collection label="Threat Intelligence">
+      <a href='/app/SplunkEnterpriseSecuritySuite/honeypot' target="_blank">Project HoneyPot</a>
+      <a href='/app/SplunkEnterpriseSecuritySuite/cert' target="_blank">US-CERT</a>
+      <a href='/app/SplunkEnterpriseSecuritySuite/vbulletin' target="_blank">Virus Bulletin</a>
+      <a href='/app/SplunkEnterpriseSecuritySuite/wildlist' target="_blank">Wildlist</a>
+    </collection>
+  </collection>
+-->
+
+  <collection label="Search">
+    <view name="dashboards" />
+    <view name="reports" />
+    <view name="data_models" />
+    <view name="search" />
+  </collection>
+  
+  <divider />
+
+  <collection label="Configure">
+    <a href='/app/SplunkEnterpriseSecuritySuite/ess_configuration'>All Configurations</a>
+    <divider />
+    <collection label="General">
+      <a href='/app/SplunkEnterpriseSecuritySuite/ess_credential_management_list'>Credential Management</a>
+      <a href='/app/SplunkEnterpriseSecuritySuite/ess_navigation_edit'>Navigation</a>
+      <a href='/app/SplunkEnterpriseSecuritySuite/ess_custom_searches_list'>Custom Searches</a>
+    </collection>
+    <collection label="Data Enrichment">
+      <a href='/app/SplunkEnterpriseSecuritySuite/ess_lookups_list'>Lists and Lookups</a>
+      <a href='/app/SplunkEnterpriseSecuritySuite/ess_ppf_lookups_list'>Per Panel Filtering</a>
+      <a href='/manager/SplunkEnterpriseSecuritySuite/data/inputs/threatlist'>Threat Lists</a>
+    </collection>
+    <a href='/manager/SplunkEnterpriseSecuritySuite/data/inputs/identity_manager'>Identity Management</a>
+    <collection label="Incident Management">
+      <a href='/app/SplunkEnterpriseSecuritySuite/ess_notable_event_create'>New Notable Event</a>
+      <a href='/app/SplunkEnterpriseSecuritySuite/ess_notable_status_list'>Notable Event Statuses</a>
+      <a href='/app/SplunkEnterpriseSecuritySuite/ess_notable_suppression_list'>Notable Event Suppressions</a>
+      <a href='/app/SplunkEnterpriseSecuritySuite/ess_log_review_configuration'>Incident Review Settings</a>
+    </collection>
+    <divider />
+    <a href='/manager/SplunkEnterpriseSecuritySuite/apps/local/SplunkEnterpriseSecuritySuite/setup?action=edit'>App Setup</a>
+  </collection>
+</nav>

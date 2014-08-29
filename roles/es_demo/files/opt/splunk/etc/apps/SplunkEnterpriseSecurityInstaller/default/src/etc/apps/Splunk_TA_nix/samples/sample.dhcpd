@@ -1,0 +1,795 @@
+Jul 15 04:02:05 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:02:05 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:02:05 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:02:05 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:02:56 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.9.174 from 90:4c:e5:38:75:c8 (Veritusmortus) via 10.99.8.1
+Jul 15 04:02:56 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.9.174 to 90:4c:e5:38:75:c8 (Veritusmortus) via 10.99.8.1
+Jul 15 04:02:59 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.9.174 via 10.99.8.1
+Jul 15 04:02:59 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.9.174 (90:4c:e5:38:75:c8) via eth0
+Jul 15 04:03:05 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:03:05 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:03:05 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:03:05 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:03:21 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:0b:85:66:6b:6e via 10.99.56.1
+Jul 15 04:03:22 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.58.211 to 00:0b:85:66:6b:6e (RLDP) via 10.99.56.1
+Jul 15 04:03:33 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.58.211 (140.192.141.242) from 00:0b:85:66:6b:6e (RLDP) via 10.99.56.1
+Jul 15 04:03:33 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.58.211 to 00:0b:85:66:6b:6e (RLDP) via 10.99.56.1
+Jul 15 04:04:02 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:04:02 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:04:02 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:04:02 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:04:59 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:04:59 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:04:59 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:04:59 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:05:00 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.34.155 via 10.99.32.1
+Jul 15 04:05:00 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.34.155 (00:22:5f:53:6c:51) via eth0
+Jul 15 04:05:57 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:05:57 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:05:57 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:05:57 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:06:19 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:06:19 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:06:55 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:06:55 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:06:55 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:06:55 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:07:28 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.11.234 from 00:24:36:93:fa:1a (kuraudo) via 10.99.8.1
+Jul 15 04:07:28 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.11.234 to 00:24:36:93:fa:1a (kuraudo) via 10.99.8.1
+Jul 15 04:07:34 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.10.143 from 7c:6d:62:55:6a:c5 (KH-Ipod) via 10.99.8.1
+Jul 15 04:07:34 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.10.143 to 7c:6d:62:55:6a:c5 (KH-Ipod) via 10.99.8.1
+Jul 15 04:07:42 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.34.175 from 00:1f:e1:07:8b:94 (D058-23404ACA) via 10.99.32.1
+Jul 15 04:07:42 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.34.175 to 00:1f:e1:07:8b:94 (D058-23404ACA) via 10.99.32.1
+Jul 15 04:07:45 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 192.168.1.101 from 00:23:6c:c8:e5:3d via 10.99.24.1: wrong network.
+Jul 15 04:07:45 dhcp-sac-1s.acmetech.com dhcpd: DHCPNAK on 192.168.1.101 to 00:23:6c:c8:e5:3d via 10.99.24.1
+Jul 15 04:07:46 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:23:6c:c8:e5:3d via 10.99.24.1
+Jul 15 04:07:47 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.25.136 to 00:23:6c:c8:e5:3d (TONYs-iPhone) via 10.99.24.1
+Jul 15 04:07:48 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.25.136 (140.192.141.242) from 00:23:6c:c8:e5:3d (TONYs-iPhone) via 10.99.24.1
+Jul 15 04:07:48 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.25.136 to 00:23:6c:c8:e5:3d (TONYs-iPhone) via 10.99.24.1
+Jul 15 04:07:52 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.34.175 from 00:1f:e1:07:8b:94 (D058-23404ACA) via 10.99.32.1
+Jul 15 04:07:52 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.34.175 to 00:1f:e1:07:8b:94 (D058-23404ACA) via 10.99.32.1
+Jul 15 04:07:53 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:07:53 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:07:53 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:07:53 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:07:54 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:07:54 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:08:17 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.27.73 from 00:19:d2:bc:bb:63 (D047-8BC125F1) via 10.99.24.1
+Jul 15 04:08:17 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.27.73 to 00:19:d2:bc:bb:63 (D047-8BC125F1) via 10.99.24.1
+Jul 15 04:08:50 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:08:50 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:08:50 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:08:50 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:08:52 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.25.136 from 00:23:6c:c8:e5:3d (TONYs-iPhone) via 10.99.24.1
+Jul 15 04:08:52 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.25.136 to 00:23:6c:c8:e5:3d (TONYs-iPhone) via 10.99.24.1
+Jul 15 04:09:48 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:09:48 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:09:48 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:09:48 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:10:17 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.27.73 from 00:19:d2:bc:bb:63 (D047-8BC125F1) via 10.99.24.1
+Jul 15 04:10:17 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.27.73 to 00:19:d2:bc:bb:63 (D047-8BC125F1) via 10.99.24.1
+Jul 15 04:10:46 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:10:46 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:10:46 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:10:46 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:11:00 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:11:00 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:11:22 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.27.73 from 00:19:d2:bc:bb:63 (D047-8BC125F1) via 10.99.24.1
+Jul 15 04:11:22 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.27.73 to 00:19:d2:bc:bb:63 (D047-8BC125F1) via 10.99.24.1
+Jul 15 04:11:43 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:11:43 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:11:43 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:11:43 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:11:43 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.56.246 from 00:20:a6:4e:7d:a1 (kiosk) via 10.99.56.1
+Jul 15 04:11:43 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.56.246 to 00:20:a6:4e:7d:a1 (kiosk) via 10.99.56.1
+Jul 15 04:11:55 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:11:55 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:12:40 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:12:40 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:12:40 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:12:40 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:12:42 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.27.73 from 00:19:d2:bc:bb:63 (D047-8BC125F1) via 10.99.24.1
+Jul 15 04:12:42 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.27.73 to 00:19:d2:bc:bb:63 (D047-8BC125F1) via 10.99.24.1
+Jul 15 04:12:48 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.11.145 via 10.99.8.1
+Jul 15 04:12:48 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.11.145 (70:1a:04:25:c8:b8) via eth0
+Jul 15 04:13:38 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:13:38 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:13:38 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:13:38 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:13:47 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.27.73 from 00:19:d2:bc:bb:63 (D047-8BC125F1) via 10.99.24.1
+Jul 15 04:13:47 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.27.73 to 00:19:d2:bc:bb:63 (D047-8BC125F1) via 10.99.24.1
+Jul 15 04:14:02 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.34.175 from 00:1f:e1:07:8b:94 (D058-23404ACA) via 10.99.32.1
+Jul 15 04:14:02 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.34.175 to 00:1f:e1:07:8b:94 (D058-23404ACA) via 10.99.32.1
+Jul 15 04:14:12 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.34.175 from 00:1f:e1:07:8b:94 (D058-23404ACA) via 10.99.32.1
+Jul 15 04:14:12 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.34.175 to 00:1f:e1:07:8b:94 (D058-23404ACA) via 10.99.32.1
+Jul 15 04:14:35 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:14:35 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:14:35 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:14:35 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:14:47 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.27.73 from 00:19:d2:bc:bb:63 (D047-8BC125F1) via 10.99.24.1
+Jul 15 04:14:47 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.27.73 to 00:19:d2:bc:bb:63 (D047-8BC125F1) via 10.99.24.1
+Jul 15 04:14:57 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:20:a6:4e:7d:a1 (kiosk) via 10.99.56.1
+Jul 15 04:14:58 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.56.246 to 00:20:a6:4e:7d:a1 (kiosk) via 10.99.56.1
+Jul 15 04:15:01 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:20:a6:4e:7d:a1 (kiosk) via 10.99.56.1
+Jul 15 04:15:01 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.56.246 to 00:20:a6:4e:7d:a1 (kiosk) via 10.99.56.1
+Jul 15 04:15:01 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.56.246 (140.192.141.242) from 00:20:a6:4e:7d:a1 (kiosk) via 10.99.56.1
+Jul 15 04:15:01 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.56.246 to 00:20:a6:4e:7d:a1 (kiosk) via 10.99.56.1
+Jul 15 04:15:33 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:15:33 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:15:34 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:15:34 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:15:50 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:15:50 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:16:17 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.228 from f4:0b:93:bd:0f:f6 (BLACKBERRY-1D20) via eth0
+Jul 15 04:16:17 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.228 to f4:0b:93:bd:0f:f6 (BLACKBERRY-1D20) via eth0
+Jul 15 04:16:32 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:16:32 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:16:32 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:16:32 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:17:30 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:17:30 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:17:30 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:17:30 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:17:34 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.16.76 via 10.99.16.1
+Jul 15 04:17:34 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.16.76 (00:24:d6:42:4e:d0) via eth0
+Jul 15 04:17:45 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:17:45 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:18:27 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:18:27 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:18:27 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:18:27 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:19:25 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:19:25 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:19:25 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:19:25 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:19:25 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.34.211 via 10.99.32.1
+Jul 15 04:19:25 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.34.211 (00:16:6f:95:30:42) via eth0
+Jul 15 04:19:29 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.34.211 via 10.99.32.1
+Jul 15 04:19:29 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.34.211 (00:16:6f:95:30:42) via eth0
+Jul 15 04:19:58 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.56.246 from 00:20:a6:4e:7d:a1 (kiosk) via 10.99.56.1
+Jul 15 04:19:58 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.56.246 to 00:20:a6:4e:7d:a1 (kiosk) via 10.99.56.1
+Jul 15 04:20:22 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:20:22 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:20:22 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:20:22 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:21:00 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.59.55 via 10.99.56.1
+Jul 15 04:21:00 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.59.55 (00:26:08:ef:d4:73) via eth0
+Jul 15 04:21:20 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:21:20 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:21:20 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:21:20 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:21:46 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:21:46 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:22:17 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.11.234 from 00:24:36:93:fa:1a (kuraudo) via 10.99.8.1
+Jul 15 04:22:17 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.11.234 to 00:24:36:93:fa:1a (kuraudo) via 10.99.8.1
+Jul 15 04:22:18 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:22:18 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:22:18 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:22:18 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:23:16 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:23:16 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:23:16 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:23:16 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:23:41 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:23:41 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:24:14 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:24:14 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:24:14 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:24:14 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:24:59 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.11.71 from 90:84:0d:03:c9:1d (ALEXANDER) via 10.99.8.1
+Jul 15 04:24:59 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.11.71 to 90:84:0d:03:c9:1d (ALEXANDER) via 10.99.8.1
+Jul 15 04:25:01 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.34.18.93 from 00:25:4b:0b:93:0c via 10.99.56.1: wrong network.
+Jul 15 04:25:01 dhcp-sac-1s.acmetech.com dhcpd: DHCPNAK on 10.34.18.93 to 00:25:4b:0b:93:0c via 10.99.56.1
+Jul 15 04:25:01 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:25:4b:0b:93:0c via 10.99.56.1
+Jul 15 04:25:02 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.58.39 to 00:25:4b:0b:93:0c (iPod-touch-2) via 10.99.56.1
+Jul 15 04:25:03 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.58.39 (140.192.141.242) from 00:25:4b:0b:93:0c (iPod-touch-2) via 10.99.56.1
+Jul 15 04:25:03 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.58.39 to 00:25:4b:0b:93:0c (iPod-touch-2) via 10.99.56.1
+Jul 15 04:25:11 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:25:11 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:25:11 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:25:11 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:25:25 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.24.117 from 00:13:02:d5:df:25 (D086-C5AB8057) via 10.99.24.1
+Jul 15 04:25:25 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.24.117 to 00:13:02:d5:df:25 (D086-C5AB8057) via 10.99.24.1
+Jul 15 04:25:41 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:25:41 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:26:09 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:26:09 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:26:09 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:26:09 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:26:20 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.34.211 from 00:16:6f:95:30:42 (D066-C51973E3) via 10.99.32.1
+Jul 15 04:26:20 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.34.211 to 00:16:6f:95:30:42 (D066-C51973E3) via 10.99.32.1
+Jul 15 04:26:35 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.34.211 from 00:16:6f:95:30:42 (D066-C51973E3) via 10.99.32.1
+Jul 15 04:26:35 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.34.211 to 00:16:6f:95:30:42 (D066-C51973E3) via 10.99.32.1
+Jul 15 04:27:08 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:27:08 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:27:08 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:27:08 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:27:12 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.34.175 from 00:1f:e1:07:8b:94 (D058-23404ACA) via 10.99.32.1
+Jul 15 04:27:12 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.34.175 to 00:1f:e1:07:8b:94 (D058-23404ACA) via 10.99.32.1
+Jul 15 04:27:42 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.34.175 from 00:1f:e1:07:8b:94 (D058-23404ACA) via 10.99.32.1
+Jul 15 04:27:42 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.34.175 to 00:1f:e1:07:8b:94 (D058-23404ACA) via 10.99.32.1
+Jul 15 04:28:05 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:28:05 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:28:05 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:28:05 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:28:58 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.9.174 via 10.99.8.1
+Jul 15 04:28:58 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.9.174 (90:4c:e5:38:75:c8) via eth0
+Jul 15 04:29:03 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:29:03 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:29:03 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:29:03 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:29:15 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.101 from 00:22:41:b3:03:13 (Alow) via 10.99.16.1
+Jul 15 04:29:15 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.101 to 00:22:41:b3:03:13 (Alow) via 10.99.16.1
+Jul 15 04:29:41 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:29:41 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:30:01 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:30:01 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:30:01 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:30:01 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:30:03 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.56.246 from 00:20:a6:4e:7d:a1 (kiosk) via 10.99.56.1
+Jul 15 04:30:03 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.56.246 to 00:20:a6:4e:7d:a1 (kiosk) via 10.99.56.1
+Jul 15 04:30:58 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:30:58 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:30:58 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:30:58 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:31:36 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:31:36 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:31:56 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:31:56 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:31:56 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:31:56 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:32:48 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.11.145 via 10.99.8.1
+Jul 15 04:32:48 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.11.145 (70:1a:04:25:c8:b8) via eth0
+Jul 15 04:32:54 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:32:54 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:32:54 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:32:54 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:33:52 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:33:52 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:33:52 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:33:52 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:34:49 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:34:49 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:34:49 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:34:49 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:35:08 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.9.174 via 10.99.8.1
+Jul 15 04:35:08 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.9.174 (90:4c:e5:38:75:c8) via eth0
+Jul 15 04:35:42 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:35:42 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:35:47 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:35:47 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:35:47 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:35:47 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:36:44 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:36:44 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:36:44 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:36:44 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:36:45 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.16.242 via 10.99.16.1
+Jul 15 04:36:45 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.16.242 (00:1f:3b:c3:18:b5) via eth0
+Jul 15 04:37:06 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.11.234 from 00:24:36:93:fa:1a (kuraudo) via 10.99.8.1
+Jul 15 04:37:06 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.11.234 to 00:24:36:93:fa:1a (kuraudo) via 10.99.8.1
+Jul 15 04:37:32 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:37:32 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:37:42 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:37:42 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:37:42 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:37:42 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:38:00 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.59.97 via 10.99.56.1
+Jul 15 04:38:00 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.59.97 (00:26:08:ef:c3:88) via eth0
+Jul 15 04:38:29 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 192.168.1.129 from 00:22:41:98:43:02 via 10.99.12.1: wrong network.
+Jul 15 04:38:29 dhcp-sac-1s.acmetech.com dhcpd: DHCPNAK on 192.168.1.129 to 00:22:41:98:43:02 via 10.99.12.1
+Jul 15 04:38:30 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:22:41:98:43:02 via 10.99.12.1
+Jul 15 04:38:31 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.15.58 to 00:22:41:98:43:02 via 10.99.12.1
+Jul 15 04:38:32 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.15.58 (140.192.141.242) from 00:22:41:98:43:02 via 10.99.12.1
+Jul 15 04:38:32 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.15.58 to 00:22:41:98:43:02 via 10.99.12.1
+Jul 15 04:38:40 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:38:40 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:38:40 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:38:40 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:39:37 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:39:37 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:39:37 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:39:37 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:40:34 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:40:34 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:40:34 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:40:34 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:41:27 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:41:27 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:41:32 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:41:32 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:41:32 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:41:32 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:41:43 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.56.246 from 00:20:a6:4e:7d:a1 (kiosk) via 10.99.56.1
+Jul 15 04:41:43 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.56.246 to 00:20:a6:4e:7d:a1 (kiosk) via 10.99.56.1
+Jul 15 04:41:48 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.56.246 from 00:20:a6:4e:7d:a1 (kiosk) via 10.99.56.1
+Jul 15 04:41:48 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.56.246 to 00:20:a6:4e:7d:a1 (kiosk) via 10.99.56.1
+Jul 15 04:42:12 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.34.175 from 00:1f:e1:07:8b:94 (D058-23404ACA) via 10.99.32.1
+Jul 15 04:42:12 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.34.175 to 00:1f:e1:07:8b:94 (D058-23404ACA) via 10.99.32.1
+Jul 15 04:42:22 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.34.175 from 00:1f:e1:07:8b:94 (D058-23404ACA) via 10.99.32.1
+Jul 15 04:42:22 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.34.175 to 00:1f:e1:07:8b:94 (D058-23404ACA) via 10.99.32.1
+Jul 15 04:42:30 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:42:30 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:42:30 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:42:30 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:42:58 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 192.168.1.68 from 60:fb:42:43:e0:b6 via 10.99.20.1: wrong network.
+Jul 15 04:42:58 dhcp-sac-1s.acmetech.com dhcpd: DHCPNAK on 192.168.1.68 to 60:fb:42:43:e0:b6 via 10.99.20.1
+Jul 15 04:42:58 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 60:fb:42:43:e0:b6 via 10.99.20.1
+Jul 15 04:42:59 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.23.209 to 60:fb:42:43:e0:b6 (TOMMIs-iPod) via 10.99.20.1
+Jul 15 04:43:00 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.23.209 (140.192.141.242) from 60:fb:42:43:e0:b6 (TOMMIs-iPod) via 10.99.20.1
+Jul 15 04:43:00 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.23.209 to 60:fb:42:43:e0:b6 (TOMMIs-iPod) via 10.99.20.1
+Jul 15 04:43:27 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:43:27 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:43:28 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:43:28 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:43:28 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:43:28 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:44:07 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:26:ba:55:13:93 via 10.99.4.1
+Jul 15 04:44:08 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.5.38 to 00:26:ba:55:13:93 via 10.99.4.1
+Jul 15 04:44:25 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:44:25 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:44:25 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:44:25 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:44:42 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:26:ba:55:13:93 via 10.99.8.1
+Jul 15 04:44:43 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.10.67 to 00:26:ba:55:13:93 via 10.99.8.1
+Jul 15 04:44:49 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1a:a2:fb:18:51 (RLDP) via 10.99.56.1
+Jul 15 04:44:50 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.56.80 to 00:1a:a2:fb:18:51 (RLDP) via 10.99.56.1
+Jul 15 04:44:50 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.56.80 (140.192.141.242) from 00:1a:a2:fb:18:51 (RLDP) via 10.99.56.1
+Jul 15 04:44:50 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.56.80 to 00:1a:a2:fb:18:51 (RLDP) via 10.99.56.1
+Jul 15 04:45:23 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:45:23 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:45:23 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:45:23 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:46:21 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:46:21 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:46:21 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:46:21 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:47:19 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.58.23 via 10.99.56.1
+Jul 15 04:47:19 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.58.23 (00:1f:3b:a6:66:fb) via eth0
+Jul 15 04:47:19 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:47:19 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:47:19 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:47:19 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:47:19 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.26.148 via 10.99.24.1
+Jul 15 04:47:19 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.26.148 (00:19:d2:bc:91:d9) via eth0
+Jul 15 04:47:24 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.26.148 via 10.99.24.1
+Jul 15 04:47:24 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.26.148 (00:19:d2:bc:91:d9) via eth0
+Jul 15 04:48:08 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:48:08 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:48:16 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:48:16 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:48:16 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:48:16 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:49:14 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:49:14 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:49:14 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:49:14 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:49:23 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:49:23 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:49:48 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 30:7c:30:67:d8:82 (BLACKBERRY-C9BC) via 10.99.16.1
+Jul 15 04:49:49 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.19.222 to 30:7c:30:67:d8:82 (BLACKBERRY-C9BC) via 10.99.16.1
+Jul 15 04:49:49 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.19.222 (140.192.141.242) from 30:7c:30:67:d8:82 (BLACKBERRY-C9BC) via 10.99.16.1
+Jul 15 04:49:49 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.19.222 to 30:7c:30:67:d8:82 (BLACKBERRY-C9BC) via 10.99.16.1
+Jul 15 04:49:49 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:24:21:4c:ce:22 via 10.99.12.1
+Jul 15 04:49:50 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.13.212 to 00:24:21:4c:ce:22 (your-8e6265d510) via 10.99.12.1
+Jul 15 04:49:50 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.13.212 (140.192.141.242) from 00:24:21:4c:ce:22 (your-8e6265d510) via 10.99.12.1
+Jul 15 04:49:50 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.13.212 to 00:24:21:4c:ce:22 (your-8e6265d510) via 10.99.12.1
+Jul 15 04:50:12 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:50:12 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:50:12 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:50:12 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:50:56 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.11.145 from 70:1a:04:25:c8:b8 (user-PC) via 10.99.8.1
+Jul 15 04:50:56 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.11.145 to 70:1a:04:25:c8:b8 (user-PC) via 10.99.8.1
+Jul 15 04:51:08 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.11.145 from 70:1a:04:25:c8:b8 (user-PC) via 10.99.8.1
+Jul 15 04:51:08 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.11.145 to 70:1a:04:25:c8:b8 (user-PC) via 10.99.8.1
+Jul 15 04:51:10 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:51:10 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:51:10 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:51:10 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:51:15 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.13.212 via 10.99.12.1
+Jul 15 04:51:15 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.13.212 (00:24:21:4c:ce:22) via eth0
+Jul 15 04:51:30 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.59.97 from 00:26:08:ef:c3:88 (14E1138-017) via eth0
+Jul 15 04:51:30 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.59.97 to 00:26:08:ef:c3:88 (14E1138-017) via eth0
+Jul 15 04:51:41 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.11.145 from 70:1a:04:25:c8:b8 (user-PC) via 10.99.8.1
+Jul 15 04:51:41 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.11.145 to 70:1a:04:25:c8:b8 (user-PC) via 10.99.8.1
+Jul 15 04:51:56 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.11.234 from 00:24:36:93:fa:1a (kuraudo) via 10.99.8.1
+Jul 15 04:51:56 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.11.234 to 00:24:36:93:fa:1a (kuraudo) via 10.99.8.1
+Jul 15 04:52:08 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:52:08 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:52:08 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:52:08 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:52:19 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.13.212 via 10.99.12.1
+Jul 15 04:52:19 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.13.212 (00:24:21:4c:ce:22) via eth0
+Jul 15 04:53:04 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.11.145 from 70:1a:04:25:c8:b8 (user-PC) via 10.99.8.1
+Jul 15 04:53:04 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.11.145 to 70:1a:04:25:c8:b8 (user-PC) via 10.99.8.1
+Jul 15 04:53:04 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.56.146 from 00:26:08:ef:c1:fe (14E1129-000) via 10.99.56.1
+Jul 15 04:53:04 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.56.146 to 00:26:08:ef:c1:fe (14E1129-000) via 10.99.56.1
+Jul 15 04:53:05 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:53:05 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:53:05 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:53:05 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:53:08 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.11.145 via 10.99.8.1
+Jul 15 04:53:08 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.11.145 (70:1a:04:25:c8:b8) via eth0
+Jul 15 04:53:15 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.59.51 from 00:26:08:ef:cc:3b (14E1129-008) via eth0
+Jul 15 04:53:15 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.59.51 to 00:26:08:ef:cc:3b (14E1129-008) via eth0
+Jul 15 04:53:18 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:53:18 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:53:23 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:53:23 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:53:35 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.11.145 from 70:1a:04:25:c8:b8 (user-PC) via 10.99.8.1
+Jul 15 04:53:35 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.11.145 to 70:1a:04:25:c8:b8 (user-PC) via 10.99.8.1
+Jul 15 04:53:35 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.13.212 via 10.99.12.1
+Jul 15 04:53:35 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.13.212 (00:24:21:4c:ce:22) via eth0
+Jul 15 04:53:38 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.11.145 via 10.99.8.1
+Jul 15 04:53:38 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.11.145 (70:1a:04:25:c8:b8) via eth0
+Jul 15 04:54:03 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:54:03 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:54:03 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:54:03 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:54:35 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.13.212 via 10.99.12.1
+Jul 15 04:54:35 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.13.212 (00:24:21:4c:ce:22) via eth0
+Jul 15 04:54:58 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:54:58 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:55:02 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:55:02 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:55:02 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:55:02 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:55:20 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.101 from 00:22:41:b3:03:13 (Alow) via 10.99.16.1
+Jul 15 04:55:20 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.101 to 00:22:41:b3:03:13 (Alow) via 10.99.16.1
+Jul 15 04:56:00 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:56:00 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:56:00 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:56:00 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:56:05 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.13.212 via 10.99.12.1
+Jul 15 04:56:05 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.13.212 (00:24:21:4c:ce:22) via eth0
+Jul 15 04:56:28 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.8.243 from 00:23:76:7e:62:de via 10.99.8.1
+Jul 15 04:56:28 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.8.243 to 00:23:76:7e:62:de via 10.99.8.1
+Jul 15 04:56:58 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:56:58 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:56:58 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:56:58 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:57:06 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.9.174 from 90:4c:e5:38:75:c8 (Veritusmortus) via 10.99.8.1
+Jul 15 04:57:06 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.9.174 to 90:4c:e5:38:75:c8 (Veritusmortus) via 10.99.8.1
+Jul 15 04:57:09 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.9.174 via 10.99.8.1
+Jul 15 04:57:09 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.9.174 (90:4c:e5:38:75:c8) via eth0
+Jul 15 04:57:14 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:57:14 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:57:19 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:57:19 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:57:25 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.18.129 from 00:25:4b:87:f2:bb via 10.99.16.1
+Jul 15 04:57:25 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.18.129 to 00:25:4b:87:f2:bb via 10.99.16.1
+Jul 15 04:57:35 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.13.212 via 10.99.12.1
+Jul 15 04:57:35 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.13.212 (00:24:21:4c:ce:22) via eth0
+Jul 15 04:57:49 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.11.71 from 90:84:0d:03:c9:1d (ALEXANDER) via 10.99.8.1
+Jul 15 04:57:49 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.11.71 to 90:84:0d:03:c9:1d (ALEXANDER) via 10.99.8.1
+Jul 15 04:57:56 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:57:56 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:57:56 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:57:56 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:58:19 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.9.174 via 10.99.8.1
+Jul 15 04:58:19 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.9.174 (90:4c:e5:38:75:c8) via eth0
+Jul 15 04:58:30 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.34.213 from 00:24:2b:53:71:11 (D2D6HLJ1) via 10.99.32.1
+Jul 15 04:58:30 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.34.213 to 00:24:2b:53:71:11 (D2D6HLJ1) via 10.99.32.1
+Jul 15 04:58:35 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.34.213 from 00:24:2b:53:71:11 (D2D6HLJ1) via 10.99.32.1
+Jul 15 04:58:35 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.34.213 to 00:24:2b:53:71:11 (D2D6HLJ1) via 10.99.32.1
+Jul 15 04:58:45 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.18.129 from 00:25:4b:87:f2:bb via 10.99.16.1
+Jul 15 04:58:45 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.18.129 to 00:25:4b:87:f2:bb via 10.99.16.1
+Jul 15 04:58:54 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:58:54 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 04:58:54 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:58:54 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:58:54 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:58:54 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:59:53 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:59:53 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:59:53 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 04:59:53 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:00:51 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:00:51 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:00:51 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:00:51 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:01:07 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.9.174 via 10.99.8.1
+Jul 15 05:01:07 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.9.174 (90:4c:e5:38:75:c8) via eth0
+Jul 15 05:01:15 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1a:a2:fb:18:51 (RLDP) via 10.99.56.1
+Jul 15 05:01:16 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.56.80 to 00:1a:a2:fb:18:51 (RLDP) via 10.99.56.1
+Jul 15 05:01:16 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.56.80 (140.192.141.242) from 00:1a:a2:fb:18:51 (RLDP) via 10.99.56.1
+Jul 15 05:01:16 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.56.80 to 00:1a:a2:fb:18:51 (RLDP) via 10.99.56.1
+Jul 15 05:01:48 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:01:48 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:01:48 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:01:48 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:02:01 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.8.243 from 00:23:76:7e:62:de via 10.99.8.1
+Jul 15 05:02:01 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.8.243 to 00:23:76:7e:62:de via 10.99.8.1
+Jul 15 05:02:04 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 05:02:04 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 05:02:46 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:02:46 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:02:46 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:02:46 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:03:09 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 05:03:09 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 05:03:18 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from a4:ed:4e:21:c9:06 via 10.99.24.1
+Jul 15 05:03:19 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.27.49 to a4:ed:4e:21:c9:06 via 10.99.24.1
+Jul 15 05:03:19 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.27.49 (140.192.141.242) from a4:ed:4e:21:c9:06 via 10.99.24.1
+Jul 15 05:03:19 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.27.49 to a4:ed:4e:21:c9:06 via 10.99.24.1
+Jul 15 05:03:36 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:0c:f1:3e:da:78 via 10.99.12.1
+Jul 15 05:03:37 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.14.64 to 00:0c:f1:3e:da:78 (depaul-4d1b093a) via 10.99.12.1
+Jul 15 05:03:44 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:03:44 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:03:44 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:03:44 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:04:01 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.8.243 from 00:23:76:7e:62:de via 10.99.8.1
+Jul 15 05:04:01 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.8.243 to 00:23:76:7e:62:de via 10.99.8.1
+Jul 15 05:04:04 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:0c:f1:3e:da:78 (depaul-4d1b093a) via 10.99.12.1
+Jul 15 05:04:04 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.14.64 to 00:0c:f1:3e:da:78 (depaul-4d1b093a) via 10.99.12.1
+Jul 15 05:04:04 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.14.64 (140.192.141.242) from 00:0c:f1:3e:da:78 (depaul-4d1b093a) via 10.99.12.1
+Jul 15 05:04:04 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.14.64 to 00:0c:f1:3e:da:78 (depaul-4d1b093a) via 10.99.12.1
+Jul 15 05:04:04 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:0c:f1:3e:da:78 (depaul-4d1b093a) via 10.99.12.1
+Jul 15 05:04:04 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.14.64 to 00:0c:f1:3e:da:78 (depaul-4d1b093a) via 10.99.12.1
+Jul 15 05:04:04 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.14.64 (140.192.141.242) from 00:0c:f1:3e:da:78 (depaul-4d1b093a) via 10.99.12.1
+Jul 15 05:04:04 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.14.64 to 00:0c:f1:3e:da:78 (depaul-4d1b093a) via 10.99.12.1
+Jul 15 05:04:04 dhcp-sac-1s.acmetech.com dhcpd: bind update on 10.99.14.64 got ack from depaul: xid mismatch.
+Jul 15 05:04:08 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.21.161 from 00:1f:5b:c4:ac:27 (632-IMAC-04) via 10.99.20.1
+Jul 15 05:04:08 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.21.161 to 00:1f:5b:c4:ac:27 (632-IMAC-04) via 10.99.20.1
+Jul 15 05:04:09 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.23.232 from 00:1f:5b:c4:aa:ff (632-IMAC-16) via 10.99.20.1
+Jul 15 05:04:09 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.23.232 to 00:1f:5b:c4:aa:ff (632-IMAC-16) via 10.99.20.1
+Jul 15 05:04:14 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.23.41 from 00:1f:5b:c3:e0:e4 (632-IMAC-107) via 10.99.20.1
+Jul 15 05:04:14 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.23.41 to 00:1f:5b:c3:e0:e4 (632-IMAC-107) via 10.99.20.1
+Jul 15 05:04:15 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.8.243 from 00:23:76:7e:62:de via 10.99.8.1
+Jul 15 05:04:15 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.8.243 to 00:23:76:7e:62:de via 10.99.8.1
+Jul 15 05:04:16 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.20.128 from 00:1f:5b:c4:ab:17 (632-IMAC-07) via 10.99.20.1
+Jul 15 05:04:16 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.20.128 to 00:1f:5b:c4:ab:17 (632-IMAC-07) via 10.99.20.1
+Jul 15 05:04:31 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.20.89 from 00:1e:c2:c5:af:5d (632-IMAC-14) via 10.99.20.1
+Jul 15 05:04:31 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.20.89 to 00:1e:c2:c5:af:5d (632-IMAC-14) via 10.99.20.1
+Jul 15 05:04:32 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.23.232 from 00:1f:5b:c4:aa:ff (632-IMAC-16) via 10.99.20.1
+Jul 15 05:04:32 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.23.232 to 00:1f:5b:c4:aa:ff (632-IMAC-16) via 10.99.20.1
+Jul 15 05:04:39 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.21.152 from 00:1e:c2:c6:39:cc (632-IMAC-12) via 10.99.20.1
+Jul 15 05:04:39 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.21.152 to 00:1e:c2:c6:39:cc (632-IMAC-12) via 10.99.20.1
+Jul 15 05:04:41 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:04:41 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:04:41 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:04:41 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:04:43 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.21.161 from 00:1f:5b:c4:ac:27 (632-IMAC-04) via 10.99.20.1
+Jul 15 05:04:43 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.21.161 to 00:1f:5b:c4:ac:27 (632-IMAC-04) via 10.99.20.1
+Jul 15 05:04:45 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.59.136 from 00:26:08:ef:d4:b1 (14E1138-011) via eth0
+Jul 15 05:04:45 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.59.136 to 00:26:08:ef:d4:b1 (14E1138-011) via eth0
+Jul 15 05:04:47 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.20.89 from 00:1e:c2:c5:af:5d (632-IMAC-14) via 10.99.20.1
+Jul 15 05:04:47 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.20.89 to 00:1e:c2:c5:af:5d (632-IMAC-14) via 10.99.20.1
+Jul 15 05:04:49 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.20.128 from 00:1f:5b:c4:ab:17 (632-IMAC-07) via 10.99.20.1
+Jul 15 05:04:49 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.20.128 to 00:1f:5b:c4:ab:17 (632-IMAC-07) via 10.99.20.1
+Jul 15 05:04:49 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.23.232 from 00:1f:5b:c4:aa:ff (632-IMAC-16) via 10.99.20.1
+Jul 15 05:04:49 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.23.232 to 00:1f:5b:c4:aa:ff (632-IMAC-16) via 10.99.20.1
+Jul 15 05:04:55 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:24:2b:53:71:11 (D2D6HLJ1) via 10.99.32.1
+Jul 15 05:04:56 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.34.213 to 00:24:2b:53:71:11 (D2D6HLJ1) via 10.99.32.1
+Jul 15 05:04:58 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:24:2b:53:71:11 (D2D6HLJ1) via 10.99.32.1
+Jul 15 05:04:58 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.34.213 to 00:24:2b:53:71:11 (D2D6HLJ1) via 10.99.32.1
+Jul 15 05:04:58 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.34.213 (140.192.141.242) from 00:24:2b:53:71:11 (D2D6HLJ1) via 10.99.32.1
+Jul 15 05:04:58 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.34.213 to 00:24:2b:53:71:11 (D2D6HLJ1) via 10.99.32.1
+Jul 15 05:05:04 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.21.152 from 00:1e:c2:c6:39:cc (632-IMAC-12) via 10.99.20.1
+Jul 15 05:05:04 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.21.152 to 00:1e:c2:c6:39:cc (632-IMAC-12) via 10.99.20.1
+Jul 15 05:05:32 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.23.232 from 00:1f:5b:c4:aa:ff (632-IMAC-16) via 10.99.20.1
+Jul 15 05:05:32 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.23.232 to 00:1f:5b:c4:aa:ff (632-IMAC-16) via 10.99.20.1
+Jul 15 05:05:36 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.20.89 from 00:1e:c2:c5:af:5d (632-IMAC-14) via 10.99.20.1
+Jul 15 05:05:36 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.20.89 to 00:1e:c2:c5:af:5d (632-IMAC-14) via 10.99.20.1
+Jul 15 05:05:39 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:05:39 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:05:39 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:05:39 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:05:45 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.23.169 from 00:1f:5b:c4:d9:0d (632-IMAC-10) via 10.99.20.1
+Jul 15 05:05:45 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.23.169 to 00:1f:5b:c4:d9:0d (632-IMAC-10) via 10.99.20.1
+Jul 15 05:05:45 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.21.152 from 00:1e:c2:c6:39:cc (632-IMAC-12) via 10.99.20.1
+Jul 15 05:05:45 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.21.152 to 00:1e:c2:c6:39:cc (632-IMAC-12) via 10.99.20.1
+Jul 15 05:05:52 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.23.232 from 00:1f:5b:c4:aa:ff (632-IMAC-16) via 10.99.20.1
+Jul 15 05:05:52 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.23.232 to 00:1f:5b:c4:aa:ff (632-IMAC-16) via 10.99.20.1
+Jul 15 05:05:54 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.20.89 from 00:1e:c2:c5:af:5d (632-IMAC-14) via 10.99.20.1
+Jul 15 05:05:54 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.20.89 to 00:1e:c2:c5:af:5d (632-IMAC-14) via 10.99.20.1
+Jul 15 05:06:19 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.8.243 from 00:23:76:7e:62:de via 10.99.8.1
+Jul 15 05:06:19 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.8.243 to 00:23:76:7e:62:de via 10.99.8.1
+Jul 15 05:06:23 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.23.232 from 00:1f:5b:c4:aa:ff (632-IMAC-16) via 10.99.20.1
+Jul 15 05:06:23 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.23.232 to 00:1f:5b:c4:aa:ff (632-IMAC-16) via 10.99.20.1
+Jul 15 05:06:24 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:20:a6:4e:7d:a1 (kiosk) via 10.99.56.1
+Jul 15 05:06:25 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.56.246 to 00:20:a6:4e:7d:a1 (kiosk) via 10.99.56.1
+Jul 15 05:06:30 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.20.89 from 00:1e:c2:c5:af:5d (632-IMAC-14) via 10.99.20.1
+Jul 15 05:06:30 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.20.89 to 00:1e:c2:c5:af:5d (632-IMAC-14) via 10.99.20.1
+Jul 15 05:06:31 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.8.243 from 00:23:76:7e:62:de via 10.99.8.1
+Jul 15 05:06:31 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.8.243 to 00:23:76:7e:62:de via 10.99.8.1
+Jul 15 05:06:31 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.23.169 from 00:1f:5b:c4:d9:0d (632-IMAC-10) via 10.99.20.1
+Jul 15 05:06:31 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.23.169 to 00:1f:5b:c4:d9:0d (632-IMAC-10) via 10.99.20.1
+Jul 15 05:06:37 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.56.246 (140.192.141.242) from 00:20:a6:4e:7d:a1 (kiosk) via 10.99.56.1
+Jul 15 05:06:37 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.56.246 to 00:20:a6:4e:7d:a1 (kiosk) via 10.99.56.1
+Jul 15 05:06:37 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:06:37 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:06:37 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:06:37 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:06:46 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.11.234 from 00:24:36:93:fa:1a (kuraudo) via 10.99.8.1
+Jul 15 05:06:46 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.11.234 to 00:24:36:93:fa:1a (kuraudo) via 10.99.8.1
+Jul 15 05:06:46 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.34.153 from 00:1f:3c:59:09:e1 (D058-234906E1) via 10.99.32.1
+Jul 15 05:06:46 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.34.153 to 00:1f:3c:59:09:e1 (D058-234906E1) via 10.99.32.1
+Jul 15 05:06:54 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.23.169 from 00:1f:5b:c4:d9:0d (632-IMAC-10) via 10.99.20.1
+Jul 15 05:06:54 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.23.169 to 00:1f:5b:c4:d9:0d (632-IMAC-10) via 10.99.20.1
+Jul 15 05:07:04 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.23.232 from 00:1f:5b:c4:aa:ff (632-IMAC-16) via 10.99.20.1
+Jul 15 05:07:04 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.23.232 to 00:1f:5b:c4:aa:ff (632-IMAC-16) via 10.99.20.1
+Jul 15 05:07:10 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 05:07:10 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 05:07:11 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.23.169 from 00:1f:5b:c4:d9:0d (632-IMAC-10) via 10.99.20.1
+Jul 15 05:07:11 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.23.169 to 00:1f:5b:c4:d9:0d (632-IMAC-10) via 10.99.20.1
+Jul 15 05:07:19 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.23.232 from 00:1f:5b:c4:aa:ff (632-IMAC-16) via 10.99.20.1
+Jul 15 05:07:19 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.23.232 to 00:1f:5b:c4:aa:ff (632-IMAC-16) via 10.99.20.1
+Jul 15 05:07:35 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:07:35 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:07:35 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:07:35 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:07:46 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.34.153 from 00:1f:3c:59:09:e1 (D058-234906E1) via 10.99.32.1
+Jul 15 05:07:46 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.34.153 to 00:1f:3c:59:09:e1 (D058-234906E1) via 10.99.32.1
+Jul 15 05:07:56 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:24:2b:53:71:11 (D2D6HLJ1) via 10.99.32.1
+Jul 15 05:07:57 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.34.213 to 00:24:2b:53:71:11 (D2D6HLJ1) via 10.99.32.1
+Jul 15 05:07:57 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.34.213 (140.192.141.242) from 00:24:2b:53:71:11 (D2D6HLJ1) via 10.99.32.1
+Jul 15 05:07:57 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.34.213 to 00:24:2b:53:71:11 (D2D6HLJ1) via 10.99.32.1
+Jul 15 05:08:33 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:08:33 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:08:33 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:08:33 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:09:02 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.34.175 from 00:1f:e1:07:8b:94 (D058-23404ACA) via 10.99.32.1
+Jul 15 05:09:02 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.34.175 to 00:1f:e1:07:8b:94 (D058-23404ACA) via 10.99.32.1
+Jul 15 05:09:05 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 05:09:05 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 05:09:18 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.56.246 from 00:20:a6:4e:7d:a1 (kiosk) via 10.99.56.1
+Jul 15 05:09:18 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.56.246 to 00:20:a6:4e:7d:a1 (kiosk) via 10.99.56.1
+Jul 15 05:09:30 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:09:30 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:09:30 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:09:30 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:09:42 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.34.175 from 00:1f:e1:07:8b:94 (D058-23404ACA) via 10.99.32.1
+Jul 15 05:09:42 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.34.175 to 00:1f:e1:07:8b:94 (D058-23404ACA) via 10.99.32.1
+Jul 15 05:10:02 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.26.209 from 00:1e:c2:b9:ad:4d via 10.99.24.1
+Jul 15 05:10:02 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.26.209 to 00:1e:c2:b9:ad:4d via 10.99.24.1
+Jul 15 05:10:18 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.13.43 from 00:1b:63:14:0d:28 via eth0
+Jul 15 05:10:18 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.13.43 to 00:1b:63:14:0d:28 via eth0
+Jul 15 05:10:28 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:10:28 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:10:28 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:10:28 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:11:26 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:11:26 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:11:26 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:11:26 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:11:43 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.56.246 from 00:20:a6:4e:7d:a1 (kiosk) via 10.99.56.1
+Jul 15 05:11:43 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.56.246 to 00:20:a6:4e:7d:a1 (kiosk) via 10.99.56.1
+Jul 15 05:11:53 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.9.174 from 90:4c:e5:38:75:c8 (Veritusmortus) via 10.99.8.1
+Jul 15 05:11:53 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.9.174 to 90:4c:e5:38:75:c8 (Veritusmortus) via 10.99.8.1
+Jul 15 05:11:59 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.9.174 via 10.99.8.1
+Jul 15 05:11:59 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.9.174 (90:4c:e5:38:75:c8) via eth0
+Jul 15 05:12:00 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.14.64 from 00:0c:f1:3e:da:78 (depaul-4d1b093a) via 75.102.220.1: wrong network.
+Jul 15 05:12:00 dhcp-sac-1s.acmetech.com dhcpd: DHCPNAK on 10.99.14.64 to 00:0c:f1:3e:da:78 via 75.102.220.1
+Jul 15 05:12:23 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:12:23 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:12:23 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:12:23 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:12:37 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.9.174 from 90:4c:e5:38:75:c8 (Veritusmortus) via 10.99.8.1
+Jul 15 05:12:37 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.9.174 to 90:4c:e5:38:75:c8 (Veritusmortus) via 10.99.8.1
+Jul 15 05:12:52 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.2.18 from 00:19:e3:dc:10:81 (jtrlabm111) via eth0
+Jul 15 05:12:52 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.2.18 to 00:19:e3:dc:10:81 (jtrlabm111) via eth0
+Jul 15 05:13:05 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 05:13:05 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 05:13:09 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.9.174 from 90:4c:e5:38:75:c8 (Veritusmortus) via 10.99.8.1
+Jul 15 05:13:09 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.9.174 to 90:4c:e5:38:75:c8 (Veritusmortus) via 10.99.8.1
+Jul 15 05:13:15 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.9.174 from 90:4c:e5:38:75:c8 (Veritusmortus) via 10.99.8.1
+Jul 15 05:13:15 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.9.174 to 90:4c:e5:38:75:c8 (Veritusmortus) via 10.99.8.1
+Jul 15 05:13:18 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.11.145 via 10.99.8.1
+Jul 15 05:13:18 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.11.145 (70:1a:04:25:c8:b8) via eth0
+Jul 15 05:13:21 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:13:21 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:13:21 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:13:21 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:13:25 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.9.174 from 90:4c:e5:38:75:c8 (Veritusmortus) via 10.99.8.1
+Jul 15 05:13:25 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.9.174 to 90:4c:e5:38:75:c8 (Veritusmortus) via 10.99.8.1
+Jul 15 05:13:29 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.9.174 via 10.99.8.1
+Jul 15 05:13:29 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.9.174 (90:4c:e5:38:75:c8) via eth0
+Jul 15 05:13:32 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1a:a2:fb:18:51 (RLDP) via 10.99.56.1
+Jul 15 05:13:33 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.56.80 to 00:1a:a2:fb:18:51 (RLDP) via 10.99.56.1
+Jul 15 05:13:58 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.9.174 from 90:4c:e5:38:75:c8 (Veritusmortus) via 10.99.8.1
+Jul 15 05:13:58 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.9.174 to 90:4c:e5:38:75:c8 (Veritusmortus) via 10.99.8.1
+Jul 15 05:14:10 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.9.174 from 90:4c:e5:38:75:c8 (Veritusmortus) via 10.99.8.1
+Jul 15 05:14:10 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.9.174 to 90:4c:e5:38:75:c8 (Veritusmortus) via 10.99.8.1
+Jul 15 05:14:19 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:14:19 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:14:19 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:14:19 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:14:50 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.9.174 via 10.99.8.1
+Jul 15 05:14:50 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.9.174 (90:4c:e5:38:75:c8) via eth0
+Jul 15 05:15:00 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 05:15:00 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 05:15:16 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:15:16 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:15:16 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:15:16 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:16:14 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:16:14 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:16:14 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:16:14 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:16:52 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.9.174 from 90:4c:e5:38:75:c8 (Veritusmortus) via 10.99.8.1
+Jul 15 05:16:52 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.9.174 to 90:4c:e5:38:75:c8 (Veritusmortus) via 10.99.8.1
+Jul 15 05:17:00 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 05:17:00 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 05:17:11 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:17:11 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:17:11 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:17:11 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:17:33 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.16.76 via 10.99.16.1
+Jul 15 05:17:33 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.16.76 (00:24:d6:42:4e:d0) via eth0
+Jul 15 05:17:45 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:19:d2:bc:91:d9 via 10.99.32.1
+Jul 15 05:17:45 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.33.14 to 00:19:d2:bc:91:d9 (D037-8BBFA624) via 10.99.32.1
+Jul 15 05:17:45 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.33.14 (140.192.141.242) from 00:19:d2:bc:91:d9 (D037-8BBFA624) via 10.99.32.1
+Jul 15 05:17:45 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.33.14 to 00:19:d2:bc:91:d9 (D037-8BBFA624) via 10.99.32.1
+Jul 15 05:17:45 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.49.207 from 00:1f:3c:c7:ec:7e (D118-70C19C24) via 10.99.48.1
+Jul 15 05:17:45 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.49.207 to 00:1f:3c:c7:ec:7e (D118-70C19C24) via 10.99.48.1
+Jul 15 05:18:06 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.34.175 from 00:1f:e1:07:8b:94 (D058-23404ACA) via 10.99.32.1
+Jul 15 05:18:06 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.34.175 to 00:1f:e1:07:8b:94 (D058-23404ACA) via 10.99.32.1
+Jul 15 05:18:10 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:18:10 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:18:10 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:18:10 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:18:12 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.34.175 from 00:1f:e1:07:8b:94 (D058-23404ACA) via 10.99.32.1
+Jul 15 05:18:12 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.34.175 to 00:1f:e1:07:8b:94 (D058-23404ACA) via 10.99.32.1
+Jul 15 05:18:37 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.11.145 from 70:1a:04:25:c8:b8 (user-PC) via 10.99.8.1
+Jul 15 05:18:37 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.11.145 to 70:1a:04:25:c8:b8 (user-PC) via 10.99.8.1
+Jul 15 05:18:40 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.11.145 via 10.99.8.1
+Jul 15 05:18:40 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.11.145 (70:1a:04:25:c8:b8) via eth0
+Jul 15 05:19:08 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:19:08 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:19:08 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:19:08 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:19:25 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.34.211 via 10.99.32.1
+Jul 15 05:19:25 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.34.211 (00:16:6f:95:30:42) via eth0
+Jul 15 05:19:28 dhcp-sac-1s.acmetech.com dhcpd: DHCPINFORM from 10.99.34.211 via 10.99.32.1
+Jul 15 05:19:28 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK to 10.99.34.211 (00:16:6f:95:30:42) via eth0
+Jul 15 05:19:44 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:19:d2:bc:91:d9 via 10.99.24.1
+Jul 15 05:19:45 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.26.148 to 00:19:d2:bc:91:d9 (D037-8BBFA624) via 10.99.24.1
+Jul 15 05:19:45 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.26.148 (140.192.141.242) from 00:19:d2:bc:91:d9 (D037-8BBFA624) via 10.99.24.1
+Jul 15 05:19:45 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.26.148 to 00:19:d2:bc:91:d9 (D037-8BBFA624) via 10.99.24.1
+Jul 15 05:20:06 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:20:06 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:20:06 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:20:06 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:20:06 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.26.148 from 00:19:d2:bc:91:d9 (D037-8BBFA624) via 10.99.24.1
+Jul 15 05:20:06 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.26.148 to 00:19:d2:bc:91:d9 (D037-8BBFA624) via 10.99.24.1
+Jul 15 05:20:18 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 192.168.1.4 from 00:23:df:23:2c:2d via 10.99.12.1: wrong network.
+Jul 15 05:20:18 dhcp-sac-1s.acmetech.com dhcpd: DHCPNAK on 192.168.1.4 to 00:23:df:23:2c:2d via 10.99.12.1
+Jul 15 05:20:18 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:23:df:23:2c:2d via 10.99.12.1
+Jul 15 05:20:19 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.12.180 to 00:23:df:23:2c:2d (iPhone) via 10.99.12.1
+Jul 15 05:20:20 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.12.180 (140.192.141.242) from 00:23:df:23:2c:2d (iPhone) via 10.99.12.1
+Jul 15 05:20:20 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.12.180 to 00:23:df:23:2c:2d (iPhone) via 10.99.12.1
+Jul 15 05:20:54 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from a4:ed:4e:a1:04:c6 via 10.99.0.1
+Jul 15 05:20:55 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.1.35 to a4:ed:4e:a1:04:c6 via 10.99.0.1
+Jul 15 05:20:55 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.1.35 (140.192.141.242) from a4:ed:4e:a1:04:c6 via 10.99.0.1
+Jul 15 05:20:55 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.1.35 to a4:ed:4e:a1:04:c6 via 10.99.0.1
+Jul 15 05:20:56 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 05:20:56 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 05:21:04 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:21:04 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:21:04 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:21:04 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:21:06 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.26.148 from 00:19:d2:bc:91:d9 (D037-8BBFA624) via 10.99.24.1
+Jul 15 05:21:06 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.26.148 to 00:19:d2:bc:91:d9 (D037-8BBFA624) via 10.99.24.1
+Jul 15 05:21:36 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.11.234 from 00:24:36:93:fa:1a (kuraudo) via 10.99.8.1
+Jul 15 05:21:36 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.11.234 to 00:24:36:93:fa:1a (kuraudo) via 10.99.8.1
+Jul 15 05:21:41 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.10.169 from 00:25:4b:12:3a:ce (ipod) via eth0
+Jul 15 05:21:41 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.10.169 to 00:25:4b:12:3a:ce (ipod) via eth0
+Jul 15 05:22:01 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:22:01 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:22:01 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:22:01 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:22:30 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.34.211 from 00:16:6f:95:30:42 (D066-C51973E3) via 10.99.32.1
+Jul 15 05:22:30 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.34.211 to 00:16:6f:95:30:42 (D066-C51973E3) via 10.99.32.1
+Jul 15 05:22:56 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.16.92 from 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 05:22:56 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.16.92 to 00:13:ce:2f:8f:27 (toshiba-user) via 10.99.16.1
+Jul 15 05:23:00 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:23:00 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:23:00 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.3.49 (140.192.141.242) from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:23:00 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:23:10 dhcp-sac-1s.acmetech.com dhcpd: DHCPREQUEST for 10.99.34.211 from 00:16:6f:95:30:42 (D066-C51973E3) via 10.99.32.1
+Jul 15 05:23:10 dhcp-sac-1s.acmetech.com dhcpd: DHCPACK on 10.99.34.211 to 00:16:6f:95:30:42 (D066-C51973E3) via 10.99.32.1
+Jul 15 05:23:19 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:23:76:27:28:1a via 10.99.8.1
+Jul 15 05:23:20 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.11.11 to 00:23:76:27:28:1a via 10.99.8.1
+Jul 15 05:23:57 dhcp-sac-1s.acmetech.com dhcpd: DHCPDISCOVER from 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1
+Jul 15 05:23:57 dhcp-sac-1s.acmetech.com dhcpd: DHCPOFFER on 10.99.3.49 to 00:1b:d4:58:7c:ff (SEP001BD4587CFF) via 10.99.0.1

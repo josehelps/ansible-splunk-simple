@@ -1,0 +1,55 @@
+NCircle Add-on
+----------------------------------------
+	Author: Splunk
+	Version/Date: 11/03/2010 05:58 pm
+	Source type(s): ncircle:ip360
+	Has index-time operations: false, this TA does not need to be placed on indexers
+	Input requirements: Data must be source typed as 'ncircle:ip360' and the IP360 system must be set up to 
+                         forward with the correct format, as described below.
+	Supported product(s): nCircle IP360 Vulnerability Scanner
+
+Using this Add-on:
+----------------------------------------
+	Configuration: Manual
+	Ports for automatic configuration: None
+	Scripted input setup: Not applicable
+
+	IP360 supports multiple export formats. The device needs to be set up to output the CSV format that contains a scan time. Sample events for this format are as follows:
+	
+	    Network6,Hostname,255.255.255.255,OS,13938,SMTP Open Mail Relay,25,12/10/2009 6:12,305
+	    Network7,Hostname,255.255.255.255,OS,13938,RPC automountd Available,32996,12/10/2009 6:12,0
+	
+	Note that the other CSV format does not include a scan time.
+
+Mapping nCircle Severities
+----------------------------------------
+	
+	This technology add-on includes a script, generate_ncircle_severities.py,
+	which can be used to map nCircle fine-grained severities to severities
+	more appropriate for use in the Splunk Apps for Enterprise Security and 
+	PCI Compliance. The script will create a lookup table that maps nCircle
+	severities by numeric ranges to the following severity values:
+
+		information, low, medium, high, critical
+		
+	By default, the lookup table is located in:
+	
+		<TA installation directory>/lookups/ncircle_severities.csv 
+	
+	To run the script in the Splunk search bar, use the following syntax:
+	
+		| ncircleseverities -I 0-10 -L 11-20 -M 21-30 -H 31-40 -C 41-53
+
+	To use the script from the CLI (command-line interface), use the following
+	syntax:
+	
+		$SPLUNK_HOME/bin/splunk cmd python ./generate_ncircle_severities.py -I 0-10 -L 11-20 -M 21-30 -H 31-40 -C 41-50
+	
+	Additional help on the script is available by running the script with the "-h"
+	switch:
+	
+		$SPLUNK_HOME/bin/splunk cmd python ./generate_ncircle_severities.py -h
+
+
+
+Copyright (C) 2009-2013 Splunk Inc. All Rights Reserved.

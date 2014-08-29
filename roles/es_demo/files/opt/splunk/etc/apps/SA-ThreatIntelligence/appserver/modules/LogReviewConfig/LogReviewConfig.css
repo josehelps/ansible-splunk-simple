@@ -1,0 +1,59 @@
+@import url("/static/css/bootstrap.min.css");
+@import url("/static/css/pages/dashboard-simple-bootstrap.min.css");
+
+fieldset legend {
+	color:          inherit;
+	font-size:      24px;
+	font-weight:    200;	
+	padding-bottom: 10px;
+}
+
+.checkboxWidget input {
+	float: left;
+}
+
+.checkboxWidget label {
+	padding-left: 18px;
+	padding-top: 3px; 
+}
+
+.splButton-primary {
+	margin-left: 0px;
+}
+
+.logReviewEditForm {
+    width: 660px;
+}
+
+.jmFormActions{
+	margin-top: 22px;
+}
+
+#item-is_required{
+	margin-bottom: 12px;
+}
+
+.Message {
+    padding: 0;
+}
+   
+input[disabled] {
+    padding-left: 7px;
+}
+
+#es_no_permissions div.adminGroup {
+  border: none;
+  box-shadow: none;
+  padding: 0px;
+}
+
+#es_no_permissions div.adminListItem {
+  border-bottom: none;
+  min-height: 45px;
+  padding-left: 15px;
+}
+
+#es_no_permissions dd {
+  border-left: none;
+  padding-top: 16px;
+}

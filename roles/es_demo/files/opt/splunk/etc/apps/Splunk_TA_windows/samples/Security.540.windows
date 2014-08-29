@@ -1,0 +1,44 @@
+09/11/09 04:13:46 PM
+LogName=Security
+SourceName=Security
+EventCode=540
+EventType=8
+Type=Success Audit
+ComputerName=SC-DC01
+User=@@user
+Sid=S-1-5-7
+SidType=5
+Category=2
+CategoryString=Logon/Logoff
+RecordNumber=130537986
+Message=Successful Network Logon:
+
+	User Name:	@@user
+
+	Domain:		
+
+	Logon ID:		(0x0,0xD0B2BDE6)
+
+	Logon Type:	3
+
+	Logon Process:	NtLmSsp 
+
+	Authentication Package:	NTLM
+
+	Workstation Name:	SC-UNIFLOW01
+
+	Logon GUID:	-
+
+	Caller User Name:	-
+
+	Caller Domain:	-
+
+	Caller Logon ID:	-
+
+	Caller Process ID: -
+
+	Transited Services: -
+
+	Source Network Address:	-
+
+	Source Port:	-

@@ -1,0 +1,26 @@
+<view isVisible="false" template="builder.html" isDashboard="False" type="redirect" target="report">
+    <label>Display Report</label>
+    <module name="ServerSideInclude" layoutPanel="messaging">
+        <param name="src">pdf_header.html</param>
+    </module>
+    <module name="SimpleResultsHeader" layoutPanel="graphArea">
+        <param name="headerFormat">.</param>
+        <param name="entityName">results</param>
+        <module name="SimpleResultsHeader" layoutPanel="graphArea">
+            <param name="headerFormat">$count$ results</param>
+            <param name="entityName">results</param>
+            <module name="ViewstateAdapter">
+                <module name="JSChart" layoutPanel="graphArea">
+                    <param name="height">400px</param>
+                    <param name="width">100%</param>
+                    <param name="maxRowsForTop">20</param>
+                    <param name="enableResize">false</param>
+                </module>
+                <module name="SimpleResultsTable" layoutPanel="resultsArea">
+                    <param name="maxLines">10</param>
+                    <param name="drilldown">none</param>
+                </module>
+            </module>
+        </module>
+        </module>
+</view>

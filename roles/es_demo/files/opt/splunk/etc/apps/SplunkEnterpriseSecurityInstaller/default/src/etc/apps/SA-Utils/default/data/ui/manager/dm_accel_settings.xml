@@ -1,0 +1,36 @@
+<endpoint name="data/inputs/dm_accel_settings">
+	<header>Threat Lists</header>
+	<breadcrumb>
+		<parent hidecurrent="False">datainputstats</parent>
+		<name>Data Model Acceleration Enforcement Settings</name>
+	</breadcrumb>
+	<elements>
+		<element name="spl-ctrl_acceleration_options" type="fieldset">
+			<key name="legend">Acceleration</key>
+			<view name="create"/>
+			<view name="edit"/>
+			<view name="list"/>
+			<elements>
+				<element name="name" type="textfield" label="Name">
+					<key name="exampleText">The data model to be accelerated.</key>
+					<view name="create"/>
+					<view name="list"/>
+				</element>
+				<element name="acceleration" type="checkbox" label="Acceleration Enforced">
+					<key name="exampleText">If checked, acceleration of the data model will be enforced.</key>
+					<key name="processValueList">'True' if value == '1' else 'False'</key>
+					<view name="create"/>
+					<view name="edit"/>
+					<view name="list"/>
+				</element>
+                <element name="manual_rebuilds" type="checkbox" label="Manual Rebuilds Enforced">
+                    <key name="exampleText">If checked, manual rebuilds of the data model will be enforced.</key>
+                    <key name="processValueList">'True' if value == '1' else 'False'</key>
+                    <view name="create"/>
+                    <view name="edit"/>
+                    <view name="list"/>
+                </element>
+			</elements>
+		</element>
+	</elements>
+</endpoint>

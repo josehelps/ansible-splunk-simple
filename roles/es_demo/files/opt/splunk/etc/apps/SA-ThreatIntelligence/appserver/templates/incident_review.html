@@ -1,0 +1,65 @@
+<!-- ${copyright} -->
+<!-- shameless copy paste of the core app.html modified to allow for extra routes and ui layout-->
+
+<%inherit file="base.html"/>
+<div class="preload">
+    <div class="header">
+      <div id="placeholder-splunk-bar">
+        <a href="{{SPLUNKWEB_URL_PREFIX}}/app/launcher/home" class="brand" title="splunk &gt; listen to your data">splunk<strong>&gt;</strong></a>
+      </div>
+      <div id="placeholder-app-bar"></div>
+    </div>
+
+    <div class="dashboard-body container-fluid main-section-body" data-role="main">
+        <div class="dashboard-header clearfix">
+            <h2>Incident Review</h2>
+        </div>
+        <div class="fieldset">
+            <div class="filter-group-col">
+                <div class="filter-col-1">
+                    <div class="input input-dropdown" id="button-group">
+                    </div>
+                </div>
+                <div class="filter-col-2">
+                    <div class="input input-dropdown" id="status_filter">
+                        <label>_</label>
+                    </div>
+                    <div class="input input-dropdown" id="owner_filter"></div>
+                    <div class="input input-dropdown" id="domain_filter"></div>
+                </div>
+                <div class="filter-col-3">
+                    <div class="input input-text" id="rule_filter"></div>
+                    <div class="input input-text" id="srch_filter"></div>
+                    <div>
+                        <div class="input input-time" id="time_filter"></div>
+                        <div id="ir_submit_btn"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-group-col">
+                <div class="custom-col" id="search_controls_div">
+                </div>
+                <div class="custom-col" id="timeline_div">
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-row dashboard-row1">
+            <div class="dashboard-cell" style="width: 100%;">
+                <div class="dashboard-panel clearfix">                
+                    <div class="panel-element-row">
+                        <div class="dashboard-element html" id="ir_events_viewer" style="width: 100%">
+                            <div class="panel-body html" style="padding:0px">
+                                <div id="iv-event-viewer-layout">
+                                  <div id="event-viewer-body"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer"></div>
+</div>

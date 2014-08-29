@@ -1,0 +1,6 @@
+03/11/10 01:12:01 PM - sampletag=authentication sampletag=default action=@@Action app=@@App dest=@@Dest src=@@Src
+03/11/10 01:12:01 PM - sampletag=authentication sampletag=privileged src_user=admin user=root action=@@Action app=@@App dest=@@Dest src=@@Src
+03/11/10 01:12:01 PM - sampletag=cleartext sampletag=authentication sampletag=default action=@@Action app=@@App dest=@@Dest src=@@Src
+03/11/10 01:12:01 PM - sampletag=insecure sampletag=authentication sampletag=default action=@@Action app=@@App dest=@@Dest src=@@Src
+03/11/10 01:12:01 PM - sampletag=cleartext sampletag=authentication sampletag=privileged src_user=admin user=root action=@@Action app=@@App dest=@@Dest src=@@Src
+03/11/10 01:12:01 PM - sampletag=insecure sampletag=authentication sampletag=privileged src_user=admin user=root action=@@Action app=@@App dest=@@Dest src=@@Src

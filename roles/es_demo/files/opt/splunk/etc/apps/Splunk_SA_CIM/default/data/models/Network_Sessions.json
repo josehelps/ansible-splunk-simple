@@ -1,0 +1,313 @@
+{
+	"modelName":	"Network_Sessions",
+	"displayName":	"Network Sessions",
+	"description":	"Network Sessions Data Model",
+	"editable":		false,
+	"objects":		[
+		{
+			"objectName":	"All_Sessions",
+			"displayName":	"All Sessions",
+			"parentName":	"BaseEvent",
+			"fields":		[
+				{
+					"fieldName":	"action",
+					"displayName":	"action",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"signature",
+					"displayName":	"signature",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"src_ip",
+					"displayName":	"src_ip",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"src_mac",
+					"displayName":	"src_mac",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},	
+				{
+					"fieldName":	"src_nt_host",
+					"displayName":	"src_nt_host",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"src_dns",
+					"displayName":	"src_dns",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},		
+				{
+					"fieldName":	"tag",
+					"displayName":	"tag",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	true,
+					"hidden":		false
+				}		
+			],
+			"calculations":	[
+				{
+					"calculationID":	"All_Sessions_fillnull_dest_ip",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"dest_ip",
+							"displayName":	"dest_ip",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnull(dest_ip),\"unknown\",dest_ip)"
+				},
+				{
+					"calculationID":	"All_Sessions_fillnull_dest_mac",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"dest_mac",
+							"displayName":	"dest_mac",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnull(dest_mac),\"unknown\",dest_mac)"
+				},
+				{
+					"calculationID":	"All_Sessions_fillnull_dest_nt_host",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"dest_nt_host",
+							"displayName":	"dest_nt_host",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnull(dest_nt_host),\"unknown\",dest_nt_host)"
+				},
+				{
+					"calculationID":	"All_Sessions_fillnull_dest_dns",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"dest_dns",
+							"displayName":	"dest_dns",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnull(dest_dns),\"unknown\",dest_dns)"
+				},
+				{
+					"calculationID":	"All_Sessions_fillnull_user",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"user",
+							"displayName":	"user",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnull(user),\"unknown\",user)"
+				},
+				{
+					"calculationID":	"All_Sessions_vendor_product",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"vendor_product",
+							"displayName":	"vendor_product",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"case(isnotnull(vendor_product),vendor_product,isnotnull(vendor) AND vendor!=\"unknown\" AND isnotnull(product) AND product!=\"unknown\",vendor.\" \".product,isnotnull(vendor) AND vendor!=\"unknown\" AND (isnull(product) OR product=\"unknown\"),vendor.\" unknown\",(isnull(vendor) OR vendor=\"unknown\") AND isnotnull(product) AND product!=\"unknown\",\"unknown \".product,isnotnull(sourcetype),sourcetype,1=1,\"unknown\")"
+				}
+			],
+			"constraints":	[
+				{
+					"search":	"tag=network tag=session"
+				}			
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Session_Start",
+			"displayName":	"Session Start",
+			"parentName":	"All_Sessions",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"tag=start"
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Session_End",
+			"displayName":	"Session End",
+			"parentName":	"All_Sessions",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"tag=end"
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"DHCP",
+			"displayName":	"DHCP",
+			"parentName":	"All_Sessions",
+			"fields":		[
+				{
+					"fieldName":	"lease_duration",
+					"displayName":	"lease_duration",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"lease_scope",
+					"displayName":	"lease_scope",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				}
+			],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"tag=dhcp"
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"VPN",
+			"displayName":	"VPN",
+			"parentName":	"All_Sessions",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"tag=vpn"
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Missing_Extractions_Network_Sessions",
+			"displayName":	"Missing Extractions (S.o.S)",
+			"parentName":	"All_Sessions",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"(dest_ip=\"unknown\")"
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Untagged_Network_Sessions",
+			"displayName":	"Untagged Network Sessions (S.o.S)",
+			"parentName":	"BaseSearch",
+			"fields":		[
+				{
+					"fieldName":	"_time",
+					"displayName":	"_time",
+					"type":			"timestamp",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"host",
+					"displayName":	"host",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"source",
+					"displayName":	"source",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"sourcetype",
+					"displayName":	"sourcetype",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				}			
+			],
+			"calculations":	[],
+			"constraints":	[],
+			"baseSearch":   "(*dhcp* OR *vpn) sourcetype!=stash NOT (tag=network tag=session)",
+			"children":		[]
+		}
+	]
+}

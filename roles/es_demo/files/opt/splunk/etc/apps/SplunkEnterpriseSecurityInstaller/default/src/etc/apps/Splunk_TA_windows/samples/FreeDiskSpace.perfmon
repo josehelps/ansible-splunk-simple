@@ -1,0 +1,27 @@
+04/14/2011 13:45:37.170
+collection=FreeDiskSpace
+object=LogicalDisk
+counter="Free Megabytes"
+instance=E:
+Value=@@mbytes_free
+
+04/14/2011 13:45:37.170
+collection=FreeDiskSpace
+object=LogicalDisk
+counter="% Free Space"
+instance=E:
+Value=@@perc_free
+
+04/14/2011 13:45:37.170
+collection=FreeDiskSpace
+object=LogicalDisk
+counter="Free Megabytes"
+instance=F:
+Value=3080
+
+04/14/2011 13:45:37.170
+collection=FreeDiskSpace
+object=LogicalDisk
+counter="% Free Space"
+instance=F:
+Value=0

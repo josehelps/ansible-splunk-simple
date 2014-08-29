@@ -1,0 +1,14 @@
+span.requiredAsterisk {
+    color: #AF4444;
+    margin-left: 2px;
+}
+
+#key-indicator-preview-panel{
+	min-height: 120px;
+}
+
+#keyIndicatorsPreviewInvalidModal .message-icon{
+	float: left;
+    margin-right: 10px;
+    font-size: 15px;
+}

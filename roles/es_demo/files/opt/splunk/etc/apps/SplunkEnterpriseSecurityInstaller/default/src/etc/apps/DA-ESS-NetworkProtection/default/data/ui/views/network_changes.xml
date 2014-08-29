@@ -1,0 +1,70 @@
+<form script="network_changes.js">
+	<label>Network Changes</label>
+	
+	<fieldset autoRun="true" submitButton="true">
+        
+        <input type="text" token="bunit_form">
+            <label>Business Unit</label>
+            <default></default>
+        </input>
+
+        <input type="dropdown" token="category_form">
+            <label>Category</label>
+            <choice value="">All</choice>
+            <populatingSearch fieldForValue="category" fieldForLabel="category">| `categories`</populatingSearch>
+            <default></default>
+        </input>
+        	        
+		<input type="time">
+			<default>Last 24 hours</default>
+		</input>
+	</fieldset>
+	
+	<row>
+        <chart id="element1">
+            <title>Network Changes By Action</title>
+            
+            <searchTemplate>| `tstats` count from datamodel=Change_Analysis where nodename=All_Changes.Network_Changes $bunit$ $category$ by _time,All_Changes.action span=10m | timechart minspan=10m useother=`useother` count by All_Changes.action | `drop_dm_object_name("All_Changes")`</searchTemplate>
+            
+            <option name="charting.axisTitleX.text">time</option>
+            <option name="charting.axisTitleY.text">count</option>
+            <option name="charting.chart">column</option>
+            <option name="charting.chart.stackMode">stacked</option>
+
+            <drilldown>
+                <link>search?q=| `datamodel("Change_Analysis","Network_Changes")` | `drop_dm_object_name("All_Changes")` | search action="$click.name2$"&amp;earliest=$earliest$&amp;latest=$latest$</link>
+            </drilldown>
+        </chart>
+    </row>
+    
+    <row>
+        <chart id="element2">
+            <title>Network Changes By Device</title>
+            
+            <searchTemplate>| tstats `summariesonly` count from datamodel=Change_Analysis where nodename=All_Changes.Network_Changes $bunit$ $category$ by All_Changes.dvc | `drop_dm_object_name("All_Changes")`</searchTemplate>
+            
+            <option name="charting.axisTitleX.text">device</option>
+            <option name="charting.axisTitleY.text">count</option>
+            <option name="charting.chart">line</option>
+            <option name="charting.chart.nullValueMode">zero</option>
+            <option name="charting.legend.placement">none</option>
+
+            <drilldown>
+                <link>search?q=| `datamodel("Change_Analysis","Network_Changes")` | `drop_dm_object_name("All_Changes")` | search dvc="$click.value$"&amp;earliest=$earliest$&amp;latest=$latest$</link>
+            </drilldown>
+        </chart>
+	</row>
+	
+	<row>
+		<event id="element3">
+			<title>Recent Nework Changes</title>
+			
+			<searchTemplate>| `datamodel("Change_Analysis", "Network_Changes")` | search $bunit$ $category$ | `drop_dm_object_name("All_Changes")` | `drop_dm_object_name("Network_Changes")` | head 100</searchTemplate>
+			
+			<option name="count">5</option>
+			<option name="rowNumbers">false</option>
+			<option name="type">list</option>
+			<fields>action, object_category, object, command, dest, user</fields>
+		</event>
+	</row>
+</form>

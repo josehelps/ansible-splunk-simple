@@ -1,0 +1,20 @@
+<dashboard script="status_dashboard.js" isDashboard="False">
+    <label>PDF activity</label>
+    <row>
+        <table>
+            <title>Recently scheduled PDF view deliveries</title>
+            <searchString>index="_internal" source="*scheduler.log" _ScheduledView__* | head 10000 | rex "_ScheduledView__(?&lt;view_name&gt;\w+)" | fields _time view_name app user status</searchString>
+            <option name="showPager">true</option>
+        </table>
+    </row>
+    
+    <row>
+        <event>
+            <title>Recent PDF activity</title>
+            <searchString>index="_internal" (source="*python.log" pdf* OR xvfb OR firefox*) | head 10000</searchString>
+            <option name="showPager">true</option>
+        </event>
+    </row>
+
+</dashboard>
+        

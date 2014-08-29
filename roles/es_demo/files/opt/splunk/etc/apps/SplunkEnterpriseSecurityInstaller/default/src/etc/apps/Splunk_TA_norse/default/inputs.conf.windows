@@ -1,0 +1,10 @@
+
+# Input stanza for incorporating Norse darklist into the Splunk App for
+# Enterprise Security's unified threatlist framework.
+[threatlist://norse_darklist]
+extract_regex = \"[^\"]+\",\"([^\"]+)\",\"([^\"]+)\",\"[^\"]+\",\"[^\"]+\",[^,]+,([^,]+),[^,]+,.*
+description = Norse Darklist
+disabled = true
+fields = ip:$1,category:$3,risk:$2,description:darklist
+type = malware
+url = lookup://norse_darklist_lookup

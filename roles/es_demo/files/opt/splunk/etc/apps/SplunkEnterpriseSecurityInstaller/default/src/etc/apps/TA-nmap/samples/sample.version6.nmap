@@ -1,0 +1,20 @@
+Nmap scan report for 192.168.2.1
+Host is up (0.034s latency).
+Not shown: 998 closed ports
+PORT   STATE SERVICE VERSION
+53/tcp open  domain  dnsmasq 2.45
+| dns-nsid: 
+|_  bind.version: dnsmasq-2.45
+80/tcp open  http    DD-WRT milli_httpd
+|_http-title: offisapupp (build 16785) - Info
+MAC Address: 00:FF:EA:BF:11:0C (Unknown)
+Device type: general purpose
+Running: Linux 2.6.X
+OS CPE: cpe:/o:linux:kernel:2.6
+OS details: Linux 2.6.15 - 2.6.24 (embedded)
+Network Distance: 1 hop
+Service Info: OS: Linux; Device: WAP; CPE: cpe:/o:linux:kernel
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   34.18 ms 192.168.2.1

@@ -1,0 +1,44 @@
+Starting Nmap 5.00 ( http://nmap.org ) at 2010-07-19 21:58 CDT
+Interesting ports on 10.120.1.8:
+Not shown: 992 closed ports
+PORT     STATE SERVICE  VERSION
+22/tcp   open  ssh      OpenSSH 4.3 (protocol 2.0)
+80/tcp   open  http     Apache httpd 2.2.11 ((Unix) mod_ssl/2.2.11 OpenSSL/0.9.8e-fips-rhel5)
+111/tcp  open  rpcbind
+443/tcp  open  ssl/http Apache Tomcat/Coyote JSP engine 1.1
+3306/tcp open  mysql    MySQL 5.0.74sp1-enterprise-gpl-log
+5900/tcp open  vnc      VNC (protocol 3.7)
+8400/tcp open  unknown
+8402/tcp open  galaxy   Galaxy Client Event Manager
+No exact OS matches for host (If you know what OS is running on it, see http://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=5.00%D=7/19%OT=22%CT=1%CU=38431%PV=Y%DS=0%G=Y%TM=4C451100%P=x86_6
+OS:4-unknown-linux-gnu)SEQ(SP=106%GCD=1%ISR=10D%TI=Z%CI=RD%II=I%TS=8)SEQ(SP
+OS:=107%GCD=1%ISR=10A%TI=Z%CI=RD%II=I%TS=8)SEQ(SP=105%GCD=1%ISR=10E%TI=Z%CI
+OS:=RD%II=I%TS=8)SEQ(SP=105%GCD=1%ISR=106%TI=Z%CI=RD%II=I%TS=8)OPS(O1=M564S
+OS:T11NW9%O2=M564ST11NW9%O3=M564NNT11NW9%O4=M564ST11NW9%O5=M564ST11NW9%O6=M
+OS:564ST11)WIN(W1=16A0%W2=16A0%W3=16A0%W4=16A0%W5=16A0%W6=16A0)ECN(R=Y%DF=Y
+OS:%T=40%W=16D0%O=M564NNSNW9%CC=N%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=0%Q=
+OS:)T2(R=Y%DF=N%T=FF%W=80%S=Z%A=S%F=AR%O=%RD=0%Q=)T3(R=Y%DF=N%T=FF%W=100%S=
+OS:Z%A=S+%F=AR%O=%RD=0%Q=)T4(R=Y%DF=N%T=FF%W=400%S=A%A=S%F=AR%O=%RD=0%Q=)T5
+OS:(R=Y%DF=Y%T=40%W=0%S=O%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=N%T=FF%W=8000%S=A%
+OS:A=S%F=AR%O=%RD=0%Q=)T7(R=Y%DF=N%T=FF%W=FFFF%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(
+OS:R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=
+OS:N%T=40%CD=S)
+
+Network Distance: 0 hops
+Service Info: OS: Windows
+
+Interesting ports on 10.127.2.5:
+Not shown: 998 closed ports
+PORT   STATE SERVICE VERSION
+23/tcp open  telnets telnetd-ssl/GNU Gatekeeper
+80/tcp open  http    3Com switch webadmin 1.0
+MAC Address: 00:05:1A:CF:51:D8 (3Com Europe)
+Device type: switch
+Running: 3Com embedded
+OS details: 3Com SuperStack 3 Switch 3300 XM
+Network Distance: 1 hop
+
+OS and Service detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 2 IP addresses (2 hosts up) scanned in 24.91 seconds

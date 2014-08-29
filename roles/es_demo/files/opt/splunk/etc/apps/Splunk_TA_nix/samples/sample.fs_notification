@@ -1,0 +1,7 @@
+Fri Jun 18 15:28:51 2010 action=add, path="/etc/passwd", isdir=0, size=3667, gid=0, uid=0, modtime="Tue Jun 23 01:19:47 2009", mode="rw-r--r--", hash=jq/wBKH6O/TYwUPbkg2YVpAL9Tj9UHrQywBOJuw5bKo=
+Fri Jun 18 15:28:51 2010 action=add, path="/etc/hosts", isdir=0, size=486, gid=0, uid=0, modtime="Mon Jun 14 09:31:06 2010", mode="rw-r--r--", hash=Qh9HxRUYHJz2gaAr27txQrVUudf0+CoxOY7VL6l7A18=
+Fri Jun 18 15:01:46 2010 action=add, path="/etc/passwd", isdir=0, size=3667, gid=0, uid=0, modtime="Tue Jun 23 01:19:47 2009", mode="rw-r--r--", hash=jq/wBKH6O/TYwUPbkg2YVpAL9Tj9UHrQywBOJuw5bKo=
+Fri Jun 18 15:01:46 2010 action=add, path="/etc/hosts", isdir=0, size=486, gid=0, uid=0, modtime="Mon Jun 14 09:31:06 2010", mode="rw-r--r--", hash=Qh9HxRUYHJz2gaAr27txQrVUudf0+CoxOY7VL6l7A18=
+Mon Jun 14 09:31:29 2010 action=update, path="/etc/hosts", isdir=0, size=486, gid=0, uid=0, modtime="Mon Jun 14 09:31:06 2010", mode="rw-r--r--", hash=Qh9HxRUYHJz2gaAr27txQrVUudf0+CoxOY7VL6l7A18=, chgs="modtime hash "
+Mon Jun 14 09:26:19 2010 action=update, path="/etc/passwd", isdir=0, size=3667, gid=0, uid=0, modtime="Tue Jun 23 01:19:47 2009", mode="rw-r--r--", hash=jq/wBKH6O/TYwUPbkg2YVpAL9Tj9UHrQywBOJuw5bKo=, chgs="hash "
+Mon Jun 14 09:26:19 2010 action=update, path="/etc/hosts", isdir=0, size=519, gid=0, uid=0, modtime="Mon Jun 14 09:09:39 2010", mode="rw-r--r--", hash=z5V1gJbJtU4bI/MxNEo5HDGlXYiAZNRybgOSC+dqXV8=, chgs="hash "

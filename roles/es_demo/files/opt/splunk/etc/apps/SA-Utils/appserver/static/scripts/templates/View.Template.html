@@ -1,0 +1,11 @@
+<div class="tag">
+    <% if (attributes.default) { %>
+        <span data-toggle="tooltip" data-original-title="Current default view" class="icon-check default view_tooltip" />
+    <% } else { %>
+        <span data-toggle="tooltip" data-original-title="Set this as the default view" class="icon-check default disabled view_tooltip" />
+    <% } %>
+    <span class="view_name">
+    	<a class="view_tooltip" href="#" data-toggle="tooltip" title="<%= attributes.name %>"><%= name %></a>
+    </span>
+    <span class="icon-x removeView disabled" />
+</div>

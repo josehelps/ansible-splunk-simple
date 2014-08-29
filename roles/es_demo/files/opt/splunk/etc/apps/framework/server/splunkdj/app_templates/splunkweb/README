@@ -1,0 +1,18 @@
+Introduction
+------------
+Describe your application here.
+
+Installation
+------------
+Describe how to install your application here (if applicable).
+
+Usage
+-----
+Describe how to use your application here.
+
+TODO:
+-----
+If you intend to upload this application to Splunk Apps, we strongly recommend 
+that you update the app.conf file (located in your app's /default directory) 
+with your name, a one-sentence description of your application, and the
+version number of your application.

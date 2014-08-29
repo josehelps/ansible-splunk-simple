@@ -1,0 +1,248 @@
+/* Splunk_TA_windows setup CSS */
+body, td {
+    background-color: #EDEDE7;
+    color: #111111;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 11px;
+}
+input, textarea, select {
+    border: none;
+}
+ol {
+    list-style: none outside none;
+    margin-left: 0px;
+}
+ol li {
+    padding: 2px 0 0 5px;
+}
+.InputTable a {
+    font-size: 10px;
+    position: relative;
+    top: -1px;
+}
+.WindowsContainer ,
+.WindowsMessageContainer {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 5px 5px 5px 5px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+    padding: 10px;
+    height: auto;
+    width: auto;
+}
+.WindowsMessageContainer {
+    max-width: 600px;
+    height: auto;
+}
+.WindowsOKButton {
+    height: 30px;
+}
+.WindowsOKButton a {
+    float: right;
+}
+.WindowsContainer {
+    max-width: 680px;
+}
+.WindowsContainer h2 {
+    background-color: transparent;
+    color: #73A550;
+    font-size: 16px;
+    font-weight: bold;
+}
+.WindowsContainer h3 {
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: normal;
+}
+.WindowsOverview p {
+    line-height: 150%;
+    margin-left: 5px;
+    max-width: 650px;
+    text-align: justify;
+    width: auto;
+}
+.WindowsEventLog {
+    height: auto;
+    margin-left: 10px;
+    min-height: 350px;
+    padding-bottom: 10px;
+    width: 675px;
+}
+.WinEvtLogInstructions {
+    width: 650px;
+    margin-bottom: 20px;
+    margin-left: 5px;
+    line-height: 150%;
+    text-align: justify;
+}
+.EnableDisableContainer {
+    border: 1px solid #CCCCCC;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+    height: 280px;
+    padding: 10px 0 0 20px;
+    width: 640px;
+}
+.WindowsMonitor, .WindowsOverview {
+    margin-left: 10px;
+}
+.WindowsMonitor {
+    height: 215px;
+    width: 675px;
+}
+.WindowsButtons {
+    max-width: 100%;
+    padding: 10px;
+    width: auto;
+}
+.InputTable td,
+.InputTable th {
+    background-color: #FFFFFF;
+    padding: 1px 10px 1px 10px;
+}
+.InputTable th {
+    text-align: left;
+}
+.errorText {
+    background: #fae7e7 url(images/icon_error.png) 10px 10px no-repeat;
+    padding: 10px 10px 10px 44px;
+}
+.HasError {
+    background-color: #fae7e7; 
+    border: 1px solid #111111;
+}
+.EnableHeader, .DisableHeader {
+    float: left;
+    padding-top: 5px;
+    width: 300px;
+}
+.EnableHeader span,
+.DisableHeader span {
+    font-size: 9px;
+    font-weight: lighter;
+    margin-left: 80px;
+}
+.EnableHeader {
+    margin-left: 10px;
+}
+.DisableHeader {
+    padding-left: 21px;
+}
+.NameHeader {
+    width: 320px;
+}
+.GenericHeader {
+    width: 60px;
+}
+.WinEvtLogFilter {
+    border-color: #CCCCCC;
+    border-left: 1px outset #CCCCCC;
+    border-style: outset inset inset outset;
+    border-width: 1px;
+    font-size: 10px;
+    height: 12px;
+    padding: 2px 15px 4px 2px;
+    width: 110px;
+}
+.EnableMoveSort, .DisableMoveSort {
+    float: left;
+    margin-bottom: 10px;
+    margin-left: 12px;
+    width: 280px;
+}
+.DisableMoveSort {
+    margin-left: 40px;
+}
+.MonitorOverview {
+    float: left;
+    line-height: 150%;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    width: 325px;
+}
+.MonitorOverviewLast {
+    margin-left: 5px;
+    width: 320px;
+}
+.splButton-primary {
+    background-color: #73A550;
+    color: #FFFFFF;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+}
+.splButton-secondary {
+    background-color: #999999;
+    color: #FFFFFF;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+}
+.splButton-primary span, .splButton-secondary span {
+    display: block;
+    min-width: 70px;
+    position: relative;
+    top: -2px;
+}
+#winevtlog_enabled,
+#winevtlog_disabled {
+    border: 1px solid #CCCCCC;
+    float: left;
+    height: 200px;
+    overflow: auto;
+    *overflow-x: auto;
+    *overflow-y: auto;
+    *position: relative;
+    width: 280px;
+}
+#winevtlog_enabled {
+    margin-left: 10px
+}
+#winevtlog_disabled {
+    margin-left: 40px;
+}
+#enable_filter_clear, #disable_filter_clear {
+    left: -15px;
+    font-size: 15px;
+    position: relative;
+    top: 2px;
+}
+#winevtlog_enable_sort, #winevtlog_disable_sort {
+    float: right;
+    *position: relative;
+    *top: -12px;
+}
+#windows_submit,
+#windows_reset {
+    width: 100px;
+}
+#windows_submit {
+    margin-left: 450px;
+}
+#monitor_table, #distsearch_table_container {
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+    float: left;
+}
+#monitor_table {
+    height: 100px;
+    padding: 20px;
+    width: 325px;
+}
+#distsearch_table {
+    padding: 20px;
+    width: 300px;
+}
+#distsearch_table_container {
+    height: 98px;
+    margin-left: 15px;
+    width: 320px;
+}
+#monitor_header, #distsearch_header, #overview_header {
+    padding-bottom: 2px;
+    width: 335px;
+}
+#monitor_header, #distsearch_header {
+    float: left;
+    margin-left: 2px;
+}

@@ -1,0 +1,57 @@
+<endpoint name="data/inputs/identity_manager">
+	<header>Identity Management</header>
+	<breadcrumb>
+		<parent hidecurrent="False">datainputstats</parent>
+		<name>Identity Management</name>
+	</breadcrumb>
+	<elements>
+		<element name="spl-ctrl_identity_manager_options" type="fieldset">
+			<key name="legend">Identity Manager Settings</key>
+			<view name="create"/>
+			<view name="edit"/>
+			<view name="list"/>
+			<elements>
+				<view name="create"/>
+				<view name="edit"/>
+				<view name="list"/>
+				<element name="name" type="textfield" label="Name">
+					<key name="exampleText">The identity manager stanza name.</key>
+					<view name="create"/>
+					<view name="list"/>
+				</element>
+				<element name="category" type="textfield" label="Category">
+					<key name="exampleText">A short descriptive category for this asset or identity list; for example, "AD_domain_1".</key>
+					<view name="create"/>
+					<view name="edit"/>
+					<view name="list"/>
+				</element>
+				<element name="description" type="textfield" label="Description">
+					<key name="exampleText">A description of the contents of this asset or identity list".</key>
+					<view name="create"/>
+					<view name="edit"/>
+					<view name="list"/>
+				</element>
+				<element name="target" type="textfield" label="Type">
+					<key name="exampleText">The type of list; must be "asset" or "identity".</key>
+					<view name="create"/>
+					<view name="edit"/>
+					<view name="list"/>
+					<options>
+						<opt value="asset" label="asset"/>
+						<opt value="identity" label="identity"/>
+					</options>
+				</element>
+				<element name="url" type="textfield" label="Source">
+					<key name="exampleText">The source for the asset or identity list, in the format "lookup://lookup_name".</key>
+					<view name="create"/>
+					<view name="edit"/>
+					<view name="list"/>
+				</element>
+                <element name="eai:acl.app" type="textfield" label="App">
+                    <view name="list"/>
+                    <key name="processValueList">entity['eai:acl']['app'] or ""</key>
+                </element>
+			</elements>
+		</element>
+	</elements>
+</endpoint>

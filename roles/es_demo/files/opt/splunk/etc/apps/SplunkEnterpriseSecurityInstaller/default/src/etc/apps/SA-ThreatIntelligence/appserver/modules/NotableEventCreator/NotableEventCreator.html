@@ -1,0 +1,190 @@
+<%# Copyright (C) 2009-2012 Splunk Inc. All Rights Reserved.
+ 
+import os
+import splunk
+import sys
+
+sys.path.append( os.path.join("..", "..", "..", "bin") )
+
+from correlation_search import CorrelationSearch
+from notable_event_status import NotableEventStatus
+from shortcuts import Duration
+from shortcuts import Urgency
+from shortcuts import NotableOwner
+from shortcuts import Status
+
+args = cherrypy.serving.request.params
+
+# Get the form action URL
+form_action = make_url(["module", "system", "Splunk.Module.NotableEventCreator", "render"]);
+
+# Get the user name
+user = cherrypy.session['user']['name']
+    
+# Get the app name
+app = APP['id']
+
+title = ""
+description = ""
+
+security_domains = CorrelationSearch.VALID_DOMAINS
+urgencies        = Urgency.getUrgencies()
+statuses         = Status.getStatuses()
+owners           = NotableOwner.getOwners()
+
+# Get the list of possible notable event statuses
+notable_statuses = NotableEventStatus.get_notable_statuses(True)
+
+def urgency_sorter( urgency ):
+    
+    if urgency == "informational":
+        return 0
+    elif urgency == "low":
+        return 1
+    elif urgency == "medium":
+        return 2
+    elif urgency == "high":
+        return 3
+    elif urgency == "critical":
+        return 4
+    else:
+        return 5
+
+%>
+<%page args="module"/>
+<script src="${make_url(['/static/app/SA-ThreatIntelligence/scripts/jquery.validationEngine-en.js'])}" type="text/javascript" charset="utf-8"></script>
+<script src="${make_url(['/static/app/SA-ThreatIntelligence/scripts/jquery.validationEngine.js'])}" type="text/javascript" charset="utf-8"></script>
+<script src="${make_url(['/static/app/SA-ThreatIntelligence/scripts/ui.dropdownchecklist-1.4-min.js'])}" type="text/javascript" ></script>
+
+<style>
+@import url("${make_url(['/static/css/admin.css'])}");
+@import url("${make_url(['/static/app/SA-ThreatIntelligence/stylesheets/validationEngine.jquery.css'])}" );
+@import url("${make_url(['/static/app/SA-ThreatIntelligence/stylesheets/ui.dropdownchecklist.standalone.css'])}" );
+.Message {
+    padding: 0;
+}
+
+#es_no_permissions div.adminGroup {
+  border: none;
+  box-shadow: none;
+  padding: 0px;
+}
+
+#es_no_permissions div.adminListItem {
+  border-bottom: none;
+  min-height: 45px;
+  padding-left: 15px;
+}
+
+#es_no_permissions dd {
+  border-left: none;
+  padding-top: 16px;
+}
+</style>
+
+% if not insufficient_permissions:
+  <form autocomplete="off" enctype="multipart/form-data" action="${form_action}" method="get" id="notableEventEditorForm" name="notableEventEditorForm" class="entityEditForm notableEventEditorForm" id="eaiform">
+    
+    <fieldset><legend style="padding: 0px 0px 0px 10px;">Create Notable Event</legend></fieldset>
+    
+    <div id="item-basicgroup" class="fieldsetWrapper">
+        <fieldset id="">
+  
+        ## ---------------------------
+        ## Title
+        ## ---------------------------
+            <div class="" id="title">
+                <label class="">Title</label>
+                <div>
+                    <div class="widgeterror"></div>
+                    
+                    <input type="text" value="${title | h}" id="form_title" name="title" placeholder="Enter a title for the notable event" class="validate[required,custom[validStanza]]"/>
+                    </div>
+            </div>
+  
+        ## ---------------------------
+        ## Correlation Search Domain
+        ## ---------------------------
+            <div id="item-domain">
+                <label class="">Domain</label>
+                <div>
+                    <select id="domain" name="security_domain" class="regular ">
+                    % for d in security_domains:
+                        <option value="${d.capitalize()|h}">${d.capitalize()|h}</option>
+                % endfor
+                    </select>
+                </div>
+            </div>
+            
+        ## ---------------------------
+        ## Urgency
+        ## ---------------------------
+            <div id="urgency">
+                <label class="">Urgency</label>
+                <div>
+                    <select name="urgency" class="regular ">
+                    % for u in sorted(urgencies, key=urgency_sorter):
+                        <option value="${u|h}">${u|h}</option>
+                    % endfor
+                    </select>
+                </div>
+            </div>
+            
+        ## ---------------------------
+        ## Owner
+        ## ---------------------------
+            <div id="owner">
+                <label class="">Owner</label>
+                <div>
+                    <select name="owner" class="regular ">
+                    % for username, realname in owners.items():
+                        % if len(realname) > 0:
+                        <option value="${username|h}">${realname|h}</option>
+                        % else:
+                        <option value="${username|h}">${username|h}</option>
+                        % endif
+                    % endfor
+                    </select>
+                </div>
+            </div>
+ 
+        ## ---------------------------
+        ## Status
+        ## ---------------------------
+            <div id="status">
+                <label class="">Status</label>
+                <div>
+                    <select name="status" class="regular ">
+                    % for status in sorted(statuses.keys()):
+                        <option value="${status|h}">${statuses[status]|h}</option>
+                    % endfor
+                    </select>
+                </div>
+            </div>
+  
+        ## ---------------------------
+        ## Description
+        ## ---------------------------
+           <div class="" id="body">
+                <label class="">Description</label>
+                <div>
+                    <div class="widgeterror"></div>
+                    <textarea type="text" id="form_body" name="body" class="regular normalFont" placeholder="Enter the text of the notable event">${description | h}</textarea>
+                </div>
+            </div>
+            
+        ## ---------------------------
+        ## Hidden meta fields
+        ## ---------------------------
+            <input type="hidden" value="${app | h}" name="app" id="app" />
+            
+        </fieldset>
+    </div>
+    
+    <div class="jmFormActions">
+        <button type="button" id="cancel_button" class="splButton-secondary"><span>Cancel</span></button>
+        <button class="splButton-primary" type="submit"><span id="save_button">Save</span></button>
+    </div>
+    
+</form>
+% endif

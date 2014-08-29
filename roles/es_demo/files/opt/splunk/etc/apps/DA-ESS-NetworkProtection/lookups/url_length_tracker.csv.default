@@ -1,0 +1,5 @@
+min_length,mean_length,max_length,stdev,total_count,Z,search
+0,0,0,0,0,1,(Web.url_length=-1)
+0,0,0,0,0,2,(Web.url_length=-1)
+0,0,0,0,0,3,(Web.url_length=-1)
+0,0,0,0,0,4,(Web.url_length=-1)

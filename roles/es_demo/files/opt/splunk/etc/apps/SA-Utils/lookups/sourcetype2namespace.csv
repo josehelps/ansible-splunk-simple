@@ -1,0 +1,15 @@
+sourcetype,namespace
+ndxsettings*,SA-AuditAndDataProtection
+indexTime*,SA-EndpointProtection
+eventgen*,SA-Eventgen
+identityLookup*,SA-IdentityManagement
+log_review_popup_module*,SA-ThreatIntelligence
+correlationsearches*,SA-ThreatIntelligence
+governance*,SA-ThreatIntelligence
+notable_owners*,SA-ThreatIntelligence
+reviewstatuses*,SA-ThreatIntelligence
+notable_event_suppression*,SA-ThreatIntelligence
+transitions_rest_hander*,SA-ThreatIntelligence
+transitioners_rest_hander*,SA-ThreatIntelligence
+expectedactivity*,SA-Utils
+postprocess*,SA-Utils

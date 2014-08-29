@@ -1,0 +1,8 @@
+pri,severity
+emergency,critical
+alert,critical
+critical,critical
+error,high
+warning,medium
+notice,low
+information,informational

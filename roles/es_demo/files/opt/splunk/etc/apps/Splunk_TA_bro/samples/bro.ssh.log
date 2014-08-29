@@ -1,0 +1,14 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	ssh
+#open	2013-09-05-23-41-46
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	status	direction	client	server	resp_size
+#types	time	string	addr	port	addr	port	string	enum	string	string	count
+1331904609.110000	G5yiRS9EbD2	192.168.203.45	60978	192.168.21.101	22	failure	INBOUND	SSH-2.0-OpenSSH_5.0	SSH-2.0-OpenSSH_5.8p1 Debian-7ubuntu1	1895
+1331904648.040000	sSAI9fIkXLe	192.168.203.45	38717	192.168.21.101	22	failure	INBOUND	SSH-2.0-OpenSSH_5.0	SSH-2.0-OpenSSH_5.8p1 Debian-7ubuntu1	1895
+1331904662.310000	Vf2mt3kcqR9	192.168.202.68	34344	192.168.27.101	22	failure	INBOUND	SSH-2.0-OpenSSH_5.0	SSH-2.0-OpenSSH_5.8p1 Debian-7ubuntu1	1895
+1331904627.280000	k8xotwjl8X9	192.168.203.45	59352	192.168.28.101	22	failure	INBOUND	SSH-2.0-OpenSSH_5.3p1 Debian-3ubuntu6	SSH-2.0-OpenSSH_5.8p1 Debian-7ubuntu1	2079
+1331905686.430000	5MRfS5jZHt1	192.168.202.68	42599	192.168.22.203	22	success	INBOUND	SSH-2.0-OpenSSH_5.0	SSH-2.0-OpenSSH_5.8p1 Debian-1ubuntu3	106899
+#close	2013-09-05-23-43-54

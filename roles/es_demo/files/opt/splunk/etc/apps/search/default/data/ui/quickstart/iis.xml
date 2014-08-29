@@ -1,0 +1,25 @@
+<quickstart>
+
+    <title>IIS logs</title>
+    <optiongroup>
+        <option>
+            <title>Consume IIS logs on this Splunk server</title>
+            <summary>Configure Splunk to index any IIS logs available to this machine.</summary>
+            <doctarget>[learnmore.recipes.files.iis]</doctarget>
+            <action type="add_monitor">
+                <label>Next</label>
+            </action>
+        </option>
+
+        <option>
+            <title>Forward IIS logs from another server</title>
+            <summary>Use Splunk's universal forwarder to send data from any machine to your Splunk server.</summary>
+            <doctarget>[learnmore.recipes.forwarder]</doctarget>
+            <action type="href">
+                <label>Download the universal forwarder</label>
+                <target>http://splunk.com/r/universalforwarder</target>
+            </action>
+        </option>
+    </optiongroup>
+
+</quickstart>

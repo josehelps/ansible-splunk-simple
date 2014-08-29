@@ -1,0 +1,24 @@
+<setup>
+    
+    <block title="Norse API Setup" endpoint="admin/ta_norse/" entity="general_settings">
+        <text>
+            <![CDATA[
+            Enter the Norse API key below to enable integration between Splunk and the Norse Darklist and Norse IPViking products. Clear the API key to disable integration.
+            <p />
+            Obtain a key from <a target="_blank" href="http://norse-corp.com/trial/trial-splunk.html">Norse-corp.com</a>
+            ]]>
+        </text>
+        
+        <input field="Norse_Darklist_API_Key">
+            <label>Norse Darklist API key</label>
+            <type>text</type>
+        </input>
+
+        <input field="Norse_IPViking_API_Key">
+            <label>Norse IPViking API key</label>
+            <type>text</type>
+        </input>
+
+    </block>
+  
+</setup>

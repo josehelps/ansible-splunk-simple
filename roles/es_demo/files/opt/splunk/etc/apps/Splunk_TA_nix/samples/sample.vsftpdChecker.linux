@@ -1,0 +1,4 @@
+Tue Mar  5 09:07:42 PST 2013 app=vsftp file_hash=@@sha1checksum local_enable=NO anonymous_enable=NO
+Tue Mar  5 09:07:42 PST 2013 app=vsftp file_hash=@@sha1checksum local_enable=NO anonymous_enable=YES
+Tue Mar  5 09:07:42 PST 2013 app=vsftp file_hash=@@sha1checksum local_enable=YES anonymous_enable=NO
+Tue Mar  5 09:07:42 PST 2013 app=vsftp file_hash=@@sha1checksum local_enable=YES anonymous_enable=YES

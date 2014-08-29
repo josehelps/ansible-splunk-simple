@@ -1,0 +1,27 @@
+<quickstart>
+
+    <title>A file or directory of files</title>
+    <header>Including any log files or directories anywhere in your network.</header>
+    <optiongroup>
+        <option>
+            <title>Consume any file on this Splunk server</title>
+            <summary>Configure Splunk to index any log file it can access.</summary>
+            <doctarget>[learnmore.recipes.files]</doctarget>
+            <action type="add_monitor">
+                <label>Next</label>
+            </action>
+        </option>
+
+        <option>
+            <title>Forward data from files or directories to this Splunk server from another server</title>
+            <summary>Use Splunk's universal forwarder to send files or directories from remote machines to your Splunk server.</summary>
+            <doctarget>[learnmore.recipes.forwarder]</doctarget>
+            <action type="href">
+                <label>Download the universal forwarder</label>
+                <target>http://splunk.com/r/universalforwarder</target>
+                <wintarget>_blank</wintarget>
+            </action>
+        </option>
+    </optiongroup>
+
+</quickstart>

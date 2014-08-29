@@ -1,0 +1,73 @@
+<form script="access_tracker.js">
+	<label>Access Tracker</label>
+	
+	<fieldset autoRun="true" submitButton="true">
+        
+		<!-- bunit tokens (bunit, dm_bunit): see access_tracker.js -->
+        <input type="text" token="bunit_form">
+            <label>Business Unit</label>
+            <default></default>
+        </input>
+        
+		<!-- category tokens (category, dm_category): see access_tracker.js -->
+        <input type="dropdown" token="category_form">
+            <label>Category</label>
+            <choice value="">All</choice>
+            <populatingSearch fieldForValue="category" fieldForLabel="category">| `categories`</populatingSearch>
+            <default></default>
+        </input>
+        	        
+	</fieldset>
+
+	<row>
+        <table id="element1">
+            <title>First Time Access - Last 7 days</title>
+            
+            <searchTemplate>| `access_tracker` | eval _time=firstTime | `daysago(7)` | search $bunit$ $category$ | stats min(firstTime) as firstTime,max(lastTime) as lastTime,values(dest) as dest by user | sort - firstTime | `uitime(firstTime)` | `uitime(lastTime)` | fields firstTime,lastTime,user,dest</searchTemplate>
+            
+            <drilldown>
+                <link>access_search?form.user=$row.user$&amp;earliest=-7d@d&amp;latest=now</link>
+            </drilldown>
+        </table>
+    </row>
+    
+    <row>
+        <table id="element2">
+            <title>Inactive Account Usage - Last 90 days</title>
+            
+            <searchTemplate>| `inactive_account_usage(90,24)` | search $bunit$ $category$ | sort - lastTime | `uitime(firstTime)` | `uitime(second2lastTime)` | `uitime(lastTime)` | table firstTime,second2lastTime,lastTime,user,inactiveDays</searchTemplate>
+            
+            <drilldown>
+                <link>access_search?form.user=$row.user$&amp;earliest=-7d@d&amp;latest=now</link>
+            </drilldown>
+        </table>
+    </row>			
+        
+    <row>
+        <table id="element3">
+            <title>Completely Inactive Accounts - Last 90 days</title>
+            
+            <searchTemplate>| `inactive_accounts(90)` | search $bunit$ $category$ | `round(dayDiff)` | rename dayDiff as inactiveDays | sort + lastTime | `uitime(firstTime)` | `uitime(lastTime)` | table firstTime,lastTime,user,inactiveDays</searchTemplate>
+            
+            <drilldown>
+                <link>access_search?form.user=$row.user$&amp;earliest=-7d@d&amp;latest=now</link>
+            </drilldown>
+        </table>
+    </row>
+    
+    <row>
+    	<table id="element4">
+    		<title>Account Usage For Expired Identities - Last 7 days</title>
+    		
+    		<earliestTime>-7d@d</earliestTime>
+    		<latestTime>now</latestTime>
+    		
+    		<searchTemplate>| tstats `summariesonly` max(_time) as _time,values(Authentication.dest) as dest from datamodel=Authentication where * $dm_bunit$ $dm_category$ by Authentication.user | `drop_dm_object_name("Authentication")` | `get_identity4events(user)` | where isnotnull(user_endDate) | `mktime(user_endDate,"%m/%d/%y %H:%M")` | where _time>user_endDate | `uitime(user_endDate,"%m/%d/%Y %H:%M:%S")` | fields _time,user,user_first,user_last,user_endDate,dest</searchTemplate>
+    	
+    	    <drilldown>
+                <link>access_search?form.user=$row.user$&amp;earliest=-7d@d&amp;latest=now</link>
+            </drilldown>
+    	</table>
+    </row>
+
+</form>

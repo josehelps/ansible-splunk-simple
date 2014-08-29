@@ -1,0 +1,14 @@
+severity_id,vendor_severity,severity
+1,,informational
+2,,informational
+3,,low
+4,,low
+5,,medium
+6,,medium
+7,,high
+8,,high
+9,,critical
+10,,critical
+,minr,low
+,majr,high
+,crit,critical

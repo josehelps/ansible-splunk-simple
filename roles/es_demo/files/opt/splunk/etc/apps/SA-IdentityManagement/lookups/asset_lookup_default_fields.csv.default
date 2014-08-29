@@ -1,0 +1,2 @@
+key,pci_domain,is_expected,requires_av,should_timesync,should_update
+*,untrust,false,false,false,false

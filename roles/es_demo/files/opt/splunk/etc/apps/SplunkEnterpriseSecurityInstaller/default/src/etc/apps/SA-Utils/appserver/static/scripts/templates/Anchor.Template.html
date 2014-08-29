@@ -1,0 +1,28 @@
+<div class="tag">
+    <span class="glyphicon glyphicon-link edit" />
+    <%= text %>
+    <span class="icon-x removeAnchor disabled" />
+
+ </div>
+
+<div class="modal hide">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>attributes: <%= text %></h3>
+    </div>
+    <div class="modal-body">
+    <% _.each(attributes, function(val, key) { %>
+        <div class="attr">
+            <%= key %>: 
+            <input type="text" class="editAttr" data-key="<%= key %>" value="<%= val %>" />
+        </div>
+    <% }); %>
+
+    <div class="instructions">
+        <strong>instructions:</strong><br>
+        Press ENTER while editing to save the attribute.<br>
+        Press ESC while editing to cancel.
+    </div>
+    <div class="message" style="display:none" />
+    </div>
+</div>

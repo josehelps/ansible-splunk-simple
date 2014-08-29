@@ -1,0 +1,110 @@
+<% if( list_link !== null && list_link_title !== null) { %>
+<a href="<%- list_link %>"><i class="icon-chevron-left icon-no-underline"></i><span><%- list_link_title %></span></a>
+<% } %>
+
+<div id="success_message" class="hide alert alert-info">
+  <i class="icon-alert"></i>The changes were successfully saved
+</div>
+
+<div id="failure_message" class="hide alert alert-error">
+  <i class="icon-alert"></i><span id="error_text">Changes could not be saved</span>
+</div>
+
+<h1>Entity Investigator Search</h1>
+<form class="form-horizontal">
+
+    <div class="control-group" id="search-name-control-group">
+        <label class="control-label">Search Name<span class="requiredAsterisk">*</span></label>
+    
+        <div class="controls">
+        <% if( is_new) { %>
+        <input id="search_name" class="input-xlarge" type="text" name="search-name" value="<%- search_name %>">
+        <% } else { %>
+        <input id="search_name" class="input-xlarge" disabled="true" type="text" name="search-name" value="<%- search_name %>">
+        <% } %>
+        </div>
+    </div>
+    
+    <div class="control-group" id="app-control-group">
+        <label class="control-label">Destination App<span class="requiredAsterisk">*</span></label>
+        
+        <div class="controls">
+        <select id="app" class="input-xlarge" name="app">
+        <% for (var i = 0; i < apps.length; i++) { %>
+           <option value="<%- apps[i].name %>"
+           <% if( apps[i].name == app ) { %>selected<% } %>
+           <% if( !is_new) { %>disabled="true"<% } %>
+            ><%- apps[i].content.label %></option>
+           <% } %>
+        </select>
+        
+        <% if(!is_new) { %>
+        <input id="app_existing" type="hidden" name="app" value="<%- app %>">
+        <% } %>
+        </div>
+    </div>
+    
+    <div class="control-group" id="title-control-group">
+        <label class="control-label">Title<span class="requiredAsterisk">*</span></label>
+        <div class="controls">
+          <input id="title" class="input-xlarge" <% if (!can_edit) { %>disabled<% } %> type="text" name="title" value="<%- title %>">
+          <span class="hide help-inline"></span>
+        </div>
+    </div>
+    
+    <div class="control-group" id="search-control-group">
+        <label class="control-label">Search<span class="requiredAsterisk">*</span></label>
+        <div class="controls">
+          <textarea id="search" class="input-xlarge" <% if (!can_edit) { %>disabled<% } %> rows="5" name="search"><%- search %></textarea>
+          <span class="hide help-inline"></span>
+        </div>
+    </div>
+    
+    <div class="control-group" id="drilldown-search-control-group">
+        <label class="control-label">Drilldown Search<span class="requiredAsterisk">*</span></label>
+        <div class="controls">
+          <input id="drilldown_search" class="input-xlarge" <% if (!can_edit) { %>disabled<% } %> type="text" name="drilldown-search" value="<%- drilldown_search %>">
+          <span class="help-block">Defines the view to redirect users to when they click a swimlane item</span>
+          <span class="hide help-inline"></span>
+        </div>
+    </div>
+    
+    <div class="control-group" id="color-control-group">
+        <label class="control-label">Color<span class="requiredAsterisk">*</span></label>
+        <div class="controls">
+            <select id="color" class="input-xlarge" name="color" >
+            <% for (var i = 0; i < colors.length; i++) { %>
+               <option value="<%- colors[i].name %>" <% if( !can_edit) { %>disabled="true"<% } %> <% if( colors[i].name == color ) { %>selected<% } %>><%- colors[i].label %></option>
+            <% } %>
+            </select>
+        </div>
+    </div>
+    
+    <div class="control-group" id="entity-type-control-group">
+        <label class="control-label">Entity type<span class="requiredAsterisk">*</span></label>
+        <div class="controls">
+            <select id="entity_type" class="input-xlarge" name="entity_type">
+            <% for (var i = 0; i < entity_types.length; i++) { %>
+               <option value="<%- entity_types[i].name %>" <% if( !can_edit) { %>disabled="true"<% } %> <% if( entity_types[i].name === entity_type ) { %>selected<% } %>><%- entity_types[i].label %></option>
+            <% } %>
+            </select>
+        </div>
+    </div>
+    
+    <div class="control-group" id="constraint-fields-control-group">
+        <label class="control-label">Constraint Fields<span class="requiredAsterisk">*</span></label>
+        <div class="controls">
+            <input placeholder="Type a field and press enter" id="constraint_fields" class="input-medium" <% if (!can_edit) { %>disabled<% } %> type="text" name="constraint_fields" value="<%- constraint_fields %>">
+            <span class="hide help-inline"></span>
+            <span class="help-block"></span>
+        </div>
+    </div>
+    
+    <div class="actions">
+        <% if( list_link !== null ) { %>
+        <a href="#" id="cancel" class="btn label_from_data pull-left" style="display: inline;">Cancel</a>
+        <% } %>
+        <a href="#" id="save" class="btn btn-primary pull-right <% if (!can_edit) { %>disabled<% } %>" style="display: inline;">Save</a>
+    </div>
+                
+</form>

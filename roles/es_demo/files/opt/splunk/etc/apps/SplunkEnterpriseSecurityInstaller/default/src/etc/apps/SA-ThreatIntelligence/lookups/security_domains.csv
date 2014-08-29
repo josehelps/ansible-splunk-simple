@@ -1,0 +1,8 @@
+security_domain,label,is_enabled,is_ignored,is_expected,count
+access,Access,true,false,true,0
+endpoint,Endpoint,true,false,true,0
+network,Network,true,false,true,0
+threat,Threat,false,true,true,0
+identity,Identity,true,false,true,0
+audit,Audit,false,true,true,0
+resources,-,false,true,false,0

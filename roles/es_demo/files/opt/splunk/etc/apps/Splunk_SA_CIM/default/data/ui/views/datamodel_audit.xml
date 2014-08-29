@@ -1,0 +1,43 @@
+<dashboard>
+	<label>Data Model Audit</label>
+	
+	<searchTemplate>| `datamodel("Splunk_Audit", "Datamodel_Acceleration")` | `drop_dm_object_name("Datamodel_Acceleration")` | join type=outer last_sid [| rest /services/search/jobs reportSearch=summarize* | rename sid as last_sid | fields last_sid,runDuration] | eval size(MB)=round(size/1048576,1) | eval retention(days)=retention/86400 | eval complete(%)=round(complete*100,1) | eval runDuration(s)=round(runDuration,1)</searchTemplate>
+
+    <row>
+        <chart id="element1">
+            <title>Top Accelerations By Size</title>
+            
+            <searchPostProcess>| sort 100 - size | table datamodel,size(MB)</searchPostProcess>
+        
+            <option name="charting.axisTitleX.text">datamodel</option>
+            <option name="charting.axisTitleY.text">size(MB)</option>
+            <option name="charting.chart">bar</option>
+            <option name="charting.drilldown">none</option>
+            <option name="charting.legend.placement">none</option>
+            <option name="height">350</option>
+        </chart>
+        
+        <chart id="element2">
+            <title>Top Accelerations By Run Duration</title>
+            
+            <searchPostProcess>| sort 100 - runDuration | table datamodel,runDuration</searchPostProcess>
+            
+            <option name="charting.axisTitleX.text">datamodel</option>
+            <option name="charting.axisTitleY.text">runDuration(s)</option>
+            <option name="charting.chart">bar</option>
+            <option name="charting.drilldown">none</option>
+            <option name="charting.legend.placement">none</option>
+            <option name="height">350</option>       
+        </chart>
+    </row>
+
+    <row>
+        <table id="element3">
+            <title>Acceleration Details</title>
+
+            <searchPostProcess>| sort 100 + datamodel | fieldformat earliest=strftime(earliest, "%m/%d/%Y %H:%M:%S") | fieldformat latest=strftime(latest, "%m/%d/%Y %H:%M:%S") | fields datamodel,app,cron,retention(days),earliest,latest,is_inprogress,complete(%),size(MB),runDuration(s),last_error</searchPostProcess>
+        
+        	<option name="drilldown">none</option>
+        </table>
+    </row>
+</dashboard>

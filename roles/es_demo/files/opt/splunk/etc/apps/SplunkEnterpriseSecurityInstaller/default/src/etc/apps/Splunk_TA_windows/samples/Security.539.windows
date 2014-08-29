@@ -1,0 +1,42 @@
+09/11/09 04:14:46 PM
+LogName=Security
+SourceName=Security
+EventCode=539
+EventType=16
+Type=Failure Audit
+ComputerName=SC-DC01
+User=SYSTEM
+Sid=S-1-5-18
+SidType=1
+Category=2
+CategoryString=Logon/Logoff
+RecordNumber=532022436
+Message=Logon Failure:
+
+	Reason:		Account locked out
+
+	User Name:	@@user
+
+	Domain:	ACMETECH
+
+	Logon Type:	3
+
+	Logon Process:	IAS
+
+	Authentication Package:	MICROSOFT_AUTHENTICATION_PACKAGE_V1_0
+
+	Workstation Name:	
+
+	Caller User Name:	SC-DC01$
+
+	Caller Domain:	ACMETECH
+
+	Caller Logon ID:	(0x0,0x3E7)
+
+	Caller Process ID: 1172
+
+	Transited Services: -
+
+	Source Network Address:	-
+
+	Source Port:	-

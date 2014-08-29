@@ -1,0 +1,23 @@
+04/14/2011 12:27:07.498
+collection="Available Memory"
+object=Memory
+counter="Available MBytes"
+Value=432
+
+04/14/2011 12:27:07.498
+collection="Available Memory"
+object=Memory
+counter="Committed Bytes"
+Value=649986048
+
+04/14/2011 12:27:07.498
+collection="Available Memory"
+object=Memory
+counter="Available MBytes"
+Value=0
+
+04/14/2011 12:27:07.498
+collection="Available Memory"
+object=Memory
+counter="Committed Bytes"
+Value=1102970880

@@ -1,0 +1,45 @@
+<view isVisible="false" template="search.html" isDashboard="False"> 
+  <label>Show source</label>
+  <module name="AccountBar" layoutPanel="appHeader">
+    <param name="mode">popup</param>
+  </module>
+  <module name="Message" layoutPanel="messaging">
+    <param name="filter">*</param>
+    <param name="clearOnJobDispatch">True</param>
+    <param name="maxSize">1</param>
+    <module name="SoftWrap" layoutPanel="pageControls">
+      <param name="enable">False</param>
+      <module name="Count" layoutPanel="pageControls">
+	<param name="options">
+	  <list>
+	    <param name="text">25</param>
+	    <param name="value">25</param>
+	  </list>
+	  <list>
+	    <param name="text">50</param>
+	    <param name="selected">True</param>
+	    <param name="value">50</param>
+	  </list>
+	  <list>
+	    <param name="text">100</param>
+	    <param name="value">100</param>
+	  </list>
+	  <list>
+	    <param name="text">200</param>
+	    <param name="value">200</param>
+	  </list>
+	  <list>
+	    <param name="text">500</param>
+	    <param name="value">500</param>
+	  </list>
+	  <list>
+	    <param name="text">1000</param>
+	    <param name="value">1000</param>
+	  </list>
+	</param>
+	<module name="ShowSource" layoutPanel="resultsAreaLeft">
+	</module>
+      </module>
+    </module>
+  </module>
+</view>

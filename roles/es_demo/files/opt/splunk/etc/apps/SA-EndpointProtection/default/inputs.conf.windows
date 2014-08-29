@@ -1,0 +1,5 @@
+## Index Time Delay (expensive)
+[script://.\bin\indexTime.py]
+disabled = false
+## once per week on wednesday; using cron such that search doesn't execute @ start time
+interval = 0 0 * * 3

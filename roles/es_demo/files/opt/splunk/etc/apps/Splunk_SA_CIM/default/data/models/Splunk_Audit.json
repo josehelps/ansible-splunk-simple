@@ -1,0 +1,548 @@
+{
+	"modelName":	"Splunk_Audit",
+	"displayName":	"Splunk Audit Logs",
+	"description":	"Splunk Audit Logs Data Model",
+	"editable":		false,
+	"objects":		[
+		{
+			"objectName":	"Datamodel_Acceleration",
+			"displayName":	"Data Model Acceleration",
+			"parentName":	"BaseSearch",
+			"fields":		[
+				{
+					"fieldName":	"access_count",
+					"displayName":	"access_count",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+			    {
+					"fieldName":	"access_time",
+					"displayName":	"access_time",
+					"type":			"timestamp",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"app",
+					"displayName":	"app",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"buckets",
+					"displayName":	"buckets",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"buckets_size",
+					"displayName":	"buckets_size",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"cron",
+					"displayName":	"cron",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"complete",
+					"displayName":	"complete",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"datamodel",
+					"displayName":	"datamodel",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"digest",
+					"displayName":	"digest",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"earliest",
+					"displayName":	"earliest",
+					"type":			"timestamp",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"is_inprogress",
+					"displayName":	"is_inprogress",
+					"type":			"boolean",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"last_error",
+					"displayName":	"last_error",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"last_sid",
+					"displayName":	"last_sid",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"latest",
+					"displayName":	"latest",
+					"type":			"timestamp",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"mod_time",
+					"displayName":	"mod_time",
+					"type":			"timestamp",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"retention",
+					"displayName":	"retention",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"size",
+					"displayName":	"size",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"summary_id",
+					"displayName":	"summary_id",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				}
+			],
+			"calculations":	[],
+			"constraints":	[],
+			"baseSearch":   "| datamodelinfo",
+			"children":		[]
+		},
+		{
+			"objectName":	"Search_Activity",
+			"displayName":	"Search Activity",
+			"parentName":	"BaseSearch",
+			"fields":		[
+				{
+					"fieldName":	"_time",
+					"displayName":	"_time",
+					"type":			"timestamp",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"host",
+					"displayName":	"host",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"info",
+					"displayName":	"info",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	true,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"search",
+					"displayName":	"search",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"search_type",
+					"displayName":	"search_type",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"source",
+					"displayName":	"source",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"sourcetype",
+					"displayName":	"sourcetype",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"user",
+					"displayName":	"user",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				}					
+			],
+			"calculations":	[],
+			"constraints":	[],
+			"baseSearch":   "`search_activity`",
+			"children":		[]
+		},
+		{
+			"objectName":	"Acceleration_Jobs",
+			"displayName":	"Acceleration Jobs",
+			"parentName":	"Search_Activity",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"search_type=\"dm_acceleration\" OR search_type=\"summary_director\""
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Adhoc_Jobs",
+			"displayName":	"Adhoc Jobs",
+			"parentName":	"Search_Activity",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"search_type=\"adhoc\""
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Failed_Jobs",
+			"displayName":	"Failed Jobs",
+			"parentName":	"Search_Activity",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"info_count>1 info=\"granted\" info!=\"completed\""
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Realtime_Jobs",
+			"displayName":	"Real-time Jobs",
+			"parentName":	"Search_Activity",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"search_type=\"realtime\""
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Scheduled_Jobs",
+			"displayName":	"Scheduled Jobs",
+			"parentName":	"Search_Activity",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"search_type=\"scheduled\""
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Subsearch_Jobs",
+			"displayName":	"Subsearch Jobs",
+			"parentName":	"Search_Activity",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"search_type=\"subsearch\""
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Scheduler_Activity",
+			"displayName":	"Scheduler Activity",
+			"parentName":	"BaseSearch",
+			"fields":		[
+				{
+					"fieldName":	"_time",
+					"displayName":	"_time",
+					"type":			"timestamp",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"app",
+					"displayName":	"app",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"host",
+					"displayName":	"host",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"savedsearch_name",
+					"displayName":	"savedsearch_name",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"sid",
+					"displayName":	"sid",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"source",
+					"displayName":	"source",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"sourcetype",
+					"displayName":	"sourcetype",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"splunk_server",
+					"displayName":	"splunk_server",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"status",
+					"displayName":	"status",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"user",
+					"displayName":	"user",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				}					
+			],
+			"calculations":	[],
+			"constraints":	[],
+			"baseSearch":   "index=_internal sourcetype=scheduler",
+			"children":		[]
+		},
+		{
+			"objectName":	"View_Activity",
+			"displayName":	"View Activity",
+			"parentName":	"BaseEvent",
+			"fields":		[
+				{
+					"fieldName":	"app",
+					"displayName":	"app",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		true,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"user",
+					"displayName":	"user",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"view",
+					"displayName":	"view",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		true,
+					"multivalue":	false,
+					"hidden":		false
+				}
+			],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"index=_internal sourcetype=splunk_web_access method=GET status=200"
+				}			
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Web_Service_Errors",
+			"displayName":	"Web Service Errors",
+			"parentName":	"BaseSearch",
+			"fields":		[
+				{
+					"fieldName":	"_time",
+					"displayName":	"_time",
+					"type":			"timestamp",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"host",
+					"displayName":	"host",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"source",
+					"displayName":	"source",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"sourcetype",
+					"displayName":	"sourcetype",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				}
+			],
+			"calculations":	[
+				{
+					"calculationID":	"Web_Service_Errors_event_id",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"event_id",
+							"displayName":	"event_id",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"splunk_server.\"@@\".index.\"@@\".sha1(_time._raw)"
+				}
+			],
+			"constraints":	[],
+			"baseSearch":   "index=_internal sourcetype=splunk_web_service tag=error",
+			"children":		[]
+		}
+	]
+}

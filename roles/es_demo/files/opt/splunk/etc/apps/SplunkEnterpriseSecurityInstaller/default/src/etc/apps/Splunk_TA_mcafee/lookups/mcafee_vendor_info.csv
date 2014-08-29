@@ -1,0 +1,4 @@
+sourcetype,vendor,product,ids_type
+mcafee:epo,McAfee,,host
+mcafee:ids,McAfee,Intrushield,network
+mcafee:foundstone,McAfee,Foundstone,

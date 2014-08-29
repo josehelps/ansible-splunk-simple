@@ -1,0 +1,25 @@
+05/19/2011 10:48:34
+Installed application enumerated from "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{163025bb-ef60-4329-9384-9aeb595a0179}"
+AuthorizedCDFPrefix=
+Comments=The IT Search Engine
+Contact=Contact Support at http://www.splunk.com/page/submit_issue
+DisplayVersion=108.1.32730
+HelpLink=http://www.splunk.com/page/submit_issue
+HelpTelephone=
+InstallDate=20110318
+InstallLocation=C:\Program Files\Splunk\
+InstallSource=C:\Users\David\Desktop\
+ModifyPath=MsiExec.exe /I{163025bb-ef60-4329-9384-9aeb595a0179}
+Publisher=Splunk, Inc.
+Readme=C:\Program Files\Splunk\README.txt 
+Size=
+EstimatedSize=0x1c991
+UninstallString=MsiExec.exe /I{163025bb-ef60-4329-9384-9aeb595a0179}
+URLInfoAbout=http://www.splunk.com
+URLUpdateInfo=http://www.splunk.com/download
+VersionMajor=0x6c
+VersionMinor=0x1
+WindowsInstaller=0x1
+Version=0x6c017fda
+Language=0x409
+DisplayName=Splunk

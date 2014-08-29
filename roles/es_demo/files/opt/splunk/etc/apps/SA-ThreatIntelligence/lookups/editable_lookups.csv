@@ -1,0 +1,5 @@
+SA-ThreatIntelligence/urgency.csv,Urgency Levels,Combinations of priority and severity levels that dictate the urgency of notable events
+SA-ThreatIntelligence/local_threatlist.csv,Local Threat List,Custom list of IP addresses to be included in the merged threat list lookup table
+SA-ThreatIntelligence/local_threatlist_domains.csv,Local Domain Threat List,Custom list of domains to be included in the merged threat list lookup table
+SA-ThreatIntelligence/local_threatlist_urls.csv,Local URL Threat List,Custom list of URLs to be included in the merged threat list lookup table
+SA-ThreatIntelligence/risk_object_types.csv,Risk Object Types,List of risk object types used by the risk analysis framework

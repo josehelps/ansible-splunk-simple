@@ -1,0 +1,21 @@
+LI_ACTION0,action_taken,action
+1,Quarantined,blocked
+2,Renamed,deferred
+3,Deleted,blocked
+4,Left alone,allowed
+5,Cleaned,blocked
+6,Cleaned or deleted macros,blocked
+7,Saved file as,deferred
+8,Sent to Intel (AMS),deferred
+9,Moved to backup location,deferred
+10,Renamed backup file,deferred
+11,Undo action in Quarantine View,deferred
+12,Unable to act on file,allowed
+13,Backed up file,deferred
+14,Pending analysis,deferred
+15,First action was partially successful; second action was Leave Alone. Results of the second action are not mentioned.,deferred
+16,A process needs to be terminated to remove a risk,deferred
+17,Prevent a risk from being loggged or a user interface from being displayed,deferred
+18,Performing a request to restart the computer,deferred
+19,Shows as Cleaned by Deletion in the Risk History in the UI and the Logs in the SSC,blocked
+20,Auto-Protect prevented a file from being created; reported (Access denied),blocked

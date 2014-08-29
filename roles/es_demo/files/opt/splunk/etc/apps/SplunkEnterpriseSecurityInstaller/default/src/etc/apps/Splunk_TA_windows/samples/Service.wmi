@@ -1,0 +1,43 @@
+20100511153257.000000
+Caption=Windows Time
+Description=Maintains date and time synchronization on all clients and servers in the network. If this service is stopped, date and time synchronization will be unavailable. If this service is disabled, any services that explicitly depend on it will fail to start.
+Name=W32Time
+PathName=C:\Windows\system32\svchost.exe -k LocalService
+StartMode=Manual
+StartName=NT AUTHORITY\LocalService
+State=Stopped
+Status=OK
+wmi_type=Service
+
+20100309104822.000000
+Caption=Wireless Configuration
+Description=
+Name=WZCSVC
+PathName=C:\WINDOWS\System32\svchost.exe -k netsvcs
+StartMode=Auto
+StartName=LocalSystem
+State=Running
+Status=OK
+wmi_type=Service
+
+20100309104822.000000
+Caption=Automatic Updates
+Description=Enables the download and installation of Windows updates. If this service is disabled, this computer will not be able to use the Automatic Updates feature or the Windows Update Web site.
+Name=wuauserv
+PathName=C:\WINDOWS\system32\svchost.exe -k netsvcs
+StartMode=Auto
+StartName=LocalSystem
+State=Running
+Status=OK
+wmi_type=Service
+
+20100309104822.000000
+Caption=Windows Management Instrumentation Driver Extensions
+Description=
+Name=Wmi
+PathName=C:\WINDOWS\system32\svchost.exe -k netsvcs
+StartMode=Auto
+StartName=LocalSystem
+State=Stopped
+Status=Broken
+wmi_type=Service

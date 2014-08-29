@@ -1,0 +1,125 @@
+
+{% load splunkmvc %}
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Splunk Application Framework Quick Start</title>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}splunkjs/css/bootstrap.css"/>
+        <link href="{{STATIC_URL}}quickstartfx/css/style.css" rel="stylesheet" type="text/css" media="screen">
+        <link href="{{STATIC_URL}}quickstartfx/css/prettify.css" rel="stylesheet" type="text/css" media="screen">
+        <script type="text/javascript" src="{{STATIC_URL}}quickstartfx/js/prettify.js"></script>
+        <script type="text/javascript" src="{{STATIC_URL}}quickstartfx/js/jquery-1.8.2.min.js"></script>
+
+    </head>
+    <body onload="prettyPrint();">
+        <div id="splunk-bar"></div>
+        <div id="container">
+            <div class="progress-buttons">
+                <a href="{% url 'quickstartfx:steps' id='addSearch' %}" class="btn">Back</a>
+                <a href="{% url 'quickstartfx:steps' id='addMap' %}" class="btn btn-next btn-success">Next</a>
+            </div>
+            <h1>Splunk Application Framework Quick Start</h1>
+            
+            
+            <div class="row" id="content-container">
+                <div class="span23" id="main">
+                        <h2>Add search results to table</h2>
+                        <p>Now that you have a search manager, let's show the results in a table. To do that, we'll create a <b>Table</b> view and bind it to the search manager. If the search is modified (for example, by using a <b>SearchBar</b> view to change the search query, or a <b>TimeRange</b> view to change the time range), the <b>Table</b> is notified and updated automatically.</p>
+                        <!-- <ul class="nav nav-tabs" id="main-tabs">
+                            <li class="active">
+                                <a href="#">Regular</a>
+                            </li>
+                            <li>
+                                <a href="#">splunkjs.Async</a>
+                            </li>
+                        </ul> -->
+                        <div class="well well-white" id="well-main">
+                            
+                                
+                            
+                            <h3>Add a table</h3>
+                            <p>Like other views we've looked at so far, you'll add the <b>Table</b> view by using tags in your HTML templates. The view is bound to a search manager by setting its <code>managerid</code> property to the ID of the search manager. Then, the table is populated with the results of that search.</p>
+                            <p>Here's an example:</p>
+                            
+                            {% table id="example-table" managerid="example-search" pageSize="5" %}
+                            {% searchmanager id="example-search" search="| inputlookup splunkdj.demo.dataset.csv | fields artist_name bytes clientip | rename _time as download_time "%} 
+                            
+                            </br>
+                            <p>Both the table and the search manager are declared in the app's HTML template using template tags:</p>
+
+
+<pre class="prettyprint linenums">
+&#123;% table id="example-table" managerid="example-search" pageSize="5"%&#125;
+
+&#123;% searchmanager id="example-search" search="| inputlookup splunkdj.demo.dataset.csv | fields artist_name bytes clientip | rename _time as download_time"   %&#125; 
+</pre>
+                </br>
+    
+                <p>If a search bar and a table are bound to the same search manager, results of a search in the search bar will populate the table. Here is a searchbar and table bound to the same search manager. Try searching on your Splunk data and see how the table is updated.</p>
+
+                {% searchbar id="example-searchbar" managerid="example-search2" timerange=False %}
+                {% table id="example-table2" managerid="example-search2" pageSize="5" %}
+                {% searchmanager id="example-search2" search="index=_internal | head 100"%}
+
+                </br>
+                <p>The code required to do this is simple:</p>
+
+<pre class="prettyprint linenums lang-js">
+&#123; % searchbar id="example-searchbar" managerid="example-search" timerange=False % &#125;
+&#123; % table id="example-table" managerid="example-search" pageSize="5" %&#125;
+&#123; % searchmanager id="example-search" search="index=_internal | head 100"% &#125;
+
+&lt;script&gt;
+    require(["splunkjs/ready!"], function() {
+        var manager = splunkjs.mvc.Components.getInstance("example-search2");
+        var searchbar = splunkjs.mvc.Components.getInstance("example-searchbar");
+        
+        searchbar.on("change", function() {
+            manager.settings.unset("search", {silent: true});
+            manager.settings.set("search", searchbar.val()); 
+        });
+    });
+&lt;/script&gt;
+</pre>
+                    
+                </div>
+                <div class="span9 offset1" id="sidebar">
+                    <div class="well well-white">
+                        <ul class="nav nav-list ">
+                            <li class="nav-header">Quick Start</li>
+                            <li><a href="{% url 'quickstartfx:steps' id='createApp' %}">Create an app</a></li>
+                            <li><a href="{% url 'quickstartfx:steps' id='addSearch' %}">Add a search</a></li>
+                            <li class="active"><a href="{% url 'quickstartfx:steps' id='addResultTable' %}">Add search results to table</a></li>
+                            <li><a href="{% url 'quickstartfx:steps' id='addMap' %}">Map your results</a></li>
+                            <li><a href="{% url 'quickstartfx:steps' id='addInteractivity' %}">Add interactivity</a></li>
+                            <li><a href="{% url 'quickstartfx:steps' id='nextSteps' %}">Next steps</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="clear: both;"></div>
+        </div>
+        <div class="progress-buttons">
+                <a href="{% url 'quickstartfx:steps' id='addSearch' %}" class="btn">Back</a>
+                <a href="{% url 'quickstartfx:steps' id='addMap' %}" class="btn btn-next btn-success">Next</a>
+            </div>     
+        {% component_loader %}
+        
+        <script>
+            require(["splunkjs/ready!"], function() {
+                var manager = splunkjs.mvc.Components.getInstance("example-search2");
+                var searchbar = splunkjs.mvc.Components.getInstance("example-searchbar");
+                
+                searchbar.on("change", function() {
+                    manager.settings.unset("search", {silent: true});
+                    manager.settings.set("search", searchbar.val()); 
+                });
+            });
+        </script>
+        
+    </body>
+</html>

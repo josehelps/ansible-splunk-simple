@@ -1,0 +1,73 @@
+<form script="traffic_search.js">
+	<label>Traffic Search</label>
+	
+	<fieldset autoRun="true" submitButton="true">
+	    
+	    <input type="dropdown" token="action">
+            <label>Action</label>
+            <choice value="">All</choice>
+            <populatingSearch fieldForValue="action" fieldForLabel="action">| `cim_traffic_actions`</populatingSearch>
+            <default></default>
+            <prefix>All_Traffic.action="</prefix>
+            <suffix>"</suffix>
+        </input>   
+        
+        <input type="text" token="src_form">
+            <label>Source</label>
+            <default></default>
+        </input>
+
+        <input type="text" token="dest_form">
+            <label>Destination</label>
+            <default></default>
+        </input>
+        
+	    <input type="dropdown" token="transport">
+            <label>Transport Protocol</label>
+            <choice value="">All</choice>
+            <populatingSearch fieldForValue="transport" fieldForLabel="transport">| `cim_transport_protocols`</populatingSearch>
+            <default></default>
+            <prefix>All_Traffic.transport="</prefix>
+            <suffix>"</suffix>
+        </input>
+        
+        <input type="text" token="dest_port">
+            <label>Destination Port</label>
+            <default></default>
+            <prefix>All_Traffic.dest_port="</prefix>
+            <suffix>"</suffix>
+        </input>
+
+		<input type="time">
+			<default>Last 24 hours</default>
+		</input>
+	</fieldset>
+	
+	<row>
+		<table id="table1">
+			<title> </title>
+			
+			<searchTemplate>| tstats `summariesonly` max(_time) as _time,values(All_Traffic.action) as action,values(All_Traffic.src_port) as src_port,count from datamodel=Network_Traffic where * $action$ $src$ $dest$ $transport$ $dest_port$ by All_Traffic.src,All_Traffic.dest,All_Traffic.transport,All_Traffic.dest_port | `drop_dm_object_name("All_Traffic")` | sort - count | fields _time,action,src,src_port,dest,transport,dest_port,count</searchTemplate>
+		    
+		    <option name="count">5</option>
+		    
+		    <drilldown>
+		        <link>search?q=| `datamodel("Network_Traffic", "All_Traffic")` | search All_Traffic.src="$row.src$" All_Traffic.dest="$row.dest$" All_Traffic.transport="$row.transport$" All_Traffic.dest_port="$row.dest_port$" | `drop_dm_object_name("All_Traffic")`&amp;earliest=$earliest$&amp;latest=$latest$</link>
+		    </drilldown>
+		</table>
+	</row>
+	
+	<row>
+		<event id="event1">
+			<title> </title>
+			
+			<searchTemplate>| `datamodel("Network_Traffic", "All_Traffic")` | search $action$ $src$ $dest$ $transport$ $dest_port$ | `drop_dm_object_name("All_Traffic")` | head 100</searchTemplate>
+			
+			<option name="count">5</option>
+			<option name="rowNumbers">false</option>
+			<option name="type">list</option>
+			<option name="list.wrap">true</option>
+			<fields>dvc, action, src, src_ip, src_mac, src_translated_ip, src_port, dest, dest_ip, dest_mac, dest_translated_ip, transport, dest_port</fields>
+		</event>
+	</row>
+</form>

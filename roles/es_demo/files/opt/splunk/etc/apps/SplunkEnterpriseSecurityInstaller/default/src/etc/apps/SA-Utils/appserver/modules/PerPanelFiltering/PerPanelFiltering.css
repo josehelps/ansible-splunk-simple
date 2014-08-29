@@ -1,0 +1,54 @@
+.HelpText{
+	padding-top: 24px;
+	font-size: small;
+}
+
+#ppf_table{
+	padding-top: 20px;
+}
+
+.perPanelFileringPopupLink{
+	float: right;
+	min-height: 24px;
+	background-repeat: no-repeat;
+	background-position: 0px -1px;
+	padding-top: 2px;
+	padding-left: 24px;
+	margin-left: 12px;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAATCAYAAACUef2IAAADKklEQVQ4EaWVz0sbURDHdze7idGYmCXRiGlDGlFSa6pi6cFUhR48RChe2n+hh95KKUJvUvAihUIpnkt7aQ+CPYWiqCAeLSlCscZSND80P0jMmphNNv3ONlu2NsZCBybv7bx5n3kzbx5ha7Uac05YfPNQAWqAms7OzlrL5XIrx3Gy2WyWMJZgr0Dl+ljF+IcQgEAcAjgPDw9vRKPRQDqdvpnNZn2SJFkVRTFUq1XyI1VYlpUNBkPVaDTKNpvtwG6377jd7s8ejyfS3t7+DT5l1Q8b7VtbWw9WVlbuA36ru7s729XVtSeKYqqjo0Pieb4AUB5awLpQqVRsCGQpFosWHMCaSqWuxONxbyaTSfb19X2anp5eRLAIn8/n/UtLSy8BEoaGhsJTU1MLiPgdmoEWoVq6CuYkVCKtVFbMXfv7+3fD4fDc9vb2Q3CYUCj0iEfNMuPj47uIfH1tbe3O8vKy2+VyRR0OR7ytrS1rtVozmGeRdhF1NsDPhjKJhUJBzOVyYiKR8J6cnHgHBgaEkZERxu/371J0ltI7Pj6eAfQVNjmgDDYySJWRZZnBxamK9BnUlxEEgTGZTL/VYrEwTqeTQWBmcHDw7ejo6BNwEwSmAOajo6OZjY2NBdTKRQASWtMr2dARagDNh2yoPxMIBN4MDw8/w/oBTIoGpnUjoKH19fUXsVjMQ0D9ZnLQC62ToJQ1nHIR4Dl8xqHqgh5MfjxaLAj4PNruNqXfTJD+6djY2Hxvb+9r+KX0vufBtMbhkvybm5vPI5HIPbSXenLthNrmzs7OxOTk5GxPT8972CTNro2cNtGNCpp/Byd5jL4ME5Dg6HdVKQtcWG5iYuIpoO+w7y8osRqByV7D7e+hDWfxWL5QZxCwHkAJBoPzeG0f4EevrKFcBFadcTERpPxVA9dbrurz+VbhcNqQWDc2BcOHwyk5KgNBNYWNXl5TudSBaqwBaU49+y9yKRinZam2BK9fJHXSrxfUJMKlYLwknh4KgUlwYtrz3+Baf3//x2Qyea1UKnkQQPJ6vastLS0xNUqTn0YPRO9Ol2tGKa6iJCLmZfT4D4xpKP2DXCg/AahpppT+OGTUAAAAAElFTkSuQmCC);
+	/* background-position: 0px -1px; */
+}
+
+.perPanelFileringForm{
+ 	min-width: 800px;
+ 	min-height: 400px;
+ 	display: none;
+}
+
+#ppf_table td{
+	vertical-align: middle;
+}
+
+a#ppf_next.disabled,  a#ppf_prev.disabled  {
+	cursor: text;
+}
+
+#ppf_next:hover, #ppf_prev:hover{
+	border-color: #999;
+}
+
+#ppf_next, #ppf_prev, #ppf_next.disabled:hover, #ppf_prev.disabled:hover {
+	border-style: solid;
+	border-width: 1px;
+	border-color: transparent;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	_border-width: 0px;
+	padding: 3px 6px;
+	text-decoration: none;
+}
+
+.view_filtered_entries{
+	clear: both;
+	padding-top: 12px;
+}

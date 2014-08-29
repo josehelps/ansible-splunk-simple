@@ -1,0 +1,17 @@
+<div class="introContent">
+  <table>
+    <tr>
+      <td valign="top" style="width: 600px;">
+        <h2 title="Introduction">Introduction</h2>
+        <p>The Intrusion Center provides an overview of all network intrusion events from the Intrusion Detection Systems (IDS) and Intrusion Prevention Systems (IPS) on your network that are providing data into Splunk. IDS's give a deeper view into the traffic on your network, based on the detailed information contained in their log events. This dashboard helps you monitor your IDS activity and see trends in severity and changes in volume of IDS events. Depending on the rules for your organization, a security analyst should monitor this dashboard on a regular basis (such as hourly). You can also use this dashboard to gain additional detail during an investigation.</p>
+        <p>Use the filtering options at the top of the screen to limit which items are shown. You can configure new data inputs through <a href="${make_url(['manager', APP['id']])}" target="_blank">Splunk Manager</a>, or search for particular network intrusion events directly through <a href="${make_url(['app', APP['id'],'incident_review'])}" target="_blank">Incident Review</a>. Clicking chart elements or table rows on this page will take you to the raw events that are represented.</p>
+  	</td>
+      <td valign="top">
+        <h2>Links</h2>
+        <ul>
+          <li><a href="${make_url(['app',APP['id'],'ids_flashtimeline'])}" target="_blank">Intrusion Search</a></li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</div>

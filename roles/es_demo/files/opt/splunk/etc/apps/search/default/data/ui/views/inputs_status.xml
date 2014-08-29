@@ -1,0 +1,55 @@
+<view template="dashboard.html" isDashboard="False">
+  <label>Inputs activity</label>
+  <module name="AccountBar" layoutPanel="appHeader"/>
+  <module name="AppBar" layoutPanel="navigationHeader"/>
+  <module name="Message" layoutPanel="messaging">
+    <param name="filter">*</param>
+    <param name="clearOnJobDispatch">False</param>
+    <param name="maxSize">1</param>
+  </module>
+  <module name="TitleBar" layoutPanel="navigationHeader">
+    <param name="actionsMenuFilter">dashboard</param>
+  </module>
+
+  <module name="HiddenSearch" layoutPanel="panel_row1_col1" group="Most recently processed files" autoRun="True">
+    <param name="search">index=_internal source=*metrics.log ("/" OR "\\") group=per_source_thruput NOT splunk | dedup series | fields series | rename series as Filename</param>
+    <module name="Paginator">
+      <param name="count">5</param>
+      <param name="entityName">results</param>
+      <module name="ViewRedirectorLink">
+        <param name="viewTarget">flashtimeline</param>
+        <param name="label">View full results</param>
+      </module>
+      <module name="SimpleResultsTable">
+        <param name="drilldown">all</param>
+        <module name="ConvertToDrilldownSearch">
+          <module name="ViewRedirector">
+            <param name="viewTarget">flashtimeline</param>
+          </module>
+        </module>
+      </module>
+
+    </module>
+  </module>
+
+  <module name="HiddenSearch" layoutPanel="panel_row1_col2" group="Most recently ignored files" autoRun="True">
+    <param name="search">index=_internal source=*splunkd.log component="fileclassifiermanager" message="*invalid*" | fields message</param>
+    <module name="Paginator">
+      <param name="count">5</param>
+      <param name="entityName">results</param>
+      <module name="ViewRedirectorLink">
+        <param name="viewTarget">flashtimeline</param>
+        <param name="label">View full results</param>
+      </module>
+      <module name="SimpleResultsTable">
+        <param name="drilldown">all</param>
+        <module name="ConvertToDrilldownSearch">
+          <module name="ViewRedirector">
+            <param name="viewTarget">flashtimeline</param>
+          </module>
+        </module>
+      </module>
+    </module>
+  </module>
+
+ </view>

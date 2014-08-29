@@ -1,0 +1,7 @@
+May 25 2011 18:37:03 app=yum-updatesd runlevel0=off runlevel1=off runlevel2=off runlevel3=off runlevel4=off runlevel5=off runlevel6=off
+May 25 2011 18:37:03 app=ypbind runlevel0=off runlevel1=off runlevel2=off runlevel3=off runlevel4=off runlevel5=off runlevel6=off
+May 25 2011 18:37:03 app=ntpd runlevel0=off runlevel1=off runlevel2=off runlevel3=off runlevel4=off runlevel5=off runlevel6=off
+May 25 2011 18:37:03 app=sshd runlevel0=off runlevel1=off runlevel2=on runlevel3=on runlevel4=on runlevel5=on runlevel6=off
+May 25 2011 18:37:03 app=smartd runlevel0=on runlevel1=off runlevel2=off runlevel3=off runlevel4=off runlevel5=off runlevel6=off
+May 25 2011 18:37:03 app=portmap runlevel0=off runlevel1=off runlevel2=on runlevel3=on runlevel4=off runlevel5=off runlevel6=off
+May 25 2011 18:37:03 app=named runlevel0=off runlevel1=off runlevel2=on runlevel3=on runlevel4=off runlevel5=off runlevel6=off

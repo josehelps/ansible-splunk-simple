@@ -1,0 +1,20 @@
+<%page expression_filter="h"/>
+<%inherit file="//layout/base.html" />
+<%namespace name="lib" file="//lib.html" import="*"/>
+<%def name="css()">
+    <%coreCSSFiles = [
+        "/static/css/view.css", 
+        "/static/css/skins/default/default.css" 
+    ] %>
+    <%lib:stylesheet_tags files="${coreCSSFiles}" />
+</%def>
+<%def name="custom_css()">
+    <%lib:stylesheet_tags files="${['/static/app/%s/ta_windows_setup.css' % app]}" />
+</%def>
+<div class="WindowsMessageContainer">
+  <h2>Splunk Add-on for Windows Setup: Authorization Failure</h2>
+  <p>You do not have sufficient permission to configure the Splunk Add-on for Windows.  Click "OK" to go to the Splunk launcher where you can choose another app or add-on.</p>
+  <div class="WindowsOKButton">
+    <a target="_parent" href="${make_url('/app/launcher')}" class="splButton-primary"><span>OK</span></a>
+  </div>
+</div>

@@ -1,0 +1,137 @@
+<view template="dashboard.html" isDashboard="False">
+  <label>Splunkd activity overview</label>
+  <module name="AccountBar" layoutPanel="appHeader"/>
+  <module name="AppBar" layoutPanel="navigationHeader"/>
+  <module name="Message" layoutPanel="messaging">
+    <param name="filter">*</param>
+    <param name="clearOnJobDispatch">False</param>
+    <param name="maxSize">1</param>
+  </module>
+  <module name="TitleBar" layoutPanel="navigationHeader">
+    <param name="actionsMenuFilter">dashboard</param>
+  </module>
+
+  <module name="GenericHeader" layoutPanel="panel_row1_col1">
+      <param name="label">Status</param>
+ 
+      <module name="HiddenSearch" layoutPanel="panel_row1_col1_grp1" autoRun="True">
+        <module name="GenericHeader"><param name="label">Splunkd errors this hour</param></module>
+        <param name="search">index=_internal source="*splunkd.log" log_level="error" | stats count as errors | gauge errors</param>
+	<param name="earliest">-1h</param>
+        <module name="HiddenChartFormatter">
+            <param name="charting.chart">radialGauge</param>
+            <param name="charting.chart.style">shiny</param>
+			<param name="charting.chart.rangeValues">[0,1,9,50]</param>
+			<param name="charting.gaugeColors">[0x84E900,0xFFE800,0xBF3030]</param>
+            <module name="JSChart" />
+        </module>
+	<module name="HiddenSearch" layoutPanel="panel_row1_col1_grp1">
+          <param name="search">index=_internal source="*splunkd.log" log_level="error"</param>
+          <module name="ViewRedirectorLink">
+            <param name="viewTarget">flashtimeline</param>
+            <param name="label">View full results</param>
+          </module>
+        </module>
+      </module>
+    
+      <module name="HiddenSearch" layoutPanel="panel_row1_col1_grp2" autoRun="True">
+        <module name="GenericHeader"><param name="label">Average splunkd access delay this hour (in s)</param></module>
+        <param name="search">index=_internal source="*splunkd_access.log" NOT uri=/services/streams/* NOT uri_path=/services/search/jobs/export | stats avg(spent) as d | eval d = round(d/1000, 3) | gauge d</param>
+	<param name="earliest">-1h</param>
+    <module name="HiddenChartFormatter">
+        <param name="charting.chart">markerGauge</param>
+        <param name="charting.chart.style">shiny</param>
+        <param name="charting.chart.orientation">x</param>
+		<param name="charting.chart.rangeValues">[0,.25,.5,2]</param>
+		<param name="charting.gaugeColors">[0x84E900,0xFFE800,0xBF3030]</param>
+        <module name="JSChart" />
+    </module>
+	<module name="HiddenSearch" layoutPanel="panel_row1_col1_grp2">
+          <param name="search">index=_internal source="*splunkd_access.log" NOT uri=/services/streams/* NOT uri_path=/services/search/jobs/export</param>
+          <module name="ViewRedirectorLink">
+            <param name="viewTarget">flashtimeline</param>
+            <param name="label">View full results</param>
+          </module>
+	</module>
+      </module>
+    
+      <module name="HiddenSearch" layoutPanel="panel_row1_col1_grp3" autoRun="True">
+        <module name="GenericHeader"><param name="label">Average splunkd uptime (in days)</param></module>
+        <param name="search">index=_internal source="*splunkd.log" "splunkd starting" OR "shutting down splunkd" | transaction startswith="splunkd starting" endswith="shutting down splunkd" | stats avg(duration) as avgdur | eval avgdur = round(avgdur/86400,3) | gauge avgdur</param>
+	<module name="HiddenChartFormatter">
+	      <param name="charting.chart">fillerGauge</param>
+	      <param name="charting.chart.style">shiny</param>
+		  <param name="charting.chart.rangeValues">[0,.0416,1,7]</param>
+		  <param name="charting.gaugeColors">[0xBF3030,0xFFE800,0x84E900]</param>
+	      <module name="JSChart" />
+	</module>
+	<module name="HiddenSearch" layoutPanel="panel_row1_col1_grp3">
+          <param name="search">index=_internal source="*splunkd.log" "splunkd starting" OR "shutting down splunkd" | transaction startswith="splunkd starting" endswith="shutting down splunkd"</param>
+          <module name="ViewRedirectorLink">
+            <param name="viewTarget">flashtimeline</param>
+            <param name="label">View full results</param>
+          </module>
+	</module>
+      </module>
+    
+    <!--
+      <module name="HiddenSearch" layoutPanel="panel_row1_col4" autoRun="True">
+        <module name="GenericHeader"><param name="label">Splunkweb 404s this hour</param></module>
+        <param name="search">index=_internal 404 source="*web_access.log" | stats count | rangemap field=count low=0-0 elevated=1-100 default=severe</param>
+	<param name="earliest">-1h</param>
+        <module name="SingleValue">
+          <param name="field">count</param>
+          <param name="classField">range</param>
+        </module>
+        <module name="ViewRedirectorLink">
+          <param name="viewTarget">flashtimeline</param>
+          <param name="label">View full results</param>
+        </module>
+      </module>
+    -->
+</module>
+
+
+  <module name="HiddenSearch" layoutPanel="panel_row2_col1" group="Most recent splunkd errors" autoRun="True">
+    <param name="search">index=_internal source=*splunkd.log (log_level="fatal" OR log_level="error")| dedup punct| head 100 | fields message</param>
+    <param name="earliest">-24h</param>
+    <module name="Paginator">
+      <param name="count">5</param>
+      <param name="entityName">results</param>
+      <module name="ViewRedirectorLink">
+        <param name="viewTarget">flashtimeline</param>
+        <param name="label">View full results</param>
+      </module>
+      <module name="SimpleResultsTable">
+        <param name="drilldown">row</param>
+        <module name="ConvertToDrilldownSearch">
+          <module name="ViewRedirector">
+            <param name="viewTarget">flashtimeline</param>
+          </module>
+        </module>
+      </module>
+    </module>
+  </module>
+
+  <module name="HiddenSearch" layoutPanel="panel_row3_col1" group="Most recent timestamping issues" autoRun="True">
+    <param name="search">index=_internal source=*splunkd.log component="dateparserverbose" | dedup message | fields message</param>
+    <param name="earliest">-24h</param>
+    <module name="Paginator">
+      <param name="count">5</param>
+      <param name="entityName">results</param>
+      <module name="ViewRedirectorLink">
+        <param name="viewTarget">flashtimeline</param>
+        <param name="label">View full results</param>
+      </module>
+      <module name="SimpleResultsTable">
+        <param name="drilldown">row</param>
+        <module name="ConvertToDrilldownSearch">
+          <module name="ViewRedirector">
+            <param name="viewTarget">flashtimeline</param>
+          </module>
+        </module>
+      </module>
+    </module>
+  </module>
+
+ </view>

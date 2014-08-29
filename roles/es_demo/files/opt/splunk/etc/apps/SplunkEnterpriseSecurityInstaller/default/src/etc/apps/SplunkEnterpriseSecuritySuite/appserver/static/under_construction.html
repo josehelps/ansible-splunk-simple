@@ -1,0 +1,58 @@
+
+
+<style>
+
+.left{
+	height: 400px;
+	float: left;
+	padding: 12px;
+}
+
+.right{
+	float:left;
+}
+
+.title{
+	font-weight: bold;
+	font-size: 20px;
+	padding: 8px;
+	padding-top: 18px;
+}
+
+.message{
+	padding: 8px;
+	font-size: 14px;
+}
+
+.dialog {
+    background: none repeat scroll 0 0 white;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 5px #CCCCCC;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    padding: 0;
+    position: relative;
+    height: 150px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 48px;
+}
+	
+</style>
+
+<div class="dialog">
+	<div class="left">
+		<img src="${make_url(['static', 'app', 'SplunkEnterpriseSecuritySuite', 'images', 'icon_alert.png'])}" alt="warning" />
+	</div>
+	<div class="right">
+		<div class="title">Under Construction</div>
+		<div class="message">
+			This page does not exist yet (but will soon enough).
+			<p>
+			Perhaps you would like to <a href="${make_url(['app', 'SplunkEnterpriseSecuritySuite', 'ess_configuration'])}">go to the main configuration page?</a>
+			</p>
+		</div>
+	</div>
+</div>

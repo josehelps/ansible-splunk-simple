@@ -1,0 +1,22 @@
+div.tagsinput { border:1px solid #CCC; background: #FFF; padding: 5px 0px 5px 5px; width:300px; height:100px; overflow-y: auto;}
+div.tagsinput span.tag { 
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	display: block;
+	float: left;
+	padding: 5px;
+	text-decoration:none;
+	background: #729C54 url("/static/img/skins/default/overlay_gloss_28.png") repeat-x;
+	color: #FFFFFF;
+	margin-right: 5px;
+	margin-bottom:5px;
+	font-family: helvetica;
+	font-size:13px;
+}
+div.tagsinput span.tag a { font-weight: bold; color: #FFFFFF; text-decoration:none; font-size: 11px;  } 
+div.tagsinput input { width:200px; margin:0px; font-family: helvetica; font-size: 13px; border:1px solid transparent; padding:5px 0px 0px 0px; background: transparent; color: #000; outline:0px;  margin-right:5px; margin-bottom:5px; }
+div.tagsinput div { display:block; float: left; } 
+.tags_clear { clear: both; width: 100%; height: 0px; }
+#tags_addTag{ margin-bottom: 0px;padding-bottom: 0px; }
+#tags_tag{ margin-bottom: 0px;padding-bottom: 0px; }
+.jquery_default_text{ color:#666666;}

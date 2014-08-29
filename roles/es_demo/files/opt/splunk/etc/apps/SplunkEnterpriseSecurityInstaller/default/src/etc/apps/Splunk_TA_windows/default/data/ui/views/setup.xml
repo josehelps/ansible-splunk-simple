@@ -1,0 +1,25 @@
+<view autoCancelInterval="100" template="search.html">
+  <label>Splunk Add-on for Windows: Setup</label>
+  
+  <module name="AccountBar" layoutPanel="appHeader"/>
+  <module name="AppBar" layoutPanel="navigationHeader"/>
+  <module name="Message" layoutPanel="messaging">
+    <param name="filter">*</param>
+    <param name="clearOnJobDispatch">False</param>
+    <param name="maxSize">1</param>
+  </module>
+  <module name="Message" layoutPanel="messaging">
+    <param name="filter">splunk.search.job</param>
+    <param name="clearOnJobDispatch">True</param>
+    <param name="maxSize">1</param>
+  </module>
+  <module name="TA_Windows_FTR" layoutPanel="viewHeader">
+  </module>
+  <module name="TitleBar" layoutPanel="viewHeader">
+    <param name="showActionsMenu">False</param>
+  </module>
+
+  <module name="TA_Windows_IFrame" layoutPanel="viewHeader">
+    <param name="height">auto</param>
+  </module>
+</view>

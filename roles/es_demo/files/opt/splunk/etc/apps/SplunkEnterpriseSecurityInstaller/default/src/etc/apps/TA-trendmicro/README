@@ -1,0 +1,20 @@
+Trend Micro Add-on
+----------------------------------------
+	Author: Splunk
+	Version/Date: 11/03/2010 05:58 pm
+	Source type(s): WinEventLog:Application:trendmicro
+	Input requirements: Trend Micro data is incorporated in the Windows Event Log on the Trend Micro manager.
+	                    To import Trend Micro data, import the Windows Event Log as described in
+	                    TA-Windows/README and this Add-on will automatically assign the correct
+	                    source type to the Trend Micro data. 
+	Has index-time operations: true, this TA needs to be deployed on indexers
+	Supported product(s): Trend Micro Endpoint Protection
+
+Using this Add-on:
+----------------------------------------
+	Configuration: Automatic
+	Ports for automatic configuration: None
+	Scripted input setup: Not applicable
+	
+	
+Copyright (C) 2009-2013 Splunk Inc. All Rights Reserved.

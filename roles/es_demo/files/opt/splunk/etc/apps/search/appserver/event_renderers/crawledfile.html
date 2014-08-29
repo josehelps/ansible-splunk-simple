@@ -1,0 +1,31 @@
+
+## inherit the default renderer strutural elements
+<%inherit file="//results/EventsViewer_default_renderer.html" />
+
+
+## override
+<%def name="event_raw(job, event, request, options, xslt)">
+
+  <% modtime     = event.fields.get('modtime','unknown')    %>
+  <% index       = event.fields.get('index','main')         %>
+  <% source      = event.fields.get('source','unknown')     %>
+  <% sourcetype  = event.fields.get('sourcetype','unknown') %>
+  <% size        = event.fields.get('size','unknown')       %>
+  <% status      = event.fields.get('status','unknown')     %>
+  <% isfile      = event.fields.get('isfile','unknown')     %>
+  <% filesearch = '|file "%s"' % source                     %> 
+  <% ftype       = "directory"                              %>
+  <% if str(isfile) == "True": ftype = "file"               %>
+  <a target=_blank title='Preview file in new window' href='flashtimeline?q=${filesearch|u}'><b>${source  | h}</b></a> (${sourcetype | h}, ${size | h})<br/> 
+  <!-- 
+  <b>modtime:</b> ${modtime | h} <b>size:</b> ${size | h}<br/>
+  <b>status:</b> ${status | h} <b>type:</b> ${ftype | h}<br/> 
+  -->
+
+</%def>
+
+
+## parent
+<%def name="event_time(job, event, request, options)">
+    ${parent.event_time(job, event, request, options)}
+</%def>

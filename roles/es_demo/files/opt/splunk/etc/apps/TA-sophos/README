@@ -1,0 +1,63 @@
+Sophos Add-on
+----------------------------------------
+	Author: Splunk
+	Version/Date: 11/26/2010 12:15 pm
+	Source type(s): sophos
+	Input requirements: Data can be received via WinEventLog:Application or SEC Server logs.
+	
+	                    WinEventLog:Application:
+	                    Data must be imported correctly using Windows-TA (since Sophos logs are stored in Windows events
+	                    logs). Once imported, this technology add-on will process the Sophos data.
+                      
+                      SEC Server Logs:
+                      Data can be received via syslog, or by monitoring the SEC Server log .
+	                    To receive data over syslog, manually set the source type for the associated data
+	                    input to 'sep'. To monitor log files, see the details under "Using this Technology
+	                    Add-on" below.
+
+	Has index-time operations: true, this TA needs to be deployed on indexers
+	Supported product(s): Sophos
+
+Using this Add-on:
+----------------------------------------
+	Configuration: Automatic
+	Ports for automatic configuration: None
+	Scripted input setup: Not applicable
+
+	This Add-on can import data directly by monitoring files on the SEC Server or via syslog. To monitor the files
+    directly you'll need to set the log file location in the inputs.conf file and enable the associated file inputs. To do so:
+
+	1. Create the following file:
+    
+            $SPLUNK_HOME/etc/apps/TA-sophos/local/inputs.conf
+        
+	2. SEC Server log Example:
+
+            Create a file input monitor
+            
+            [monitor://<SEC_LOG_PATH>\Threats.log]
+            sourcetype = sophos:threats
+
+            SEC Server log sourcetypes:
+            - sourcetype = sophos:threats
+            - sourcetype = sophos:webdata
+            - sourcetype = sophos:firewall
+            - sourcetype = sophos:appcontrol
+            - sourcetype = sophos:devicecontrol
+            - sourcetype = sophos:tamperprotection
+            - sourcetype = sophos:datacontrol
+            - sourcetype = sophos:computerdata
+
+	3. SEC Server Syslog Stream Example:
+
+            Create a syslog monitor
+            
+            [udp:514]
+            sourcetype=sophos:utm:firewall
+
+            Syslog sourcetypes:
+            - sophos:utm:firewall
+            - sophos:utm:ips
+            - sophos:utm:ipsec
+
+Copyright (C) 2009-2013 Splunk Inc. All Rights Reserved.

@@ -1,0 +1,1007 @@
+<%page expression_filter="h"/>
+<%inherit file="//layout/admin_lite.html" />
+<%namespace name="lib" file="//lib.html" import="*"/>
+
+<%def name="title()">${_('Data preview')} - ${parent.title()}</%def>
+
+<%def name="get_breadcrumbs()">
+    <%
+        return breadcrumbs
+    %>
+</%def>
+
+<%!
+    import logging
+    logger = logging.getLogger('splunk.datapreview')
+%>
+<%def name="custom_css()">
+    <%lib:stylesheet_tags files="${['/static/css/admin.css']}" />
+    <%lib:stylesheet_tags files="${['/static/css/skins/default/default.css']}" />
+    <%lib:stylesheet_tags files="${['/static/app/splunk_datapreview/preview.css']}" />
+</%def>
+
+<%def name="js()">
+    ${parent.js()}
+    
+    ${lib.script_tags(files=[
+        "/static/js/contrib/jquery.cookie.js",
+        "/static/js/contrib/script.js",
+        "/static/js/contrib/jquery.tipTip.minified.js",
+        "/static/app/splunk_datapreview/jquery.class.js",
+        "/static/app/splunk_datapreview/service.js",
+        "/static/app/splunk_datapreview/dp_models.js",
+        "/static/app/splunk_datapreview/dp_views.js",
+        "/static/app/splunk_datapreview/dp_controllers.js"
+    ])}
+    
+    <script type="text/javascript">
+        var svc;
+        var samp;
+        var ctrlr;
+        var jsBasePath = Splunk.util.make_url('/static/js');
+        var dynamicLibs = [jsBasePath + '/contrib/highcharts-3.0.7/highcharts.js'];
+        
+        $(function(){
+            svc = new splunk.service.Service(Splunk.util.make_url('/custom/splunk_datapreview/svc'));
+            svc.poll_interval = 750;
+            ctrlr = new Splunk.preview.Controller(
+                $('#data_source').val(),
+                $('#data_continue_to').val(),
+                $('#data_return_to').val(),
+                $('#data_reset_to').val(),
+                dynamicLibs
+            );
+            ctrlr.main();
+            
+        });
+    </script>
+</%def>
+
+<form style="display:none">
+    <input type="hidden" id="data_source" value="${source or ''}" />
+    <input type="hidden" id="data_continue_to" value="${continue_to or ''}" />
+    <input type="hidden" id="data_return_to" value="${return_to or ''}" />
+    <input type="hidden" id="data_reset_to" value="${reset_to or ''}" />
+</form>
+
+<div class="warn" id="main_error_panel"></div>
+
+<div class="relWrapper">
+
+<div class="preview tabs_visible" id="preview">
+    
+    <h1>${_('Previewing as ')} 
+    <select id="display_mode_switch">
+        <option value="0">${_('Unstructured data')}</option>
+        <option value="1">${_('Tabular data')}</option>
+        <option value="2">${_('JSON')}</option>
+        <option value="3">${_('W3C (IIS logs)')}</option>
+    </select>   
+    <span class="file_name">${source}</span></h1>
+    
+    <div class="previewWrapper" id="previewWrapper">
+        <div class="previewEvents">
+            
+            <table class="events_table">
+            </table>
+            
+            <table class="str_events_table">
+            </table>
+            
+            <div class="no_results"><span class="warning-icon">&nbsp;</span>${_('No results could be obtained with selected settings.')}</div>
+            <div class="no_fields"><span class="warning-icon">&nbsp;</span>${_('No fields could be extracted with selected settings.')}</div>
+            <div class="loader eventsLoader"></div>
+        </div>
+        <div class="eventTooltip"><a id="nextEvent" href="javascript:void(0)">${_('Next event')}<span class="splIcon splIcon-arrow-s"></span></a></div>    
+        <div class="previewMetadata">
+            <div class="loader metaLoader"></div>
+
+            <div id="metadata_body">
+                <h2>${_('File properties')}</h2>
+                <table>
+                    <tr>
+                        <th>${_('Path')}</th>
+                        <td>${source.replace('/',' /').replace('\\', ' \\') if source else ''}</td>
+                    </tr>
+                    <tr>
+                        <th>${_('Bytes')}</th>
+                        <td id="stats_total_bytes"></td>
+                    </tr>
+                </table>
+
+                <h2>${_('Preview properties')}</h2>
+
+                <p id="preview_truncate_note" class="info_message"></p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>${_('# of events extracted')}</th>
+                            <td id="stats_num_events"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>${_('Event time distribution')}</h3>
+            <div id="chart_container"></div>
+            <div id="chart_range"></div>
+            
+            <div id="linecount_wrapper">
+                <h3>${_('Event linecount distribution')}</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>${_('lines per event')}</th>
+                            <th>${_('# of events')}</th>
+                        </tr>
+                    </thead>
+                    <tbody id="metadata_linecounts"></tbody>
+                </table>
+            </div>
+
+        </div>
+        
+    </div>
+    
+    
+    <div class="previewConfig">
+        
+        
+            <div id="settings_layout">
+                <div id="wrapper">
+                    <ul class="tabs">
+                        <li><a href="javascript:void(0)" id="eb_tab" class="defaulttab" rel="tab_eventBreaks">${_('Event Breaks')}</a></li>
+                        <li><a href="javascript:void(0)" id="str_tab" rel="tab_structured">${_('General')}</a></li>
+                        <li><a href="javascript:void(0)" id="str_tab_headers" rel="tab_headers">${_('Headers')}</a></li>
+                        <li><a href="javascript:void(0)" id="ts_tab" rel="tab_timestamps">${_('Timestamps')}</a></li>
+                        <li class="tab_advanced"><a href="javascript:void(0)" id="adv_tab" rel="tab_advanced">${_('Advanced mode (props.conf)')}</a></li>
+                    </ul>
+                    
+                                  
+                    
+                    <form id="simple_config_form">
+                    <div id="tab_eventBreaks" class="tab-content">
+                        <div id="eventBreaks_help">
+                            <a href="${generateSelfHelpLink('eventbreaking.preview')}" target="_blank" class="spl-external-link spl-icon-external-link-sm">${_('Help with event breaking')}</a>
+                        </div>
+                        <div class="break_settings">
+                            <h3>${_('Location')}</h3>
+                            <label for="lb_type_auto">
+                            <input type="radio" id="lb_type_auto" name="lb_type" value="" checked="checked" class="radio"/> ${_('Auto (break on timestamp)')}</label>
+                            <label for="lb_type_single">
+                            <input type="radio" id="lb_type_single" name="lb_type" value="single_line" class="radio" /> ${_('Every line is one event')} <span class="exampleText">
+                                    <em>${_('ex: access logs')}</em>
+                                </span></label>
+                            <label for="radio_regex">
+                            <input type="radio" id="radio_regex" name="lb_type" value="regex" class="radio" /> ${_('Specify a pattern or regex to break before')}<span class="exampleText">
+                                    <em>${_('ex: \d+foo\d[2,4], Start Of Event, ^\*\*\* ')}</em>
+                                </span></label>
+                            
+                            <div id="lb_use_regex" class="dp_suboption_wrapper">
+                                <input id="lb_line_breaker" type="text" name="BREAK_ONLY_BEFORE" disabled=disabled/> <a href="${generateSelfHelpLink('regex.preview')}" class="spl-external-link spl-icon-external-link-sm" target="_blank">${_('Regex reference')}</a>
+                            </div>
+                        </div>
+                        
+                        <div class="previewSettingsActions actions1">
+                            <button id="ts_reset_simple" class="resetSettings splButton-secondary">
+                                <span>${_('Reset')}</span>
+                            </button>
+                            <button id="ts_apply_simple" class="ts_apply splButton-primary">
+                                <span>${_('Apply')}</span>
+                            </button>
+                        </div>
+                    </div><!-- /#tab_eventBreaks.tab-content -->
+
+                    
+                    <div id="tab_structured" class="tab-content">
+                        <div id="timestamp_help">
+                            <a href="${generateSelfHelpLink('structured.preview')}" target="_blank" class="spl-external-link spl-icon-external-link-sm">${_('Help with general settings')}</a>
+                        </div>
+                        <div id="str_file_spec" class="subcategory">
+                            <h3>${_('File Special Characters')}</h3>  
+                            <label for="str_field_delimiter">
+                                ${_('Character that delimits or separates fields')}
+                            </label>
+                            <div class="dp_suboption_wrapper">
+                                <select id="str_field_delimiter_select">
+                                    <option value=','>, ${_('(comma)')}</option>
+                                    <option value='|'>| ${_('(pipe)')}</option>
+                                    <option value='tab'>${_('tab')}</option>
+                                    <option value='space'>${_('space')}</option>
+                                    <option value='custom'>${_('custom')}</option>
+                                </select>
+                                <input id="str_field_delimiter" class="single_char delimiter" type="text" name="FIELD_DELIMITER" size="4"/> 
+                            </div>
+                            
+                            <label for="str_field_quote">
+                                ${_('Character to use for quotes')}
+                            </label>
+                            <div class="dp_suboption_wrapper">
+                                <select id="str_field_quote" name="FIELD_QUOTE">
+                                    <option value=''>${_('Auto')}</option>
+                                    <option value='"'>( " )  ${_('double quote')}</option>
+                                    <option value="'">( ' )  ${_('single quote')}</option>
+                                </select>
+                            </div>                        
+                            
+                        </div>
+                        
+                        <div id="str_preamble" class="subcategory">
+                            <h3>${_('Preamble')}</h3>  
+                            
+                            <label for="str_preamble_regex">
+                                ${_('Regular expression to ignore preamble lines')}
+                            </label>
+                            <div class="dp_suboption_wrapper">
+                                <input id="str_preamble_regex" type="text" name="PREAMBLE_REGEX" /> 
+                                <a href="${generateSelfHelpLink('regex.preview')}" class="spl-external-link spl-icon-external-link-sm" target="_blank">${_('Regex reference')}</a>
+                            </div>
+                            
+                            
+                        </div>    
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <div class="previewSettingsActions actions2">
+                            <button id="str_reset_simple" class="resetSettings splButton-secondary">
+                                <span>${_('Reset')}</span>
+                            </button>
+                            <button id="str_apply_simple" class="ts_apply splButton-primary">
+                                <span>${_('Apply')}</span>
+                            </button>
+                        </div>
+                        
+                    
+                    </div><!-- /#tab_structured.tab-content -->                    
+                    
+                    
+                    <div id="tab_headers" class="tab-content">
+                        <div id="timestamp_help">
+                            <a href="${generateSelfHelpLink('headers.preview')}" target="_blank" class="spl-external-link spl-icon-external-link-sm">${_('Help with headers')}</a>
+                        </div>
+                        
+                        
+                        <div id="str_hdr_spec" class="subcategory">
+                            <h3>${_('Special Characters')}</h3> 
+                            <label for="hdr_field_delimiter">
+                                ${_('Character that delimits or separates fields in header line')}
+                            </label>
+                            <div class="dp_suboption_wrapper">
+                                <select id="hdr_field_delimiter_select">
+                                    <option value=','>, ${_('(comma)')}</option>
+                                    <option value='|'>| ${_('(pipe)')}</option>
+                                    <option value='tab'>${_('tab')}</option>
+                                    <option value='space'>${_('space')}</option>
+                                    <option value='custom'>${_('custom')}</option>
+                                </select>
+                                <input id="hdr_field_delimiter" class="single_char delimiter" type="text" name="HEADER_FIELD_DELIMITER" size="4" />
+                            </div>
+                            
+                            <label for="hdr_field_quote">
+                                ${_('Character to use for quotes in header line')}
+                            </label>
+                            <div class="dp_suboption_wrapper">
+                                <select id="hdr_field_quote" name="HEADER_FIELD_QUOTE">
+                                    <option value=''>${_('Auto')}</option>
+                                    <option value='"'>( " )  ${_('double quote')}</option>
+                                    <option value="'">( ' )  ${_('single quote')}</option>
+                                </select>
+                            </div>                                                    
+                        </div>
+                        
+                        
+                        <div id="str_headers" class="subcategory">
+                            <h3>${_('Location')}</h3>
+                            <table class="hdr_loc">
+                            <tr>
+                                <td class="hdr_loc_option">
+                                    <label for="hdr_auto_radio">
+                                        <input type="radio" id="hdr_auto_radio" name="hdr_type" value="" checked="checked" class="radio"/> 
+                                        ${_('Auto')} 
+                                        <span class="info-icon" title="${_('Let Splunk automatically locate headers.')}">&nbsp;</span>
+                                    </label>
+                                    
+                                </td>
+                                <td>
+                                    <input id="hdr_auto" type="hidden" disabled=disabled/> 
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="hdr_loc_option">
+                                    <label for="hdr_pattern_radio">
+                                        <input type="radio" id="hdr_pattern_radio" name="hdr_type" value="pattern" class="radio" /> 
+                                        ${_('Pattern for prefixed header line')} 
+                                        <span class="info-icon" title="${_('How to recognize a prefix if any. Example: [some regex here]')}">&nbsp;</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <input id="hdr_pattern" type="text" name="FIELD_HEADER_REGEX" class="disabled_by_default" disabled=disabled/> 
+                                    <a href="${generateSelfHelpLink('regex.preview')}" class="spl-external-link spl-icon-external-link-sm" target="_blank">${_('Regex reference')}</a>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="hdr_loc_option">
+                                    <label for="hdr_line_radio">
+                                        <input type="radio" id="hdr_line_radio" name="hdr_type" value="line" class="radio" /> 
+                                        ${_('Header line number')}
+                                        <span class="info-icon" title="${_('At which line in the file can the header be found? Example: 5')}">&nbsp;</span>
+                                    </label>                                        
+                                </td>
+                                <td>
+                                    <input id="hdr_line" type="text" name="HEADER_FIELD_LINE_NUMBER" class="disabled_by_default" disabled=disabled/> 
+                                </td>
+                            </tr>
+                            
+                            <tr colspan="2">
+                                <td>
+                                    <label for="hdr_direct_radio">
+                                        <input type="radio" id="hdr_direct_radio" name="hdr_type" value="direct" class="radio" /> 
+                                        ${_('Specify header fields directly')}
+                                        <span class="info-icon" title="${_('Some fields might be missing from the header. You can list them here. Example: missingHeader1, missingHeader2')}">&nbsp;</span>
+                                    </label>    
+                                </td>
+                                <td>
+                                    <input id="hdr_direct" type="text" name="FIELD_NAMES" class="disabled_by_default" disabled=disabled/> 
+                                </td>
+                            </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="previewSettingsActions actions1">
+                            <button id="ts_reset_simple" class="resetSettings splButton-secondary">
+                                <span>${_('Reset')}</span>
+                            </button>
+                            <button id="ts_apply_simple" class="ts_apply splButton-primary">
+                                <span>${_('Apply')}</span>
+                            </button>
+                        </div>
+                        
+                    </div><!-- /#tab_headers.tab-content -->                    
+                    
+                    
+                    
+                    <div id="tab_timestamps" class="tab-content">
+                        
+                        <div id="timestamp_help">
+                            <a href="${generateSelfHelpLink('timestamping.preview')}" target="_blank" class="spl-external-link spl-icon-external-link-sm">${_('Help with timestamping')}</a>
+                        </div>
+                        <div id="timestamp_location" class="subcategory">
+                            <h3>${_('Location')}</h3>
+                            
+                            <!-- TIMESTAMP AUTO LOCATED -->
+                            <label for="ts_type_auto">
+                                <input type="radio" id="ts_type_auto" name="ts_type" value="" checked="checked" class="radio" />${_('Automatically locate timestamp (default)')}
+                            </label>
+                            
+                            <!-- TIMESTAMP DERIVED FROM CURTIME -->
+                            <label for="ts_type_curtime">
+                                <input type="radio" id="ts_type_curtime" name="ts_type" value="curtime" class="radio" />${_('Use current time')}
+                            </label>
+                            
+                            <!-- TIMESTAMP ALWAYS PREFACED BY PATTERN -->
+                            <div class="timestamp_pattern">
+                                <label for="ts_type_pattern">
+                                    <input type="radio" id="ts_type_pattern" name="ts_type" value="pre_pattern" class="radio" />${_('Timestamp is always prefaced by a pattern')} 
+                                        <span class="exampleText">
+                                            <em>${_('ex: \d+abc123\d[2,4]')}</em>
+                                        </span>
+                                </label>                            
+                                <div id="ts_prefaced" class="dp_suboption_wrapper">
+                                    <input id="ts_time_prefix" type="text" name="TIME_PREFIX" class="disabled_by_default" disabled=disabled/><a href="${generateSelfHelpLink('regex.preview')}" class="spl-external-link spl-icon-external-link-sm" target="_blank">${_('Regex reference')}</a>
+                                </div>
+                            </div>
+                            
+                            <!-- TIMESTAMP NEVER EXTENDS -->
+                            <div id="timestamp_neverextends">
+                                <label for="ts_extends" id="ts_prefaced_past_label">
+                                    <input id="ts_extends" type="checkbox" name="lookahead" class="checkbox"/>${_('Timestamp never extends more than')}
+                                </label>
+                                <input id="ts_max_lookahead" type="text" name="MAX_TIMESTAMP_LOOKAHEAD" value="150" class="disabled_by_default disabled_text" disabled=disabled/> <span id="chars_pattern">${_('chars into the event')}</span>
+                            </div>
+                        </div>
+
+                        <div id="str_timestamp_location" class="subcategory">
+                            <h3>${_('Location')}</h3>
+                            
+                            <!-- TIMESTAMP AUTO LOCATED -->
+                            <label for="str_ts_type_auto">
+                                <input type="radio" id="str_ts_type_auto" name="str_ts_type" value="" checked="checked" class="radio" />${_('Automatically locate timestamp (default)')}
+                                <input id="str_timestamp_loc_auto" type="hidden" disabled=disabled/>
+                            </label>
+                            
+                            <!-- TIMESTAMP DERIVED FROM CURTIME -->
+                            <label for="str_ts_type_curtime">
+                                <input type="radio" id="str_ts_type_curtime" name="str_ts_type" value="curtime" class="radio" />${_('Use current time')}
+                            </label>
+                            
+                            <!-- TIMESTAMP FIELDS -->
+                            <div class="timestamp_fields">
+                                <label for="str_ts_struct_fields">
+                                    <input type="radio" name="str_ts_type" id="str_ts_struct_fields" value="struct_fields" class="radio" />${_('Specify all the fields which constitute the timestamp. ex: field1,field2,...,fieldn')}
+                                </label>
+                                <div class="dp_suboption_wrapper">
+                                    <input id="str_timestamp_fields" type="text" name="TIMESTAMP_FIELDS" class="disabled_by_default" disabled=disabled/>
+                                </div>
+                            </div>
+                        </div>                        
+                        
+                        
+                        <div id="timestamp_format">
+                            <h3>${_('Format')}</h3>  
+                            
+                            <!-- TIMESTAMP FORMAT -->
+                            <label for="change_time_format">
+                                ${_('Timestamp format (strptime)')} <span class="exampleText"> ${_('ex: %Y-%m-%d')}</span> 
+                            </label>
+                            <div class="dp_suboption_wrapper">
+                                 <input id="ts_time_format" type="text" name="TIME_FORMAT" /> <a href="${generateSelfHelpLink('timeformat.preview')}" class="spl-external-link spl-icon-external-link-sm" target="_blank">${_('Format reference')}</a>
+                            </div>
+                            
+                            <!-- TIMEZONE -->
+                            <label for="change_timezone">
+                                ${_('Timezone')}
+                            </label>           
+                            <div class="dp_suboption_wrapper">
+                                <select id="ts_tz" name="TZ">
+                                    <option value="">${_('(Automatically detect)')}</option>
+                                    <option value="UTC">(UTC) Coordinated Universal Time</option>
+                                    <option value="America/Adak">(GMT-10:00) America/Adak (Hawaii-Aleutian Standard Time)</option>
+                                    <option value="America/Atka">(GMT-10:00) America/Atka (Hawaii-Aleutian Standard Time)</option>
+                                    <option value="America/Anchorage">(GMT-9:00) America/Anchorage (Alaska Standard Time)</option>
+                                    <option value="America/Juneau">(GMT-9:00) America/Juneau (Alaska Standard Time)</option>
+                                    <option value="America/Nome">(GMT-9:00) America/Nome (Alaska Standard Time)</option>
+                                    <option value="America/Yakutat">(GMT-9:00) America/Yakutat (Alaska Standard Time)</option>
+                                    <option value="America/Dawson">(GMT-8:00) America/Dawson (Pacific Standard Time)</option>
+                                    <option value="America/Ensenada">(GMT-8:00) America/Ensenada (Pacific Standard Time)</option>
+                                    <option value="America/Los_Angeles">(GMT-8:00) America/Los_Angeles (Pacific Standard Time)</option>
+                                    <option value="America/Tijuana">(GMT-8:00) America/Tijuana (Pacific Standard Time)</option>
+                                    <option value="America/Vancouver">(GMT-8:00) America/Vancouver (Pacific Standard Time)</option>
+                                    <option value="America/Whitehorse">(GMT-8:00) America/Whitehorse (Pacific Standard Time)</option>
+                                    <option value="Canada/Pacific">(GMT-8:00) Canada/Pacific (Pacific Standard Time)</option>
+                                    <option value="Canada/Yukon">(GMT-8:00) Canada/Yukon (Pacific Standard Time)</option>
+                                    <option value="Mexico/BajaNorte">(GMT-8:00) Mexico/BajaNorte (Pacific Standard Time)</option>
+                                    <option value="America/Boise">(GMT-7:00) America/Boise (Mountain Standard Time)</option>
+                                    <option value="America/Cambridge_Bay">(GMT-7:00) America/Cambridge_Bay (Mountain Standard Time)</option>
+                                    <option value="America/Chihuahua">(GMT-7:00) America/Chihuahua (Mountain Standard Time)</option>
+                                    <option value="America/Dawson_Creek">(GMT-7:00) America/Dawson_Creek (Mountain Standard Time)</option>
+                                    <option value="America/Denver">(GMT-7:00) America/Denver (Mountain Standard Time)</option>
+                                    <option value="America/Edmonton">(GMT-7:00) America/Edmonton (Mountain Standard Time)</option>
+                                    <option value="America/Hermosillo">(GMT-7:00) America/Hermosillo (Mountain Standard Time)</option>
+                                    <option value="America/Inuvik">(GMT-7:00) America/Inuvik (Mountain Standard Time)</option>
+                                    <option value="America/Mazatlan">(GMT-7:00) America/Mazatlan (Mountain Standard Time)</option>
+                                    <option value="America/Phoenix">(GMT-7:00) America/Phoenix (Mountain Standard Time)</option>
+                                    <option value="America/Shiprock">(GMT-7:00) America/Shiprock (Mountain Standard Time)</option>
+                                    <option value="America/Yellowknife">(GMT-7:00) America/Yellowknife (Mountain Standard Time)</option>
+                                    <option value="Canada/Mountain">(GMT-7:00) Canada/Mountain (Mountain Standard Time)</option>
+                                    <option value="Mexico/BajaSur">(GMT-7:00) Mexico/BajaSur (Mountain Standard Time)</option>
+                                    <option value="America/Belize">(GMT-6:00) America/Belize (Central Standard Time)</option>
+                                    <option value="America/Cancun">(GMT-6:00) America/Cancun (Central Standard Time)</option>
+                                    <option value="America/Chicago">(GMT-6:00) America/Chicago (Central Standard Time)</option>
+                                    <option value="America/Costa_Rica">(GMT-6:00) America/Costa_Rica (Central Standard Time)</option>
+                                    <option value="America/El_Salvador">(GMT-6:00) America/El_Salvador (Central Standard Time)</option>
+                                    <option value="America/Guatemala">(GMT-6:00) America/Guatemala (Central Standard Time)</option>
+                                    <option value="America/Knox_IN">(GMT-6:00) America/Knox_IN (Central Standard Time)</option>
+                                    <option value="America/Managua">(GMT-6:00) America/Managua (Central Standard Time)</option>
+                                    <option value="America/Menominee">(GMT-6:00) America/Menominee (Central Standard Time)</option>
+                                    <option value="America/Merida">(GMT-6:00) America/Merida (Central Standard Time)</option>
+                                    <option value="America/Mexico_City">(GMT-6:00) America/Mexico_City (Central Standard Time)</option>
+                                    <option value="America/Monterrey">(GMT-6:00) America/Monterrey (Central Standard Time)</option>
+                                    <option value="America/Rainy_River">(GMT-6:00) America/Rainy_River (Central Standard Time)</option>
+                                    <option value="America/Rankin_Inlet">(GMT-6:00) America/Rankin_Inlet (Central Standard Time)</option>
+                                    <option value="America/Regina">(GMT-6:00) America/Regina (Central Standard Time)</option>
+                                    <option value="America/Swift_Current">(GMT-6:00) America/Swift_Current (Central Standard Time)</option>
+                                    <option value="America/Tegucigalpa">(GMT-6:00) America/Tegucigalpa (Central Standard Time)</option>
+                                    <option value="America/Winnipeg">(GMT-6:00) America/Winnipeg (Central Standard Time)</option>
+                                    <option value="Canada/Central">(GMT-6:00) Canada/Central (Central Standard Time)</option>
+                                    <option value="Canada/East-Saskatchewan">(GMT-6:00) Canada/East-Saskatchewan (Central Standard Time)</option>
+                                    <option value="Canada/Saskatchewan">(GMT-6:00) Canada/Saskatchewan (Central Standard Time)</option>
+                                    <option value="Chile/EasterIsland">(GMT-6:00) Chile/EasterIsland (Easter Is. Time)</option>
+                                    <option value="Mexico/General">(GMT-6:00) Mexico/General (Central Standard Time)</option>
+                                    <option value="America/Atikokan">(GMT-5:00) America/Atikokan (Eastern Standard Time)</option>
+                                    <option value="America/Bogota">(GMT-5:00) America/Bogota (Colombia Time)</option>
+                                    <option value="America/Cayman">(GMT-5:00) America/Cayman (Eastern Standard Time)</option>
+                                    <option value="America/Coral_Harbour">(GMT-5:00) America/Coral_Harbour (Eastern Standard Time)</option>
+                                    <option value="America/Detroit">(GMT-5:00) America/Detroit (Eastern Standard Time)</option>
+                                    <option value="America/Fort_Wayne">(GMT-5:00) America/Fort_Wayne (Eastern Standard Time)</option>
+                                    <option value="America/Grand_Turk">(GMT-5:00) America/Grand_Turk (Eastern Standard Time)</option>
+                                    <option value="America/Guayaquil">(GMT-5:00) America/Guayaquil (Ecuador Time)</option>
+                                    <option value="America/Havana">(GMT-5:00) America/Havana (Cuba Standard Time)</option>
+                                    <option value="America/Indianapolis">(GMT-5:00) America/Indianapolis (Eastern Standard Time)</option>
+                                    <option value="America/Iqaluit">(GMT-5:00) America/Iqaluit (Eastern Standard Time)</option>
+                                    <option value="America/Jamaica">(GMT-5:00) America/Jamaica (Eastern Standard Time)</option>
+                                    <option value="America/Lima">(GMT-5:00) America/Lima (Peru Time)</option>
+                                    <option value="America/Louisville">(GMT-5:00) America/Louisville (Eastern Standard Time)</option>
+                                    <option value="America/Montreal">(GMT-5:00) America/Montreal (Eastern Standard Time)</option>
+                                    <option value="America/Nassau">(GMT-5:00) America/Nassau (Eastern Standard Time)</option>
+                                    <option value="America/New_York">(GMT-5:00) America/New_York (Eastern Standard Time)</option>
+                                    <option value="America/Nipigon">(GMT-5:00) America/Nipigon (Eastern Standard Time)</option>
+                                    <option value="America/Panama">(GMT-5:00) America/Panama (Eastern Standard Time)</option>
+                                    <option value="America/Pangnirtung">(GMT-5:00) America/Pangnirtung (Eastern Standard Time)</option>
+                                    <option value="America/Port-au-Prince">(GMT-5:00) America/Port-au-Prince (Eastern Standard Time)</option>
+                                    <option value="America/Resolute">(GMT-5:00) America/Resolute (Eastern Standard Time)</option>
+                                    <option value="America/Thunder_Bay">(GMT-5:00) America/Thunder_Bay (Eastern Standard Time)</option>
+                                    <option value="America/Toronto">(GMT-5:00) America/Toronto (Eastern Standard Time)</option>
+                                    <option value="Canada/Eastern">(GMT-5:00) Canada/Eastern (Eastern Standard Time)</option>
+                                    <option value="America/Caracas">(GMT-4:-30) America/Caracas (Venezuela Time)</option>
+                                    <option value="America/Anguilla">(GMT-4:00) America/Anguilla (Atlantic Standard Time)</option>
+                                    <option value="America/Antigua">(GMT-4:00) America/Antigua (Atlantic Standard Time)</option>
+                                    <option value="America/Aruba">(GMT-4:00) America/Aruba (Atlantic Standard Time)</option>
+                                    <option value="America/Asuncion">(GMT-4:00) America/Asuncion (Paraguay Time)</option>
+                                    <option value="America/Barbados">(GMT-4:00) America/Barbados (Atlantic Standard Time)</option>
+                                    <option value="America/Blanc-Sablon">(GMT-4:00) America/Blanc-Sablon (Atlantic Standard Time)</option>
+                                    <option value="America/Boa_Vista">(GMT-4:00) America/Boa_Vista (Amazon Time)</option>
+                                    <option value="America/Campo_Grande">(GMT-4:00) America/Campo_Grande (Amazon Time)</option>
+                                    <option value="America/Cuiaba">(GMT-4:00) America/Cuiaba (Amazon Time)</option>
+                                    <option value="America/Curacao">(GMT-4:00) America/Curacao (Atlantic Standard Time)</option>
+                                    <option value="America/Dominica">(GMT-4:00) America/Dominica (Atlantic Standard Time)</option>
+                                    <option value="America/Eirunepe">(GMT-4:00) America/Eirunepe (Amazon Time)</option>
+                                    <option value="America/Glace_Bay">(GMT-4:00) America/Glace_Bay (Atlantic Standard Time)</option>
+                                    <option value="America/Goose_Bay">(GMT-4:00) America/Goose_Bay (Atlantic Standard Time)</option>
+                                    <option value="America/Grenada">(GMT-4:00) America/Grenada (Atlantic Standard Time)</option>
+                                    <option value="America/Guadeloupe">(GMT-4:00) America/Guadeloupe (Atlantic Standard Time)</option>
+                                    <option value="America/Guyana">(GMT-4:00) America/Guyana (Guyana Time)</option>
+                                    <option value="America/Halifax">(GMT-4:00) America/Halifax (Atlantic Standard Time)</option>
+                                    <option value="America/La_Paz">(GMT-4:00) America/La_Paz (Bolivia Time)</option>
+                                    <option value="America/Manaus">(GMT-4:00) America/Manaus (Amazon Time)</option>
+                                    <option value="America/Marigot">(GMT-4:00) America/Marigot (Atlantic Standard Time)</option>
+                                    <option value="America/Martinique">(GMT-4:00) America/Martinique (Atlantic Standard Time)</option>
+                                    <option value="America/Moncton">(GMT-4:00) America/Moncton (Atlantic Standard Time)</option>
+                                    <option value="America/Montserrat">(GMT-4:00) America/Montserrat (Atlantic Standard Time)</option>
+                                    <option value="America/Port_of_Spain">(GMT-4:00) America/Port_of_Spain (Atlantic Standard Time)</option>
+                                    <option value="America/Porto_Acre">(GMT-4:00) America/Porto_Acre (Amazon Time)</option>
+                                    <option value="America/Porto_Velho">(GMT-4:00) America/Porto_Velho (Amazon Time)</option>
+                                    <option value="America/Puerto_Rico">(GMT-4:00) America/Puerto_Rico (Atlantic Standard Time)</option>
+                                    <option value="America/Rio_Branco">(GMT-4:00) America/Rio_Branco (Amazon Time)</option>
+                                    <option value="America/Santiago">(GMT-4:00) America/Santiago (Chile Time)</option>
+                                    <option value="America/Santo_Domingo">(GMT-4:00) America/Santo_Domingo (Atlantic Standard Time)</option>
+                                    <option value="America/St_Barthelemy">(GMT-4:00) America/St_Barthelemy (Atlantic Standard Time)</option>
+                                    <option value="America/St_Kitts">(GMT-4:00) America/St_Kitts (Atlantic Standard Time)</option>
+                                    <option value="America/St_Lucia">(GMT-4:00) America/St_Lucia (Atlantic Standard Time)</option>
+                                    <option value="America/St_Thomas">(GMT-4:00) America/St_Thomas (Atlantic Standard Time)</option>
+                                    <option value="America/St_Vincent">(GMT-4:00) America/St_Vincent (Atlantic Standard Time)</option>
+                                    <option value="America/Thule">(GMT-4:00) America/Thule (Atlantic Standard Time)</option>
+                                    <option value="America/Tortola">(GMT-4:00) America/Tortola (Atlantic Standard Time)</option>
+                                    <option value="America/Virgin">(GMT-4:00) America/Virgin (Atlantic Standard Time)</option>
+                                    <option value="Antarctica/Palmer">(GMT-4:00) Antarctica/Palmer (Chile Time)</option>
+                                    <option value="Atlantic/Bermuda">(GMT-4:00) Atlantic/Bermuda (Atlantic Standard Time)</option>
+                                    <option value="Atlantic/Stanley">(GMT-4:00) Atlantic/Stanley (Falkland Is. Time)</option>
+                                    <option value="Brazil/Acre">(GMT-4:00) Brazil/Acre (Amazon Time)</option>
+                                    <option value="Brazil/West">(GMT-4:00) Brazil/West (Amazon Time)</option>
+                                    <option value="Canada/Atlantic">(GMT-4:00) Canada/Atlantic (Atlantic Standard Time)</option>
+                                    <option value="Chile/Continental">(GMT-4:00) Chile/Continental (Chile Time)</option>
+                                    <option value="America/St_Johns">(GMT-3:-30) America/St_Johns (Newfoundland Standard Time)</option>
+                                    <option value="Canada/Newfoundland">(GMT-3:-30) Canada/Newfoundland (Newfoundland Standard Time)</option>
+                                    <option value="America/Araguaina">(GMT-3:00) America/Araguaina (Brasilia Time)</option>
+                                    <option value="America/Bahia">(GMT-3:00) America/Bahia (Brasilia Time)</option>
+                                    <option value="America/Belem">(GMT-3:00) America/Belem (Brasilia Time)</option>
+                                    <option value="America/Buenos_Aires">(GMT-3:00) America/Buenos_Aires (Argentine Time)</option>
+                                    <option value="America/Catamarca">(GMT-3:00) America/Catamarca (Argentine Time)</option>
+                                    <option value="America/Cayenne">(GMT-3:00) America/Cayenne (French Guiana Time)</option>
+                                    <option value="America/Cordoba">(GMT-3:00) America/Cordoba (Argentine Time)</option>
+                                    <option value="America/Fortaleza">(GMT-3:00) America/Fortaleza (Brasilia Time)</option>
+                                    <option value="America/Godthab">(GMT-3:00) America/Godthab (Western Greenland Time)</option>
+                                    <option value="America/Jujuy">(GMT-3:00) America/Jujuy (Argentine Time)</option>
+                                    <option value="America/Maceio">(GMT-3:00) America/Maceio (Brasilia Time)</option>
+                                    <option value="America/Mendoza">(GMT-3:00) America/Mendoza (Argentine Time)</option>
+                                    <option value="America/Miquelon">(GMT-3:00) America/Miquelon (Pierre & Miquelon Standard Time)</option>
+                                    <option value="America/Montevideo">(GMT-3:00) America/Montevideo (Uruguay Time)</option>
+                                    <option value="America/Paramaribo">(GMT-3:00) America/Paramaribo (Suriname Time)</option>
+                                    <option value="America/Recife">(GMT-3:00) America/Recife (Brasilia Time)</option>
+                                    <option value="America/Rosario">(GMT-3:00) America/Rosario (Argentine Time)</option>
+                                    <option value="America/Santarem">(GMT-3:00) America/Santarem (Brasilia Time)</option>
+                                    <option value="America/Sao_Paulo">(GMT-3:00) America/Sao_Paulo (Brasilia Time)</option>
+                                    <option value="Antarctica/Rothera">(GMT-3:00) Antarctica/Rothera (Rothera Time)</option>
+                                    <option value="Brazil/East">(GMT-3:00) Brazil/East (Brasilia Time)</option>
+                                    <option value="America/Noronha">(GMT-2:00) America/Noronha (Fernando de Noronha Time)</option>
+                                    <option value="Atlantic/South_Georgia">(GMT-2:00) Atlantic/South_Georgia (South Georgia Standard Time)</option>
+                                    <option value="Brazil/DeNoronha">(GMT-2:00) Brazil/DeNoronha (Fernando de Noronha Time)</option>
+                                    <option value="America/Scoresbysund">(GMT-1:00) America/Scoresbysund (Eastern Greenland Time)</option>
+                                    <option value="Atlantic/Azores">(GMT-1:00) Atlantic/Azores (Azores Time)</option>
+                                    <option value="Atlantic/Cape_Verde">(GMT-1:00) Atlantic/Cape_Verde (Cape Verde Time)</option>
+                                    <option value="Africa/Abidjan">(GMT+0:00) Africa/Abidjan (Greenwich Mean Time)</option>
+                                    <option value="Africa/Accra">(GMT+0:00) Africa/Accra (Ghana Mean Time)</option>
+                                    <option value="Africa/Bamako">(GMT+0:00) Africa/Bamako (Greenwich Mean Time)</option>
+                                    <option value="Africa/Banjul">(GMT+0:00) Africa/Banjul (Greenwich Mean Time)</option>
+                                    <option value="Africa/Bissau">(GMT+0:00) Africa/Bissau (Greenwich Mean Time)</option>
+                                    <option value="Africa/Casablanca">(GMT+0:00) Africa/Casablanca (Western European Time)</option>
+                                    <option value="Africa/Conakry">(GMT+0:00) Africa/Conakry (Greenwich Mean Time)</option>
+                                    <option value="Africa/Dakar">(GMT+0:00) Africa/Dakar (Greenwich Mean Time)</option>
+                                    <option value="Africa/El_Aaiun">(GMT+0:00) Africa/El_Aaiun (Western European Time)</option>
+                                    <option value="Africa/Freetown">(GMT+0:00) Africa/Freetown (Greenwich Mean Time)</option>
+                                    <option value="Africa/Lome">(GMT+0:00) Africa/Lome (Greenwich Mean Time)</option>
+                                    <option value="Africa/Monrovia">(GMT+0:00) Africa/Monrovia (Greenwich Mean Time)</option>
+                                    <option value="Africa/Nouakchott">(GMT+0:00) Africa/Nouakchott (Greenwich Mean Time)</option>
+                                    <option value="Africa/Ouagadougou">(GMT+0:00) Africa/Ouagadougou (Greenwich Mean Time)</option>
+                                    <option value="Africa/Sao_Tome">(GMT+0:00) Africa/Sao_Tome (Greenwich Mean Time)</option>
+                                    <option value="Africa/Timbuktu">(GMT+0:00) Africa/Timbuktu (Greenwich Mean Time)</option>
+                                    <option value="America/Danmarkshavn">(GMT+0:00) America/Danmarkshavn (Greenwich Mean Time)</option>
+                                    <option value="Atlantic/Canary">(GMT+0:00) Atlantic/Canary (Western European Time)</option>
+                                    <option value="Atlantic/Faeroe">(GMT+0:00) Atlantic/Faeroe (Western European Time)</option>
+                                    <option value="Atlantic/Faroe">(GMT+0:00) Atlantic/Faroe (Western European Time)</option>
+                                    <option value="Atlantic/Madeira">(GMT+0:00) Atlantic/Madeira (Western European Time)</option>
+                                    <option value="Atlantic/Reykjavik">(GMT+0:00) Atlantic/Reykjavik (Greenwich Mean Time)</option>
+                                    <option value="Atlantic/St_Helena">(GMT+0:00) Atlantic/St_Helena (Greenwich Mean Time)</option>
+                                    <option value="Europe/Belfast">(GMT+0:00) Europe/Belfast (Greenwich Mean Time)</option>
+                                    <option value="Europe/Dublin">(GMT+0:00) Europe/Dublin (Greenwich Mean Time)</option>
+                                    <option value="Europe/Guernsey">(GMT+0:00) Europe/Guernsey (Greenwich Mean Time)</option>
+                                    <option value="Europe/Isle_of_Man">(GMT+0:00) Europe/Isle_of_Man (Greenwich Mean Time)</option>
+                                    <option value="Europe/Jersey">(GMT+0:00) Europe/Jersey (Greenwich Mean Time)</option>
+                                    <option value="Europe/Lisbon">(GMT+0:00) Europe/Lisbon (Western European Time)</option>
+                                    <option value="Europe/London">(GMT+0:00) Europe/London (Greenwich Mean Time)</option>
+                                    <option value="Africa/Algiers">(GMT+1:00) Africa/Algiers (Central European Time)</option>
+                                    <option value="Africa/Bangui">(GMT+1:00) Africa/Bangui (Western African Time)</option>
+                                    <option value="Africa/Brazzaville">(GMT+1:00) Africa/Brazzaville (Western African Time)</option>
+                                    <option value="Africa/Ceuta">(GMT+1:00) Africa/Ceuta (Central European Time)</option>
+                                    <option value="Africa/Douala">(GMT+1:00) Africa/Douala (Western African Time)</option>
+                                    <option value="Africa/Kinshasa">(GMT+1:00) Africa/Kinshasa (Western African Time)</option>
+                                    <option value="Africa/Lagos">(GMT+1:00) Africa/Lagos (Western African Time)</option>
+                                    <option value="Africa/Libreville">(GMT+1:00) Africa/Libreville (Western African Time)</option>
+                                    <option value="Africa/Luanda">(GMT+1:00) Africa/Luanda (Western African Time)</option>
+                                    <option value="Africa/Malabo">(GMT+1:00) Africa/Malabo (Western African Time)</option>
+                                    <option value="Africa/Ndjamena">(GMT+1:00) Africa/Ndjamena (Western African Time)</option>
+                                    <option value="Africa/Niamey">(GMT+1:00) Africa/Niamey (Western African Time)</option>
+                                    <option value="Africa/Porto-Novo">(GMT+1:00) Africa/Porto-Novo (Western African Time)</option>
+                                    <option value="Africa/Tunis">(GMT+1:00) Africa/Tunis (Central European Time)</option>
+                                    <option value="Africa/Windhoek">(GMT+1:00) Africa/Windhoek (Western African Time)</option>
+                                    <option value="Arctic/Longyearbyen">(GMT+1:00) Arctic/Longyearbyen (Central European Time)</option>
+                                    <option value="Atlantic/Jan_Mayen">(GMT+1:00) Atlantic/Jan_Mayen (Central European Time)</option>
+                                    <option value="Europe/Amsterdam">(GMT+1:00) Europe/Amsterdam (Central European Time)</option>
+                                    <option value="Europe/Andorra">(GMT+1:00) Europe/Andorra (Central European Time)</option>
+                                    <option value="Europe/Belgrade">(GMT+1:00) Europe/Belgrade (Central European Time)</option>
+                                    <option value="Europe/Berlin">(GMT+1:00) Europe/Berlin (Central European Time)</option>
+                                    <option value="Europe/Bratislava">(GMT+1:00) Europe/Bratislava (Central European Time)</option>
+                                    <option value="Europe/Brussels">(GMT+1:00) Europe/Brussels (Central European Time)</option>
+                                    <option value="Europe/Budapest">(GMT+1:00) Europe/Budapest (Central European Time)</option>
+                                    <option value="Europe/Copenhagen">(GMT+1:00) Europe/Copenhagen (Central European Time)</option>
+                                    <option value="Europe/Gibraltar">(GMT+1:00) Europe/Gibraltar (Central European Time)</option>
+                                    <option value="Europe/Ljubljana">(GMT+1:00) Europe/Ljubljana (Central European Time)</option>
+                                    <option value="Europe/Luxembourg">(GMT+1:00) Europe/Luxembourg (Central European Time)</option>
+                                    <option value="Europe/Madrid">(GMT+1:00) Europe/Madrid (Central European Time)</option>
+                                    <option value="Europe/Malta">(GMT+1:00) Europe/Malta (Central European Time)</option>
+                                    <option value="Europe/Monaco">(GMT+1:00) Europe/Monaco (Central European Time)</option>
+                                    <option value="Europe/Oslo">(GMT+1:00) Europe/Oslo (Central European Time)</option>
+                                    <option value="Europe/Paris">(GMT+1:00) Europe/Paris (Central European Time)</option>
+                                    <option value="Europe/Podgorica">(GMT+1:00) Europe/Podgorica (Central European Time)</option>
+                                    <option value="Europe/Prague">(GMT+1:00) Europe/Prague (Central European Time)</option>
+                                    <option value="Europe/Rome">(GMT+1:00) Europe/Rome (Central European Time)</option>
+                                    <option value="Europe/San_Marino">(GMT+1:00) Europe/San_Marino (Central European Time)</option>
+                                    <option value="Europe/Sarajevo">(GMT+1:00) Europe/Sarajevo (Central European Time)</option>
+                                    <option value="Europe/Skopje">(GMT+1:00) Europe/Skopje (Central European Time)</option>
+                                    <option value="Europe/Stockholm">(GMT+1:00) Europe/Stockholm (Central European Time)</option>
+                                    <option value="Europe/Tirane">(GMT+1:00) Europe/Tirane (Central European Time)</option>
+                                    <option value="Europe/Vaduz">(GMT+1:00) Europe/Vaduz (Central European Time)</option>
+                                    <option value="Europe/Vatican">(GMT+1:00) Europe/Vatican (Central European Time)</option>
+                                    <option value="Europe/Vienna">(GMT+1:00) Europe/Vienna (Central European Time)</option>
+                                    <option value="Europe/Warsaw">(GMT+1:00) Europe/Warsaw (Central European Time)</option>
+                                    <option value="Europe/Zagreb">(GMT+1:00) Europe/Zagreb (Central European Time)</option>
+                                    <option value="Europe/Zurich">(GMT+1:00) Europe/Zurich (Central European Time)</option>
+                                    <option value="Africa/Blantyre">(GMT+2:00) Africa/Blantyre (Central African Time)</option>
+                                    <option value="Africa/Bujumbura">(GMT+2:00) Africa/Bujumbura (Central African Time)</option>
+                                    <option value="Africa/Cairo">(GMT+2:00) Africa/Cairo (Eastern European Time)</option>
+                                    <option value="Africa/Gaborone">(GMT+2:00) Africa/Gaborone (Central African Time)</option>
+                                    <option value="Africa/Harare">(GMT+2:00) Africa/Harare (Central African Time)</option>
+                                    <option value="Africa/Johannesburg">(GMT+2:00) Africa/Johannesburg (South Africa Standard Time)</option>
+                                    <option value="Africa/Kigali">(GMT+2:00) Africa/Kigali (Central African Time)</option>
+                                    <option value="Africa/Lubumbashi">(GMT+2:00) Africa/Lubumbashi (Central African Time)</option>
+                                    <option value="Africa/Lusaka">(GMT+2:00) Africa/Lusaka (Central African Time)</option>
+                                    <option value="Africa/Maputo">(GMT+2:00) Africa/Maputo (Central African Time)</option>
+                                    <option value="Africa/Maseru">(GMT+2:00) Africa/Maseru (South Africa Standard Time)</option>
+                                    <option value="Africa/Mbabane">(GMT+2:00) Africa/Mbabane (South Africa Standard Time)</option>
+                                    <option value="Africa/Tripoli">(GMT+2:00) Africa/Tripoli (Eastern European Time)</option>
+                                    <option value="Asia/Amman">(GMT+2:00) Asia/Amman (Eastern European Time)</option>
+                                    <option value="Asia/Beirut">(GMT+2:00) Asia/Beirut (Eastern European Time)</option>
+                                    <option value="Asia/Damascus">(GMT+2:00) Asia/Damascus (Eastern European Time)</option>
+                                    <option value="Asia/Gaza">(GMT+2:00) Asia/Gaza (Eastern European Time)</option>
+                                    <option value="Asia/Istanbul">(GMT+2:00) Asia/Istanbul (Eastern European Time)</option>
+                                    <option value="Asia/Jerusalem">(GMT+2:00) Asia/Jerusalem (Israel Standard Time)</option>
+                                    <option value="Asia/Nicosia">(GMT+2:00) Asia/Nicosia (Eastern European Time)</option>
+                                    <option value="Asia/Tel_Aviv">(GMT+2:00) Asia/Tel_Aviv (Israel Standard Time)</option>
+                                    <option value="Europe/Athens">(GMT+2:00) Europe/Athens (Eastern European Time)</option>
+                                    <option value="Europe/Bucharest">(GMT+2:00) Europe/Bucharest (Eastern European Time)</option>
+                                    <option value="Europe/Chisinau">(GMT+2:00) Europe/Chisinau (Eastern European Time)</option>
+                                    <option value="Europe/Helsinki">(GMT+2:00) Europe/Helsinki (Eastern European Time)</option>
+                                    <option value="Europe/Istanbul">(GMT+2:00) Europe/Istanbul (Eastern European Time)</option>
+                                    <option value="Europe/Kaliningrad">(GMT+2:00) Europe/Kaliningrad (Eastern European Time)</option>
+                                    <option value="Europe/Kiev">(GMT+2:00) Europe/Kiev (Eastern European Time)</option>
+                                    <option value="Europe/Mariehamn">(GMT+2:00) Europe/Mariehamn (Eastern European Time)</option>
+                                    <option value="Europe/Minsk">(GMT+2:00) Europe/Minsk (Eastern European Time)</option>
+                                    <option value="Europe/Nicosia">(GMT+2:00) Europe/Nicosia (Eastern European Time)</option>
+                                    <option value="Europe/Riga">(GMT+2:00) Europe/Riga (Eastern European Time)</option>
+                                    <option value="Europe/Simferopol">(GMT+2:00) Europe/Simferopol (Eastern European Time)</option>
+                                    <option value="Europe/Sofia">(GMT+2:00) Europe/Sofia (Eastern European Time)</option>
+                                    <option value="Europe/Tallinn">(GMT+2:00) Europe/Tallinn (Eastern European Time)</option>
+                                    <option value="Europe/Tiraspol">(GMT+2:00) Europe/Tiraspol (Eastern European Time)</option>
+                                    <option value="Europe/Uzhgorod">(GMT+2:00) Europe/Uzhgorod (Eastern European Time)</option>
+                                    <option value="Europe/Vilnius">(GMT+2:00) Europe/Vilnius (Eastern European Time)</option>
+                                    <option value="Europe/Zaporozhye">(GMT+2:00) Europe/Zaporozhye (Eastern European Time)</option>
+                                    <option value="Africa/Addis_Ababa">(GMT+3:00) Africa/Addis_Ababa (Eastern African Time)</option>
+                                    <option value="Africa/Asmara">(GMT+3:00) Africa/Asmara (Eastern African Time)</option>
+                                    <option value="Africa/Asmera">(GMT+3:00) Africa/Asmera (Eastern African Time)</option>
+                                    <option value="Africa/Dar_es_Salaam">(GMT+3:00) Africa/Dar_es_Salaam (Eastern African Time)</option>
+                                    <option value="Africa/Djibouti">(GMT+3:00) Africa/Djibouti (Eastern African Time)</option>
+                                    <option value="Africa/Kampala">(GMT+3:00) Africa/Kampala (Eastern African Time)</option>
+                                    <option value="Africa/Khartoum">(GMT+3:00) Africa/Khartoum (Eastern African Time)</option>
+                                    <option value="Africa/Mogadishu">(GMT+3:00) Africa/Mogadishu (Eastern African Time)</option>
+                                    <option value="Africa/Nairobi">(GMT+3:00) Africa/Nairobi (Eastern African Time)</option>
+                                    <option value="Antarctica/Syowa">(GMT+3:00) Antarctica/Syowa (Syowa Time)</option>
+                                    <option value="Asia/Aden">(GMT+3:00) Asia/Aden (Arabia Standard Time)</option>
+                                    <option value="Asia/Baghdad">(GMT+3:00) Asia/Baghdad (Arabia Standard Time)</option>
+                                    <option value="Asia/Bahrain">(GMT+3:00) Asia/Bahrain (Arabia Standard Time)</option>
+                                    <option value="Asia/Kuwait">(GMT+3:00) Asia/Kuwait (Arabia Standard Time)</option>
+                                    <option value="Asia/Qatar">(GMT+3:00) Asia/Qatar (Arabia Standard Time)</option>
+                                    <option value="Europe/Moscow">(GMT+3:00) Europe/Moscow (Moscow Standard Time)</option>
+                                    <option value="Europe/Volgograd">(GMT+3:00) Europe/Volgograd (Volgograd Time)</option>
+                                    <option value="Indian/Antananarivo">(GMT+3:00) Indian/Antananarivo (Eastern African Time)</option>
+                                    <option value="Indian/Comoro">(GMT+3:00) Indian/Comoro (Eastern African Time)</option>
+                                    <option value="Indian/Mayotte">(GMT+3:00) Indian/Mayotte (Eastern African Time)</option>
+                                    <option value="Asia/Tehran">(GMT+3:30) Asia/Tehran (Iran Standard Time)</option>
+                                    <option value="Asia/Baku">(GMT+4:00) Asia/Baku (Azerbaijan Time)</option>
+                                    <option value="Asia/Dubai">(GMT+4:00) Asia/Dubai (Gulf Standard Time)</option>
+                                    <option value="Asia/Muscat">(GMT+4:00) Asia/Muscat (Gulf Standard Time)</option>
+                                    <option value="Asia/Tbilisi">(GMT+4:00) Asia/Tbilisi (Georgia Time)</option>
+                                    <option value="Asia/Yerevan">(GMT+4:00) Asia/Yerevan (Armenia Time)</option>
+                                    <option value="Europe/Samara">(GMT+4:00) Europe/Samara (Samara Time)</option>
+                                    <option value="Indian/Mahe">(GMT+4:00) Indian/Mahe (Seychelles Time)</option>
+                                    <option value="Indian/Mauritius">(GMT+4:00) Indian/Mauritius (Mauritius Time)</option>
+                                    <option value="Indian/Reunion">(GMT+4:00) Indian/Reunion (Reunion Time)</option>
+                                    <option value="Asia/Kabul">(GMT+4:30) Asia/Kabul (Afghanistan Time)</option>
+                                    <option value="Asia/Aqtau">(GMT+5:00) Asia/Aqtau (Aqtau Time)</option>
+                                    <option value="Asia/Aqtobe">(GMT+5:00) Asia/Aqtobe (Aqtobe Time)</option>
+                                    <option value="Asia/Ashgabat">(GMT+5:00) Asia/Ashgabat (Turkmenistan Time)</option>
+                                    <option value="Asia/Ashkhabad">(GMT+5:00) Asia/Ashkhabad (Turkmenistan Time)</option>
+                                    <option value="Asia/Dushanbe">(GMT+5:00) Asia/Dushanbe (Tajikistan Time)</option>
+                                    <option value="Asia/Karachi">(GMT+5:00) Asia/Karachi (Pakistan Time)</option>
+                                    <option value="Asia/Oral">(GMT+5:00) Asia/Oral (Oral Time)</option>
+                                    <option value="Asia/Samarkand">(GMT+5:00) Asia/Samarkand (Uzbekistan Time)</option>
+                                    <option value="Asia/Tashkent">(GMT+5:00) Asia/Tashkent (Uzbekistan Time)</option>
+                                    <option value="Asia/Yekaterinburg">(GMT+5:00) Asia/Yekaterinburg (Yekaterinburg Time)</option>
+                                    <option value="Indian/Kerguelen">(GMT+5:00) Indian/Kerguelen (French Southern & Antarctic Lands Time)</option>
+                                    <option value="Indian/Maldives">(GMT+5:00) Indian/Maldives (Maldives Time)</option>
+                                    <option value="Asia/Calcutta">(GMT+5:30) Asia/Calcutta (India Standard Time)</option>
+                                    <option value="Asia/Colombo">(GMT+5:30) Asia/Colombo (India Standard Time)</option>
+                                    <option value="Asia/Kolkata">(GMT+5:30) Asia/Kolkata (India Standard Time)</option>
+                                    <option value="Asia/Katmandu">(GMT+5:45) Asia/Katmandu (Nepal Time)</option>
+                                    <option value="Antarctica/Mawson">(GMT+6:00) Antarctica/Mawson (Mawson Time)</option>
+                                    <option value="Antarctica/Vostok">(GMT+6:00) Antarctica/Vostok (Vostok Time)</option>
+                                    <option value="Asia/Almaty">(GMT+6:00) Asia/Almaty (Alma-Ata Time)</option>
+                                    <option value="Asia/Bishkek">(GMT+6:00) Asia/Bishkek (Kirgizstan Time)</option>
+                                    <option value="Asia/Dacca">(GMT+6:00) Asia/Dacca (Bangladesh Time)</option>
+                                    <option value="Asia/Dhaka">(GMT+6:00) Asia/Dhaka (Bangladesh Time)</option>
+                                    <option value="Asia/Novosibirsk">(GMT+6:00) Asia/Novosibirsk (Novosibirsk Time)</option>
+                                    <option value="Asia/Omsk">(GMT+6:00) Asia/Omsk (Omsk Time)</option>
+                                    <option value="Asia/Qyzylorda">(GMT+6:00) Asia/Qyzylorda (Qyzylorda Time)</option>
+                                    <option value="Asia/Thimbu">(GMT+6:00) Asia/Thimbu (Bhutan Time)</option>
+                                    <option value="Asia/Thimphu">(GMT+6:00) Asia/Thimphu (Bhutan Time)</option>
+                                    <option value="Indian/Chagos">(GMT+6:00) Indian/Chagos (Indian Ocean Territory Time)</option>
+                                    <option value="Asia/Rangoon">(GMT+6:30) Asia/Rangoon (Myanmar Time)</option>
+                                    <option value="Indian/Cocos">(GMT+6:30) Indian/Cocos (Cocos Islands Time)</option>
+                                    <option value="Antarctica/Davis">(GMT+7:00) Antarctica/Davis (Davis Time)</option>
+                                    <option value="Asia/Bangkok">(GMT+7:00) Asia/Bangkok (Indochina Time)</option>
+                                    <option value="Asia/Ho_Chi_Minh">(GMT+7:00) Asia/Ho_Chi_Minh (Indochina Time)</option>
+                                    <option value="Asia/Hovd">(GMT+7:00) Asia/Hovd (Hovd Time)</option>
+                                    <option value="Asia/Jakarta">(GMT+7:00) Asia/Jakarta (West Indonesia Time)</option>
+                                    <option value="Asia/Krasnoyarsk">(GMT+7:00) Asia/Krasnoyarsk (Krasnoyarsk Time)</option>
+                                    <option value="Asia/Phnom_Penh">(GMT+7:00) Asia/Phnom_Penh (Indochina Time)</option>
+                                    <option value="Asia/Pontianak">(GMT+7:00) Asia/Pontianak (West Indonesia Time)</option>
+                                    <option value="Asia/Saigon">(GMT+7:00) Asia/Saigon (Indochina Time)</option>
+                                    <option value="Asia/Vientiane">(GMT+7:00) Asia/Vientiane (Indochina Time)</option>
+                                    <option value="Indian/Christmas">(GMT+7:00) Indian/Christmas (Christmas Island Time)</option>
+                                    <option value="Antarctica/Casey">(GMT+8:00) Antarctica/Casey (Western Standard Time (Australia))</option>
+                                    <option value="Asia/Brunei">(GMT+8:00) Asia/Brunei (Brunei Time)</option>
+                                    <option value="Asia/Choibalsan">(GMT+8:00) Asia/Choibalsan (Choibalsan Time)</option>
+                                    <option value="Asia/Chongqing">(GMT+8:00) Asia/Chongqing (China Standard Time)</option>
+                                    <option value="Asia/Chungking">(GMT+8:00) Asia/Chungking (China Standard Time)</option>
+                                    <option value="Asia/Harbin">(GMT+8:00) Asia/Harbin (China Standard Time)</option>
+                                    <option value="Asia/Hong_Kong">(GMT+8:00) Asia/Hong_Kong (Hong Kong Time)</option>
+                                    <option value="Asia/Irkutsk">(GMT+8:00) Asia/Irkutsk (Irkutsk Time)</option>
+                                    <option value="Asia/Kashgar">(GMT+8:00) Asia/Kashgar (China Standard Time)</option>
+                                    <option value="Asia/Kuala_Lumpur">(GMT+8:00) Asia/Kuala_Lumpur (Malaysia Time)</option>
+                                    <option value="Asia/Kuching">(GMT+8:00) Asia/Kuching (Malaysia Time)</option>
+                                    <option value="Asia/Macao">(GMT+8:00) Asia/Macao (China Standard Time)</option>
+                                    <option value="Asia/Macau">(GMT+8:00) Asia/Macau (China Standard Time)</option>
+                                    <option value="Asia/Makassar">(GMT+8:00) Asia/Makassar (Central Indonesia Time)</option>
+                                    <option value="Asia/Manila">(GMT+8:00) Asia/Manila (Philippines Time)</option>
+                                    <option value="Asia/Shanghai">(GMT+8:00) Asia/Shanghai (China Standard Time)</option>
+                                    <option value="Asia/Singapore">(GMT+8:00) Asia/Singapore (Singapore Time)</option>
+                                    <option value="Asia/Taipei">(GMT+8:00) Asia/Taipei (China Standard Time)</option>
+                                    <option value="Asia/Ujung_Pandang">(GMT+8:00) Asia/Ujung_Pandang (Central Indonesia Time)</option>
+                                    <option value="Asia/Ulaanbaatar">(GMT+8:00) Asia/Ulaanbaatar (Ulaanbaatar Time)</option>
+                                    <option value="Asia/Ulan_Bator">(GMT+8:00) Asia/Ulan_Bator (Ulaanbaatar Time)</option>
+                                    <option value="Asia/Urumqi">(GMT+8:00) Asia/Urumqi (China Standard Time)</option>
+                                    <option value="Australia/Perth">(GMT+8:00) Australia/Perth (Western Standard Time (Australia))</option>
+                                    <option value="Australia/West">(GMT+8:00) Australia/West (Western Standard Time (Australia))</option>
+                                    <option value="Australia/Eucla">(GMT+8:45) Australia/Eucla (Central Western Standard Time (Australia))</option>
+                                    <option value="Asia/Dili">(GMT+9:00) Asia/Dili (Timor-Leste Time)</option>
+                                    <option value="Asia/Jayapura">(GMT+9:00) Asia/Jayapura (East Indonesia Time)</option>
+                                    <option value="Asia/Pyongyang">(GMT+9:00) Asia/Pyongyang (Korea Standard Time)</option>
+                                    <option value="Asia/Seoul">(GMT+9:00) Asia/Seoul (Korea Standard Time)</option>
+                                    <option value="Asia/Tokyo">(GMT+9:00) Asia/Tokyo (Japan Standard Time)</option>
+                                    <option value="Asia/Yakutsk">(GMT+9:00) Asia/Yakutsk (Yakutsk Time)</option>
+                                    <option value="Australia/Adelaide">(GMT+9:30) Australia/Adelaide (Central Standard Time (South Australia))</option>
+                                    <option value="Australia/Broken_Hill">(GMT+9:30) Australia/Broken_Hill (Central Standard Time (South Australia/New South Wales))</option>
+                                    <option value="Australia/Darwin">(GMT+9:30) Australia/Darwin (Central Standard Time (Northern Territory))</option>
+                                    <option value="Australia/North">(GMT+9:30) Australia/North (Central Standard Time (Northern Territory))</option>
+                                    <option value="Australia/South">(GMT+9:30) Australia/South (Central Standard Time (South Australia))</option>
+                                    <option value="Australia/Yancowinna">(GMT+9:30) Australia/Yancowinna (Central Standard Time (South Australia/New South Wales))</option>
+                                    <option value="Antarctica/DumontDUrville">(GMT+10:00) Antarctica/DumontDUrville (Dumont-d'Urville Time)</option>
+                                    <option value="Asia/Sakhalin">(GMT+10:00) Asia/Sakhalin (Sakhalin Time)</option>
+                                    <option value="Asia/Vladivostok">(GMT+10:00) Asia/Vladivostok (Vladivostok Time)</option>
+                                    <option value="Australia/ACT">(GMT+10:00) Australia/ACT (Eastern Standard Time (New South Wales))</option>
+                                    <option value="Australia/Brisbane">(GMT+10:00) Australia/Brisbane (Eastern Standard Time (Queensland))</option>
+                                    <option value="Australia/Canberra">(GMT+10:00) Australia/Canberra (Eastern Standard Time (New South Wales))</option>
+                                    <option value="Australia/Currie">(GMT+10:00) Australia/Currie (Eastern Standard Time (New South Wales))</option>
+                                    <option value="Australia/Hobart">(GMT+10:00) Australia/Hobart (Eastern Standard Time (Tasmania))</option>
+                                    <option value="Australia/Lindeman">(GMT+10:00) Australia/Lindeman (Eastern Standard Time (Queensland))</option>
+                                    <option value="Australia/Melbourne">(GMT+10:00) Australia/Melbourne (Eastern Standard Time (Victoria))</option>
+                                    <option value="Australia/NSW">(GMT+10:00) Australia/NSW (Eastern Standard Time (New South Wales))</option>
+                                    <option value="Australia/Queensland">(GMT+10:00) Australia/Queensland (Eastern Standard Time (Queensland))</option>
+                                    <option value="Australia/Sydney">(GMT+10:00) Australia/Sydney (Eastern Standard Time (New South Wales))</option>
+                                    <option value="Australia/Tasmania">(GMT+10:00) Australia/Tasmania (Eastern Standard Time (Tasmania))</option>
+                                    <option value="Australia/Victoria">(GMT+10:00) Australia/Victoria (Eastern Standard Time (Victoria))</option>
+                                    <option value="Australia/LHI">(GMT+10:30) Australia/LHI (Lord Howe Standard Time)</option>
+                                    <option value="Australia/Lord_Howe">(GMT+10:30) Australia/Lord_Howe (Lord Howe Standard Time)</option>
+                                    <option value="Asia/Magadan">(GMT+11:00) Asia/Magadan (Magadan Time)</option>
+                                    <option value="Antarctica/McMurdo">(GMT+12:00) Antarctica/McMurdo (New Zealand Standard Time)</option>
+                                    <option value="Antarctica/South_Pole">(GMT+12:00) Antarctica/South_Pole (New Zealand Standard Time)</option>
+                                    <option value="Asia/Anadyr">(GMT+12:00) Asia/Anadyr (Anadyr Time)</option>
+                                    <option value="Asia/Kamchatka">(GMT+12:00) Asia/Kamchatka (Petropavlovsk-Kamchatski Time)</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="previewSettingsActions actions2">
+                            <button id="ts_reset_simple" class="resetSettings splButton-secondary">
+                                <span>${_('Reset')}</span>
+                            </button>
+                            <button id="ts_apply_simple" class="ts_apply splButton-primary">
+                                <span>${_('Apply')}</span>
+                            </button>
+                        </div>
+                        
+                    </div><!-- /#tab_timestamps.tab-content -->
+                    
+                    
+                    
+                    
+                    </form>
+
+
+                 
+                    <div id="tab_advanced" class="tab-content">
+                        <div id="advanced_help">
+                            <a href="${generateSelfHelpLink('advanced.preview')}" target="_blank" class="spl-external-link spl-icon-external-link-sm">${_('Help with advanced configuration')}</a>
+                        </div>
+                        
+                            <div id="adv_props_left" class="adv_props_wrapper">
+                                <h3>${_('Additional settings (overrides)')}</h3>
+                                <textarea id="text_props_advanced"></textarea>
+                            </div>
+                            <div id="adv_props_right" class="adv_props_wrapper">
+                                <h3>${_('Currently applied settings')}</h3>
+                                <textarea id="text_inherited_advanced" readonly="readonly"></textarea>
+                            </div>
+                        
+                        <div class="previewSettingsActions actions3">
+                            <button id="ts_reset_advanced" class="resetSettings splButton-secondary">
+                                <span>${_('Reset')}</span>
+                            </button>
+                            <button id="ts_apply_advanced" class="ts_apply splButton-primary">
+                                <span>${_('Apply')}</span>
+                            </button>
+                        </div>
+                    </div><!-- /#tab_advanced.tab-content -->
+                    
+                </div><!-- /#wrapper -->
+                
+            </div><!-- /#settings_layout -->
+
+        
+    </div><!-- /.previewConfig -->
+
+    <div class="actionButtons">
+        <div class="jmFormActions">
+            <button id="bt_cancel" class="splButton-secondary" type="button">
+                <span>${_('Choose new file')}</span>
+            </button>
+            <button id="bt_continue" class="splButton-primary" type="submit">
+                <span>${_('Continue')}</span>
+            </button>
+        </div>
+    </div>
+    
+</div> <!-- /.preview -->
+</div><!-- /.relWrapper-->        
+
+
+###
+### Define popups
+###
+
+<div id="st_select_popup">
+
+    
+
+    <div class="errors"></div>
+    <form id="st_select_form">
+        <div id="st_type_auto_wrapper" class="dp_option">
+            <div class="dp_option_radio">
+                <input type="radio" name="st_type" id='st_type_auto' value="auto" class="radio" />
+            </div>
+            <div class="dp_option_detail">
+                <label for="st_type_auto">${_('Use auto-detected source type:')} <span id="st_type_auto_value"></span></label>
+                <p class="dp_notice">
+                    ${_('Start with an existing source type (you can make changes)')}
+                </p>
+            </div>
+        </div>
+        <div id="st_type_not_found_message" class="info_message">
+            ${_('Splunk could not automatically determine a source type for this data.')}
+        </div>
+        <div class="dp_option">
+            <div class="dp_option_radio">
+                <input type="radio" name="st_type" id='st_type_new' value="new" class="radio" />
+            </div>
+            <div class="dp_option_detail">
+                <label for="st_type_new">${_('Start a new source type')}</label>
+            </div>
+        </div>
+        <div class="dp_option">
+            <div class="dp_option_radio">
+                <input type="radio" name="st_type" id='st_type_existing' value="existing" class="radio" />
+            </div>
+            <div class="dp_option_detail">
+                <label for="st_type_existing">${_('Apply an existing source type')}</label>
+                <div class="dp_suboption_wrapper">
+                    <select name="st_type_preset" id="st_type_preset">
+                        <option value="">${_('Choose a source type...')}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </form>    
+    <a href="${generateSelfHelpLink('sourcetypes.preview')}" class="spl-external-link spl-icon-external-link-sm" target="_blank">${_('Learn more about source types')}</a>
+</div>
+
+
+<div id="st_confirm_popup" style="display:none;background:#fff">
+    <div class="errors"></div>
+    
+    <form id="st_confirm_form">
+        <div class="optionWrapper">
+            <label for="st_name">${_('Name your new source type')}<span class="required">*</span></label>
+            <input type="text" name="st_name" id='st_name' />
+        </div>
+        
+        <div class="optionWrapper">
+            <label for="st_props">${_('Splunk will create a props.conf file for this source type with the following settings:')}</label>
+            <textarea name="st_props" id='st_props' readonly='readonly'></textarea>
+        </div>
+    </form>    
+</div>
+
+<div id="st_success_popup" class="spl-gdi-wrapper spl-prompt-message-layout  success_page"> 
+    <h2 class="spl-page-hdr" > 
+        <span id="success_msg">${_('Successfully created ')}</span> 
+    </h2> 
+    
+    <div class="success_desc">
+        <p>
+            ${_('You may now continue and apply this source type to a new data input, or exit and create a new data input at a later time.')}  
+        </p>
+    </div>
+</div> 
+
+<div id="fatal_popup">
+    <div>
+        <p>${_('Unable to process the file:')}</p>
+        <ul></ul>
+    </div>
+</div>
+

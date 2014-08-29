@@ -1,0 +1,5 @@
+03/11/10 01:12:01 PM sample_tag=inventory sample_tag=memory sample_tag=cpu sample_tag=storage sample_tag=os description=@@DESC dest=@@DEST enabled=@@ENABLED family=@@FAMILY hypervisor_id=@@HYPERVID serial=@@SERIAL status=@@STATUS vendor=@@VENDOR product=@@PRODUCT cpu_cores=@@CPUCORES cpu_count=@@CPUCOUNT cpu_mhz=@@CPUMHZ mem=@@MEM dns=@@DNS interface=@@INTERFACE ip=@@IP mac=@@MAC name=@@NAME os=@@OS 
+03/11/10 01:12:01 PM sample_tag=inventory sample_tag=user dest=192.168.0.1 enabled=@@ENABLED interactive=@@INTERACTIVE password=@@PASSWORD shell=@@SHELL user=@@USER user_id=@@USRID user_priority=@@USRPRIO
+03/11/10 01:12:01 PM sample_tag=inventory sample_tag=user sample_tag=default dest=192.168.0.1 enabled=@@ENABLED interactive=@@INTERACTIVE password=@@PASSWORD shell=@@SHELL user=@@USER user_id=@@USRID user_priority=@@USRPRIO
+03/11/10 01:12:01 PM sample_tag=inventory sample_tag=snapshot sample_tag=virtual hypervisor=vc.foorus.com size=@@SIZE snapshot=FakeSnapshot1.@@SNAPSHOT time=@@time
+03/11/10 01:12:01 PM sample_tag=inventory sample_tag=tools sample_tag=virtual hypervisor=vc.foorus.com dest=apps-server-001 status="Installed"

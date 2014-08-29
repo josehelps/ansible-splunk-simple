@@ -1,0 +1,16 @@
+
+## governance.conf
+
+[Access - Excessive Failed Logins - Rule]
+compliance.0.governance = hipaa
+compliance.0.control = 1.1
+
+compliance.1.governance = acmecorp-internal
+compliance.1.control = 4.2
+
+compliance.2.governance = sox
+compliance.2.control = 3.6
+
+compliance.3.governance = pci
+compliance.3.control = 5.1
+compliance.3.tag = password

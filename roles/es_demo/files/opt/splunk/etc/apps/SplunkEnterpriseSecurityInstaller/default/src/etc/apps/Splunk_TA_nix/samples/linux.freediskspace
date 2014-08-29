@@ -1,0 +1,4 @@
+Mar 05 2010 16:49:53 host=1 filesystem="/dev/disk0s1" TotalMegabytes=30000 UsedMegabytes=0 FreeMegabytes=30000 PercentFreeSpace=1000 mount="/"
+Mar 05 2010 16:49:54 host=2 filesystem="/dev/disk0s2" TotalMegabytes=30000 UsedMegabytes=0 FreeMegabytes=30000 PercentFreeSpace=1000 mount="/home"
+Mar 05 2010 16:49:55 host=3 filesystem="/dev/disk1s1" TotalMegabytes=30000 UsedMegabytes=0 FreeMegabytes=30000 PercentFreeSpace=1000 mount="/opt"
+Mar 05 2010 16:49:56 host=4 filesystem="/dev/disk1s2" TotalMegabytes=30000 UsedMegabytes=0 FreeMegabytes=30000 PercentFreeSpace=1000 mount="/mnt"

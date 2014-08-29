@@ -1,0 +1,13 @@
+<h2>Protecting Event Data with IT Data Signing</h2>
+
+IT data signing applies a digital signature to blocks of IT events in order to verify the integrity of the data at search time and identifies gaps in the data.
+
+<h3>Configuring IT Data Signing</h3>
+IT data signing is configured in <i>indexes.conf.</i> by setting <span class="font-face:courier">blockSignSize</span> to a value greater than zero.
+IT data signing can be configured per index (encrypt all events for an index) or globally (for all indexes).
+
+Note that increasing the block size decreases the number of times that Splunk has to encrypt events an thus reduces the performance impact to Splunk.
+
+<p>See <a target="_blank" href="http://www.splunk.com/base/Documentation/latest/Admin/ITDataSigning">Splunk's wiki</a> for details regarding using and configuring IT data signing.</p>
+<br />
+<h3>Signing Is Enabled For The Following Indexes:</h3>

@@ -1,0 +1,73 @@
+.splunk-dropdown div[id*=s2id_autogen] {
+    min-width: 150px;
+    margin-bottom: 8px;
+}
+
+#button-group .splunk-choice-input-message {
+    margin-top: 2px;
+}
+
+.fieldset .input {
+    width: 150px;
+    height: 70px;
+}
+
+input[type=text]{
+    width:210px;
+}
+
+.shared-jobstatus {
+    border-bottom: rgb(220, 220, 220) solid 1px;
+}
+
+.filter-group-col {
+    /*display: inline;*/
+    float: left;
+    width:650px;
+}
+
+.filter-col-1 {
+    float: left;
+    width: 31%;
+}
+
+.filter-col-2 {
+    float: left;
+    width: 29%;
+}
+
+.filter-col-3 {
+    float: left;
+    width: 40%;
+}
+
+.timeline-group-col {
+    /*display: inline;*/
+    /*float: right;*/
+    min-height: 210px;
+    overflow: hidden;
+    /*width: 55%;*/
+    background-color: #F2F2F2;
+    margin-top: 20px;
+    /*border: #E1E1E1 solid 1px;*/
+}
+
+.controls.shared-timerangepicker {
+    max-width: 80%;
+}
+
+#time_filter {
+    float:left;
+}
+
+#ir_submit_btn {
+    float:left;
+}
+
+#timeline_div {
+    padding-top: 10px;
+}
+
+div.dashboard-panel.clearfix {
+    margin: 0px;
+}

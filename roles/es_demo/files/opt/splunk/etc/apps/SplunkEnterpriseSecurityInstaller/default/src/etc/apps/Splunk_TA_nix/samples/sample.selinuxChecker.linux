@@ -1,0 +1,12 @@
+Tue Mar  5 09:05:28 PST 2013 app=selinux file_hash=@@sha1checksum selinux=disabled selinuxtype=targeted setlocaldefs=0
+Tue Mar  5 09:05:28 PST 2013 app=selinux file_hash=@@sha1checksum selinux=disabled selinuxtype=strict setlocaldefs=0
+Tue Mar  5 09:05:28 PST 2013 app=selinux file_hash=@@sha1checksum selinux=enforcing selinuxtype=targeted setlocaldefs=0
+Tue Mar  5 09:05:28 PST 2013 app=selinux file_hash=@@sha1checksum selinux=enforcing selinuxtype=strict setlocaldefs=0
+Tue Mar  5 09:05:28 PST 2013 app=selinux file_hash=@@sha1checksum selinux=permissive selinuxtype=targeted setlocaldefs=0
+Tue Mar  5 09:05:28 PST 2013 app=selinux file_hash=@@sha1checksum selinux=permissive selinuxtype=strict setlocaldefs=0
+Tue Mar  5 09:05:28 PST 2013 app=selinux file_hash=@@sha1checksum selinux=disabled selinuxtype=targeted setlocaldefs=1
+Tue Mar  5 09:05:28 PST 2013 app=selinux file_hash=@@sha1checksum selinux=disabled selinuxtype=targeted setlocaldefs=1
+Tue Mar  5 09:05:28 PST 2013 app=selinux file_hash=@@sha1checksum selinux=enforcing selinuxtype=targeted setlocaldefs=0
+Tue Mar  5 09:05:28 PST 2013 app=selinux file_hash=@@sha1checksum selinux=enforcing selinuxtype=strict setlocaldefs=1
+Tue Mar  5 09:05:28 PST 2013 app=selinux file_hash=@@sha1checksum selinux=permissive selinuxtype=targeted setlocaldefs=1
+Tue Mar  5 09:05:28 PST 2013 app=selinux file_hash=@@sha1checksum selinux=permissive selinuxtype=strict setlocaldefs=1

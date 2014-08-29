@@ -1,0 +1,88 @@
+ip,mac,nt_host,dns,owner,priority,lat,long,city,country,bunit,category,pci_domain,is_expected,should_timesync,should_update,requires_av
+6.0.0.1-9.0.0.0,,,,,low,41.040855,28.986183,Istanbul,TR,apac,,,,true,true,
+1.2.3.4,00:15:70:91:df:6c,,,,medium,38.959405,-77.04,Washington D.C.,USA,americas,,,,true,true,
+,,,CORP1.acmetech.com,,high,37.694452,-121.894461,Pleasanton,USA,americas,pci|cardholder,trust,true,true,true,
+192.168.12.9-192.168.12.9,,storefront,,,critical,32.931277,-96.818167,Dallas,USA,americas,pci,trust,true,true,true,
+2.0.0.0/8,,,,,low,50.84436,-0.98451,Havant,UK,emea,pci|sox,dmz,true,true,true,
+192.168.15.8-192.168.15.10,,,,,medium,38.959405,-77.04,Washington D.C.,USA,americas,pci|hipaa,trust,,true,true,
+192.168.0.0/16,,,,,high,37.694452,-121.894461,Pleasanton,USA,americas,iso27002,,,true,true,
+5.6.7.8,00:12:cf:30:27:b5,millenium-falcon,,,critical,32.931277,-96.818167,Dallas,USA,americas,nerc|sox,,true,true,true,
+192.168.15.9-192.168.15.9,,acmefileserver,,,low,50.84436,-0.98451,Havant,UK,emea,pci,trust,,true,true,
+192.168.15.9-192.169.15.27,,,,,medium,38.959405,-77.04,Washington D.C.,USA,americas,,,,true,true,
+9.10.11.12,00:16:5d:10:08:9c,,,,high,37.694452,-121.894461,Pleasanton,USA,americas,email_servers,,,true,true,
+,00:25:bc:42:f4:60-00:25:bc:42:f4:6F,,,,critical,32.931277,-96.818167,Dallas,USA,americas,virtual,,,true,true,
+,00:25:bc:42:f4:60-00:25:bc:42:f4:60,,,,low,50.84436,-0.98451,Havant,UK,emea,pci,wireless,,true,true,
+,00:25:ac:42:f4:60-00:25:cc:42:f4:60,,,,medium,38.959405,-77.04,Washington D.C.,USA,americas,,,,true,true,
+,,,PA-dC02,,high,37.694452,-121.894461,Pleasanton,USA,americas,pci|cardholder,,true,true,true,
+,,,ACMEaPP,,critical,32.931277,-96.818167,Dallas,USA,americas,pci|cardholder,,true,true,true,
+,,,NCoRPNoDE1,,high,50.84436,-0.98451,Havant,UK,emea,pci|cardholder,,true,true,true,
+,,AcMEDC01,,,high,38.959405,-77.04,Washington D.C.,USA,americas,pci|cardholder,,true,true,true,
+,,macFISH,,,high,37.694452,-121.894461,Pleasanton,USA,americas,pci|cardholder,,true,true,true,
+,,AcMEFW,,,high,38.959405,-77.04,Washington D.C.,USA,americas,pci|cardholder,,true,true,true,
+,,ns5gt-wlan,,,high,38.959405,-77.04,Washington D.C.,USA,americas,pci|cardholder,,true,true,true,
+10.252.0.0/16,,,,,high,20.8165052,-16.39597482,Mauritania,AF,emea,cardholder,,true,true,true,
+68.87.0.0/16,,,,,high,37.694452,-121.894461,Pleasanton,USA,americas,pci|cardholder,trust,true,true,true,
+10.11.36.20,,,,Bill_williams,critical,37.694452,-121.894461,Pleasanton,USA,americas,pci|splunk,,true,true,true,
+110.172.158.1-110.172.158.15,,,,b.franklin,critical,37.694452,-121.894461,Pleasanton,USA,americas,billing|pci,,true,true,true,
+,,ACMETREND,,b.franklin,critical,37.694452,-121.894461,Pleasanton,USA,americas,billing|pci,,true,true,true,
+10.12.34.56,,SJCDCSV012ERP01,,,critical,32.931277,-96.818167,Dallas,USA,americas,pci|OracleDB,trust,true,true,true,
+10.11.36.1-10.11.36.19,,,,,high,50.84436,-0.98451,Havant,UK,emea,pci,wireless,,true,true,
+10.11.36.21-10.11.36.30,,,,,medium,32.931277,-96.818167,Dallas,USA,americas,pci,trust,true,true,true,
+10.11.36.31-10.11.36.40,,,,,high,38.959405,-77.04,Washington D.C.,USA,americas,,,,true,true,
+10.11.36.41-10.11.36.50,,,,,low,20.8165052,-16.39597482,Mauritania,AF,emea,pci|cardholder,,true,true,true,
+,,ACME-001,,lurker,high,50.84436,-0.98451,Havant,UK,emea,pci,wireless,,true,true,
+,,ACME-002,,goose,high,50.84436,-0.98451,Havant,UK,emea,pci,wireless,,true,true,
+,,ACME-003,,dude,high,50.84436,-0.98451,Havant,UK,emea,pci,wireless,,true,true,true
+,,ACME-004,,taters,high,50.84436,-0.98451,Havant,UK,emea,pci,wireless,,true,true,true
+,,ACME-005,,pineapple,high,50.84436,-0.98451,Havant,UK,emea,pci,wireless,,true,true,true
+,,ACME-006,,,high,50.84436,-0.98451,Havant,UK,emea,pci,wireless,,true,true,true
+,,HOST-002,,,high,50.84436,-0.98451,Havant,UK,emea,pci,wireless,,true,true,true
+,,HOST-003,,,high,50.84436,-0.98451,Havant,UK,emea,pci,wireless,,true,true,true
+,,HOST-004,,,high,50.84436,-0.98451,Havant,UK,emea,pci,wireless,,true,true,true
+,,HOST-005,,,high,50.84436,-0.98451,Havant,UK,emea,pci,wireless,,true,true,
+,,HOST-006,,,high,50.84436,-0.98451,Havant,UK,emea,pci,wireless,,true,true,
+,,ops-sys-001,,,medium,32.931277,-96.818167,Dallas,USA,americas,pci,,true,true,true,
+,,ops-sys-002,,,medium,32.931277,-96.818167,Dallas,USA,americas,pci,,true,true,true,true
+,,ops-sys-003,,,medium,32.931277,-96.818167,Dallas,USA,americas,pci,,true,true,true,true
+,,ops-sys-004,,,medium,32.931277,-96.818167,Dallas,USA,americas,pci,,true,true,true,true
+,,ops-sys-005,,,medium,32.931277,-96.818167,Dallas,USA,americas,pci,,true,true,true,true
+,,ops-sys-006,,,medium,32.931277,-96.818167,Dallas,USA,americas,pci,,true,true,true,true
+,,PROD-POS-001,,mbcgown,medium,32.931277,-96.818167,Dallas,USA,americas,pci,,true,true,true,true
+,,PROD-POS-002,,gclough,medium,32.931277,-96.818167,Dallas,USA,americas,pci,,true,true,true,true
+,,PROD-POS-003,,raceuedo,medium,32.931277,-96.818167,Dallas,USA,americas,pci,,true,true,true,true
+,,PROD-POS-004,,mpickle,medium,32.931277,-96.818167,Dallas,USA,americas,pci,,true,true,true,true
+,,PROD-POS-005,,rgalizia,medium,32.931277,-96.818167,Dallas,USA,americas,pci,,true,true,true,true
+,,PROD-POS-006,,,medium,32.931277,-96.818167,Dallas,USA,americas,pci,,true,true,true,true
+,,PROD-MFS-001,,,low,38.959405,-77.04,Washington D.C.,USA,americas,,,,true,true,
+,,PROD-MFS-002,,,low,38.959405,-77.04,Washington D.C.,USA,americas,,,,true,true,
+,,PROD-MFS-003,,,low,38.959405,-77.04,Washington D.C.,USA,americas,,,,true,true,
+,,PROD-MFS-004,,,low,38.959405,-77.04,Washington D.C.,USA,americas,,,,true,true,
+,,PROD-MFS-005,,,low,38.959405,-77.04,Washington D.C.,USA,americas,,,,true,true,
+,,PROD-MFS-006,,,low,38.959405,-77.04,Washington D.C.,USA,americas,,,,true,true,
+,,COREDEV-001,,,medium,38.959405,-77.04,Washington D.C.,USA,americas,pci|virtual,,,true,true,true
+,,COREDEV-002,,,medium,38.959405,-77.04,Washington D.C.,USA,americas,pci|virtual,,,true,true,true
+,,COREDEV-003,,,medium,38.959405,-77.04,Washington D.C.,USA,americas,pci|virtual,,,true,true,true
+,,COREDEV-004,,,medium,38.959405,-77.04,Washington D.C.,USA,americas,pci|virtual,,,true,true,true
+,,COREDEV-005,,,medium,38.959405,-77.04,Washington D.C.,USA,americas,pci|virtual,,,true,true,true
+,,COREDEV-006,,,medium,38.959405,-77.04,Washington D.C.,USA,americas,pci|virtual,,,true,true,true
+,,SE-001,,,low,41.040855,28.986183,Istanbul,TR,apac,,,,true,true,
+,,SE-002,,,low,41.040855,28.986183,Istanbul,TR,apac,,,,true,true,
+,,SE-003,,,low,41.040855,28.986183,Istanbul,TR,apac,,,,true,true,
+,,SE-004,,,low,41.040855,28.986183,Istanbul,TR,apac,,,,true,true,
+,,SE-005,,,low,41.040855,28.986183,Istanbul,TR,apac,,,,true,true,
+,,SE-006,,,low,41.040855,28.986183,Istanbul,TR,apac,,,,true,true,
+,,BUSDEV-001,,,medium,37.694452,-121.894461,Pleasanton,USA,americas,cardholder,trust,true,true,true,true
+,,BUSDEV-002,,,medium,37.694452,-121.894461,Pleasanton,USA,americas,pci|cardholder,,true,true,true,true
+,,BUSDEV-003,,,medium,37.694452,-121.894461,Pleasanton,USA,americas,pci|cardholder,trust|cardholder,true,true,true,true
+,,BUSDEV-004,,,medium,37.694452,-121.894461,Pleasanton,USA,americas,pci|cardholder,trust|cardholder,true,true,true,true
+,,BUSDEV-005,,,medium,37.694452,-121.894461,Pleasanton,USA,americas,pci|cardholder,trust|cardholder,true,true,true,true
+,,BUSDEV-006,,,medium,37.694452,-121.894461,Pleasanton,USA,americas,pci|cardholder,trust|cardholder,true,true,true,true
+,,BUSDEV-007,,,medium,37.694452,-121.894461,Pleasanton,USA,americas,pci|cardholder,trust|cardholder,true,true,true,true
+,,BUSDEV-008,,,medium,37.694452,-121.894461,Pleasanton,USA,americas,pci|cardholder,trust|cardholder,true,true,true,true
+,,SERVER1,,,medium,32.931277,-96.818167,Dallas,USA,americas,pci,,true,true,true,true
+,,SERVER2,,,medium,32.931277,-96.818167,Dallas,USA,americas,pci,,true,true,true,true
+,,SERVER3,,,medium,32.931277,-96.818167,Dallas,USA,americas,pci,,true,true,true,true
+10.25.102.106,,xyze00000000011,xyze00000000011.acmecorp.com,,,38.959405,-77.04,Washington D.C.,USA,americas,,,,true,true,true
+10.25.102.116,,e00000000011,e00000000011.acmecorp.com,,,38.959405,-77.04,Washington D.C.,USA,americas,,,,true,true,true
+,,HOST0201,,,medium,37.694452,-121.894461,Pleasanton,USA,americas,pci|cardholder,trust|cardholder,true,true,true,true
+,,HOST0202,,,medium,37.694452,-121.894461,Pleasanton,USA,americas,,,true,false,true,true

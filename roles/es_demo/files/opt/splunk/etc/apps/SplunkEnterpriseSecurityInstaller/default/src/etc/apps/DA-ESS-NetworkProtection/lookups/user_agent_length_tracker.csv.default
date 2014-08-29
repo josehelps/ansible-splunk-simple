@@ -1,0 +1,5 @@
+min_length,mean_length,max_length,stdev,total_count,Z,search
+0,0,0,0,0,1,(Web.http_user_agent_length=-1)
+0,0,0,0,0,2,(Web.http_user_agent_length=-1)
+0,0,0,0,0,3,(Web.http_user_agent_length=-1)
+0,0,0,0,0,4,(Web.http_user_agent_length=-1)

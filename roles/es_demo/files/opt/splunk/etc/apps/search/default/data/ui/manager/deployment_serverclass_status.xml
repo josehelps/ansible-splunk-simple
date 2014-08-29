@@ -1,0 +1,33 @@
+<endpoint name="deployment/serverclass_status" hideActionsColumn="True" hidePermissionsColumn="True" hideEnabledColumn="True" >
+  <header>Deployment server class status</header>
+  <breadcrumb>
+    <parent hidecurrent="False">deployment/serverclass</parent>
+    <name>Class Status</name>
+  </breadcrumb>
+  <elements>
+    <element name="Server Class Status" type="fieldset">
+      <view name="list"/>
+
+      <elements>
+        <element name="host" type="textfield" label="Host">
+          <view name="list"/>
+        </element>
+
+        <element name="serverclass" type="textfield" label="Server Class">
+          <view name="list"/>
+        </element>
+
+        <element name="tenant" type="textfield" label="Tenant">
+          <view name="list"/>
+        </element>
+
+        <element name="application" type="textfield" label="Applications">
+          <view name="list"/>
+        </element>
+
+      </elements>
+
+      <key name="legend">Deployment settings</key>
+    </element>
+  </elements>
+</endpoint>

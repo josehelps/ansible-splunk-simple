@@ -1,0 +1,13 @@
+name,weight
+"iblocklist_logmein",1
+"iblocklist_piratebay",1
+"iblocklist_proxy",1
+"iblocklist_rapidshare",1
+"iblocklist_spyware",1
+"iblocklist_tor",1
+"iblocklist_web_attacker",1
+"local_threatlist",1
+"local_threatlist_domains",1
+"local_threatlist_urls",1
+"malware_domains",1
+sans,1

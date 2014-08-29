@@ -1,0 +1,10 @@
+<% if (_.isEmpty(name)) { %>
+    <input type="text" class="name editingName" placeholder="add new collection" />
+<% } else { %>
+    <!-- <i class="icon-chevron-down icon-white" /> -->
+    <span class="name editName">
+        <%= name %>
+        <span class="icon-pencil editNameIcon" />
+    </span>
+    <input type="text" class="name editingName" value="<%= name %>" style="display:none" />
+<% } %>

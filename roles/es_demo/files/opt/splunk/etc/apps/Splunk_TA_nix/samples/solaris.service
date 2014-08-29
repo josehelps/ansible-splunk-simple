@@ -1,0 +1,5 @@
+May 25 2011 18:39:45 app="/system/zones:default" StartMode="Disabled" StartName="svc" State="Running"
+May 25 2011 18:39:45 app="/network/ntp:default" StartMode="Auto" StartName="svc" State="Running"
+May 25 2011 18:39:45 app="/application/graphical-login/gdm:default" StartMode="Auto" StartName="svc" State="Stopped"
+May 25 2011 18:39:45 app="/system/filesystem/rmvolmgr:default" StartMode="Auto" StartName="svc" State="Running"
+May 25 2011 18:39:45 app="/system/hal:default" StartMode="Auto" StartName="svc" State="Running"

@@ -1,0 +1,15 @@
+LI_LOGGER_DEC,LI_LOGGER
+0,Scheduled Scan
+1,Manual
+2,Real Time
+6,Console
+7,VPDOWN
+8,System
+9,Startup
+101,Client
+102,Forwarded
+65637,Manual
+131173,Realtime
+524389,System
+720997,Defwatch
+6619237,Client

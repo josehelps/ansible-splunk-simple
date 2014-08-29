@@ -1,0 +1,100 @@
+<form script="update_center.js" stylesheet="updates.css">
+	<label>Update Center</label>
+	
+	<fieldset autoRun="true" submitButton="true">
+        
+		<!-- dest_should_update tokens (update_dsu, appstate_dsu): see update_center.js -->
+        <input type="dropdown" token="dest_should_update">
+            <label>Show only systems that should update</label>
+            <choice value="">All</choice>
+            <choice value="true">True</choice>
+            <choice value="false">False</choice>
+            <default></default>
+        </input>
+        
+		<!-- dest tokens (update_dest, appstate_dest): see update_center.js -->
+        <input type="text" token="dest">
+            <label>Destination</label>
+            <default></default>
+        </input>
+        
+		<!-- bunit tokens (update_bunit, appstate_bunit): see update_center.js -->
+        <input type="text" token="bunit">
+            <label>Business Unit</label>
+            <default></default>
+        </input>
+
+		<!-- category tokens (update_category, appstate_category): see update_center.js -->
+        <input type="dropdown" token="category">
+            <label>Category</label>
+            <choice value="">All</choice>
+            <populatingSearch fieldForValue="category" fieldForLabel="category">| `categories`</populatingSearch>
+            <default></default>
+        </input>
+        
+		<input type="time">
+			<default>Last 30 days</default>
+		</input>
+	</fieldset>
+	
+	<!-- Key indicators -->
+	<row>
+		<html id="element1">
+			<div class="key-indicators" data-group-name="update_center"></div>
+		</html>
+	</row>
+	
+	<row>
+	    <chart id="element2">
+            <title>Top Systems Needing Updates</title>
+            
+            <searchTemplate>| tstats `summariesonly` latest(Updates.status) as status from datamodel=Updates where * $update_dsu$ $update_dest$ $update_bunit$ $update_category$ by Updates.dest,Updates.signature_id,Updates.vendor_product | `drop_dm_object_name("Updates")` | search status=available | stats count by dest | sort 10 - count</searchTemplate>
+                        
+            <option name="charting.axisTitleX.text">dest</option>
+            <option name="charting.axisTitleY.text">count</option>
+            <option name="charting.chart">bar</option>
+            <option name="charting.legend.placement">none</option>
+ 
+            <drilldown>
+                <link>update_search?form.dest=$click.value$&amp;earliest=$earliest$&amp;latest=$latest$</link>
+            </drilldown>
+        </chart>
+        
+        <chart id="element3">
+            <title>Top Updates Needed</title>
+            
+            <searchTemplate>| tstats `summariesonly` latest(Updates.status) as status from datamodel=Updates where * $update_dsu$ $update_dest$ $update_bunit$ $update_category$ by Updates.dest,Updates.signature_id,Updates.vendor_product | `drop_dm_object_name("Updates")` | `get_update_signature` | search status=available | stats count by signature_id | sort 10 - count</searchTemplate>
+            
+            <option name="charting.axisTitleX.text">signature_id</option>
+            <option name="charting.axisTitleY.text">count</option>
+            <option name="charting.chart">bar</option>
+            <option name="charting.legend.placement">none</option>
+ 
+            <drilldown>
+                <link>update_search?form.signature_form=$click.value$&amp;earliest=$earliest$&amp;latest=$latest$</link>
+            </drilldown>
+        </chart>
+    </row>
+    
+    <row>
+    	<table id="element4">
+    		<title>Systems Not Updating - Greater Than 30 Days</title>
+    		
+    		<searchTemplate>| tstats `summariesonly` min(_time) as _time,latest(Updates.dest_should_update) as dest_should_update from datamodel=Updates where earliest=-1y@d latest=+0s Updates.status=installed $update_dsu$ $update_dest$ $update_bunit$ $update_category$ by Updates.dest,Updates.signature_id,Updates.vendor_product | `drop_dm_object_name("Updates")` | stats max(_time) as lastTime,latest(dest_should_update) as dest_should_update by dest | eval dayDiff=round((now()-lastTime)/86400,1) | search dayDiff>30 | sort + lastTime | `uitime(lastTime)`</searchTemplate>
+    	
+    		<drilldown>
+    			<link>update_search?form.dest=$row.dest$&amp;earliest=-1y@d&amp;latest=now</link>
+    		</drilldown>
+    	</table>
+    	
+    	<table id="element5">
+    		<title>Update Service Start Mode Anomalies</title>
+    		
+    		<searchTemplate>| tstats `summariesonly` latest(All_Application_State.Services.start_mode) as start_mode,latest(All_Application_State.Services.status) as status from datamodel=Application_State where nodename=All_Application_State.Services All_Application_State.tag=update $appstate_dsu$ $appstate_dest$ $appstate_bunit$ $appstate_category$ by All_Application_State.dest,All_Application_State.Services.service | `drop_dm_object_name("All_Application_State")` | `drop_dm_object_name("Services")` | search start_mode!=auto | sort 100 + start_mode | fields dest,service,start_mode,status</searchTemplate>
+    	
+    		<drilldown>
+    			<link>search?q=| `datamodel("Application_State", "Services")` | `drop_dm_object_name("All_Application_State")` | `drop_dm_object_name("Services")` | search dest="$row.dest$" service="$row.service$" | head 2&amp;earliest=$earliest$&amp;latest=$latest$</link>
+    		</drilldown>
+    	</table>
+    </row>
+</form>

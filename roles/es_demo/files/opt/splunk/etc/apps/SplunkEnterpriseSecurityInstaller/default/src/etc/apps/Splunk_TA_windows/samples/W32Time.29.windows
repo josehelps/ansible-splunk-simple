@@ -1,0 +1,14 @@
+04/22/10 11:15:40 AM
+LogName=System
+SourceName=W32Time
+EventCode=29
+EventType=1
+Type=Error
+ComputerName=HOST0167
+Category=0
+CategoryString=none
+RecordNumber=296
+Message=The time provider NtpClient is configured to acquire time from one or more
+time sources, however none of the sources are currently accessible. 
+No attempt to contact a source will be made for 14 minutes.
+NtpClient has no source of accurate time.

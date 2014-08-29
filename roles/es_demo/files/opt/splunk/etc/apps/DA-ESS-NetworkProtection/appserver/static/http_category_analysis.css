@@ -1,0 +1,15 @@
+/* SPL-74031 */
+#ppf_html > .html > div > p:first-child{
+    display: none;
+}
+
+#ppf_btn {
+	margin-right: 0px;
+	width: auto;
+}
+
+/* SOLNESS-4641 */
+#ppf_html, #ppf_html > div{
+    display: inline-block;
+    float: right;
+}

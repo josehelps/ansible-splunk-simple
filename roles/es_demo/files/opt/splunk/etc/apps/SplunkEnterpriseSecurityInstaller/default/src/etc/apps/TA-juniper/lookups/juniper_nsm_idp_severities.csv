@@ -1,0 +1,6 @@
+juniper_severity,severity
+info,informational
+warning,low
+minor,medium
+major,high
+critical,critical

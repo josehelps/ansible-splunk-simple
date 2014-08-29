@@ -1,0 +1,71 @@
+# Copyright (C) 2009 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2009-09-14 18:55-0700\n"
+"PO-Revision-Date: 2012-11-05 11:54-0000\n"
+"Last-Translator: Lisa Newnham <lisan@iotals.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Korean\n"
+"X-Poedit-Country: KOREA, REPUBLIC OF\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:59
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:142
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:145
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:147
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:339
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:452
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:498
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:499
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:500
+msgid "Splunk help"
+msgstr "Splunk 도움말"
+
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:59
+msgid "Developer Manual"
+msgstr "개발자 매뉴얼"
+
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:142
+msgid "scripted input"
+msgstr "스크립트 기반 입력"
+
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:145
+msgid "file system change monitoring"
+msgstr "파일 시스템 변경 모니터링"
+
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:147
+msgid "Splunk forwarders"
+msgstr "Splunk Forwarder"
+
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:339
+msgid "Knowledge Manager manual"
+msgstr "지식 관리자 매뉴얼"
+
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:452
+msgid "User Manual"
+msgstr "사용자 매뉴얼"
+
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:498
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:499
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:500
+msgid "here"
+msgstr "여기"
+
+#: /opt/splunk/etc/apps/gettingstarted/default/app.conf:2
+msgid "Getting started"
+msgstr "시작하기"
+
+#: /opt/splunk/etc/apps/gettingstarted/default/app.conf:8
+msgid "Get started with Splunk.  This app introduces you to many of Splunk's features.  You'll learn how to use Splunk to index data, search and investigate, add knowledge, monitor and alert, report and analyze.'"
+msgstr "Splunk를 시작하십시오.  이 앱은 Splunk의 많은 기능을 소개합니다.  Splunk를 사용하여 데이터 인덱스, 지식 검색/조사/추가, 모니터링, 경고 생성, 보고 및 분석 방법을 배울 수 있습니다.'"
+

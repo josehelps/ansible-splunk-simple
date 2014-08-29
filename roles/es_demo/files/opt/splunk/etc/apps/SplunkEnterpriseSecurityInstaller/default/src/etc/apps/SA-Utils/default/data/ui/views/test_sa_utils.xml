@@ -1,0 +1,14 @@
+<dashboard script="tests.js" isDashboard="false" isVisible="false">
+    <label>SA-Utils Tests</label>
+    
+    <row>
+        <html id="element1">
+	        <div id="HTMLReporter" class="jasmine_reporter">
+	            <div class="banner">
+	                <span class="title">Unit Tests</span>
+	                <span class="version"></span>
+	            </div>
+	        </div>
+        </html>
+    </row>
+</dashboard>

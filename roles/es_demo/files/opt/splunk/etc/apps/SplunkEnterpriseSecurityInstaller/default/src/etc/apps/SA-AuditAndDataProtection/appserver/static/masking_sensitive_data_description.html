@@ -1,0 +1,13 @@
+<h2>Anonymizing Sensitive Data</h2>
+Log data may contain sensitive data such as passwords, PII (personally identifiable information), credit cards, etc.
+Event data can be anonymized such that the sensitive data is removed as it is indexed.
+
+<h3>Configuring Splunk to Anonymize Data</h3>
+Data anonymization is configured in <i>props.conf</i> ($SPLUNK_HOME/etc/system/local/props.conf).
+Data is anonymized by specifying sed scripts that match and replace portions of the raw event.
+
+<a target="_blank" href="http://docs.splunk.com/Documentation/Splunk/latest/Data/Anonymizedatausingconfigurationfiles">splunk>docs</a>.
+
+<h3>Detecting Sensitive Data</h3>
+Data Protection uses the <a target="_blank" href="http://en.wikipedia.org/wiki/Luhn_algorithm">Luhn algorithm</a> to detect a variety of identification numbers.
+If the identification number happens to be a bank card number the institution which issued the card will be detected via the first 6 digits of the <a target="_blank" href="http://en.wikipedia.org/wiki/Credit_card_number">credit card number</a>.

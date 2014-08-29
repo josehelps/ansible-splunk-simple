@@ -1,0 +1,11 @@
+<endpoint name="summarization">
+  <header></header>
+  <menu name="data_configurations">
+    <label>Report acceleration summaries</label>
+    <url>/manager/system/summarization</url>
+    <description>Manage saved search summaries</description>
+    <order>80</order>
+    <icon>bolt.png</icon>
+    <id>summarization</id>
+  </menu>
+</endpoint>

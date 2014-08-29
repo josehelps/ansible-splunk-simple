@@ -1,0 +1,12 @@
+# Do not allow namespace1 to grow beyond 100000 megabytes
+[namespace1]
+maxTotalDataSizeMB = 100000
+
+# Do not allow namespace2 to grow beyond 1 year
+[namespace2]
+retentionTimePeriodInSecs = 31556940
+
+# Do not allow namespace3 to grow beyond 100000 megabytes OR 1 year
+[namespace3]
+maxTotalDataSizeMB = 100000
+retentionTimePeriodInSecs = 31556940

@@ -1,0 +1,7 @@
+20110414155841.735270
+BytesReceivedPersec=503
+BytesSentPersec=7622
+BytesTotalPersec=8125
+CurrentBandwidth=1000000000
+Name=Intel[R] PRO_1000 MT Network Connection
+wmi_type=LocalNetwork

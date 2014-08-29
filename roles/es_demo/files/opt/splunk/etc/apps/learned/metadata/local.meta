@@ -1,0 +1,69 @@
+[props/splunkd-utility-too_small]
+owner = nobody
+version = 6.1.2
+modtime = 1406772077.366401000
+
+[props/first_install-too_small]
+owner = nobody
+version = 6.1.2
+modtime = 1406772077.378597000
+
+[props/splunkd_stdout-too_small]
+owner = nobody
+version = 6.1.2
+modtime = 1406772077.389380000
+
+[props/export_metrics-too_small]
+owner = nobody
+version = 6.1.2
+modtime = 1406772087.357404000
+
+[props/es_installer_controller-too_small]
+owner = nobody
+version = 6.1.2
+modtime = 1406778818.990473000
+
+[props/python_modular_input-too_small]
+owner = nobody
+version = 6.1.3
+modtime = 1406780599.506362000
+
+[props/splunkd-utility-2]
+owner = nobody
+version = 6.1.3
+modtime = 1406780623.113628000
+
+[sourcetypes/%2Fopt%2Fsplunk%2Fvar%2Flog%2Fsplunk%2Fsplunkd-utility.log_Thu_Jul_31_04%3A23%3A43_2014_1180597549]
+owner = nobody
+version = 6.1.3
+modtime = 1406780623.298666000
+
+[props/governance_makeCSV-too_small]
+owner = nobody
+version = 6.1.3
+modtime = 1406780623.968027000
+
+[props/identitymapper-too_small]
+owner = nobody
+version = 6.1.3
+modtime = 1406780633.008993000
+
+[props/credential_manager_controller-too_small]
+owner = nobody
+version = 6.1.3
+modtime = 1406780633.061953000
+
+[props/correlation_search_controller-too_small]
+owner = nobody
+version = 6.1.3
+modtime = 1406780633.111813000
+
+[props/key_indicators_controller-too_small]
+owner = nobody
+version = 6.1.3
+modtime = 1406780633.165163000
+
+[props/notable_events_controller-too_small]
+owner = nobody
+version = 6.1.3
+modtime = 1406780633.217448000

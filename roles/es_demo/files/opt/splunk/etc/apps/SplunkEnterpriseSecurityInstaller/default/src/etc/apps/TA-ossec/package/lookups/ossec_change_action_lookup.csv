@@ -1,0 +1,9 @@
+signature,action,status,change_type
+Integrity checksum changed.,modified,success,filesystem
+Integrity checksum changed again (2nd time).,modified,success,filesystem
+Integrity checksum changed again (3rd time).,modified,success,filesystem
+Registry Integrity Checksum Changed,modified,success,filesystem
+Registry Integrity Checksum Changed Again (2nd time),modified,success,filesystem
+Registry Integrity Checksum Changed Again (3rd time),modified,success,filesystem
+File deleted. Unable to retrieve checksum.,deleted,success,filesystem
+NONE,unknown,unknown,unknown

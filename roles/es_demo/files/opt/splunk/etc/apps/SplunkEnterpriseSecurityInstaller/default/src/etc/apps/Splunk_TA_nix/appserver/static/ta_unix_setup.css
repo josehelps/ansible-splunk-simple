@@ -1,0 +1,135 @@
+/* TA-nix setup CSS */
+body, td {
+    background-color: #F7F7F7;
+    color: #111111;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 11px;
+}
+input, textarea, select {
+    border: none;
+}
+.InputTable a {
+    font-size: 10px;
+    position: relative;
+    top: -1px;
+}
+.TAUnixContainer ,
+.TAUnixMessageContainer {
+    background: none repeat scroll 0 0 #F7F7F7;
+    border-radius: 5px 5px 5px 5px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+    padding: 10px;
+    height: auto;
+    width: auto;
+}
+.TAUnixMessageContainer {
+    max-width: 600px;
+    height: auto;
+}
+.TAUnixOKButton {
+    height: 30px;
+}
+.TAUnixOKButton a {
+    float: right;
+}
+.TAUnixContainer {
+    max-width: 450px;
+}
+.TAUnixContainer h2 {
+    background-color: transparent;
+    color: #73A550;
+    font-size: 16px;
+    font-weight: bold;
+}
+.TAUnixContainer h3 {
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: normal;
+}
+.TAUnixOverview p {
+    margin-left: 10px;
+    max-width: 420px;
+    text-align: justify;
+    width: auto;
+}
+.TAUnixMonitor, .TAUnixScripted {
+    margin-left: 10px;
+}
+.TAUnixScripted ,
+.TAUnixMonitor {
+    width: 450px;
+}
+.TAUnixButtons {
+    max-width: 100%;
+    padding: 20px;
+    width: auto;
+}
+.ScriptedInterval {
+    border: 1px solid #CCCCCC;
+    width: 30px;
+    padding: 2px;
+    font-size: 9px;
+    text-align: right;
+    position: relative;
+    left: -18px;
+}
+.InputTable td,
+.InputTable th {
+    background-color: #F7F7F7;
+    padding: 1px 10px 1px 10px;
+}
+.InputTable th {
+    text-align: left;
+}
+.errorText {
+    background: #fae7e7 url(images/icon_error.png) 10px 10px no-repeat;
+    padding: 10px 10px 10px 44px;
+}
+.HasError {
+    background-color: #fae7e7; 
+    border: 1px solid #111111;
+}
+.NameHeader {
+    width: 140px;
+}
+.IntervalHeader {
+    width: 100px;
+}
+.IntervalColumn {
+    text-align: center;
+}
+.splButton-primary {
+    background-color: #73A550;
+    color: #FFFFFF;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+}
+.splButton-secondary {
+    background-color: #999999;
+    color: #FFFFFF;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+}
+.splButton-primary span, .splButton-secondary span {
+    display: block;
+    min-width: 70px;
+    position: relative;
+    top: -2px;
+}
+#ta-unix_submit,
+#ta-unix_reset {
+    width: 100px;
+}
+#ta-unix_submit {
+    margin-left: 170px;
+}
+#scripted_header {
+    padding-bottom: 2px;
+    width: 350px;
+}
+#monitor_header {
+    padding-bottom: 2px;
+    width: 350px;
+}

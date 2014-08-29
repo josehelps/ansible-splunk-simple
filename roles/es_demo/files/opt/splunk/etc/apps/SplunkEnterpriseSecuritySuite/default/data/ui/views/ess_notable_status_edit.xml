@@ -1,0 +1,32 @@
+<view template="dashboard.html" isDashboard="false">
+  
+  <label>Notable Event Statuses</label>
+  
+  <module name="AccountBar" layoutPanel="appHeader"/>
+  <module name="AppBar" layoutPanel="navigationHeader"/>
+  <module name="Message" layoutPanel="messaging">
+    <param name="filter">*</param>
+    <param name="clearOnJobDispatch">False</param>
+    <param name="maxSize">2</param>
+  </module>
+  <module name="BreadCrumb" layoutPanel="viewHeader">
+    <param name="options">
+      <list>
+        <param name="view">ess_configuration</param>
+        <param name="label">Configure</param>
+      </list>
+      <list>
+        <param name="view">ess_notable_status_list</param>
+        <param name="label">Notable Event Statuses</param>
+      </list>
+      <list>
+        <param name="label">Edit Status</param>
+      </list>
+    </param>
+  </module>
+
+  <module name="NotableEventStatusEditor" layoutPanel="panel_row1_col1">
+    <param name="view_after_saving">ess_notable_status_list</param>
+  </module>
+
+</view>

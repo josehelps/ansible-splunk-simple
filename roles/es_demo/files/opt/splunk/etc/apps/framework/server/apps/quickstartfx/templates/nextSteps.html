@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Splunk Application Framework Quick Start</title>
+		<!-- Bootstrap -->
+    	<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}splunkjs/css/bootstrap.css"/>
+		<link href="{{STATIC_URL}}quickstartfx/css/style.css" rel="stylesheet" type="text/css" media="screen">
+		<link href="{{STATIC_URL}}quickstartfx/css/prettify.css" rel="stylesheet" type="text/css" media="screen">
+		<script type="text/javascript" src="{{STATIC_URL}}quickstartfx/js/prettify.js"></script>
+		<script type="text/javascript" src="{{STATIC_URL}}quickstartfx/js/jquery-1.8.2.min.js"></script>
+
+		<script>
+        	window.SPLUNKJS_STATIC_URL = "{{STATIC_URL}}";
+    	</script>
+	</head>
+	<body onload="prettyPrint();">
+		<div id="splunk-bar"></div>
+		<div id="container">
+			<div class="progress-buttons" id="top-progress-buttons">
+				<a href="{% url 'quickstartfx:steps' id='addInteractivity' %}" class="btn">Back</a>
+				<a href="{% url 'homefx:home' %}" class="btn btn-next btn-success">Done</a>
+			</div>
+			<h1>Splunk Application Framework Quick Start</h1>
+			
+			
+			<div class="row" id="content-container">
+				<div class="span23" id="main">
+						<h2>Next steps</h2>
+						<p>Now you're ready to create your own apps using the Splunk Application Framework. And if you ever want to run this Quick Start again, you can find it as the <b>Quick Start</b> app on the Home page of the Splunk Application Framework.</p>
+						
+						<div class="well well-white" id="well-main">
+							
+								
+							<div style="clear: both;"></div>
+							
+							
+							<div style="clear: both;"></div>
+							<div  >
+								
+														
+								<h3>Where is the sample data for this Quick Start?</h3>
+								<p>For this Quick Start and our other sample apps, we included some sample geo-tagged data. If you would like to use the data in your other apps, just copy the <b>splunkdj.demo.dataset.csv</b> file from <b>$SPLUNKDJ_HOME/server/apps/quickstartfx/splunkd/lookups</b> to your app's directory under <b>$SPLUNKDJ_HOME/server/apps/<i>your_app</i>/splunkd/lookups</b>.</p>
+														
+								<h3>Search the sample data</h3>
+								<p>To search the sample data, use the <code>inputlookup</code> command in your search query. For example, this search query lists the count of events in the data set:</p>
+								<pre>| inputlookup splunkdj.demo.dataset.csv | stats count</pre>
+								
+								<h3>Explore Splunk Application Framework resources</h3>
+								<div class="well well-gray">
+								<ul>
+									<h4>Sample apps</h4><p>We have a bunch of sample apps for you to explore within the Splunk Application Framework (you'll see the Home page when you click <b>Done</b>). The source code is in the <b>$HOME/server/apps</b> directory.</p>
+									<h4><a href="http://dev.splunk.com/view/app-framework/SP-CAAAEMA" target="_blank">The Splunk Developer Portal</a></h4><p>This is the home of our documentation, where you'll find more in-depth explanations of how things work, including code examples.</p>
+									<h4><a href="http://docs.splunk.com/Documentation:AppFramework" target="_blank">Component Reference</a></h4><p>Here you'll find the reference for all of the managers and views, including more code examples.</p>
+								</ul>
+								</div>	
+							</div>
+							<div style="clear:both"></div>
+						</div>
+					
+				</div>
+				<div class="span9 offset1" id="sidebar">
+					<div class="well well-white">
+						<ul class="nav nav-list ">
+							<li class="nav-header">Quick Start</li>
+							<li><a href="{% url 'quickstartfx:steps' id='createApp' %}">Create an app</a></li>
+							<li><a href="{% url 'quickstartfx:steps' id='addSearch' %}">Add a search</a></li>
+							<li><a href="{% url 'quickstartfx:steps' id='addResultTable' %}">Add search results to table</a></li>
+							<li><a href="{% url 'quickstartfx:steps' id='addMap' %}">Map your results</a></li>
+							<li><a href="{% url 'quickstartfx:steps' id='addInteractivity' %}">Add interactivity</a></li>
+							<li class="active"><a href="{% url 'quickstartfx:steps' id='nextSteps' %}">Next steps</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="progress-buttons">
+				<a href="{% url 'quickstartfx:steps' id='addInteractivity' %}" class="btn">Back</a>
+				<a href="{% url 'homefx:home' %}" class="btn btn-next btn-success">Done</a>
+			</div>
+			<div style="clear: both;"></div>
+		</div>
+		
+	</body>
+</html>

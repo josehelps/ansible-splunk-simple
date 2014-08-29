@@ -1,0 +1,74 @@
+06/15/10 09:20:06 PM
+LogName=Security
+SourceName=Security
+EventCode=624
+EventType=8
+Type=Success Audit
+ComputerName=SERVER2003DC01
+User=Administrator
+Sid=S-1-5-21-4204247624-3950301307-2231654708-500
+SidType=1
+Category=7
+CategoryString=Account Management
+RecordNumber=46161213
+Message=User Account Created:
+
+	New Account Name:	philjackson
+
+	New Domain:	2003DOMAIN
+
+	New Account ID:	%{S-1-5-21-4204247624-3950301307-2231654708-1120}
+
+	Caller User Name:	administrator
+
+	Caller Domain:	2003DOMAIN
+
+	Caller Logon ID:	(0x0,0xD67975B)
+
+	Privileges		-
+
+Attributes:
+
+	Sam Account Name:	philjackson
+
+	Display Name:	Phill m. jackson
+
+	User Principal Name:	philjackson@2003domain.mvp.com
+
+	Home Directory:	-
+
+	Home Drive:	-
+
+	Script Path:	-
+
+	Profile Path:	-
+
+	User Workstations:	-
+
+	Password Last Set:	<never>
+
+
+	Account Expires:	<never>
+
+
+	Primary Group ID:	513
+
+	AllowedToDelegateTo:	-
+
+	Old UAC Value:	0x0
+
+	New UAC Value:	0x15
+
+	User Account Control:	
+		Account Disabled
+
+		'Password Not Required' - Enabled
+
+		'Normal Account' - Enabled
+
+
+	User Parameters:	-
+
+	Sid History:	-
+
+	Logon Hours:	<value not set>

@@ -1,0 +1,140 @@
+<view template="builder.html" onunloadCancelJobs="False" isVisible="False" isDashboard="False">
+  <label>Advanced Charting</label>
+  <module name="AccountBar" layoutPanel="appHeader"/>
+  <module name="AppBar" layoutPanel="navigationHeader"/>
+  <module name="Message" layoutPanel="messaging">
+    <param name="filter">*</param>
+    <param name="clearOnJobDispatch">False</param>
+    <param name="maxSize">1</param>
+  </module>
+  <module name="SearchBar" layoutPanel="splSearchControls-inline">
+    <param name="useAssistant">true</param>
+    <param name="useTypeahead">true</param>
+    <param name="useOwnSubmitButton">False</param>
+    <module name="TimeRangePicker">
+      <param name="searchWhenChanged">True</param>
+      <param name="selected">All time</param>
+      <module name="SubmitButton">
+        <param name="allowSoftSubmit">True</param>
+	<param name="updatePermalink">True</param>
+	<module name="JobStatus" layoutPanel="reportFirstPanel">
+	  <param name="showSaveMenu">True</param>
+	  <param name="showCreateMenu">True</param>
+	  <param name="actionsMenuFilter">charting</param>            
+	  <module name="Message" layoutPanel="reportFirstPanel">
+	    <param name="filter">splunk.search.job</param>
+	    <param name="clearOnJobDispatch">True</param>
+	    <param name="maxSize">2</param>
+            <module name="TitleBar" layoutPanel="viewHeader">
+	      <param name="showActionsMenu">False</param>
+	    </module>
+            <module name="ShowHideHeader" layoutPanel="reportSecondPanel">
+              <param name="label">Chart</param>
+              <param name="mode">independent</param>
+              <param name="selected">show</param>
+              <param name="disableOnNull">True</param>
+              <module name="ShowHideHeader" layoutPanel="reportSecondPanel" group="show">
+                <param name="label">Formatting options</param>
+                <param name="mode">serializeAll</param>
+                <param name="headerType">secondary</param>
+                <param name="selected">hide</param>
+                <param name="disableOnNull">True</param>
+                <module name="ChartTypeFormatter" group="show" layoutPanel="panel_row2_col1">
+		  <param name="ensureCompatibleType">true</param>
+                  <module name="LinkSwitcher" layoutPanel="panel_row2_col2">
+                    <param name="mode">serializeAll</param>
+                    <param name="hideChildrenOnLoad">True</param>
+                    <param name="label">Format</param>
+                    <module name="ChartTitleFormatter" group="General" layoutPanel="panel_row3_col1">
+                      <param name="label">Chart title</param>
+                      <module name="StackModeFormatter" layoutPanel="panel_row3_col2">
+                          <module name="SplitModeFormatter" layoutPanel="panel_row3_col2">
+                            <module name="NullValueFormatter">
+                              <module name="LegendFormatter" layoutPanel="panel_row3_col3"></module>
+                            </module>
+                          </module>
+                      </module>
+                    </module>
+                    <module name="XAxisTitleFormatter" group="X-axis" layoutPanel="panel_row3_col1">
+                      <module name="LineMarkerFormatter" layoutPanel="panel_row3_col2"></module>
+                    </module>
+                    <module name="YAxisTitleFormatter" group="Y-axis" layoutPanel="panel_row3_col1">
+                      <module name="YAxisRangeMinimumFormatter" layoutPanel="panel_row3_col2">
+                        <module name="YAxisRangeMaximumFormatter" layoutPanel="panel_row3_col2">
+                          <module name="AxisScaleFormatter" layoutPanel="panel_row3_col3"></module>
+                        </module>
+                      </module>
+                    </module>
+                    <!-- last switcher child in serializeAll mode is always visible. -->
+                    <module name="NullModule" layoutPanel="panel_row4_col1"></module>
+                 </module>
+                </module>
+                <!-- last switcher child in serializeAll mode is always visible. -->
+                <module name="JSChart" layoutPanel="graphArea">
+                  <param name="height">300px</param>
+                  <param name="width">100%</param>
+                  <param name="maxRowsForTop">20</param>
+                  <module name="ConvertToDrilldownSearch">
+                    <module name="ViewRedirector">
+                      <param name="viewTarget">flashtimeline</param>
+                    </module>
+                  </module>
+                </module>
+              </module>
+              <!-- last switcher child in serializeAll mode is always visible. -->
+              <module name="NullModule" layoutPanel="reportSecondPanel" group="hide"></module>
+            </module>
+            <module name="ShowHideHeader" layoutPanel="resultsArea">
+              <param name="label">Results</param>
+              <param name="mode">independent</param>
+              <param name="selected">show</param>
+              <param name="disableOnNull">True</param>
+              <module name="Count">
+                <param name="options">
+                  <list>
+                    <param name="text">10</param>
+                    <param name="value">10</param>
+                  </list>
+                  <list>
+                    <param name="text">20</param>
+                    <param name="value">20</param>
+                  </list>
+                  <list>
+                    <param name="text">50</param>
+                    <param name="selected">True</param>
+                    <param name="value">50</param>
+                  </list>
+                </param>
+                <module name="ResultsHeader" >
+                  <param name="entityLabel">results</param>
+                  <param name="entityLabelSingular">result</param>
+                  <param name="entityName">results</param>
+                  <module name="EnablePreview" group="show">
+                    <param name="enable">True</param>
+                    <module name="AddTotals">
+                      <param name="enable">False</param>
+					  <module name="Export"><param name="exportType">result</param></module>
+                      <module name="Paginator">
+                        <param name="entityName">results</param>
+                        <param name="maxPages">10</param>
+                        <module name="SimpleResultsTable">
+                          <param name="entityName">results</param>
+                          <param name="drilldown">all</param>
+                          <module name="ConvertToDrilldownSearch">
+                            <module name="ViewRedirector">
+                              <param name="viewTarget">flashtimeline</param>
+                            </module>
+                          </module>
+                        </module>
+                      </module>
+                    </module>
+                  </module>
+                </module>
+              </module>
+            </module>
+          </module>
+        </module>
+      </module>
+    </module>
+  </module>
+</view>

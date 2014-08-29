@@ -1,0 +1,41 @@
+<dashboard isDashboard="False">
+  <label>UI activity</label>
+
+  <row>
+    <chart>
+      <title>Views over time (last 7 days)</title>
+      <searchString><![CDATA[index=_internal source=*web_access.log* /app/  | rex "GET /[^/]+/app/(?<app_view>[^/ ?]+/[^/ ?]+) " | search app_view=* | timechart span=1h count by app_view]]></searchString>
+      <earliestTime>-7d@d</earliestTime>
+      <option name="charting.chart.stackMode">stacked</option>
+    </chart>    
+  </row>
+
+  <row>
+    <table>
+      <title>Popular views (last 7 days)</title>
+      <searchString><![CDATA[index=_internal source=*web_access.log* /app/  | rex "GET /[^/]+/app/(?<app_view>[^/ ?]+/[^/ ?]+) " | search app_view=* | top 1000 app_view]]></searchString>
+      <earliestTime>-7d@d</earliestTime>
+      <option name="showPager">true</option>
+    </table>    
+  </row>
+
+  <row>
+    <chart>
+      <title>UI activity by user</title>
+      <searchString>search index="_internal" source="*splunkd_access.log" "/services/search/jobs" | kv access-extractions | search uri=/services/search/jobs/* user!="-"| rex (?&lt;run_time&gt;\d+)ms$ | timechart eval(sum(run_time)/1000) by user</searchString>
+      <earliestTime>-24h</earliestTime>
+      <option name="charting.chart">column</option>
+      <option name="charting.chart.stackMode">stacked</option>
+      <option name="charting.secondaryAxisTitle.text">Service time (s)</option>
+    </chart>    
+  </row>
+
+  <row>
+    <table>
+      <title>Average splunkd Latency per Search Job Endpoint Type (last 24 hours)</title>
+      <searchString>search index="_internal" source="*splunkd_access.log" "/services/search/jobs" | kv access-extractions | search uri=/services/search/jobs/* user!="-"| rex (?&lt;run_time&gt;\d+)ms$ | eval file = if(file = "summary" OR file = "timeline" OR file = "control" OR file = "results_preview" OR file = "results" OR file = "events", file, "job") | chart avg(run_time) as "Avg. Latency (ms)" perc95(run_time) as "95th Percentile Latency (ms)" count by file | rename file as "Endpoint Type"</searchString>
+      <earliestTime>-24h</earliestTime>
+    </table>    
+  </row>
+
+</dashboard>

@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<!--${copyright}-->
+<view template="SA-ThreatIntelligence:/templates/incident_review.html" type="html" isDashboard="False">
+	<label>Incident Review</label>
+</view>

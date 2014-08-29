@@ -1,0 +1,96 @@
+<div id="predictCommandOptionsModal" class="modal hide fade form-horizontal" style="overflow:auto" tabindex="-1" role="dialog" aria-labelledby="predictCommandOptionsModal" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        <h3 id="myModalLabel">Advanced Predict Options</h3>
+    </div>
+    <div class="modal-body">
+
+        <span id="options">
+        
+             <div id="span" class="control-group">
+                <label class="control-label" for="spanField">Predict Timespan</label>
+                <div class="controls">
+	                <input id="spanField" class="input-large" type="text" placeholder="defaults to 10m" />
+	                <span class="hide help-inline"></span>
+	                <span class="help-block">Use time specifiers: y, mon, d, h, m, s</span>
+                </div>
+             </div>
+        
+            <div class="control-group">
+	            <label class="control-label" for="algorithmField">Algorithm</label>
+	            <div class="controls">
+		            <select id="algorithmField" name="algorithm">
+		                <option value="LL">Local level</option>
+		                <option value="LLP">Seasonal local level</option>
+		                <option value="LLT">Local level trend</option>
+		                <!-- <option value="LLB">Bivariate local level</option> -->
+		            </select>
+		        </div>
+	        </div>
+            
+            <div id="correlate" class="control-group">
+                <label class="control-label" for="correlateField">Correlate</label>
+                <div class="controls">
+	                <select id="correlateField" name="correlate">
+	                    <option value="unknown">Unknown</option>
+	                 </select>
+	                 <span class="hide help-inline"></span>
+	                 <span class="help-block">For bivariate model, indicates the field to correlate against</span>
+                </div>
+             </div>
+             
+             <div id="futureTimespan" class="control-group">
+                <label class="control-label" for="futureTimespanField">Future Timespan</label>
+                <div class="controls">
+	                <input id="futureTimespanField" class="input-large" type="text" placeholder="Must be a non-negative number" />
+	                <span class="hide help-inline"></span>
+	                <span class="help-block">The length of prediction into the future</span>
+	            </div>
+             </div>
+                        
+             <div id="holdback" class="control-group">
+                <label class="control-label" for="holdbackField">Holdback</label>
+                <div class="controls">
+	                <input id="holdbackField" class="input-large" type="text" />
+	                <span class="hide help-inline"></span>
+	                <span class="help-block">Specifies the &lt;number&gt; of data points from the end that are NOT used to build the model</span>
+	            </div>
+             </div>
+             
+             <div id="lower" class="control-group">
+                <label class="control-label" for="lowerField">Lower confidence interval</label>
+                <div class="controls">
+	                <input id="lowerField" class="input-large" type="text" placeholder="Must be 0-100; defaults to 95" />
+	                <span class="hide help-inline"></span>
+	                <span class="help-block">Specifies a field name for the lower &lt;int&gt; percentage confidence interval</span>
+	            </div>
+             </div>
+             
+             <div id="upper" class="control-group">
+                <label class="control-label" for="upperField">Upper confidence interval</label>
+                <div class="controls">
+	                <input id="upperField" class="input-large" type="text" placeholder="Must be 0-100; defaults to 95" />
+	                <span class="hide help-inline"></span>
+	                <span class="help-block">Specifies a field name for the upper &lt;int&gt; percentage confidence interval</span>
+	            </div>
+             </div>
+             
+             <div id="period" class="control-group">
+                <label class="control-label" for="periodField">Period</label>
+                <div class="controls">
+	                <input id="periodField" class="input-large" type="text" />
+	                <span class="hide help-inline"></span>
+	                <span class="help-block">Specifies the seasonal period of the time series data</span>
+                </div>
+             </div>
+             
+        </span>
+    </div>
+    <div class="modal-footer">
+        <div class="pull-left" style="margin-top: 6px;">
+            <a target="_blank" href="http://docs.splunk.com/Documentation/Splunk/latest/SearchReference/Predict">Predict command help</a>
+        </div>
+        <button id="setPredictOptions" class="btn">Apply</button>
+    </div>
+</div>
+<a href="#" id="predictOptionsDialog">Advanced...</a>

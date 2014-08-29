@@ -1,0 +1,7 @@
+form.entityEditForm[name=LogReview] {
+    margin: 0 0 0;
+}
+
+.popupContainer > .splHeader-popup > h2{
+    padding-top: 6px;
+}

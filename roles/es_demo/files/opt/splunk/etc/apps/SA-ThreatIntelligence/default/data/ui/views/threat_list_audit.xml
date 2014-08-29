@@ -1,0 +1,122 @@
+<form script="threat_list_audit.js" stylesheet="threat_list_audit.css">
+  <label>Threat List Audit</label>
+  <description>Details regarding updates to ES Threat Lists.</description>
+  <row>
+    <panel>
+      <table id="enabled_threatlist_table">
+        <title>Enabled Threat Lists</title>
+        <searchString>| rest /services/data/threatliststats  | search disabled=False is_lookup_table=False | eval current_time=time() | eval age_delta=case(threatlist_file_st_mtime &lt;= current_time - (interval + 7200), 2, threatlist_file_st_mtime &lt;= current_time - (interval + 3600), 1, threatlist_file_st_mtime > current_time - (interval + 3600), 0) | eval lastTime=strftime(threatlist_file_st_mtime, "%Y-%m-%dT%H:%M:%S") | eval size=case(threatlist_actual_file_size>=pow(1024,3),tostring(round(threatlist_actual_file_size/pow(1024,3),2))." GB",threatlist_actual_file_size >= pow(1024,2),tostring(round(threatlist_actual_file_size/pow(1024,2),2))." MB",threatlist_actual_file_size >= 1024,tostring(round(threatlist_actual_file_size/1024,2))." KB", threatlist_actual_file_size &lt; 1024,tostring(threatlist_actual_file_size)." B")| eval age_delta=if(isnull(age_delta), 2, age_delta) | rangemap field=age_delta low=0-0, elevated=1-1, severe=2-2, default=severe | rename range as status | sort -age_delta, -age, -weight | fields - eai:acl*, - current_time, - is_lookup_table, - age_delta | fields status, title, type, download_status, size, lastTime, url, weight</searchString>
+        <earliestTime>0</earliestTime>
+        <latestTime/>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">cell</option>
+        <option name="count">10</option>
+      </table>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <table id="local_threatlist_table">
+        <title>Local Threat Lists</title>
+        <searchString>| rest /services/data/threatliststats | search disabled=False is_lookup_table=True | sort +threatlist_file_st_mtime, -weight | eval "lastTime"=strftime(threatlist_file_st_mtime, "%Y-%m-%dT%H:%M:%S") | eval size=case(threatlist_actual_file_size>=pow(1024,3),tostring(round(threatlist_actual_file_size/pow(1024,3),2))." GB",threatlist_actual_file_size>=pow(1024,2),tostring(round(threatlist_actual_file_size/pow(1024,2),2))." MB",threatlist_actual_file_size>=1024,tostring(round(threatlist_actual_file_size/1024,2))." KB", threatlist_actual_file_size &lt; 1024,tostring(threatlist_actual_file_size)." B") | fields title, description, type, size, lastTime, weight</searchString>
+        <earliestTime>0</earliestTime>
+        <latestTime/>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="count">10</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">0</option>
+        <option name="charting.axisTitleX.visibility">visible</option>
+        <option name="charting.axisTitleY.visibility">visible</option>
+        <option name="charting.axisTitleY2.visibility">visible</option>
+        <option name="charting.axisX.scale">linear</option>
+        <option name="charting.axisY.scale">linear</option>
+        <option name="charting.axisY2.enabled">false</option>
+        <option name="charting.axisY2.scale">inherit</option>
+        <option name="charting.chart">column</option>
+        <option name="charting.chart.bubbleMaximumSize">50</option>
+        <option name="charting.chart.bubbleMinimumSize">10</option>
+        <option name="charting.chart.bubbleSizeBy">area</option>
+        <option name="charting.chart.nullValueMode">gaps</option>
+        <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+        <option name="charting.chart.stackMode">default</option>
+        <option name="charting.chart.style">shiny</option>
+        <option name="charting.drilldown">all</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+        <option name="charting.legend.placement">right</option>
+        <option name="drilldown">cell</option>
+      </table>
+    </panel>
+    <panel>
+      <table>
+        <title>Disabled Threat Lists</title>
+        <searchString>| rest /services/data/threatliststats | search disabled=True | sort -weight | table url type weight</searchString>
+        <earliestTime>0</earliestTime>
+        <latestTime/>
+        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">0</option>
+        <option name="charting.axisTitleX.visibility">visible</option>
+        <option name="charting.axisTitleY.visibility">visible</option>
+        <option name="charting.axisTitleY2.visibility">visible</option>
+        <option name="charting.axisX.scale">linear</option>
+        <option name="charting.axisY.scale">linear</option>
+        <option name="charting.axisY2.enabled">false</option>
+        <option name="charting.axisY2.scale">inherit</option>
+        <option name="charting.chart">column</option>
+        <option name="charting.chart.bubbleMaximumSize">50</option>
+        <option name="charting.chart.bubbleMinimumSize">10</option>
+        <option name="charting.chart.bubbleSizeBy">area</option>
+        <option name="charting.chart.nullValueMode">gaps</option>
+        <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+        <option name="charting.chart.stackMode">default</option>
+        <option name="charting.chart.style">shiny</option>
+        <option name="charting.drilldown">all</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+        <option name="charting.legend.placement">right</option>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">cell</option>
+        <option name="count">10</option>
+      </table>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <input type="dropdown" token="stanza" searchWhenChanged="true">
+        <label>Threat List Filter</label>
+        <populatingSearch earliest="$earliest$" latest="$latest$" fieldForLabel="title" fieldForValue="title">| rest /services/data/threatliststats | search disabled=False is_lookup_table=False | fields title</populatingSearch>
+        <choice value="*">All</choice>
+        <default>*</default>
+      </input>
+      <input type="time" searchWhenChanged="true">
+        <label>Time Range</label>
+        <default>
+          <earliestTime>-24h@h</earliestTime>
+          <latestTime>now</latestTime>
+        </default>
+      </input>
+      <event>
+        <title>Threat List Download Events</title>
+        <searchString>source=*python_modular_input.log index=_internal download_task earliest="$earliest$" latest="$latest$" | search url=* stanza="$stanza$"</searchString>
+        <earliestTime>0</earliestTime>
+        <latestTime/>
+        <option name="list.drilldown">full</option>
+        <option name="list.wrap">1</option>
+        <option name="maxLines">5</option>
+        <option name="raw.drilldown">full</option>
+        <option name="rowNumbers">0</option>
+        <option name="table.drilldown">all</option>
+        <option name="table.wrap">1</option>
+        <option name="type">list</option>
+        <option name="count">10</option>
+        <fields>["host","source","sourcetype"]</fields>
+      </event>
+    </panel>
+  </row>
+</form>

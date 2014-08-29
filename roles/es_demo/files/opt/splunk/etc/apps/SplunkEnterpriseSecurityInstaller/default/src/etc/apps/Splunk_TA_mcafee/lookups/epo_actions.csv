@@ -1,0 +1,13 @@
+vendor_action,action
+"access denied",allowed
+blocked,blocked
+cleaned,blocked
+deleted,blocked
+"deny terminate",blocked 
+"deny write",blocked
+"none",allowed
+"would deny create",allowed
+"would deny execute",allowed
+"would deny read",allowed
+"would deny terminate",allowed
+"would deny write",allowed

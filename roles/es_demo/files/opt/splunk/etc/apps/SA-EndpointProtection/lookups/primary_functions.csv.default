@@ -1,0 +1,26 @@
+process,service,transport,port,is_primary,function
+,,,,,Application (name)
+splunkd,,,,false,splunk
+slapd,,,,true,Authentication
+,slapd,,,true,Authentication
+,,*,389,true,Authentication
+,,*,636,true,Authentication
+mysqld,,,,true,Database
+,mysqld,,,true,Database
+,,*,3306,true,Database
+named,,,,true,Domain Name Service (DNS)
+,named,,,true,Domain Name Service (DNS)
+,,*,53,true,Domain Name Service (DNS)
+sendmail,,,,true,Mail
+,sendmail,,,true,Mail
+,,*,25,true,Mail
+squid,,,,true,Proxy
+,squid,,,true,Proxy
+,,*,3128,true,Proxy
+ntpd,,,,true,Network Time Protocol (NTP)
+,ntpd,,,true,Network Time Protocol (NTP)
+,,*,123,true,Network Time Protocol (NTP)
+httpd,,,,true,Web
+,httpd,,,true,Web
+,,tcp,80,true,Web
+,,tcp,443,true,Web

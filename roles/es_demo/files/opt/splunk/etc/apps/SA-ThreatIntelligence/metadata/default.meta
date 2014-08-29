@@ -1,0 +1,33 @@
+
+# Import the necessary apps
+[]
+import = search,TA-airdefense,TA-alcatel,TA-bluecoat,TA-cef,TA-fireeye,TA-flowd,TA-fortinet,TA-ftp,TA-ip2location,TA-juniper,Splunk_TA_mcafee,TA-ncircle,Splunk_TA_nessus,TA-nmap,TA-oracle,TA-ossec,TA-paloalto,TA-rsa,TA-sav,TA-sep,TA-snort,TA-sophos,TA-splunk,TA-tippingpoint,TA-trendmicro,TA-websense,Splunk_TA_nix,Splunk_TA_windows,SA-AccessProtection,SA-AuditAndDataProtection,Splunk_SA_CIM,SA-EndpointProtection,SA-IdentityManagement,SA-NetworkProtection,SA-Utils
+
+## SA-ThreatIntelligence Application-level permissions
+[log_review]
+access = read : [ * ], write : [ * ]
+
+[reviewstatuses]
+access = read : [ * ], write : [ * ]
+
+[workflow_actions]
+export = none
+## shared Application-level permissions
+[]
+access = read : [ * ], write : [ admin ]
+export = system
+
+[savedsearches]
+owner = admin
+
+[governance]
+access = read : [ * ], write : [ * ]
+
+## Postprocess
+[postprocess]
+access = read : [ * ], write : [ * ]
+
+
+## Exclude export of custom alert actions
+[alert_actions/email]
+export = none

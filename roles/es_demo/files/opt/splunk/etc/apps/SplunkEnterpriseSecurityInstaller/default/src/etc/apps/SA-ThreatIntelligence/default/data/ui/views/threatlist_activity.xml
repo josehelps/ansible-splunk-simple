@@ -1,0 +1,96 @@
+<form script="threatlist_activity.js">
+
+    <label>Threat List Activity</label>
+    
+    <searchTemplate>| $searchTemplate$</searchTemplate>
+    
+    <fieldset autoRun="true" submitButton="true">
+        <input type="dropdown" token="model">
+            <label>Data Model</label>
+            <choice value="">All</choice>
+            <choice value="Intrusion_Detection">Intrusion Detection</choice>
+            <choice value="Network_Traffic">Network Traffic</choice>
+            <choice value="Web_by_ip">Web (by IP or Domain)</choice>
+            <choice value="Web_by_url">Web (by URL)</choice>
+            <default></default>
+        </input>
+        
+        <input type="text" token="ip">
+            <label>IP/Domain/URL</label>
+            <default></default>
+        </input>
+        
+        <input type="dropdown" token="threatlist">
+            <label>Threat List</label>
+            <choice value="">All</choice>
+            <populatingSearch fieldForValue="threatlist_name" fieldForLabel="threatlist_name">| `threatlist_names` | fields threatlist_name</populatingSearch>
+            <default></default>
+        </input>
+        
+        <input type="time">
+            <default>Last 24 hours</default>
+        </input>
+    </fieldset>
+
+    <row>
+        <chart id="element1">
+            <title>Threat List Activity Over Time</title>
+            
+            <searchPostProcess>fields count threatlist_name | mvexpand threatlist_name | lookup threatlist_names name AS threatlist_name OUTPUT weight | timechart minspan=10m sum(eval(count*weight)) as risk_score by threatlist_name</searchPostProcess>
+            
+            <option name="charting.axisLabelsY.integerUnits">true</option>
+            <option name="charting.axisTitleX.text">time</option>
+            <option name="charting.axisTitleY.text">risk_score</option>
+            <option name="charting.chart">line</option>
+            <option name="charting.chart.nullValueMode">zero</option>
+            <option name="charting.drilldown">all</option>
+            
+            <drilldown>
+                <link>search?q=$drilldownTemplate$ | `threatlist_lookup_extended` | search (src_threatlist_name="$click.name2$" OR dest_threatlist_name="$click.name2$" OR url_threatlist_name="$click.name2$")&amp;earliest=$earliest$&amp;latest=$latest$</link>
+            </drilldown>
+        </chart>
+    </row>
+    
+    <row>
+        <table id="element2">
+            <title>Most Active Threat Lists</title>
+            
+            <searchPostProcess>eval system=case(isnotnull(src_threatlist_name) AND isnotnull(dest_threatlist_name),null(),isnotnull(src_threatlist_name),dest,1=1,src) | fields count system threatlist_name | mvexpand threatlist_name | lookup threatlist_names name AS threatlist_name OUTPUT weight | stats dc(system) as "Impacted Systems", sum(eval(count*weight)) as "Risk Score" by threatlist_name | sort 100 - "Risk Score"</searchPostProcess>
+            
+            <drilldown>
+                <link>search?q=$drilldownTemplate$ | `threatlist_lookup_extended` | search src_threatlist_name="$row.threatlist_name$" OR dest_threatlist_name="$row.threatlist_name$" OR url_threatlist_name="$row.threatlist_name$"&amp;earliest=$earliest$&amp;latest=$latest$</link>
+            </drilldown>
+        </table>
+        
+        <chart id="element3">
+            <title>Most Active Threats</title>
+            
+            <!-- Precedence order for "threat" is src, dest, url. This underestimates risk slightly if both src and dest appear on a threatlist -->
+            <searchPostProcess>eval threat=case(isnotnull(src_threatlist_name),src,isnotnull(dest_threatlist_name),dest,isnotnull(url_threatlist_name),url,1==1,"unknown") | eval risk_score=case(isnotnull(src_threatlist_name),src_risk_score,isnotnull(dest_threatlist_name),dest_risk_score,isnotnull(url_threatlist_name),url_risk_score,1==1,0) | stats sum(eval(count*risk_score)) as risk_score by threat | sort 10 -risk_score</searchPostProcess>
+                        
+            <option name="charting.axisTitleX.text">Threat</option>
+            <option name="charting.axisTitleY.text">Risk Score</option>
+            <option name="charting.chart">bar</option>
+            <option name="charting.drilldown">all</option>
+            <option name="charting.legend.placement">none</option>
+                        
+            <drilldown>
+                <link>search?q=$drilldownTemplate$ | search (src="$click.value$" OR dest="$click.value$") | `threatlist_lookup_extended`&amp;earliest=$earliest$&amp;latest=$latest$</link>
+            </drilldown>
+        </chart>
+    </row>
+
+    <row>
+        <table id="element4">
+            <title>Recent Threat List Activity</title>
+
+            <searchPostProcess>sort 100 -_time | fillnull value="unknown" src,dest,url | eval src_threatlist_name=split(replace(mvjoin(src_threatlist_name,"|"), "([^\|]*)(\|*)", "src: \1\2"),"|") | eval dest_threatlist_name=split(replace(mvjoin(dest_threatlist_name,"|"), "([^\|]*)(\|*)", "dest: \1\2"),"|") | eval url_threatlist_name=split(replace(mvjoin(url_threatlist_name,"|"), "([^\|]*)(\|*)", "url: \1\2"),"|") | eval threatlist=mvappend(src_threatlist_name, dest_threatlist_name, url_threatlist_name) | eval threatlist_description=mvappend(src_threatlist_description, dest_threatlist_description, url_threatlist_description) | fields _time,risk_score,count,threatlist,threatlist_description,src,dest,url</searchPostProcess>
+
+            <fields>_time,risk_score,count,threatlist,threatlist_description,src,dest,url</fields>
+
+            <drilldown>
+                <link>search?q=$drilldownTemplate$ | search (src="$row.src$" dest="$row.dest$") OR url="$row.url$" | `threatlist_lookup_extended`&amp;earliest=$earliest$&amp;latest=$latest$</link>
+            </drilldown>
+        </table>
+    </row>
+</form>

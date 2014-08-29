@@ -1,0 +1,447 @@
+{
+	"modelName":	"Authentication",
+	"displayName":	"Authentication",
+	"description":	"Authentication Data Model",
+	"editable":		false,
+	"objects":		[
+		{
+			"objectName":	"Authentication",
+			"displayName":	"Authentication",
+			"parentName":	"BaseEvent",
+			"fields":		[
+				{
+					"fieldName":	"dest_bunit",
+					"displayName":	"dest_bunit",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"dest_category",
+					"displayName":	"dest_category",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	true,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"dest_nt_domain",
+					"displayName":	"dest_nt_domain",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"dest_priority",
+					"displayName":	"dest_priority",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"src_bunit",
+					"displayName":	"src_bunit",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"src_category",
+					"displayName":	"src_category",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	true,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"src_nt_domain",
+					"displayName":	"src_nt_domain",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"src_priority",
+					"displayName":	"src_priority",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"src_user_bunit",
+					"displayName":	"src_user_bunit",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"src_user_category",
+					"displayName":	"src_user_category",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	true,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"src_user_priority",
+					"displayName":	"src_user_priority",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"tag",
+					"displayName":	"tag",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	true,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"user_bunit",
+					"displayName":	"user_bunit",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"user_category",
+					"displayName":	"user_category",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	true,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"user_priority",
+					"displayName":	"user_priority",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				}
+			],
+			"calculations":	[
+				{
+					"calculationID":	"Authentication_fillnull_action",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"action",
+							"displayName":	"action",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnull(action),\"unknown\",action)"
+				},
+				{
+					"calculationID":	"Authentication_fillnull_app",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"app",
+							"displayName":	"app",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnull(app),sourcetype,app)"
+				},
+				{
+					"calculationID":	"Authentication_fillnull_resp_time",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"resp_time",
+							"displayName":	"resp_time",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnull(resp_time),\"unknown\",resp_time)"
+				},
+				{
+					"calculationID":	"Authentication_fillnull_src",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"src",
+							"displayName":	"src",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnull(src),\"unknown\",src)"
+				},
+				{
+					"calculationID":	"Authentication_fillnull_src_user",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"src_user",
+							"displayName":	"src_user",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnull(src_user),\"unknown\",src_user)"
+				},
+				{
+					"calculationID":	"Authentication_fillnull_dest",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"dest",
+							"displayName":	"dest",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnull(dest),\"unknown\",dest)"
+				},
+				{
+					"calculationID":	"Authentication_fillnull_user",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"user",
+							"displayName":	"user",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnull(user),\"unknown\",user)"
+				}
+			],
+			"constraints":	[
+				{
+					"search":	"tag=authentication NOT (action=success user=*$)"
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Failed_Authentication",
+			"displayName":	"Failed Authentication",
+			"parentName":	"Authentication",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"action=\"failure\""
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Successful_Authentication",
+			"displayName":	"Successful Authentication",
+			"parentName":	"Authentication",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"action=\"success\""
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Default_Authentication",
+			"displayName":	"Default Authentication",
+			"parentName":	"Authentication",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"tag=\"default\""
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Failed_Default_Authentication",
+			"displayName":	"Failed Default Authentication",
+			"parentName":	"Default_Authentication",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"action=\"failure\""
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Successful_Default_Authentication",
+			"displayName":	"Successful Default Authentication",
+			"parentName":	"Default_Authentication",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"action=\"success\""
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Insecure_Authentication",
+			"displayName":	"Insecure Authentication",
+			"parentName":	"Authentication",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"tag=\"insecure\" OR tag=\"cleartext\""
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Privileged_Authentication",
+			"displayName":	"Privileged Authentication",
+			"parentName":	"Authentication",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"tag=\"privileged\""
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Failed_Privileged_Authentication",
+			"displayName":	"Failed Privileged Authentication",
+			"parentName":	"Privileged_Authentication",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"action=\"failure\""
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Successful_Privileged_Authentication",
+			"displayName":	"Successful Privileged Authentication",
+			"parentName":	"Privileged_Authentication",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"action=\"success\""
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Missing_Extractions_Authentication",
+			"displayName":	"Missing Extractions (S.o.S)",
+			"parentName":	"Authentication",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"(action=\"unknown\" OR app=\"unknown\" OR src=\"unknown\" OR dest=\"unknown\" OR user=\"unknown\")"
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Untagged_Authentication",
+			"displayName":	"Untagged Authentication (S.o.S)",
+			"parentName":	"BaseSearch",
+			"fields":		[
+				{
+					"fieldName":	"_time",
+					"displayName":	"_time",
+					"type":			"timestamp",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"host",
+					"displayName":	"host",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"source",
+					"displayName":	"source",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"sourcetype",
+					"displayName":	"sourcetype",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				}
+			],
+			"calculations":	[],
+			"constraints":	[],
+			"baseSearch":   "(login OR \"log in\" OR authenticated) sourcetype!=stash NOT tag=authentication",
+			"children":		[]
+		}
+	]
+}

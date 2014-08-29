@@ -1,0 +1,24 @@
+<% minShown = Math.min(3, item.vals.length); %>
+<div class="signBoardRow">
+  <div class="signBoardRowLeft"><%= item.name %></div>
+  <div class="signBoardRowRight">
+    <div class="alwaysVisible">
+      <% for(i = 0; i < minShown; i++){ %>
+        <div><%=item.vals[i]%></div>
+      <% } %>
+    </div>
+    <div class="toggleable" style="display:none;">
+      <% for(; i < item.vals.length; i++){%>
+        <div><%=item.vals[i]%></div>
+      <% } %>
+    </div>
+    <% if(item.vals.length > minShown){ %>
+      <div class="toggleHandle">
+        <div class="showMore">+<%=item.vals.length - minShown%> more</div>
+        <div class="showLess" style="display:none;">Show Less</div>
+      </div>
+    <% } %>
+  </div>
+</div>
+
+<div class="clear"></div>

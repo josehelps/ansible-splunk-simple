@@ -1,0 +1,239 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="/static/app/SplunkEnterpriseSecurityInstaller/contrib/bootstrap/js/bootstrap.min.js"></script>
+
+<div id="restartstatus">
+    <h1>Splunk is restarting</h1>
+    <p>Please wait. This may take a few minutes.</p>
+</div>
+<div id="restartsslwarn">
+    <h1>Splunk is restarting</h1>
+    <p>
+    Check the web_service.log file to determine when Splunk has restarted and then <a href="">click here to continue</a>.
+    </p>
+</div>
+<div class="splOverlay"></div>
+
+
+<div>
+  <textarea id="fileTextArea"></textarea>
+</div>
+
+<div class="modal hide" id="progressModal" data-backdrop="static" data-keyboard="false">
+  <div class="modal-header">
+      <strong>Processing...</strong>
+  </div>
+  <div class="modal-body">
+      <div class="progress progress-striped active">
+          <div class="bar" style="width: 100%;"></div>
+      </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+
+  <div class="row-fluid">
+
+    <div class="span3">
+      <ul class="nav nav-list">
+      
+        <li class="super-list">
+          <a id="li-disable" href="#">
+            <span class="list-circle circle-big"></span>
+            <strong>Disable ES App</strong>
+          </a>
+        </li>
+      
+        <li class="super-list">
+          <a id="li-restart" href="#">
+            <span class="list-circle circle-big"></span>
+            <strong>Restart Splunk</strong>
+          </a>
+        </li>
+      
+        <li class="super-list">
+          <a id="li-compare" href="#">
+            <span class="list-circle circle-big"></span>
+            <strong>Unpack and Compare</strong>
+          </a>
+        </li>
+      
+        <li class="sub-list">
+          <a id="li-customizations" href="#">
+            <span class="list-circle circle-small"></span>
+            <small>Customizations</small>
+            <small id="list-count"></small>
+          </a>
+        </li>
+      
+        <li class="sub-list">
+          <a id="li-deprecated-apps" href="#">
+            <span class="list-circle circle-small"></span>
+            <small>Deprecated Apps</small>
+            <small id="list-count"></small>
+          </a>
+        </li>
+
+        <li class="sub-list">
+          <a id="li-deprecated-files" href="#">
+            <span class="list-circle circle-small"></span>
+            <small>Deprecated Files</small>
+            <small id="list-count"></small>
+          </a>
+        </li>
+      
+        <li class="sub-list">
+          <a id="li-default-confs" href="#">
+            <span class="list-circle circle-small"></span>
+            <small>Default .conf</small>
+            <small id="list-count"></small>
+          </a>
+        </li>
+
+        <li class="super-list">
+          <a id="li-upgrade" href="#">
+            <span class="list-circle circle-big"></span>
+            <strong>Upgrade</strong>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  
+    <div class="span8">
+  
+      <div class="row-fluid">
+
+        <div id="pane_report_tabs" class="display-pane span12">
+
+          <ul class="nav nav-tabs" id="report-tabs">
+
+            <li class="active"><a href="#report-content-customizations" data-toggle="tab">Customizations
+                  <span id="indicator-customizations" class="number-circle"></span>
+                </a>
+            </li>
+            <li><a href="#report-content-deprecated-apps" data-toggle="tab">Deprecated Apps
+                  <span id="indicator-deprecated-apps" class="number-circle"></span>
+                </a>
+            </li>
+            <li><a href="#report-content-deprecated-files" data-toggle="tab">Deprecated Files
+                  <span id="indicator-deprecated-files" class="number-circle"></span>
+                </a>
+            </li>
+            <li><a href="#report-content-default-conf" data-toggle="tab">Default .conf
+                  <span id="indicator-default-confs" class="number-circle"></span>
+                </a>
+            </li>
+          </ul>
+
+          <div class="tab-content">
+
+            <div class="tab-pane fade in active" id="report-content-customizations"></div>
+
+            <div class="tab-pane fade" id="report-content-deprecated-apps"></div>
+            
+            <div class="tab-pane fade" id="report-content-deprecated-files"></div>
+
+            <div class="tab-pane fade" id="report-content-default-conf"></div>
+
+          </div>
+
+        </div>
+
+        <div id="pane_disabled_false_msg" class="display-pane msg-pane span12">
+          <p>To upgrade Splunk App for Enterprise Security, the current installation needs to be disabled.
+          </p>
+          <p>Click the Disable button below and restart Splunk.
+          </p>
+        </div>
+
+        <div id="pane_disabled_true_msg" class="display-pane msg-pane span12">
+          <p>Splunk App for Enterprise Security is disabled.
+          </p>
+          <p>Click the Restart button below.
+          </p>
+        </div>
+
+        <div id="pane_upgrade_ready_msg" class="display-pane msg-pane span12">
+          <p>Upgrade ready.
+          </p>
+          <p>Click Continue to unpack packages and compare components.
+          </p>
+        </div>
+
+        <div id="pane_upgrade_success_msg" class="display-pane msg-pane span12">
+          <p>Upgrade success.
+          </p>
+          <p>Click Restart to finish the upgrade.
+          </p>
+        </div>
+
+        <div id="pane_upgrade_installed_msg" class="display-pane msg-pane span12">
+          <span>
+            Splunk App for Enterprise Security is up to date.  Current version&nbsp;<span class="installedVersionString"></span>&nbsp;is installed.
+            <br/><br/>
+            You will be notified of future updates.
+          </span>
+        </div>
+        
+        <div id="pane_upgrade_unsupported_msg" class="display-pane msg-pane span12">
+          <span>
+            This version of Splunk App for Enterprise Security&nbsp;<span class="installedVersionString"></span>&nbsp;is not supported for automated upgrade.
+            <br/><br/>
+            Please contact Splunk support for more assistance.
+          </span>
+        </div>
+
+        <div id="pane_upgrade_unsupported_server_msg" class="display-pane msg-pane span12">
+          <span>
+            The installed Splunk platform, version&nbsp;<span class="installedServerVersionString"></span>, does not meet the minimum requirements.
+            <br/><br/>
+            Splunk App for Enterprise Security is supported on Splunk 6.1.2.1 or higher.
+            Please contact Splunk support for any upgrade assistance.
+          </span>
+        </div>
+
+        <div id="pane_install_msg" class="display-pane msg-pane span12">
+          <span>
+            <p>Enterprise Security is not installed</p>
+            <p>Click Install to start deployment.</p>
+          </span>
+        </div>
+        
+        <div id="pane_install_success_msg" class="display-pane msg-pane span12">
+          <p>Install success.
+          </p>
+          <p>Click Restart to finish the upgrade.
+          </p>
+        </div>
+        
+        <div id="pane_restart_needed_msg" class="display-pane msg-pane span12">
+          <p>Splunk requires a restart.
+          </p>
+          <p>Click Restart to continue.
+          </p>
+        </div>
+    
+      </div>
+    
+      <div class="row-fluid">
+
+        <div id="div-exit" class="span3">
+          <button id="btn-exit" type="button" class="btn" onclick="window.location=&quot;${make_url(['app', 'launcher', 'home'])}&quot;"><i class="icon-remove"></i>Exit</button>
+        </div>
+
+        <div id="div-recheck" class="span3 hidden-btn">
+          <button id="btn-recheck" type="button" class="btn"><i class="icon-refresh"></i>Recheck</button>
+        </div>
+
+        <div id="div-print" class="span3 hidden-btn">
+          <button id="btn-print" type="button" class="btn"><i class="icon-print"></i>Print Report</button>
+        </div>
+      
+        <div id="div-continue" class="span3 offset6">
+          <button id="btn-continue" type="button" class="btn btn-primary"><i class="icon-ok icon-white"></i>Disable</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

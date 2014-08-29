@@ -1,0 +1,64 @@
+<quickstart>
+
+    <title>Configuration files</title>
+    <header>Track changes in the configuration files on this Splunk server, or on any other server in your network.</header>
+    <optiongroup>
+       
+        <option platforms="unix">
+            <title>Get the Splunk for *nix app</title>
+            <summary>This app collects Unix/Linux data, and provides predefined dashboards and searches built on this data.</summary>
+            <doctarget>[learnmore.recipes.app.unix]</doctarget>
+            <action type="install_app">
+                <label>Next</label>
+                <target>unix</target>
+            </action>
+        </option>
+        
+        <option platforms="unix">
+            <title>Use Splunk's file change monitoring feature</title>
+            <summary>Configure Splunk to watch for changes in your file system.</summary>
+            <doctarget>[learnmore.recipes.filechange]</doctarget>
+        </option>
+        
+        <option platforms="windows">
+            <title>Get the Splunk for Windows app</title>
+            <summary>This app allows you to select from preconfigured Windows event log, performance, registry and Active Directory monitoring inputs on Windows machines. It also provides predefined dashboards and searches.</summary>
+            <doctarget>[learnmore.recipes.app.windows]</doctarget>
+            <action type="install_app">
+                <label>Next</label>
+                <target>windows</target>
+            </action>
+        </option>
+        
+        <option platforms="windows">
+            <title>Set up Windows registry monitoring</title>
+            <summary>Configure Splunk to read data from the Windows registry.</summary>
+            <doctarget>[learnmore.recipes.windows.registry]</doctarget>
+            <action type="add_regmon">
+                <label>Next</label>
+            </action>
+        </option>
+        
+        <option>
+            <title>Watch any configuration file on this Splunk server</title>
+            <summary>Configure Splunk to index any file it can access.</summary>
+            <doctarget>[learnmore.recipes.files.configuration]</doctarget>
+            <action type="add_monitor">
+                <label>Next</label>
+            </action>
+        </option>
+        
+        <option>
+            <title>Watch configuration files on another server</title>
+            <summary>Use Splunk's universal forwarder to send configuration file changes from any machine to your Splunk server.</summary>
+            <doctarget>[learnmore.recipes.forwarder]</doctarget>
+            <action type="href">
+                <label>Download the universal forwarder</label>
+                <target>http://splunk.com/r/universalforwarder</target>
+            </action>
+        </option>
+        
+        
+    </optiongroup>
+
+</quickstart>

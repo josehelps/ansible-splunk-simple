@@ -1,0 +1,12 @@
+04/22/10 09:49:37 AM
+LogName=System
+SourceName=W32Time
+EventCode=35
+EventType=4
+Type=Information
+ComputerName=HOST0201
+Category=0
+CategoryString=none
+RecordNumber=271
+Message=The time service is now synchronizing the system time with the time
+source time-a.nist.gov (ntp.m|0x1|192.168.165.148:123->129.6.15.28:123).

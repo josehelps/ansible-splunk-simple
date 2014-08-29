@@ -1,0 +1,60 @@
+02/15/2012 02:04:06 PM
+LogName=Application
+SourceName=Trend Micro OfficeScan Server
+EventCode=500
+EventType=3
+Type=Warning
+ComputerName=
+User=SYSTEM
+Sid=S-1-5-18
+SidType=1
+TaskCategory=System
+OpCode=None
+RecordNumber=6046491
+Keywords=Classic
+Message=Virus Detected!!! Virus/Malware: JS_INJECT.VIB
+Computer: ACME-12345
+Domain: Computer staging
+File: C:\Users\foo\AppData\Local\Mozilla\Firefox\Profiles\r9o78ru7.default\Cache\30A70787d01
+Date/Time: 
+Result: Cleaned
+02/15/2012 02:04:06 PM
+LogName=Application
+SourceName=Trend Micro OfficeScan Server
+EventCode=500
+EventType=3
+Type=Warning
+ComputerName=
+User=SYSTEM
+Sid=S-1-5-18
+SidType=1
+TaskCategory=System
+OpCode=None
+RecordNumber=6046491
+Keywords=Classic
+Message=Virus Detected!!! Virus/Malware: JS_INJECT.VIB
+Computer: ACME-12345
+Domain: Computer staging
+File: C:\DOCUME~1\asdafrk\LOCALS~1\Temp\Aqf4TvNf.zip.part (FedEx_Invoice.exe)
+Date/Time: 
+Result: Cleaned
+02/15/2012 02:04:06 PM
+LogName=Application
+SourceName=Trend Micro OfficeScan Server
+EventCode=500
+EventType=3
+Type=Warning
+ComputerName=
+User=SYSTEM
+Sid=S-1-5-18
+SidType=1
+TaskCategory=System
+OpCode=None
+RecordNumber=6046491
+Keywords=Classic
+Message=Virus Detected!!! Virus/Malware: JS_INJECT.VIB
+Computer: ACME-12345
+Domain: Computer staging
+File: FedEx_Invoice.exe
+Date/Time: 
+Result: Cleaned

@@ -1,0 +1,9 @@
+***SPLUNK*** index=os sourcetype=df source=df host=@host
+
+Filesystem  Type    Size    Used    Avail   UsePct      MountedOn
+@FileSystem ext3    @SizeG  @UsedG  @AvailG @UsePct%    /
+@FileSystem ext3    @SizeG  @UsedG  @AvailG @UsePct%    /var
+@FileSystem ext3    @SizeG  @UsedG  @AvailG @UsePct%    /home
+@FileSystem ext4    @SizeG  @UsedG  @AvailG @UsePct%    /usr/local
+@remote_host:@FileSystem    nfs @SizeM  @UsedM  @AvailM @UsePct%    /mnt/remote_fs@UsePct
+

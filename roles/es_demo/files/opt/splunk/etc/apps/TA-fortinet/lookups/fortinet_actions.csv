@@ -1,0 +1,12 @@
+vendor_action,status,action
+,accept,allowed
+,deny,blocked
+,success,success
+,failed,failure
+,negotiate_error,failure
+,esp_error,failure
+,dpd_failure,failure
+modify,,modify
+edit,,modify
+changed,,modify
+edited,,modify

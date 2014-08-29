@@ -1,0 +1,59 @@
+<dashboard>
+  <label>Bro</label>
+  <description>Splunk Technology Add-on for Bro</description>
+  <row>
+
+    <table>
+      <title>Highest Volume per IP Source and Destination (last 24 hours)</title>
+      <searchString>index=bro earliest=-24h | stats sum(bytes_in) as i sum(bytes_out) as o by id_orig_h id_resp_h | eval r=if(i>0, round(o/i, 2), 0) | search r > 0 | eval x=if(r > 1.1, "Upload", if(r > 0.9, "Symetric", "Download")) | table id_orig_h,id_resp_h,i,o,x | sort 10 -i,o | rename i as "Input Bytes" o as "Output Bytes" x as "Flow Type" id_orig_h as "Source Host" id_resp_h as "Remote Host" </searchString>
+      <earliestTime>0</earliestTime>
+      <latestTime>now</latestTime>
+      <option name="wrap">true</option>
+      <option name="rowNumbers">false</option>
+      <option name="dataOverlayMode">none</option>
+      <option name="drilldown">row</option>
+      <option name="count">10</option>
+    </table>
+
+    <chart>
+      <title>Sourcetypes Repartition (last 24 hours)</title>
+      <searchString>index=bro earliest=-24h | timechart span=10m count by sourcetype</searchString>
+      <earliestTime>0</earliestTime>
+      <latestTime>now</latestTime>
+      <option name="charting.axisTitleX.visibility">visible</option>
+      <option name="charting.axisTitleY.visibility">visible</option>
+      <option name="charting.axisX.scale">linear</option>
+      <option name="charting.axisY.scale">linear</option>
+      <option name="charting.chart">line</option>
+      <option name="charting.chart.nullValueMode">gaps</option>
+      <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+      <option name="charting.chart.stackMode">default</option>
+      <option name="charting.chart.style">shiny</option>
+      <option name="charting.drilldown">all</option>
+      <option name="charting.layout.splitSeries">0</option>
+      <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+      <option name="charting.legend.placement">bottom</option>
+    </chart>
+
+    <chart>
+      <title>Destination port over time (last 24 hours)</title>
+      <searchString>index=bro earliest=-24h | timechart span=10m count by id_resp_p</searchString>
+      <earliestTime>0</earliestTime>
+      <latestTime>now</latestTime>
+      <option name="charting.axisTitleX.visibility">visible</option>
+      <option name="charting.axisTitleY.visibility">visible</option>
+      <option name="charting.axisX.scale">linear</option>
+      <option name="charting.axisY.scale">linear</option>
+      <option name="charting.chart">line</option>
+      <option name="charting.chart.nullValueMode">gaps</option>
+      <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+      <option name="charting.chart.stackMode">default</option>
+      <option name="charting.chart.style">shiny</option>
+      <option name="charting.drilldown">all</option>
+      <option name="charting.layout.splitSeries">0</option>
+      <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+      <option name="charting.legend.placement">bottom</option>
+    </chart>
+  </row>
+
+</dashboard>

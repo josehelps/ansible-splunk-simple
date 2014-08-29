@@ -1,0 +1,19 @@
+path,label,description
+SA-AuditAndDataProtection/expected_views.csv,Expected Views,Views that will be audited
+SA-EndpointProtection/primary_functions.csv,Primary Functions,"List of primary processes, services, and their function"
+SA-EndpointProtection/interesting_ports.csv,Interesting Ports,"TCP and UDP ports determined to be required, prohibited, or insecure"
+SA-EndpointProtection/interesting_processes.csv,Interesting Processes,"Processes determined to be required, prohibited, or insecure"
+SA-EndpointProtection/interesting_services.csv,Interesting Services,"Services determined to be required, prohibited, or insecure"
+SA-IdentityManagement/categories.csv,Categories,Categories that apply to assets and identities
+SA-IdentityManagement/assets.csv,Assets,List of assets that will be matched to incoming events
+SA-IdentityManagement/identities.csv,Identities,List of identities that will be matched to incoming events
+SA-IdentityManagement/administrative_identities.csv,Administrative Identities,List of commonly used administrative identities
+SA-IdentityManagement/demo_assets.csv,Demonstration Assets,List of demonstration assets
+SA-IdentityManagement/demo_identities.csv,Demonstration Identities,List of demonstration identities
+SA-NetworkProtection/application_protocols.csv,Application Protocols,Known port and protocol service mappings
+SA-NetworkProtection/prohibited_traffic.csv,Prohibited Traffic,Traffic that will generate notable events when detected
+SA-ThreatIntelligence/urgency.csv,Urgency Levels,Combinations of priority and severity levels that dictate the urgency of notable events
+SA-ThreatIntelligence/local_threatlist.csv,Local Threat List,Custom list of IP addresses to be included in the merged threat list lookup table
+SA-ThreatIntelligence/local_threatlist_domains.csv,Local Domain Threat List,Custom list of domains to be included in the merged threat list lookup table
+SA-ThreatIntelligence/local_threatlist_urls.csv,Local URL Threat List,Custom list of URLs to be included in the merged threat list lookup table
+SA-ThreatIntelligence/risk_object_types.csv,Risk Object Types,List of risk object types used by the risk analysis framework

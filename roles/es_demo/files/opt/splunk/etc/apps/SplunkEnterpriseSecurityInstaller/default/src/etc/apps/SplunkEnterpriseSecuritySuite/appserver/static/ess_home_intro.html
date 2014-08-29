@@ -1,0 +1,130 @@
+<style type="text/css">
+.esHome a {
+    font-size: 16px;
+    font-family: Arial,Helvetica,sans-serif;
+    color: #1A7996;
+    text-decoration: none;
+}
+
+.esHome p {
+  color: #666666;
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 14px;
+}
+
+.esHome .intro {
+  max-width:1000px;
+}
+
+.esHome h1 {
+    color:       #3F3F3F;
+    font-size:   20px;
+    font-weight: 100;
+    font-family: "Helvetica nenu", Helvetica, Arial, sans-serif;
+    line-height: normal;
+    
+    /* Adjust spacing around panel titles. Spacing above and on the left of panel titles should be 27px to panel edge. Spacing below panel titles (between bottom of title and top of content) should be 20px. */
+    margin:      0px 50px 19px 0px;
+}
+
+.link-row:hover{
+  border: 3px solid #EAEAEA;
+  
+  -moz-border-top-right-radius: 15px;
+  border-top-right-radius: 15px;
+  -moz-border-bottom-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  -moz-border-top-left-radius: 15px;
+  border-top-left-radius: 15px;
+  -moz-border-bottom-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.link-row{
+  padding: 12px;
+  border: 3px solid rgba(255,255,255,0.1);
+  max-width:650px;
+}
+
+.link-row a{
+  cursor:pointer;
+}
+
+.link-icon{
+  display: inline-block;
+}
+
+.link-description{
+  display: inline-block;
+}
+
+.icon{
+  font-size: 30pt;
+  opacity: 0.4;
+  margin-right: 10px;
+  width: 28px;
+  display: inline-block;
+}
+
+</style>
+
+<div class="esHome splunk-components" style="padding: 30px; 30px;">
+
+<div class="row">
+  <div class="span12">
+    <h1>Splunk App for Enterprise Security</h1>
+    <p class="intro">The Splunk App for Enterprise Security (ES) runs on top of the core Splunk 'Big-data' engine, extending the Splunk core capabilities for security team workflows. Use the Splunk App for Enterprise Security to view security event metrics on dashboards across security domains in context with data from non-traditional data sources. ES supports drill-down into raw data for root cause analysis and also allows you to 'pivot' on any single piece of information to broaden an investigation.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span12 link-row">
+    <i class="icon icon-gauge-radial"></i>
+    <span class="link-description">
+    <a href="${make_url(['app', APP['id'], 'ess_security_posture'])}">Security Posture</a>
+    <p>See real-time status of the organization's security posture over the last 24 hours</p>
+    </span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span12 link-row">
+    <i class="icon icon-flag"></i>
+    <span class="link-description">
+      <a href='${make_url(['app', APP['id'], 'incident_review'])}'>Incident Review</a>
+      <p>Work directly with notable events</p>
+    </span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span12 link-row">
+    <i class="icon icon-settings"></i>
+    <span class="link-description">
+      <a href='${make_url(['app', APP['id'], 'ess_configuration'])}'>App Configuration</a>
+      <p>Configure the application</p>
+    </span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span12 link-row">
+    <i class="icon icon-question"></i>
+    <span class="link-description">
+      <a href='http://docs.splunk.com/Documentation/ES'>Documentation</a>
+      <p>View the Installation and Configuration, User, and Data Source Integration manuals</p>
+    </span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span12 link-row">
+    <i class="icon icon-speech-bubble"></i>
+    <span class="link-description">
+      <a href='http://splunk-base.splunk.com/search/?q=ess+enterprise_security+es&Submit=Search'>Community</a>
+      <p>Explore Splunk Answers for relevant questions and answers</p>
+    </span>
+  </div>
+</div>
+
+</div>

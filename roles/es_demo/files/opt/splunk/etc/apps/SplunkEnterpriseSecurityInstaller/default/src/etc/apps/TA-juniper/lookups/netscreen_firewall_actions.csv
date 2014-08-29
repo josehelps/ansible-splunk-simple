@@ -1,0 +1,6 @@
+vendor_action,action
+Permit,allowed
+Deny,blocked
+failed,failure
+successful,success
+refused,failure

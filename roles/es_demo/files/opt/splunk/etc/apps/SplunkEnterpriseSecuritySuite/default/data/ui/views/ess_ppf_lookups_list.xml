@@ -1,0 +1,31 @@
+<view template="dashboard.html" isDashboard="false">
+  
+  <label>Per-Panel Filtering Lookups</label>
+  
+  <module name="AccountBar" layoutPanel="appHeader"/>
+  <module name="AppBar" layoutPanel="navigationHeader"/>
+  <module name="Message" layoutPanel="messaging">
+    <param name="filter">*</param>
+    <param name="clearOnJobDispatch">False</param>
+    <param name="maxSize">2</param>
+  </module>
+  <module name="BreadCrumb" layoutPanel="viewHeader">
+    <param name="options">
+      <list>
+        <param name="view">ess_configuration</param>
+        <param name="label">Configure</param>
+      </list>
+      <list>
+        <param name="label">Per-Panel Filtering Lookups</param>
+      </list>
+    </param>
+  </module>
+
+  <module name="LookupLister" layoutPanel="panel_row1_col1">
+    <param name="editView">ess_ppf_lookups_edit</param>
+    <param name="editableLookups">SplunkEnterpriseSecuritySuite/lookups/ppf_lookups.csv</param>
+    <param name="title">Per-Panel Filtering Lookups</param>
+    
+  </module>
+
+</view>

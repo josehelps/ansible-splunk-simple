@@ -1,0 +1,366 @@
+body {
+    font: 12px helvetica, arial, sans-serif; 
+    color: #333;
+    background-color: #EDEDE7;
+}
+p {
+    line-height: 150%;
+}
+
+p.error {
+    color: #cc0000;
+    padding:0px 20px;
+    display: block;
+}
+.licenseError {
+    font-weight: bold;
+    display: block;
+}
+.licenseErrorText {
+    color: #333;
+}
+p.licensePageError {
+    top:30px;
+}
+a { 
+    color: #4D9BB3; 
+    text-decoration: none; 
+}
+#layout { 
+    background-color: #fff;
+    border:1px solid #ccc;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: #ccc 0 0 5px;
+    box-shadow: #ccc 0 0 5px;
+    position: absolute;
+    width:720px;
+    top: 50%;
+    left: 50%;
+    margin-left: -360px;
+    margin-top: -200px;
+}
+/* container for custom user messaging */
+#userMessaging {
+    min-height: 80px;
+    _height:80px;
+    padding: 10px;
+}
+#authWrapper {
+    width: 100%;
+    float:left;
+}
+/* left box with splunk logo */
+#splunkLogo {
+    width:368px;
+    height:200px;
+    padding: 0;
+    float:left;
+    background: #fff url(../images/logo-mrsparkle.png) no-repeat 65px 60px;
+}
+/* holds login form and free messaging info for free product */
+#authContainer {
+    padding: 0;
+    float:left;
+    width:350px;
+    border-left: 1px solid #ddd;
+    min-height: 200px;
+    _height:200px;
+}
+#mainPanel {
+    padding-left: 20px;
+    min-height: 200px;
+}
+div.hasPasswordHint {
+    padding-top:20px;
+}
+#mainPanel a {
+    font-size:11px;
+}
+/* password hint popup */
+a#passwordHint {
+    font-size: 12px;
+}
+#protrial {
+    display:none;
+    z-index: 80;
+    height:125px;
+    width:320px;
+    font-size:11px;
+    font-weight:normal;
+    position:absolute;
+    top: 10px;
+    *top:7px;
+    right:20px;
+    background: url(../images/bg_logintip.png) no-repeat 0 0;
+    *background: url(../images/bg_logintip.gif) no-repeat 0 0;
+}
+#protrialContent {
+    z-index: 100;
+    padding: 15px 20px;
+}
+#protrialContent p {
+    line-height:130%;   
+    margin-top: 0px;
+    margin-bottom: 7px;
+}
+#protrialContent p span {
+    font-weight: bold;
+}
+#protrial #protrialClose {
+    height: 13px;
+    width: 13px;
+    _font-size: 0px;
+    _line-height: 0px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: block;
+    background-image: url(../images/splIcons.gif); 
+    background-color: #999;
+    background-position: 0px 0px;
+    position: absolute;
+    top:10px;
+    right:10px;
+    z-index: 110;
+}
+#protrial #protrialClose:hover { background-position: -20px 0px; }   
+
+#infoContainer { 
+    min-height: 50px;
+    _height:50px;
+    clear: both;
+    padding:10px 20px;
+}
+#infoContainer a {
+    text-align:center;   
+}
+#tipsCheckerContainer { 
+    padding: 20px;
+}
+#tipsCheckerContainer iframe {
+    height: 300px; 
+    background-color: #fff;
+}
+#freeMessageContainer {
+    padding-left: 20px;
+    line-height: 25px;
+}
+#freeMessageContainer .freeMessageUpdate {
+    margin:10px 0px 20px;
+}
+#freeMessageContainer .freeMessageUpdate .splButton-primary {
+    margin-right:10px;
+}
+.checkingForUpdatesWrapper {
+    height: 110px;
+    padding-top: 90px;
+}
+.checkingForUpdates, .noUpdatesFound {
+    height: 16px;
+    line-height: 16px;
+    padding-left:21px;
+    background: url(../images/loader.gif) no-repeat 0 0;
+}
+.noUpdatesFound {
+    background: url(../images/icon_complete.png) no-repeat 0 0;
+}
+#freeMessageContainer .freeMessageUpdate .skipUpdate {
+    margin-left: 10px;
+}
+.subContainer { 
+    display: none; 
+}
+iframe { 
+    width: 680px; overflow: hidden; 
+}
+
+/* update checker container (banner container) */
+#updateCheckerContainer {
+    
+}
+#updateCheckerContainer iframe {
+    height:80px;
+}
+
+/* free version update checker */
+
+#freeUpdateCheckerContainer {
+    display: none;
+    height:150px;
+    width:300px;
+    margin-left:20px;
+}
+#freeUpdateCheckerContainer iframe {
+    height:100%;
+    width:100%;
+}
+
+/* copied button classes from view and default css.  careful for delta in changes here */
+
+.splButton-primary, .splButton-secondary {
+    height:25px;
+    line-height:25px;
+    width: auto;
+    margin-left: 5px;
+    _background: none;
+    text-align: center;
+    padding: 0px 10px;
+    *padding: 0px 20px;
+    cursor: pointer;
+    background: url(../images/overlay_gloss_28.png) repeat-x left -2px;
+    color: #FFF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:12px;
+    border: none; 
+    /* corner rounding for good browsers */
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    _background-image: none;
+}
+.splButton-primary {
+    background-color: #73a550; 
+}
+.splButton-primary:hover {
+    background-color: #5e8d3d;   
+}
+button.splButton-primary, button.splButton-secondary {
+    *padding:0px;   
+}
+a.splButton-primary, a.splButton-secondary, 
+a.splButton-primary span, a.splButton-secondary span {
+    text-decoration: none;
+    float: left;
+}
+.splButton-primary span, .splButton-secondary span {
+    min-width: 110px;
+    *min-width: 80px;
+    _width: 80px;
+    *white-space: nowrap;
+    display: block;
+}
+
+button::-moz-focus-inner { border: none;}
+
+.tipsCheckerContinueLink .splButton-primary {
+    float: right;
+    margin-right: 10px;
+}
+
+
+p.loginButtonRow {
+    *margin-bottom:5px;   
+}
+.footer {
+    margin: 10px;
+    font-size: 11px; 
+    color: #666;
+    padding-left: 15px;
+}
+
+label {
+    text-transform: uppercase;
+    font-size: 11px;
+    color: #666;
+}
+label.license_label {
+    text-transform: none;
+    font-size: 12px;
+    margin-left: 3px;
+}
+
+.loginForm input {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 6px;
+    width: 275px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    -moz-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+input.splButton-primary {
+    padding: 0;
+    margin: 0;
+    height: 28px;
+    line-height: 28px;
+    width: 125px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px;
+    background:transparent url(../images/overlay_gloss_28.png) repeat-x;
+    border:medium none;
+    color:#FFFFFF;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:12px;
+    background-color: #73A550;
+    _background-image: none;
+    -moz-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+input.splButton-primary:hover {
+    
+    background-color: #5E8D3D;
+}
+
+#connectError {
+    display: none;
+    bottom: 40px; 
+    left: 40px; 
+    width: 640px;
+    height: 50px; 
+    text-align: center;
+    z-index: 1000;
+    background-color: #fff;
+    color: #777;
+}
+
+#connectError h2, #connectError p {
+    margin: 0px; 
+    padding-top: 5px; 
+}
+.connectErrorContinue {
+    margin-top: 90px;
+}
+
+.licensingPage #mainPanel {
+    top:82px;
+}
+.licensingPage #mainPanel a {
+    font-size: 12px;
+}
+.licenseExpiredForm {
+    margin-bottom: 10px;
+}
+.licenseExpiredForm p {
+    margin: 0 0 10px 0;
+}
+.licenseOptionDiv {
+    margin-bottom: 7px;
+}
+.licenseOptionDiv label {
+    color: #333;
+}
+.licenseExpiredForm p.licenseButtonRow {
+    margin-top: 15px;
+    margin-bottom:15px;
+}
+
+/* noscript message */
+noscript p {
+    background: #FFEE91;
+    padding: 10px;
+    margin: 20px;
+    margin-top: 55px;
+    border-radius: 5px;
+    display: block;
+    line-height: 150%;
+    font-weight: bold;
+}

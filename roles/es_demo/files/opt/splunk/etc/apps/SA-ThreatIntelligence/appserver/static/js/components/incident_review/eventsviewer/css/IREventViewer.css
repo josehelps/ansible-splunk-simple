@@ -1,0 +1,162 @@
+/*
+ * Div for Edit Selected Event style
+ */
+
+.ir-selected-event-sytle {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    font-size:14px;
+}
+/**
+ *     Outer table properties
+ */
+
+.ir-splunk-offwhite-color {
+    background-color: #f5f5f5;
+}
+
+.table td.ir-veritcal-align {
+    vertical-align: middle;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.table thead th {
+    vertical-align: middle;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.table-row-expanding th.col-info {
+vertical-align: middle;
+}
+
+
+.table td.ir-check-limited-width {
+    width: 22px;
+}
+
+/*
+ * Inner table and inner event view properties
+ */
+.ir-hide-bottom-border {
+    border-bottom-style: hidden;
+}
+
+.ir-table-no-row-border td {
+    border-top: 0px;
+    border-bottom: 0px;
+    padding-left: 0px;
+    padding-bottom: 4px;
+    padding-top: 0px;
+}
+
+td.ir-header {
+    font-weight:bold;
+    font-style:normal;
+}
+
+
+.table td.ir-no-left-padding {
+    padding-left:0px;
+}
+
+/*
+ * Raw event style
+ */
+.ir-orig-raw-field {
+    background-color: #dfdcdc;
+    border-bottom-color: #cccccc;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-collapse: collapse;
+    border-left-color: #cccccc;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: #cccccc;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: #cccccc;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    font-family: monospace;
+    padding: 5px;
+}
+
+/*
+ * Urgency icons
+ */
+.ir-urgency-default-text-style {
+    font-size:12px;
+    color:#333333;
+     vertical-align: middle;
+}
+.ir-icon-info-circle-style {
+    color: #6ab7c7;
+    font-size: 160%;
+    vertical-align: middle;
+}
+
+.ir-icon-circle-style {
+    color:#65a637;
+    font-size: 160%;
+    vertical-align: middle;
+}
+
+.ir-icon-alert-circle-med-style {
+    font-size: 160%;
+    color: #fac51c;
+    vertical-align: middle;
+}
+
+.ir-icon-alert-circle-high-style {
+    font-size: 160%;
+    color: #f7902b;
+    vertical-align: middle;
+}
+
+.ir-icon-alert-style {
+    color:#d85d3c;
+    font-size: 160%;
+    vertical-align: middle;
+}
+
+/*
+ * Rows fields action on hover
+ */
+
+.ir-row-hover-field:hover +  div.ir-row-show-on-hover,  .ir-row-show-on-hover:hover {
+    display: block;
+}
+
+.ir-row-show-on-hover {
+    display: none;
+}
+
+.ir-row-float-inherit {
+    float:inherit;
+}
+
+.ir-row-float-left {
+    float:left;
+}
+
+/*
+ * Pagination on right
+ */
+.ir-pagination-right {
+    float:right;
+}
+
+/*
+ * Background color on Action Fields hover
+ */
+
+.ir-btn-pill:hover, .ir-btn-pill.active, .ir-btn-pill:focus {
+    background-color: #eeeeee;
+}

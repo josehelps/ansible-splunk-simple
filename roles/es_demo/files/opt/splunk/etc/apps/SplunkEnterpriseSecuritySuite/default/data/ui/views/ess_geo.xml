@@ -1,0 +1,15 @@
+<dashboard>
+    <label>Notable Event Geography</label>
+    
+    <row>
+        <map>
+            <searchString>`notable` | eval latitude=mvappend(src_lat,NULL,dest_lat) | eval longitude=mvappend(src_long,NULL,dest_long)  | geostats latfield=latitude longfield=longitude count by rule_name</searchString>
+            <title> </title>
+            <earliestTime>-24h</earliestTime>
+            <latestTime>now</latestTime>
+            
+            <option name="mapping.tileLayer.minZoom">2</option>
+        </map>
+    </row>
+
+</dashboard>

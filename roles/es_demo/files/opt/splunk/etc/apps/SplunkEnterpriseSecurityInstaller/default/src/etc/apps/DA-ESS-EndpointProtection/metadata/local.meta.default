@@ -1,0 +1,22 @@
+
+## To allow additional roles to manage review statuses, append to the write list like so
+## access = read : [ * ], write : [ admin,role2,role3 ]
+[authorize]
+access = read : [ * ], write : [ admin ]
+
+## To allow additional roles to manage correlation searches, 
+## append to the write list like as shown below for each of the
+## following stanzas: savedsearches, correlationsearches
+
+## access = read : [ * ], write : [ admin,role2,role3 ]
+[savedsearches]
+access = read : [ * ], write : [ admin ]
+
+[correlationsearches]
+access = read : [ * ], write : [ admin ]
+
+## To allow additional roles to edit lookups, specify the roles below. Note that allowing others to edit lookups
+## is necessary for some modules such as the blocklist editor, per-panel-filtering module and the lookup editor.
+## Note that the local.meta needs to be modified in the app where the lookup file resides.
+[lookups]
+access = read : [ * ], write : [ admin ]

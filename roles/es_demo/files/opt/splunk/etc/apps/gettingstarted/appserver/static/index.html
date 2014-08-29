@@ -1,0 +1,527 @@
+<script type="text/javascript" src="/static/app/gettingstarted/getstarted.js"></script>
+
+     <div id="gs-intro" class="splClearfix">
+
+          <div class="gs-Wrapper">
+               <h1>Getting started with Splunk</h1>
+               <p>
+               Splunk lets you index, search, alert and report on any IT data, in real time, for application management, IT operations, security and compliance, and more. Splunk consumes any data: log files, system metrics, applications, configurations...feed any data you want into Splunk.
+               </p>
+               <p>
+               Click on a topic below to get started.
+               </p>
+
+              <div class="gsTOC">
+                <a href="#" class="gsTOCLink gsTOCLinkHighlighted" divToShow="#gettingTab">Getting Around</a>
+                <a href="#" class="gsTOCLink" divToShow="#indexTab">Index Data</a>
+                <a href="#" class="gsTOCLink" divToShow="#searchTab">Search & Investigate</a>
+                <a href="#" class="gsTOCLink" divToShow="#knowledgeTab">Add Knowledge</a>
+                <a href="#" class="gsTOCLink" divToShow="#monitorTab">Monitor & Alert</a>
+                <a href="#" class="gsTOCLink" divToShow="#reportTab">Report & Analyze</a>
+                <a href="#" class="gsTOCLink" divToShow="#moreTab">More</a>
+             </div>
+         </div>
+     </div>
+
+     <div class="gs-Wrapper">
+
+          <div class="gsDetails" id="gettingTab" style="display: block;">
+                <h2>Getting around</h2>
+                <p>Splunk's UI is packed with features. Read through the following topics to get a better sense of how to navigate and use your Splunk installation.</p>
+                <ul class="gs-subnav">
+                    <li><a href="#" class="gsExpandLink gsExpandLinkHighlighted" divToShow="#whereapps">Where am I right now?</a></li>
+                    <li><a href="#" class="gsExpandLink" divToShow="#usemanager">Manage your Splunk install</a></li>
+                </ul>
+
+                <div id="whereapps" class="gsExpandDetails" style="display: block;">
+                    <h2>Where am I right now?</h2>
+                    <p>Splunk is made up of apps. Apps create different contexts for your data out of sets of views, dashboards, and configurations. Right now, you're in the Getting Started app. You also have the search app, which is where you can create searches, and the default app Splunk Home, which lets you launch other apps. You can also add new apps from Splunkbase, or create your own.</p>
+                    <p><b>Navigate between apps</b></p>
+                    <p>To navigate to another app, use the <b>App</b> drop-down in the upper right hand corner:</p>
+                    <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/appmenu.png')}" alt="screenshow_uploadLocal" />
+                    <p>To see a list of apps that are currently installed in your Splunk instance, you can return to Home by clicking the App menu in the upper right hand corner of this page and choosing Home. This will take you out of the Getting Started app, but you can get back here by choosing Getting Started again from the Home or the App menu.</p>
+                    <p><b>Used Splunk before? Looking for something a little more familiar?</b></p>
+                    <p>If you've used Splunk before, you're probably looking for the Search app. To get to the Search app, choose "Search" from the App menu in the upper right-hand corner.</p>
+                </div>
+
+                <div id="usemanager" class="gsExpandDetails">
+                    <h2>Manage your Splunk install</h2>
+                    <p>Most of Splunk's management options are available through Splunk Web (Splunk's user interface).  Note that some configurations are only available to Splunk users with admin privileges.  If you can't access some of the configurations discussed in this app, you may not have permission to access them.</p>
+                    <p><b>Use Splunk Manager</b></p>
+                    <p>Manage your configurations and apps with Splunk Manager.  Almost every configuration change can be set through Splunk Manager.  Get to Manager by clicking on the <b>Manager</b> link in the upper right hand corner:</p>
+                    <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/managernav.png')}" alt="screenshow_uploadLocal" />
+                    <p><b>Use Job Manager</b></p>
+                    <p>Manage your searches with Job Manager. All of your searches run as jobs.  You can list and control all the searches running on your system by clicking the <b>Jobs</b> link in the upper right hand corner:</p>
+                    <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/jobsnav.png')}" alt="screenshow_uploadLocal" />
+                    <p><b>Add more apps</b></p>
+                    <p>To browse for and download more apps for Splunk, return Home and click the Find more apps button.</p>
+                    <p>You can make your own apps, too. Refer to the <a href="${generateSelfHelpLink('gettingstarted.developer')}" target="_blank" title="Splunk help">Developer Manual</a> for more information.</p>
+                </div>
+          </div>
+
+
+          <div class="gsDetails" id="indexTab">
+               <h2>Index data</h2>
+               <p>If a machine generates it, Splunk can index it. Yep, that's right -- Splunk can index any data, structured or unstructured, without custom parsers, connectors, or adapters. Feed Splunk anything from syslog from Unix servers and network devices, to Event Logs on Windows, to custom application logs and even configurations and system metrics -- you'll get visibility into your entire operation.<p>
+               <p>You can use Splunk's getting data in workflows to find out all the different types of data you can add to Splunk, and your different options for getting this type of data in. There are lots of ways to get your data into Splunk, depending on where it's located.</p>
+               <ul class="gs-subnav">
+                    <li><a href="#" class="gsExpandLink gsExpandLinkHighlighted" divToShow="#localdata">On this Splunk server</a></li>
+                    <li><a href="#" class="gsExpandLink" divToShow="#windowsdata">On a remote Windows machine</a></li>
+                    <li><a href="#" class="gsExpandLink" divToShow="#unixdata">On a remote non-Windows machine</a></li>
+                    <li><a href="#" class="gsExpandLink" divToShow="#networkdata">On your network</a></li>
+                    <li><a href="#" class="gsExpandLink" divToShow="#moreinputs">More input methods</a></li>
+               </ul>
+
+               <div id="localdata" class="gsExpandDetails" style="display: block;">
+                    <h2>On this Splunk server</h2>
+                    <p>Splunk can index any local data, either continuously or just once. Configure Splunk to index a file or directory through Splunk Manager. You can also preview your data before you index it and create custom rules for how Splunk should handle your data.</p>
+                    <ol>
+                         <li>Click Manager &raquo; Data inputs &raquo; Files & Directories.</li>
+                         <li>Click New.</li>
+                          <div class="controlButtonWrapper">
+                             <a class="splButton-primary" href="${make_url('/manager/search/data/inputs/monitor/_new?action=edit')}" target="_blank"><span>Take me there...</span></a>
+                          </div>
+                         <li>This will take you to Data Preview and let you create a sourcetype -- rules for how Splunk should parse and extract index time data from your files and directories.</li>
+                         <li>Once you've finished previewing your data, you can add a single file or a directory and Splunk will index the data immediately.</li>
+                         <li>Choose ''Continuously index data from a file or directory this Splunk instance can access'' to continuously index data.</li>
+                         <li>Choose ''Upload and index a file'' to upload a file on your client machine.</li>
+                         <li>Choose ''Index a file once from this Splunk server'' to index a file once.</li>
+                         <li>Set more options by following the rest of the directions on the page. For example, set a host name, sourcetype or index.  Or you can leave most of these options to the defaults and Splunk will assign them for you.</li>
+                    </ol>
+               </div>
+
+               <div id="windowsdata" class="gsExpandDetails">
+                    <h2>On a remote Windows machine</h2>
+                    <p>Use Splunk to gather Windows data from other machines in your network.  You have a few options, depending on how your network is set up:</p>
+                    <ol>
+                         <li>If you're running Splunk on Windows, you can use WMI to collect Windows event logs, as well as Event Log collection, registry monitoring and Active Directory monitoring.  All your options are listed in Manager &raquo; Data inputs.</li>
+                         <div class="controlButtonWrapper">
+                             <a class="splButton-primary" href="${make_url('/manager/launcher/datainputstats')}" target="_blank"><span>Take me there...</span></a>
+                          </div>
+                         <li>If you're running Splunk on a non-Windows machine, you can use an agent to send the data from your Windows machine to Splunk.  Install a universal forwarder on the remote machine.  For more information about forwarders, check out the <a href="${generateSelfHelpLink('gettingstarted.forwarders')}" target="_blank" title="Splunk help">Universal forwarder</a> topic in the documentation.</li>
+                         <li>Or, you can always index data from directories that are shared on your network.  Just navigate to Splunk Manager Data Inputs page and choose ''Monitor a file or directory''. Type in the full path to the file or directory. For example, on Windows you can enter: c:\apache\apache.error.log to monitor a local file, or \\hostname\apache\apache.error.log to monitor a file on a remote Windows machine.</li>
+                         <div class="controlButtonWrapper">
+                             <a class="splButton-primary" href="${make_url('/manager/search/data/inputs/monitor/_new?action=edit')}" target="_blank"><span>Take me there...</span></a>
+                         </div>
+                    </ol>
+               </div>
+
+               <div id="unixdata" class="gsExpandDetails">
+                    <h2>On a remote non-Windows machine</h2>
+                    <p>Use Splunk to gather data from other non-Windows machines in your network.  You have a few options, depending on how your network is set up:</p>
+                    <ol>
+                         <li>You can always index data from directories that are shared on your network.  Just navigate to Splunk Manager Data Inputs page and choose ''Monitor a file or directory''. Type in the full path to the file or directory. On Unix, use the form /var/log to monitor a local file, or /mnt/www01/var/log to monitor a remote directory. </li>
+                         <div class="controlButtonWrapper">
+                             <a class="splButton-primary" href="${make_url('/manager/search/data/inputs/monitor/_new?action=edit')}" target="_blank"><span>Take me there...</span></a>
+                         </div>
+                         <li>You can also use Splunk's universal forwarder to send the data from any other machine to Splunk.  Install the forwarder as an agent on the remote machine, and set it up to send data to your Splunk server. For more information about forwarders, check out the <a href="${generateSelfHelpLink('gettingstarted.forwarders')}" target="_blank" title="Splunk help">Universal forwarder</a> topic in the documentation.</li>
+                    </ol>
+               </div>
+
+               <div id="networkdata" class="gsExpandDetails">
+                    <h2>On your network</h2>
+                    <p>Use this method to capture data sent over a TCP or UDP port. For example, set up Splunk to listen on UDP 514 to capture syslog data.</p>
+                    <ol>
+                         <li>Navigate to the Data Inputs page within Splunk Manager.</li>
+                         <div class="controlButtonWrapper">
+                         <a class="splButton-primary" href="${make_url('/manager/search/datainputstats')}" target="_blank">
+                             <span>Take me there...</span>
+                         </a>
+                         </div>
+                         <li>Click New next to UDP to add data from UDP port.</li>
+                         <li>Click New next to TCP to add data from a port using TCP.</li>
+                         <li>Specify the port Splunk should listen on.</li>
+                         <li>Set more options by following the rest of the directions on the page.</li>
+                    </ol>
+               </div>
+
+                <div id="moreinputs" class="gsExpandDetails">
+                    <h2>More input methods</h2>
+                    <p>There are other ways to get your data into Splunk.  Here are a few popular options:</p>
+                    <p><b>Collect data from several machines in a distributed environment</b></p>
+                    <p>Wonder how you'll get data to Splunk from a distributed environment, such as a farm of app or web servers logging locally? Splunk's universal forwarder is a lightweight agent that can be deployed to dozens or even hundreds or thousands of servers to capture data in real time and send to a central Splunk indexer. Use <a href="${generateSelfHelpLink('gettingstarted.forwarders')}" target="_blank" title="Splunk help">Universal forwarders</a> to send data to Splunk from other systems. Set up Forwarding from Splunk Manager.</p>
+                    <p><b>Script your own inputs</b></p>
+                    <p>Create a <a href="${generateSelfHelpLink('gettingstarted.scripted')}" target="_blank" title="Splunk help">scripted input</a> for your custom data source. Scripted input are useful for command-line tools such as vmstat, iostat, netstat, top, etc. Get data from APIs and other remote data interfaces and message queues and generate metrics and status data from exercising system and app status commands like vmstat, iostat, etc. Lots of apps on SplunkBase provide scripted inputs for specific applications. Set up scripted inputs from Splunk Manager.</p>
+                    <p><b>Monitor file system changes</b></p>
+                    <p>Interested in what changes are happening on your file system? Set up <a href="${generateSelfHelpLink('gettingstarted.fscm')}" target="_blank" title="Splunk help">file system change monitoring</a> and see every change as it occurs. Use this method to monitor critical files, configuration files, and more as required for many compliance mandates as well as to find system-impacting changes and unauthorized changes for security and operations.</p>
+                </div>
+          </div>
+
+          <div class="gsDetails" id="searchTab">
+               <h2>Search</h2>
+               <p>
+               Once you have data in Splunk, you can use the Search app to investigate security incidents, troubleshoot application, server and network problems, or just proactively review system and user activity.
+               </p>
+               <ul class="gs-subnav">
+                    <li><a href="#" class="gsExpandLink gsExpandLinkHighlighted" divToShow="#freeform">Free form search</a></li>
+                    <li><a href="#" class="gsExpandLink" divToShow="#realtime">Search in real time</a></li>
+                    <li><a href="#" class="gsExpandLink" divToShow="#resultsactions">Interact with results</a></li>
+                    <li><a href="#" class="gsExpandLink" divToShow="#fields">Use fields to search</a></li>
+                    <li><a href="#" class="gsExpandLink" divToShow="#timeline">Investigate with the timeline</a></li>
+                    <li><a href="#" class="gsExpandLink" divToShow="#searchassist">Search assistant</a></li>
+                </ul>
+
+               <div id="freeform" class="gsExpandDetails" style="display: block;">
+                    <h2>Free form search</h2>
+                    <p>
+                    Search for any text that you expect to find in your data.
+                    </p>
+                    <ol>
+                         <li>Navigate to the Search app.</li>
+                         <div class="controlButtonWrapper">
+                         <a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank">
+                             <span>Take me there...</span>
+                         </a>
+                         </div>
+                         <li>Type terms directly into the search bar. If you are investigating a problem, search for:</li>
+                         <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_error.png')}" alt="screenshow_uploadLocal"/>
+                         <li>Combine terms with Boolean expressions. So, if you want to find errors that are not associated with Web activity, search for:</li>
+                         <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_errornothttp.png')}" alt="screenshow_uploadLocal" />
+                         <li>Use wildcards to match patterns of terms. If you want to find failed login attempts, which could include both "failed" or "failure" in the message, you might search for: </li>
+                         <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_faillogin.png')}" alt="screenshow_uploadLocal" />
+                   </ol>
+               </div>
+
+               <div id="realtime" class="gsExpandDetails" style="display: block;">
+                    <h2>Search in real time</h2>
+                    <p>
+                         Search data in real time as it comes into Splunk.
+                    </p>
+                    <ol>
+                         <li>Navigate to the Search app.</li>
+                         <div class="controlButtonWrapper">
+                         <a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank">
+                             <span>Take me there...</span>
+                         </a>
+                         </div>
+                         <li>Type in a free-form search.  Real-time search supports all of Splunk's search language.</li>
+                         <li>Select the ''Real-time'' option, and then pick a window of time over which to display your real-time results as they stream in.</li>
+                         <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_realtime.png')}" alt="screenshow_uploadLocal" />
+                   </ol>
+               </div>
+
+               <div id="resultsactions" class="gsExpandDetails">
+                   <h2>Interact with results</h2>
+                   <p>Your search results are just as interactive as the timeline. In this section, you'll see how, with just one click, you can add, remove, and exclude terms from your search. </p>
+                   <ol>
+                        <li>Navigate to the Search app.</li>
+                        <div class="controlButtonWrapper">
+                            <a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank">
+                                <span>Take me there...</span>
+                            </a>
+                        </div>
+                        <li>Run a search for any term in your data.</li>
+                        <li>Move your mouse over your search results. Notice that words and phrases highlight as you mouse over them, indicating that you can add these terms to your search.</li>
+                        <li>Highlight and click a term in your search results. Your search updates to include this term in the search bar and filters out all previous results that don't match.</li>
+                        <li>Alternately, click any term in your search results that is already highlighted; Splunk updates and removes that term from your search.</li>
+                        <li>Additionally, you can specify terms for Splunk to exclude. Highlight the term and alt-click (in Windows, ctrl-click); Splunk updates your search to exclude this term with a Boolean NOT operation.</li>
+                   </ol>
+               </div>
+
+               <div id="fields" class="gsExpandDetails">
+                    <h2>Use fields to search</h2>
+                    <p>Free form search is easy and powerful, but it doesn't always give you the answer that you want. For example, you may want to exclude events with the HTTP status code 200. But, if you just search for "NOT 200", you'll also remove events you might want to keep, such as "503" status events coming from IP addresses with 200 in them.</p>
+                    <p>As Splunk indexes every term in your original data, it discovers and adds fields based on name/value pairs, headers, or other information that is otherwise self-explanatory. For example, Splunk automatically adds information about where the data came from into host, source and sourcetype fields.  Splunk might also recognize other parts of your data, such as IP addresses, HTTP status codes, etc. You can also add your own fields, as discussed in the Add knowledge section of this app.</p>
+                    <ol>
+                        <li>Navigate to the Search app.</li>
+                        <div class="controlButtonWrapper">
+                              <a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank">
+                                  <span>Take me there...</span>
+                              </a>
+                        </div>
+                        <li>For example, search for web activity:</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_http.png')}" alt="screenshow_uploadLocal" />
+                        <li>Notice the Fields menu next to the search results, on the left hand side. These are fields that Splunk automatically discovers and adds.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/fields_menu.png')}" alt="screenshow_uploadLocal" />
+                        <p>Fields that are visible in your search results are listed under the 'selected fields' header. You can select more fields to show. Other fields that Splunk discovered automatically are listed under 'interesting fields'.</p>
+                        <li>Next to each field name is the number of different values that exist for the field in your search results. Click on any of the field names to see the top values of each field. Click on any of the field values to add it as a filter to your search.</li>.
+                        <li>If you are searching through web data, you can add the HTTP status to the fields menu by clicking 'Pick fields' and picking 'status' from the pop-up menu that appears.</li>
+                        <li>Notice that the values of the 'status' field are the HTTP status codes: 200, 503, 404, etc. Now, you can use this knowledge to search for or exclude specific field values. A search for all unsuccessful Web access events might be:</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_httpnotstatus200.png')}" alt="screenshow_uploadLocal" />
+                        <li>You can also use comparison operators ( >, <, >=, <=) when searching with fields; to see all events with status values greater than 300, search for:</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_status300.png')}" alt="screenshow_uploadLocal" />
+                     </ol>
+               </div>
+               <div id="timeline" class="gsExpandDetails">
+                    <h2>Investigate with the timeline</h2>
+                    <p>The timeline is a visual representation of the number of events that occur at each point in time. Thus, you can use the timeline to highlight patterns of events or investigate peaks and lows in event activity.</p>
+                    <ol>
+                        <li>Navigate to the Search app.</li>
+                           <div class="controlButtonWrapper">
+                              <a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank">
+                                  <span>Take me there...</span>
+                              </a>
+                           </div>
+                        <li>Try running a search for 'error' and notice the timeline right below your search.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_timeline.png')}" alt="screenshow_uploadLocal" />
+                        <li>As the timeline updates with your search results, you might notice clusters or patterns of events; peaks or valleys in the timeline can indicate spikes in activity or server downtime.</li>
+                        <li>Click on a point in the timeline and drag your mouse over a cluster of bars to a second point. Your search results update to display only the events that occurred in that selected time range.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/timeline2.png')}" alt="screenshow_uploadLocal" />
+                        <li>Click on one bar in the timeline. Your search results update to display only the events that occur at that selected point in time. </li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/timeline3.png')}" alt="screenshow_uploadLocal" />
+                    </ol>
+               </div>
+
+               <div id="searchassist" class="gsExpandDetails">
+                   <h2>Use search assistant</h2>
+                   <p>Search assistant is a quick in-product reference for users who are constructing searches. It provides details about the search command, including examples of usage, and suggests other commands for you to use.</p>
+                   <ol>
+                        <li>Navigate to the Search app.</li>
+                        <div class="controlButtonWrapper">
+                           <a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank">
+                               <span>Take me there...</span>
+                           </a>
+                        </div>
+                        <li>To open Search Assistant, click the green arrow under the search bar.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_assist.png')}" alt="screenshow_uploadLocal" />
+                        <li>If the search bar is empty, you'll see a brief description of searching in Splunk and how to construct searches. By default, the assistant displays information for the search command.</li>
+                        <li>The left side of Search Assistant shows a history of the command's usage and what commands were most often used next.</li>
+                        <li>The right side of Search Assistant shows a brief description of the search command and examples of usage.</li>
+                   </ol>
+               </div>
+          </div>
+
+          <div class="gsDetails" id="knowledgeTab">
+               <h2>Add knowledge</h2>
+               <p>Splunk takes search where it's never been before by automatically extracting knowledge from your IT data and letting you add your own knowledge on-the-fly. Add knowledge about the events, fields, transactions, patterns and statistics in your data. You can identify, name and tag this data as well.</p>
+               <p>Splunk maps all this knowledge at search time, so you can add new fields and event types anytime you need them, without re-indexing the data. Go from finding all events with a particular username, to instantly getting statistics on specific user activities.</p>
+               <ul class="gs-subnav">
+                   <li><a href="#" class="gsExpandLink gsExpandLinkHighlighted" divToShow="#classifyevents">Classify similar events</a></li>
+                   <li><a href="#" class="gsExpandLink" divToShow="#extractfields">Extract new fields</a></li>
+                   <li><a href="#" class="gsExpandLink" divToShow="#tagevents">Tag field values</a></li>
+                   <li><a href="#" class="gsExpandLink" divToShow="#moreknow">Learn more about Splunk Knowledge</a></li>
+               </ul>
+
+               <div id="classifyevents" class="gsExpandDetails" style="display: block;">
+                   <h2>Classify similar events</h2>
+                   <p>When you search your data, you're essentially weeding out all unwanted events; the results of your search are events that share common characteristics, and you can give them a collective name or "event type". The names of your event types are added as values into an eventtype field. This means that you can search for these groups of events the same way you search for any field. The following example takes you through the steps to save a search as an eventtype and then searching for that field.</p>
+                   <p>If you run frequent searches to investigate SSH and firewall activities, such as sshd logins or firewall denies, you can save these searches as an event type. Also, if you see error messages that are cryptic, you can save it as an event type with a more descriptive name.</p>
+                   <ol>
+                        <li>Navigate the Search app.</li>
+                        <div class="controlButtonWrapper">
+                           <a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank">
+                               <span>Take me there...</span>
+                           </a>
+                        </div>
+                        <li>If regularly track SSH activity, such as login attempts, you can save this search as an event type. First, run a search; for example, a search for SSH logins might be:</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_sshdlogin.png')}" alt="screenshow_uploadLocal" />
+                        <li>After you run a search, select the "Event type..." option from the 'Create' dropdown menu. The Save Event Type window appears. </li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/save_event_type.png')}" alt="screenshow_uploadLocal" />
+                        <li>Follow the directions on the screen to name your event type; you might name this event type "sshlogin". Modify the search string if necessary. Optionally, define tags for your event type; this is discussed in more detail later. When you're finished, click "Save".</li>
+                        <li>You can also save event types for other types of SSH activity, such as logouts and timeouts. Now to search for just SSH logins: </li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_eventtypesshlogin.png')}" alt="screenshow_uploadLocal" />
+                        <li>If you saved the other saved event types named sshlogout and sshtimeout, you can quickly search for all SSH events:</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_eventypessh_all.png')}" alt="screenshow_uploadLocal" />
+                   </ol>
+               </div>
+
+               <div id="extractfields" class="gsExpandDetails">
+                    <h2>Extract new fields</h2>
+                    <p>Splunk automatically extracts knowledge for you as you index new data; and you can also add new knowledge anytime you need it -- without re-indexing your data. This section shows you how to use the field extractor to interactively extract and save new fields.</p>
+                    <ol>
+                        <li>Navigate to the Search app.</li>
+                        <div class="controlButtonWrapper">
+                           <a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank">
+                               <span>Take me there...</span>
+                           </a>
+                        </div>
+                        <li>Run a search for a host, source or sourcetype value. Field extraction for any set of events is linked to the host, source or sourcetype value associated with those events.</li>
+                        <li>Select an event from your results.</li>
+                        <li>Click on the blue dropdown arrow next to the timestamp for this event. This opens a menu.</li>
+                        <li>Select "Extract Fields". This opens the interactive Extract fields window.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/extract_field.png')}" alt="screenshow_uploadLocal" />
+                        <li>Follow the instructions on the page. For example, you might want to add fields for username, source IP, and destination IP.</li>
+                    </ol>
+               </div>
+
+               <div id="tagevents" class="gsExpandDetails">
+                    <h2>Tag field values</h2>
+                    <p>Tags help you group search results that share field values. A tag is a name that you attach to a particular value of a field such as eventtype, host, source, or sourcetype. For example, you can tag a host's values with a service name or a note indicating compliance with regulations like PCI. </p>
+                    <p>Generally, you can use tags to:</p>
+                    <ul>
+                         <li>Help you track abstract field values, like IP addresses or ID numbers. which you can group with a location or name.</li>
+                         <li>Use one tag to group a set of field values together, so you can search on them with one simple command.</li>
+                         <li>Give specific extracted fields multiple tags that reflect different aspects of their identity, which enable you to perform tag-based searches that help you quickly narrow down the results you want.</li>
+                    </ul>
+                    <p>There are two ways to search for a tag - against all fields or a particular fielddialog.</p>
+                    <ol>
+                        <li>If you want to find any event with a field that was tagged deny:</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_tagdeny.png')}" alt="screenshow_uploadLocal" />
+                        <li>If you want to find only events with an event type tag, deny:</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_tageventtypedeny.png')}" alt="screenshow_uploadLocal" />
+                    </ol>
+               </div>
+
+               <div id="moreknow" class="gsExpandDetails">
+                    <h2>Learn more about Splunk Knowledge</h2>
+                    <p>There's more that you can do to best use and extend Splunk so that it works with your data in a manner that fulfills the needs of your enterprise. You'll want to consult the <a href="${generateSelfHelpLink('gettingstarted.knowledge')}" target="_blank" title="Splunk help">Knowledge Manager manual</a> as you optimize, maintain, and expand your Splunk deployment over time.</p>
+                    <p>The Knowledge Manager manual teaches you:</p>
+                    <ul>
+                        <li>How to manage and maintain Splunk "knowledge objects" such as events, event types, fields, source types, tags, and transactions.</li>
+                        <li>Best practices for working with fields, including lookups and aliasing.</li>
+                        <li>Strategies for grouping conceptually related events into transactions.</li>
+                    </ul>
+               </div>
+           </div>
+
+
+          <div class="gsDetails" id="monitorTab">
+               <h2>Monitor and alert</h2>
+               <p>After you use Splunk to identify and locate problems in your system, take advantage of its monitoring and alerting capabilities to keep you notified if those situations recur. Save your searches to run them whenever you want, or set up an alert to do the monitoring for you. Configure alerts to fire when the search results meet conditions that you define. You can even alert on events happening in real time.</p>
+               <ul class="gs-subnav">
+                   <li><a href="#" class="gsExpandLink gsExpandLinkHighlighted" divToShow="#saveandschedule">Save a search</a></li>
+                   <li><a href="#" class="gsExpandLink" divToShow="#setupalert">Set up an alert</a></li>
+               </ul>
+               <div id="saveandschedule" class="gsExpandDetails" style="display: block;">
+                    <h2>Save a search</h2>
+                    <ol>
+                         <li>Create a search that returns results you're interested in.</li>
+                         <div class="controlButtonWrapper">
+                              <a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank">
+                                  <span>Take me there...</span>
+                              </a>
+                         </div>
+                         <li>When your search is done running, select "Save search" from the 'Save' dropdown underneath the search bar:</li>
+                         <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/saveactions.png')}" alt="screenshow_uploadLocal" />
+                         <li>This pops up the save a search dialog.</li>
+                         <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/savesearch.png')}" alt="screenshow_uploadLocal" />
+                         <li>Set more options by following the rest of the directions on the page.</li>
+                    </ol>
+               </div>
+               <div id="setupalert" class="gsExpandDetails">
+                    <h2>Set up an alert</h2>
+                    <p>You can turn any search into an alert.  Alerts notify you by email or RSS. You can also set up alerts to trigger a script.</p>
+                    <ol>
+                         <li>If you want to set up your search to be an alert, choose "Alert" from the 'Create' dropdown underneath the search bar:</li>
+                         <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/alertactions.png')}" alt="screenshow_uploadLocal" />
+                         <li>This pops up the Create Alert dialog:</li>
+                         <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/alertworkflow.png')}" alt="screenshow_uploadLocal" />
+                         <li>Follow the directions in the dialog to set up one or more alert methods.  Make sure your Splunk server has sendmail (or another MTA) enabled if you want Splunk to email you.</li>
+                    </ol>
+               </div>
+          </div>
+
+          <div class="gsDetails" id="reportTab">
+          <h2>Report and analyze</h2>
+          <p>Create reports with Splunk's built-in visualization tools. Splunk gives you a wide range of options when it comes to reporting. Create simple "top values over time" reports directly from your search results. Use Report Builder to define and format sophisticated charts. Or define reports by hand using Splunk's powerful statistical commands. Finally, you can quickly create dashboards that share your best reports with others.</p>
+          <ul class="gs-subnav">
+               <li><a href="#" class="gsExpandLink gsExpandLinkHighlighted" divToShow="#basicreports">Create a simple report</a></li>
+               <li><a href="#" class="gsExpandLink" divToShow="#reportbuilder">Use Report Builder</a></li>
+               <li><a href="#" class="gsExpandLink" divToShow="#reportcommands">Use reporting commands</a></li>
+               <li><a href="#" class="gsExpandLink" divToShow="#previewreports">Preview reports</a></li>
+               <li><a href="#" class="gsExpandLink" divToShow="#builddashboards">Build dashboards</a></li>
+          </ul>
+
+               <div id="basicreports" class="gsExpandDetails" style="display: block;">
+                    <h2>Create a simple report</h2>
+                    <p>After you run a search you can quickly launch reports providing basic information about the fields in your search results.</p>
+                    <ol>
+                      <li>Navigate to the Search app.</li>
+                      <div class="controlButtonWrapper">
+                            <a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank">
+                                <span>Take me there...</span>
+                            </a>
+                        </div>
+                        <li>Run a search for any term or field you want to report on.</li>
+                        <li>When your search is done find a field in the search results sidebar that you would like to report on and click it. For example, pick UID if you want to report on a set of user IDs.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/report_fieldselect.png')}" alt="screenshow_uploadLocal" />
+                        <li>A popup window appears, displaying information about the field you've selected. You can launch a report for each field. Select a report you'd like to run, such as "Average over time" or "Top values overall."</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/report_topvals.png')}" alt="screenshow_uploadLocal" />
+                        <li>Report Builder appears in a separate window, showing a chart based on the event data returned by your search. From here you can reformat the report, save it, print it, and more.</li>
+                    </ol>
+               </div>
+               <div id="reportbuilder" class="gsExpandDetails">
+                    <h2>Use Report Builder</h2>
+                    <p>Launch the report builder to create and format your reports.</p>
+                    <ol>
+                        <li>Navigate to the Search app.</li>
+                        <div class="controlButtonWrapper">
+                              <a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank">
+                                  <span>Take me there...</span>
+                              </a>
+                          </div>
+                        <li>Run a search for any term or field you want to report on.</li>
+                        <li>In the 'Create' menu over the timeline, you'll see a link to create a report. Click this link to launch the Report Builder. (You don't need to wait for the search to complete before launching the Report Builder.)</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/report_build.png')}" alt="screenshow_uploadLocal" />
+                        <li>You can also create a report from directly within the timeline view by clicking on the Results Chart button at the top of the Results area.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/report_sprite.png')}" alt="screenshow_uploadLocal" />
+                    </ol>
+            </div>
+
+            <div id="reportcommands" class="gsExpandDetails">
+                    <h2>Use reporting commands</h2>
+                    <p>When you use the Report Builder drop-down lists to define a report, you may notice that Splunk updates the Report Builder search box with the statistical reporting commands Splunk uses to run the report. This section explains how to use these reporting commands directly from the search bar.</p>
+                    <ol>
+                        <li>Navigate to the Search app.</li>
+                        <div class="controlButtonWrapper">
+                              <a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank">
+                                  <span>Take me there...</span>
+                              </a>
+                        </div>
+                        <li>Run a search for any term in your data.</li>
+                        <li>Follow your search terms with a "pipe" character and some basic reporting commands. This basic report, for example, finds the top 5 most common sources in your internal Splunk index:</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/report_top5.png')}" alt="screenshow_uploadLocal" />
+                        <li>Select the Results Chart button underneath the timeline to see your results as a chart. Reformat the report if you wish using the 'Formatting options.'</li>
+                        <li>If you want to build a more sophisticated report, there's more information about Splunk reporting commands in Splunk's <a href="${generateSelfHelpLink('gettingstarted.report')}" target="_blank" title="Splunk help">User Manual</a>.</li>
+                    </ol>
+            </div>
+
+            <div id="previewreports" class="gsExpandDetails">
+                    <h2>Preview reports</h2>
+                    <p>When you run a report, Splunk can preview the report results for you as the search runs. This feature saves you time, especially when running searches across large time periods. Note that report preview is enabled by default for searches that use reporting commands, so try it out on a report over a large period of time.</p>
+                    <ol>
+                        <li>Navigate to the Search app.</li>
+                        <div class="controlButtonWrapper">
+                              <a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank">
+                                  <span>Take me there...</span>
+                              </a>
+                        </div>
+                        <li>Enter a report-generating search into the search bar.</li>
+                        <li>While the report is running, you'll see a preview show up in the results area.</li>
+                        <li>If you're not happy with your report and want to change it before it finishes running, just click the cancel button and edit the search string.</li>
+                    </ol>
+            </div>
+
+            <div id="builddashboards" class="gsExpandDetails">
+                    <h2>Build dashboards</h2>
+                    <p>Save and share your searches and reports by creating a dashboard. Dashboards are a place to collect your most useful and informative reports, and make them available to other users. Start a dashboard from scratch, or create one as you create reports.</p>
+                    <ol>
+                        <li>Navigate to the Search app.</li>
+                        <div class="controlButtonWrapper">
+                              <a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank">
+                                  <span>Take me there...</span>
+                              </a>
+                        </div>
+                        <li>If you’ve already run a search or report, under the Create menu, clicking "Dashboard panel…" will allow you to add your search or report to an existing dashboard, or create a new dashboard.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/actionsdash.png')}" alt="screenshow_uploadLocal" />
+                    </ol>
+                    <p>You can also start by creating your dashboard from scratch.</p>
+                    <ol>
+                         <li>From the Dashboards & Views menu, choose "Create dashboard":</li>
+                         <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/adddash.png')}" alt="screenshow_uploadLocal" />
+                         <li>The Create new dashboard window appears. Give the dashboard a short name (Dashboard ID) and long name (Dashboard name). Click Create when you're done.</li>
+                         <li>At first, your dashboard is empty. Click Edit the dashboard to open the Edit window, and choose the panel type and saved search for your first panel. Click Add panel to add your new panel to the dashboard.</li>
+                        <li>Click Edit panel if you want to rename the panel, change its format, or update the search it's based on.</li>
+                        <li>Repeat the last two steps to create more panels. Drag them around until you have them set up the way you want them.</li>
+                        <li>You're finished! Click Close to see how your dashboard looks. If you see stuff you want to change, go to the Action menu at the top of the page, select Edit dashboard..., and fix them.</li>
+                    </ol>
+            </div>
+     </div>
+
+     <div class="gsDetails" id="moreTab">
+          <h2>More</h2>
+          <p>Looking for more information on what you can do with Splunk? Here are a few more links to Splunk's online documentation.</p>
+          <ul>
+            <li><b>Add more users</b>: Learn how to add more users and configure access controls for them <a href="${generateSelfHelpLink('gettingstarted.users')}" target="_blank" title="Splunk help">here</a>. <b>Note</b>: This feature is not available when using Splunk Free. If you are using a trial version of Splunk Enterprise, you won't have access to this feature after your trial expires.</li>
+            <li><b>Set up distributed search</b>: Read more about how to use multiple instances of Splunk to distribute processing and search across them all <a href="${generateSelfHelpLink('gettingstarted.distsearch')}" target="_blank" title="Splunk help">here</a>.</li>
+            <li><b>Create your own apps</b>: Learn how to build apps to meet your organization's needs <a href="${generateSelfHelpLink('gettingstarted.apps')}" target="_blank" title="Splunk help">here</a>.</li>
+        </ul>
+    </div>
+</div><!-- wrapper -->
+
+
+
+
+
+
+

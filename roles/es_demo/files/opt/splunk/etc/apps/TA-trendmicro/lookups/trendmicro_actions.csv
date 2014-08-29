@@ -1,0 +1,6 @@
+vendor_action,action,app
+"Virus successfully detected, cannot perform the Clean action",allowed,
+"Virus successfully detected, cannot perform the Quarantine action",allowed,
+"Cleaned",blocked,
+"logged in",success,trendmicro
+"adds account",created

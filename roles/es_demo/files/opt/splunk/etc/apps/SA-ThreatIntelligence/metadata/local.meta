@@ -1,0 +1,66 @@
+
+## To allow additional roles to manage suppressions, append to the write list like so
+## access = read : [ * ], write : [ admin,role2,role3 ]
+[eventtypes]
+access = read : [ * ], write : [ admin ]
+
+## Users will need permission to edit transforms and lookups to manage blocklists:
+[lookups]
+access = read : [ * ], write : [ admin ]
+
+[transforms]
+access = read : [ * ], write : [ admin ]
+## To allow additional roles to manage review statuses, append to the write list like so
+## access = read : [ * ], write : [ admin,role2,role3 ]
+[authorize]
+access = read : [ * ], write : [ admin ]
+
+## To allow additional roles to manage correlation searches, 
+## append to the write list like as shown below for each of the
+## following stanzas: savedsearches, correlationsearches
+
+## access = read : [ * ], write : [ admin,role2,role3 ]
+[savedsearches]
+access = read : [ * ], write : [ admin ]
+
+[correlationsearches]
+access = read : [ * ], write : [ admin ]
+
+[]
+access = read : [ * ], write : [ admin ]
+export = system
+version = 6.1.3
+modtime = 1406780857.078525000
+import = DA-ESS-AccessProtection, DA-ESS-EndpointProtection, DA-ESS-IdentityManagement, DA-ESS-NetworkProtection, SA-AccessProtection, SA-AuditAndDataProtection, SA-EndpointProtection, SA-IdentityManagement, SA-NetworkProtection, SA-ThreatIntelligence, SA-Utils, Splunk_SA_CIM, Splunk_TA_bro, Splunk_TA_flowfix, Splunk_TA_mcafee, Splunk_TA_nessus, Splunk_TA_nix, Splunk_TA_norse, Splunk_TA_windows, SplunkEnterpriseSecuritySuite, TA-airdefense, TA-alcatel, TA-bluecoat, TA-cef, TA-fireeye, TA-flowd, TA-fortinet, TA-ftp, TA-ip2location, TA-juniper, TA-ncircle, TA-nmap, TA-oracle, TA-ossec, TA-paloalto, TA-rsa, TA-sav, TA-sep, TA-snort, TA-sophos, TA-splunk, TA-tippingpoint, TA-trendmicro, TA-websense, search
+
+[inputs/threatlist_manager%3A%2F%2Fdefault]
+version = 6.1.3
+modtime = 1406780815.796843000
+
+[datamodels/Incident_Management]
+version = 6.1.3
+modtime = 1406780816.963658000
+
+[datamodels/Risk]
+version = 6.1.3
+modtime = 1406780817.018956000
+
+[lookups/mozilla_public_suffix.csv]
+version = 6.1.3
+modtime = 1406780863.194276000
+
+[lookups/threatlist_by_domain_or_url.csv]
+version = 6.1.3
+modtime = 1406780904.083207000
+
+[lookups/threatlist_by_cidr.csv]
+version = 6.1.3
+modtime = 1406780904.342492000
+
+[lookups/threatlist_by_str.csv]
+version = 6.1.3
+modtime = 1406780904.545812000
+
+[lookups/alexa_by_str.csv]
+version = 6.1.3
+modtime = 1406780967.884401000

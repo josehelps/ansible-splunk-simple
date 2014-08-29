@@ -1,0 +1,45 @@
+<quickstart>
+
+    <title>WebSphere logs, metrics and other data</title>
+    <header>Including WebSphere and Java/J2EE server and application log files, WebSphere metrics via JMX, JMS messages.</header>
+    <optiongroup>
+        <option>
+            <title>Get the Splunk for WebSphere Application Server app</title>
+            <summary>This app indexes WebSphere Application Server logs and metrics. It also contains dashboards and searches for WebSphere Application Server data.</summary>
+            <doctarget>[learnmore.recipes.app.websphere]</doctarget>
+            <action type="install_app">
+                <label>Next</label>
+                <target>SplunkWAS</target>
+            </action>
+        </option>
+        
+        <option>
+            <title>Collect messages from JMS</title>
+            <summary>Splunk can programmatically collect messages from JMS by running and collecting the output from a script.</summary>
+            <doctarget>[learnmore.recipes.jms]</doctarget>
+            <action type="add_script">
+                <label>Next</label>
+            </action>
+        </option>
+
+        <option>
+            <title>Consume WebSphere server logs on this Splunk server</title>
+            <summary>Configure Splunk to index any WebSphere data available to this Splunk server.</summary>
+            <doctarget>[learnmore.recipes.files.websphere]</doctarget>
+            <action type="add_monitor">
+                <label>Next</label>
+            </action>
+        </option>
+
+        <option>
+            <title>Forward WebSphere data to this Splunk server from another server</title>
+            <summary>Use Splunk's universal forwarder to send data from any machine to your Splunk server</summary>
+            <doctarget>[learnmore.recipes.forwarder]</doctarget>
+            <action type="href">
+                <label>Download the universal forwarder</label>
+                <target>http://splunk.com/r/universalforwarder</target>
+            </action>
+        </option>
+    </optiongroup>
+
+</quickstart>

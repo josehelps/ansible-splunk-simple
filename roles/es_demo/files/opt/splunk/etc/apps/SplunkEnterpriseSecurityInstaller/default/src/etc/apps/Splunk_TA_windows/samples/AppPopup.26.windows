@@ -1,0 +1,11 @@
+04/20/10 03:42:32 PM
+LogName=System
+SourceName=Application Popup
+EventCode=26
+EventType=4
+Type=Information
+ComputerName=HOST0167
+Category=0
+CategoryString=none
+RecordNumber=4
+Message=Application popup: Windows - Virtual Memory Minimum Too Low : Your system is low on virtual memory. Windows is increasing the size of your virtual memory paging file. During this process, memory requests for some applications may be denied. For more information, see Help. 

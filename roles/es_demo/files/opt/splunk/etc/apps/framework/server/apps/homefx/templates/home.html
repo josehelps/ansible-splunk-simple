@@ -1,0 +1,91 @@
+{% extends 'splunkdj:base_with_account_bar.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block css %}
+  <style>
+    .container {
+      padding-top: 40px;
+    }
+    .apps {
+        margin: 0;
+        padding-bottom: 5px;
+    }
+    .app {
+        list-style-type: none;
+        margin-bottom: 20px;
+        margin-right: 20px;
+        padding-top: 2px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .app + .app {
+        border-top: 1px solid #ccc;
+    }
+    .app-title {
+        font-size: 16px;
+        line-height: 38px;
+    }
+    .app-link {
+    }
+    .app-link:hover {
+        text-decoration: none;
+    }
+    .app-title {
+        cursor: pointer;
+    }
+    .app-version {
+        float: right;
+        color: #888;
+        font-size: 12px;
+    }
+    .panel {
+        border: 1px solid #ccc;
+        background-color: #fff;
+        padding: 15px 0px 0px 20px;
+        margin-top: 0;
+        margin-bottom: 40px;
+        border-radius: 4px;
+        box-shadow: 0px 1px 1px rgba(0,0,0,0.08);
+    }
+    body {
+        background: #eee;
+    }
+  </style>
+{% endblock css %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="offset1 span9 panel">
+        <ul class="apps sortable">
+          {% for app in apps %}
+            <li class="app">
+              <div class="app-title">
+                <a class="app-link" href="{% url app.name|add:":home" %}">{{app.label}}</a>
+                <span class="app-version">{{app.version}}</span>
+                <p>{{app.description}}</p>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <p>
+  </div>
+{% endblock %}
+
+{% block js %}
+  <script>
+    require(["jquery"], function() {
+      $(function() {        
+          // Make it so the entire area is clickable
+          $("li.app").click(function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            window.location = $(e.currentTarget).find("a.app-link").attr("href");
+          });
+      });
+    });
+  </script>
+{% endblock js %}

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<dashboard>
+  <label>REST Audit</label>
+  <row>
+    <chart>
+      <searchName>Utils - Top REST actions</searchName>
+      <title>Top REST actions</title>
+      <option name="charting.chart">pie</option>
+    </chart>
+    <chart>
+      <searchName>Utils - Top REST by duration</searchName>
+      <title>Top REST handlers by duration</title>
+      <option name="charting.axisTitleX.text"/>
+      <option name="charting.axisTitleY.text">seconds</option>
+      <option name="charting.chart">bar</option>
+      <option name="charting.chart.nullValueMode">gaps</option>
+      <option name="charting.chart.stackMode">default</option>
+      <option name="charting.layout.splitSeries">false</option>
+      <option name="charting.legend.placement">right</option>
+      <option name="charting.primaryAxisTitle.text"/>
+      <option name="charting.secondaryAxis.maximumNumber">""</option>
+      <option name="charting.secondaryAxis.minimumNumber">""</option>
+      <option name="charting.secondaryAxis.scale">""</option>
+      <option name="charting.secondaryAxisTitle.text"/>
+    </chart>
+  </row>
+  <row>
+    <table>
+      <searchName>Utils - Top REST actions by sourcetype</searchName>
+      <title>Top REST actions by handler</title>
+      <option name="count">10</option>
+      <option name="displayRowNumbers">true</option>
+    </table>
+  </row>
+</dashboard>

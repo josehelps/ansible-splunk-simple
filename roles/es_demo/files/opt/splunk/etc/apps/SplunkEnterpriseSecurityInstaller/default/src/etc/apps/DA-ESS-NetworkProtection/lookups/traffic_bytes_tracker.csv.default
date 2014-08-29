@@ -1,0 +1,5 @@
+min_bytes,mean_bytes,max_bytes,stdev,total_count,Z,search
+0,0,0,0,0,1,(All_Traffic.bytes=-1)
+0,0,0,0,0,2,(All_Traffic.bytes=-1)
+0,0,0,0,0,3,(All_Traffic.bytes=-1)
+0,0,0,0,0,4,(All_Traffic.bytes=-1)

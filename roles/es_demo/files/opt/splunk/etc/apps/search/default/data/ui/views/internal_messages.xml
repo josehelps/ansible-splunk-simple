@@ -1,0 +1,33 @@
+<dashboard script="status_dashboard.js" isDashboard="False">
+	<label>Internal Errors and Messages</label>
+	<row>
+		<table id="element1">
+			<title>Latest Splunkd Errors</title>
+			<searchString>index=_internal source=*splunkd.log* (log_level=ERROR OR log_level=CRIT OR log_level=FATAL)</searchString>
+			<earliestTime>-24h@h</earliestTime>
+			<latestTime>now</latestTime>
+		</table>
+	</row>
+	<row>
+		<chart id="element2">
+			<title>Messages by Minute</title>
+			<searchString>index=_internal source="*metrics.log" eps "group=per_source_thruput" NOT filetracker | eval events=eps*kb/kbps | timechart fixedrange=t span=1m limit=5 sum(events) by series</searchString>
+			<earliestTime>-3h</earliestTime>
+			<latestTime>now</latestTime>
+			<option name="charting.axisX.scale">linear</option>
+			<option name="charting.axisY.scale">linear</option>
+			<option name="charting.chart">column</option>
+			<option name="charting.chart.nullValueMode">gaps</option>
+			<option name="charting.chart.rangeValues">["0","30","70","100"]</option>
+			<option name="charting.chart.stackMode">default</option>
+			<option name="charting.chart.style">shiny</option>
+			<option name="charting.drilldown">1</option>
+			<option name="charting.gaugeAutoRanges">1</option>
+			<option name="charting.gaugeColors">["84E900","FFE800","BF3030"]</option>
+			<option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+			<option name="charting.legend.placement">right</option>
+			<option name="charting.axisTitleX.text">Time</option>
+			<option name="charting.axisTitleY.text">Count</option>
+		</chart>
+	</row>
+</dashboard>

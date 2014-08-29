@@ -1,0 +1,11 @@
+20100616182011.000000
+Caption=GLASSHOU-2975EB\Administrator
+Description=Built-in account for administering the computer/domain
+Domain=GLASSHOU-2975EB
+InstallDate=NULL
+LocalAccount=True
+Name=Administrator
+SID=S-1-5-21-1715567821-926492609-725345543-500
+SIDType=1
+Status=Degraded
+wmi_type=UserAccounts

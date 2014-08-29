@@ -1,0 +1,45 @@
+
+###### Identity Management ######
+
+##### Default asset/identity consolidation settings #####
+[identity_manager]
+interval = 300
+master_host =
+
+# Asset lists
+[identity_manager://demo_assets]
+category = demo_assets
+description = Demonstration asset list.
+disabled = true
+target = asset
+url = lookup://demo_asset_lookup
+
+[identity_manager://static_assets]
+category = static_assets
+description = List containing static assets.
+disabled = true
+target = asset
+url = lookup://simple_asset_lookup
+
+# Identity lists
+
+[identity_manager://administrative_identities]
+category = administrative_identities
+description = List of commonly-used administrative or privileged identities.
+disabled = true
+target = identity
+url = lookup://administrative_identity_lookup
+
+[identity_manager://demo_identities]
+category = demo_identities
+description = Demonstration identity list.
+disabled = true
+target = identity
+url = lookup://demo_identity_lookup
+
+[identity_manager://static_identities]
+category = static_identities
+description = List containing static identities.
+disabled = true
+target = identity
+url = lookup://simple_identity_lookup

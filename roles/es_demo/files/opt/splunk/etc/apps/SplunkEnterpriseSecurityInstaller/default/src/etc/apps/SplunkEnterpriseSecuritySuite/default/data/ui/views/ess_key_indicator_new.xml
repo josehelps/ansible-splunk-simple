@@ -1,0 +1,10 @@
+<dashboard script="ess_key_indicator_edit.js" stylesheet="ess_key_indicator_edit.css" isDashboard="false">
+    <label>New Key Indicator Search</label>
+    <row>
+        <html id="element1">
+            <div id="key_indicator_editor">
+                Loading
+            </div>
+        </html>
+    </row>
+</dashboard>

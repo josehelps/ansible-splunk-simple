@@ -1,0 +1,57 @@
+    
+#no_permissions div.adminGroup {
+   border: none;
+   box-shadow: none;
+   padding: 0px;
+}
+    
+#no_permissions div.adminListItem {
+   border-bottom: none;
+   min-height: 45px;
+   padding-left: 15px;
+}
+    
+#no_permissions dd {
+   border-left: none;
+   padding-top: 16px;
+}
+    
+.section{
+   float: left;
+   width: 250px;	
+}
+    
+.child_nav_entries{
+   padding-left: 20px;
+}
+    
+.nav_entry{
+   margin: 5px;
+   font-size: 11px;
+}
+    
+.divider{
+   border-bottom: 1px solid #AAAAAA;
+}
+    
+.controls{
+   clear:both;
+}
+    
+.navEditorForm > .nav_entry{
+   float: left;
+   width: 100px;
+}
+	
+.main{
+   background-color: black;
+   color: #CCC;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   font-size: 11px;
+   font-weight: bold;
+}
+	
+.collection > .child_nav_entries{
+   border: 1px solid #AAAAAA;
+}

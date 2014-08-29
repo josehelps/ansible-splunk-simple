@@ -1,0 +1,12 @@
+***SPLUNK*** index=os sourcetype=top source=top host=@host
+
+PID    USER      PR    NI    VIRT  RES     SHR     S  pctCPU  pctMEM cpuTIME   COMMAND
+@PID  james     ?     ?   @VIRTM   @RESM   6448K   ?  45.6    ?      06:07.08  python
+@PID  james     ?     ?   @VIRTM   @RESM     22M   ?  15.6    ?      02:15.99  splunkd
+@PID  james     ?     ?   @VIRTM   @RESM    107M   ?  15.3    ?      01:49:33  firefox
+@PID  root      ?     ?   @VIRTM   @RESM    220K   ?  10.5    ?      02:07:57  activitymonitord
+@PID  root      ?     ?   @VIRTM   @RESM    220K   ?  9.8     ?      00:00.23  top
+@PID  root      ?     ?   @VIRTM   @RESM     16M   ?  5.4     ?      81:24.29  vmware-vmx
+@PID  james     ?     ?   @VIRTM   @RESM   5572K   ?  3.4     ?      00:01.84  mdworker
+@PID  root      ?     ?   @VIRTM   @RESM      0B   ?  2.2     ?      77:54.40  kernel_task
+

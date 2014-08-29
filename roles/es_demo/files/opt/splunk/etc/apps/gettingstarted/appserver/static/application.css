@@ -1,0 +1,308 @@
+/**********************************
+override default splunk app stuff
+***********************************/
+div.AccountBar {
+padding: 0px;
+}
+
+
+.AccountBar .appLogoContainer {
+padding: 0;
+padding-left: 10px;
+}
+
+.appLogo {
+height: 43px;
+    width: 235px;
+    padding-right: 5px;
+    float: left;
+    background: url(appLogo.png) no-repeat 0 0;
+    _background: url(appLogo.gif) no-repeat 0 0;
+}
+
+.appHeaderWrapper h1 {
+display: none;
+}
+
+
+
+
+/* app header wrapper */
+
+.appHeaderWrapper {
+    background-image: url(bg_sky.png);
+    background-position: bottom;
+    background-repeat: repeat-x;
+}
+
+
+/* app menu */
+
+.splMenu-secondary ul {
+	background-color:#ceedff;
+	border-color:#fff;
+}
+
+.splMenu-secondary a{
+	color:#463E27;
+}
+
+/*--- top-right text and links ---*/
+
+
+.accountBarItems a, .accountBarItems a:active, .accountBarItems a:visited {
+color: #463e27;
+}
+
+.appHeaderWrapper {
+color:#000;
+}
+
+.appHeaderWrapper a {
+color:#463e27;
+}
+
+
+
+/*--- set margin/padding to 0 for this app ---*/
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+/*--- turn off the nav bar ---*/
+
+.splHeader.splHeader-navigation {
+    border-bottom: 0;
+    background-image: none;
+    _background-image: none;
+}
+
+/*--- nuke the padding on module ---*/
+
+.SplunkModule {
+padding:0;
+}
+
+/*--- hide the logo---*/
+a.appLogo img {
+display: none;
+}
+
+
+/**********************************
+App specific stuff
+***********************************/
+
+.appHeaderWrapper h1 {
+    color: #435E0A;
+}
+
+.gs-Wrapper h1 {
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0;
+    margin-bottom: 14px;
+    padding: 0;
+    letter-spacing: -0.7px;
+    color: #000;
+    line-height: 1.2em;
+}
+
+h2 {
+    font-size: 21px;
+    font-weight: normal;
+    margin: 0;
+    margin-bottom: 14px;
+    padding: 0;
+    letter-spacing: -0.5px;
+    color: #435e0a;
+    line-height: 1.2em;
+}
+
+
+/* page structure */
+
+
+#gs-intro {
+    background: #e6f5fe url(bg_grass.png) repeat-x bottom;
+    color: #000;
+}
+
+#introInner {
+    padding-bottom: 10px;
+}
+
+div.resultsArea {
+    border: 0;
+}
+
+.gsDetails {
+    display: none;
+    padding-top: 25px;
+}
+
+.gs-Wrapper {
+    width: 960px;
+    margin: auto;
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+
+.gsExpandDetails {
+    display: none;
+    width: 625px;
+    overflow: auto;
+    overflow-x: hidden;
+    position: relative;
+    font-size: 14px;
+    padding-left: 4px;
+}
+
+/* top tabs */
+
+.gsTOC {
+    padding-top: 60px;
+}
+
+.gsTOC a {
+    padding: 10px 18px 8px 18px;
+    font-size: 14px;
+    margin-right: 5px;
+    color: #fff;
+    text-decoration: none;
+    background-color: #435e0a;
+    float: left;
+    margin-right: 7px;
+    display: block;
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-topright: 4px;
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    -moz-box-shadow:  inset 0 0 4px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow:  inset 0 0 4px rgba(0, 0, 0, 0.4);
+    box-shadow:  inset 0 0 4px rgba(0, 0, 0, 0.4);
+    /* SPL-61031 - truncate long text */
+    max-width: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.gsTOC a:hover {
+    background-color: #fff;
+    color: #505050;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.gsTOC a.gsTOCLinkHighlighted {
+    background-color: #fff;
+    color: #000;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+    box-shadow:none;
+}
+
+.gsTOC a:focus {
+    outline: none;
+}
+
+
+
+
+
+/* sub tabs */
+
+ul.gs-subnav {
+    list-style: none;
+    width: 325px;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+ul.gs-subnav li {
+    display: block;
+    height: 50px;
+    margin-bottom: 4px;
+}
+
+ul.gs-subnav a {
+    padding: 0 35px 0 15px;
+    display: block;
+    color: #000;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    font-size: 14px;
+    height: 50px;
+    line-height: 50px;
+    background-image: url(bg_link.png);
+    /* SPL-61031 - truncate long text */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+ul.gs-subnav a:hover {
+    color: #fff;
+    background-image: url(bg_link_hover.png);
+}
+
+ul.gs-subnav a.gsExpandLinkHighlighted {
+    color: #fff;
+    background-image: url(bg_link_selected.png);
+}
+
+ul.gs-subnav a:focus {
+    outline: none;
+}
+
+
+/*--- required for list and button alignment. aargh. ---*/
+.gsDetails li {
+clear: left;
+}
+
+.controlButtonWrapper {
+    margin-left: -5px;
+}
+
+
+.controlButtonWrapper a.splButton-primary{
+margin-bottom: 20px;
+margin-top: 10px;
+}
+
+.splButton-primary {
+height: 28px;
+font-size: 14px;
+background-color: #f47a03;
+background-image: url(overlay_gradient_28.png);
+background-position: 0 0;
+_background-image: none;
+-moz-box-shadow:  inset 0px 0px 3px rgba(0, 0, 0, 0.3);
+-webkit-box-shadow:  inset 0px 0px 3px rgba(0, 0, 0, 0.3);
+box-shadow:  inset 0px 0px 3px rgba(0, 0, 0, 0.3);
+}
+
+.splButton-primary:hover {
+background-color: #ff8712;
+}
+
+.gs-screenshot {
+margin: 10px 0 15px 0;
+}
+
+
+
+
+.hide {
+    display: none;
+}

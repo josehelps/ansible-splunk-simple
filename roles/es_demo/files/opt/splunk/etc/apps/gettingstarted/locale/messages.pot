@@ -1,0 +1,72 @@
+# Translations template for PROJECT.
+# Copyright (C) 2009 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2009-09-14 18:55-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.4\n"
+
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:59
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:142
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:145
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:147
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:339
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:452
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:498
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:499
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:500
+msgid "Splunk help"
+msgstr ""
+
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:59
+msgid "Developer Manual"
+msgstr ""
+
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:142
+msgid "scripted input"
+msgstr ""
+
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:145
+msgid "file system change monitoring"
+msgstr ""
+
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:147
+msgid "Splunk forwarders"
+msgstr ""
+
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:339
+msgid "Knowledge Manager manual"
+msgstr ""
+
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:452
+msgid "User Manual"
+msgstr ""
+
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:498
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:499
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:500
+msgid "here"
+msgstr ""
+
+#: /opt/splunk/etc/apps/gettingstarted/default/app.conf:2
+msgid "Getting started"
+msgstr ""
+
+#: /opt/splunk/etc/apps/gettingstarted/default/app.conf:8
+msgid ""
+"Get started with Splunk.  This app introduces you to many of Splunk's "
+"features.  You'll learn how to use Splunk to index data, search and "
+"investigate, add knowledge, monitor and alert, report and analyze.'"
+msgstr ""
+

@@ -1,0 +1,89 @@
+
+{% load splunkmvc %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Splunk Application Framework Quick Start</title>
+		<!-- Bootstrap -->
+    	<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}splunkjs/css/bootstrap.css"/>
+		<link href="{{STATIC_URL}}quickstartfx/css/style.css" rel="stylesheet" type="text/css" media="screen">
+		<link href="{{STATIC_URL}}quickstartfx/css/prettify.css" rel="stylesheet" type="text/css" media="screen">
+		<script type="text/javascript" src="{{STATIC_URL}}quickstartfx/js/prettify.js"></script>
+		<script type="text/javascript" src="{{STATIC_URL}}quickstartfx/js/jquery-1.8.2.min.js"></script>
+
+	</head>
+	<body onload="prettyPrint();">
+		<div id="splunk-bar"></div>
+		<div id="container">
+			<div class="progress-buttons" id="top-progress-buttons">
+				<a href="{% url 'quickstartfx:steps' id='addSearch' %}" class="btn">Back</a>
+				<a href="{% url 'quickstartfx:steps' id='addSearchManager' %}" class="btn btn-next btn-success">Next</a>
+			</div>
+			<h1>Splunk Application Framework Quick Start</h1>
+			
+			
+			<div class="row" id="content-container">
+				<div class="span23" id="main">
+						<h2>Add a search bar to your app</h2>
+						<p>A quick and easy way to add dynamic search functionality to your app is by using a <b>SearchBar</b> view.</p>
+						<!-- <ul class="nav nav-tabs" id="main-tabs">
+							<li class="active">
+								<a href="#">Regular</a>
+							</li>
+							<li>
+								<a href="#">splunkjs.Async</a>
+							</li>
+						</ul> -->
+						<div class="well well-white splunk" id="well-main">
+							
+							
+							<h3>Add a search bar</h3>
+							<p>The search bar is a standard view that includes a text input for entering search queries and (optionally) a time range input that allows the user to change the search timeline. The ID of the search manager to bind to is set in the <b>SearchBar</b> properties. When a new search query or timeline is submitted, the search manager is updated and any other views that are bound to the search manager are notified.</p>
+							<p>Here is a basic search bar (although this won't do anything yet):</p>
+
+							{% searchbar id="example search bar" managerid="example-search" %}
+							{% searchmanager id="example-search" %}
+
+							</br>
+							<p>Create the view by adding the <code>searchbar</code> tag to your HTML template, including the ID of the search manager in the <code>managerid</code> property.</p>
+
+<pre class="prettyprint linenums pre-scrollable">
+&#123;% searchbar id="example search bar" managerid="example-search" %&#125;
+
+&#123;% searchmanager id="example-search" %&#125; 
+</pre>
+							<p>Search bars can also be bound to and modify an existing hard-coded search.</p>
+							<p class="learn-more"><a href="{% url 'quickstartfx:steps' id='addSearchManager' %}">Learn more about hard-coded searches<img src="{{STATIC_URL}}quickstartfx/img/link-arrow.png" /></a></p>
+						</div>
+					
+				</div>
+				<div class="span9 offset1" id="sidebar">
+					<div class="well well-white">
+						<ul class="nav nav-list ">
+							<li class="nav-header">Quick Start</li>
+							<li><a href="{% url 'quickstartfx:steps' id='createApp' %}">Create an app</a></li>
+							<li class="active"><a href="{% url 'quickstartfx:steps' id='addSearch' %}">Add a search</a>
+								<ul>
+									<li class="active"><a href="{% url 'quickstartfx:steps' id='addSearchBar' %}">Add a search bar</a></li>
+									<li><a href="{% url 'quickstartfx:steps' id='addSearchManager' %}">Add a search manager</a></li>
+								</ul>
+							</li>
+							<li><a href="{% url 'quickstartfx:steps' id='addResultTable' %}">Add search results to table</a></li>
+							<li><a href="{% url 'quickstartfx:steps' id='addMap' %}">Map your results</a></li>
+							<li><a href="{% url 'quickstartfx:steps' id='addInteractivity' %}">Add interactivity</a></li>
+							<li><a href="{% url 'quickstartfx:steps' id='nextSteps' %}">Next steps</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="progress-buttons">
+				<a href="{% url 'quickstartfx:steps' id='addSearch' %}" class="btn">Back</a>
+				<a href="{% url 'quickstartfx:steps' id='addSearchManager' %}" class="btn btn-next btn-success">Next</a>
+			</div>
+			<div style="clear: both;"></div>
+		</div>
+	    {% component_loader %}
+		
+	</body>
+</html>

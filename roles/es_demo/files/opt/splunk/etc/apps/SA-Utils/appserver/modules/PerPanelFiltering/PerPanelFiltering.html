@@ -1,0 +1,79 @@
+<%page args="module"/>
+<%# Copyright (C) 2005-2011 Splunk Inc. All Rights Reserved.
+
+import cherrypy
+args = cherrypy.serving.request.params
+
+# Get the form action URL
+form_action = make_url(["module", "system", "Splunk.Module.PerPanelFiltering", "render"]);
+
+# Get the user name
+user = cherrypy.session['user']['name']
+	
+# Get the app name
+app = APP['id']
+
+fields_str = module['params'].get('fields', None)
+fields = fields_str.split(",")
+
+lookup_file               = module['params'].get('lookup_file', None)
+lookup_name               = module['params'].get('lookup_name', None)
+namespace                 = module['params'].get('namespace', None)
+owner                     = module['params'].get('owner', None)
+lookup_edit_view          = module['params'].get('lookup_edit_view', None)
+filter_name               = module['params'].get('filter_name', 'Filter results')
+reload_page_after_editing = module['params'].get('reload_page_after_editing', None)
+
+# Get session key
+session_key = cherrypy.session.get('sessionKey')
+        
+# Get the user name
+user = cherrypy.session['user']['name']
+
+from PerPanelFiltering import PerPanelFiltering
+has_permission = PerPanelFiltering.hasCapabilities(user, session_key)
+%>
+
+% if has_permission:
+<fieldset>
+    <p>
+    	<a href="#" class="perPanelFileringPopupLink">${filter_name|h}</a>
+    </p>
+    <!--  if you wanted a button instead of a link this would be a small matter of uncommenting the below, and changing what the event handler is bound to in the js.  -->
+    <!-- 
+    <button class="splButton-secondary perPanelFilteringButton"><span>Edit...</span></button>
+    -->
+</fieldset>
+% endif
+
+
+
+<form method="get" class="entityEditForm" style="display:none; min-width: 500px; min-height: 500px" name="perPanelFiltering">
+	% for field in fields:
+	<input type="hidden" value="${field|h}" name="fields" />
+	% endfor
+	
+	<input type="hidden" value="${lookup_name|h}" name="lookup_name" />
+	<input type="hidden" value="${namespace|h}" name="namespace" />
+	<input type="hidden" value="${lookup_file|h}" name="lookup_file" />
+	<input type="hidden" value="${owner|h}" name="owner" />
+	<input type="hidden" value="${reload_page_after_editing|h}" name="reload_page_after_editing" />
+	
+	<div class="HelpText">Select the events below that you would like to filter:</div>
+	<table class="simpleResultsTable splTable" id="ppf_table">
+	</table>
+	
+	<input type="hidden" value="0" name="page" />
+	<div style="float:left"><a id="ppf_prev" href="#">&laquo; Previous</a></div>
+	<div style="float:right"><a id="ppf_next" href="#">Next &raquo;</a></div>
+	
+	% if lookup_edit_view:
+	<p class="view_filtered_entries">
+		% if lookup_file:
+		<a target="_blank" href="${lookup_edit_view|h}?namespace=${namespace|h}&lookup_file=${lookup_file|h}">View/edit filtered entries</a>
+		% elif lookup_name:
+		<a target="_blank" href="${lookup_edit_view|h}?namespace=${namespace|h}&lookup_name=${lookup_name|h}">View/edit filtered entries</a>
+		% endif
+	</p>
+	% endif
+</form>

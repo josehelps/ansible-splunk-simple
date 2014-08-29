@@ -1,0 +1,114 @@
+<form script="ids_center.js">
+	<label>Intrusion Center</label>
+	
+	<fieldset autoRun="true" submitButton="true">
+        
+        <input type="dropdown" token="ids_type">
+            <label>IDS Type</label>
+            <choice value="">All</choice>
+            <populatingSearch fieldForValue="ids_type" fieldForLabel="ids_type">| `cim_ids_types`</populatingSearch>
+            <default></default>
+            <prefix>IDS_Attacks.ids_type="</prefix>
+            <suffix>"</suffix>
+        </input>
+        
+        <input type="dropdown" token="ids_category">
+            <label>IDS Category</label>
+            <choice value="">All</choice>
+            <populatingSearch fieldForValue="category" fieldForLabel="category">| `ids_category_tracker`</populatingSearch>
+            <default></default>
+            <prefix>IDS_Attacks.category="</prefix>
+            <suffix>"</suffix>
+        </input>
+        
+        <input type="dropdown" token="severity">
+            <label>Severity</label>
+            <choice value="">All</choice>
+            <populatingSearch fieldForValue="severity" fieldForLabel="severity">| `cim_ids_severities`</populatingSearch>
+            <default></default>
+            <prefix>IDS_Attacks.severity="</prefix>
+            <suffix>"</suffix>
+        </input>
+        
+        <input type="text" token="bunit_form">
+            <label>Business Unit</label>
+            <default></default>
+        </input>
+
+        <input type="dropdown" token="category_form">
+            <label>Category</label>
+            <choice value="">All</choice>
+            <populatingSearch fieldForValue="category" fieldForLabel="category">| `categories`</populatingSearch>
+            <default></default>
+        </input>
+        
+		<input type="time">
+			<default>Last 24 hours</default>
+		</input>
+	</fieldset>
+	
+	<!-- Key indicators -->
+	<row>
+		<html id="element1">
+			<div class="key-indicators" data-group-name="ids_center"></div>
+		</html>
+	</row>
+
+	<row>
+        <chart id="element2">
+            <title>Attacks Over Time By Severity</title>
+            
+            <searchTemplate>| `tstats` count from datamodel=Intrusion_Detection where * $ids_type$ $ids_category$ $severity$ $bunit$ $category$ by _time,IDS_Attacks.severity span=10m | timechart minspan=10m useother=`useother` count by IDS_Attacks.severity | `drop_dm_object_name("IDS_Attacks")`</searchTemplate>
+            
+            <option name="charting.axisTitleX.text">time</option>
+            <option name="charting.axisTitleY.text">count</option>
+            <option name="charting.chart">area</option>
+            <option name="charting.chart.nullValueMode">zero</option>
+            <option name="charting.legend.placement">bottom</option>
+            <option name="charting.legend.labels">[critical,high,medium,low,informational,unknown]</option>
+            <option name="charting.seriesColors">[0xD25B3B,0xFF8800,0xF0BE1B,0x98BF3B,0x5378AD,0x999999]</option>
+            <option name="height">310px</option>
+
+            <drilldown>
+                <link>ids_search?form.severity=$click.name2$&amp;earliest=$earliest$&amp;latest=$latest$</link>
+            </drilldown>
+        </chart>
+        
+        <table id="element3">
+			<title>Top Attacks</title>
+			
+			<searchTemplate>| tstats `summariesonly` dc(IDS_Attacks.src) as src_count,dc(IDS_Attacks.dest) as dest_count,count from datamodel=Intrusion_Detection where * $ids_type$ $ids_category$ $severity$ $bunit$ $category$ by IDS_Attacks.signature | `drop_dm_object_name("IDS_Attacks")` | sort - count</searchTemplate>
+			
+			<drilldown>
+				<link>ids_search?form.signature=$row.signature$&amp;earliest=$earliest$&amp;latest=$latest$</link>
+			</drilldown>
+		</table>
+    </row>
+        
+    <row>
+        <chart id="element4">
+            <title>Scanning Activity (Many Attacks)</title>
+            
+            <searchTemplate>| tstats `summariesonly` dc(IDS_Attacks.signature) as attack_count from datamodel=Intrusion_Detection where * $ids_type$ $ids_category$ $severity$ $bunit$ $category$ by IDS_Attacks.src | `drop_dm_object_name("IDS_Attacks")` | sort 10 - attack_count</searchTemplate>
+            
+            <option name="charting.axisTitleX.text">src</option>
+            <option name="charting.axisTitleY.text">dc(signature)</option>
+            <option name="charting.chart">bar</option>
+            <option name="charting.legend.placement">none</option>
+
+            <drilldown>
+                <link>ids_search?form.src=$click.value$&amp;earliest=$earliest$&amp;latest=$latest$</link>
+            </drilldown>
+        </chart>
+        
+        <table id="element5">
+			<title>New Attacks</title>
+			
+			<searchTemplate>| `ids_attack_tracker` | rename ids_type as IDS_Attacks.ids_type | search $ids_type$ | rename IDS_Attacks.ids_type as ids_type | `tracker_timerange_by_value("-30d","now")` | `dayDiff(firstTime)` | `uitime(firstTime)` | sort 100 - firstTime | fields firstTime,ids_type,signature,vendor_product</searchTemplate>
+			
+			<drilldown>
+				<link>ids_search?form.signature=$row.signature$&amp;earliest=$earliest$&amp;latest=$latest$</link>
+			</drilldown>
+		</table>
+	</row>
+</form>

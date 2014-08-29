@@ -1,0 +1,2 @@
+Sep 30 08:36:46 192.168.21.1 date=2009-09-30,time=08:36:59,devname=GH4-FGT300A,device_id=FG300A3333333334,log_id=32138,type=event,subtype=admin,pri=critical,fwver=040000,vd=root,user="admin",ui=GUI,action=reboot,msg="User admin rebooted the device from GUI" 
+Sep 30 08:36:46 192.168.21.1 date=2009-09-30,time=08:36:59,devname=GH4-FGT300A,device_id=FG300A3333333334,log_id=32138,type=event,subtype=admin,pri=critical,fwver=040000,vd=root,user="admin",ui=GUI,action=shutdown,msg="User admin shutdown the device from GUI" 

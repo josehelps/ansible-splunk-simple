@@ -1,0 +1,10 @@
+app,dest,dest_pci_domain,is_required,is_prohibited,is_secure,note
+portmap,*,*,false,true,,Unix RPC portmapper service is prohibited. 
+xinetd,*,*,false,true,,Unix xinetd services are prohibited.
+Fax,*,*,false,true,,Windows Fax service is prohibited.
+RemoteRegistry,*,*,false,true,,Windows remote registry service is prohibited.
+SNMPTRAP,*,*,false,true,,Windows SNMP trap service is prohibited.
+ssh,*,*,false,false,true,Unix Secure shell is permitted.
+W32Time,*,*,true,false,,Windows time service is required.
+wuauserv,*,*,true,false,,Windows automatic update service is required.
+yum-updatesd,*,*,true,false,,Unix automatic update service is required.

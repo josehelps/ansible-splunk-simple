@@ -1,0 +1,203 @@
+<endpoint name="authorization/roles" hideEnabledColumn="1">
+  <header>Roles</header>
+  <breadcrumb>
+    <parent hidecurrent="False">accesscontrols</parent>
+    <name>Roles</name>
+  </breadcrumb>
+  <!-- not putting this on the homepage menu for now
+  <menu name="system_configurations">
+    <label>Roles</label>
+    <url>/manager/%(namespace)s/authorization/roles</url>
+    <description>Manage roles, set granular access controls and search restrictions.</description>
+    <order>120</order>
+  </menu>
+  -->
+  <elements>
+      <element name="name" type="textfield" label="Role name">
+        <view name="list"/>
+        <view name="create"/>
+        <key name="submitValueAdd">value.strip()</key>
+        <key name="submitValueEdit">value.strip()</key>
+      </element>
+      <element name="defaultApp" type="select" label="Default app">
+        <view name="list"/>
+        <view name="edit"/>
+        <view name="create"/>
+        <key name="processValueList">value if value else ''</key>
+        <extraOptions>
+          <opt value="" label=""/>
+        </extraOptions>
+        <key name="dynamicOptions" type="dict">
+          <key name="keyName">title</key>
+          <key name="keyValue">title</key>
+          <key name="splunkSource">/apps/local</key>
+          <key name="splunkSourceParams" type="dict">
+            <key name="search">'visible=true AND disabled=false'</key>
+            <key name="count">-1</key>
+          </key>
+        </key>
+      </element>
+      <element name="fieldset-restrict" type="fieldset">
+      <view name="edit"/>
+      <view name="create"/>
+      <elements>
+        <element name="srchFilter" type="textfield" label="Restrict search terms">
+          <view name="list"/>
+          <view name="edit"/>
+          <view name="create"/>
+          <key name="exampleText">Can include source, host, index (can be set below), eventtype, sourcetype, search fields, *, and OR and AND. Example: "host=web* OR source=/var/log/*"</key>
+        </element>
+        <element name="srchTimeWin" type="textfield" label="Restrict search time range">
+          <view name="edit"/>
+          <view name="create"/>
+          <key name="exampleText">Set a maximum time window (in seconds) for searches for this role. For example, set this to '60' to restrict this role's searches to 1 minute before the most recent time specified in the search. You can also set this to '0' to explicitly make the window infinite, or '-1' to unset the window for this role (can be overridden by imported roles).</key>
+          <key name="processValueList">_('None') if value=='-1' else value</key>
+          <key name="processValueAdd">'-1'</key>
+        </element>
+        <element name="srchJobsQuota" type="textfield" label="User-level concurrent search jobs limit">
+          <view name="list"/>
+          <view name="edit"/>
+          <view name="create"/>
+          <key name="exampleText">Enter the maximum number of concurrent search jobs for each user of this role.</key>
+        </element>
+        <element name="rtSrchJobsQuota" type="textfield" label="User-level concurrent real-time search jobs limit">
+          <view name="list"/>
+          <view name="edit"/>
+          <view name="create"/>
+          <key name="exampleText">Enter the maximum number of concurrent real-time search jobs for each user of this role. This count is independent from the normal search jobs limit.</key>
+        </element>
+        <element name="cumulativeSrchJobsQuota" type="textfield" label="Role-level concurrent search jobs limit">
+          <view name="list"/>
+          <view name="edit"/>
+          <view name="create"/>
+          <key name="exampleText">Enter the maximum number of cumulative concurrent search jobs for this role.</key>
+        </element>
+        <element name="cumulativeRTSrchJobsQuota" type="textfield" label="Role-level concurrent real-time search jobs limit">
+          <view name="list"/>
+          <view name="edit"/>
+          <view name="create"/>
+          <key name="exampleText">Enter the maximum number of cumulative concurrent real-time search jobs for this role. This count is independent from the normal search jobs limit.</key>
+        </element>        
+        <element name="srchDiskQuota" type="textfield" label="Limit total jobs disk quota">
+          <view name="list"/>
+          <view name="edit"/>
+          <view name="create"/>
+          <key name="exampleText">Enter the total disk space in MB that can be used by a user's search jobs. For example, '100' would limit this role to 100 MB total.</key>
+        </element>
+      </elements>
+      <key name="helpText">Restrict the scope of searches run by this role. Search results for this role will only show events that also match this search string.</key>
+      <key name="legend">Search restrictions</key>
+    </element>
+    <element name="fieldset-inherit" type="fieldset">
+      <view name="edit"/>
+      <view name="create"/>
+      <elements>
+        <element name="imported_roles" type="accumulator" label="roles">
+          <view name="list"/>
+          <view name="edit"/>
+          <view name="create"/>
+          <key name="processValueList">', '.join(value) if isinstance(value, list) else value</key>
+          <key name="dynamicOptions" type="dict">
+            <key name="keyName">title</key>
+            <key name="keyValue">None if title in ('Everybody', entity_name) else title</key>
+            <key name="splunkSource">/authorization/roles</key>
+            <key name="splunkSourceParams" type="dict">
+              <key name="count">-1</key>
+            </key>
+          </key>
+        </element>
+      </elements>
+      <key name="helpText">Specify roles from which this role inherits capabilities and indexes. Inherited capabilities and indexes cannot be disabled. If multiple roles are specified, this role inherits capabilities from the parent with the broadest permissions.</key>
+      <key name="legend">Inheritance</key>
+    </element>
+    <element name="fieldset-capabilities" type="fieldset">
+      <view name="edit"/>
+      <view name="list"/>
+      <view name="create"/>
+      <elements>
+        <element name="capabilities" type="accumulator" label="capabilities">
+          <view name="list"/>
+          <view name="edit"/>
+          <view name="create"/>
+          <key name="labelList">Number of capabilities</key>
+          <key name="labelListSortable">False</key>
+          <key name="processValueList">len(value) if value else 0</key>
+          <key name="dynamicOptions" type="dict">
+            <key name="entityField">'capabilities'</key>
+            <key name="splunkSourceEntity">'capabilities'</key>
+            <key name="splunkSource">/admin/capabilities</key>
+            <key name="splunkSourceParams" type="dict">
+              <key name="count">-1</key>
+            </key>
+          </key>
+        </element>
+        <element name="imported_capabilities" type="textarea" label="Imported capabilities">
+          <key name="processValueEdit">'\n'.join(value) if isinstance(value, list) else value</key>
+          <key name="disabled">1</key>
+	  <key name="submitValueEdit">None</key>
+          <view name="edit"/>
+        </element>
+      </elements>
+      <key name="helpText">Select specific capabilities for this role.</key>
+      <key name="legend">Capabilities</key>
+    </element>
+    <element name="fieldset-defaultindex" type="fieldset">
+      <view name="edit"/>
+      <view name="create"/>
+      <elements>
+        <element name="srchIndexesDefault" type="accumulator" label="indexes">
+          <extraOptions>
+            <opt value="*" label="All non-internal indexes"/>
+            <opt value="_*" label="All internal indexes"/>
+          </extraOptions>
+          <view name="list"/>
+          <view name="edit"/>
+          <view name="create"/>
+          <key name="processValueList">', '.join(value) if isinstance(value, list) else value</key>
+          <key name="processValueAdd">['main']</key>
+          <key name="dynamicOptions" type="dict">
+             <key name="keyName">entry.properties.get('index', 'index key not found')</key>
+             <key name="keyValue">entry.properties.get('index', 'index key not found')</key>
+             <key name="splunkSource">/search/jobs/oneshot</key>
+             <key name="splunkSourceParams" type="dict">
+               <key name="output_mode">"atom"</key>
+               <key name="count">"1000"</key>
+               <key name="search">"| eventcount summarize=false index=* index=_* | dedup index"</key>
+             </key>
+          </key>
+        </element>
+      </elements>
+      <key name="helpText">Set the index(es) that searches default to when no index is specified. User with this role can search other indexes using index= (e.g., "index=special_index").</key>
+      <key name="legend">Indexes searched by default</key>
+    </element>
+    <element name="fieldset-index" type="fieldset">
+      <view name="edit"/>
+      <view name="create"/>
+      <elements>
+        <element name="srchIndexesAllowed" type="accumulator" label="search indexes">
+          <extraOptions>
+            <opt value="*" label="All non-internal indexes"/>
+            <opt value="_*" label="All internal indexes"/>
+          </extraOptions>
+          <view name="list"/>
+          <view name="edit"/>
+          <view name="create"/>
+          <key name="processValueAdd">['*']</key>
+          <key name="processValueList">', '.join(value) if isinstance(value, list) else value</key>
+          <key name="dynamicOptions" type="dict">
+             <key name="keyName">entry.properties.get('index', 'index key not found')</key>
+             <key name="keyValue">entry.properties.get('index', 'index key not found')</key>
+             <key name="splunkSource">/search/jobs/oneshot</key>
+             <key name="splunkSourceParams" type="dict">
+               <key name="output_mode">"atom"</key>
+               <key name="count">"1000"</key>
+               <key name="search">"| eventcount summarize=false index=* index=_* | dedup index"</key>
+             </key>
+           </key>
+        </element>
+      </elements>
+      <key name="helpText">Restrict this role's searches to the specified index(es). Search results for this role will only show events from these indexes.</key>
+      <key name="legend">Indexes</key>
+    </element>
+  </elements>
+</endpoint>

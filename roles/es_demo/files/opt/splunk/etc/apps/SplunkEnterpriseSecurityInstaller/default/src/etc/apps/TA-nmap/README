@@ -1,0 +1,20 @@
+Nmap Add-on
+----------------------------------------
+	Author: Splunk
+	Version/Date: 11/28/2012 02:17 pm
+	Source type(s): nmap
+	Input requirements: Nmap results files must be uploaded to $SPLUNK_HOME/var/spool/splunk/ with an extension
+	                    of '.nmap'. The format of the reports ought to be the "normal" format (that is, the
+	                    format provided when you use the "-oN" argument).
+	Has index-time operations: true, this TA needs to be deployed on any indexers that will be importing Nmap
+	                           report files
+	Supported product(s): Nmap
+
+Using this Add-on:
+----------------------------------------
+	Configuration: Manual
+	Ports for automatic configuration: None
+	Scripted input setup: Not applicable
+	
+	
+Copyright (C) 2009-2013 Splunk Inc. All Rights Reserved.

@@ -1,0 +1,11 @@
+04/22/10 11:15:40 AM
+LogName=System
+SourceName=Service Control Manager
+EventCode=7036
+EventType=4
+Type=Information
+ComputerName=HOST0167
+Category=0
+CategoryString=none
+RecordNumber=299
+Message=The Windows Time service entered the running state.

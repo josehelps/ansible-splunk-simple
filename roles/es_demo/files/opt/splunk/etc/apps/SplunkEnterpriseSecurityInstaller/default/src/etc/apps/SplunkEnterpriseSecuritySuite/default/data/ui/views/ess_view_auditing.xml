@@ -1,0 +1,45 @@
+<dashboard>
+    <label>View Audit</label>
+    
+    <row>
+        <chart id="element1">
+            <title>View Activity Over Time</title>
+            
+            <searchName>Audit - ES View Activity Over Time</searchName>
+
+            <option name="charting.axisTitleX.text">time</option>
+            <option name="charting.axisTitleY.text">count</option>
+
+            <drilldown>
+                <link>search?q=| `datamodel("Splunk_Audit", "View_Activity")` | `drop_dm_object_name("View_Activity")` | search view="$click.name2$"&amp;earliest=$earliest$&amp;latest=$latest$</link>
+            </drilldown>
+        </chart>
+    </row>
+
+    <row>
+        <table id="element2">
+            <title>Expected View Activity</title>
+            
+            <searchName>Audit - Expected ES View Activity</searchName>
+
+            <drilldown>
+                <link>search?q=| `datamodel("Splunk_Audit", "View_Activity")` | `drop_dm_object_name("View_Activity")` | search view="$row.view$"&amp;earliest=$earliest$&amp;latest=$latest$</link>
+            </drilldown>
+        </table>
+    </row>
+
+    <row>
+        <event id="element3">
+            <title>Web Service Errors</title>
+            
+            <searchName>Audit - Web Service Errors</searchName>
+            
+            <!--<drilldown>
+                <link>search?q=| `datamodel("Splunk_Audit", "Web_Service_Errors")` | search $click.name2$</link>
+            </drilldown>-->
+
+            <fields>host, source, sourcetype, event_id</fields>
+
+        </event>
+    </row>
+</dashboard>

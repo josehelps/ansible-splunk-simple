@@ -1,0 +1,125 @@
+======================================================================
+Splunk Add-on for Nessus
+======================================================================
+Author:                  Splunk, Inc.
+Add-on Name:             Splunk Add-on for Nessus
+Add-on Version:          3.0.2
+
+Vendor Product(s):       Nessus XML File Format V1 and V2
+Splunk Platform(s):      5.x, 6.x
+Splunk CIM Compatible:   Yes
+
+Description
+------------------------------
+The Splunk Add-on for Nessus allows a Splunk administrator to collect and ingest Nessus vulnerability scan reports. Once ingested, the Nessus data can be analyzed directly or used as a contextual data feed to correlate with other vulnerability related data in Splunk. This add-on provides the inputs and CIM-compatible knowledge to use the add-on with other Splunk apps, such as Splunk App for Enterprise Security and Splunk App for PCI Compliance.
+
+Data Types
+------------------------------
+This add-on provides the index-time and search-time knowledge for the vulnerability scan report data from Nessus for the following format:
+
+IMPORTANT NOTE: The default severity level mapping supports Nessus XML V2 Format.  To support V1 read "Add-on Lookups" below to adjust severity level mapping values.
+
+1. Nessus XML V1 Format:
+Nessus file format version 1 is a .nessus file, was introduced with Nessus 3.x and is also supported in Nessus 4.x and 5.x
+   - Sourcetype: nessus
+
+2. Nessus XML V2 Format:
+Nessus file format version 2 is a .nessus file, is an enhanced version of Nessus v1 format. Nessus V2 format was introduced with Nessus 4.0 and is also supported in Nessus 5.x
+   - Sourcetype: nessus
+
+
+Installation and Configuration
+------------------------------
+
+Installation of the add-on to the search head
+========================================================
+The add-on needs to be installed to the search head to allow a user to use the search-time knowledge provided within the add-on. To install the add-on, do the following:
+
+1. Download the app from Splunkbase (Already done if you are reading this).
+2. From the Splunk web interface, click on App -> Manage Apps to open the Apps Management page in Manager.
+3. Click the "Install app from file" button, locate the downloaded file and click "Upload".
+4. Verify (if necessary) that the app is installed.  It should be listed in the list of apps installed within the Manager and can be found on the server at $SPLUNK_HOME/etc/apps/Splunk_TA_nessus.
+
+Installation of the add-on to the Splunk Indexer
+========================================================
+If your Splunk deployment consists of a single server, you don't need to follow this step. If your deployment is distributed, you may need to follow this step, but only if you expect to sourcetype the Nessus data on the indexer instead of via a Splunk Forwarder.
+
+This add-on contains index-time operations.  In a distributed deployment this add-on needs to be installed on the indexers.
+
+Note: These steps will require a restart of the indexer(s).
+
+To install the app to the indexers, do the following:
+
+1. Upload the Splunk_TA_nessus folder to the indexer and put into the $SPLUNK_HOME/etc/apps directory.
+2. Restart the indexer.
+
+Data received by the indexer that matches the sourcetype rules in the props.conf and transforms.conf file will automatically be sourcetyped.
+
+Configure the scripted input in Splunk
+========================================================
+A scripted input converts Nessus v1 and v2 reports into Splunk-compatible format.
+
+With the default settings, the Nessus report files must be placed in the $SPLUNK_HOME/etc/apps/Splunk_TA_nessus/spool. The report files must be exported to the "dot nessus" XML format and have a file extension of '.nessus'.
+
+Nessus scripted input using default directories
+
+Converts .nessus format files (v1 or v2) to a Splunk-indexable format, using the following directories as source and target:
+    srcdir = <Splunk_TA_nessus installation directory>/spool
+    tgtdir = $SPLUNK_HOME/var/spool/splunk
+
+Example of use in inputs.conf:
+
+    [script://./bin/nessus2splunk.py]
+    disabled = false
+    interval = 120
+    index = _internal
+    source = nessus2splunk
+    sourcetype = nessus2splunk
+
+
+Example of use in inputs.conf using custom source and target directories
+for input and output files:
+
+    [script://./bin/nessus2splunk.py -s /opt/nessus/incoming -t /opt/nessus/parsed]
+    disabled = false
+    interval = 120
+    index = _internal
+    source = nessus2splunk
+    sourcetype = nessus2splunk
+
+Both srcdir and tgtdir arguments must be either:
+
+- Fully qualified paths from the root directory, OR
+- A relative path, relative to the app directory.
+    
+Note that if the target directory is different from $SPLUNK_HOME/var/spool/splunk,
+it is necessary to set up a "monitor" stanza in inputs.conf referring to the target
+directory. Additionally, the target directory must already exist on the filesystem.
+
+
+Add-on Lookups
+------------------------------
+1. Nessus severity lookup - maps the severity id to severity for this add-on
+
+   - File location: $SPLUNK_HOME/Splunk_TA_nessus/lookups/nessus_severities_lookup.csv
+   - Lookup fields: severity_id,severity
+   - Lookup contents:
+        severity_id,severity
+        0,informational
+        1,low
+        2,medium
+        3,high
+        4,critical
+
+You can change these mappings to define custom severity definitions in Nessus, or if different versions of Nessus (or other scans) require different severity mappings.
+
+Edit the nessus_severities.csv file on the file system to change the mappings.
+
+2. Vendor product lookup - defines the vendor and product for this add-on.
+
+   - File location: $SPLUNK_HOME/Splunk_TA_nessus/lookups/nessus_vendor_info_lookup.csv.
+   - Lookup fields: sourcetype,vendor,product
+   - Lookup contents: 
+        nessus,Tenable,Nessus
+
+Copyright (C) 2009-2014 Splunk Inc. All Rights Reserved.

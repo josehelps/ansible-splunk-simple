@@ -1,0 +1,182 @@
+09/23/10 05:42:23 AM
+LogName=Application
+SourceName=Sophos Anti-Virus
+EventCode=36
+EventType=2
+Type=Warning
+ComputerName=ACME-1457
+User=LOCAL SERVICE
+Sid=S-1-5-19
+SidType=5
+Category=1
+CategoryString=Virus/spyware
+RecordNumber=18665
+Message=Virus/spyware 'Troj/JSRedir-AV' has been removed.
+
+09/23/10 04:52:30 AM
+LogName=Application
+SourceName=Sophos Anti-Virus
+EventCode=51
+EventType=2
+Type=Warning
+ComputerName=ACME-1457
+User=LOCAL SERVICE
+Sid=S-1-5-19
+SidType=5
+Category=11
+CategoryString=Suspicious file
+RecordNumber=18664
+Message=File "C:\ACMEgram Files\Adobe\Adobe Bridge\AdobeLM.dll" has been identified as suspicious file of type 'Sus/ComPack-C'.
+	Please send a sample to Sophos.
+
+09/23/10 04:15:26 AM
+LogName=Application
+SourceName=Sophos Anti-Virus
+EventCode=32
+EventType=2
+Type=Warning
+ComputerName=ACME-1457
+User=LOCAL SERVICE
+Sid=S-1-5-19
+SidType=5
+Category=1
+CategoryString=Virus/spyware
+RecordNumber=18663
+Message=File "C:\Documents and Settings\ncarbine\Local Settings\Temporary Internet Files\Content.IE5\O1DJTUKK\in[1].htm" belongs to virus/spyware 'Troj/JSRedir-AV'.
+
+09/23/10 04:14:37 AM
+LogName=Application
+SourceName=Sophos Anti-Virus
+EventCode=32
+EventType=2
+Type=Warning
+ComputerName=ACME-1457
+User=LOCAL SERVICE
+Sid=S-1-5-19
+SidType=5
+Category=1
+CategoryString=Virus/spyware
+RecordNumber=18662
+Message=File "C:\Documents and Settings\ncarbine\Local Settings\Temporary Internet Files\Content.IE5\K5AJ0L2B\in[1].htm" belongs to virus/spyware 'Troj/JSRedir-AV'.
+
+09/23/10 02:18:44 AM
+LogName=Application
+SourceName=Sophos Anti-Virus
+EventCode=51
+EventType=2
+Type=Warning
+ComputerName=ACME-1386
+User=LOCAL SERVICE
+Sid=S-1-5-19
+SidType=5
+Category=11
+CategoryString=Suspicious file
+RecordNumber=1560
+Message=File "C:\ACMEgram Files\Macromedia\FreeHand MXa\MMxpt.dll" has been identified as suspicious file of type 'Sus/ComPack-C'.
+	Please send a sample to Sophos.
+
+09/23/10 02:18:34 AM
+LogName=Application
+SourceName=Sophos Anti-Virus
+EventCode=51
+EventType=2
+Type=Warning
+ComputerName=ACME-1386
+User=LOCAL SERVICE
+Sid=S-1-5-19
+SidType=5
+Category=11
+CategoryString=Suspicious file
+RecordNumber=1559
+Message=File "C:\ACMEgram Files\Macromedia\FreeHand MXa\actlib.dll" has been identified as suspicious file of type 'Sus/ComPack-C'.
+	Please send a sample to Sophos.
+
+09/23/10 01:18:07 AM
+LogName=Application
+SourceName=Sophos Anti-Virus
+EventCode=51
+EventType=2
+Type=Warning
+ComputerName=ACME-BEL-335
+User=LOCAL SERVICE
+Sid=S-1-5-19
+SidType=5
+Category=11
+CategoryString=Suspicious file
+RecordNumber=4702
+Message=File "C:\Documents and Settings\fdesk\Local Settings\Temp\10228\chrome.dll" has been identified as suspicious file of type 'Sus/NullAtEP-A'.
+	Please send a sample to Sophos.
+
+09/22/10 11:51:35 PM
+LogName=Application
+SourceName=Sophos Anti-Virus
+EventCode=51
+EventType=2
+Type=Warning
+ComputerName=ACME-1439
+User=LOCAL SERVICE
+Sid=S-1-5-19
+SidType=5
+Category=11
+CategoryString=Suspicious file
+RecordNumber=22371
+Message=File "C:\Documents and Settings\khoke\Local Settings\Temp\DWOA51B.tmp" has been identified as suspicious file of type 'Sus/NullAtEP-A'.
+	Please send a sample to Sophos.
+
+09/22/10 11:41:54 PM
+LogName=Application
+SourceName=Sophos Anti-Virus
+EventCode=51
+EventType=2
+Type=Warning
+ComputerName=ACME-1439
+User=LOCAL SERVICE
+Sid=S-1-5-19
+SidType=5
+Category=11
+CategoryString=Suspicious file
+RecordNumber=22370
+Message=File "C:\Documents and Settings\khoke\Local Settings\Temp\DWO8989.tmp" has been identified as suspicious file of type 'Sus/NullAtEP-A'.
+	Please send a sample to Sophos.
+
+09/22/10 11:39:23 PM
+LogName=Application
+SourceName=Sophos Anti-Virus
+EventCode=51
+EventType=2
+Type=Warning
+ComputerName=ACME-1439
+User=LOCAL SERVICE
+Sid=S-1-5-19
+SidType=5
+Category=11
+CategoryString=Suspicious file
+RecordNumber=22369
+Message=File "C:\Documents and Settings\khoke\Local Settings\Temp\DWOE67E.tmp" has been identified as suspicious file of type 'Sus/NullAtEP-A'.
+	Please send a sample to Sophos.
+
+09/22/10 10:54:47 PM
+LogName=Application
+SourceName=Sophos Anti-Virus
+EventCode=1
+EventType=2
+Type=Error
+ComputerName=ACME-BEL-2828.ACMEclub.com
+TaskCategory=None
+OpCode=None
+RecordNumber=10782
+Keywords=Classic
+Message=No versions of component 'MessageResDSFactory' are registered. MessageResDSFactory cannot be returned.
+
+09/22/10 10:54:47 PM
+LogName=Application
+SourceName=Sophos Anti-Virus
+EventCode=1
+EventType=2
+Type=Error
+ComputerName=ACME-BEL-2828.ACMEclub.com
+TaskCategory=None
+OpCode=None
+RecordNumber=10781
+Keywords=Classic
+Message=No versions of component 'MessageResDSFactory' are registered. MessageResDSFactory cannot be returned.

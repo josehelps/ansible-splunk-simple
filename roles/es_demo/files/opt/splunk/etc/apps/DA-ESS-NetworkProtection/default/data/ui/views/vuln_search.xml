@@ -1,0 +1,73 @@
+<form script="vuln_search.js">
+	<label>Vulnerability Search</label>
+	
+	<fieldset autoRun="true" submitButton="true">
+	
+	    <input type="text" token="category">
+            <label>Vuln. Category</label>
+            <default></default>
+            <prefix>Vulnerabilities.category="</prefix>
+            <suffix>"</suffix>
+        </input>
+	    
+	    <input type="dropdown" token="severity">
+            <label>Severity</label>
+            <choice value="">All</choice>
+            <populatingSearch fieldForValue="severity" fieldForLabel="severity">| `cim_vuln_severities`</populatingSearch>
+            <default></default>
+            <prefix>Vulnerabilities.severity="</prefix>
+            <suffix>"</suffix>
+        </input>   
+        
+        <input type="text" token="signature">
+            <label>Signature</label>
+            <default></default>
+            <prefix>Vulnerabilities.signature="</prefix>
+            <suffix>"</suffix>
+        </input>
+
+        <input type="text" token="reference_form">
+            <label>Reference (bugtraq, cert, cve, etc.)</label>
+            <default></default>
+        </input>
+
+        <input type="text" token="dest">
+            <label>Destination</label>
+            <default></default>
+            <prefix>Vulnerabilities.dest="</prefix>
+            <suffix>"</suffix>
+        </input>
+
+		<input type="time">
+			<default>Last 30 days</default>
+		</input>
+	</fieldset>
+	
+	<row>
+		<table id="table1">
+			<title> </title>
+			
+			<searchTemplate>| tstats `summariesonly` max(_time) as _time,values(Vulnerabilities.category) as category,values(Vulnerabilities.severity) as severity,values(Vulnerabilities.cve) as cve,count from datamodel=Vulnerabilities where * $category$ $severity$ $signature$ $reference$ $dest$ by Vulnerabilities.signature,Vulnerabilities.dest | `drop_dm_object_name("Vulnerabilities")` | sort - count | fields _time,category,severity,signature,cve,dest,count</searchTemplate>
+		    
+		    <option name="count">5</option>
+		    
+		    <drilldown>
+		        <link>search?q=| `datamodel("Vulnerabilities", "Vulnerabilities")` | search Vulnerabilities.signature="$row.signature$" Vulnerabilities.dest="$row.dest$" | `drop_dm_object_name("Vulnerabilities")`&amp;earliest=$earliest$&amp;latest=$latest$</link>
+		    </drilldown>
+		</table>
+	</row>
+	
+	<row>
+		<event id="event1">
+			<title> </title>
+			
+			<searchTemplate>| `datamodel("Vulnerabilities", "Vulnerabilities")` | search $category$ $severity$ $signature$ $reference$ $dest$ | `drop_dm_object_name("Vulnerabilities")` | head 100</searchTemplate>
+			
+			<option name="count">5</option>
+			<option name="rowNumbers">false</option>
+			<option name="type">list</option>
+			<option name="list.wrap">true</option>
+			<fields>dvc, category, severity, signature, bugtraq, cert, cve, msft, mskb, xref, os, dest</fields>
+		</event>
+	</row>
+</form>

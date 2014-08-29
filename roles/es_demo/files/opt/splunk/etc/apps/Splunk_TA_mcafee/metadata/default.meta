@@ -1,0 +1,20 @@
+
+## shared Application-level permissions
+[]
+access = read : [ * ], write : [ admin ]
+export = system
+
+[savedsearches]
+owner = admin
+
+[governance]
+access = read : [ * ], write : [ * ]
+
+## Postprocess
+[postprocess]
+access = read : [ * ], write : [ * ]
+
+
+## Exclude export of custom alert actions
+[alert_actions/email]
+export = none

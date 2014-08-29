@@ -1,0 +1,55 @@
+#!/bin/bash
+
+pushd `dirname $0` > /dev/null
+SCRIPTPATH=`pwd -P`
+popd > /dev/null
+
+SPLUNKHOME_FILE="$SCRIPTPATH/.splunkhome"
+
+HOMEPATH=`cat $SPLUNKHOME_FILE 2> /dev/null`
+
+if [ "$HOMEPATH" = "" ]
+then
+    read -e -p "Where is Splunk installed (version 5.0 or later is required)? [$SPLUNK_HOME]: " HOMEPATH
+    
+    if [ "$HOMEPATH" = "" ]
+    then
+        if [ "$SPLUNK_HOME" != "" ]
+        then
+            HOMEPATH=$SPLUNK_HOME
+        else
+            echo "You must provide a value for 'SPLUNK_HOME'."
+            exit 1
+        fi
+    fi
+    
+    eval HOMEPATH=$HOMEPATH
+    if [[ ! -d "$HOMEPATH" ]]
+    then
+        echo "'$HOMEPATH does not exist. Please provide a valid location".
+        exit 1
+    fi
+    
+    echo $HOMEPATH > "$SCRIPTPATH/.splunkhome"
+fi
+
+export SPLUNK_HOME=$HOMEPATH
+
+export PYTHON_HOME=`which python`
+# Add the node_modules bin directory to the PATH
+export PATH="$SCRIPTPATH/node_modules/.bin:$SPLUNK_HOME/bin:$PATH"
+
+if [ ! -e "$SPLUNK_HOME/bin/splunk" ]
+then
+    echo "$SPLUNK_HOME/bin/splunk was not found.  Please check your SPLUNK_HOME path and try again."
+    exit 1
+fi
+
+if [ ! -x "$SPLUNK_HOME/bin/splunk" ]
+then
+    echo "$SPLUNK_HOME/bin/splunk is not set executable.  Please correct this problem and try again."
+    exit 1
+fi
+
+# Run the actual CLI environment
+"$SPLUNK_HOME/bin/splunk" cmd python "$SCRIPTPATH/cli/appdo.py" $@

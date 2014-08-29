@@ -1,0 +1,114 @@
+<form script="access_center.js">
+	<label>Access Center</label>
+	
+	<fieldset autoRun="true" submitButton="true">
+        
+        <input type="dropdown" token="action">
+            <label>Action</label>
+            <choice value="">All</choice>
+            <populatingSearch fieldForValue="action" fieldForLabel="action">| `cim_access_actions`</populatingSearch>
+            <default></default>
+            <prefix>Authentication.action="</prefix>
+            <suffix>"</suffix>
+        </input>
+        
+        <input type="dropdown" token="app">
+            <label>App</label>
+            <choice value="">All</choice>
+            <populatingSearch fieldForValue="app" fieldForLabel="app">| `access_apps`</populatingSearch>
+            <default></default>
+            <prefix>Authentication.app="</prefix>
+            <suffix>"</suffix>
+        </input>
+        
+        <input type="text" token="bunit_form">
+            <label>Business Unit</label>
+            <default></default>
+        </input>
+
+        <input type="dropdown" token="category_form">
+            <label>Category</label>
+            <choice value="">All</choice>
+            <populatingSearch fieldForValue="category" fieldForLabel="category">| `categories`</populatingSearch>
+            <default></default>
+        </input>
+        	        
+        <input type="dropdown" token="special">
+            <label>Special Access</label>
+            <choice value="">All</choice>
+            <choice value="Authentication.Privileged_Authentication">Privileged</choice>
+            <choice value="Authentication.Default_Authentication">Default</choice>
+            <default></default>
+            <prefix>nodename="</prefix>
+            <suffix>"</suffix>
+        </input>
+        
+		<input type="time">
+			<default>Last 24 hours</default>
+		</input>
+	</fieldset>
+	
+	<!-- Key indicators -->
+	<row>
+		<html id="element1">
+			<div class="key-indicators" data-group-name="access_center"></div>
+		</html>
+	</row>
+	
+	<row>
+        <chart id="element2">
+            <title>Access Over Time By Action</title>
+            
+            <searchTemplate>| `tstats` count from datamodel=Authentication where * $action$ $app$ $bunit$ $category$ $special$ by _time,Authentication.action span=10m | timechart minspan=10m useother=`useother` count by Authentication.action | `drop_dm_object_name("Authentication")`</searchTemplate>
+            
+            <option name="charting.axisTitleX.text">time</option>
+            <option name="charting.axisTitleY.text">count</option>
+            <option name="charting.chart">area</option>
+            <option name="charting.chart.nullValueMode">zero</option>
+            <option name="charting.legend.labels">[success,failure,unknown]</option>
+            <option name="charting.seriesColors">[0x64A43D,0xD25B3B,0x999999]</option>
+
+            <drilldown>
+                <link>access_search?form.action=$click.name2$&amp;earliest=$earliest$&amp;latest=$latest$</link>
+            </drilldown>
+        </chart>
+        
+        <chart id="element3">
+            <title>Access Over Time By App</title>
+            
+            <searchTemplate>| `tstats` count from datamodel=Authentication where * $action$ $app$ $bunit$ $category$ $special$ by _time,Authentication.app span=10m | timechart minspan=10m useother=`useother` count by Authentication.app</searchTemplate>
+            
+            <option name="charting.axisTitleX.text">time</option>
+            <option name="charting.axisTitleY.text">count</option>
+            <option name="charting.chart">area</option>
+            <option name="charting.chart.nullValueMode">zero</option>
+
+            <drilldown>
+                <link>access_search?form.app=$click.name2$&amp;earliest=$earliest$&amp;latest=$latest$</link>
+            </drilldown>
+        </chart>
+	</row>
+	
+	<row>
+		<table id="element4">
+			<title>Top Access By Source</title>
+			
+			<searchTemplate>| tstats `summariesonly` count from datamodel=Authentication where * $action$ $app$ $bunit$ $category$ $special$ by _time,Authentication.src span=1h | `drop_dm_object_name("Authentication")` | stats sparkline(sum(count),1h) as sparkline,sum(count) as count by src | sort - count</searchTemplate>
+			
+			<drilldown>
+				<link>access_search?form.src=$row.src$&amp;earliest=$earliest$&amp;latest=$latest$</link>
+			</drilldown>
+		</table>
+		
+		<table id="element5">
+			<title>Top Access By Unique Users</title>
+			
+			<searchTemplate>| tstats `summariesonly` values(Authentication.user) as user,count from datamodel=Authentication where * $action$ $app$ $bunit$ $category$ $special$ by _time,Authentication.src span=1h | `drop_dm_object_name("Authentication")` | stats sparkline(sum(count),1h) as sparkline,dc(user) as user_count by src | sort - user_count</searchTemplate>
+			
+			<drilldown>
+				<link>access_search?form.src=$row.src$&amp;earliest=$earliest$&amp;latest=$latest$</link>
+			</drilldown>
+		</table>
+	</row>
+	
+</form>

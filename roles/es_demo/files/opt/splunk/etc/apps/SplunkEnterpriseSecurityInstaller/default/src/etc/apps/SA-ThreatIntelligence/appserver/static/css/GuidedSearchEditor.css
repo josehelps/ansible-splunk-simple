@@ -1,0 +1,87 @@
+
+#guidedSearchModal .input{
+    margin-bottom: 20px;
+}
+
+#guidedSearchModal h2{
+    margin: 0 0 0 0;
+}
+
+#guidedSearchModal .panel-description{
+    margin-bottom: 12px;
+}
+
+#guidedSearchModal .wizard-steps{
+    border-bottom: 1px solid #B0B1B3;
+    margin-bottom: 12px;
+}
+
+#guidedSearchModal .step-number{
+    font-size: large;
+}
+
+#guidedSearchModal .step.inactive{
+    color: #B0B1B3;
+}
+
+#guidedSearchModal .step-description{
+    
+}
+
+#guidedSearchModal .step{
+    display:inline;
+    margin-right: 18px;
+}
+
+#guidedSearchModal .modal-body{
+    overflow-x: hidden; /* This is needed to support the slide animation */
+    min-height: 130px; /* Make sure that the page is got at least some room */
+}
+
+#guidedSearchModal .warning-message-container{
+	height:40px;
+}
+
+#guidedSearchModal.modal {
+    /* new custom width */
+    width: 480px;
+    /* must be half of the width, minus scrollbar on the left (30px) */
+    margin-left: -240px;
+}
+
+#guidedSearchModal #search-parse-status {
+    margin-bottom: 0px;
+}
+
+#guidedSearchModal #data_model_selection_page{
+    min-height: 245px;
+}
+
+#time_selection_page{
+	min-height: 350px;
+}
+
+#split_by_selection_page{
+	min-height: 110px;
+}
+
+#aggregate_list_page{
+    min-height: 200px;
+}
+
+#guidedSearchModal .aggregate-new{
+	margin-top: 12px;
+	display: block;
+}
+
+#guidedSearchModal #aggregates-list th{
+	font-weight: bold;
+}
+
+#guidedSearchModal #split_by_alias_page{
+    min-height: 245px;
+}
+
+#guidedSearchModal #split_by_alias_page th{
+    font-weight: bold;
+}

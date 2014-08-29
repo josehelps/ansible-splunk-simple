@@ -1,0 +1,161 @@
+{
+	"modelName":	"Domain_Analysis",
+	"displayName":	"Domain Analysis",
+	"description":	"Domain Analysis Data Model",
+	"editable":		false,
+	"objects":		[
+		{
+			"objectName":	"All_Domains",
+			"displayName":	"All Domains",
+			"parentName":	"BaseEvent",
+			"fields":		[
+				{
+					"fieldName":	"created",
+					"displayName":	"created",
+					"type":			"timestamp",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"expires",
+					"displayName":	"expires",
+					"type":			"timestamp",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"retrieved",
+					"displayName":	"retrieved",
+					"type":			"timestamp",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"tag",
+					"displayName":	"tag",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	true,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"updated",
+					"displayName":	"updated",
+					"type":			"timestamp",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				}
+			],
+			"calculations":	[
+				{
+					"calculationID":	"All_Domains_fillnull_domain",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"domain",
+							"displayName":	"domain",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnull(domain),\"unknown\",domain)"
+				},
+				{
+					"calculationID":	"All_Domains_fillnull_nameservers",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"nameservers",
+							"displayName":	"nameservers",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	true,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnull(nameservers),\"unknown\",nameservers)"
+				},
+				{
+					"calculationID":	"All_Domains_fillnull_registrant",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"registrant",
+							"displayName":	"registrant",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnull(registrant),\"unknown\",registrant)"
+				},
+				{
+					"calculationID":	"All_Domains_fillnull_registrar",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"registrar",
+							"displayName":	"registrar",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnull(registrar),\"unknown\",registrar)"
+				},
+				{
+					"calculationID":	"All_Domains_fillnull_resolved_domain",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"resolved_domain",
+							"displayName":	"resolved_domain",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnull(resolved_domain),\"unknown\",resolved_domain)"
+				}
+			],
+			"constraints":	[
+				{
+					"search":	"index=whois sourcetype=Whois:*"
+				}			
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Missing_Extractions_All_Domains",
+			"displayName":	"Missing Extractions (S.o.S)",
+			"parentName":	"All_Domains",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"(domain=\"unknown\"  OR nameservers=\"unknown\" OR registrant=\"unknown\" OR created!=* OR expires!=* OR updated!=*)"
+				}
+			],
+			"children":		[]
+		}
+	]
+}

@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<dashboard script="status_dashboard.js" isDashboard="False">
+  <label>Scheduler errors</label>
+  <row>
+    <chart>
+      <searchString>index="_internal" source="*scheduler.log" "error savedsplunker" "No actions executed"| stats count by savedsearch_id | sort -count| rename savedsearch_id AS SavedsearchId</searchString>
+      <title>Errors while executing saved searches - Last 24 Hours</title>
+      <earliestTime>-24h</earliestTime>
+      <option name="charting.chart">bar</option>
+      <option name="charting.primaryAxisTitle.text">SavedsearchId</option>
+      <option name="charting.secondaryAxisTitle.text">Error Counter</option>
+      <option name="charting.legend.placement">none</option>
+    </chart>
+  </row>
+  
+  <row>
+
+    <chart>
+      <searchString>index=_internal source=*scheduler.log savedsplunker status=skipped | rename savedsearch_id AS SavedsearchId |stats count AS SkippedCount BY SavedsearchId  | sort - SkippedCount</searchString>
+      <title>Skipped Scheduled Search Executions - Last 24 Hours</title>
+      <earliestTime>-24h</earliestTime>
+      <option name="charting.chart">bar</option>
+      <option name="charting.primaryAxisTitle.text">SavedsearchId</option>
+      <option name="charting.secondaryAxisTitle.text">Skipped Counter</option>
+      <option name="charting.legend.placement">none</option>
+    </chart>
+
+  </row>
+
+  <row>
+
+    <chart>
+      <searchString>index=_internal source=*scheduler.log savedsplunker warn "max alive" | stats count AS SkippedCount BY savedsearch_id  | sort - SkippedCount</searchString>
+      <title>Execution Time &gt; Execution Period - Last 24 Hours</title>
+      <earliestTime>-24h</earliestTime>
+      <option name="charting.chart">bar</option>
+      <option name="charting.primaryAxisTitle.text">SavedsearchId</option>
+      <option name="charting.secondaryAxisTitle.text">Skipped Counter</option>
+      <option name="charting.legend.placement">none</option>
+    </chart>
+
+  </row>
+
+</dashboard>
+  

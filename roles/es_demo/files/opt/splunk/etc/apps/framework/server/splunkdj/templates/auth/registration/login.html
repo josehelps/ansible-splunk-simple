@@ -1,0 +1,70 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:s="http://www.splunk.com/xhtml-extensions/1.0" xml:lang="en" lang="en">
+    
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="en_US" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <meta name="author" content="Splunk Inc." />
+    <link rel="shortcut icon" href="{{STATIC_URL}}splunkdj/auth/images/favicon.ico" />
+    <title>Login - Splunk (Django)</title>
+    <link rel="stylesheet" href="{{STATIC_URL}}splunkdj/auth/css/login.css" />              
+</head>
+    
+<body>
+
+    <div id="layout" class="">
+        <div id="userMessaging"></div> 
+    
+        <div id="authWrapper">
+            <div id="splunkLogo"></div>
+            <div id="authContainer">
+                {% if form.errors %}
+                <p id="tplerror" class="error">Your username and password didn't match. Please try again.</p>
+                {% endif %}
+                <div id="mainPanel" >
+                    <form action="{% url 'splunkdj.auth.views.login' %}" class="loginForm" method="post" autocomplete="off">
+                        {% csrf_token %}
+                        <p>
+                            {{ form.username.label_tag }}<br/>
+                            <input type="text" name="{{ form.username.html_name }}" id="{{ form.username.auto_id }}"/>
+                        </p>
+                        <p>
+                            {{ form.password.label_tag }}<br/>
+                            <input type="password" name="{{ form.password.html_name }}" id="{{ form.password.auto_id }}"/>
+                        </p>
+                        <p class="loginButtonRow">
+                            <input class="splButton-primary" type="submit" value="Sign in"/>
+                        </p>
+                        <input type="hidden" name="return_to" value="{{ return_to }}"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+        <div id="tipsCheckerContainer" class="subContainer">
+            <iframe frameborder="0" id="tipsChecker" name="tipsChecker" ALLOWTRANSPARENCY="true"></iframe>
+            <div class="tipsCheckerContinueLink"><a href="/" class="splButton-primary"><span>Continue &raquo;</span></a></div>
+        </div>
+    
+        <div id="infoContainer">
+            <div id="updateCheckerContainer" class="subContainer">
+                <iframe frameborder="0" id="updateChecker" name="updateChecker" ALLOWTRANSPARENCY="true" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            </div>
+        </div>
+    
+        <p class="footer">&copy; 2005-2013 Splunk Inc. <i>Web Framework 1.0.1</i></p>
+
+        <script type="text/javascript" language="Javascript1.3">
+            window.onload = function() {
+                document.getElementById('{{ form.username.auto_id }}').focus();
+                document.getElementById('{{ form.username.auto_id }}').select();
+            }
+        </script>
+    </div>
+    <div class="splClearfix"></div>
+</body>
+
+</html>

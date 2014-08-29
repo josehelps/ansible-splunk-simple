@@ -1,0 +1,786 @@
+{
+	"modelName":	"Compute_Inventory",
+	"displayName":	"Inventory",
+	"description":	"Inventory Data Model",
+	"editable":		false,
+	"objects":		[
+	    {
+			"objectName":	"All_Inventory",
+			"displayName":	"All Inventory",
+			"parentName":	"BaseEvent",
+			"fields":		[
+				{
+					"fieldName":	"description",
+					"displayName":	"description",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"dest_bunit",
+					"displayName":	"dest_bunit",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"dest_category",
+					"displayName":	"dest_category",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	true,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"dest_priority",
+					"displayName":	"dest_priority",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"enabled",
+					"displayName":	"enabled",
+					"type":			"boolean",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"family",
+					"displayName":	"family",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"hypervisor_id",
+					"displayName":	"hypervisor_id",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"serial",
+					"displayName":	"serial",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"status",
+					"displayName":	"status",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"version",
+					"displayName":	"version",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"tag",
+					"displayName":	"tag",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	true,
+					"hidden":		false
+				}
+			],
+			"calculations":	[
+				{
+					"calculationID":	"All_Inventory_fillnull_dest",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"dest",
+							"displayName":	"dest",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnull(dest),\"unknown\",dest)"
+				},
+				{
+					"calculationID":	"All_Inventory_vendor_product",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"vendor_product",
+							"displayName":	"vendor_product",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"case(isnotnull(vendor_product),vendor_product,isnotnull(vendor) AND vendor!=\"unknown\" AND isnotnull(product) AND product!=\"unknown\",vendor.\" \".product,isnotnull(vendor) AND vendor!=\"unknown\" AND (isnull(product) OR product=\"unknown\"),vendor.\" unknown\",(isnull(vendor) OR vendor=\"unknown\") AND isnotnull(product) AND product!=\"unknown\",\"unknown \".product,isnotnull(sourcetype),sourcetype,1=1,\"unknown\")"
+				}
+			],
+			"constraints":	[
+				{
+					"search":	"tag=inventory"
+				}
+			],
+			"children":		[]
+	    },
+		{
+			"objectName":	"CPU",
+			"displayName":	"CPU",
+			"parentName":	"All_Inventory",
+			"fields":		[
+				{
+					"fieldName":	"cpu_cores",
+					"displayName":	"cpu_cores",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"cpu_count",
+					"displayName":	"cpu_count",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"cpu_mhz",
+					"displayName":	"cpu_mhz",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				}
+			],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"tag=cpu"
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":   "Missing_Extractions_CPU",
+			"displayName":  "Missing Extractions (S.o.S)",
+			"parentName":   "CPU",
+			"fields":       [],
+			"calculations": [],
+			"constraints":  [
+				{
+					"search": "dest=\"unknown\" OR NOT (cpu_cores=* OR cpu_count=* OR cpu_mhz=*)"
+				}
+			],
+			"children": []
+		}, 
+		{
+			"objectName":	"Memory",
+			"displayName":	"Memory",
+			"parentName":	"All_Inventory",
+			"fields":		[
+				{
+					"fieldName":	"mem",
+					"displayName":	"mem",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				}
+			],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"tag=memory"
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":   "Missing_Extractions_Memory",
+			"displayName":  "Missing Extractions (S.o.S)",
+			"parentName":   "Memory",
+			"fields":       [],
+			"calculations": [],
+			"constraints":  [
+				{
+					"search": "dest=\"unknown\" OR NOT (mem=*)"
+				}
+			],
+			"children": []
+		}, 
+		{
+			"objectName":	"Network",
+			"displayName":	"Network",
+			"parentName":	"All_Inventory",
+			"fields":		[
+				{
+					"fieldName":	"dns",
+					"displayName":	"dns",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"interface",
+					"displayName":	"interface",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"ip",
+					"displayName":	"ip",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"dest_ip",
+					"displayName":	"dest_ip",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"src_ip",
+					"displayName":	"src_ip",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"mac",
+					"displayName":	"mac",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"lb_method",
+					"displayName":	"lb_method",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"node",
+					"displayName":	"node",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"inline_nat",
+					"displayName":	"inline_nat",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"vip_port",
+					"displayName":	"vip_port",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"node_port",
+					"displayName":	"node_port",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"name",
+					"displayName":	"name",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				}
+			],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"tag=network"
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":   "Missing_Extractions_Network",
+			"displayName":  "Missing Extractions (S.o.S)",
+			"parentName":   "Network",
+			"fields":       [],
+			"calculations": [],
+			"constraints":  [
+				{
+					"search": "dest=\"unknown\" OR NOT (interface=* OR ip=* OR mac=* OR name=* OR dns=*)"
+				}
+			],
+			"children": []
+		},
+		{
+			"objectName":	"Storage",
+			"displayName":	"Storage",
+			"parentName":	"All_Inventory",
+			"fields":		[
+				{
+					"fieldName":	"array",
+					"displayName":	"array",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"blocksize",
+					"displayName":	"blocksize",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"cluster",
+					"displayName":	"cluster",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"fd_max",
+					"displayName":	"fd_max",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"latency",
+					"displayName":	"latency",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"mount",
+					"displayName":	"mount",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"parent",
+					"displayName":	"parent",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"read_blocks",
+					"displayName":	"read_blocks",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"read_latency",
+					"displayName":	"read_latency",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"read_ops",
+					"displayName":	"read_ops",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"storage",
+					"displayName":	"storage",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"write_blocks",
+					"displayName":	"write_blocks",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"write_latency",
+					"displayName":	"write_latency",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"write_ops",
+					"displayName":	"write_ops",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				}
+			],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"tag=storage"
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":   "Missing_Extractions_Storage",
+			"displayName":  "Missing Extractions (S.o.S)",
+			"parentName":   "Storage",
+			"fields":       [],
+			"calculations": [],
+			"constraints":  [
+				{
+					"search": "dest=\"unknown\" OR NOT (mount=* OR storage=*)"
+				}
+			],
+			"children": []
+		}, 
+		{
+			"objectName":	"OS",
+			"displayName":	"OS",
+			"parentName":	"All_Inventory",
+			"fields":		[],
+			"calculations":	[
+				{
+					"calculationID":	"OS_os",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"os",
+							"displayName":	"os",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnotnull(os),replace(replace(os,\"(?:\\(R\\)|\\\\\\\\xA8)\",\"\"),\"^(?:MS)?\\s*Windows\",\"Microsoft Windows\"),\"unknown\")"
+				}
+			],
+			"constraints":	[
+				{
+					"search":	"tag=os"
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":   "Missing_Extractions_OS",
+			"displayName":  "Missing Extractions (S.o.S)",
+			"parentName":   "OS",
+			"fields":       [],
+			"calculations": [],
+			"constraints":  [
+				{
+					"search": "dest=\"unknown\" OR NOT (os=* OR version=*)"
+				}
+			],
+			"children": []
+		},
+		{
+			"objectName":	"User",
+			"displayName":	"User",
+			"parentName":	"All_Inventory",
+			"fields":		[
+				{
+					"fieldName":	"shell",
+					"displayName":	"shell",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"user_bunit",
+					"displayName":	"user_bunit",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"user_category",
+					"displayName":	"user_category",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	true,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"user_id",
+					"displayName":	"user_id",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"user_priority",
+					"displayName":	"user_priority",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				}
+			],
+			"calculations":	[
+				{
+					"calculationID":	"User_interactive",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"interactive",
+							"displayName":	"interactive",
+							"type":			"boolean",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"case(isnotnull(interactive),interactive,tag=\"interactive\",\"true\",1=1,\"false\")"
+				},
+				{
+					"calculationID":	"User_password",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"password",
+							"displayName":	"password",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if((password==\"*\" OR password==\"x\" OR password==\"\"),null(),password)"
+				},
+				{
+					"calculationID":	"User_user",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"user",
+							"displayName":	"user",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"if(isnull(user),\"unknown\",user)"
+				}
+			],
+			"constraints":	[
+				{
+					"search":	"tag=user"
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Cleartext_Passwords",
+			"displayName":	"Cleartext Passwords",
+			"parentName":	"User",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"password=*"
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Default_Accounts",
+			"displayName":	"Default Accounts",
+			"parentName":	"User",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"tag=\"default\""
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Virtual_OS",
+			"displayName":	"Virtual OS",
+			"parentName":	"All_Inventory",
+			"fields":		[
+				{
+					"fieldName":	"hypervisor",
+					"displayName":	"hypervisor",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				}
+			],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"tag=virtual"
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Snapshot",
+			"displayName":	"Snapshot",
+			"parentName":	"Virtual_OS",
+			"fields":		[
+				{
+					"fieldName":	"size",
+					"displayName":	"size",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"snapshot",
+					"displayName":	"snapshot",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"time",
+					"displayName":	"time",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				}
+			],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"tag=snapshot"
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Tools",
+			"displayName":	"Tools",
+			"parentName":	"Virtual_OS",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"tag=tools"
+				}
+			],
+			"children":		[]
+		}
+	]
+}

@@ -1,0 +1,19 @@
+Oracle Add-on
+----------------------------------------
+	Author: Splunk
+	Version/Date: 11/03/2010 01:44 pm
+	Source type(s): oracle
+	Input requirements: Data must be source typed as 'oracle' OR 'oracle11', this depends on the version of oracle deployed.
+	                    It is highly recommended that you collect oracle logs off of the system that generated the data because
+	                    Oracle only records the database or "Node name" in the header of the log file.
+	Has index-time operations: true, this TA needs to be deployed on indexers
+	Supported product(s): Oracle Database Server 10g, Oracle Database Server 11g
+
+Using this Add-on:
+----------------------------------------
+	Configuration: Manual
+	Ports for automatic configuration: None
+	Scripted input setup: Not applicable
+	
+
+Copyright (C) 2009-2013 Splunk Inc. All Rights Reserved.

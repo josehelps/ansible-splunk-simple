@@ -1,0 +1,16 @@
+Alcatel Add-on
+----------------------------------------
+	Author: Splunk
+	Version/Date: 11/03/2010 05:58 pm
+	Source type(s): alcatel
+	Input requirements: Data must be source typed as 'alcatel'
+	Has index-time operations: true, this TA must be placed on indexers
+	Supported product(s): Alcatel Network Switch
+
+Using this Add-on:
+----------------------------------------
+	Configuration: Manual
+	Ports for automatic configuration: None
+	Scripted input setup: Not applicable
+	
+Copyright (C) 2009-2013 Splunk Inc. All Rights Reserved.

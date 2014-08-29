@@ -1,0 +1,22 @@
+body {
+    background-color: #F7F7F7;
+}
+.resultsArea {
+    background-color: #F7F7F7;
+}
+.appBarNav {
+    display: none;
+}
+.splHeader-navigation {
+    display: none;
+}
+.TitleBar .splHeader, 
+.FieldPickerPopup .splHeader-primary {
+    background-color: #F7F7F7;
+    background-image: none;
+}
+.viewHeader, .mainSearchControls,
+.splSearchControls-inline,
+.SearchBar .saHelpWrapper {
+    background-color: #F7F7F7;
+}

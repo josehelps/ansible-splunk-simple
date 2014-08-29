@@ -1,0 +1,15 @@
+{% extends "splunkdj:base.html" %}
+
+{% load splunkmvc %}
+
+{% block splunkstyles %}{% endblock splunkstyles %}
+
+{% block _css %}
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}splunkjs/css/bootstrap.css"/>
+    {{block.super}}
+{% endblock _css %}
+
+{% block _js %}
+    {{block.super}}
+    {% component_loader %}
+{% endblock _js %}

@@ -1,0 +1,102 @@
+
+## To allow additional roles to manage navigation, append to the write list like so
+## access = read : [ * ], write : [ admin,role2,role3 ]
+[nav]
+access = read : [ * ], write : [ admin ]
+## To allow additional roles to manage review statuses, append to the write list like so
+## access = read : [ * ], write : [ admin,role2,role3 ]
+[authorize]
+access = read : [ * ], write : [ admin ]
+
+## To allow additional roles to manage correlation searches, 
+## append to the write list like as shown below for each of the
+## following stanzas: savedsearches, correlationsearches
+
+## access = read : [ * ], write : [ admin,role2,role3 ]
+[savedsearches]
+access = read : [ * ], write : [ admin ]
+
+[correlationsearches]
+access = read : [ * ], write : [ admin ]
+
+## To allow additional roles to edit lookups, specify the roles below. Note that allowing others to edit lookups
+## is necessary for some modules such as the blocklist editor, per-panel-filtering module and the lookup editor.
+## Note that the local.meta needs to be modified in the app where the lookup file resides.
+[lookups]
+access = read : [ * ], write : [ admin ]
+
+[inputs/app_imports_update%3A%2F%2Fupdate_es]
+version = 6.1.3
+modtime = 1406780815.062078000
+
+[inputs/dm_accel_settings%3A%2F%2FApplication_State]
+version = 6.1.3
+modtime = 1406780815.208829000
+
+[inputs/dm_accel_settings%3A%2F%2FAuthentication]
+version = 6.1.3
+modtime = 1406780815.231268000
+
+[inputs/dm_accel_settings%3A%2F%2FChange_Analysis]
+version = 6.1.3
+modtime = 1406780815.253652000
+
+[inputs/dm_accel_settings%3A%2F%2FDomain_Analysis]
+version = 6.1.3
+modtime = 1406780815.275759000
+
+[inputs/dm_accel_settings%3A%2F%2FEmail]
+version = 6.1.3
+modtime = 1406780815.297923000
+
+[inputs/dm_accel_settings%3A%2F%2FIncident_Management]
+version = 6.1.3
+modtime = 1406780815.319544000
+
+[inputs/dm_accel_settings%3A%2F%2FIntrusion_Detection]
+version = 6.1.3
+modtime = 1406780815.342919000
+
+[inputs/dm_accel_settings%3A%2F%2FMalware]
+version = 6.1.3
+modtime = 1406780815.367880000
+
+[inputs/dm_accel_settings%3A%2F%2FNetwork_Sessions]
+version = 6.1.3
+modtime = 1406780815.390358000
+
+[inputs/dm_accel_settings%3A%2F%2FNetwork_Traffic]
+version = 6.1.3
+modtime = 1406780815.415053000
+
+[inputs/dm_accel_settings%3A%2F%2FPerformance]
+version = 6.1.3
+modtime = 1406780815.471040000
+
+[inputs/dm_accel_settings%3A%2F%2FRisk]
+version = 6.1.3
+modtime = 1406780815.521170000
+
+[inputs/dm_accel_settings%3A%2F%2FSplunk_Audit]
+version = 6.1.3
+modtime = 1406780815.566072000
+
+[inputs/dm_accel_settings%3A%2F%2FUpdates]
+version = 6.1.3
+modtime = 1406780815.589688000
+
+[inputs/dm_accel_settings%3A%2F%2FVulnerabilities]
+version = 6.1.3
+modtime = 1406780815.612809000
+
+[inputs/dm_accel_settings%3A%2F%2FWeb]
+version = 6.1.3
+modtime = 1406780815.637291000
+
+[limits/realtime]
+version = 6.1.3
+modtime = 1406780817.084037000
+
+[app/install/is_configured]
+version = 6.1.3
+modtime = 1406780817.340496000

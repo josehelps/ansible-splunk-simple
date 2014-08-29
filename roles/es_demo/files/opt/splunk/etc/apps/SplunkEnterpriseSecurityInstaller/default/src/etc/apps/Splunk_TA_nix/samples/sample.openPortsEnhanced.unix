@@ -1,0 +1,19 @@
+Tue Mar  5 09:03:37 PST 2013 app=dhclient dest_ip=* dest_port=68 pid=3709 user=root fd=4u ip_version=4 dvc_id=7950 transport=UDP
+Tue Mar  5 09:03:37 PST 2013 app=sshd dest_ip=* dest_port=22 pid=4256 user=root fd=3u ip_version=6 dvc_id=10769 transport=TCP
+Tue Mar  5 09:03:37 PST 2013 app=sshd dest_ip=* dest_port=22 pid=4256 user=root fd=4u ip_version=4 dvc_id=10771 transport=TCP
+Tue Mar  5 09:03:37 PST 2013 app=sendmail dest_ip=127.0.0.1 dest_port=25 pid=4278 user=root fd=4u ip_version=4 dvc_id=10870 transport=TCP
+Tue Mar  5 15:00:16 EST 2013 app=Dropbox dest_ip=* dest_port=17500 pid=318 user=splunk fd=14u ip_version=4 dvc_id=0x9639e0f268318fa9 transport=UDP
+Tue Mar  5 15:00:16 EST 2013 app=Dropbox dest_ip=* dest_port=17500 pid=318 user=splunk fd=17u ip_version=4 dvc_id=0x9639e0f26b115099 transport=TCP
+Tue Mar  5 15:00:16 EST 2013 app=Dropbox dest_ip=127.0.0.1 dest_port=25836 pid=318 user=splunk fd=24u ip_version=4 dvc_id=0x9639e0f26b1133b9 transport=TCP
+Tue Mar  5 15:00:16 EST 2013 app=CIJScanne dest_ip=* dest_port=61612 pid=352 user=splunk fd=4u ip_version=4 dvc_id=0x9639e0f279e0bd99 transport=UDP
+Tue Mar  5 15:00:16 EST 2013 app=CIJScanne dest_ip=* dest_port=52635 pid=352 user=splunk fd=5u ip_version=4 dvc_id=0x9639e0f26e13ac11 transport=UDP
+Tue Mar  5 15:00:16 EST 2013 app=Skype dest_ip=127.0.0.1 dest_port=64306 pid=440 user=splunk fd=10u ip_version=4 dvc_id=0x9639e0f26598afa9 transport=UDP
+Tue Mar  5 15:00:16 EST 2013 app=Skype dest_ip=* dest_port=15588 pid=440 user=splunk fd=53u ip_version=4 dvc_id=0x9639e0f26b6ae7d1 transport=TCP
+Tue Mar  5 15:00:16 EST 2013 app=Skype dest_ip=* dest_port=15588 pid=440 user=splunk fd=54u ip_version=4 dvc_id=0x9639e0f26598e0a9 transport=UDP
+Tue Mar  5 15:00:16 EST 2013 app=eclipse dest_ip=* dest_port=10000 pid=62884 user=splunk fd=125u ip_version=6 dvc_id=0x9639e0f276d3bb41 transport=TCP
+Tue Mar  5 15:00:16 EST 2013 app=eclipse dest_ip=* dest_port=9000 pid=62884 user=splunk fd=135u ip_version=6 dvc_id=0x9639e0f276d3b381 transport=TCP
+Tue Mar  5 15:00:16 EST 2013 app=eclipse dest_ip=127.0.0.1 dest_port=51235 pid=62884 user=splunk fd=144u ip_version=6 dvc_id=0x9639e0f27e62ef21 transport=TCP
+Tue Mar  5 15:00:16 EST 2013 app=eclipse dest_ip=* dest_port=57350 pid=62884 user=splunk fd=172u ip_version=6 dvc_id=0x9639e0f276d3b761 transport=TCP
+Tue Mar  5 15:00:16 EST 2013 app=eclipse dest_ip=* dest_port=52997 pid=62884 user=splunk fd=198u ip_version=6 dvc_id=0x9639e0f27e62db41 transport=TCP
+Tue Mar  5 15:00:16 EST 2013 app=python dest_ip=127.0.0.1 dest_port=52998 pid=65106 user=splunk fd=5u ip_version=4 dvc_id=0x9639e0f2672ce6d9 transport=TCP
+Tue Mar  5 15:00:16 EST 2013 file_hash=@@sha1checksum

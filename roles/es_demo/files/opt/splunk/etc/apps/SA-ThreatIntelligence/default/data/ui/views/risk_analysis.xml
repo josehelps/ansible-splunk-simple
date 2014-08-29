@@ -1,0 +1,95 @@
+<form script="risk_analysis.js" stylesheet="risk_analysis.css">
+
+    <label>Risk Analysis</label>
+        
+    <fieldset autoRun="true" submitButton="true">
+        <input type="dropdown" token="source">
+            <label>Source</label>
+            <choice value="">All</choice>
+            <choice value="AdHoc Risk Score">AdHoc Risk Modifiers</choice>
+            <populatingSearch fieldForValue="title" fieldForLabel="title">| rest /services/saved/searches count=0 search="action.risk=1"</populatingSearch>
+            <default></default>
+            <prefix>source="</prefix>
+            <suffix>"</suffix>
+        </input>
+        
+        <input type="dropdown" token="risk_object_type">
+            <label>Risk Object Type</label>
+            <populatingSearch fieldForValue="risk_object_type" fieldForLabel="risk_object_type">| `risk_object_types`</populatingSearch>
+            <selectFirstChoice>true</selectFirstChoice>
+            <prefix>All_Risk.risk_object_type="</prefix>
+            <suffix>"</suffix>
+        </input>
+        
+        <input type="text" token="risk_object_form">
+            <label>Risk Object</label>
+            <default></default>
+        </input>
+        
+        <input type="time">
+            <default>Last 24 hours</default>
+        </input>
+        
+        <html id="adhocdialog"></html>
+    </fieldset>
+
+    <row>
+        <chart id="element1">
+            <title>Risk Modifiers Over Time</title>
+            
+            <searchTemplate>| tstats prestats=true allow_old_summaries=`allow_old_summaries_bool` sum(All_Risk.risk_score),count from datamodel=Risk where * $source$ $risk_object$ by _time span=10m | timechart minspan=10m sum(All_Risk.risk_score) as risk_score,count</searchTemplate>
+            
+            <option name="charting.axisLabelsY.integerUnits">true</option>
+            <option name="charting.axisLabelsY2.integerUnits">true</option>
+            <option name="charting.axisTitleX.text">time</option>
+            <option name="charting.chart">column</option>
+            <option name="charting.chart.nullValueMode">zero</option>
+            <option name="charting.chart.overlayFields">count</option>
+            <option name="charting.axisY2.enabled">true</option>
+            <option name="charting.axisY2.fields">count</option>
+            <option name="charting.drilldown">all</option>
+            <option name="charting.legend.placement">bottom</option>
+  
+            <drilldown>
+                <link>search?q=| `datamodel("Risk","All_Risk")`&amp;earliest=$earliest$&amp;latest=$latest$</link>
+            </drilldown>
+        </chart>
+    </row>
+
+    <row>
+        <table id="element2">
+            <title>Risk Score By Object</title>
+            
+            <searchTemplate>| tstats allow_old_summaries=`allow_old_summaries_bool` sum(All_Risk.risk_score) as risk_score,dc(source) as source_count,count from datamodel=Risk where * $source$ $risk_object$ by All_Risk.risk_object,All_Risk.risk_object_type | `drop_dm_object_name("All_Risk")` | sort 1000 - risk_score</searchTemplate>
+            
+            <option name="drilldown">row</option>
+            
+            <drilldown>
+                <link>search?q=| `datamodel("Risk","All_Risk")` | `drop_dm_object_name("All_Risk")` | search risk_object="$row.risk_object$" risk_object_type="$row.risk_object_type$"&amp;earliest=$earliest$&amp;latest=$latest$</link>
+            </drilldown>
+        </table>
+        
+        <table id="element3">
+            <title>Most Active Sources</title>
+            
+            <searchTemplate>| tstats allow_old_summaries=`allow_old_summaries_bool` sum(All_Risk.risk_score) as risk_score,dc(All_Risk.risk_object) as risk_objects,count from datamodel=Risk where * $source$ $risk_object$ by source | sort 1000 - count,risk_score</searchTemplate>
+
+            <option name="drilldown">row</option>
+             
+            <drilldown>
+                <link>search?q=| `datamodel("Risk","All_Risk")` | `drop_dm_object_name("All_Risk")` | search source="$row.source$"&amp;earliest=$earliest$&amp;latest=$latest$</link>
+            </drilldown>
+        </table>
+        
+    </row>
+
+    <row>
+        <table id="element4">
+            <title>Recent Risk Modifiers</title>
+
+            <searchTemplate>| `datamodel("Risk","All_Risk")` | search $source$ $risk_object$ | head 1000 | `drop_dm_object_name("All_Risk")` | table _time risk_object risk_object_type source description risk_score</searchTemplate>
+            
+            <option name="drilldown">none</option>
+        </table>
+    </row>
+</form>

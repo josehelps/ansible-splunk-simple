@@ -1,0 +1,25 @@
+Unix Add-on
+----------------------------------------
+	Author: Splunk
+	Author: Splunk
+	Version/Date: 5.0.3/07-01-2014
+	Has index-time operations: true, this TA must be deployed on indexers
+	Supported product(s): 
+		 * DHCPD (DHCP server)
+		 * OS-X system logs
+		 * Linux system logs
+		 * AIX system logs
+
+Using this Add-on:
+----------------------------------------
+	Configuration: Manual
+	Ports for automatic configuration: None
+	Scripted input setup: Not applicable
+	
+	For the latest instructions on how to deploy, configure, and use the Splunk Add-on for Unix and Linux, 
+	visit the on-line documentation on a computer with access to the Internet:
+
+	http://docs.splunk.com/Documentation/UnixApp/latest/User/AbouttheSplunkTechnicalAdd-on(TA)forUnixandLinux
+	
+	
+Copyright (C) 2005-2014 Splunk Inc. All Rights Reserved.

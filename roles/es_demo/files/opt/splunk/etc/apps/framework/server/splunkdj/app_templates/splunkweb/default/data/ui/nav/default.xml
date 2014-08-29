@@ -1,0 +1,4 @@
+<nav>
+    <view name="default" default="true"/>
+    <a href="/dj/redirector/{{app_name}}/home">Home</a>
+</nav>

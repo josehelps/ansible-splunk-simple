@@ -1,0 +1,869 @@
+
+/**
+ * Splunk App for Enterprise Security application.css
+ */
+
+/* SOLNPCI-902: Set width of mainSearchControls to 1024 pixels to
+ * force correct filter alignment in ES/PCI apps. Set background
+ * color so that the div doesn't look truncated on the right. */
+
+html.lt-ie9 .splView-incident_review .layout,
+html.lt-ie9 .splTemplate-dashboard .layout {
+	background-color: #F7F7F7;	
+}
+
+
+/* panel headers */
+.splHeader-dashboard h2 {
+    color:       #3F3F3F;
+    font-size:   20px;
+    font-weight: 100;
+    font-family: "Helvetica nenu", Helvetica, Arial, sans-serif;
+    line-height: normal;
+    
+    /* Adjust spacing around panel titles. Spacing above and on the left of panel titles should be 27px to panel edge. Spacing below panel titles (between bottom of title and top of content) should be 20px. */
+    margin:      15px 50px 19px 16px;
+}
+
+/* The left edge of panel content should align with the left edge of the panel title. */
+.dashboardContent {
+	margin-left: 17px;
+}
+
+.SimpleResultsTable .simpleResultsTableWrapper {
+	padding: 0px 10px 0px 0px;
+}
+
+.Pager .previous a {
+	padding: 3px 6px 3px 1px;
+}
+
+.v:hover{
+    background-color:#FFF !important;
+    cursor: default !important;
+}
+
+/**
+ * shared/common application.css
+ */
+
+.ConvertArrayToString {
+	display: none;
+}
+
+.section_separator{
+	clear:both;	
+}
+
+/* SOLNESS-1293: Hide search buttons after search is cancelled.
+ * This is specific to IE7/IE9 in IE7 std. mode; background
+ * images used in <a> links do not seem to respect display:none.
+ */
+.JobStatus .empty {
+	visibility: hidden;
+}
+
+/* SOLNESS-1213: Navigation menu CSS  fix */
+.appBarNav > .hasMenu {
+	white-space: nowrap;
+}
+
+table.splTable td .details{
+	border-bottom-style: dotted;
+	border-bottom-width: 1px;
+	padding: 5px;
+	vertical-align: top;
+}
+
+.HiddenSoftWrap {
+	display: none;
+}
+
+/* 
+ * This makes the height identical to the Pulldown module.
+ * SOLNESS-2756
+ */
+.PulldownSwitcher select {
+    height: 23px;
+}
+
+/* ------ Single Value CSS ------ */
+
+.SingleValueHolder {
+	background-image: none;
+	-moz-box-shadow: none;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: left center;
+	color: #333333;
+	font-size: 15px;
+	padding: 20px 20px 20px 45px;
+	text-align: left;
+	width: 80%;
+}
+
+.SingleValue a {
+	color: #333333;
+	text-decoration: none;
+}
+
+.SingleValue .severe {
+	background-color: transparent;
+	background-image: url('images/high.png');
+	color: #333333;
+}
+
+.SingleValue .elevated {
+	background-color: transparent;
+	background-image: url('images/medium.png');
+	color: #333333;
+}
+
+.SingleValue .low {
+	background-color: transparent;
+	background-image: url('images/low.png');
+	color: #333333;
+}
+
+.SingleValue .informational {
+	background-color: transparent;
+	background-image: url('images/informational.png');
+	color: #333333;
+}
+
+.AccessValueHolder {
+	background-image: url('images/lock.png');
+	-moz-box-shadow: none;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: left center;
+	color: #333333;
+	font-size: 15px;
+	padding: 20px 20px 20px 45px;
+	text-align: left;
+	width: 80%;
+}
+
+/* ------ All Indexed Data ------ */
+.AIDValueHolder {
+    background: none;
+    text-align: left;
+    font-weight: normal;
+    width: auto;
+    padding-top: 0;
+    padding-left: 0;
+    font-size: 11px;
+    -moz-box-shadow: none;
+    float:left;
+    margin-right: 20px;
+    
+}
+
+.AIDValueHolder .singleLabelBefore {
+    display: block;
+    margin-bottom: 2px;
+    color: #333;
+}
+
+.AIDValueHolder .singleResult {
+    font-size: 14px;
+}
+/* ------ End All Indexed Data ------ */
+
+
+.CommentValueHolder {
+	-moz-box-shadow: none;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: left center;
+	color: #333333;
+	font-size: 13px;
+	font-weight: normal;
+	padding: 20px 20px 20px 45px;
+	text-align: left;
+	width: 80%;
+}
+
+.SRHValueHolder {
+	-moz-box-shadow: none;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: left center;
+	color: #333333;
+	font-size: 12px;
+	padding: 10px 20px 20px 10px;
+	text-align: left;
+	width: 90%;
+}
+
+.SingleValue .aix {
+	background-color: transparent;
+	background-image: url('images/aix.png');
+	color: #333333;
+}
+
+.SingleValue .freebsd {
+	background-color: transparent;
+    background-image: url('images/freebsd.png');
+    color: #333333;
+}
+
+.SingleValue .hpux {
+	background-color: transparent;
+	background-image: url('images/hpux.png');
+	color: #333333;
+}
+
+.SingleValue .linux {
+	background-color: transparent;
+	background-image: url('images/linux.png');
+	color: #333333;
+}
+
+.SingleValue .osx {
+	background-color: transparent;
+	background-image: url('images/mac.png');
+	color: #333333;
+}
+
+.SingleValue .solaris {
+	background-color: transparent;
+	background-image: url('images/solaris.png');
+	color: #333333;
+	padding-left: 60px;
+}
+
+.SingleValue .windows {
+	background-color: transparent;
+	background-image: url('images/windows.png');
+	color: #333333;
+}
+
+.UptimeValueHolder {
+	background-image: url('images/clock.png');
+	-moz-box-shadow: none;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: left center;
+	color: #333333;
+	font-size: 15px;
+	padding: 20px 20px 20px 45px;
+	text-align: left;
+	width: 80%;
+}
+
+/* Stoplight Stylesheets */
+.stoplight {
+	background-image: none;
+	-moz-box-shadow: none;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-position-x: center; /* For IE7 */
+	background-size: contain;
+	color: #333333;
+	padding-bottom: 55px;
+	padding-top: 0px;
+	margin-top: 0px;
+	height: 80px;
+}
+
+html.lt-ie9 .stoplight.low {
+	background-color: transparent;
+	background-image: url('images/stoplight_low_small.png');
+	color: #333333;
+}
+
+html.lt-ie9 .stoplight.elevated {
+	background-color: transparent;
+	background-image: url('images/stoplight_elevated_small.png');
+	color: #333333;
+}
+
+html.lt-ie9 .stoplight.severe {
+	background-color: transparent;
+	background-image: url('images/stoplight_severe_small.png');
+	color: #333333;
+}
+
+.stoplight.low {
+	background-color: transparent;
+	background-image: url('images/stoplight_low.png');
+	color: #333333;
+}
+
+.stoplight.elevated {
+	background-color: transparent;
+	background-image: url('images/stoplight_elevated.png');
+	color: #333333;
+}
+
+.stoplight.severe {
+	background-color: transparent;
+	background-image: url('images/stoplight_severe.png');
+	color: #333333;
+}
+
+/* ------ End Single Value CSS ------ */
+
+
+/*
+ Basic HTML components for the description pages  
+*/
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin-bottom: 8px;
+	margin-left: 16px;
+	padding-left: 6px;
+	border-left: 3px solid #DDD;
+}
+
+/* Correct issue in Internet Explorer where the label pushes the time range picker down: */
+.mainSearchControls > .TimeRangePicker > label.timeRangePickerLabel {
+	display: none;
+	background-color: red;
+}
+
+.mainSearchControls > .TimeRangePicker > .timeRangeActivatorWrapper {
+	margin-top: 5px;
+}
+
+/*
+ * UI notify message box
+ */
+ 
+.ui-notify { width:350px; position:fixed; top:10px; right:10px; }
+.ui-notify-message { padding:10px; margin-bottom:15px; -moz-border-radius:8px; -webkit-border-radius:8px; border-radius:8px }
+.ui-notify-message h1 { font-size:14px; margin:0; padding:0 }
+.ui-notify-message p { margin:3px 0; padding:0; line-height:18px }
+.ui-notify-message:last-child { margin-bottom:0 }
+.ui-notify-message-style { background:#000; background:rgba(0,0,0,0.8); -moz-box-shadow: 0 0 6px #000; -webkit-box-shadow: 0 0 6px #000; box-shadow: 0 0 6px #000; }
+.ui-notify-message-style h1 { color:#fff; font-weight:bold }
+.ui-notify-message-style p { color:#fff }
+.ui-notify-close { color:#fff; text-decoration:underline }
+.ui-notify-click { cursor:pointer }
+.ui-notify-cross { margin-top:-4px; float:right; cursor:pointer; text-decoration:none; font-size:12px; font-weight:bold; text-shadow:0 1px 1px #fff; padding:2px }
+.ui-notify-cross:hover { color:#ffffab }
+.ui-notify-cross:active { position:relative; top:1px }
+
+
+.Pulldown div.multipleSelect label {
+    vertical-align:top;
+    position:relative;
+}
+
+.Pulldown div.ui-dropdownchecklist label {
+    top:0px;
+}
+
+.multipleSelect option{
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 3px;
+    margin-bottom: 4px;
+}
+
+/*
+Minimal stand-alone css for dropdownchecklist support
+*/
+
+.ui-dropdownchecklist {
+	z-index: 100; /* Must be high enough to float over the Flash timeline */
+}
+
+.ui-dropdownchecklist-dropcontainer-wrapper{
+	z-index: 101 !important; /* Must be greater than .ui-dropdownchecklist so that pulldowns do not float over other pulldowns */
+}
+
+.ui-dropdownchecklist-selector {
+	height: 20px;
+	border: 1px solid #ccc;
+	background: #fff;
+	
+	/* This adds the little dropdown caret */
+	background-image: url(data:image/png;base64,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);
+	background-repeat: no-repeat;
+	background-position: 91% 50%;
+}
+.ui-state-hover, .ui-state-active {
+	border-color: #7fa550;
+}
+.ui-dropdownchecklist-text {
+	line-height: 20px;
+}
+.ui-dropdownchecklist-dropcontainer {
+	background-color: #fff;
+	border: 1px solid #999;
+}
+.ui-dropdownchecklist-item {
+}
+.ui-dropdownchecklist-item > input{
+	margin-top: 4px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+.ui-state-hover {
+	background-color: #d0e0bc;
+}
+.ui-state-disabled label {
+	color: #ccc;
+}
+.ui-dropdownchecklist-group {
+	font-weight: bold;
+	font-style: italic;
+}
+.ui-dropdownchecklist-indent {
+	padding-left: 10px;
+}
+.ui-dropdownchecklist-selector-wrapper {
+	position: relative;
+}
+.ui-dropdownchecklist-selector {
+	padding-left: 3px;
+}
+.ui-dropdownchecklist-group {
+	padding: 1px 1px 1px 3px;
+}
+
+/* ------ viewHeader compliance styling ------ */
+.viewHeader .compliance_items {
+	border: 1px solid #CCCCCC;
+	border-bottom: none;
+	border-radius: 5px 5px 0px 0px;
+	box-shadow: 0 0 5px #CCCCCC;
+	margin-top: 2px;
+	width: 99%;
+}
+
+.viewHeader .compliance_items .header {
+	background: none repeat scroll 0 0 #999999;
+	color: white;
+	font-weight: bold;
+}
+
+.viewHeader .compliance_items .body {
+	background: none repeat scroll 0 0 #FFFFFF;
+}
+
+.viewHeader .compliance_items .col1 {
+	border-right: 1px solid #CCCCCC;
+	border-bottom: 1px solid #CCCCCC;
+	padding: 3px 5px;
+}
+
+.viewHeader .compliance_items .col2 {
+	border-bottom: 1px solid #CCCCCC;
+	padding: 3px 5px;
+}
+
+/* SOLNESS-1920 */
+.outerMenuWrapper .splShadow > ul{
+	padding-bottom: 0px;
+}
+
+/**
+ * Collapsible main search control filters (SOLNPCI-319)
+ */
+.HTML .currentSelections {
+    clear:both;
+}
+.HTML .customShowHide {
+    /* a little relative positioning and a little negative bottom margin */
+    position:relative;
+    top:4px;
+    margin: 1px 0px -13px 1px;
+    
+    display:block;
+    clear:both;
+    padding-top: 4px;
+    width: 20px;
+    height: 8px;
+    
+    -moz-border-radius-bottomleft: 3px;
+    -moz-border-radius-bottomright: 3px;
+    background-position: -4px 0;
+    cursor: pointer;
+}
+.HTML .customShowHide:hover {
+    text-decoration: none;
+}
+.HTML .customShowHide {
+    background-color: #689549;
+    background-image: url("../../../img/skins/default/overlay_gradient_28.png");
+    background-repeat: repeat-x;
+}
+.HTML .customShowHide .splIcon {
+    height:8px;
+    margin:-2px 0 0 3px;
+    background-color: transparent;
+    background-image:url(images/splIcons.gif);
+}
+.HTML .open .splIcon {
+    background-position: 0 -562px;
+}
+.HTML .closed .splIcon {
+    background-position: 0 -582px;
+}
+.HTML span.assistantAutoOpener {
+    display: none;
+}
+
+/* SOLNESS-1284 */
+.JobProgressIndicator {
+	padding: 0 0 17px 0 !important;
+}
+ 
+ /* ------ viewHeader intro styling ------ */
+ .viewHeader .introContent {
+        padding-left: 30px; 
+        padding-right: 30px;
+        padding-bottom: 20px;
+        width: 855px;
+ }
+ 
+.introContent{ /* Hide the intro section until the JavaScript shows it */
+   display: none;
+   clear: both;
+}
+
+.SingleValue .singleResult {
+	!important;
+	font-size: 12px; /* Override of 5.0 CSS which otherwise sets the height to 28px */
+}
+/**
+ * SA-ThreatIntelligence application.css
+ */
+
+/* ------ incident_review2 ------ */
+
+/* -- header -- */
+.notable_header {
+	background: none repeat scroll 0 0 #999999;
+	border: 1px solid #CCCCCC;
+	border-radius: 5px 5px 0px 0px;
+	box-shadow: 0 0 5px #CCCCCC;
+	margin-bottom: -1px;
+	width: 100%;
+}
+
+.notable_header td {
+	color: white;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 10px;
+}
+
+/* -- renderer -- */
+.EventsViewer .splEvent-incident_review2 {
+	background: none repeat scroll 0 0 white;
+	border: 1px solid #CCCCCC;
+	/*border-radius: 5px 5px 5px 5px;*/
+	box-shadow: 0 0 5px #CCCCCC;
+	margin-bottom: -1px;
+	*margin-bottom: -4px; /* IE 7 and below */
+}
+
+/* -- mainTable -- */
+.EventsViewer .splEvent-incident_review2 .mainTable {
+	width: 100%;
+}
+
+.EventsViewer .splEvent-incident_review2 .mainTable td {
+	padding: 2px 10px;
+}
+
+.EventsViewer .splEvent-incident_review2 .mainTable .col1,
+.notable_header .col1 {
+	vertical-align: middle;
+	padding: 5px 0px 6px 5px;
+	width: 2%;
+}
+
+.EventsViewer .splEvent-incident_review2 .mainTable .col2,
+.notable_header .col2 {
+	vertical-align: middle;
+	padding: 5px 0px 6px 5px;
+	width: 3%;
+}
+
+.EventsViewer .splEvent-incident_review2 .mainTable .col3,
+.notable_header .col3 {
+	vertical-align: middle;
+	width: 10%;
+}
+
+.EventsViewer .splEvent-incident_review2 .mainTable .col4,
+.notable_header .col4 {
+	text-transform: capitalize;
+	vertical-align: middle;
+	width: 10%;	
+}
+
+.EventsViewer .splEvent-incident_review2 .mainTable .col5,
+.notable_header .col5 {
+	vertical-align: middle;
+	width: 35%;
+	
+}
+
+.EventsViewer .splEvent-incident_review2 .mainTable .col6,
+.notable_header .col6 {
+	text-transform: capitalize;
+	vertical-align: middle;
+	width: 13%;
+}
+
+.EventsViewer .splEvent-incident_review2 .mainTable .col7,
+.notable_header .col7 {
+	vertical-align: middle;
+	width: 8%;
+}
+
+.EventsViewer .splEvent-incident_review2 .mainTable .col8,
+.notable_header .col8 {
+	vertical-align: middle;
+	width: 13%;
+}
+
+.EventsViewer .splEvent-incident_review2 .mainTable .col9,
+.notable_header .col9 {
+	min-width: 60px;
+	vertical-align: middle;
+}
+
+.EventsViewer .splEvent-incident_review2 .mainTable .header2 .v {
+    color: #333333;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* -- urgencies -- */
+.EventsViewer .splEvent-incident_review2 .critical .v {
+    background-image: url('images/16_critical.png');
+    background-position: 2px;
+    background-repeat: no-repeat;
+    padding: 3px 0px 2px 24px;
+    font-weight: bold;
+    color: #d25b3b;
+    font-size: 12px;
+}
+
+.EventsViewer .splEvent-incident_review2 .high .v {
+    background-image: url('images/16_high.png');
+    background-position: 2px;
+    background-repeat: no-repeat;
+    padding: 3px 0px 2px 24px;
+    font-weight: bold;
+    color: #FF8800;
+    font-size: 12px;
+}
+
+.EventsViewer .splEvent-incident_review2 .medium .v {
+    background-image: url('images/16_medium.png');
+    background-position: 2px;
+    background-repeat: no-repeat;
+    padding: 3px 0px 2px 24px;
+    font-weight: bold;
+    color: #f0be1b;
+    font-size: 12px;
+}
+
+.EventsViewer .splEvent-incident_review2 .low .v {
+    background-image: url('images/16_low.png');
+    background-position: 2px;
+    background-repeat: no-repeat;
+    padding: 3px 0px 2px 24px;
+    font-weight: bold;
+    color: #98bf3b;
+    font-size: 12px;
+}
+
+.EventsViewer .splEvent-incident_review2 .informational .v {
+    background-image: url('images/16_informational.png');
+    background-position: 2px;
+    background-repeat: no-repeat;
+    padding: 3px 0px 2px 24px;
+    font-weight: bold;
+    color: #5378ad;
+    font-size: 12px;
+}
+
+.EventsViewer .splEvent-incident_review2 .unknown .v {
+    background-image: url('images/16_unknown.png');
+    background-position: 2px;
+    background-repeat: no-repeat;
+    padding: 3px 0px 2px 24px;
+    font-weight: bold;
+    color: #999999;
+    font-size: 12px;
+}
+
+/* -- details -- */
+.EventsViewer .splEvent-incident_review2 .event_details {
+	border-top: 1px dotted #CCCCCC;	
+	margin: 10px 8% 10px 10%;
+	padding-top: 10px;
+}
+
+/* -- description -- */
+.EventsViewer .splEvent-incident_review2 .rule_description {
+	width: 100%; 
+}
+
+.EventsViewer .splEvent-incident_review2 .rule_description .header {
+	/*color: #73A550;*/
+	font-weight: bold; 
+}
+
+/* -- compliance -- */
+.EventsViewer .splEvent-incident_review2 .compliance {
+	padding-top: 10px;
+	width: 40%;
+}
+
+.EventsViewer .splEvent-incident_review2 .compliance .header {
+	/*color: #73A550;*/
+	font-weight: bold; 
+}
+
+.EventsViewer .splEvent-incident_review2 .compliance_items {
+	border: 1px solid #CCCCCC;
+	border-bottom: none;
+	border-radius: 5px 5px 0px 0px;
+	box-shadow: 0 0 5px #CCCCCC;
+	margin-top: 2px;
+	width: 100%;
+}
+
+.EventsViewer .splEvent-incident_review2 .compliance_items .header {
+	background: none repeat scroll 0 0 #999999;
+	color: white;
+	font-weight: bold;
+}
+
+.EventsViewer .splEvent-incident_review2 .compliance_items .col1 {
+	border-right: 1px solid #CCCCCC;
+	border-bottom: 1px solid #CCCCCC;
+	padding: 3px 5px;
+}
+
+.EventsViewer .splEvent-incident_review2 .compliance_items .col2 {
+	border-bottom: 1px solid #CCCCCC;
+	padding: 3px 5px;
+}
+
+/* -- additional fields -- */
+.EventsViewer .splEvent-incident_review2 .additional_fields {
+	padding-top: 10px;
+	width: 100%;
+}
+
+.EventsViewer .splEvent-incident_review2 .additional_fields .header {
+	/*color: #73A550;*/
+	font-weight: bold;
+}
+
+/* -- source -- */
+.EventsViewer .splEvent-incident_review2 .source {
+	padding-left: 10px;
+	width: 100%;
+}
+
+.EventsViewer .splEvent-incident_review2 .source .header {
+	/*color: #73A550;*/
+	font-weight: bold;
+}
+
+/* -- drilldown -- */
+.EventsViewer .splEvent-incident_review2 .drilldown {
+	padding-left: 10px;
+	padding-top: 10px;
+	width: 100%;
+}
+
+.EventsViewer .splEvent-incident_review2 .drilldown .header {
+	/*color: #73A550;*/
+	font-weight: bold;
+}
+
+/* -- orig_raw -- */
+.EventsViewer .splEvent-incident_review2 .orig_raw {
+	padding-left: 10px;
+	padding-top: 10px;
+	width: 100%;
+}
+
+.EventsViewer .splEvent-incident_review2 .orig_raw .header {
+	/*color: #73A550;*/
+	font-weight: bold;
+}
+
+/* -- history -- */
+.EventsViewer .splEvent-incident_review2 .history {
+	padding-left: 10px;
+	padding-top: 10px;
+	width: 100%;
+}
+
+.EventsViewer .splEvent-incident_review2 .history .header {
+	/*color: #73A550;*/
+	font-weight: bold;
+}
+
+/* ------ credit_cards ------ */
+.credit_card .v {
+	background-repeat: no-repeat;
+	padding-left: 28px;
+	padding-top: 2px;
+}
+
+.diners_club_enroute .v {
+	background-image: url('images/credit_cards/diners_club.png');
+}
+
+.diners_club_carte_blanche .v {
+	background-image: url('images/credit_cards/diners_club.png');
+}
+
+.american_express .v {
+	background-image: url('images/credit_cards/american_express.png');
+}
+
+.jcb .v {
+	background-image: url('images/credit_cards/jcb.png');
+}
+
+.diners_club_international .v {
+	background-image: url('images/credit_cards/diners_club.png');
+}
+
+.visa_electron .v {
+	background-image: url('images/credit_cards/visa_electron.png');
+}
+
+.maestro .v {
+	background-image: url('images/credit_cards/maestro.png');
+}
+
+.visa .v {
+	background-image: url('images/credit_cards/visa.png');
+}
+
+.mastercard .v {
+	background-image: url('images/credit_cards/mastercard.png');
+}
+
+.bankcard .v {
+	background-image: url('images/credit_cards/bankcard.png');
+}
+
+.discover_card .v {
+	background-image: url('images/credit_cards/discover.png');
+}
+
+.solo .v {
+	background-image: url('images/credit_cards/solo.png');
+}

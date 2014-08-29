@@ -1,0 +1,129 @@
+{
+    "objectNameList": [],
+	"objectSummary": {},
+	"displayName": "Alerts",
+	"description": "",
+	"modelName": "Alerts",
+	"objects": [
+		{
+			"objectName": "Alerts",
+			"calculations": [
+				{
+					"calculationID": "Alerts_fillnull_dest",
+					"calculationType": "Eval",
+					"outputFields": [
+						{
+							"fieldName": "dest",
+							"displayName": "dest",
+							"type": "string",
+							"fieldSearch": "",
+							"required": false,
+							"multivalue": false,
+							"hidden": false,
+							"comment": "The asset or identity that the alert event is about. May be aliased from more specific fields, such as dest_host, dest_ip, or dest_name. Also see the optional dest_* fields listed in Optional Subject Fields."
+						}
+					],
+					"expression": "if(isnull(dest),\"unknown\",dest)"
+				},{
+					"calculationID": "Alerts_fillnull_app",
+					"calculationType": "Eval",
+					"outputFields": [
+						{
+							"fieldName": "app",
+							"displayName": "app",
+							"type": "string",
+							"fieldSearch": "",
+							"required": false,
+							"multivalue": false,
+							"hidden": false,
+							"comment": "The application involved in the event (such as win:app:trendmicro, vmware, nagios)."
+						}
+					],
+					"expression": "if(isnull(app),\"unknown\",app)"
+				},{
+					"calculationID": "Alerts_fillnull_type",
+					"calculationType": "Eval",
+					"outputFields": [
+						{
+							"fieldName": "type",
+							"displayName": "type",
+							"type": "string",
+							"fieldSearch": "",
+							"required": false,
+							"multivalue": false,
+							"hidden": false,
+							"comment": "The type of alert.; alarm/alert/event/task/unknown"
+						}
+					],
+					"expression": "if(isnull(type),\"unknown\",type)"
+				}
+
+			],
+			"constraints": [
+				{
+					"search": "tag=alert"
+				}
+			],
+			"comment": "",
+			"parentName": "BaseEvent",
+			"displayName": "Alerts",
+			"fields": [
+				 {
+					"type": "string",
+					"displayName": "id",
+					"hidden": false,
+					"multivalue": false,
+					"fieldSearch": "",
+					"fieldName": "id",
+					"required": false,
+					"comment": "A unique identifier of alert."
+				}, {
+					"type": "string",
+					"displayName": "src",
+					"hidden": false,
+					"multivalue": false,
+					"fieldSearch": "",
+					"fieldName": "src",
+					"required": false,
+					"comment": " The source of the alert event, such as an alert-generation system. May be aliased from more specific fields, such as src_host, src_ip, or src_name. Also see the optional src_* fields listed in Optional Subject Fields."
+				}, {
+					"type": "string",
+					"displayName": "severity",
+					"hidden": false,
+					"multivalue": false,
+					"fieldSearch": "",
+					"fieldName": "severity",
+					"required": false,
+					"comment": "The severity of alert. Note: This field is a string. Please use a msg_severity_id field for severity ID fields that are integer data types. Specific values are required, please use vendor_severity for the vendor's own human readable strings (such as 'Good', 'Bad', 'Really Bad').; ok/critical/high/medium/low/informational/unknown"
+				}, {
+					"type": "string",
+					"displayName": "severity_id",
+					"hidden": false,
+					"multivalue": false,
+					"fieldSearch": "",
+					"fieldName": "severity_id",
+					"required": false,
+					"comment": "A numeric severity indicator for alert."
+				}, {
+					"type": "string",
+					"displayName": "subject",
+					"hidden": false,
+					"multivalue": false,
+					"fieldSearch": "",
+					"fieldName": "subject",
+					"required": false,
+					"comment": "The subject of alert."
+				}, {
+					"type": "string",
+					"displayName": "body",
+					"hidden": false,
+					"multivalue": false,
+					"fieldSearch": "",
+					"fieldName": "body",
+					"required": false,
+					"comment": "The body of alert."
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,12 @@
+signature_id,Sub_Status,signature
+4625,0xc0000064,"User name does not exist"
+4625,0xc000006a,"User name is correct but the password is wrong"
+4625,0xc0000234,"User is currently locked out"
+4625,0xc0000072,"Account is currently disabled"
+4625,0xc000006F,"User tried to logon outside his day of week or time of day restrictions"
+4625,0xc0000070,"Workstation restriction"
+4625,0xc0000193,"Account expiration"
+4625,0xc0000071,"Expired password"
+4625,0xc0000133,"Clocks between DC and other computer too far out of sync"
+4625,0xc0000224,"User is required to change password at next logon"
+4625,0xc0000225,"Evidently a bug in Windows and not a risk"

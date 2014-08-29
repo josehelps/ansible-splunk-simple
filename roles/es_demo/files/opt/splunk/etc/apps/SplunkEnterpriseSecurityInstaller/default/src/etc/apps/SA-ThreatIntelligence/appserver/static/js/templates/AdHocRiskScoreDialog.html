@@ -1,0 +1,56 @@
+<!-- <a id="create-adhoc-risk" class="hide" href="#">Create ad-hoc risk score entry</a> -->
+
+<div id="create-adhoc-risk-holder" class="hide">
+	<div class="input form-submit splunk-view" style="margin-right: 0px;">
+	    <button id="create-adhoc-risk" class="btn" style="display: inline-block;"><i style="margin-right:8px" class="icon-plus icon-large"></i>Create Ad-Hoc Risk Entry</button>
+	</div>
+</div>
+<div id="adHocRiskScoreModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="adHocRiskScoreModal" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        <h3>Ad-Hoc Risk Score</h3>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal">
+	        <div class="warning-message-container">
+	            <div id="warning-message" class="hide alert alert-error">
+	              <i class="icon-alert"></i><span id="warning-message-text"></span>
+	            </div>
+	        </div>
+            
+            <div class="control-group">
+                <label class="control-label">Score</label>
+                <div class="controls">
+                    <div class="input input-text" id="risk-score"></div>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <label class="control-label">Description</label>
+                <div class="controls">
+                    <div class="input input-text" id="risk-description"></div>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <label class="control-label">Risk object</label>
+                
+                <div class="controls">
+                   <div class="input input-text" id="risk-object"></div>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <label class="control-label">Risk object type</label>
+                
+                <div class="controls">
+                   <div class="input input-text" id="risk-object-type"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button id="cancel" class="btn pull-left" data-dismiss="modal" aria-hidden="true">Cancel</button>
+        <button id="save" class="btn btn-primary pull-right btn-save">Save</button>
+    </div>
+</div>

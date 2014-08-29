@@ -1,0 +1,491 @@
+﻿<script type="text/javascript" src="/static/app/gettingstarted/getstarted.js"></script>
+
+     <div id="gs-intro" class="splClearfix">
+
+          <div class="gs-Wrapper">
+               <h1>Splunk 시작하기</h1>
+               <p>
+               Splunk를 사용하여 애플리케이션 관리, IT 작업, 보안 및 컴플라이언스 등을 위해 IT 데이터를 인덱스, 검색, 경고 및 보고할 수 있습니다. Splunk는 로그 파일, 시스템 메트릭스, 애플리케이션, 구성 등 모든 데이터를 사용합니다. 원하는 데이터를 Splunk에 제공할 수 있습니다.
+               </p>
+               <p>
+               시작하려면 아래 항목을 클릭하십시오.
+               </p>
+
+              <div class="gsTOC">
+                <a href="#" class="gsTOCLink gsTOCLinkHighlighted" divToShow="#gettingTab">둘러보기</a> <a href="#" class="gsTOCLink" divToShow="#indexTab">데이터 인덱스</a> <a href="#" class="gsTOCLink" divToShow="#searchTab">검색 및 조사</a> <a href="#" class="gsTOCLink" divToShow="#knowledgeTab">지식 추가</a> <a href="#" class="gsTOCLink" divToShow="#monitorTab">모니터링 및 경고</a> <a href="#" class="gsTOCLink" divToShow="#reportTab">보고 및 분석</a> <a href="#" class="gsTOCLink" divToShow="#moreTab">기타</a>
+             </div>
+         </div>
+     </div>
+
+     <div class="gs-Wrapper">
+
+          <div class="gsDetails" id="gettingTab" style="display: block;">
+                <h2>둘러보기</h2>
+                <p>Splunk UI에는 많은 기능이 포함되어 있습니다. Splunk를 탐색하고 Splunk 설치를 사용하는 방법에 대해 자세히 알려면 다음 항목을 모두 읽어 보십시오.</p>
+                <ul class="gs-subnav">
+                    <li><a href="#" class="gsExpandLink gsExpandLinkHighlighted" divToShow="#whereapps">현재 위치</a></li>
+                    <li><a href="#" class="gsExpandLink" divToShow="#usemanager">Splunk 관리</a></li>
+                </ul>
+
+                <div id="whereapps" class="gsExpandDetails" style="display: block;">
+                    <h2>현재 위치</h2>
+                    <p>Splunk는 앱으로 구성되어 있습니다. 앱은 뷰, 대시보드 및 구성 집합에서 데이터에 대한 여러 컨텍스트를 만듭니다. 현재 위치는 시작하기 앱입니다. 검색 앱을 만들 수 있는 검색 앱과 다른 앱을 실행할 수 있는 기본 앱인 Splunk 홈도 있습니다. Splunkbase에서 새 앱을 추가하거나 사용자의 앱을 만들 수도 있습니다.</p>
+                    <p><b>앱 간 이동</b></p>
+                    <p>다른 앱으로 이동하려면 오른쪽 상단 모서리의 <b>앱</b> 드롭다운을 사용하십시오.</p>
+                    <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/appmenu.png')}" alt="screenshow_uploadLocal" />
+                    <p>현재 Splunk 인스턴스에 설치된 앱 리스트를 보려면 이 페이지의 오른쪽 상단 모서리에 있는 앱 메뉴를 클릭하고 홈을 선택하여 홈으로 돌아가십시오. 이렇게 하면 시작하기 앱을 벗어나지만 홈 또는 앱 메뉴에서 시작하기를 다시 클릭하여 돌아올 수 있습니다.</p>
+                    <p><b>Splunk를 사용해 본 적이 있습니까? 보다 익숙한 다른 앱을 찾고 계십니까?</b></p>
+                    <p>Splunk를 사용해 본 적이 있을 경우 아마도 검색 앱을 찾는 것입니다. 검색 앱으로 이동하려면 오른쪽 상단 모서리의 앱 메뉴에서 &quot;검색&quot;을 선택하십시오.</p>
+                </div>
+
+                <div id="usemanager" class="gsExpandDetails">
+                    <h2>Splunk 관리</h2>
+                    <p>Splunk에 있는 대부분의 관리 옵션은 Splunk Web(Splunk 사용자 인터페이스)을 통해 사용할 수 있습니다.  일부 구성은 관리자 권한이 있는 Splunk 사용자만 사용할 수 있습니다.  이 앱에서 설명된 일부 구성 옵션에 접근할 수 없으면 해당 옵션에 접근할 수 있는 권한이 없을 수도 있습니다.</p>
+                    <p><b>Splunk 관리자 사용</b></p>
+                    <p>Splunk 관리자를 사용하여 구성 및 앱을 관리하십시오.  대부분 Splunk 관리자를 통해 구성 변경을 설정할 수 있습니다.  오른쪽 상단 모서리의 <b>관리자</b> 링크를 클릭하여 관리자로 이동하십시오.</p>
+                    <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/managernav.png')}" alt="screenshow_uploadLocal" />
+                    <p><b>작업 관리자 사용</b></p>
+                    <p>작업 관리자를 사용하여 검색을 관리하십시오. 모든 검색은 작업으로 실행됩니다.  오른쪽 상단 모서리의 <b>작업</b> 링크를 클릭하여 시스템에서 실행되는 모든 검색을 나열하고 제어할 수 있습니다.</p>
+                    <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/jobsnav.png')}" alt="screenshow_uploadLocal" />
+                    <p><b>앱 추가</b></p>
+                    <p>더 많은 Splunk 앱을 찾고 다운로드하려면 홈으로 돌아가 앱 더 찾아보기 탭을 클릭하십시오.</p>
+                    <p>사용자의 앱을 만들 수 있습니다. 자세한 내용은 <a href="${generateSelfHelpLink('gettingstarted.developer')}" target="_blank" title="Splunk 도움말">개발자 매뉴얼</a>을 참조하십시오.</p>
+                </div>
+          </div>
+
+
+          <div class="gsDetails" id="indexTab">
+               <h2>데이터 인덱스</h2>
+               <p>컴퓨터에서 생성하는 항목은 Splunk가 인덱스할 수 있습니다. 예. Splunk는 사용자 지정 구문 분석기, 커넥터 또는 어댑터 없이 구조화되거나 구조화되지 않은 모든 데이터를 인덱스할 수 있습니다. Unix 서버 및 네트워크 장치의 syslog에서 Windows의 이벤트 로그, 사용자 지정 애플리케이션 로그, 구성 및 시스템 메트릭에 이르기까지 어느 항목이나 Splunk에 제공하십시오. 모든 작업을 볼 수 있습니다.<p>
+               <p>Splunk에서 워크플로로 가져온 데이터를 사용하여 Splunk에 추가할 수 있는 모든 데이터 유형 및 이러한 유형의 데이터를 가져오기 위해 사용할 수 있는 여러 옵션을 확인할 수 있습니다. 데이터를 Splunk로 가져오는 방법은 데이터 위치에 따라 다양합니다.</p>
+               <ul class="gs-subnav">
+                    <li><a href="#" class="gsExpandLink gsExpandLinkHighlighted" divToShow="#localdata">이 Splunk 서버</a></li>
+                    <li><a href="#" class="gsExpandLink" divToShow="#windowsdata">원격 Windows 컴퓨터</a></li>
+                    <li><a href="#" class="gsExpandLink" divToShow="#unixdata">비 Windows 원격 컴퓨터</a></li>
+                    <li><a href="#" class="gsExpandLink" divToShow="#networkdata">네트워크</a></li>
+                    <li><a href="#" class="gsExpandLink" divToShow="#moreinputs">추가 입력 방법</a></li>
+               </ul>
+
+               <div id="localdata" class="gsExpandDetails" style="display: block;">
+                    <h2>이 Splunk 서버</h2>
+                    <p>Splunk는 모든 로컬 데이터를 연속적으로 또는 한 번만 인덱스할 수 있습니다. Splunk 관리자를 통해 파일이나 디렉터리를 인덱스하도록 Splunk를 구성하십시오. 데이터를 인덱스하기 전에 미리 보고 Splunk의 데이터 처리 방식에 대한 사용자 지정 규칙을 만들 수도 있습니다.</p>
+                    <ol>
+                         <li>관리자 &raquo; 데이터 입력 &raquo; 파일 및 디렉터리를 클릭합니다.</li>
+                         <li>새로 만들기를 클릭합니다.</li>
+                          <div class="controlButtonWrapper">
+                             <a class="splButton-primary" href="${make_url('/manager/search/data/inputs/monitor/_new?action=edit')}" target="_blank"><span>해당 항목으로 이동...</span></a>
+                          </div>
+                         <li>이렇게 하면 데이터 미리보기로 이동하여 sourcetype, Splunk가 파일 및 디렉터리에서 인덱스 시간 데이터를 구문 분석하고 제외하는 방식에 대한 규칙을 만들 수 있습니다.</li>
+                         <li>데이터를 미리 본 후에는 단일 파일 또는 디렉터리를 추가할 수 있으며 Splunk가 데이터를 즉시 인덱스합니다.</li>
+                         <li>데이터를 계속 인덱스하려면 &quot;이 Splunk 인스턴스가 액세스할 수 있는 파일 또는 디렉터리에서 데이터 계속 인덱스&quot;를 선택합니다.</li>
+                         <li>클라이언트 컴퓨터에 파일을 업로드하려면 ''로컬 파일 업로드''를 선택합니다.</li>
+                         <li>파일을 한 번 인덱스하려면 &quot;Splunk 서버에서 파일 인덱스''를 선택합니다.</li>
+                         <li>페이지의 나머지 지침에 따라 추가 옵션을 설정합니다. 예를 들어, 호스트 이름, sourcetype 또는 인덱스를 설정합니다.  또는 대부분의 옵션을 기본값으로 사용하여 Splunk에서 자동으로 지정하도록 합니다.</li>
+                    </ol>
+               </div>
+
+               <div id="windowsdata" class="gsExpandDetails">
+                    <h2>원격 Windows 컴퓨터</h2>
+                    <p>Splunk를 사용하여 네트워크의 다른 컴퓨터에서 Windows 데이터를 수집하십시오.  네트워크의 설정 방식에 따라 몇 가지 옵션을 사용할 수 있습니다.</p>
+                    <ol>
+                         <li>Windows에서 Splunk를 실행하는 경우 WMI를 사용하여 Windows 이벤트 로그뿐만 아니라 이벤트 로그 컬렉션, 레지스트리 모니터링 및 활성 디렉터리 모니터링도 수집할 수 있습니다.  모든 옵션은 관리자 &raquo; 데이터 입력에 나열됩니다.</li>
+                         <div class="controlButtonWrapper">
+                             <a class="splButton-primary" href="${make_url('/manager/launcher/datainputstats')}" target="_blank"><span>해당 항목으로 이동...</span></a>
+                          </div>
+                         <li>비 Windows 컴퓨터에서 Splunk를 실행하는 경우 에이전트를 사용하여 Windows 컴퓨터에서 Splunk로 데이터를 보낼 수 있습니다.  원격 컴퓨터에 범용 전달기(Universal Forwarder)를 설치하십시오.  Forwarder에 대한 자세한 내용은 설명서의 <a href="${generateSelfHelpLink('gettingstarted.forwarders')}" target="_blank" title="Splunk 도움말">범용 전달기(Universal Forwarder)</a> 항목을 참조하십시오.</li>
+                         <li>또는 네트워크에서 공유되는 디렉터리에서 언제든지 데이터를 인덱스할 수 있습니다.  Splunk 관리자 데이터 입력 페이지로 이동하여 ''파일 또는 디렉터리 모니터링&quot;을 선택하십시오. 파일 또는 디렉터리의 전체 경로를 입력하십시오. 예를 들어, Windows에서 c:\apache\apache.error.log를 입력하여 로컬 파일을 모니터링하거나 \\hostname\apache\apache.error.log를 입력하여 원격 Windows 컴퓨터에서 파일을 모니터링할 수 있습니다.</li>
+                         <div class="controlButtonWrapper">
+                             <a class="splButton-primary" href="${make_url('/manager/search/data/inputs/monitor/_new?action=edit')}" target="_blank"><span>해당 항목으로 이동...</span></a>
+                         </div>
+                    </ol>
+               </div>
+
+               <div id="unixdata" class="gsExpandDetails">
+                    <h2>비 Windows 원격 컴퓨터</h2>
+                    <p>Splunk를 사용하여 네트워크의 다른 비 Windows 컴퓨터에서 데이터를 수집하십시오.  네트워크의 설정 방식에 따라 몇 가지 옵션을 사용할 수 있습니다.</p>
+                    <ol>
+                         <li>네트워크에서 공유되는 디렉터리에서 언제든지 데이터를 인덱스할 수 있습니다.  Splunk 관리자 데이터 입력 페이지로 이동하여 ''파일 또는 디렉터리 모니터링&quot;을 선택하십시오. 파일 또는 디렉터리의 전체 경로를 입력하십시오. Unix에서 /var/log 형식을 사용하여 로컬 파일을 모니터링하거나 /mnt/www01/var/log를 사용하여 원격 디렉터리를 모니터링하십시오. </li>
+                         <div class="controlButtonWrapper">
+                             <a class="splButton-primary" href="${make_url('/manager/search/data/inputs/monitor/_new?action=edit')}" target="_blank"><span>해당 항목으로 이동...</span></a>
+                         </div>
+                         <li>또한 Splunk의 범용 전달기(Universal Forwarder)를 사용하여 다른 컴퓨터에서 Splunk로 데이터를 보낼 수 있습니다.  원격 컴퓨터에 Forwarder를 에이전트로 설치하고 Splunk 서버에 데이터를 보내도록 설정하십시오. Forwarder에 대한 자세한 내용은 설명서의 <a href="${generateSelfHelpLink('gettingstarted.forwarders')}" target="_blank" title="Splunk 도움말">범용 전달기(Universal Forwarder)</a> 항목을 참조하십시오.</li>
+                    </ol>
+               </div>
+
+               <div id="networkdata" class="gsExpandDetails">
+                    <h2>네트워크</h2>
+                    <p>TCP 또는 UDP 포트를 통해 데이터를 캡처하려면 이 방법을 사용하십시오. 예를 들어, syslog 데이터를 캡처하려면 UDP 514에서 수신 대기하도록 Splunk를 설정하십시오.</p>
+                    <ol>
+                         <li>Splunk 관리자에서 데이터 입력 페이지로 이동합니다.</li>
+                         <div class="controlButtonWrapper">
+                         <a class="splButton-primary" href="${make_url('/manager/search/datainputstats')}" target="_blank"><span>해당 항목으로 이동...</span></a>
+                         </div>
+                         <li>UDP 포트에서 데이터를 추가하려면 UDP 옆의 새로 만들기를 클릭합니다.</li>
+                         <li>TCP를 사용하는 포트에서 데이터를 추가하려면 TCP 옆의 새로 만들기를 클릭합니다.</li>
+                         <li>Splunk에서 수신 대기해야 하는 포트를 지정합니다.</li>
+                         <li>페이지의 나머지 지침에 따라 추가 옵션을 설정합니다.</li>
+                    </ol>
+               </div>
+
+                <div id="moreinputs" class="gsExpandDetails">
+                    <h2>추가 입력 방법</h2>
+                    <p>다른 방법으로 데이터를 Splunk로 가져올 수 있습니다.  일반적으로 다음과 같은 옵션이 사용됩니다.</p>
+                    <p><b>분산 환경의 여러 컴퓨터에서 데이터 수집</b></p>
+                    <p>앱의 팜 또는 로컬 로깅 웹 서버와 같은 분산 환경에서 Splunk로 데이터를 어떻게 로컬로 가져오는지 궁금하십니까? Splunk의 범용 전달기(Universal Forwarder)는 수십 대 또는 수백 대나 수천 대의 서버에 배포하여 실시간으로 데이터를 캡처하고 중앙 Splunk 인덱서로 보낼 수 있는 경량형 에이전트입니다. 다른 시스템에서 Splunk로 데이터를 보내려면 <a href="${generateSelfHelpLink('gettingstarted.forwarders')}" target="_blank" title="Splunk 도움말">범용 전달기(Universal Forwarder)</a>를 사용하십시오. Splunk 관리자에서 전달을 설정하십시오.</p>
+                    <p><b>사용자의 입력 스크립트</b></p>
+                    <p>사용자 지정 데이터 원본에 대해 <a href="${generateSelfHelpLink('gettingstarted.scripted')}" target="_blank" title="Splunk 도움말">스크립트 기반 입력</a>을 만드십시오. 스크립트 기반 입력은 vmstat, iostat, netstat, top 등과 같은 명령줄 도구에 유용합니다. API와 기타 원격 데이터 인터페이스 및 메시지 대기열에서 데이터를 가져오고 vmstat, iostat 등과 같은 시스템 및 앱 상태 명령을 실행하여 메트릭 및 상태 데이터를 생성하십시오. SplunkBase의 많은 앱에서는 특정 애플리케이션에 스크립트 기반 입력을 제공합니다. Splunk 관리자에서 스크립트 기반 입력을 설정하십시오.</p>
+                    <p><b>파일 시스템 변경 모니터링</b></p>
+                    <p>파일 시스템에서 어떤 변경이 수행되고 있는지 관심이 있으십니까? <a href="${generateSelfHelpLink('gettingstarted.fscm')}" target="_blank" title="Splunk 도움말">파일 시스템 변경 모니터링</a>을 설정하고 모든 변경이 발생하는 대로 확인하십시오. 이 방법을 사용하여 수많은 컴플라이언스 명령에 필요한 경우 중요한 파일, 구성 파일 등을 모니터링하고 보안 및 작동을 위해 시스템에 영향을 미치는 변경 및 무단 변경을 찾아보십시오.</p>
+                </div>
+          </div>
+
+          <div class="gsDetails" id="searchTab">
+               <h2>검색</h2>
+               <p>
+               Splunk에 데이터를 가져온 후 검색 앱을 사용하여 보안 인시던트를 조사하거나 애플리케이션, 서버 및 네트워크 문제를 해결하거나 시스템 및 사용자 작업을 사전 검토할 수 있습니다.
+               </p>
+               <ul class="gs-subnav">
+                    <li><a href="#" class="gsExpandLink gsExpandLinkHighlighted" divToShow="#freeform">자유 양식 검색</a></li>
+                    <li><a href="#" class="gsExpandLink" divToShow="#realtime">실시간으로 검색</a></li>
+                    <li><a href="#" class="gsExpandLink" divToShow="#resultsactions">결과와의 인터랙션</a></li>
+                    <li><a href="#" class="gsExpandLink" divToShow="#fields">필드를 사용하여 검색</a></li>
+                    <li><a href="#" class="gsExpandLink" divToShow="#timeline">시간 표시줄을 사용하여 조사</a></li>
+                    <li><a href="#" class="gsExpandLink" divToShow="#searchassist">검색 길잡이</a></li>
+                </ul>
+
+               <div id="freeform" class="gsExpandDetails" style="display: block;">
+                    <h2>자유 양식 검색</h2>
+                    <p>
+                    데이터에서 찾을 것으로 예상하는 모든 텍스트를 검색하십시오.
+                    </p>
+                    <ol>
+                         <li>검색 앱으로 이동합니다.</li>
+                         <div class="controlButtonWrapper">
+                         <a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank"><span>해당 항목으로 이동...</span></a>
+                         </div>
+                         <li>검색란에 직접 용어를 입력합니다. 문제를 조사할 경우 다음 항목을 검색하십시오.</li>
+                         <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_error.png')}" alt="screenshow_uploadLocal"/>
+                         <li>용어를 부울식과 결합합니다. 따라서 웹 작업과 연결되지 않은 오류를 찾으려면 다음 항목을 검색하십시오.</li>
+                         <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_errornothttp.png')}" alt="screenshow_uploadLocal" />
+                         <li>용어의 패턴과 일치시키려면 와일드카드를 사용합니다. 메시지에 &quot;failed&quot; 또는 &quot;failure&quot;가 포함되는 실패한 로그인 시도를 찾으려면 다음 항목을 검색하십시오. </li>
+                         <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_faillogin.png')}" alt="screenshow_uploadLocal" />
+                   </ol>
+               </div>
+
+               <div id="realtime" class="gsExpandDetails" style="display: block;">
+                    <h2>실시간으로 검색</h2>
+                    <p>
+                         데이터를 Splunk로 가져오면 실시간으로 검색하십시오.
+                    </p>
+                    <ol>
+                         <li>검색 앱으로 이동합니다.</li>
+                         <div class="controlButtonWrapper">
+                         <a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank"><span>해당 항목으로 이동...</span></a>
+                         </div>
+                         <li>자유 양식 검색으로 입력합니다.  실시간 검색은 Splunk의 모든 검색 언어를 지원합니다.</li>
+                         <li>''실시간'' 옵션을 선택한 다음 실시간 결과가 스트리밍되는 대로 표시할 시간 간격을 선택합니다.</li>
+                         <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_realtime.png')}" alt="screenshow_uploadLocal" />
+                   </ol>
+               </div>
+
+               <div id="resultsactions" class="gsExpandDetails">
+                   <h2>결과와의 인터랙션</h2>
+                   <p>검색 결과는 시간 표시줄과 마찬가지로 서로 영향을 미칩니다. 이 절에서는 클릭 한 번으로 검색에 용어를 추가, 제거 및 추출하는 방법에 대해 설명합니다. </p>
+                   <ol>
+                        <li>검색 앱으로 이동합니다.</li>
+                        <div class="controlButtonWrapper">
+                            <a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank"><span>해당 항목으로 이동...</span></a>
+                        </div>
+                        <li>데이터에 있는 용어에 대한 검색을 실행합니다.</li>
+                        <li>마우스를 검색 결과 위로 이동합니다. 마우스를 검색 결과 위로 움직이면 단어 및 구가 강조 표시되어 검색에 추가할 수 있음을 나타냅니다.</li>
+                        <li>검색 결과에서 용어를 강조 표시하고 클릭합니다. 이 용어가 검색란에 포함되도록 검색이 업데이트되고 일치하지 않는 이전의 모든 결과를 제외합니다.</li>
+                        <li>또는 검색 결과에서 이미 강조 표시된 용어를 클릭합니다. Splunk가 검색을 업데이트하고 해당 용어를 제거합니다.</li>
+                        <li>또한 Splunk에서 제외할 용어를 지정할 수 있습니다. 용어를 강조 표시하고 Alt 키(Windows의 경우 Ctrl 키)를 누른 상태에서 클릭합니다. Splunk는 부울 NOT 연산을 사용하여 이 용어를 제외합니다.</li>
+                   </ol>
+               </div>
+
+               <div id="fields" class="gsExpandDetails">
+                    <h2>필드를 사용하여 검색</h2>
+                    <p>자유 양식 검색은 쉽고 강력하지만 항상 원하는 대답을 제공하지는 않습니다. 예를 들어, HTTP 상태 코드가 200인 이벤트를 제외하고자 할 수 있습니다. 그러나 &quot;NOT 200&quot;을 검색하는 경우 200이 포함된 IP 주소에서 전송되는 &quot;503&quot; 상태 이벤트와 같이 계속 유지하려는 이벤트도 제거될 수 있습니다.</p>
+                    <p>Splunk는 원래 데이터에서 모든 용어를 인덱스할 때 이름/값 쌍, 헤더 또는 기타 설명이 필요하지 않은 다른 정보를 기준으로 필드를 검색하고 추가합니다. 예를 들어, Splunk는 host, source 및 sourcetype 필드로 데이터를 가져온 위치에 대한 정보를 자동으로 추가합니다.  Splunk는 또한 IP 주소, HTTP 상태 코드 등 데이터의 다른 부분을 인식할 수 있습니다. 이 앱의 지식 추가 절에 설명된 대로 사용자 필드를 추가할 수도 있습니다.</p>
+                    <ol>
+                        <li>검색 앱으로 이동합니다.</li>
+                        <div class="controlButtonWrapper">
+                              <a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank"><span>해당 항목으로 이동...</span></a>
+                        </div>
+                        <li>예를 들어, 웹 작업을 검색합니다.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_http.png')}" alt="screenshow_uploadLocal" />
+                        <li>검색 결과의 왼쪽 옆에는 필드 메뉴가 있습니다. 이 필드들은 Splunk가 자동으로 검색하고 추가하는 필드입니다.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/fields_menu.png')}" alt="screenshow_uploadLocal" />
+                        <p>검색 결과에 표시되는 필드는 '검색된 결과' 헤더 아래에 나열됩니다. 표시할 더 많은 필드를 선택할 수 있습니다. Splunk가 자동으로 검색한 다른 필드는 '관심 있는 필드' 아래 나열됩니다.</p>
+                        <li>각 필드 이름 옆에는 검색 결과에서 해당 필드에 대해 존재하는 다른 값의 수가 표시됩니다. 아무 필드 이름이나 클릭하면 각 필드의 상위 값이 표시됩니다. 원하는 필드 값을 클릭하여 검색에 필터로 추가합니다.</li>.
+                        <li>웹 데이터를 검색하는 경우 '필드 선택'을 클릭하고 표시되는 팝업 메뉴에서 '상태'를 선택하여 HTTP 상태를 필드에 추가할 수 있습니다.</li>
+                        <li>'상태' 필드 값이 HTTP 상태 코드 200, 503, 404 등입니다. 이제 이 정보를 사용하여 특정 필드 값을 검색하거나 제외할 수 있습니다. 다음과 같이 실패한 모든 웹 접근 이벤트를 검색할 수 있습니다.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_httpnotstatus200.png')}" alt="screenshow_uploadLocal" />
+                        <li>필드를 사용하여 검색할 때 비교 연산자(&gt;, &lt;, &gt;=, &lt;=)를 사용할 수도 있습니다. 상태 값이 300보다 큰 이벤트를 모두 보려면 다음 항목을 검색하십시오.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_status300.png')}" alt="screenshow_uploadLocal" />
+                     </ol>
+               </div>
+               <div id="timeline" class="gsExpandDetails">
+                    <h2>시간 표시줄을 사용하여 조사</h2>
+                    <p>시간 표시줄은 각 시점에 발생하는 이벤트 수를 시각적으로 나타냅니다. 따라서 시간 표시줄을 사용하여 이벤트 패턴을 강조 표시하거나 이벤트 작업의 최고점과 최저점을 조사할 수 있습니다.</p>
+                    <ol>
+                        <li>검색 앱으로 이동합니다.</li>
+                           <div class="controlButtonWrapper">
+                              <a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank"><span>해당 항목으로 이동...</span></a>
+                           </div>
+                        <li>'error'에 대한 검색을 실행해 보고 검색 아래 오른쪽의 시간 표시줄을 확인합니다.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_timeline.png')}" alt="screenshow_uploadLocal" />
+                        <li>검색 결과에 따라 시간 표시줄이 업데이트되면 이벤트 모음이나 패턴을 확인할 수 있습니다. 시간 표시줄의 최고점 또는 최저점은 활동이 가장 많은 부분 또는 서버 중단 시간을 나타냅니다.</li>
+                        <li>시간 표시줄의 한 점을 클릭하고 막대 모음 위로 두 번째 점까지 마우스를 끕니다. 검색 결과가 선택된 해당 시간 범위에 발생한 이벤트만 표시하도록 업데이트됩니다.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/timeline2.png')}" alt="screenshow_uploadLocal" />
+                        <li>시간 표시줄의 막대 하나를 클릭합니다. 검색 결과가 선택된 해당 시점에 발생한 이벤트만 표시하도록 업데이트됩니다. </li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/timeline3.png')}" alt="screenshow_uploadLocal" />
+                    </ol>
+               </div>
+
+               <div id="searchassist" class="gsExpandDetails">
+                   <h2>검색 길잡이 사용</h2>
+                   <p>검색 길잡이는 검색을 구성하는 사용자를 위한 제품 내 신속한 참조입니다. 용례를 포함하여 검색 명령어에 대한 세부정보를 제공하며 사용 가능한 다른 명령어를 제안합니다.</p>
+                   <ol>
+                        <li>검색 앱으로 이동합니다.</li>
+                        <div class="controlButtonWrapper">
+                           <a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank"><span>해당 항목으로 이동...</span></a>
+                        </div>
+                        <li>검색 길잡이를 열려면 검색란 아래 녹색 화살표를 클릭합니다.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_assist.png')}" alt="screenshow_uploadLocal" />
+                        <li>검색란이 비어 있는 경우 Splunk 내 검색 및 검색 구성 방법에 대한 간략한 설명이 표시됩니다. 기본적으로, 도우미는 검색 명령어에 대한 정보를 표시합니다.</li>
+                        <li>검색 길잡이의 오른쪽에는 명령어 사용내역 및 다음으로 많이 사용된 명령어가 표시됩니다.</li>
+                        <li>검색 길잡이의 왼쪽에는 검색 명령어 및 용례 예제에 대한 간략한 설명이 표시됩니다.</li>
+                   </ol>
+               </div>
+          </div>
+
+          <div class="gsDetails" id="knowledgeTab">
+               <h2>지식 추가</h2>
+               <p>Splunk는 IT 데이터에서 지식을 자동으로 추출하고 사용자가 자신의 지식을 쉽게 추가할 수 있도록 허용하여 완전히 새로운 방식으로 검색을 실행합니다. 데이터에 있는 이벤트, 필드, 트랜잭션, 패턴 및 통계에 대한 지식을 추가하십시오. 이 데이터를 식별하고 이름 및 태그를 지정할 수 있습니다.</p>
+               <p>Splunk가 검색 시 이 지식을 모두 매핑하기 때문에, 데이터를 다시 인덱스하지 않고 필요할 때 새 필드 및 event type을 언제든지 추가할 수 있습니다. 특정 사용자 이름이 포함된 모든 이벤트를 찾고 특정 사용자 작업에 대한 통계를 바로 확인해 보십시오.</p>
+               <ul class="gs-subnav">
+                   <li><a href="#" class="gsExpandLink gsExpandLinkHighlighted" divToShow="#classifyevents">유사한 이벤트 분류</a></li>
+                   <li><a href="#" class="gsExpandLink" divToShow="#extractfields">새 필드 추출</a></li>
+                   <li><a href="#" class="gsExpandLink" divToShow="#tagevents">필드 값 태그 지정</a></li>
+                   <li><a href="#" class="gsExpandLink" divToShow="#moreknow">Splunk 지식에 대해 자세히 알아보기</a></li>
+               </ul>
+
+               <div id="classifyevents" class="gsExpandDetails" style="display: block;">
+                   <h2>유사한 이벤트 분류</h2>
+                   <p>데이터를 검색할 경우 원하지 않은 이벤트를 기본적으로 모두 제거합니다. 검색 결과는 공통 특성을 공유하는 이벤트이며 이 이벤트에 집합적인 이름 또는 &quot;event type&quot;을 지정할 수 있습니다. event type의 이름은 eventtype 필드에 값으로 추가됩니다. 즉, 이 이벤트 그룹도 다른 필드를 검색하는 것과 동일한 방법으로 검색할 수 있습니다. 다음 예에서는 검색을 eventtype으로 저장한 다음 해당 필드를 검색하는 방법을 단계적으로 설명합니다.</p>
+                   <p>sshd 로그인이나 방화벽 거부와 같은 SSH 및 방화벽 작업을 조사하기 위해 자주 검색을 실행하는 경우 이러한 검색을 event type으로 저장할 수 있습니다. 또한 간단한 오류 메시지가 표시되는 경우 보다 설명적인 이름을 가진 event type으로 저장할 수 있습니다.</p>
+                   <ol>
+                        <li>검색 앱으로 이동합니다.</li>
+                        <div class="controlButtonWrapper">
+                           <a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank"><span>해당 항목으로 이동...</span></a>
+                        </div>
+                        <li>로그인 시도와 같은 SSH 작업을 정기적으로 추적하는 경우 이 검색을 event type으로 저장할 수 있습니다. 먼저, 검색을 실행합니다. 예를 들어, 다음과 같이 SSH 로그인을 검색하십시오.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_sshdlogin.png')}" alt="screenshow_uploadLocal" />
+                        <li>검색을 실행한 후 '만들기' 드롭다운 메뉴에서 &quot;이벤트 유형...&quot; 옵션을 선택합니다. 이벤트 유형 저장 창이 나타납니다. </li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/save_event_type.png')}" alt="screenshow_uploadLocal" />
+                        <li>화면의 지침에 따라 event type에 이름을 지정합니다. 예를 들어, 이 이벤트 유형의 이름을 &quot;sshlogin&quot;으로 지정할 수 있습니다. 필요한 경우 검색 문자열을 수정합니다. 이벤트 유형에 대한 태그를 선택적으로 정의할 수 있습니다(자세한 내용은 뒤에 설명되어 있음). 작업이 완료되면 &quot;저장&quot;을 클릭합니다.</li>
+                        <li>로그아웃이나 제한시간과 같은 다른 유형의 SSH 작업에 대한 event type도 저장할 수 있습니다. 지금은 다음과 같이 실행하여 SSH 로그인만 검색합니다. </li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_eventtypesshlogin.png')}" alt="screenshow_uploadLocal" />
+                        <li>sshlogout 및 sshtimeout 이름의 다른 event type을 저장한 경우 모든 SSH 이벤트를 신속하게 검색할 수 있습니다.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_eventypessh_all.png')}" alt="screenshow_uploadLocal" />
+                   </ol>
+               </div>
+
+               <div id="extractfields" class="gsExpandDetails">
+                    <h2>새 필드 추출</h2>
+                    <p>Splunk는 사용자가 새 데이터를 인덱스할 때 지식을 자동으로 추출합니다. 사용자도 데이터를 다시 인덱스하지 않고 필요할 때 언제든지 새 지식을 추가할 수 있습니다. 이 절에서는 필드 추출기를 사용하여 대화식으로 새 필드를 추출하고 저장하는 방법에 대해 설명합니다.</p>
+                    <ol>
+                        <li>검색 앱으로 이동합니다.</li>
+                        <div class="controlButtonWrapper">
+                           <a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank"><span>해당 항목으로 이동...</span></a>
+                        </div>
+                        <li>host, source 또는 sourcetype 값에 대한 검색을 실행합니다. 이벤트 집합에 대한 필드 추출은 해당 이벤트와 연결된 host, source 또는 sourcetype 값에 연결됩니다.</li>
+                        <li>결과에서 이벤트를 선택합니다.</li>
+                        <li>이 이벤트에 대한 타임스탬프 옆의 파란색 드롭다운 화살표를 클릭합니다. 메뉴가 열립니다.</li>
+                        <li>&quot;필드 추출&quot;을 선택합니다. 대화형 필드 추출 창이 열립니다.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/extract_field.png')}" alt="screenshow_uploadLocal" />
+                        <li>페이지의 지침을 따릅니다. 예를 들어, 사용자 이름, 원본 IP 및 대상 IP에 대한 필드를 추가할 수 있습니다.</li>
+                    </ol>
+               </div>
+
+               <div id="tagevents" class="gsExpandDetails">
+                    <h2>필드 값 태그 지정</h2>
+                    <p>태그는 필드 값을 공유하는 검색 결과를 분류하는 데 도움이 됩니다. 태그는 eventtype, host, source 또는 sourcetype과 같은 필드의 특정 값에 추가하는 이름입니다. 예를 들어, 서비스 이름 또는 PCI와 같은 규정과의 컴플라이언스를 나타내는 메모를 사용하여 host 값에 태그를 지정할 수 있습니다. </p>
+                    <p>일반적으로 태그를 사용하여 다음 작업을 수행할 수 있습니다.</p>
+                    <ul>
+                         <li>위치나 이름을 사용하여 그룹화할 수 있는 IP 주소 또는 ID 번호와 같은 추상적인 필드 값을 추적할 수 있습니다.</li>
+                         <li>태그를 사용하여 필드 값 집합을 그룹화할 수 있으므로, 간단한 하나의 명령어로 필드 값을 검색할 수 있습니다.</li>
+                         <li>추출된 특정 필드에 ID의 여러 측면을 반영하는 여러 개의 태그를 지정할 수 있습니다. 이 태그들을 사용하면 태그 기반 검색을 수행하여 원하는 결과 범위를 빨리 좁힐 수 있습니다.</li>
+                    </ul>
+                    <p>모든 필드에 대해 검색 또는 특정 필드 대화 상자에 대해 검색의 두 가지 태그 검색 방법이 있습니다.</p>
+                    <ol>
+                        <li>태그가 지정된 필드를 포함하는 모든 이벤트를 검색하려면 다음 항목을 거부하십시오.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_tagdeny.png')}" alt="screenshow_uploadLocal" />
+                        <li>event type이 태그인 이벤트만 검색하려면 다음 항목을 거부하십시오.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_tageventtypedeny.png')}" alt="screenshow_uploadLocal" />
+                    </ol>
+               </div>
+
+               <div id="moreknow" class="gsExpandDetails">
+                    <h2>Splunk 지식에 대해 자세히 알아보기</h2>
+                    <p>엔터프라이즈 요구를 충족하는 방식으로 데이터를 처리하도록 Splunk를 최대한 활용하고 확장할 수 있는 다른 여러 방법이 있습니다. <a href="${generateSelfHelpLink('gettingstarted.knowledge')}" target="_blank" title="Splunk 도움말">지식 관리자 매뉴얼</a>을 참조하면 장기적으로 Splunk 배포를 최적화하고 유지 및 확장하는 데 도움이 됩니다.</p>
+                    <p>지식 관리자 매뉴얼에서는 다음 항목에 대해 설명합니다.</p>
+                    <ul>
+                        <li>이벤트, event type, 필드, source type, 태그, 트랜잭션 등 Splunk &quot;knowledge object&quot;를 관리하고 유지하는 방법</li>
+                        <li>룩업 및 별칭을 포함한 필드 사용의 베스트 프랙티스</li>
+                        <li>개념적으로 관련된 이벤트를 트랜잭션으로 분류하기 위한 전략</li>
+                    </ul>
+               </div>
+           </div>
+
+
+          <div class="gsDetails" id="monitorTab">
+               <h2>모니터링 및 경고</h2>
+               <p>Splunk를 사용하여 시스템의 문제를 식별하고 찾은 후에는 Splunk의 모니터링 및 경고 기능을 통해 해당 상황이 다시 발생하는 경우 통보하도록 설정할 수 있습니다. 검색을 저장하여 원하는 경우 언제든지 실행하거나 또는 모니터링하도록 경고를 설정할 수 있습니다. 검색 결과가 사용자가 정의하는 조건을 충족할 경우 경보가 발생하도록 구성하십시오. 실시간으로 발생하는 이벤트에 대해 경고를 생성할 수도 있습니다.</p>
+               <ul class="gs-subnav">
+                   <li><a href="#" class="gsExpandLink gsExpandLinkHighlighted" divToShow="#saveandschedule">검색 저장</a></li>
+                   <li><a href="#" class="gsExpandLink" divToShow="#setupalert">경고 설정</a></li>
+               </ul>
+               <div id="saveandschedule" class="gsExpandDetails" style="display: block;">
+                    <h2>검색 저장</h2>
+                    <ol>
+                         <li>관심 있는 결과를 반환하는 검색을 만듭니다.</li>
+                         <div class="controlButtonWrapper">
+                              <a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank"><span>해당 항목으로 이동...</span></a>
+                         </div>
+                         <li>검색 실행이 완료되면 검색란 아래 '저장' 드롭다운에서 &quot;검색 저장&quot;을 선택합니다.</li>
+                         <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/saveactions.png')}" alt="screenshow_uploadLocal" />
+                         <li>검색 저장 대화 상자가 표시됩니다.</li>
+                         <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/savesearch.png')}" alt="screenshow_uploadLocal" />
+                         <li>페이지의 나머지 지침에 따라 추가 옵션을 설정합니다.</li>
+                    </ol>
+               </div>
+               <div id="setupalert" class="gsExpandDetails">
+                    <h2>경고 설정</h2>
+                    <p>검색을 경고로 전환할 수 있습니다.  경고는 이메일이나 RSS로 사용자에게 알립니다. 스크립트를 트리거하도록 경고를 설정할 수도 있습니다.</p>
+                    <ol>
+                         <li>검색을 경고로 설정하려면 검색란 아래 '만들기' 드롭다운에서 &quot;경고&quot;를 선택합니다.</li>
+                         <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/alertactions.png')}" alt="screenshow_uploadLocal" />
+                         <li>경고 만들기 대화 상자가 표시됩니다.</li>
+                         <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/alertworkflow.png')}" alt="screenshow_uploadLocal" />
+                         <li>대화 상자의 지침에 따라 하나 이상의 경고 방법을 설정합니다.  Splunk가 사용자에게 이메일을 보내도록 하려면 Splunk 서버에서 sendmail(또는 MTA)이 활성화되어 있는지 확인합니다.</li>
+                    </ol>
+               </div>
+          </div>
+
+          <div class="gsDetails" id="reportTab">
+          <h2>보고 및 분석</h2>
+          <p>Splunk의 기본 제공 시각화 도구를 사용하여 보고서를 만드십시오. Splunk는 보고와 관련하여 광범위한 옵션을 제공합니다. 검색 결과에서 직접 간단한 &quot;시간에 따른 상위 값&quot; 보고서를 만드십시오. 복잡한 차트를 정의하고 형식을 지정하려면 보고서 작성기를 사용하십시오. 또는 Splunk의 강력한 통계 명령어를 사용하여 직접 보고서를 정의하십시오. 마지막으로, 사용자의 보고서를 다른 사람과 공유하는 대시보드를 신속하게 만들 수 있습니다.</p>
+          <ul class="gs-subnav">
+               <li><a href="#" class="gsExpandLink gsExpandLinkHighlighted" divToShow="#basicreports">간단한 보고서 만들기</a></li>
+               <li><a href="#" class="gsExpandLink" divToShow="#reportbuilder">보고서 작성기 사용</a></li>
+               <li><a href="#" class="gsExpandLink" divToShow="#reportcommands">보고 명령 사용</a></li>
+               <li><a href="#" class="gsExpandLink" divToShow="#previewreports">보고서 미리보기</a></li>
+               <li><a href="#" class="gsExpandLink" divToShow="#builddashboards">대시보드 생성</a></li>
+          </ul>
+
+               <div id="basicreports" class="gsExpandDetails" style="display: block;">
+                    <h2>간단한 보고서 만들기</h2>
+                    <p>검색을 실행한 후 검색 결과에 포함된 필드에 대한 기본 정보를 제공하는 보고서를 신속하게 실행할 수 있습니다.</p>
+                    <ol>
+                      <li>검색 앱으로 이동합니다.</li>
+                      <div class="controlButtonWrapper">
+                            <a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank"><span>해당 항목으로 이동...</span></a>
+                        </div>
+                        <li>보고할 용어나 필드에 대한 검색을 실행합니다.</li>
+                        <li>검색이 완료되면 검색 결과 사이드바에서 보고할 필드를 찾아 클릭합니다. 예를 들어, 사용자 ID 집합에 대해 보고하려면 UID를 선택하십시오.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/report_fieldselect.png')}" alt="screenshow_uploadLocal" />
+                        <li>팝업 창이 나타나 선택한 필드에 대한 정보를 표시합니다. 각 필드에 대해 보고서를 실행할 수 있습니다. &quot;시간에 따른 평균&quot; 또는 &quot;전체 상위 값&quot; 등 실행할 보고서를 선택합니다.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/report_topvals.png')}" alt="screenshow_uploadLocal" />
+                        <li>보고서 작성기가 별도의 창에 나타나 검색에서 반환한 이벤트 데이터를 기준으로 차트를 표시합니다. 여기서 보고서의 형식을 다시 지정하거나 보고서를 저장하거나 인쇄할 수 있습니다.</li>
+                    </ol>
+               </div>
+               <div id="reportbuilder" class="gsExpandDetails">
+                    <h2>보고서 작성기 사용</h2>
+                    <p>보고서를 만들고 형식을 지정하려면 보고서 작성기를 실행하십시오.</p>
+                    <ol>
+                        <li>검색 앱으로 이동합니다.</li>
+                        <div class="controlButtonWrapper">
+                              <a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank"><span>해당 항목으로 이동...</span></a>
+                          </div>
+                        <li>보고할 용어나 필드에 대한 검색을 실행합니다.</li>
+                        <li>시간 표시줄 위의 '만들기' 메뉴에 보고서를 만들기 위한 링크가 표시됩니다. 이 링크를 클릭하여 보고서 작성기를 실행합니다. 보고서 작성기를 실행하기 전에 검색이 완료될 때까지 기다리지 않아도 됩니다.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/report_build.png')}" alt="screenshow_uploadLocal" />
+                        <li>시간 표시줄 아래 결과 차트 단추를 클릭하여 시간 표시줄 뷰 내에서 직접 보고서를 만들 수도 있습니다.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/report_sprite.png')}" alt="screenshow_uploadLocal" />
+                    </ol>
+            </div>
+
+            <div id="reportcommands" class="gsExpandDetails">
+                    <h2>보고 명령 사용</h2>
+                    <p>보고서 작성기 드롭다운 리스트를 사용하여 보고서를 정의하는 경우 Splunk는 보고서를 실행하기 위해 사용하는 통계 보고 명령을 사용하여 보고서 작성기 검색 상자를 업데이트합니다. 이 절에서는 검색란에서 직접 보고 명령을 사용하는 방법에 대해 설명합니다.</p>
+                    <ol>
+                        <li>검색 앱으로 이동합니다.</li>
+                        <div class="controlButtonWrapper">
+                              <a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank"><span>해당 항목으로 이동...</span></a>
+                        </div>
+                        <li>데이터에 있는 용어에 대한 검색을 실행합니다.</li>
+                        <li>검색 용어 뒤에 &quot;파이프&quot; 문자 및 일부 기본 보고 명령을 추가합니다. 예를 들어, 이 기본 보고서에서는 내부 Splunk 인덱스에서 가장 일반적인 상위 5개 원본을 찾습니다.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/report_top5.png')}" alt="screenshow_uploadLocal" />
+                        <li>결과를 차트로 표시하려면 시간 표시줄 아래 결과 차트 단추를 선택합니다. 원하는 경우 '형식 지정 옵션'을 사용하여 보고서의 형식을 다시 지정합니다.</li>
+                        <li>더 복잡한 보고서를 생성하려면 Splunk의 <a href="${generateSelfHelpLink('gettingstarted.report')}" target="_blank" title="Splunk 도움말">사용자 매뉴얼</a>에서 Splunk 보고 명령어에 대한 내용을 참조하십시오.</li>
+                    </ol>
+            </div>
+
+            <div id="previewreports" class="gsExpandDetails">
+                    <h2>보고서 미리보기</h2>
+                    <p>보고서를 실행하는 경우 검색이 실행됨에 따라 보고서 결과를 미리 볼 수 있습니다. 이 기능을 사용하면 특히 장기간 검색을 실행하는 경우 시간을 절약할 수 있습니다. 보고 명령어를 사용하는 검색의 경우 기본적으로 보고서 미리보기 기능이 활성화되므로 장기간 실행되는 보고서에 대해 사용해 보십시오.</p>
+                    <ol>
+                        <li>검색 앱으로 이동합니다.</li>
+                        <div class="controlButtonWrapper">
+                              <a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank"><span>해당 항목으로 이동...</span></a>
+                        </div>
+                        <li>검색란에 보고서 생성 검색을 입력합니다.</li>
+                        <li>보고서가 실행되는 동안 결과 영역에 미리보기가 표시됩니다.</li>
+                        <li>보고서 실행을 완료하기 전에 보고서를 변경하려면 취소 단추를 클릭하고 검색 문자열을 편집합니다.</li>
+                    </ol>
+            </div>
+
+            <div id="builddashboards" class="gsExpandDetails">
+                    <h2>대시보드 생성</h2>
+                    <p>대시보드를 만들어 검색 및 보고서를 저장하고 공유하십시오. 대시보드는 정보를 제공하는 가장 유용한 보고서를 수집하고 다른 사용자가 사용할 수 있도록 하는 장소입니다. 대시보드를 처음부터 시작하거나 보고서를 만들 때 대시보드를 만드십시오.</p>
+                    <ol>
+                        <li>검색 앱으로 이동합니다.</li>
+                        <div class="controlButtonWrapper">
+                              <a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank"><span>해당 항목으로 이동...</span></a>
+                        </div>
+                        <li>만들기 메뉴에서 검색 또는 보고서를 이미 실행한 경우 &quot;대시보드 패널&quot;을 클릭하면 검색 또는 보고서를 기존 대시보드에 추가하거나 새 대시보드를 만들 수 있습니다.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/actionsdash.png')}" alt="screenshow_uploadLocal" />
+                    </ol>
+                    <p>처음부터 대시보드를 만드는 작업부터 시작할 수도 있습니다.</p>
+                    <ol>
+                         <li>대시보드 및 보기 메뉴에서 &quot;새 대시보드 만들기&quot;를 선택합니다.</li>
+                         <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/adddash.png')}" alt="screenshow_uploadLocal" />
+                         <li>새 대시보드 만들기 창이 표시됩니다. 대시보드에 짧은 이름(대시보드 ID) 및 긴 이름(대시보드 이름)을 지정합니다. 이름을 지정한 후 만들기를 클릭합니다.</li>
+                         <li>처음에는 대시보드가 비어 있습니다. 대시보드 편집을 클릭하여 편집 창을 열고 패널 유형 및 첫 번째 패널에 대해 저장된 검색을 선택합니다. 패널 추가를 클릭하여 새 패널을 대시보드에 추가합니다.</li>
+                        <li>패널을 재명명하거나 패널 형식을 변경하거나 패널을 기준으로 하는 검색을 업데이트하려면 패널 편집을 클릭합니다.</li>
+                        <li>더 많은 패널을 만들려면 마지막 두 단계를 반복합니다. 패널이 원하는 방식으로 설정될 때까지 계속 끕니다.</li>
+                        <li>작업이 완료되었습니다! 닫기를 클릭하면 대시보드의 모양을 확인할 수 있습니다. 변경할 항목이 있으면 페이지 맨 위의 작업 메뉴로 이동하여 대시보드 편집...을 선택하고 항목을 수정합니다.</li>
+                    </ol>
+            </div>
+     </div>
+
+     <div class="gsDetails" id="moreTab">
+          <h2>추가</h2>
+          <p>Splunk를 사용하여 수행할 수 있는 작업에 대한 추가 정보를 찾고 계십니까? 다음은 Splunk의 온라인 설명서에 대한 추가 링크입니다.</p>
+          <ul>
+            <li><b>사용자 추가</b>: <a href="${generateSelfHelpLink('gettingstarted.users')}" target="_blank" title="Splunk 도움말">여기</a>에서 사용자를 추가하고 사용자에 대한 접근 제어를 구성하는 방법에 대해 알아보십시오. <b>참고</b>: Splunk Free를 사용할 경우에는 이 기능을 사용할 수 없습니다. Splunk Enterprise의 평가판 버전을 사용하는 경우 평가판이 만료된 후에는 이 기능에 접근할 수 없습니다.</li>
+            <li><b>분산 검색 설정</b>: <a href="${generateSelfHelpLink('gettingstarted.distsearch')}" target="_blank" title="Splunk 도움말">여기</a>에서 여러 Splunk 인스턴스를 사용하여 인스턴스 간에 처리 및 검색을 분산하는 방법에 대해 자세히 읽어보십시오.</li>
+            <li><b>사용자 앱 만들기</b>: <a href="${generateSelfHelpLink('gettingstarted.apps')}" target="_blank" title="Splunk 도움말">여기</a>에서 조직의 요구를 충족하도록 앱을 생성하는 방법에 대해 알아보십시오.</li>
+        </ul>
+    </div>
+</div><!-- wrapper -->
+
+
+
+
+
+
+

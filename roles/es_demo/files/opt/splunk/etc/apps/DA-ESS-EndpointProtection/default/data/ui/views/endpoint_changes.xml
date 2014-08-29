@@ -1,0 +1,80 @@
+<form script="endpoint_changes.js">
+	<label>Endpoint Changes</label>
+	
+	<fieldset autoRun="true" submitButton="true">
+        
+        <input type="text" token="bunit_form">
+            <label>Business Unit</label>
+            <default></default>
+        </input>
+
+        <input type="dropdown" token="category_form">
+            <label>Category</label>
+            <choice value="">All</choice>
+            <populatingSearch fieldForValue="category" fieldForLabel="category">| `categories`</populatingSearch>
+            <default></default>
+        </input>
+        
+		<input type="time">
+			<default>Last 24 hours</default>
+		</input>
+	</fieldset>
+	
+	<row>
+        <chart id="element1">
+            <title>Endpoint Changes By Action</title>
+            
+            <searchTemplate>| `tstats` count from datamodel=Change_Analysis where nodename=All_Changes.Endpoint_Changes $bunit$ $category$ by _time,All_Changes.action span=10m | timechart minspan=10m useother=`useother` count by All_Changes.action | `drop_dm_object_name("All_Changes")`</searchTemplate>
+            
+            <option name="charting.axisTitleX.text">time</option>
+            <option name="charting.axisTitleY.text">count</option>
+            <option name="charting.chart">line</option>
+            <option name="charting.chart.nullValueMode">zero</option>
+
+            <drilldown>
+                <link>search?q=| `datamodel("Change_Analysis", "Endpoint_Changes")` | `drop_dm_object_name("All_Changes")` | search action="$click.name2$"&amp;earliest=$earliest$&amp;latest=$latest$</link>
+            </drilldown>
+        </chart>
+    </row>
+
+	<row>
+		<chart id="element2">
+			<title>Endpoint Changes By Type</title>
+			
+			<searchTemplate>| tstats `summariesonly` count from datamodel=Change_Analysis where nodename=All_Changes.Endpoint_Changes $bunit$ $category$ by All_Changes.object_category | `drop_dm_object_name("All_Changes")` | sort 10 - count</searchTemplate>
+            
+            <option name="charting.axisTitleX.text">object_category</option>
+            <option name="charting.axisTitleY.text">count</option>
+            <option name="charting.chart">bar</option>
+            <option name="charting.legend.placement">none</option>
+			
+			<drilldown>
+				<link>search?q=| `datamodel("Change_Analysis", "Endpoint_Changes")` | `drop_dm_object_name("All_Changes")` | search object_category="$click.value$"&amp;earliest=$earliest$&amp;latest=$latest$</link>
+			</drilldown>
+		</chart>
+		
+		<table id="element3">
+			<title>Endpoint Changes By System</title>
+			
+			<searchTemplate>| tstats `summariesonly` values(All_Changes.object_category) as object_category,count from datamodel=Change_Analysis where nodename=All_Changes.Endpoint_Changes $bunit$ $category$ by _time,All_Changes.dest span=1h | `drop_dm_object_name("All_Changes")` | stats sparkline(sum(count),1h) as sparkline,values(object_category) as object_category,sum(count) as count by dest | sort 100 - count</searchTemplate>
+			
+			<drilldown>
+				<link>search?q=| `datamodel("Change_Analysis", "Endpoint_Changes")` | `drop_dm_object_name("All_Changes")` | search dest="$row.dest$"&amp;earliest=$earliest$&amp;latest=$latest$</link>
+			</drilldown>
+		</table>
+	</row>
+	
+	<row>
+		<event id="element4">
+			<title>Recent Endpoint Changes</title>
+			
+			<searchTemplate>| `datamodel("Change_Analysis", "Endpoint_Changes")` | search $bunit$ $category$ | `drop_dm_object_name("All_Changes")` | head 100</searchTemplate>
+			
+			<option name="count">5</option>
+			<option name="rowNumbers">false</option>
+			<option name="type">list</option>
+			<option name="list.wrap">true</option>
+			<fields>action, object_category, object_path, object, dest, user</fields>
+		</event>
+	</row>
+</form>

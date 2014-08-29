@@ -1,0 +1,17 @@
+<view template="search.html" stylesheet="ess_configuration.css" isDashboard="false" isVisible="false" >
+  <label>Setup</label>
+  
+  <module name="AccountBar" layoutPanel="appHeader"/>
+  <module name="AppBar" layoutPanel="navigationHeader"/>
+  <module name="Message" layoutPanel="messaging">
+    <param name="filter">*</param>
+    <param name="clearOnJobDispatch">False</param>
+    <param name="maxSize">1</param>
+  </module>
+
+  <module name="ServerSideInclude" layoutPanel="viewHeader">
+    <param name="src">under_construction.html</param>
+  </module>
+  
+</view>
+

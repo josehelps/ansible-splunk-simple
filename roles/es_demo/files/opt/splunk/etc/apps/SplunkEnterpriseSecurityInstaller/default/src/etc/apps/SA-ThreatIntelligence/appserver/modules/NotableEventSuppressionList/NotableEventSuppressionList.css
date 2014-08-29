@@ -1,0 +1,49 @@
+@import url("/static/css/bootstrap.min.css");
+@import url("/static/css/pages/dashboard-simple-bootstrap.min.css");
+
+.adminContentList h2 {
+	float:       left;
+	font-size:   24px;
+	font-weight: 200;	
+}
+
+.eaiPaginationHeader {
+	padding-bottom: 10px;
+}
+
+.eaiPaginationHeader .splButton-primary {
+	margin-left: 50px;
+	margin-top:  12px;
+}
+
+.eaiResultsPerPage {
+	float: right;
+}
+
+.Paginator a {
+    display: inline-block;
+    padding: 3px 6px;
+}
+
+.Paginator ul {
+	margin-left: 0px;
+}
+
+.Paginator ul li {
+    display: inline;
+    line-height: 100%;
+    padding: 0;
+}
+
+.checkboxWidget {
+	padding-bottom: 10px;
+}
+	
+.checkboxWidget input {
+	float: left;
+}
+
+.checkboxWidget label {
+	padding-left: 18px;
+	padding-top: 3px; 
+}

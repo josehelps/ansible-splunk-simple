@@ -1,0 +1,20 @@
+<%page expression_filter="h" args="module"/>
+<%
+import splunk.util
+import splunk
+if splunk.util.normalizeBoolean(module['useStandardCSS']):
+	css = "/static/app/SA-Utils/stylesheets/jqueryui-splunk.css"
+else:
+	css = "/" + "/".join(['static', 'app', APP['id'], 'stylesheets', 'jqueryui-splunk.css'])
+%>
+<%namespace name="lib" file="//lib.html" import="*"/>
+
+<% 
+splunkVersion = splunk.getReleaseVersion()
+if splunkVersion.startswith("5."):
+	jsFiles = ['/static/app/SA-Utils/scripts/contrib/jquery-ui-1.8.21.custom.min.js','/static/app/SA-Utils/scripts/contrib/store.min.js']
+else:
+	jsFiles = ['/static/app/SA-Utils/scripts/contrib/store.min.js']
+%> 
+<%lib:script_tags files="${jsFiles}" />
+<link rel="stylesheet" type="text/css" href="${make_url(css)}" />

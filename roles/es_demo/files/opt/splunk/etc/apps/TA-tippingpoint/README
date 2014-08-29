@@ -1,0 +1,17 @@
+Tipping Point Add-on
+----------------------------------------
+	Author: Splunk
+	Version/Date: 01/19/2011 04:43 pm
+	Source type(s): tippingpoint
+	Input requirements: Tab delimitted SMS 2.0/2.1 Syslog
+	Has index-time operations: false
+	Supported product(s): Tipping Point Security Management System
+
+Using this Add-on:
+----------------------------------------
+	Configuration: Automatic
+	Ports for automatic configuration: 9514
+	Scripted input setup: Not applicable
+	
+	
+Copyright (C) 2009-2013 Splunk Inc. All Rights Reserved.

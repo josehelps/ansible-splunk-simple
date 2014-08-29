@@ -1,0 +1,491 @@
+﻿<script type="text/javascript" src="/static/app/gettingstarted/getstarted.js"></script>
+
+     <div id="gs-intro" class="splClearfix">
+
+          <div class="gs-Wrapper">
+<h1>Splunk 入门介绍</h1>
+               <p>
+利用 Splunk 可以对任何 IT 数据进行实时索引、搜索、告警和报表，从而实现应用程序管理、IT 运营、安全性和合规性等用途。Splunk 可以处理任何数据：日志文件、系统指标、应用程序、配置...您可以将所需的任何数据提供给 Splunk。
+               </p>
+               <p>
+单击下面一个主题，开始体验。
+               </p>
+
+              <div class="gsTOC">
+<a href="#" class="gsTOCLink gsTOCLinkHighlighted" divToShow="#gettingTab">概览</a><a href="#" class="gsTOCLink" divToShow="#indexTab">索引数据</a><a href="#" class="gsTOCLink" divToShow="#searchTab">搜索与调查</a><a href="#" class="gsTOCLink" divToShow="#knowledgeTab">添加知识</a><a href="#" class="gsTOCLink" divToShow="#monitorTab">监视与告警</a><a href="#" class="gsTOCLink" divToShow="#reportTab">报告与分析</a><a href="#" class="gsTOCLink" divToShow="#moreTab">更多</a>
+             </div>
+         </div>
+     </div>
+
+     <div class="gs-Wrapper">
+
+          <div class="gsDetails" id="gettingTab" style="display: block;">
+<h2>概览</h2>
+<p>Splunk 的用户界面提供了很多功能。请通读以下主题来更好地了解如何导航和使用您的 Splunk 安装。</p>
+                <ul class="gs-subnav">
+<li><a href="#" class="gsExpandLink gsExpandLinkHighlighted" divToShow="#whereapps">我现在在何处？</a></li>
+<li><a href="#" class="gsExpandLink" divToShow="#usemanager">管理您的 Splunk 安装</a></li>
+                </ul>
+
+                <div id="whereapps" class="gsExpandDetails" style="display: block;">
+<h2>我现在在何处？</h2>
+<p>Splunk 由各种应用组成。应用会利用各种视图、仪表板和配置为您的数据创建不同的环境。您现在正位于&ldquo;入门介绍&rdquo;应用中。您还可以使用从中创建搜索的搜索应用，以及可从中启动其他应用的默认应用 Splunk 主页。您还可以从 Splunkbase 添加新应用，或创建您自己的应用。</p>
+<p><b>在应用之间导航</b></p>
+<p>要导航到其他应用，请使用右上角的<b>应用</b>下拉菜单：</p>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/appmenu.png')}" alt="screenshow_uploadLocal" />
+<p>要查看您的 Splunk 实例中当前所安装应用的列表，您可以单击此页面右上角的&ldquo;应用&rdquo;菜单，然后选择&ldquo;主页&rdquo;以返回&ldquo;主页&rdquo;。这将使您离开&ldquo;入门介绍&rdquo;应用，但您可以从&ldquo;主页&rdquo;或&ldquo;应用&rdquo;菜单中再次选择&ldquo;入门介绍&rdquo;返回此处。</p>
+<p><b>以前使用过 Splunk 吗？想找到您熟悉的功能吗？</b></p>
+<p>如果您以前使用过 Splunk，您可能正在寻找&ldquo;搜索&rdquo;应用。要到达&ldquo;搜索&rdquo;应用，从右上角的&ldquo;应用&rdquo;菜单中选择&ldquo;搜索&rdquo;。</p>
+                </div>
+
+                <div id="usemanager" class="gsExpandDetails">
+<h2>管理您的 Splunk 安装</h2>
+<p>通过 Splunk 網站（Splunk 的用户界面）可使用大部分 Splunk 管理选项。请注意，一些配置只适用于具有管理员权限的 Splunk 用户。如果您无法访问本应用中讨论的部分配置，您可能没有访问它们的权限。</p>
+<p><b>使用 Splunk 管理器</b></p>
+<p>您可以使用&ldquo;Splunk 管理器&rdquo;来管理您的配置和应用。几乎每项配置更改都可以通过&ldquo;Splunk 管理器&rdquo;来设置。单击右上角的<b>管理器</b>链接可以转到管理器：</p>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/managernav.png')}" alt="screenshow_uploadLocal" />
+<p><b>使用任务管理器</b></p>
+<p>您可以使用&ldquo;任务管理器&rdquo;来管理您的搜索。您的所有搜索都作为任务运行。单击右上角的<b>任务</b>链接，可以列出和控制在您的系统上运行的所有搜索：</p>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/jobsnav.png')}" alt="screenshow_uploadLocal" />
+<p><b>添加更多应用</b></p>
+<p>要浏览和下载 Splunk 的更多应用，返回&ldquo;主页&rdquo;，并单击&ldquo;查找更多应用&rdquo;按钮。</p>
+<p>您也可以创建自己的应用。有关更多信息，请参考<a href="${generateSelfHelpLink('gettingstarted.developer')}" target="_blank" title="Splunk 帮助">开发人员手册</a>。</p>
+                </div>
+          </div>
+
+
+          <div class="gsDetails" id="indexTab">
+<h2>索引数据</h2>
+<p>只要计算机生成数据，Splunk 就可以建立数据索引。是的，没错 - Splunk 可以索引任何数据，无论是结构化的还是非结构化的，无需定制的分析器、连接器或适配器。您可以向 Splunk 提供任何数据，包括 Unix 服务器和网络设备的 syslog、Windows 上的事件日志、定制应用程序的日志，甚至是配置和系统指标-您可以对整个运行状态一览无余。<p>
+<p>使用 Splunk 的将数据导入工作流功能，您可以找到可以添加到 Splunk 的所有不同类型的数据和导入此类数据的不同方法。有许多方法可以将您的数据导入 Splunk，具体取决于数据所在的位置。</p>
+               <ul class="gs-subnav">
+<li><a href="#" class="gsExpandLink gsExpandLinkHighlighted" divToShow="#localdata">在此 Splunk 服务器上</a></li>
+<li><a href="#" class="gsExpandLink" divToShow="#windowsdata">在远程 Windows 计算机上</a></li>
+<li><a href="#" class="gsExpandLink" divToShow="#unixdata">在远程非 Windows 计算机上</a></li>
+<li><a href="#" class="gsExpandLink" divToShow="#networkdata">在您的网络上</a></li>
+<li><a href="#" class="gsExpandLink" divToShow="#moreinputs">更多导入方法</a></li>
+               </ul>
+
+               <div id="localdata" class="gsExpandDetails" style="display: block;">
+<h2>在此 Splunk 服务器上</h2>
+<p>Splunk 可以连续或一次性索引所有本地数据。将 Splunk 配置为通过&ldquo;Splunk 管理器&rdquo;索引文件或目录。您还可以在索引数据之前对其进行预览，并创建 Splunk 应如何处理数据的规则。</p>
+                    <ol>
+<li>单击&ldquo;管理器&rdquo;&raquo;&ldquo;数据导入&rdquo;&raquo;&ldquo;文件和目录&rdquo;。</li>
+<li>单击&ldquo;新建&rdquo;。</li>
+                          <div class="controlButtonWrapper">
+<a class="splButton-primary" href="${make_url('/manager/search/data/inputs/monitor/_new?action=edit')}" target="_blank"><span>前往此处...</span></a>
+                          </div>
+<li>这会将您带到&ldquo;数据预览&rdquo;，并允许您创建 sourcetype - 决定 Splunk 应如何从您的文件和目录解析和提取索引时间数据的规则。</li>
+<li>预览完您的数据后，您可以添加单个文件或目录，Splunk 会立即为数据建立索引。</li>
+<li>选择&ldquo;不断索引从此 Splunk 实例可以访问的文件或目录的数据&rdquo;，可以不断索引数据。</li>
+<li>选择&ldquo;上载并索引文件&rdquo;，可以上载您的客户端计算机上的文件。</li>
+<li>选择&ldquo;从此 Splunk 服务器索引文件一次&rdquo;，可以对文件建立一次性索引。</li>
+<li>按照页面上的其他指示操作，设置更多选项。例如，设置主机名、sourcetype 或索引。或者，您可以将大部分以上选项保留为默认设置，Splunk 将为您指定相关设置。</li>
+                    </ol>
+               </div>
+
+               <div id="windowsdata" class="gsExpandDetails">
+<h2>在远程 Windows 计算机上</h2>
+<p>您可以使用 Splunk 来收集您的网络中其他计算机上的 Windows 数据。根据您的网络设置，您有几个选项可供选择：</p>
+                    <ol>
+<li>如果您在 Windows 上运行 Splunk，您可以使用 WMI 来收集 Windows 事件日志以及&ldquo;事件日志&rdquo;集合、注册表监视和 Active Directory 监视。所有选项都在&ldquo;管理器&rdquo;&raquo;&ldquo;数据导入&rdquo;中列出。</li>
+                         <div class="controlButtonWrapper">
+<a class="splButton-primary" href="${make_url('/manager/launcher/datainputstats')}" target="_blank"><span>前往此处...</span></a>
+                          </div>
+<li>如果您在非 Windows 计算机上运行 Splunk，可以使用代理来将数据从您的 Windows 计算机发送到 Splunk。在远程计算机上安装通用转发器。有关转发器的更多信息，请查看文档中的<a href="${generateSelfHelpLink('gettingstarted.forwarders')}" target="_blank" title="Splunk 帮助">通用转发器</a>主题。</li>
+<li>另外，您始终可以索引网络上共享目录中的数据。只需导航到&ldquo;Splunk 管理器数据导入&rdquo;页面，并选择&ldquo;监视文件或目录&rdquo;。键入文件或目录的完整路径。例如，在 Windows 上，您可以输入：c:\apache\apache.error.log 来监视本地文件，或 \\hostname\apache\apache.error.log 来监视远程 Windows 计算机上的文件。</li>
+                         <div class="controlButtonWrapper">
+<a class="splButton-primary" href="${make_url('/manager/search/data/inputs/monitor/_new?action=edit')}" target="_blank"><span>前往此处...</span></a>
+                         </div>
+                    </ol>
+               </div>
+
+               <div id="unixdata" class="gsExpandDetails">
+<h2>在远程非 Windows 计算机上</h2>
+<p>您可以使用 Splunk 来收集您的网络中其他非 Windows 计算机上的数据。根据您的网络设置，您有几个选项可供选择：</p>
+                    <ol>
+<li>您始终可以索引网络上共享目录中的数据。只需导航到&ldquo;Splunk 管理器数据导入&rdquo;页面，并选择&ldquo;监视文件或目录&rdquo;。键入文件或目录的完整路径。在 Unix 上，使用 /var/log 来监视本地文件，或使用 /mnt/www01/var/log 来监视远程目录。 </li>
+                         <div class="controlButtonWrapper">
+<a class="splButton-primary" href="${make_url('/manager/search/data/inputs/monitor/_new?action=edit')}" target="_blank"><span>前往此处...</span></a>
+                         </div>
+<li>您还可以使用 Splunk 的通用转发器将数据从任何其他计算机发送到 Splunk。安装转发器作为远程计算机上的代理，并将其设置为将数据发送到您的 Splunk 服务器。有关转发器的更多信息，请查看文档中的<a href="${generateSelfHelpLink('gettingstarted.forwarders')}" target="_blank" title="Splunk 帮助">通用转发器</a>主题。</li>
+                    </ol>
+               </div>
+
+               <div id="networkdata" class="gsExpandDetails">
+<h2>在您的网络上</h2>
+<p>使用此方法捕获通过 TCP 或 UDP 端口发送的数据。例如，将 Splunk 设置为在 UDP 514 上侦听，以捕获 syslog 数据。</p>
+                    <ol>
+<li>在&ldquo;Splunk 管理器&rdquo;中导航到&ldquo;数据导入&rdquo;页面。</li>
+                         <div class="controlButtonWrapper">
+<a class="splButton-primary" href="${make_url('/manager/search/datainputstats')}" target="_blank"><span>前往此处...</span></a>
+                         </div>
+<li>单击 UDP 旁边的&ldquo;新建&rdquo;以添加 UDP 端口的数据。</li>
+<li>单击 TCP 旁边的&ldquo;新建&rdquo;以添加使用 TCP 的端口的数据。</li>
+<li>指定 Splunk 应侦听的端口。</li>
+<li>按照页面上的其他指示操作，设置更多选项。</li>
+                    </ol>
+               </div>
+
+                <div id="moreinputs" class="gsExpandDetails">
+<h2>更多导入方法</h2>
+<p>还有一些其他方法可以将您的数据导入 Splunk。以下是几个常用选项：</p>
+<p><b>收集分布式环境中多台计算机的数据</b></p>
+<p>想知道如何使数据从分布式环境（例如，在本地登录的一系列应用或 Web 服务器）导入 Splunk 吗？Splunk 的通用转发器是轻型代理，可以部署到数十，甚至数以百计或千计的服务器，以实时捕获数据，或发送到中央 Splunk 索引器。您可以使用<a href="${generateSelfHelpLink('gettingstarted.forwarders')}" target="_blank" title="Splunk 帮助">通用转发器</a>将数据从其他系统发送到 Splunk。从&ldquo;Splunk 管理器&rdquo;设置转发。</p>
+<p><b>编写您自己的导入脚本</b></p>
+<p>为您的自定义数据源创建<a href="${generateSelfHelpLink('gettingstarted.scripted')}" target="_blank" title="Splunk 帮助">脚本式导入</a>。脚本式导入对 vmstat、iostat、netstat、top 等命令行工具非常有用。从 API 以及其他远程数据接口和消息队列获取数据，并从执行系统和诸如 vmstat、iostat 等应用状态命令生成指标和状态数据。SplunkBase 上的许多应用都提供针对特定应用程序的脚本式导入。从&ldquo;Splunk 管理器&rdquo;设置脚本式导入。</p>
+<p><b>监视文件系统更改</b></p>
+<p>您想了解文件系统上发生了哪些更改吗？设置<a href="${generateSelfHelpLink('gettingstarted.fscm')}" target="_blank" title="Splunk 帮助">文件系统更改监视</a>，便可以即时查看每项更改。使用此方法可以监视关键文件、配置文件等是否符合许多合规要求，还可以发现影响系统的更改和未授权更改，以保证安全和正常运营。</p>
+                </div>
+          </div>
+
+          <div class="gsDetails" id="searchTab">
+<h2>搜索</h2>
+               <p>
+将数据导入 Splunk 后，您可以使用&ldquo;搜索&rdquo;应用来调查安全事故、解决应用程序、服务器和网络问题，或只是主动检查系统和用户活动。
+               </p>
+               <ul class="gs-subnav">
+<li><a href="#" class="gsExpandLink gsExpandLinkHighlighted" divToShow="#freeform">任意搜索</a></li>
+<li><a href="#" class="gsExpandLink" divToShow="#realtime">实时搜索</a></li>
+<li><a href="#" class="gsExpandLink" divToShow="#resultsactions">与结果交互</a></li>
+<li><a href="#" class="gsExpandLink" divToShow="#fields">使用字段搜索</a></li>
+<li><a href="#" class="gsExpandLink" divToShow="#timeline">使用时间线调查</a></li>
+<li><a href="#" class="gsExpandLink" divToShow="#searchassist">搜索助理</a></li>
+                </ul>
+
+               <div id="freeform" class="gsExpandDetails" style="display: block;">
+<h2>任意搜索</h2>
+                    <p>
+搜索您要在数据中查找的任何文本。
+                    </p>
+                    <ol>
+<li>导航到&ldquo;搜索&rdquo;应用。</li>
+                         <div class="controlButtonWrapper">
+<a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank"><span>前往此处...</span></a>
+                         </div>
+<li>将词语直接键入搜索栏。如果您要调查某个问题，请搜索：</li>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_error.png')}" alt="screenshow_uploadLocal"/>
+<li>将词语与布尔表达式结合使用。如果您要查找与 Web 活动不相关的错误，请搜索：</li>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_errornothttp.png')}" alt="screenshow_uploadLocal" />
+<li>使用通配符来匹配词语的格式。如果您要查找失败的登录尝试，这些失败的尝试在消息中可能包含&ldquo;failed&rdquo;或&ldquo;failure&rdquo;，您可以搜索： </li>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_faillogin.png')}" alt="screenshow_uploadLocal" />
+                   </ol>
+               </div>
+
+               <div id="realtime" class="gsExpandDetails" style="display: block;">
+<h2>实时搜索</h2>
+                    <p>
+数据进入 Splunk 时对其进行实时搜索。
+                    </p>
+                    <ol>
+<li>导航到&ldquo;搜索&rdquo;应用。</li>
+                         <div class="controlButtonWrapper">
+<a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank"><span>前往此处...</span></a>
+                         </div>
+<li>键入任意搜索。实时搜索支持 Splunk 的所有搜索语言。</li>
+<li>选择&ldquo;实时&rdquo;选项，然后选择实时结果流入时进行显示的时间窗。</li>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_realtime.png')}" alt="screenshow_uploadLocal" />
+                   </ol>
+               </div>
+
+               <div id="resultsactions" class="gsExpandDetails">
+<h2>与结果交互</h2>
+<p>您的搜索结果与时间线是交互的。在本部分中，只需单击就可以查看如何从您的搜索中添加、删除或排除术语。 </p>
+                   <ol>
+<li>导航到&ldquo;搜索&rdquo;应用。</li>
+                        <div class="controlButtonWrapper">
+<a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank"><span>前往此处...</span></a>
+                        </div>
+<li>运行在您的数据中查找任何词语的搜索。</li>
+<li>将鼠标移动到您的搜索结果上。请注意您将鼠标移动到词和短语上时突出显示的词和短语，这表示您可以将这些词语添加到您的搜索。</li>
+<li>突出显示并单击搜索结果中的某个词语。您的搜索会更新，将此词语加入搜索栏中，并过滤掉不匹配的所有先前结果。</li>
+<li>此外，单击已经突出显示的搜索结果中的任何词语；Splunk 会更新并从搜索中删除该词语。</li>
+<li>而且，您还可以指定要 Splunk 排除的词语。突出显示该词，然后按住 Alt 单击（在 Windows 中，按住 Ctrl 单击）；Splunk 会更新您的搜索，使用布尔 NOT 运算排除该词语。</li>
+                   </ol>
+               </div>
+
+               <div id="fields" class="gsExpandDetails">
+<h2>使用字段搜索</h2>
+<p>任意搜索简单易用且功能强大，但并非始终都能提供您需要的答案。例如，您可能要排除 HTTP 状态代码为 200 的事件。但是，如果您只搜索&ldquo;NOT 200&rdquo;，您还会删除可能要保留的事件，例如来自包含 200 的 IP 地址的状态为&ldquo;503&rdquo;的事件。</p>
+<p>索引您的原始数据中的每个词语时，Splunk 会基于名称/值对、标题或不需另行说明的其他信息来发现和添加字段。例如，Splunk 会将有关数据来源位置的信息添加到 host、source 和 sourcetype 字段。Splunk 还可能会识别数据的其他部分，例如，IP 地址、HTTP 状态代码等。您还可以按此应用的&ldquo;添加知识&rdquo;部分中的说明，添加您自己的字段。</p>
+                    <ol>
+<li>导航到&ldquo;搜索&rdquo;应用。</li>
+                        <div class="controlButtonWrapper">
+<a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank"><span>前往此处...</span></a>
+                        </div>
+<li>例如，搜索 Web 活动：</li>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_http.png')}" alt="screenshow_uploadLocal" />
+<li>请注意位于左侧的搜索结果旁边的字段菜单。这些是 Splunk 自动发现并添加的字段。</li>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/fields_menu.png')}" alt="screenshow_uploadLocal" />
+<p>在&ldquo;选定字段&rdquo;标题的下方列出的是可以在您的搜索结果中看到的字段。您可以选择显示多个字段。在&ldquo;感兴趣的字段&rdquo;下方列出的是 Splunk 自动发现的其他字段。</p>
+<li>每个字段名的旁边是您的搜索结果中各字段存在的不同值的数目。单击其中的任何字段名，可以看到每个字段的上限值。单击其中的任何字段值，可以将其添加为搜索的过滤器。</li>.
+<li>如果您在所有 Web 数据中搜索，单击&ldquo;选择字段&rdquo;，然后从显示的弹出菜单中选择&ldquo;状态&rdquo;可以将 HTTP 状态添加到字段菜单。</li>
+<li>请注意，&ldquo;状态&rdquo;字段的值是 HTTP 状态代码：200、503、404 等。现在，您可以使用此知识来搜索或排除特定的字段值。对所有失败的 Web 访问事件的搜索可能如下：</li>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_httpnotstatus200.png')}" alt="screenshow_uploadLocal" />
+<li>使用字段搜索时您还可以使用比较运算符（&gt;、&lt;、&gt;=、&lt;=）；要查看状态值大于 300 的所有事件，请搜索：</li>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_status300.png')}" alt="screenshow_uploadLocal" />
+                     </ol>
+               </div>
+               <div id="timeline" class="gsExpandDetails">
+<h2>使用时间线调查</h2>
+<p>时间线是在每个时间点上发生的事件数的虚拟表示。因此，您可以使用时间线来突出显示事件的模式，或调查事件活动中的高值和低值。</p>
+                    <ol>
+<li>导航到&ldquo;搜索&rdquo;应用。</li>
+                           <div class="controlButtonWrapper">
+<a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank"><span>前往此处...</span></a>
+                           </div>
+<li>尝试搜索&ldquo;error&rdquo;，并注意在您的搜索正下方的时间线。</li>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_timeline.png')}" alt="screenshow_uploadLocal" />
+<li>时间线中更新了您的搜索结果时，您可能会注意到事件的聚合或形态；时间线中的高值或低值表示活动高峰或服务器停机。</li>
+<li>单击时间线中的某个点，拖动您的鼠标跨过一串栏位到达另一个点。您的搜索结果会更新，只显示在此所选时间范围内出现的事件。</li>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/timeline2.png')}" alt="screenshow_uploadLocal" />
+<li>单击时间线中的一个栏。您的搜索结果会更新，只显示在所选时间点上出现的事件。 </li>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/timeline3.png')}" alt="screenshow_uploadLocal" />
+                    </ol>
+               </div>
+
+               <div id="searchassist" class="gsExpandDetails">
+<h2>使用搜索助理</h2>
+<p>搜索助理是产品中内置的快速参考，供用户在构建搜索时使用。它提供有关搜索命令的详细信息（其中包括使用范例），并建议其他命令供您使用。</p>
+                   <ol>
+<li>导航到&ldquo;搜索&rdquo;应用。</li>
+                        <div class="controlButtonWrapper">
+<a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank"><span>前往此处...</span></a>
+                        </div>
+<li>要打开&ldquo;搜索助理&rdquo;，单击搜索栏下方的绿色箭头。</li>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_assist.png')}" alt="screenshow_uploadLocal" />
+<li>如果搜索栏为空，则您会看到在 Splunk 中搜索的简要说明，以及如何构建搜索。默认情况下，搜索助理会显示有关搜索命令的信息。</li>
+<li>&ldquo;搜索助理&rdquo;的左侧会显示命令的使用历史记录，以及接下来最常使用哪些命令。</li>
+<li>&ldquo;搜索助理&rdquo;的右侧会显示搜索命令的简要说明和使用范例。</li>
+                   </ol>
+               </div>
+          </div>
+
+          <div class="gsDetails" id="knowledgeTab">
+<h2>添加知识</h2>
+<p>通过从 IT 数据中提取知识，并允许动态地添加您自己的知识，Splunk 可使搜索到达它之前所未触及的位置。在您的数据中添加有关事件、字段、交易、格式和统计信息的知识，也可以识别、命名和标记此数据。</p>
+<p>Splunk 在搜索时会映射所有此类知识，因此您可以在需要新字段和事件类型时随时添加它们，而不需要重新对数据建立索引。以下阐述从查找某个特定用户名的所有事件，到即时获取有关特定用户活动的统计信息的过程。</p>
+               <ul class="gs-subnav">
+<li><a href="#" class="gsExpandLink gsExpandLinkHighlighted" divToShow="#classifyevents">分类类似事件</a></li>
+<li><a href="#" class="gsExpandLink" divToShow="#extractfields">提取新字段</a></li>
+<li><a href="#" class="gsExpandLink" divToShow="#tagevents">标记字段值</a></li>
+<li><a href="#" class="gsExpandLink" divToShow="#moreknow">了解有关 Splunk 知识的更多信息</a></li>
+               </ul>
+
+               <div id="classifyevents" class="gsExpandDetails" style="display: block;">
+<h2>分类类似事件</h2>
+<p>您搜索数据时，实际上是在剔除所有不需要的事件；您的搜索结果具有共同特性的事件，您可以为它们指定一个共同的名称或者&ldquo;事件类型&rdquo;。将事件类型的名称添加为 eventtype 字段的值。这表示您可以按搜索任意字段的相同方法搜索这些事件组。以下示例向您展示将搜索保存为 eventtype，然后搜索该字段的各步骤。</p>
+<p>如果您运行常用搜索来调查 SSH 和防火墙活动，例如 sshd 登录或防火墙拒绝，则您可以将这些搜索保存为事件类型。另外，如果您看到的错误信息令人困惑，可以将其保存为具有更详细的描述性名称的事件类型。</p>
+                   <ol>
+<li>导航到&ldquo;搜索&rdquo;应用。</li>
+                        <div class="controlButtonWrapper">
+<a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank"><span>前往此处...</span></a>
+                        </div>
+<li>如果定期跟踪 SSH 活动，例如登录尝试，您可以将此搜索保存为事件类型。首先，运行搜索；例如，对 SSH 登录的搜索可能如下：</li>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_sshdlogin.png')}" alt="screenshow_uploadLocal" />
+<li>在您运行搜索后，从&ldquo;创建&rdquo;下拉菜单中选择&ldquo;事件类型...&rdquo;选项。&ldquo;保存事件类型&rdquo;窗口随即打开。 </li>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/save_event_type.png')}" alt="screenshow_uploadLocal" />
+<li>按照屏幕上的说明操作来命名您的事件类型；您可以将此事件类型命名为&ldquo;sshlogin&rdquo;。根据需要修改搜索字符串。或者，为您的事件类型定义标记；此内容将在稍后详细讨论。完成时，单击&ldquo;保存&rdquo;。</li>
+<li>您也可以保存其他类型的 SSH 活动的事件类型，例如注销和超时。现在，只搜索 SSH 登录： </li>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_eventtypesshlogin.png')}" alt="screenshow_uploadLocal" />
+<li>如果您保存了名为 sshlogout 和 sshtimeout 的其他已保存的事件类型，可以快速搜索所有 SSH 事件：</li>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_eventypessh_all.png')}" alt="screenshow_uploadLocal" />
+                   </ol>
+               </div>
+
+               <div id="extractfields" class="gsExpandDetails">
+<h2>提取新字段</h2>
+<p>您索引新数据时，Splunk 会为您自动提取知识；您需要新知识时也可以随时添加 - 不需要重新为数据建立索引。本部分向您介绍如何使用字段提取器来交互提取和保存新字段。</p>
+                    <ol>
+<li>导航到&ldquo;搜索&rdquo;应用。</li>
+                        <div class="controlButtonWrapper">
+<a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank"><span>前往此处...</span></a>
+                        </div>
+<li>运行对 host、source 或 sourcetype 值的搜索。任何一组事件的字段提取都会链接到与这些事件相关的 host、source 或 sourcetype 值。</li>
+<li>从您的结果中选择一个事件。</li>
+<li>单击此事件的时间戳旁边的蓝色下拉箭头。这会打开一个菜单。</li>
+<li>选择&ldquo;提取字段&rdquo;。这会打开交互式&ldquo;提取字段&rdquo;窗口。</li>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/extract_field.png')}" alt="screenshow_uploadLocal" />
+<li>按照页面上的说明操作。例如，您可能要为用户名、来源 IP 和目标 IP 添加字段。</li>
+                    </ol>
+               </div>
+
+               <div id="tagevents" class="gsExpandDetails">
+<h2>标记字段值</h2>
+<p>标记可以帮助您对具有相同字段值的搜索结果进行分组。标记是您附加到字段的特定值（例如，eventtype、host、source 或 sourcetype）的名称。例如，您可以使用服务名称或表示符合 PCI 等规定的注释来标记主机值。 </p>
+<p>通常，您可以使用标记：</p>
+                    <ul>
+<li>帮助您跟踪抽象字段值，例如 IP 地址或 ID 编号，您可以用位置或名称对其进行分组。</li>
+<li>使用一个标记将一组字段值分在一组，这样您只需使用一个简单的命令即可对它们进行搜索。</li>
+<li>为特定的提取字段提供反映其不同方面特性的多个标记，这允许您执行基于标记的搜索，此搜索可帮助您快速缩小您所需结果的范围。</li>
+                    </ul>
+<p>有两种方法可以搜索标记，即对所有字段进行搜索或对特定字段对话框进行搜索。</p>
+                    <ol>
+<li>如果要查找具有标记为&ldquo;deny&rdquo;的字段的所有事件：</li>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_tagdeny.png')}" alt="screenshow_uploadLocal" />
+<li>如果要只查找具有事件类型标记&ldquo;deny&rdquo;的事件：</li>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_tageventtypedeny.png')}" alt="screenshow_uploadLocal" />
+                    </ol>
+               </div>
+
+               <div id="moreknow" class="gsExpandDetails">
+<h2>了解有关 Splunk 知识的更多信息</h2>
+<p>有很多事可以让您以最有效的方式来使用和扩展 Splunk，使其对数据的处理能满足您企业的需要。随着您对 Splunk 部署的优化、维护和扩展，您可能要参考<a href="${generateSelfHelpLink('gettingstarted.knowledge')}" target="_blank" title="Splunk 帮助">知识管理器手册</a>。</p>
+<p>&ldquo;知识管理器&rdquo;手册会指导您：</p>
+                    <ul>
+<li>如果管理和维护 Splunk&ldquo;知识对象&rdquo;，例如事件、事件类型、字段、来源类型、标记和交易。</li>
+<li>使用字段（包括查找和别名）的最佳做法。</li>
+<li>将概念上相关的事件分组为交易的策略。</li>
+                    </ul>
+               </div>
+           </div>
+
+
+          <div class="gsDetails" id="monitorTab">
+<h2>监视与告警</h2>
+<p>使用 Splunk 确定和找到您系统中的问题之后，可以利用其监视和告警功能在这些情况再次出现时通知您。您可以保存您的搜索以在需要的时候运行，或设置告警来为您执行监视。将告警配置为在搜索结果满足您定义的条件时触发。您甚至可以对实时发生的事件进行告警。</p>
+               <ul class="gs-subnav">
+<li><a href="#" class="gsExpandLink gsExpandLinkHighlighted" divToShow="#saveandschedule">保存搜索</a></li>
+<li><a href="#" class="gsExpandLink" divToShow="#setupalert">设置告警</a></li>
+               </ul>
+               <div id="saveandschedule" class="gsExpandDetails" style="display: block;">
+<h2>保存搜索</h2>
+                    <ol>
+<li>创建一个搜索来返回您感兴趣的结果。</li>
+                         <div class="controlButtonWrapper">
+<a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank"><span>前往此处...</span></a>
+                         </div>
+<li>搜索运行结束后，从搜索栏下方的&ldquo;保存&rdquo;下拉菜单中选择&ldquo;保存搜索&rdquo;：</li>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/saveactions.png')}" alt="screenshow_uploadLocal" />
+<li>这会弹出保存搜索对话框。</li>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/savesearch.png')}" alt="screenshow_uploadLocal" />
+<li>按照页面上的其他指示操作，设置更多选项。</li>
+                    </ol>
+               </div>
+               <div id="setupalert" class="gsExpandDetails">
+<h2>设置告警</h2>
+<p>您可以将任何搜索变为告警。告警会通过电子邮件或 RSS 通知您。您还可以将告警设置为触发某个脚本。</p>
+                    <ol>
+<li>如果要将搜索设置为告警，请从搜索栏下方的&ldquo;创建&rdquo;下拉菜单中选择&ldquo;告警&rdquo;：</li>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/alertactions.png')}" alt="screenshow_uploadLocal" />
+<li>这会弹出&ldquo;创建告警&rdquo;对话框：</li>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/alertworkflow.png')}" alt="screenshow_uploadLocal" />
+<li>按照对话框中的说明来设置一个或多个告警方法。如果需要 Splunk 向您发送电子邮件，请确保您的 Splunk 服务器启用了 sendmail（或其他 MTA）。</li>
+                    </ol>
+               </div>
+          </div>
+
+          <div class="gsDetails" id="reportTab">
+<h2>报告与分析</h2>
+<p>您可以使用 Splunk 的内置可视化工具来创建报表。Splunk 在报表方面您提供了大量选项。从搜索结果可以直接创建简单的&ldquo;时段上限值&rdquo;报表。使用&ldquo;报表构建器&rdquo;来定义和设定复杂报表的格式。或者，使用 Splunk 强大的统计命令手动定义报表。最后，您还可以快速创建将您最好的报表与他人共享的仪表板。</p>
+          <ul class="gs-subnav">
+<li><a href="#" class="gsExpandLink gsExpandLinkHighlighted" divToShow="#basicreports">创建简单报表</a></li>
+<li><a href="#" class="gsExpandLink" divToShow="#reportbuilder">使用报表构建器</a></li>
+<li><a href="#" class="gsExpandLink" divToShow="#reportcommands">使用报表命令</a></li>
+<li><a href="#" class="gsExpandLink" divToShow="#previewreports">预览报表</a></li>
+<li><a href="#" class="gsExpandLink" divToShow="#builddashboards">构建仪表板</a></li>
+          </ul>
+
+               <div id="basicreports" class="gsExpandDetails" style="display: block;">
+<h2>创建简单报表</h2>
+<p>在运行搜索之后，您可以快速启动报表来了解搜索结果中各字段的基本信息。</p>
+                    <ol>
+<li>导航到&ldquo;搜索&rdquo;应用。</li>
+                      <div class="controlButtonWrapper">
+<a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank"><span>前往此处...</span></a>
+                        </div>
+<li>运行搜索，查找要用来制作报表的词语或字段。</li>
+<li>搜索结束时，在搜索结果边栏找到一个您要报告的字段，并单击该字段。例如，如果您要报告一组用户 ID，请选择 UID。</li>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/report_fieldselect.png')}" alt="screenshow_uploadLocal" />
+<li>会显示一个弹出窗口，显示有关您已选择的字段的信息。您可以为每个字段启动一个报表。选择您要运行的报表，例如&ldquo;时段平均值&rdquo;或&ldquo;总体上限值&rdquo;。</li>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/report_topvals.png')}" alt="screenshow_uploadLocal" />
+<li>&ldquo;报表构建器&rdquo;会显示在单独的窗口中，显示根据您的搜索返回的事件数据制作的图表。您可以在此处重新设定报表的格式、保存报表、打印报表等。</li>
+                    </ol>
+               </div>
+               <div id="reportbuilder" class="gsExpandDetails">
+<h2>使用报表构建器</h2>
+<p>您可以启动报表构建器来创建报表并设定报表的格式。</p>
+                    <ol>
+<li>导航到&ldquo;搜索&rdquo;应用。</li>
+                        <div class="controlButtonWrapper">
+<a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank"><span>前往此处...</span></a>
+                          </div>
+<li>运行搜索，查找要用来制作报表的词语或字段。</li>
+<li>在时间线上的&ldquo;创建&rdquo;菜单中，您将看到用于创建报表的链接。单击此链接可启动&ldquo;报表构建器&rdquo;。（您不必等待搜索完成再启动&ldquo;报表构建器&rdquo;。）</li>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/report_build.png')}" alt="screenshow_uploadLocal" />
+<li>您还可以单击&ldquo;结果&rdquo;区域顶部的&ldquo;结果图表&rdquo;按钮，直接在时间线视图中创建报表。</li>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/report_sprite.png')}" alt="screenshow_uploadLocal" />
+                    </ol>
+            </div>
+
+            <div id="reportcommands" class="gsExpandDetails">
+<h2>使用报表命令</h2>
+<p>您使用&ldquo;报表构建器&rdquo;下拉列表来定义报表时，您可能会注意到 Splunk 会使用统计报表命令（Splunk 使用其来运行报表）更新&ldquo;报表构建器&rdquo;搜索框。本部分说明了如何直接从搜索栏使用这些报表命令。</p>
+                    <ol>
+<li>导航到&ldquo;搜索&rdquo;应用。</li>
+                        <div class="controlButtonWrapper">
+<a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank"><span>前往此处...</span></a>
+                        </div>
+<li>运行在您的数据中查找任何词语的搜索。</li>
+<li>在搜索词后加上&ldquo;管道&rdquo;符和一些基本报表命令。例如，此基本报表会找到您的内部 Splunk 索引中前 5 个最常用的来源：</li>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/report_top5.png')}" alt="screenshow_uploadLocal" />
+<li>选择时间线下方的&ldquo;结果图表&rdquo;按钮，能够以图表的形式查看结果。如果需要，可以使用&ldquo;格式选项&rdquo;重新设定报表的格式。</li>
+<li>如果您构建更复杂的报表，在 Splunk 的<a href="${generateSelfHelpLink('gettingstarted.report')}" target="_blank" title="Splunk 帮助">用户手册</a>中有关于 Splunk 报表命令的更多信息。</li>
+                    </ol>
+            </div>
+
+            <div id="previewreports" class="gsExpandDetails">
+<h2>预览报表</h2>
+<p>您运行报表时，Splunk 可以在搜索运行时为您预览报表结果。此功能会为您节省时间，尤其是运行的搜索时间跨度较长的时间。请注意，默认情况下对使用报表命令的搜索启用报表预览，因此可以在时间跨度较长的报表上尝试。</p>
+                    <ol>
+<li>导航到&ldquo;搜索&rdquo;应用。</li>
+                        <div class="controlButtonWrapper">
+<a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank"><span>前往此处...</span></a>
+                        </div>
+<li>在搜索栏中输入一个报表生成搜索。</li>
+<li>报表运行时，您可以在结果区域中看到预览。</li>
+<li>如果您不满意您的报表，想在其完成运行之前进行更改，只需单击&ldquo;取消&rdquo;按钮，并编辑搜索字符串即可。</li>
+                    </ol>
+            </div>
+
+            <div id="builddashboards" class="gsExpandDetails">
+<h2>构建仪表板</h2>
+<p>通过创建仪表板保存和共享您的搜索和报表。您可以将最有用、信息最丰富的报表放到仪表板中，让其他用户也可以使用这些报表。从头开始建立一个仪表板，或在您创建报表时创建一个仪表板。</p>
+                    <ol>
+<li>导航到&ldquo;搜索&rdquo;应用。</li>
+                        <div class="controlButtonWrapper">
+<a class="splButton-primary" href="${make_url('/app/search/flashtimeline')}" target="_blank"><span>前往此处...</span></a>
+                        </div>
+<li>如果您已经运行搜索或报表，单击&ldquo;创建&rdquo;菜单下的&ldquo;仪表板面板&rdquo;可以将您的搜索或报表添加到现有仪表板，或者创建新仪表板。</li>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/actionsdash.png')}" alt="screenshow_uploadLocal" />
+                    </ol>
+<p>您还可以从头开始创建仪表板。</p>
+                    <ol>
+<li>从&ldquo;仪表板和视图&rdquo;菜单中，选择&ldquo;创建仪表板&rdquo;：</li>
+<img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/adddash.png')}" alt="screenshow_uploadLocal" />
+<li>随即会显示&ldquo;创建新仪表板&rdquo;窗口。为仪表板指定一个短名称（仪表板 ID）和一个长名称（仪表板名称）。完成后，单击&ldquo;创建&rdquo;。</li>
+<li>最初，您的仪表板是空的。单击&ldquo;编辑仪表板&rdquo;以打开&ldquo;编辑&rdquo;窗口，并为您的第一个面板选择面板类型和保存的搜索。单击&ldquo;添加面板&rdquo;以将您的新面板添加到仪表板。</li>
+<li>如果您要重命名面板、更改其格式或更新它所基于的搜索，请单击&ldquo;编辑&rdquo;。</li>
+<li>重复最后两个步骤以创建更多面板。拖动这些面板，将它们放到您满意的位置。</li>
+<li>创建完毕！单击&ldquo;关闭&rdquo;以查看仪表板的显示效果。如果您看到要更改的内容，请转到页面顶部的&ldquo;操作&rdquo;菜单，选择&ldquo;编辑仪表板...&rdquo;，然后进行更正。</li>
+                    </ol>
+            </div>
+     </div>
+
+     <div class="gsDetails" id="moreTab">
+<h2>更多</h2>
+<p>您在查找有关如何使用 Splunk 的更多信息吗？以下是 Splunk 在线文档的几个链接。</p>
+          <ul>
+<li><b>添加更多用户</b>：在<a href="${generateSelfHelpLink('gettingstarted.users')}" target="_blank" title="Splunk 帮助">此处</a>了解如何添加更多用户并为用户配置访问控件。<b>注意</b>：在使用 Splunk Free 时此功能不可用。如果您使用的是 Splunk Enterprise 的试用版，试用版到期后您将不能访问此功能。</li>
+<li><b>设置分布式搜索</b>：在<a href="${generateSelfHelpLink('gettingstarted.distsearch')}" target="_blank" title="Splunk 帮助">此处</a>阅读有关使用 Splunk 的多个实例来在所有这些实例中分散处理和搜索的更多信息。</li>
+<li><b>创建您自己的应用</b>：在<a href="${generateSelfHelpLink('gettingstarted.apps')}" target="_blank" title="Splunk 帮助">此处</a>了解如何构建应用来满足您组织的需要。</li>
+        </ul>
+    </div>
+</div><!-- wrapper -->
+
+
+
+
+
+
+

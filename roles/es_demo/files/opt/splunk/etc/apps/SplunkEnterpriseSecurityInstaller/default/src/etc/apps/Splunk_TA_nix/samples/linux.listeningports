@@ -1,0 +1,3 @@
+Mar 05 2010 20:59:23 app= dest_dns=* dest_port=443 pid=15104 user=root fd=4u ip_version=4 dvc_id=4039683 transport=TCP
+Mar 05 2010 20:59:23 app= dest_dns=* dest_port=443 pid=15104 user=root fd=4u ip_version=4 dvc_id=4039683 transport=UDP
+

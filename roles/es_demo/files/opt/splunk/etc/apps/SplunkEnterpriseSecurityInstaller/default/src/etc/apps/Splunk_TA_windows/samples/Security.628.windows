@@ -1,0 +1,26 @@
+06/15/10 09:20:06 PM
+LogName=Security
+SourceName=Security
+EventCode=628
+EventType=8
+Type=Success Audit
+ComputerName=SERVER2003DC01
+User=Administrator
+Sid=S-1-5-21-4204247624-3950301307-2231654708-500
+SidType=1
+Category=7
+CategoryString=Account Management
+RecordNumber=46161215
+Message=User Account password set:
+
+	Target Account Name:	philjackson
+
+	Target Domain:	2003DOMAIN
+
+	Target Account ID:	%{S-1-5-21-4204247624-3950301307-2231654708-1120}
+
+	Caller User Name:	administrator
+
+	Caller Domain:	2003DOMAIN
+
+	Caller Logon ID:	(0x0,0xD67975B)

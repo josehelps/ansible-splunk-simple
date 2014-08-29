@@ -1,0 +1,86 @@
+<%page/>
+<%inherit file="//layout/base.html" />
+<%namespace name="lib" file="//lib.html" import="*"/>
+<%namespace name="helpers" file="//view/_helpers.html" import="*"/>
+
+<%def name="css()">
+    <%coreCSSFiles = [
+        "/static/app/SA-Utils/stylesheets/anubis.css",
+        "/static/app/SA-Utils/stylesheets/jqueryui-splunk.css",
+        "/static/css/view.css", 
+        "/static/css/skins/default/default.css" 
+    ] %>
+    <%lib:stylesheet_tags files="${coreCSSFiles}" />
+</%def>
+
+<style>
+	@import url("http://codemirror.net/lib/codemirror.css");
+</style>
+
+<%namespace name="lib" file="//lib.html" import="*"/>
+<%lib:script_tags files="${['/static/app/SA-Utils/scripts/jquery-ui-1.8.21.custom.min.js','/static/app/SA-Utils/scripts/store.min.js','/static/app/SA-Utils/scripts/anubis.js']}" />
+
+${csrf_hidden_input()}
+
+<table>
+	<tr>
+		<td>
+			<div style="border-right:1px solid #585858;float:left;min-height:750px;pading:5px;margin:5px;">
+				<h2 class="anubis-header">Module Hierarchy Selector</h2>
+				<div class="nav-control">
+					<div class="searchbar-container" style="margin:5px;float:left;clear:both;">
+						<span class="noel-icon noel-icon-magnify-glass" style="float:left;margin-top:2px;"></span><input type="text" class="ui-tree-searchbar"></input>
+					</div>
+					<div class="ui-tree-buttonset" style="margin:5px;float:left;clear:both;">
+						<button class="ui-tree-expand-all ui-tree-button">Expand All</button>
+						<button class="ui-tree-collapse-all ui-tree-button">Collapse All</button>
+					</div>
+				</div>
+				<div id="anubis-selector-container" class="ui-tree" style="margin:5px;" >${moduleHierarchySnippet}</div>
+			</div>
+		</td>
+		<td>
+			<div id="anubis-data-contianer" style="float:left;min-height:750px;pading:5px;margin:5px;">
+				<div id="context-stuff-container" style="border-right:1px solid #585858;float:left; clear:left;max-height:450px;max-width:375pxpading:5px;margin:5px;" >
+					<h2 class="anubis-header">Received Context</h2>
+					<div id="context-textarea-container" style="float:left; clear:both;" >
+						<textarea id="context-textarea"></textarea>
+					</div>
+					<div id="context-controls-container" style="float:left; clear:both;" >
+						<button id="highlight-module-button" class="ui-tree-button">Highlight Module</button>
+					</div>
+				</div>
+				<div id="modified-context-stuff-container" style="float:right; clear:right;max-height:450px;max-width:375pxpading:5px;margin:5px;" >
+					<h2 class="anubis-header">Modified Context Manipulation</h2>
+					<div id="modified-context-textarea-container" style="float:left; clear:both;" >
+						<textarea id="modified-context-textarea"></textarea>
+					</div>
+					<div id="context-controls-container" style="float:left; clear:both;" >
+						<button id="push-context-button" class="ui-tree-button">Push This Context</button>
+					</div>
+				</div>
+				<hr style="clear:both;margin:10px"></hr>
+				<div id="search-stuff-container" style="border-right:1px solid #585858;float:left; clear:left;max-height:450px;max-width:375pxpading:5px;margin:5px;" >
+					<h2 class="anubis-header">Search Manipulation</h2>
+					<div id="search-textarea-container" style="float:left; clear:both;" >
+						<textarea id="search-textarea"></textarea>
+					</div>
+					<div id="search-controls-container" style="float:left; clear:both;" >
+						<button id="get-results-button" class="ui-tree-button">Get Search Results</button>
+						<button id="inspect-button" class="ui-tree-button">Inspect</button>
+					</div>
+				</div>
+				<div id="search-results-container" style="float:left; clear:right;pading:5px;margin:5px;" >
+					<h2 class="anubis-header">Search Results</h2>
+					<div id="search-results-textarea-container" style="float:left; clear:both;" >
+						<textarea id="search-results-textarea"></textarea>
+					</div>
+				</div>
+			</div>
+		</td>
+	</tr>
+</table>
+
+
+<script src="http://codemirror.net/lib/codemirror.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://codemirror.net/mode/javascript/javascript.js" type="text/javascript" charset="utf-8"></script>

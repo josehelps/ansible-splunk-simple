@@ -1,0 +1,43 @@
+
+## SplunkEnterpriseSecuritySuite Application-level permissions
+[event_renderers]
+export = none
+
+## per SOLNPCI-297 renaming 'ess_correlation_search_edit' -> 'correlation_search_edit'
+## and setting exportation to local
+[views/correlation_search_edit]
+export = none
+
+## The following export=none allows for general suppression definitions:
+## 'ess_notable_supppression_new' -> 'notable_suppression_new'
+[views/notable_suppression_new]
+export = none
+
+## Don't export the workflow actions since other apps will not have the notable editor and we don't
+## want to redirect the users to an inaccessible view.
+## Furthermore, we don't want to list the workflow actions twice if the customer has both ES and PCI
+[workflow_actions]
+export = none
+
+# Import the Domain Addons for ES. Note that these DA's will import the Supporting Addons.
+[]
+import = DA-ESS-AccessProtection,DA-ESS-EndpointProtection,DA-ESS-IdentityManagement,DA-ESS-NetworkProtection,es_zeus_demo
+## shared Application-level permissions
+[]
+access = read : [ * ], write : [ admin ]
+export = system
+
+[savedsearches]
+owner = admin
+
+[governance]
+access = read : [ * ], write : [ * ]
+
+## Postprocess
+[postprocess]
+access = read : [ * ], write : [ * ]
+
+
+## Exclude export of custom alert actions
+[alert_actions/email]
+export = none

@@ -1,0 +1,35 @@
+<dashboard script="status_dashboard.js" isDashboard="False">
+	<label>System Activity</label>
+	<description>Dashboards about the user activity and status of the system.</description>
+  <row>
+    <html>
+      <i class="icon-search-thin" style="float: left; line-height: 1; color: #999;font-size: 32px; margin-left:5px;"></i>
+      <h2 style="margin-left:40px; margin-bottom:0; line-height: 32px;">Search</h2>
+      <p style="margin-left:40px; line-height:20px">
+      <a href="search_status">Search activity overview</a><br/>
+      <a href="search_detail_activity">Search details</a><br/>
+      <a href="search_activity_by_user">Search user activity</a>
+      </p>
+    </html>
+    <html>
+      <i class="icon-data" style="float: left; line-height: 1; color: #999;font-size: 32px; margin-left:5px;"></i>
+      <h2 style="margin-left:40px; margin-bottom:0; line-height: 32px;">Server</h2>
+      <p style="margin-left:40px; line-height:20px">
+      <a href="splunkweb_status">Splunk browser usage and exceptions</a><br/>
+      <a href="internal_messages">Internal messages and errors</a><br/>
+      <a href="/manager/search/licenseusage">License usage</a>
+      </p>
+    </html>
+    <html>
+      <i class="icon-clock" style="float: left; line-height: 1; color: #999;font-size: 32px; margin-left:5px;"></i>
+      <h2 style="margin-left:40px; margin-bottom:0; line-height: 32px;">Scheduler</h2>
+      <p style="margin-left:40px; line-height:20px">
+      <a href="scheduler_status">Scheduler activity overview</a><br/>
+      <a href="scheduler_user_app">Scheduler activity by user or app</a><br/>
+      <a href="scheduler_savedsearch">Scheduler activity by saved search</a><br/>
+      <a href="scheduler_status_errors">Scheduler errors</a><br/>
+      <a href="pdf_activity">PDF activity</a>
+      </p>
+    </html>
+  </row>
+</dashboard>

@@ -1,0 +1,4 @@
+SA-EndpointProtection/primary_functions.csv,Primary Functions,"List of primary processes, services, and their function"
+SA-EndpointProtection/interesting_ports.csv,Interesting Ports,"TCP and UDP ports determined to be required, prohibited, or insecure"
+SA-EndpointProtection/interesting_processes.csv,Interesting Processes,"Processes determined to be required, prohibited, or insecure"
+SA-EndpointProtection/interesting_services.csv,Interesting Services,"Services determined to be required, prohibited, or insecure"

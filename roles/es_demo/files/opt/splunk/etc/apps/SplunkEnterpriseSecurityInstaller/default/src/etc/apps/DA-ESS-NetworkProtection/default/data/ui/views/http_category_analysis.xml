@@ -1,0 +1,57 @@
+<form script="http_category_analysis.js" stylesheet="http_category_analysis.css" >
+	<label>HTTP Category Analysis</label>
+	
+	<fieldset autoRun="true" submitButton="true">
+	
+        <input type="dropdown" token="is_unknown">
+            <label>Show only unknown categories</label>
+            <choice value="">False</choice>
+            <choice value="tag=unknown">True</choice>
+            <default></default>
+        </input>
+        
+		<input type="time">
+			<default>Last 24 hours</default>
+		</input>
+		
+        <html id="ppf_html">
+        	<div id="ppf"></div>
+        </html>
+	</fieldset>
+	
+	<!-- Key indicators -->
+	<row>
+		<html id="element1">
+			<div class="key-indicators" data-group-name="http_category"></div>
+		</html>
+	</row>
+	
+	<row>
+        <chart id="element2">
+            <title>Category Distribution</title>
+            
+            <searchTemplate>| tstats `summariesonly` dc(Web.src) as dc(src),count from datamodel=Web by Web.category | eval category='Web.category' | tags outputfield=tag category | search $is_unknown$ | `per_panel_filter("ppf_http_category","category")` | fields category,count,dc(src)</searchTemplate>
+            
+            <option name="charting.axisTitleX.text">count</option>
+            <option name="charting.axisTitleY.text">dc(src)</option>
+            <option name="charting.chart">scatter</option>
+            <option name="charting.legend.placement">none</option>
+
+            <drilldown>
+                <link>search?q=| `datamodel("Web", "Web")` | `drop_dm_object_name("Web")` | search category="$click.value$"&amp;earliest=$earliest$&amp;latest=$latest$</link>
+            </drilldown>
+        </chart>
+    </row>
+
+    <row>
+    	<table id="table1">
+			<title>Category Details</title>
+			
+			<searchTemplate>| tstats `summariesonly` max(_time) as lastTime,dc(Web.src) as dc(src),dc(Web.dest) as dc(dest),count from datamodel=Web by Web.category | `drop_dm_object_name("Web")` | join type=outer category [| tstats `summariesonly` count from datamodel=Web where earliest=-24h@h latest=+0s by _time,Web.category span=`http_category_sparkline_span` | stats sparkline(sum(count),`http_category_sparkline_span`) as sparkline by Web.category | `drop_dm_object_name("Web")`] | tags outputfield=tag category | search $is_unknown$ | `makemv(sparkline,",")` | eventstats avg(count) as mean_count,stdev(count) as stdev | `get_stdev_index(count)` | `round(Z)` | `per_panel_filter("ppf_http_category","category")` | rename ppf_filter as filter | sort -filter,+count | `uitime(lastTime)` | table category,filter,sparkline,dc(src),dc(dest),count,Z,lastTime</searchTemplate>
+			
+			<drilldown>
+				<link>search?q=| `datamodel("Web", "Web")` | `drop_dm_object_name("Web")` | search category="$row.category$"&amp;earliest=$earliest$&amp;latest=$latest$</link>
+			</drilldown>
+		</table>
+	</row>
+</form>

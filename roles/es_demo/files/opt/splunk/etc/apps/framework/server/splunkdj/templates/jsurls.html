@@ -1,0 +1,73 @@
+define(function(require, exports, module) {
+    var _ = require('underscore');
+    
+    var mount = "{{mount}}";
+    var urlpatterns = {{patterns|safe}};
+    
+    var reverse = function(name, app, args) {
+        if (!args && _.isObject(app)) {
+            args = app;
+            app = '';
+        }
+        
+        if (!name) {
+            throw new Error("Must provide a name for path reverse.");
+        }
+      
+        if (name.indexOf(":") > -1 && !app) {
+            var parts = name.split(":");
+            name = parts[1];
+            app = parts[0];  
+        }
+        
+        if (!name) {
+            throw new Error("Must provide a name for path reverse.");
+        }
+        
+        if (!urlpatterns.hasOwnProperty(name)) {
+            throw new Error("No URL path with name '" + name + "' exists.");
+        }
+        
+        var pattern = null;
+        var patterns = urlpatterns[name];
+        
+        // If there is only one pattern and the user
+        // didn't specify an app, return the first one
+        if (patterns.length === 1 && !app) {
+            pattern = patterns[0];
+        }
+        else {
+            for(var i = 0; i < patterns.length; i++) {
+                if (patterns[i].app === app) {
+                    pattern = patterns[i];
+                }
+            }
+        }
+        
+        if (!pattern) {
+            throw new Error("No URL path with name '" + name + "' in app '" + app + "' exists.");
+        }
+        
+        var path = "/" + mount + pattern.pattern;
+        args = _.extend(_.clone(pattern.kwargs), args);
+        _.each(args, function(value, key) {
+            if (!path.match("<" + key + ">")) {
+                throw new Error("Key '" + key + "' does not exist in path: '" + path + "'");
+            }
+            
+            path = path.replace("<" + key + ">", value);
+        });
+        
+        var re = new RegExp("<[a-zA-Z0-9-_]{1,}>", "g");
+        var missingArgs = path.match(re);
+        if (missingArgs) {
+            throw("Missing arguments (" + missingArgs.join(", ") + ") for path '" + path + "'");
+        }
+        
+        return path;
+    };
+    
+    return {
+        reverse: reverse
+    };
+});

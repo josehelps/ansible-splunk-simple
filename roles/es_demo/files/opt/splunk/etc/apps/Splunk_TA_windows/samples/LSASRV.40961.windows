@@ -1,0 +1,11 @@
+04/20/10 03:26:19 PM
+LogName=System
+SourceName=LSASRV
+EventCode=40961
+EventType=2
+Type=Warning
+ComputerName=HOST0201
+Category=3
+CategoryString=SPNEGO (Negotiator)
+RecordNumber=2
+Message=The Security System could not establish a secured connection with the server DNS/prisoner.iana.org.  No authentication protocol was available.

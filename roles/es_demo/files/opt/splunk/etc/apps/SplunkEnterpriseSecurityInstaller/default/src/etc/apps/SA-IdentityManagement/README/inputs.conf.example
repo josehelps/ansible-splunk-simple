@@ -1,0 +1,18 @@
+
+# This example stanza defines an asset table, to be retrieved from the lookup
+# on the local system named "simple_asset_lookup". 
+[identitymanager://static_assets]
+category = static_asset
+description = List containing static assets.
+disabled = false
+target = asset
+url = lookup://simple_asset_lookup
+
+# This example stanza defines an asset table, to be retrieved from the lookup
+# on the local system named "simple_identity_lookup". 
+[identitymanager://static_identities]
+category = static_identity
+description = List containing static identities.
+disabled = false
+target = identity
+url = lookup://simple_identity_lookup

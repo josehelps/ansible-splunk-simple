@@ -1,0 +1,687 @@
+{
+	"modelName":	"Databases",
+	"displayName":	"Databases",
+	"description":	"Data Model for all databases",
+	"editable":		false,
+	"objects":		[
+		{
+			"objectName":	"All_Databases",
+			"displayName":	"All Databases",
+			"parentName":	"BaseEvent",
+			"fields":		[
+				{
+					"fieldName":	"dest",
+					"displayName":	"dest",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"src",
+					"displayName":	"src",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"product",
+					"displayName":	"product",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"vendor",
+					"displayName":	"vendor",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"object",
+					"displayName":	"object",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"tag",
+					"displayName":	"tag",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	true,
+					"hidden":		false
+				}
+			],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"tag=database"
+				}	
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Database_Instance",
+			"displayName":	"Database Instance",
+			"parentName":	"All_Databases",
+			"fields":		[
+				{
+					"fieldName":	"instance_name",
+					"displayName":	"instance_name",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"instance_version",
+					"displayName":	"instance_version",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"session_limit",
+					"displayName":	"session_limit",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"process_limit",
+					"displayName":	"process_limit",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				}
+			],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"tag=instance"
+				}	
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Instance_Stats",
+			"displayName":	"Instance Stats",
+			"parentName":	"Database_Instance",
+			"fields":		[
+				{
+					"fieldName":	"start_time",
+					"displayName":	"start_time",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"availability",
+					"displayName":	"availability",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"sessions",
+					"displayName":	"sessions",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"processes",
+					"displayName":	"processes",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"dump_area_used",
+					"displayName":	"dump_area_used",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"tablespace_used",
+					"displayName":	"tablespace_used",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"number_of_users",
+					"displayName":	"number_of_users",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"avg_executions",
+					"displayName":	"avg_executions",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"instance_reads",
+					"displayName":	"instance_reads",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"instance_writes",
+					"displayName":	"instance_writes",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"sga_buffer_cache_size",
+					"displayName":	"sga_buffer_cache_size",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"sga_shared_pool_size",
+					"displayName":	"sga_shared_pool_size",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"sga_redo_log_buffer_size",
+					"displayName":	"sga_redo_log_buffer_size",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"sga_library_cache_size",
+					"displayName":	"sga_library_cache_size",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"sga_fixed_area_size",
+					"displayName":	"sga_fixed_area_size",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"sga_sql_area_size",
+					"displayName":	"sga_sql_area_size",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"sga_buffer_hit_limit",
+					"displayName":	"sga_buffer_hit_limit",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"sga_data_dict_hit_ratio",
+					"displayName":	"sga_data_dict_hit_ratio",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"sga_free_memory",
+					"displayName":	"sga_free_memory",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				}
+			],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"tag=stats"
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Session_Info",
+			"displayName":	"Session Info",
+			"parentName":	"Database_Instance",
+			"fields":		[
+				{
+					"fieldName":	"session_id",
+					"displayName":	"session_id",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"session_status",
+					"displayName":	"session_status",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"machine",
+					"displayName":	"machine",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"user",
+					"displayName":	"user",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"elapsed_time",
+					"displayName":	"elapsed_time",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"cpu_used",
+					"displayName":	"cpu_used",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"memory_sorts",
+					"displayName":	"memory_sorts",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"table_scans",
+					"displayName":	"table_scans",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"physical_reads",
+					"displayName":	"physical_reads",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"logical_reads",
+					"displayName":	"logical_reads",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"commits",
+					"displayName":	"commits",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"cursor",
+					"displayName":	"cursor",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"buffer_cache_hit_ratio",
+					"displayName":	"buffer_cache_hit_ratio",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"wait_state",
+					"displayName":	"wait_state",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"wait_time",
+					"displayName":	"wait_time",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"seconds_in_wait",
+					"displayName":	"seconds_in_wait",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				}
+			],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"tag=session"
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Lock_Info",
+			"displayName":	"Lock Info",
+			"parentName":	"Database_Instance",
+			"fields":		[
+				{
+					"fieldName":	"obj_name",
+					"displayName":	"obj_name",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"lock_session_id",
+					"displayName":	"lock_session_id",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"serial_num",
+					"displayName":	"serial_num",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"lock_mode",
+					"displayName":	"lock_mode",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"os_pid",
+					"displayName":	"os_pid",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"last_call_minute",
+					"displayName":	"last_call_minute",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"logon_time",
+					"displayName":	"logon_time",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				}
+			],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"tag=lock"
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Database_Query",
+			"displayName":	"Database Query",
+			"parentName":	"All_Databases",
+			"fields":		[
+				{
+					"fieldName":	"query_id",
+					"displayName":	"query_id",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"query_time",
+					"displayName":	"query_time",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				}
+			],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"tag=query"
+				}	
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Tablespace",
+			"displayName":	"Tablespace",
+			"parentName":	"Database_Query",
+			"fields":		[
+				{
+					"fieldName":	"tablespace_name",
+					"displayName":	"tablespace_name",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"tablespace_status",
+					"displayName":	"tablespace_status",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"free_bytes",
+					"displayName":	"free_bytes",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"tablespace_reads",
+					"displayName":	"tablespace_reads",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"tablespace_writes",
+					"displayName":	"tablespace_writes",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				}
+			],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"tag=tablespace"
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Query_Stats",
+			"displayName":	"Query Stats",
+			"parentName":	"Database_Query",
+			"fields":		[
+				{
+					"fieldName":	"stored_procedures_called",
+					"displayName":	"stored_procedures_called",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"tables_hit",
+					"displayName":	"tables_hit",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"indexes_hit",
+					"displayName":	"indexes_hit",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"query_plan_hit",
+					"displayName":	"query_plan_hit",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				}
+			],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"tag=stats"
+				}
+			],
+			"children":		[]
+		}
+	]
+}

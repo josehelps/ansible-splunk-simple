@@ -1,0 +1,41 @@
+Symantec EndPoint Protection (SEP) Add-on
+----------------------------------------
+	Author: Splunk
+	Version/Date: 11/23/2010 10:38 am
+	Source type(s): sep
+	Input requirements: Data can be received via syslog, or by monitoring the SEP log files on the SEP Manager.
+	                    To receive data over syslog, manually set the source type for the associated data
+	                    input to 'sep'. To monitor log files, see the details under "Using this Technology
+	                    Add-on" below.
+	Has index-time operations: true, this TA needs to be deployed on indexers
+	Supported product(s): Symantec EndPoint Protection 11
+
+Using this Add-on:
+----------------------------------------
+	Configuration: Manual
+	Ports for automatic configuration: None
+	Scripted input setup: Not applicable
+	
+	This Add-on can import data directly by monitoring files on the SEP manager. To monitor the files
+    directly you'll need to set the log file location in the inputs.conf file and enable the associated file inputs. To do so:
+
+	1.  Enable log data export in Symantec Endpoint Protection Manager
+	
+			http://www.symantec.com/business/support/index?page=content&id=HOWTO55416
+
+	2. Copy the following file:
+    
+            $SPLUNK_HOME/etc/apps/TA-sep/default/inputs.conf.local
+        
+        To the following location:
+    
+            $SPLUNK_HOME/etc/apps/TA-sep/local/inputs.conf
+        
+	3.  The default path in inputs.conf assumes that the SEP Manager is installed in the following directory:
+    
+            C:\Program Files\Symantec\Symantec Endpoint Protection Manager
+    
+    	Edit this path to the actual location of the SEP Manager if necessary.
+	
+	
+Copyright (C) 2009-2013 Splunk Inc. All Rights Reserved.

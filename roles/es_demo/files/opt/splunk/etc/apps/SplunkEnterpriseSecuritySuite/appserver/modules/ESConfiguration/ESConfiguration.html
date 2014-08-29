@@ -1,0 +1,198 @@
+<%
+## Copyright (C) 2009-2012 Splunk Inc. All Rights Reserved.
+
+from ESConfiguration import ESConfiguration
+
+## Get cherry key
+session_key = cherrypy.session.get('sessionKey')
+
+## Get cherry username
+user = cherrypy.session['user']['name'].lower()
+
+## Get capabilities
+capabilities = ESConfiguration.getCapabilities4User(user, session_key)
+
+%>
+
+<%def name="configHeader( title, id, cls )">
+<div class="adminHeader" id="${id}">
+  <i class="icon ${cls}"></i>
+  <h2 style="color: #989898">${title}</h2>
+</div>
+</%def>
+
+<%def name="configEntry( url, icon_url, title, description)">
+        <div class="adminListItem">
+            <dt>
+                <a class="adminListIcon" href="${url}">${title}</a>
+            </dt>
+            <dd>${description}</dd>
+        </div>
+</%def>
+
+<style>
+@import url("${make_url(['/static/css/admin.css'])}");    
+</style>
+
+<div class="adminContent splunk-components">
+    
+  <style>
+    .error-message { background-color: yellow; color: red; border: 1px black solid }
+    .notification { background-color: yellow; color: green; border: 1px black solid }
+    .formentry { padding: 5px; clear: left}
+    .formentry label { width: 10em; float: left; }
+
+    body{
+      background-color: #F7F7F7;
+    }
+    
+    .dashboardCell{
+      background-color: #F7F7F7;
+    }
+    
+    #ess_enrichment {
+    	padding-top: 10px;
+    }
+    
+    #ess_workflow {
+    	padding-top: 126px;
+    }
+    
+    div.adminIndex .adminListIcon {
+      display: inline;
+      float: none;
+      margin-left: 0px;
+    }
+    
+    dd{
+      border-left: 0px;
+      padding-left: 0px;
+    }
+    
+    #es_no_permissions div.adminGroup {
+      padding: 0px;
+    }
+    
+    #es_no_permissions div.adminListItem {
+      border-bottom: none;
+      min-height: 45px;
+      padding-left: 15px;
+    }
+    
+    #es_no_permissions dd {
+      border-left: none;
+      padding-top: 16px;
+    }
+
+    .icon{
+      float:left;
+      opacity: 0.4;
+      font-size:22pt;
+      margin-top: -6px;
+      margin-left: 8px;
+      width:25px;
+      height:25px
+    }
+    
+  </style>
+
+  % if 'admin_all_objects' in capabilities or 'edit_es_navigation' in capabilities or 'schedule_search' in capabilities or 'edit_correlationsearches' in capabilities or 'edit_lookups' in capabilities or 'edit_per_panel_filters' in capabilities or 'list_inputs' in capabilities or ('edit_notable_events' in capabilities and 'edit_tcp' in capabilities) or 'edit_reviewstatuses' in capabilities or 'edit_suppressions' in capabilities or 'edit_log_review_settings' in capabilities:
+  <div class="adminIndex">
+    <div class="adminIndexLeft">
+      % if 'admin_all_objects' in capabilities or 'edit_es_navigation' in capabilities or 'schedule_search' in capabilities or 'edit_correlationsearches' in capabilities:
+      ${configHeader("General", "ess_configuration", "icon-settings")}
+      <div class="adminGroup">       
+        <dl>
+          % if 'admin_all_objects' in capabilities:
+            ${configEntry(make_url(['app','SplunkEnterpriseSecuritySuite','ess_credential_management_list']), make_url("/static/img/skins/default/managerIcons/icon_user_options.png"), "Credential Management", "View and edit user credentials for data inputs" )}
+          % endif
+          
+          % if 'edit_es_navigation' in capabilities:
+          	${configEntry(make_url(['app','SplunkEnterpriseSecuritySuite','ess_navigation_edit']), make_url("/static/img/skins/default/managerIcons/icon_user_interface.png"), "Navigation", "View and edit app navigation" )}
+          % endif
+
+          % if 'schedule_search' in capabilities or 'edit_correlationsearches' in capabilities:
+            ${configEntry(make_url(['app','SplunkEnterpriseSecuritySuite','ess_custom_searches_list']), make_url("/static/img/skins/default/managerIcons/icon_searches.png"), "Custom Searches", "Add, customize, remove, enable/disable correlation searches and key indicators" )}
+          % endif
+        </dl>
+      </div>
+      % endif
+      
+      % if 'edit_lookups' in capabilities or 'edit_per_panel_filters' in capabilities or 'list_inputs' in capabilities:
+      ${configHeader("Data Enrichment", "ess_enrichment", "icon-data")}
+      <div class="adminGroup">       
+        <dl>
+          % if 'edit_lookups' in capabilities:
+            ${configEntry(make_url(['app','SplunkEnterpriseSecuritySuite','ess_lookups_list']), make_url("/static/img/skins/default/managerIcons/icon_lookups.png"), "Lists and Lookups", "View and edit the default lists and lookups used to drive the dashboards within the app" )}
+          % endif
+          
+          % if 'edit_per_panel_filters' in capabilities:
+          ${configEntry(make_url(['app','SplunkEnterpriseSecuritySuite','ess_ppf_lookups_list']), make_url("/static/app/SplunkEnterpriseSecuritySuite/filter.png"), "Per-Panel Filtering", "View and edit the per-panel filters" )}
+          % endif
+          
+          % if 'list_inputs' in capabilities:
+            ${configEntry(make_url(['manager','SplunkEnterpriseSecuritySuite','data/inputs/threatlist']), make_url("/static/img/skins/default/bolt.png"), "Threat Lists", "Enable or disable external threat intelligence lists" )}
+          % endif
+        </dl>
+      </div>
+      % endif
+    </div>
+    
+    <div class="adminIndexRight">
+      % if 'list_inputs' in capabilities:
+      ${configHeader("Identity Management", "ess_assets", "icon-user")}
+      <div class="adminGroup">       
+        <dl>
+          	${configEntry(make_url(['manager','SplunkEnterpriseSecuritySuite','data/inputs/identity_manager']), make_url("/static/img/skins/default/bolt.png"), "Identity Manager ", "Enable or disable additional asset or identity lists." )}
+        </dl>
+      </div>
+      % endif
+      
+      % if ('edit_notable_events' in capabilities and 'edit_tcp' in capabilities) or 'edit_reviewstatuses' in capabilities or 'edit_suppressions' in capabilities or 'edit_log_review_settings' in capabilities:
+      ${configHeader("Incident Management", "ess_workflow", "icon-flag")}
+      <div class="adminGroup">       
+        <dl>          
+          % if 'edit_notable_events' in capabilities and 'edit_tcp' in capabilities:
+            ${configEntry(make_url(['app','SplunkEnterpriseSecuritySuite','ess_notable_event_create']), make_url(['static','app','SplunkEnterpriseSecuritySuite','images','notable_create.png']), "New Notable Event", "Create an ad-hoc notable event" )}
+          % endif
+
+          % if 'edit_reviewstatuses' in capabilities:
+            ${configEntry(make_url(['app','SplunkEnterpriseSecuritySuite','ess_notable_status_list']), make_url(['static','app','SplunkEnterpriseSecuritySuite','images','icon_alert.png']), "Notable Event Statuses", "Manage notable event statuses, status transitions, default status, and user authorization" )}
+          % endif
+          
+          % if 'edit_suppressions' in capabilities:
+            ${configEntry(make_url(['app','SplunkEnterpriseSecuritySuite','ess_notable_suppression_list']), make_url(['static','app','SplunkEnterpriseSecuritySuite','images','icon_clock.png']), "Notable Event Suppressions", "View and delete notable event suppressions created on the Incident Review dashboard" )}
+          % endif
+          
+          % if 'edit_log_review_settings' in capabilities:
+            ${configEntry(make_url(['app','SplunkEnterpriseSecuritySuite','ess_log_review_configuration']), make_url("/static/img/skins/default/managerIcons/icon_user_options.png"), "Incident Review Settings", "View and edit the incident review configuration settings" )}
+          % endif
+        </dl>
+      </div>
+      % endif
+    </div>
+  </div>
+  
+  % else:
+  <div class="adminIndex" id="es_no_permissions">
+    <div class="adminGroup">
+      <div class="adminListItem">
+        <a class="adminListIcon" style="background: url(${make_url(['/static/img/skins/default/managerIcons/icon_access.png'])}) no-repeat 0px 0; display: inline; float: left;"></a>
+        <dd>You do not have any of the necessary capabilities required to configure Splunk for Enterprise Security.  Please contact your Splunk administrator.</dd>
+      </div>
+    </div>
+  </div>
+  % endif
+  
+</div>
+
+<script language="javascript">
+function nudgeIE(){
+  sel = $(".adminIndex")[0];
+  sel.className = sel.className;
+}
+
+$(document).ready(function() {
+  nudgeIE();
+});
+</script>

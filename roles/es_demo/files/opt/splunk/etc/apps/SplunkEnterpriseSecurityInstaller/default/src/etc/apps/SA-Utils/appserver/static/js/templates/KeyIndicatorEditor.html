@@ -1,0 +1,193 @@
+<div id="keyIndicatorsPreviewModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="keyIndicatorsPreviewModal" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        <h3>Key Indicator Preview</h3>
+    </div>
+    <div class="modal-body">
+        <div id="key-indicator-preview-panel">
+        
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="pull-left" style="margin-top: 6px;">
+            <a target="_blank" href="http://docs.splunk.com/Documentation/ES/latest/Install/Configuredashboardalerts">key indicators help</a>
+        </div>
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+</div>
+
+<div id="keyIndicatorsPreviewInvalidModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="keyIndicatorsPreviewInvalidModal" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        <h3>Key Indicator Preview</h3>
+    </div>
+    <div class="modal-body">
+        <div class="message-icon">
+            <i class="icon-warning-sign icon-large"></i>
+        </div>
+        <div>The key indicator properties are invalid; please fix the errors and then preview</div>
+    </div>
+    <div class="modal-footer">
+        <div class="pull-left" style="margin-top: 6px;">
+            <a target="_blank" href="http://docs.splunk.com/Documentation/ES/latest/Install/Configuredashboardalerts">key indicators help</a>
+        </div>
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+</div>
+
+<% if( list_link !== null && list_link_title !== null) { %>
+<a href="<%- list_link %>"><i class="icon-chevron-left icon-no-underline"></i><span><%- list_link_title %></span></a>
+<% } %>
+
+<div id="success_message" class="hide alert alert-info">
+  <i class="icon-alert"></i>The changes were successfully saved
+</div>
+
+<div id="failure_message" class="hide alert alert-error">
+  <i class="icon-alert"></i><span id="error_text">Changes could not be saved</span>
+</div>
+
+<h1>Key Indicator Search</h1>
+<form class="form-horizontal">
+    
+    <div class="control-group" id="search-name-control-group">
+        <label class="control-label">Search Name<span class="requiredAsterisk">*</span></label>
+    
+	    <div class="controls">
+	    <% if( is_new) { %>
+	    <input class="input-xlarge" type="text" name="search-name" value="<%- search_name %>">
+	    <% } else { %>
+	    <input class="input-xlarge" disabled="true" type="text" name="search-name" value="<%- search_name %>">
+	    <% } %>
+	    </div>
+    </div>
+    
+    <div class="control-group" id="app-control-group">
+	    <label class="control-label">Destination App<span class="requiredAsterisk">*</span></label>
+	    
+	    <div class="controls">
+	    <select class="input-xlarge" name="app">
+		<% for (var i = 0; i < apps.length; i++) { %>
+		   <option value="<%- apps[i].name %>"
+		   <% if( apps[i].name == app ) { %>selected<% } %>
+		   <% if( !is_new) { %>disabled="true"<% } %>
+		    ><%- apps[i].content.label %></option>
+		   <% } %>
+		</select>
+		
+		<% if(!is_new) { %>
+		<input type="hidden" name="app" value="<%- app %>">
+		<% } %>
+		</div>
+	</div>
+
+    <div class="control-group" id="title-control-group">
+		<label class="control-label">Title<span class="requiredAsterisk">*</span></label>
+		<div class="controls">
+		  <input class="input-xlarge" <% if (!can_edit) { %>disabled<% } %> type="text" name="title" value="<%- title %>">
+		  <span class="hide help-inline"></span>
+		</div>
+	</div>
+    
+    <div class="control-group" id="sub-title-control-group">
+		<label class="control-label">Sub-title</label>
+		<div class="controls">
+		  <input class="input-xlarge" <% if (!can_edit) { %>disabled<% } %> type="text" name="sub-title" value="<%- sub_title %>">
+		  <span class="hide help-inline"></span>
+		</div>
+	</div>
+	
+	<div class="control-group" id="search-control-group">
+		<label class="control-label">Search<span class="requiredAsterisk">*</span></label>
+		<div class="controls">
+		  <textarea class="input-xlarge" <% if (!can_edit) { %>disabled<% } %> rows="5" name="search"><%- search %></textarea>
+		  <span class="hide help-inline"></span>
+		</div>
+	</div>
+	
+    <div class="control-group" id="drilldown-uri-control-group">
+        <label class="control-label">Drilldown URL</label>
+        <div class="controls">
+          <input class="input-xlarge" <% if (!can_edit) { %>disabled<% } %> type="text" name="drilldown-uri" value="<%- drilldown_uri %>">
+          <span class="help-block">Defines the view to redirect users to when they click the key indicator</span>
+          <span class="hide help-inline"></span>
+        </div>
+    </div>
+	
+	<h2>Acceleration</h2>
+		<div class="control-group" id="schedule-control-group">
+		<label class="control-label" for="schedule">Schedule</label>
+		<div class="controls">
+		    <input id="schedule" <% if (!can_edit) { %>disabled<% } %> type="checkbox" name="schedule" <% if (is_scheduled) { %>checked<% } %>>
+		    <span class="help-block">Scheduling a key indicator will make it load faster but may increase storage and processing costs</span>
+		    <span class="hide help-inline"></span>
+	    </div>
+    </div>
+	
+	<div id="cron-schedule-control-group" class="control-group">
+		<label class="control-label">Cron Schedule<span class="requiredAsterisk">*</span></label>
+		<div class="controls">
+			<input class="input-xlarge" <% if (!can_edit) { %>disabled<% } %> type="text" name="cron-schedule" value="<%- cron_schedule %>">
+			<span class="hide help-inline"></span>
+			<span class="help-block">Specifies how often to refresh the data for the key indicator</span>
+		</div>
+	</div>
+	
+	<h2>Fields</h2>
+	<div class="control-group" id="value-field-control-group">
+		<label class="control-label">Value<span class="requiredAsterisk">*</span></label>
+		<div class="controls">
+		  <input class="input-xlarge" <% if (!can_edit) { %>disabled<% } %> type="text" name="value-field" value="<%- value_field %>">
+		  <span class="hide help-inline"></span>
+		  <span class="help-block">Specifies the name of the field that contains the current value of the key indicator</span>
+		</div>
+	</div>
+	<div class="control-group" id="delta-field-control-group">
+		<label class="control-label">Delta</label>
+		<div class="controls">
+		  <input class="input-xlarge" <% if (!can_edit) { %>disabled<% } %> type="text" name="delta-field" value="<%- delta_field %>">
+		  <span class="hide help-inline"></span>
+		  <span class="help-block">Specifies the name of the field that contains the change (delta) the key indicator</span>
+		</div>
+	</div>
+	
+	
+	<div class="control-group" id="threshold-control-group">
+		<h2>Rendering Options</h2>
+		<label class="control-label">Threshold</label>
+		<div class="controls">
+		  <input class="input-xlarge" <% if (!can_edit) { %>disabled<% } %> type="text" name="threshold" value="<%- threshold %>">
+		  <span class="hide help-inline"></span>
+	      <span class="help-block">The threshold can be set by set on the dashboards too</span>
+	    </div>
+	</div>
+	
+    <div class="control-group" id="value-suffix-control-group">
+        <label class="control-label">Value suffix</label>
+        <div class="controls">
+          <input class="input-xlarge" <% if (!can_edit) { %>disabled<% } %> type="text" name="value-suffix" value="<%- value_suffix %>">
+          <span class="hide help-inline"></span>
+          <span class="help-block">The suffix will be displayed after the value (useful for to specify units)</span>
+        </div>
+    </div>
+	
+	<div class="control-group" id="invert-control-group">
+		<label class="control-label" for="invert">Invert</label>
+		<div class="controls">
+		  <input id="invert" type="checkbox" name="invert" <% if (!can_edit) { %>disabled<% } %><% if (invert) { %>checked<% } %>>
+		  <span class="hide help-inline"></span>
+		  <span class="help-block">Inverting means that an low number is considered worse and a high number considered better</span>
+		</div>
+	</div>
+	
+	<input type="hidden" name="is_new" value="<%- is_new %>">
+	<% if(!is_new) { %>
+    <input type="hidden" name="owner" value="<%- owner %>">
+    <% } %>
+	
+	<div class="actions">
+	    <a href="#" id="preview-key-indicator" class="btn label_from_data pull-left" style="display: inline;">Preview</a>
+	    <a href="#" id="save-key-indicator" class="btn btn-primary pull-right <% if (!can_edit) { %>disabled<% } %>" style="display: inline;">Save</a>
+	</div>
+                
+</form>

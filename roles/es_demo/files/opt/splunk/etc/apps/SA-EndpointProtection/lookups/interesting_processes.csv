@@ -1,0 +1,2 @@
+app,dest,dest_pci_domain,is_required,is_prohibited,is_secure,note
+telnetd,*,*,false,true,false,The telnet application is prohibited due to insecure authentication.

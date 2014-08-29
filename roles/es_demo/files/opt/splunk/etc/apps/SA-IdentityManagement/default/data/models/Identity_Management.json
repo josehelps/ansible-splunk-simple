@@ -1,0 +1,598 @@
+{
+	"modelName":	"Identity_Management",
+	"displayName":	"Assets And Identities",
+	"description":	"Assets And Identities Data Model",
+	"editable":		false,
+	"objects":		[
+		{
+			"objectName":	"All_Assets",
+			"displayName":	"All Assets",
+			"parentName":	"BaseSearch",
+			"fields":		[
+				{
+					"fieldName":	"asset",
+					"displayName":	"asset",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	true,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"asset_id",
+					"displayName":	"asset_id",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		true
+				},
+				{
+					"fieldName":	"ip",
+					"displayName":	"ip",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"mac",
+					"displayName":	"mac",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"nt_host",
+					"displayName":	"nt_host",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"dns",
+					"displayName":	"dns",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"owner",
+					"displayName":	"owner",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"priority",
+					"displayName":	"priority",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"lat",
+					"displayName":	"lat",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"long",
+					"displayName":	"long",
+					"type":			"number",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"city",
+					"displayName":	"city",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"country",
+					"displayName":	"country",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"bunit",
+					"displayName":	"bunit",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"category",
+					"displayName":	"category",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	true,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"is_expected",
+					"displayName":	"is_expected",
+					"type":			"boolean",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"should_timesync",
+					"displayName":	"should_timesync",
+					"type":			"boolean",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"should_update",
+					"displayName":	"should_update",
+					"type":			"boolean",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"requires_av",
+					"displayName":	"requires_av",
+					"type":			"boolean",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				}
+			],
+			"calculations":	[],
+			"constraints":	[],
+			"baseSearch":	"| `assets`",
+			"children":		[]
+		},
+		{
+			"objectName":	"High_Critical_Assets",
+			"displayName":	"High Or Critical Priority Assets",
+			"parentName":	"All_Assets",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"(priority=high OR priority=critical)"
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Expected_Assets",
+			"displayName":	"Assets Expected To Splunk Data",
+			"parentName":	"All_Assets",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"is_expected=true"
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Should_Timesync_Assets",
+			"displayName":	"Assets That Should Sync Time",
+			"parentName":	"All_Assets",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"should_timesync=true"
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Should_Update_Assets",
+			"displayName":	"Assets That Should Update",
+			"parentName":	"All_Assets",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"should_update=true"
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Requires_AV_Assets",
+			"displayName":	"Assets That Require Antimalware",
+			"parentName":	"All_Assets",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"requires_av=true"
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"All_Identities",
+			"displayName":	"All Identities",
+			"parentName":	"BaseSearch",
+			"fields":		[
+				{
+					"fieldName":	"identity",
+					"displayName":	"identity",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	true,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"prefix",
+					"displayName":	"prefix",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"nick",
+					"displayName":	"nick",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"first",
+					"displayName":	"first",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"last",
+					"displayName":	"last",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"suffix",
+					"displayName":	"suffix",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"email",
+					"displayName":	"email",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"phone",
+					"displayName":	"phone",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"phone2",
+					"displayName":	"phone2",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"managedBy",
+					"displayName":	"managedBy",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"priority",
+					"displayName":	"priority",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"bunit",
+					"displayName":	"bunit",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"category",
+					"displayName":	"category",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	true,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"watchlist",
+					"displayName":	"watchlist",
+					"type":			"boolean",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				}
+			],
+			"calculations":	[
+				{
+					"calculationID":	"All_Identities_startDate",
+					"calculationType":	"Eval",
+					"outputFields":		[				
+						{
+							"fieldName":	"startDate",
+							"displayName":	"startDate",
+							"type":			"timestamp",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"strptime(startDate,\"%m/%d/%y %H:%M\")"
+				},
+				{
+					"calculationID":	"All_Identities_endDate",
+					"calculationType":	"Eval",
+					"outputFields":		[				
+						{
+							"fieldName":	"endDate",
+							"displayName":	"endDate",
+							"type":			"timestamp",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"strptime(endDate,\"%m/%d/%y %H:%M\")"
+				},
+				{
+					"calculationID":	"All_Identities_employedDays",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"employedDays",
+							"displayName":	"employedDays",
+							"type":			"number",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		true
+						}
+					],
+					"expression":		"(time()-startDate)/86400"
+				}
+			],
+			"constraints":	[],
+			"baseSearch":	"| `identities`",
+			"children":		[]
+		},
+		{
+			"objectName":	"High_Critical_Identities",
+			"displayName":	"High Or Critical Priority Identities",
+			"parentName":	"All_Identities",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"(priority=high OR priority=critical)"
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"New_Identities",
+			"displayName":	"New Identities",
+			"parentName":	"All_Identities",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"employedDays<90"
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Expired_Identities",
+			"displayName":	"Expired Identities",
+			"parentName":	"All_Identities",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"endDate=*"
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Watchlisted_Identities",
+			"displayName":	"Watchlisted Identities",
+			"parentName":	"All_Identities",
+			"fields":		[],
+			"calculations":	[],
+			"constraints":	[
+				{
+					"search":	"watchlist=true"
+				}
+			],
+			"children":		[]
+		},
+		{
+			"objectName":	"Expired_Identity_Activity",
+			"displayName":	"Expired Identity Activity",
+			"parentName":	"BaseSearch",
+			"fields":		[
+				{
+					"fieldName":	"_time",
+					"displayName":	"_time",
+					"type":			"timestamp",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"host",
+					"displayName":	"host",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"source",
+					"displayName":	"source",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"src_user",
+					"displayName":	"src_user",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"sourcetype",
+					"displayName":	"sourcetype",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				},
+				{
+					"fieldName":	"user",
+					"displayName":	"user",
+					"type":			"string",
+					"fieldSearch":	"",
+					"required":		false,
+					"multivalue":	false,
+					"hidden":		false
+				}
+			],
+			"calculations":	[
+				{
+					"calculationID":	"Expired_Identity_Activity_expired_user",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"expired_user",
+							"displayName":	"expired_user",
+							"type":			"string",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"case(isnotnull(user_endDate),user,isnotnull(src_user_endDate),src_user,1=1,null())"
+				},
+				{
+					"calculationID":	"Expired_Identity_Activity_src_user_endDate",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"src_user_endDate",
+							"displayName":	"src_user_endDate",
+							"type":			"timestamp",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"strptime(src_user_endDate, \"%m/%d/%y %H:%M\")"
+				},
+				{
+					"calculationID":	"Expired_Identity_Activity_user_endDate",
+					"calculationType":	"Eval",
+					"outputFields":		[
+						{
+							"fieldName":	"user_endDate",
+							"displayName":	"user_endDate",
+							"type":			"timestamp",
+							"fieldSearch":	"",
+							"required":		false,
+							"multivalue":	false,
+							"hidden":		false
+						}
+					],
+					"expression":		"strptime(user_endDate, \"%m/%d/%y %H:%M\")"
+				}
+			],
+			"constraints":	[],
+			"baseSearch":	"NOT sourcetype=stash (src_user_endDate=* OR user_endDate=*)",
+			"children":		[]
+		}
+	]
+}

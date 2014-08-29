@@ -1,0 +1,18 @@
+<h2>Protecting Notable Events with Event Hashing</h2>
+
+Correlated events are hashed with a cryptographic algorithm (SHA256) at index time in order to ensure the events displayed at search time have not been changed
+(i.e. are the same as the events received at index time).
+Events that match the hash (integrity is verified) will be indicated as valid or tampered in the raw data view per the following: 
+<br />
+<br />
+<span class="audit label label-success"><i class="icon-check-circle"></i> Valid</span>
+<span class="audit label label-important"><i class="icon-alert-circle"></i> Tampered!</span>
+<span class="audit label label-warning"><i class="icon-minus-circle"></i> Gap</span>
+<span class="audit label label-info"><i class="icon-question-circle"></i> Can't validate!</span>
+<br />
+<br />
+<p>
+	Event hashing is configured in the file <i>audit.conf</i>. Event hashing can be specified with whitelists (hash events that match given parameters)
+	or blacklists (hash all events except those that match given paramaters).
+</p>
+See <a target="_blank" href="http://http://docs.splunk.com/Documentation/Splunk/latest/Security/Eventhashing">splunk>docs</a> for detailed information regarding configuring event hashing.

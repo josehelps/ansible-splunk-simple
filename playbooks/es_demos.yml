@@ -1,0 +1,10 @@
+---
+# This playbook deploys all sub playbooks
+
+- name: install ES 3.1 Demo
+  hosts: es_demo
+  user: root
+
+  roles:
+    - common
+    - es_demo

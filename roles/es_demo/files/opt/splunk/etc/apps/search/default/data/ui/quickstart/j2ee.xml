@@ -1,0 +1,32 @@
+<quickstart>
+
+    <title>J2EE data</title>
+    <optiongroup>
+        <option>
+            <title>Splunk for Websphere Application Server app</title>
+            <summary>This app indexes Websphere Application Server logs and metrics. It also contains dashboards and searches for Websphere Application Server data.</summary>
+            <doctarget>[learnmore.recipes.app.websphere]</doctarget>
+            <action type="install_app">
+                <label>Next</label>
+                <target>SplunkWAS</target>
+            </action>
+        </option>
+
+        <option>
+            <title>J2EE data your Splunk server can access</title>
+            <summary>Add any J2EE data on the Splunk server to Splunk.</summary>
+            <doctarget>[learnmore.recipes.files.j2ee]</doctarget>
+            <action type="add_monitor">
+                <label>Next</label>
+            </action>
+        </option>
+        
+        <option>
+            <title>J2EE data your Splunk server can't access</title>
+            <summary>Use Splunk's universal forwarder to forward J2EE data from any machine to your Splunk server.</summary>
+            <doctarget>[learnmore.recipes.forwarder]</doctarget>
+        </option>
+
+    </optiongroup>
+
+</quickstart>

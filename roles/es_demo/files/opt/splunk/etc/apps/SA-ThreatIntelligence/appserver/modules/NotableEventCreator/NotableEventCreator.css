@@ -1,0 +1,52 @@
+::-webkit-input-placeholder {
+    color: #999;
+}
+
+:-moz-placeholder {
+    color: #999;
+}
+
+textarea::-webkit-input-placeholder {
+	font-size: 11px;
+	font-family: Arial,Helvetica,sans-serif;
+    color: #999;
+}
+
+textarea:-moz-placeholder {
+	font-size: 11px;
+	font-family: Arial,Helvetica,sans-serif;
+    color: #999;
+}
+
+#eaiform.entityEditForm textarea.regular::-webkit-input-placeholder {
+	font-size: 11px;
+	font-family: Arial,Helvetica,sans-serif;
+   	color: #999;
+}
+
+#eaiform.entityEditForm textarea.regular:-moz-placeholder {
+	font-size: 11px;
+	font-family: Arial,Helvetica,sans-serif;
+   	color: #999;
+}
+
+#eaiform.entityEditForm textarea.normalFont {
+	font-size: 11px;
+	font-family: Arial,Helvetica,sans-serif;
+}
+
+.jmFormActions{
+	margin-top: 10px;
+}
+.firstCell .layoutCellInner{
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    border-width: 0px;
+}
+
+#form_body{
+	height: 100px;
+	width: 98%;
+}

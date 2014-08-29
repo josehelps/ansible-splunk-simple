@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoint name="data/inputs/threatlist">
+	<header>Threat Lists</header>
+	<breadcrumb>
+		<parent hidecurrent="False">datainputstats</parent>
+		<name>Threat Lists</name>
+	</breadcrumb>
+	<elements>
+		<element name="spl-ctrl_threatlist_options" type="fieldset">
+			<key name="legend">Threat List Settings</key>
+			<view name="create" />
+			<view name="edit" />
+			<view name="list" />
+			<elements>
+				<view name="create" />
+				<view name="edit" />
+				<view name="list" />
+				<element name="name" type="textfield" label="Name">
+					<key name="exampleText">The threat list name.</key>
+					<view name="create" />
+					<view name="list" />
+				</element>
+				<element name="type" type="textfield" label="Type">
+					<key name="exampleText">The type of threat list (e.g., "malware").</key>
+					<view name="create" />
+					<view name="edit" />
+					<view name="list" />
+				</element>
+				<element name="description" type="textfield" label="Description">
+					<key name="exampleText">The threat list description.</key>
+					<view name="create" />
+					<view name="edit" />
+					<view name="list" />
+				</element>
+				<element name="url" type="textfield" label="URL">
+					<key name="exampleText">The threat list URL.</key>
+					<view name="create" />
+					<view name="edit" />
+					<view name="list" />
+				</element>
+				<element name="weight" type="textfield" label="Weight">
+					<key name="exampleText">The threat list weight.</key>
+					<view name="create" />
+					<view name="edit" />
+					<view name="list" />
+				</element>
+				<element name="interval" type="textfield" label="Interval">
+					<key name="exampleText">The interval at which to download the threat list.
+					</key>
+					<view name="create" />
+					<view name="edit" />
+					<view name="list" />
+				</element>
+				<element name="post_args" type="textfield" label="POST arguments">
+					<key name="exampleText">POST arguments to be passed to the URL.</key>
+					<view name="create" />
+					<view name="edit" />
+				</element>
+				<element name="eai:acl.app" type="textfield" label="App">
+					<view name="list" />
+					<key name="processValueList">entity['eai:acl']['app'] or ""</key>
+				</element>
+			</elements>
+		</element>
+		<element name="spl-ctrl_parsing_options" type="fieldset">
+			<key name="legend">Parsing Options</key>
+			<view name="create" />
+			<view name="edit" />
+			<elements>
+				<view name="create" />
+				<view name="edit" />
+				<element name="delim_regex" type="textfield"
+					label="Delimiting regular expression">
+					<key name="exampleText">A delimiter used to split lines in a threat list.
+					</key>
+					<view name="create" />
+					<view name="edit" />
+				</element>
+				<element name="extract_regex" type="textfield"
+					label="Extracting regular expression">
+					<key name="exampleText">A regular expression used to extract fields from
+						individual lines of a threat list.</key>
+					<view name="create" />
+					<view name="edit" />
+				</element>
+				<element name="fields" type="textfield" label="Fields">
+					<key name="exampleText">A transforms.conf-style expression used to rename or
+						combine fields.</key>
+					<view name="create" />
+					<view name="edit" />
+				</element>
+				<element name="ignore_regex" type="textfield"
+					label="Ignoring regular expression">
+					<key name="exampleText">A regular expression used to IGNORE lines in a threat
+						list.</key>
+					<view name="create" />
+					<view name="edit" />
+				</element>
+				<element name="skip_header_lines" type="textfield" label="Skip header lines">
+					<key name="exampleText">The number of header lines to skip when processing
+						the threat list (should be "1" for lookup tables).</key>
+					<view name="create" />
+					<view name="edit" />
+				</element>
+			</elements>
+		</element>
+		<element name="spl-ctrl_download_options" type="fieldset">
+			<key name="legend">Download Options</key>
+			<view name="create" />
+			<view name="edit" />
+			<elements>
+				<view name="create" />
+				<view name="edit" />
+				<element name="retry_interval" type="textfield" label="Retry interval">
+					<key name="exampleText">Time to wait between download retry attempts, in
+						seconds.</key>
+					<view name="create" />
+					<view name="edit" />
+				</element>
+				<element name="site_user" type="textfield" label="Remote site user">
+					<key name="exampleText">A username to use in remote authentication, if
+						required (must correspond to the name of a Splunk secure stored
+						credential).</key>
+					<view name="create" />
+					<view name="edit" />
+				</element>
+				<element name="retries" type="textfield" label="Retries">
+					<key name="exampleText">The maximum number of download retry attempts.</key>
+					<view name="create" />
+					<view name="edit" />
+				</element>
+				<element name="timeout" type="textfield" label="Timeout">
+					<key name="exampleText">The time to wait before regarding a download attempt
+						as failed, in seconds.</key>
+					<view name="create" />
+					<view name="edit" />
+				</element>
+			</elements>
+		</element>
+		<element name="spl-ctrl_proxy_options" type="fieldset">
+			<key name="legend">Proxy Options</key>
+			<view name="create" />
+			<view name="edit" />
+			<elements>
+				<view name="create" />
+				<view name="edit" />
+				<element name="proxy_server" type="textfield" label="Proxy Server">
+					<key name="exampleText">A proxy server, if required.</key>
+					<view name="create" />
+					<view name="edit" />
+				</element>
+				<element name="proxy_port" type="textfield" label="Proxy Port">
+					<key name="exampleText">A proxy port, if required.</key>
+					<view name="create" />
+					<view name="edit" />
+				</element>
+				<element name="proxy_user" type="textfield" label="Proxy User">
+					<key name="exampleText">A proxy user (must correspond to the name of a Splunk
+						secure stored credential).</key>
+					<view name="create" />
+					<view name="edit" />
+				</element>
+			</elements>
+		</element>
+
+	</elements>
+
+</endpoint>

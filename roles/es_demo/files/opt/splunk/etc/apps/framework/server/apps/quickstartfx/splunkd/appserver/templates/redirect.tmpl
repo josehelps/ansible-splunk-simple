@@ -1,0 +1,6 @@
+<script>
+    var root = "/dj/";
+    var path = document.location.pathname;
+    var appName = path.match(/\/app\/(.*)\/default/)[1]
+    document.location = root + appName;
+</script>

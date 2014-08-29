@@ -1,0 +1,135 @@
+<view isVisible="false" template="builder.html" displayView="report_builder_display" onunloadCancelJobs="False" decomposeIntentions="true" isDashboard="False" type="redirect" target="search">
+  <label>Report Builder</label>
+  <module name="AccountBar" layoutPanel="appHeader"/>
+  <module name="AppBar" layoutPanel="navigationHeader"/>
+  <module name="Message" layoutPanel="messaging">
+    <param name="filter">*</param>
+    <param name="clearOnJobDispatch">True</param>
+    <param name="maxSize">1</param>
+  </module>
+  <module name="BreadCrumb" layoutPanel="viewHeader">
+    <param name="goBackOnJobCancelled">True</param>
+    <param name="options">
+      <list>
+        <param name="view">report_builder_define_data</param>
+        <param name="label">1: Define report content</param>
+      </list>
+      <list>
+        <param name="label">2: Format report</param>
+      </list>
+    </param>
+    <module name="Message" layoutPanel="reportSecondPanel">
+      <param name="filter">splunk.search</param>
+      <param name="clearOnJobDispatch">True</param>
+      <param name="maxSize">2</param>
+    </module>
+    <module name="JobStatus" layoutPanel="reportSecondPanel" group="hide">
+      <param name="actionsMenuFilter">reportFormat</param>
+      <param name="showSaveMenu">True</param>
+      <param name="showCreateMenu">True</param>
+      <param name="enableWizards">False</param>      
+      <module name="ShowHideHeader" layoutPanel="reportThirdPanel">
+        <param name="label">Chart</param>
+        <param name="mode">independent</param>
+        <param name="selected">show</param>
+        <module name="ShowHideHeader" layoutPanel="reportThirdPanel" group="show">
+          <param name="label">Formatting options</param>
+          <param name="mode">serializeAll</param>
+          <param name="headerType">secondary</param>
+          <param name="selected">hide</param>
+          <module name="ChartTypeFormatter" group="show" layoutPanel="panel_row2_col1">
+            <param name="ensureCompatibleType">true</param>
+            <module name="LinkSwitcher" layoutPanel="panel_row2_col2">
+              <param name="mode">serializeAll</param>
+              <param name="hideChildrenOnLoad">True</param>
+              <param name="label">Format</param>
+              <module name="ChartTitleFormatter" group="General" layoutPanel="panel_row3_col1">
+                <param name="label">Chart title</param>
+                <module name="StackModeFormatter" layoutPanel="panel_row3_col2">
+                    <module name="SplitModeFormatter" layoutPanel="panel_row3_col2">
+                      <module name="NullValueFormatter">
+                        <module name="LegendFormatter" layoutPanel="panel_row3_col3"></module>
+                      </module>
+                    </module>
+                </module>
+              </module>
+              <module name="XAxisTitleFormatter" group="X-axis" layoutPanel="panel_row3_col1">
+                <module name="LineMarkerFormatter" layoutPanel="panel_row3_col2"></module>
+              </module>                  
+              <module name="YAxisTitleFormatter" group="Y-axis" layoutPanel="panel_row3_col1">
+                <module name="YAxisRangeMinimumFormatter" layoutPanel="panel_row3_col2">
+                  <module name="YAxisRangeMaximumFormatter" layoutPanel="panel_row3_col2">
+                    <module name="AxisScaleFormatter" layoutPanel="panel_row3_col3"></module>
+                  </module>
+                </module>
+              </module>
+              <module name="SubmitButton" layoutPanel="panel_row4_col1">
+                <param name="label">Apply</param>
+              </module>
+            </module>
+          </module>
+          <!-- last switcher child in serializeAll mode is always visible. -->
+          <module name="JSChart" layoutPanel="graphArea">
+            <param name="height">300px</param>
+            <param name="width">100%</param>
+            <param name="maxRowsForTop">20</param>
+            <module name="ConvertToDrilldownSearch">
+              <module name="ViewRedirector">
+                <param name="viewTarget">flashtimeline</param>
+                <param name="popup">True</param>
+              </module>
+            </module>
+          </module>
+        </module>
+        <!-- last switcher child in serializeAll mode is always visible. -->
+        <module name="NullModule" layoutPanel="reportThirdPanel" group="hide"></module>
+      </module>
+
+      <module name="ShowHideHeader" layoutPanel="resultsArea">
+        <param name="mode">independent</param>
+        <param name="label">Table</param>
+        <param name="selected">show</param>
+        <module name="Count" group="show">
+          <param name="options">
+            <list>
+              <param name="text">10</param>
+              <param name="value">10</param>
+            </list>
+            <list>
+              <param name="text">20</param>
+              <param name="selected">True</param>
+              <param name="value">20</param>
+            </list>
+            <list>
+              <param name="text">50</param>
+              <param name="value">50</param>
+            </list>
+          </param>
+          <module name="Export"><param name="exportType">result</param></module>
+          <module name="Paginator">
+            <param name="count">20</param>
+            <param name="entityName">results</param>
+            <param name="maxPages">10</param>
+            <module name="DataOverlay">
+              <module name="EnablePreview" group="show">
+                <param name="enable">True</param>
+                <module name="SimpleResultsTable">
+                  <param name="maxLines">10</param>
+                  <param name="drilldown">all</param>
+                  <module name="ConvertToDrilldownSearch">
+                    <module name="ViewRedirector">
+                      <param name="viewTarget">flashtimeline</param>
+                      <param name="popup">True</param>
+                    </module>
+                  </module>
+                </module>
+              </module>
+            </module>
+          </module>
+        </module>
+        <!-- last switcher child in serializeAll mode is always visible. -->
+        <module name="NullModule" group="hide"/>
+      </module>
+    </module>
+  </module>
+</view>

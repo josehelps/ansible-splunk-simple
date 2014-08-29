@@ -1,0 +1,25 @@
+<quickstart>
+
+    <title>JMS or JMX data</title>
+    <optiongroup>
+        <option>
+            <title>Splunk for Websphere Application Server app</title>
+            <summary>Use this app to index data from Websphere Application Server logs, JMX and JMS. This app also contains dashboards, searches and reports for Websphere Application Server data.</summary>
+            <doctarget>[learnmore.recipes.app.websphere]</doctarget>
+            <action type="install_app">
+                <label>Next</label>
+                <target>SplunkWAS</target>
+            </action>
+        </option>
+
+        <option>
+            <title>Write your own script</title>
+            <summary>Configure Splunk to run your own script to gather data from JMS, JMX and other APIs.</summary>
+            <doctarget>[learnmore.recipes.script]</doctarget>
+            <action type="add_script">
+                <label>Next</label>
+            </action>
+        </option>
+    </optiongroup>
+
+</quickstart>

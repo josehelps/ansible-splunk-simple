@@ -1,0 +1,5 @@
+May 25 2011 18:56:19 package="xulrunner.i386" package_type=updates
+May 25 2011 18:56:19 package="sudo.i386" package_type=updates
+May 25 2011 18:56:19 package="openssh-server.i386" package_type=updates
+May 25 2011 18:56:19 package="openssh-clients.i386" package_type=updates
+May 25 2011 18:56:19 total_updates=4 base=0 updates=4 addons=0 extras=0

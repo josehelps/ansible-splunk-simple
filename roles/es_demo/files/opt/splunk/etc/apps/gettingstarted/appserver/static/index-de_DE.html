@@ -1,0 +1,491 @@
+﻿<script type="text/javascript" src="/static/app/gettingstarted/getstarted.js"></script>
+     
+     <div id="gs-intro" class="splClearfix">
+          
+          <div class="gs-Wrapper">
+               <h1>Einstieg in Splunk</h1>
+               <p>
+               Mit Splunk können Sie beliebige IT-Daten in Echtzeit indizieren, durchsuchen, in Warnungen und Berichte einbinden und für die Anwendungsverwaltung, IT-Vorgänge, Sicherheits- und Compliance-Berichte und Vieles mehr nutzen. Splunk lässt sich für alle Computerdaten verwenden: Ob Logfiles, Systemmetriken, Anwendungen, Konfigurationsdaten usw. – Splunk erfasst alle Arten von Daten.
+               </p>
+               <p>
+               Klicken Sie unten auf ein Thema, um Splunk kennen zu lernen.
+               </p>
+               
+              <div class="gsTOC">
+                <a href="#" class="gsTOCLink gsTOCLinkHighlighted" divToShow="#gettingTab">Navigieren in Splunk</a> <a href="#" class="gsTOCLink" divToShow="#indexTab">Indizieren von Daten</a> <a href="#" class="gsTOCLink" divToShow="#searchTab">Suchen & Untersuchen</a> <a href="#" class="gsTOCLink" divToShow="#knowledgeTab">Hinzufügen von Informationen</a> <a href="#" class="gsTOCLink" divToShow="#monitorTab">Überwachen und Benachrichtigen</a> <a href="#" class="gsTOCLink" divToShow="#reportTab">Berichten und Analysieren</a> <a href="#" class="gsTOCLink" divToShow="#moreTab">Weitere Informationen</a>
+             </div>
+         </div>
+     </div>
+
+     <div class="gs-Wrapper">
+          
+          <div class="gsDetails" id="gettingTab" style="display: block;">
+                <h2>Navigieren in Splunk</h2>
+                <p>Die Oberfläche von Splunk bietet zahllose Funktionen. In den nächsten Themen werden die Navigation innerhalb von Splunk sowie die Nutzung der Splunk-Installation beschrieben.</p>
+                <ul class="gs-subnav">
+                    <li><a href="#" class="gsExpandLink gsExpandLinkHighlighted" divToShow="#whereapps">Wo befinde ich mich im Moment?</a></li>
+                    <li><a href="#" class="gsExpandLink" divToShow="#usemanager">Verwalten der Splunk-Installation</a></li>
+                </ul>
+               
+                <div id="whereapps" class="gsExpandDetails" style="display: block;">
+                    <h2>Wo befinde ich mich im Moment?</h2>
+                    <p>Splunk besteht aus Apps. Apps erzeugen unterschiedliche Kontexte für Ihre Daten aus verschiedenen Ansichten, Dashboards und Konfigurationen. Im Moment befinden Sie sich in der Erste Schritte-App. Außerdem stehen Ihnen die Such-App zum Erstellen von Suchvorgängen und die standardmäßige Start-App zum Aufrufen anderer Apps zur Verfügung. Darüber hinaus können Sie neue Apps aus SplunkBase hinzufügen oder eigene Apps erstellen.</p>
+                    <p><b>Navigation zwischen Apps</b></p>
+                    <p>Für den Wechsel zu einer anderen App verwenden Sie das Dropdown-Menü <b>App</b> in der rechten oberen Ecke:</p>
+                    <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/appmenu.png')}" alt="screenshow_uploadLocal" />
+                    <p>Wenn Sie eine Liste der aktuell in Ihrer Splunk-Instanz installierten Apps anzeigen möchten, kehren Sie zur Startseite zurück, indem Sie auf das Menü "App" in der rechten oberen Ecke dieser Seite klicken und "Startseite" auswählen. Sie verlassen dadurch die Erste Schritte-App, können jedoch zu ihr zurückkehren, indem Sie erneut "Erste Schritte" aus dem Start- oder App-Menü auswählen.</p>
+                    <p><b>Haben Sie Splunk schon verwendet? Suchen Sie etwas, mit dem Sie vertraut sind?</b></p>
+                    <p>Wenn Sie Splunk bereits kennen, suchen Sie wahrscheinlich die Such-App. Zum Aufrufen der Such-App wählen Sie den Befehl "Suchen" aus dem Menü "App" in der rechten oberen Ecke aus.</p>
+                </div>
+               
+                <div id="usemanager" class="gsExpandDetails">
+                    <h2>Verwalten der Splunk-Installation</h2>
+                    <p>Die meisten Splunk-Verwaltungsoptionen können über Splunk Web (die Benutzeroberfläche von Splunk) aufgerufen werden.  Manche Konfigurationen stehen jedoch nur Splunk-Benutzern mit Administratorrechten zur Verfügung.  Sollten Sie auf einige der in dieser App beschriebenen Konfigurationen nicht zugreifen können, haben Sie möglicherweise nicht die notwendigen Zugriffsberechtigungen.</p>
+                    <p><b>Verwenden des Splunk-Managers</b></p>
+                    <p>Mit dem Splunk-Manager können Sie Ihre Konfigurationen und Apps verwalten.  Nahezu alle Konfigurationsänderungen lassen sich über den Splunk-Manager durchführen.  Zum Aufrufen des Managers klicken Sie auf den Link <b>Manager</b> in der rechten oberen Ecke:</p>
+                    <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/managernav.png')}" alt="screenshow_uploadLocal" />
+                    <p><b>Verwenden des Auftrags-Managers</b></p>
+                    <p>Verwalten Sie Ihre Suchvorgänge mit dem Auftrags-Manager. Ihre sämtlichen Suchvorgänge werden als Aufträge ausgeführt.  Sie können alle Suchvorgänge, die auf Ihrem System ausgeführt werden, auflisten und steuern, indem Sie auf den Link <b>Aufträge</b> in der rechten oberen Ecke klicken:</p>
+                    <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/jobsnav.png')}" alt="screenshow_uploadLocal" />
+                    <p><b>Hinzufügen weiterer Apps</b></p>
+                    <p>Wenn Sie weitere Apps für Splunk suchen und herunterladen möchten, kehren Sie zur Startseite zurück und klicken auf die Schaltfläche "Weitere Apps suchen".</p>
+                    <p>Sie haben auch die Möglichkeit, eigene Apps zu erstellen. Weitere Informationen dazu finden Sie im <a href="${generateSelfHelpLink('gettingstarted.developer')}" target="_blank" title="Splunk-Hilfe">Developer Manual</a>.</p>
+                </div>
+          </div>
+
+ 
+          <div class="gsDetails" id="indexTab">
+               <h2>Indizieren von Daten</h2>
+               <p>Wenn die Daten von einem Rechner generiert wurden, kann Splunk sie indizieren. Ja, ganz richtig: Splunk indiziert beliebige Daten, ob strukturiert oder unstrukturiert, und benötigt dazu keine speziellen Parser, Konnektoren oder Adapter. Sie können Splunk mit beliebigen Daten "füttern", von den Syslogs auf UNIX-Servern und Netzwerkgeräten über die Ereignisprotokolle unter Windows bis hin zu benutzerdefinierten Anwendungslogs sowie Konfigurationen und sogar Systemmetriken – und erhalten Erkenntnisse über Ihr gesamtes System.<p>
+               <p>Nutzen Sie die Datenerfassung von Splunk in Workflows, um das ganze Spektrum an unterschiedlichen Datentypen, die Sie zu Splunk hinzufügen können, und die verschiedenen Dateneingabemethoden kennen zu lernen. Abhängig vom Speicherort der Daten gibt es viele verschiedene Möglichkeiten, diese in Splunk zu erfassen.</p>
+               <ul class="gs-subnav">
+                    <li><a href="#" class="gsExpandLink gsExpandLinkHighlighted" divToShow="#localdata">Auf diesem Splunk-Server</a></li>
+                    <li><a href="#" class="gsExpandLink" divToShow="#windowsdata">Auf einem Remoterechner mit Windows als Betriebssystem</a></li>
+                    <li><a href="#" class="gsExpandLink" divToShow="#unixdata">Auf einem Remoterechner mit einem anderen Betriebssystem</a></li>
+                    <li><a href="#" class="gsExpandLink" divToShow="#networkdata">In Ihrem Netzwerk</a></li>
+                    <li><a href="#" class="gsExpandLink" divToShow="#moreinputs">Weitere Eingabemethoden</a></li>
+               </ul>
+               
+               <div id="localdata" class="gsExpandDetails" style="display: block;">
+                    <h2>Auf diesem Splunk-Server</h2>
+                    <p>Splunk indiziert beliebige lokale Daten, und zwar ständig oder auch nur ein Mal. Mit dem Splunk-Manager konfigurieren Sie Splunk für die Indizierung einer Datei oder eines Verzeichnisses. Sie können Ihre Daten vor der Indizierung auch anzeigen und benutzerdefinierte Regeln für die Datenverarbeitung mit Splunk festlegen.</p>
+                    <ol>
+                         <li>Klicken Sie auf "Manager &raquo; Dateneingaben &raquo; Dateien & Verzeichnisse".</li>
+                         <li>Klicken Sie auf "Neu".</li>
+                          <div class="controlButtonWrapper">
+                             <a class="splButton-primary" href="/manager/search/data/inputs/monitor/_new?action=edit" target="_blank"><span>Dorthin wechseln...</span></a>
+                          </div>
+                         <li>Sie gelangen dann zur Datenvorschau und können einen Sourcetyp erstellen, also Regeln dafür festlegen, wie Splunk Daten zum Indizierungszeitpunkt aus Ihren Dateien und Verzeichnissen parsen und extrahieren soll.</li>
+                         <li>Nach der Vorschau der Daten können Sie eine einzelne Datei oder ein Verzeichnis hinzufügen und Splunk indiziert die Daten dann sofort.</li>
+                         <li>Wählen Sie ''Daten aus einer Datei oder einem Verzeichnis, auf das diese Splunk-Instanz Zugriff hat, ständig indizieren'' aus, wenn die Daten kontinuierlich indiziert werden sollen.</li>
+                         <li>Wenn Sie eine Datei auf Ihren Client-Rechner hochladen möchten, wählen Sie "Datei hochladen und indizieren" aus.</li>
+                         <li>Soll eine Datei nur ein Mal indiziert werden, wählen Sie ''Datei ein Mal mit diesem Splunk-Server indizieren''.</li>
+                         <li>Legen Sie weitere Optionen fest, indem Sie den restlichen Anleitungen der Seite folgen. Legen Sie beispielsweise einen Hostnamen, Sourcetyp oder Index fest.  Sie können die meisten dieser Optionen auch auf die Standardwerte eingestellt lassen, damit sie von Splunk zugewiesen werden.</li>
+                    </ol>
+               </div>
+               
+               <div id="windowsdata" class="gsExpandDetails">
+                    <h2>Auf einem Remoterechner mit Windows als Betriebssystem</h2>
+                    <p>Mit Splunk können Sie Windows-Daten von anderen Rechnern in Ihrem Netzwerk erfassen.  Abhängig von der Netzwerkkonfiguration haben Sie verschiedene Möglichkeiten:</p>
+                    <ol>
+                         <li>Wenn Sie Splunk unter Windows einsetzen, können Sie Windows-Ereignisprotokolle mit WMI erfassen sowie die Ereignisprotokollerfassung, die Registrierungsüberwachung und die Active Directory-Überwachung nutzen.  Unter "Manager &raquo; Dateneingaben" werden alle Möglichkeiten aufgeführt, die Ihnen zur Verfügung stehen.</li>
+                         <div class="controlButtonWrapper">
+                             <a class="splButton-primary" href="/manager/launcher/datainputstats" target="_blank"><span>Dorthin wechseln...</span></a>
+                          </div>
+                         <li>Wird Splunk auf einem Rechner ohne Windows ausgeführt, können Sie die Daten mithilfe eines Agenten von Ihrem Windows-Rechner an Splunk übermitteln.  Installieren Sie einen universellen Forwarder auf dem Remoterechner.  Weitere Informationen über Forwarder finden Sie in der Dokumentation unter dem Thema <a href="${generateSelfHelpLink('gettingstarted.forwarders')}" target="_blank" title="Splunk-Hilfe">Splunk Universal Forwarder</a>.</li>
+                         <li>Sie können jederzeit auch Daten aus Verzeichnissen indizieren, die in Ihrem Netzwerk freigegeben wurden.  Navigieren Sie im Splunk-Manager einfach zur Seite "Dateneingaben" und wählen Sie ''Datei oder Verzeichnis überwachen" aus. Geben Sie den vollständigen Pfad für die Datei bzw. das Verzeichnis ein. Unter Windows können Sie z. B. "C:\apache\apache.error.log" eingeben, um eine lokale Datei zu überwachen, oder "\\Hostname\apache\apache.error.log", um eine Datei auf einem Remoterechner mit Windows zu überwachen.</li>
+                         <div class="controlButtonWrapper">
+                             <a class="splButton-primary" href="/manager/search/data/inputs/monitor/_new?action=edit" target="_blank"><span>Dorthin wechseln...</span></a>
+                         </div>
+                    </ol>
+               </div>
+               
+               <div id="unixdata" class="gsExpandDetails">
+                    <h2>Auf einem Remoterechner mit einem anderen Betriebssystem</h2>
+                    <p>Mit Splunk können Sie Daten von anderen Rechnern ohne Windows-Betriebssystem in Ihrem Netzwerk erfassen.  Abhängig von der Netzwerkkonfiguration haben Sie verschiedene Möglichkeiten:</p>
+                    <ol>
+                         <li>Sie können jederzeit Daten aus Verzeichnissen indizieren, die in Ihrem Netzwerk freigegeben wurden.  Navigieren Sie im Splunk-Manager einfach zur Seite "Dateneingaben" und wählen Sie ''Datei oder Verzeichnis überwachen" aus. Geben Sie den vollständigen Pfad für die Datei bzw. das Verzeichnis ein. Unter Unix verwenden Sie das Form "/var/log" zum Überwachen einer lokalen Datei bzw. "/mnt/www01/var/log" für die Überwachung eines Remote-Verzeichnisses. </li>
+                         <div class="controlButtonWrapper">
+                             <a class="splButton-primary" href="/manager/search/data/inputs/monitor/_new?action=edit" target="_blank"><span>Dorthin wechseln...</span></a>
+                         </div>
+                         <li>Sie können auch den Universal Forwarder von Splunk verwenden, um die Daten von einem anderen Rechner an Splunk zu übermitteln.  Installieren Sie den Forwarder als Agenten auf dem Remoterechner und konfigurieren Sie ihn so, dass er Daten an Ihren Splunk-Server sendet. Weitere Informationen über Forwarder finden Sie in der Dokumentation unter dem Thema <a href="${generateSelfHelpLink('gettingstarted.forwarders')}" target="_blank" title="Splunk-Hilfe">Splunk Universal Forwarder</a>.</li>
+                    </ol>
+               </div>
+        
+               <div id="networkdata" class="gsExpandDetails">
+                    <h2>In Ihrem Netzwerk</h2>
+                    <p>Mit dieser Methode erfassen Sie Daten, die über einen TCP- oder UDP-Port gesendet wurden. Sie können Splunk beispielsweise für die Überwachung des UDP-Ports 514 konfigurieren, um Syslog-Daten zu erfassen.</p>
+                    <ol>
+                         <li>Dazu navigieren Sie im Splunk-Manager zur Seite "Dateneingaben".</li>
+                         <div class="controlButtonWrapper">
+                         <a class="splButton-primary" href="/manager/search/datainputstats" target="_blank"><span>Dorthin wechseln...</span></a>
+                         </div>
+                         <li>Klicken Sie neben "UDP" auf "Neu", um Daten von einem UDP-Port hinzuzufügen.</li>
+                         <li>Klicken Sie neben "TCP" auf "Neu", um mithilfe von TCP Daten von einem Port hinzuzufügen.</li>
+                         <li>Geben Sie den Port an, den Splunk überwachen soll.</li>
+                         <li>Legen Sie weitere Optionen fest, indem Sie den restlichen Anleitungen der Seite folgen.</li>
+                    </ol>    
+               </div>
+                
+                <div id="moreinputs" class="gsExpandDetails">
+                    <h2>Weitere Eingabemethoden</h2>
+                    <p>Es gibt noch andere Möglichkeiten für die Dateneingabe in Splunk.  Im Folgenden werden einige beliebte Methoden beschrieben:</p>
+                    <p><b>Erfassen von Daten von mehreren Rechnern in einer verteilten Umgebung</b></p>
+                    <p>Sie möchten Daten aus einer verteilten Umgebung, etwa einer Anwendungs- oder Webserverfarm, mit lokaler Protokollierung in Splunk eingeben? Der Universal Forwarder von Splunk ist ein unkomplizierter Agent, der auf Dutzenden, Hunderten oder gar Tausenden von Servern bereitgestellt werden kann, um Daten in Echtzeit zu erfassen und an einen zentralen Splunk-Indexer zu senden. Mit einem <a href="${generateSelfHelpLink('gettingstarted.forwarders')}" target="_blank" title="Splunk-Hilfe">universellen Forwarder</a> können Sie Daten aus anderen Systemen an Splunk übertragen. Die Übermittlung durch den Forwarder wird im Splunk-Manager eingerichtet.</p>
+                    <p><b>Erstellen eigener Eingaben mithilfe von Skripten</b></p>
+                    <p>Erstellen Sie eine <a href="${generateSelfHelpLink('gettingstarted.scripted')}" target="_blank" title="Splunk-Hilfe">skriptbasierte Eingabe</a> für Ihre benutzerdefinierte Datenquelle. Die skriptbasierte Eingabe eignet sich für Befehlszeilentools wie vmstat, iostat, netstat, top usw. Rufen Sie Daten von APIs und anderen, Remote-Datenschnittstellen und Meldungswarteschlangen ab und erstellen Sie Metriken und Statusdaten, indem Sie System- und Anwendungsstatusbefehle wie vmstat, iostat, etc. ausführen. Viele Apps in SplunkBase stellen skriptbasierte Eingaben für bestimmte Anwendungen bereit. Skriptbasierte Eingaben werden im Splunk-Manager eingerichtet.</p>         
+                    <p><b>Überwachen von Änderungen im Dateisystem</b></p>
+                    <p>Möchten Sie wissen, welche Änderungen in Ihrem Dateisystem stattfinden? Richten Sie die <a href="${generateSelfHelpLink('gettingstarted.fscm')}" target="_blank" title="Splunk-Hilfe">Änderungsüberwachung im Dateisystem</a> ein, um jede Änderung sofort angezeigt zu bekommen. Mit dieser Methode können Sie kritische Dateien, Konfigurationsdateien usw. überwachen, wie dies bei vielen Compliance-Anforderungen notwendig ist, sowie im Rahmen von Sicherheits- und Betriebsstandards systemrelevante und nicht genehmigte Änderungen feststellen.</p>
+                </div> 
+          </div>
+                    
+          <div class="gsDetails" id="searchTab">
+               <h2>Suche</h2>
+               <p>
+               Nachdem Sie Daten in Splunk eingegeben haben, können Sie mit der Such-App sicherheitsrelevante Vorfälle untersuchen, Anwendungs-, Server- und Netzwerkprobleme beheben oder die System- und Benutzeraktivität einfach proaktiv prüfen.
+               </p>
+               <ul class="gs-subnav">
+                    <li><a href="#" class="gsExpandLink gsExpandLinkHighlighted" divToShow="#freeform">Freitextsuche</a></li>
+                    <li><a href="#" class="gsExpandLink" divToShow="#realtime">Suchen in Echtzeit</a></li>
+                    <li><a href="#" class="gsExpandLink" divToShow="#resultsactions">Interaktion mit Ergebnissen</a></li>
+                    <li><a href="#" class="gsExpandLink" divToShow="#fields">Suchen mit Feldern</a></li>
+                    <li><a href="#" class="gsExpandLink" divToShow="#timeline">Untersuchen anhand der Zeitachse</a></li>
+                    <li><a href="#" class="gsExpandLink" divToShow="#searchassist">Suchassistent</a></li>
+                </ul>
+          
+               <div id="freeform" class="gsExpandDetails" style="display: block;">
+                    <h2>Freitextsuche</h2>
+                    <p>
+                    Mit der Freitextsuche suchen Sie nach beliebigem Text, den Sie erwarten, in Ihren Daten zu finden.
+                    </p>
+                    <ol>
+                         <li>Wechseln Sie zur Such-App.</li>
+                         <div class="controlButtonWrapper">
+                         <a class="splButton-primary" href="/app/search/flashtimeline" target="_blank"><span>Dorthin wechseln...</span></a>
+                         </div>
+                         <li>Geben Sie Begriffe direkt in die Suchleiste ein. Suchen Sie beim Untersuchen eines Problems nach Folgendem:</li>
+                         <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_error.png')}" alt="screenshow_uploadLocal"/>
+                         <li>Kombinieren Sie Begriffe mit booleschen Ausdrücken. Wenn Sie also Fehler finden möchten, die nicht mit der Webaktivität zusammenhängen, suchen Sie nach:</li>
+                         <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_errornothttp.png')}" alt="screenshow_uploadLocal" />
+                         <li>Verwenden Sie Platzhalter für die Suche nach Begriffsmustern. Zum Auffinden fehlgeschlagener Anmeldeversuche, bei denen die zugehörige Meldung möglicherweise die Begriffe "fehlgeschlagen" oder "Fehler" enthält, könnten Sie wie folgt suchen: </li>
+                         <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_faillogin.png')}" alt="screenshow_uploadLocal" />
+                   </ol>
+               </div>
+               
+               <div id="realtime" class="gsExpandDetails" style="display: block;">
+                    <h2>Suchen in Echtzeit</h2>
+                    <p>
+                         Sie können Daten in Echtzeit durchsuchen, während sie in Splunk empfangen werden.
+                    </p>
+                    <ol>
+                         <li>Wechseln Sie zur Such-App.</li>
+                         <div class="controlButtonWrapper">
+                         <a class="splButton-primary" href="/app/search/flashtimeline" target="_blank"><span>Dorthin wechseln...</span></a>
+                         </div>
+                         <li>Geben Sie eine Freitextsuche ein.  Bei der Echtzeitsuche wird die gesamte Suchsprache von Splunk unterstützt.</li>
+                         <li>Wählen Sie die Option "Echtzeit" aus und legen Sie dann ein Zeitfenster fest, für das Echtzeitergebnisse während ihres Eingangs angezeigt werden sollen</li>
+                         <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_realtime.png')}" alt="screenshow_uploadLocal" />
+                   </ol>
+               </div>
+               
+               <div id="resultsactions" class="gsExpandDetails">
+                   <h2>Interaktion mit Ergebnissen</h2>
+                   <p>Ihre Suchergebnisse lassen sich ebenso interaktiv nutzen wie die Zeitachse. In diesem Abschnitt erfahren Sie, wie Sie mit nur einem Mausklick Begriffe zu einer Suche hinzufügen, daraus entfernen oder auch davon ausschließen können. </p>
+                   <ol>
+                        <li>Wechseln Sie zur Such-App.</li>
+                        <div class="controlButtonWrapper">
+                            <a class="splButton-primary" href="/app/search/flashtimeline" target="_blank"><span>Dorthin wechseln...</span></a>
+                        </div>
+                        <li>Führen Sie eine Suche nach einem beliebigen, in Ihren Daten enthaltenen Begriff durch.</li>
+                        <li>Bewegen Sie die Maus über die Suchergebnisse. Wie Sie sehen, werden Wörter und Ausdrücke hervorgehoben, während Sie den Mauszeiger darüber bewegen. Dies bedeutet, dass Sie diese Begriffe zu Ihrer Suche hinzufügen können.</li>
+                        <li>Markieren Sie einen Begriff in Ihren Suchergebnissen und klicken Sie dann auf den Begriff. Ihre Suche wird aktualisiert und enthält diesen Begriff nun in der Suchleiste. Gleichzeitig werden alle vorherigen Ergebnisse, die jetzt nicht mehr übereinstimmen, herausgefiltert.</li>
+                        <li>Klicken Sie dagegen in den Suchergebnissen auf einen bereits markierten Begriff, wird Splunk aktualisiert und dieser Begriff aus Ihrer Suche entfernt.</li>
+                        <li>Darüber hinaus können Sie Begriffe angeben, die Splunk ausschließen soll. Markieren Sie den Begriff und klicken Sie bei gedrückter ALT-Taste (in Windows bei gedrückter STRG-Taste) darauf. Splunk aktualisiert Ihre Suche und schließt diesen Begriff durch eine boolesche NOT-Operation aus.</li>
+                   </ol>
+               </div>
+               
+               <div id="fields" class="gsExpandDetails">
+                    <h2>Suchen mit Feldern</h2>
+                    <p>Die Freitextsuche ist einfach und leistungsfähig, bringt jedoch nicht immer die gesuchte Antwort. Nehmen wir beispielsweise an, Sie möchten Ereignisse mit dem HTTP-Statuscode 200 ausschließen. Wenn Sie in diesem Fall nur nach "NOT 200" suchen, entfernen Sie auch Ereignisse, die Sie eigentlich behalten möchten, wie etwa Ereignisse mit dem Status "503", deren IP-Adressen die Zahl 200 enthalten.</p>
+                    <p>Da Splunk jeden Begriff in Ihren Originaldaten indiziert, erkennt und fügt es Felder auf der Basis von Name/Wert-Paaren, Kopfzeilen oder anderen, ansonsten selbsterklärenden Informationen hinzu. Splunk fügt beispielsweise automatisch Informationen über den Ursprung der Daten zu Host-, Quell- und Sourcetypfeldern hinzu.  Splunk erkennt eventuell auch andere Teile der Daten, wie etwa IP-Adressen, HTTP-Statuscodes usw. Außerdem können Sie eigene Felder hinzufügen. Dies wird im Abschnitt "Hinzufügen von Informationen" in dieser App erläutert.</p>
+                    <ol>
+                        <li>Wechseln Sie zur Such-App.</li>
+                        <div class="controlButtonWrapper">
+                              <a class="splButton-primary" href="/app/search/flashtimeline" target="_blank"><span>Dorthin wechseln...</span></a>
+                        </div>
+                        <li>Sie können zum Beispiel nach Webaktivität suchen:</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_http.png')}" alt="screenshow_uploadLocal" />
+                        <li>Beachten Sie das Menü "Felder" auf der linken Seite neben den Suchergebnissen. Dieses Menü enthält die Felder, die Splunk automatisch erkennt und hinzufügt.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/fields_menu.png')}" alt="screenshow_uploadLocal" />
+                        <p>Felder, die in Ihren Suchergebnissen sichtbar sind, werden unter der Überschrift "ausgewählte Felder" aufgelistet. Sie können weitere Felder für die Anzeige auswählen. Andere Felder, die von Splunk automatisch erkannt wurden, werden unter "interessante Felder" aufgeführt.</p>
+                        <li>Neben den einzelnen Feldnamen wird die Anzahl der unterschiedlichen Werte angegeben, die für das Feld in Ihren Suchergebnissen enthalten sind. Klicken Sie auf einen der Feldnamen, um jeweils den obersten Wert anzuzeigen. Klicken Sie auf einen der Feldwerte, um ihn als Filter zu Ihrer Suche hinzuzufügen.</li>.
+                        <li>Beim Durchsuchen von Webdaten können Sie den HTTP-Status zum Menü "Felder" hinzufügen, indem Sie auf "Felder auswählen" klicken und aus dem angezeigten Popup-Menü den Eintrag "Status" auswählen.</li>
+                        <li>Die Werte im Feld "Status" sind die HTTP-Statuscodes: 200, 503, 404 usw. Sie können diese Informationen jetzt dazu nutzen, spezifische Feldwerte zu suchen bzw. auszuschließen. So könnten Sie beispielsweise nach allen erfolglosen Webzugriffsereignissen suchen:</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_httpnotstatus200.png')}" alt="screenshow_uploadLocal" />
+                        <li>Bei der Suche mit Feldern können Sie auch Vergleichsoperatoren ( >, <, >=, <=) verwenden. Wenn Sie z. B. alle Ereignisse mit Statuswerten über 300 anzeigen möchten, führen Sie die folgende Suche durch:</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_status300.png')}" alt="screenshow_uploadLocal" />
+                     </ol>
+               </div>
+               <div id="timeline" class="gsExpandDetails">
+                    <h2>Untersuchen anhand der Zeitachse</h2>
+                    <p>Bei der Zeitachse handelt es sich um die visuelle Darstellung der Anzahl von Ereignissen, die jeweils zu einem Zeitpunkt stattfinden. Mithilfe der Zeitachse können Sie daher Ereignismuster aufzeigen oder Hoch- und Tiefpunkte der Ereignisaktivität untersuchen.</p>
+                    <ol>
+                        <li>Wechseln Sie zur Such-App.</li>
+                           <div class="controlButtonWrapper">
+                              <a class="splButton-primary" href="/app/search/flashtimeline" target="_blank"><span>Dorthin wechseln...</span></a>
+                           </div>
+                        <li>Führen Sie eine Suche nach dem Befehl "Fehler" durch und beachten Sie die Zeitachse direkt unter dem Suchfenster.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_timeline.png')}" alt="screenshow_uploadLocal" />
+                        <li>Die Zeitachse wird mit Ihren Suchergebnissen aktualisiert und dabei fallen Ihnen eventuell Ereignis-Cluster oder -muster auf. Hoch- und Tiefpunkte auf der Zeitachse können auf Aktivitätsspitzen oder Serverausfallzeiten bedeuten.</li>
+                        <li>Klicken Sie auf einen Punkt in der Zeitachse und ziehen Sie die Maus über eine Gruppe von Balken zu einem zweiten Punkt. Ihre Suchergebnisse werden aktualisiert und zeigen nur die Ereignisse, die in der ausgewählten Zeitspanne auftraten.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/timeline2.png')}" alt="screenshow_uploadLocal" />
+                        <li>Klicken Sie auf einen Balken in der Zeitachse. Ihre Suchergebnisse werden aktualisiert und zeigen nur die Ereignisse, die zum ausgewählten Zeitpunkt stattfanden. </li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/timeline3.png')}" alt="screenshow_uploadLocal" />
+                    </ol>
+               </div>
+               
+               <div id="searchassist" class="gsExpandDetails">
+                   <h2>Verwenden des Suchassistenten</h2>
+                   <p>Der Suchassistent ist eine in das Produkte integrierte Kurzreferenz für Benutzer, die Suchvorgänge erstellen. Im Suchassistenten finden Sie Details über den Suchbefehl mit Verwendungsbeispielen und erhalten Vorschläge zu anderen, möglichen Befehlen.</p>
+                   <ol>
+                        <li>Wechseln Sie zur Such-App.</li>
+                        <div class="controlButtonWrapper">
+                           <a class="splButton-primary" href="/app/search/flashtimeline" target="_blank"><span>Dorthin wechseln...</span></a>
+                        </div>
+                        <li>Zum Aufrufen des Suchassistenten klicken Sie auf den grünen Pfeil unter der Suchleiste.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_assist.png')}" alt="screenshow_uploadLocal" />
+                        <li>Wenn die Suchleiste leer ist, wird eine kurze Beschreibung dazu angezeigt, wie Sie in Splunk suchen und Suchvorgänge erstellen. Standardmäßig zeigt der Suchassistent Informationen über den Suchbefehl an.</li>
+                        <li>Auf der linken Seite des Suchassistenten wird der bisherige Verlauf der Befehlsverwendung angezeigt und angegeben, welche Befehle am häufigsten als nächstes verwendet wurden.</li>
+                        <li>Auf der rechten Seite des Suchassistenten finden Sie eine kurze Beschreibung des Befehls "Suchen" sowie Beispiele zu seiner Verwendung.</li>
+                   </ol>
+               </div>
+          </div>
+                    
+          <div class="gsDetails" id="knowledgeTab">
+               <h2>Hinzufügen von Informationen</h2>
+               <p>Splunk eröffnet völlig neue Suchmöglichkeiten, indem es automatisch Informationen aus Ihren IT-Daten extrahiert und Ihnen ermöglicht, spontan eigene Informationen hinzuzufügen. Sie können Informationen über die Ereignisse, Felder, Transaktionen, Muster und Statistiken in Ihren Daten hinzufügen. Zudem haben Sie die Möglichkeit, diese Daten zu identifizieren, zu benennen und mit Tags zu versehen.</p>
+               <p>Splunk ordnet alle diese Informationen zum Suchzeitpunkt zu, sodass Sie ganz nach Bedarf neue Felder und Eventtypen hinzufügen können, ohne die Daten erneut indizieren zu müssen. Sie können also nicht nur sämtliche Ereignisse für einen bestimmten Benutzernamen suchen, sondern auch sofort Statistiken zu spezifischen Benutzeraktivitäten abfragen.</p>
+               <ul class="gs-subnav">
+                   <li><a href="#" class="gsExpandLink gsExpandLinkHighlighted" divToShow="#classifyevents">Klassifizieren ähnlicher Ereignisse</a></li>
+                   <li><a href="#" class="gsExpandLink" divToShow="#extractfields">Extrahieren neuer Felder</a></li>
+                   <li><a href="#" class="gsExpandLink" divToShow="#tagevents">Zuordnen von Tags zu Feldwerten</a></li>
+                   <li><a href="#" class="gsExpandLink" divToShow="#moreknow">Weitere Informationen über den Splunk Wissens-Manager</a></li>
+               </ul>
+
+               <div id="classifyevents" class="gsExpandDetails" style="display: block;">
+                   <h2>Klassifizieren ähnlicher Ereignisse</h2>
+                   <p>Beim Durchsuchen Ihrer Daten sortieren Sie im Grund genommen alle unerwünschten Ereignisse aus. Das Ergebnis Ihrer Suche sind Ereignisse mit gemeinsamen Merkmalen, denen Sie eine Sammelbezeichnung oder einen "Eventtyp" zuordnen können. Die Bezeichnungen Ihrer Eventtypen werden als Werte in ein Feld "Eventtyp" eingefügt. Sie können also genau wie nach anderen Feldern auch nach diesen Ereignisgruppen suchen. Im folgenden Beispiel führen Sie die Schritte durch, mit denen Sie eine Suche als Eventtyp speichern und dann nach diesem Feld suchen.</p>
+                   <p>Wenn Sie häufig Suchvorgänge ausführen, um SSH- und Firewall-Aktivitäten wie SSHD-Anmeldungen oder Deny-Ereignisse zu untersuchen, können Sie diese Suchvorgänge als Eventtyp speichern. Zudem haben Sie so die Möglichkeit, unverständliche Fehlermeldungen als Eventtyp mit einem aussagekräftigeren Namen zu speichern.</p>
+                   <ol>
+                        <li>Wechseln Sie zur Such-App.</li>
+                        <div class="controlButtonWrapper">
+                           <a class="splButton-primary" href="/app/search/flashtimeline" target="_blank"><span>Dorthin wechseln...</span></a>
+                        </div>
+                        <li>Wenn Sie regelmäßig SSH-Aktivitäten wie z. B. Anmeldeversuche nachverfolgen, können Sie diese Suche als Eventtyp speichern. Führen Sie zuerst eine Suche durch; beispielsweise die folgende Suche nach SSH-Anmeldungen:</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_sshdlogin.png')}" alt="screenshow_uploadLocal" />
+                        <li>Nach dem Suchvorgang wählen Sie aus dem Dropdown-Menü "Erstellen" die Option "Eventtyp..." aus. Daraufhin wird das Fenster "Eventtyp speichern" angezeigt. </li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/save_event_type.png')}" alt="screenshow_uploadLocal" />
+                        <li>Führen Sie die angezeigten Schritte durch, um Ihren Eventtyp zu benennen. Sie können dem Eventtyp beispielsweise den Namen "sshlogin" geben. Ändern Sie die Suchzeichenfolge, falls nötig. Definieren Sie optional Tags für den Eventtyp. Dies wird später ausführlicher erläutert. Wenn Sie fertig sind, klicken Sie auf "Speichern".</li>
+                        <li>Sie können auch Eventtypen für andere Arten von SSH-Aktivitäten speichern, etwa für Abmeldungen und Timeouts. Suchen Sie jetzt nur nach SSH-Anmeldungen: </li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_eventtypesshlogin.png')}" alt="screenshow_uploadLocal" />
+                        <li>Wenn Sie die anderen Eventtypen ("sshlogout" und "sshtimeout") gespeichert haben, können Sie ganz schnell nach allen SSH-Ereignissen suchen:</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_eventypessh_all.png')}" alt="screenshow_uploadLocal" />
+                   </ol>
+               </div>
+               
+               <div id="extractfields" class="gsExpandDetails">
+                    <h2>Extrahieren neuer Felder</h2>
+                    <p>Splunk extrahiert beim Indizieren neuer Daten automatisch Informationen. Außerdem können Sie ganz nach Bedarf neue Informationen hinzufügen, ohne Ihre Daten erneut indizieren zu müssen. In diesem Abschnitt wird erklärt, wie Sie den Feldextraktor verwenden, um interaktiv neue Felder zu extrahieren und zu speichern.</p>
+                    <ol>
+                        <li>Wechseln Sie zur Such-App.</li>
+                        <div class="controlButtonWrapper">
+                           <a class="splButton-primary" href="/app/search/flashtimeline" target="_blank"><span>Dorthin wechseln...</span></a>
+                        </div>
+                        <li>Suchen Sie nach einem Host-, Quellen- oder Sourcetypwert. Die Feldextraktion für eine beliebige Ereignisgruppe ist mit dem Host-, Quellen- oder Sourcetypwert verknüpft, der diesen Ereignissen zugeordnet ist.</li>
+                        <li>Wählen Sie ein Ereignis aus Ihren Ergebnissen aus.</li>
+                        <li>Klicken Sie auf den blauen Dropdown-Pfeil neben dem Zeitstempel des betreffenden Ereignisses. Daraufhin wird ein Menü eingeblendet.</li>
+                        <li>Wählen Sie "Felder extrahieren" aus. Das interaktive Fenster "Felder extrahieren" wird geöffnet.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/extract_field.png')}" alt="screenshow_uploadLocal" />
+                        <li>Befolgen Sie die auf der Seite angezeigten Anweisungen. Sie könnten beispielsweise Felder für Benutzername, Quellen-IP und Ziel-IP hinzufügen.</li>                          
+                    </ol>
+               </div>
+               
+               <div id="tagevents" class="gsExpandDetails">
+                    <h2>Zuordnen von Tags zu Feldwerten</h2>
+                    <p>Tags erleichtern das Gruppen von Suchergebnissen, die gemeinsame Feldwerte aufweisen. Ein Tag ist ein Name, den Sie an einen bestimmten Wert eines Felds wie Eventtyp, Host, Quelle oder Sourcetyp anhängen. Sie können die Werte eines Hosts z. B. mit einem Dienstnamen oder einer Notiz zur Einhaltung von Vorschriften wie PCI taggen. </p>
+                    <p>Ganz allgemein verwenden Sie Tags für folgende Aufgaben:</p>
+                    <ul>
+                         <li>Tags erleichtern das Verfolgen abstrakter Feldwerte wie IP-Adressen oder IDs, da Sie diese mit einem Speicherort oder Namen gruppieren können.</li>
+                         <li>Mit einem Tag können Sie Feldwerte zu einer Gruppe zusammenfassen und diese dann mit einem ganz einfachen Befehl durchsuchen.</li>
+                         <li>Sie können speziellen, extrahierten Feldern mehrere Tags zuweisen, die unterschiedliche Aspekte ihrer Identität widerspiegeln. Dies ermöglicht Ihnen auf Tags basierende Suchvorgänge durchzuführen und schnell und gezielt die gewünschten Ergebnisse zu erhalten.</li>
+                    </ul>
+                    <p>Es gibt zwei Möglichkeiten, ein Tag zu suchen, und zwar in allen Feldern oder in einem bestimmten Feld.</p>
+                    <ol>
+                        <li>Für die Suche nach allen Ereignissen mit einem getaggten Feld verwenden Sie die folgende Syntax:</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_tagdeny.png')}" alt="screenshow_uploadLocal" />
+                        <li>Wenn Sie nur Ereignisse mit einem Eventtyp-Tag suchen möchten, verwenden Sie die folgende Syntax:</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/search_tageventtypedeny.png')}" alt="screenshow_uploadLocal" />
+                    </ol>
+               </div>
+               
+               <div id="moreknow" class="gsExpandDetails">
+                    <h2>Weitere Informationen über den Splunk Wissens-Manager</h2>
+                    <p>Sie haben noch mehr Möglichkeiten, die Verwendung von Splunk so zu optimieren und auszubauen, dass die Software Ihre Computerdaten exakt so nutzt, wie es Ihr Unternehmen erfordert. Weitere Informationen zum kontinuierlichen Optimieren, Pflegen und Erweitern Ihrer Splunk-Bereitstellung finden Sie im <a href="${generateSelfHelpLink('gettingstarted.knowledge')}" target="_blank" title="Splunk-Hilfe">Knowledge Manager Manual</a>.</p>
+                    <p>Das "Knowledge Manager Manual" behandelt folgende Themen:</p>
+                    <ul>
+                        <li>Warten und Pflegen von sogenannten "Wissensobjekten" in Splunk wie Ereignissen, Eventtypen, Feldern, Sourcetypen, Tags und Transaktionen</li>
+                        <li>Bewährte Verfahren für die Verwendung von Feldern, einschließlich Nachschlagevorgängen und Aliasing.</li>
+                        <li>Strategien für die Gruppierung konzeptionell zusammenhängender Ereignisse in Transaktionen</li>
+                    </ul>
+               </div>
+           </div>
+                    
+                         
+          <div class="gsDetails" id="monitorTab">
+               <h2>Überwachen und Benachrichtigen</h2>
+               <p>Nachdem Sie mithilfe von Splunk Probleme in Ihrem System identifiziert und lokalisiert haben, können Sie die Überwachungs- und Benachrichtigungsfunktionen des Programms nutzen, um beim erneuten Auftreten derselben Umstände informiert zu werden. Speichern Sie Ihre Suchvorgänge, um diese ganz nach Wunsch auszuführen, oder richten Sie eine Benachrichtigungsfunktion zur Überwachung ein. Sie können Benachrichtigungen so konfigurieren, dass sie ausgelöst werden, wenn die Suchergebnisse von Ihnen definierte Bedingungen erfüllen. Es ist sogar möglich, in Echtzeit Benachrichtigungen zu Ereignissen zu erhalten.</p>
+               <ul class="gs-subnav">
+                   <li><a href="#" class="gsExpandLink gsExpandLinkHighlighted" divToShow="#saveandschedule">Speichern einer Suche</a></li>
+                   <li><a href="#" class="gsExpandLink" divToShow="#setupalert">Einrichten einer Benachrichtigung</a></li>
+               </ul>
+               <div id="saveandschedule" class="gsExpandDetails" style="display: block;">
+                    <h2>Speichern einer Suche</h2>
+                    <ol>
+                         <li>Erstellen Sie eine Suche, die für Sie interessante Ergebnisse zurückgibt.</li>
+                         <div class="controlButtonWrapper">
+                              <a class="splButton-primary" href="/app/search/flashtimeline" target="_blank"><span>Dorthin wechseln...</span></a>
+                         </div>
+                         <li>Nach dem Ende der Suche wählen Sie "Suche speichern" aus dem Dropdown-Menü "Speichern" unterhalb der Suchleiste aus:</li>
+                         <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/saveactions.png')}" alt="screenshow_uploadLocal" />
+                         <li>Daraufhin wird das Dialogfeld "Suche speichern" eingeblendet.</li>
+                         <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/savesearch.png')}" alt="screenshow_uploadLocal" />
+                         <li>Legen Sie weitere Optionen fest, indem Sie den restlichen Anleitungen der Seite folgen.</li>
+                    </ol>
+               </div>
+               <div id="setupalert" class="gsExpandDetails">
+                    <h2>Einrichten einer Benachrichtigung</h2>
+                    <p>Sie können jede beliebige Suche als eine Benachrichtigungsfunktion festlegen.  Bei Benachrichtigungen werden Sie per E-Mail oder RSS informiert. Sie können auch Benachrichtigungen einrichten, die ein Skript aufrufen.</p>
+                    <ol>
+                         <li>Wenn Sie Ihre Suche als Benachrichtigungsfunktion einrichten möchten, wählen Sie "Benachrichtigung" aus dem Dropdown-Menü "Erstellen" unterhalb der Suchleiste aus:</li>
+                         <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/alertactions.png')}" alt="screenshow_uploadLocal" />
+                         <li>Daraufhin wird das Dialogfeld "Benachrichtigung erstellen" angezeigt:</li>
+                         <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/alertworkflow.png')}" alt="screenshow_uploadLocal" />
+                         <li>Folgen Sie den Anweisungen im Dialogfeld, um eine oder mehrere Benachrichtigungsmethoden einzurichten.  Wenn Sie von Splunk per E-Mail benachrichtigt werden möchten, stellen Sie sicher, dass Sendmail (oder ein anderer MTA) für Ihren Splunk-Server aktiviert ist.</li>
+                    </ol>
+               </div>
+          </div>
+          
+          <div class="gsDetails" id="reportTab">
+          <h2>Berichten und Analysieren</h2>
+          <p>Mit den integrierten Visualisierungs-Tools von Splunk können Sie Berichte erstellen. In Splunk steht Ihnen eine Vielzahl von Optionen für die Berichterstellung zur Auswahl. Sie können einfache Berichte vom Typ "Spitzenwerte im Zeitverlauf" aus Ihren Suchergebnissen erstellen. Komplexe Diagramme definieren und formatieren Sie mit dem Berichtsgenerator. Sie können auch Splunks leistungsfähige Statistikbefehle verwenden, um Berichte manuell zu definieren. Außerdem können Sie im Handumdrehen Dashboards erstellen, in denen Sie Ihre besten Berichte für andere Benutzer freigeben.</p>
+          <ul class="gs-subnav">
+               <li><a href="#" class="gsExpandLink gsExpandLinkHighlighted" divToShow="#basicreports">Erstellen eines einfachen Berichts</a></li>
+               <li><a href="#" class="gsExpandLink" divToShow="#reportbuilder">Verwenden des Berichtsgenerators</a></li>
+               <li><a href="#" class="gsExpandLink" divToShow="#reportcommands">Verwenden von Berichterstellungsbefehlen</a></li>
+               <li><a href="#" class="gsExpandLink" divToShow="#previewreports">Anzeigen der Berichtsvorschau</a></li>
+               <li><a href="#" class="gsExpandLink" divToShow="#builddashboards">Erstellen von Dashboards</a></li>
+          </ul>
+
+               <div id="basicreports" class="gsExpandDetails" style="display: block;">
+                    <h2>Erstellen eines einfachen Berichts</h2>
+                    <p>Nach dem Ausführen einer Suche können Sie schnell und einfach Berichte starten, die grundlegende Informationen über die Felder in Ihren Suchergebnissen enthalten.</p>
+                    <ol>
+                      <li>Wechseln Sie zur Such-App.</li>
+                      <div class="controlButtonWrapper">
+                            <a class="splButton-primary" href="/app/search/flashtimeline" target="_blank"><span>Dorthin wechseln...</span></a>
+                        </div>
+                        <li>Führen Sie eine Suche nach einem beliebigen Begriff oder Feld durch, zu dem Sie einen Bericht erstellen möchten.</li>
+                        <li>Suchen Sie nach dem Ende des Suchlaufs in der Randleiste mit den Suchergebnissen ein Feld , zu dem Sie einen Bericht erstellen möchten, und klicken Sie darauf. Wählen Sie beispielsweise "UID" aus, um einen Bericht über eine Reihe von Benutzer-IDs zu erstellen.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/report_fieldselect.png')}" alt="screenshow_uploadLocal" />
+                        <li>Ein Popup-Fenster mit Informationen über das ausgewählte Feld wird angezeigt. Sie können einen Bericht für jedes Feld starten. Wählen Sie einen auszuführenden Bericht aus, beispielsweise "Durchschnitt im Zeitverlauf" oder "Spitzenwerte gesamt".</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/report_topvals.png')}" alt="screenshow_uploadLocal" />
+                        <li>Der Berichtsgenerator wird in einem separaten Fenster geöffnet und zeigt ein Diagramm, das auf den Ereignisdaten basiert, die Ihre Suche zurückgegeben hat. In diesem Fenster können Sie den Bericht dann anders formatieren, speichern, drucken usw.</li>
+                    </ol>
+               </div>
+               <div id="reportbuilder" class="gsExpandDetails">
+                    <h2>Verwenden des Berichtsgenerators</h2>
+                    <p>Starten Sie den Berichtsgenerator, wenn Sie Berichte erstellen und formatieren möchten.</p>
+                    <ol>
+                        <li>Wechseln Sie zur Such-App.</li>
+                        <div class="controlButtonWrapper">
+                              <a class="splButton-primary" href="/app/search/flashtimeline" target="_blank"><span>Dorthin wechseln...</span></a>
+                          </div>
+                        <li>Führen Sie eine Suche nach einem beliebigen Begriff oder Feld durch, zu dem Sie einen Bericht erstellen möchten.</li>
+                        <li>Im Menü "Erstellen" über der Zeitachse wird ein Link zur Berichtserstellung angezeigt. Klicken Sie auf diesen Link, um den Berichtsgenerator aufzurufen. (Sie müssen mit dem Aufrufen des Berichtsgenerators nicht warten, bis die Suche abgeschlossen ist.)</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/report_build.png')}" alt="screenshow_uploadLocal" />
+                        <li>Sie können einen Bericht auch direkt von der Zeitachsenansicht aus erstellen, indem Sie am oberen Rand des Ergebnisbereichs auf die Schaltfläche "Ergebnisdiagramm" klicken.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/report_sprite.png')}" alt="screenshow_uploadLocal" />
+                    </ol>
+            </div>
+        
+            <div id="reportcommands" class="gsExpandDetails">
+                    <h2>Verwenden von Berichterstellungsbefehlen</h2>
+                    <p>Wenn Sie die Dropdown-Listen im Berichtsgenerator dazu verwenden, einen Bericht zu definieren, aktualisiert Splunk das Suchfeld des Berichtsgenerators mit den Befehlen für die Statistikerstellung, die Splunk für die Ausführung des Berichts verwendet. In diesem Abschnitt wird beschrieben, wie Sie diese Berichterstellungsbefehle direkt von der Suchleiste aus verwenden.</p>
+                    <ol>
+                        <li>Wechseln Sie zur Such-App.</li>
+                        <div class="controlButtonWrapper">
+                              <a class="splButton-primary" href="/app/search/flashtimeline" target="_blank"><span>Dorthin wechseln...</span></a>
+                        </div>
+                        <li>Führen Sie eine Suche nach einem beliebigen, in Ihren Daten enthaltenen Begriff durch.</li>
+                        <li>Geben Sie nach den Suchbegriffen ein "Pipe"-Zeichen sowie einige einfache Berichterstellungsbefehle ein. Der folgende, einfache Bericht sucht beispielsweise die fünf häufigsten Datenquellen in Ihrem internen Splunk-Index:</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/report_top5.png')}" alt="screenshow_uploadLocal" />
+                        <li>Klicken Sie auf die Schaltfläche "Ergebnisdiagramm" unter der Zeitachse, um die Ergebnisse als Diagramm anzuzeigen. Falls nötig, formatieren Sie den Bericht mithilfe der "Formatierungsoptionen" neu.</li>                
+                        <li>Wenn Sie einen anspruchsvolleren Bericht erstellen möchten, finden Sie weitere Informationen über die Splunk-Berichterstellungsbefehle im <a href="${generateSelfHelpLink('gettingstarted.report')}" target="_blank" title="Splunk-Hilfe">User Manual</a> zu Splunk.</li>
+                    </ol>
+            </div>
+          
+            <div id="previewreports" class="gsExpandDetails">
+                    <h2>Anzeigen der Berichtsvorschau</h2>
+                    <p>Bei der Berichtsausführung kann Splunk eine Vorschau der Berichtsergebnisse anzeigen, während die Suche läuft. Mit dieser Funktion sparen Sie Zeit – besonders bei Suchvorgängen über lange Zeiträume. Die Berichtsvorschau ist für Suchvorgänge mit Berichterstellungsbefehlen standardmäßig aktiviert – probieren Sie sie bei einem Bericht aus, der einen langen Zeitraum umfasst.</p>
+                    <ol>
+                        <li>Wechseln Sie zur Such-App.</li>
+                        <div class="controlButtonWrapper">
+                              <a class="splButton-primary" href="/app/search/flashtimeline" target="_blank"><span>Dorthin wechseln...</span></a>
+                        </div>
+                        <li>Geben Sie eine Suche mit Berichterstellung in die Suchleiste ein.</li>
+                        <li>Während der Berichtsausführung wird im Ergebnisbereich eine Vorschau angezeigt.</li>
+                        <li>Wenn Ihnen der Bericht nicht zusagt und Sie ihn vor dem Ende der Ausführung ändern möchten, klicken Sie einfach auf die Schaltfläche "Abbrechen" und bearbeiten die Suchzeichenfolge.</li>
+                    </ol>
+            </div>
+        
+            <div id="builddashboards" class="gsExpandDetails">
+                    <h2>Erstellen von Dashboards</h2>
+                    <p>Sie können Ihre Suchvorgänge und Berichte speichern und freigeben, indem Sie ein Dashboard erstellen. In Dashboards sammeln Sie Ihre nützlichsten und informativsten Berichte an einem Ort und stellen Sie sie anderen Benutzern zur Verfügung. Sie können ein ganz neues Dashboard erstellen oder es während der Berichtserstellung anlegen.</p>
+                    <ol>
+                        <li>Wechseln Sie zur Such-App.</li>
+                        <div class="controlButtonWrapper">
+                              <a class="splButton-primary" href="/app/search/flashtimeline" target="_blank"><span>Dorthin wechseln...</span></a>
+                        </div>
+                        <li>Wenn Sie bereits eine Suche oder einen Bericht ausgeführt haben und im Menü "Erstellen" auf "Dashboard-Teilfenster" klicken, können Sie Ihre Suche bzw. Ihren Bericht entweder zu einem bestehenden Dashboard hinzufügen oder ein neues Dashboard erstellen.</li>
+                        <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/actionsdash.png')}" alt="screenshow_uploadLocal" />
+                    </ol>
+                    <p>Sie können auch ohne Suche oder Bericht ein ganz neues Dashboard einrichten.</p>
+                    <ol>
+                         <li>Wählen Sie aus dem Menü "Dashboards & Ansichten" den Befehl "Dashboard erstellen" aus:</li>
+                         <img class="gs-screenshot splShadow" src="${make_url('/static/app/gettingstarted/adddash.png')}" alt="screenshow_uploadLocal" />
+                         <li>Daraufhin wird das Fenster "Neues Dashboard erstellen" angezeigt. Geben Sie dem Dashboard eine Kurzbezeichnung (Dashboard-ID) und einen langen Namen (Dashboard-Name). Klicken Sie dann auf "Erstellen".</li>
+                         <li>Ihr Dashboard ist zunächst leer. Klicken Sie auf "Dashboard bearbeiten", um das Fenster "Bearbeiten" zu öffnen. Wählen Sie dann den Teilfenstertyp und die gespeicherte Suche für Ihr erstes Teilfenster aus. Klicken Sie auf "Teilfenster hinzufügen", um das neue Teilfenster zum Dashboard hinzuzufügen.</li>
+                        <li>Klicken Sie auf "Teilfenster bearbeiten", um das Teilfenster umzubenennen, sein Format zu ändern oder die ihm zugrunde liegende Suche zu aktualisieren.</li>
+                        <li>Wiederholen Sie die beiden letzten Schritte, um weitere Teilfenster zu erstellen. Ziehen Sie die Teilfenster an die gewünschte Position.</li>
+                        <li>Fertig! Klicken Sie auf "Schließen", um sich Ihr Dashboard anzusehen. Falls Sie noch Änderungen vornehmen möchten, wählen Sie aus dem Menü "Aktion" am oberen Seitenrand den Befehl "Dashboard bearbeiten..." und bringen die Korrekturen an.</li>
+                    </ol>
+            </div>
+     </div>
+     
+     <div class="gsDetails" id="moreTab">
+          <h2>Weitere Informationen</h2>
+          <p>Suchen Sie weitere Informationen zu den Möglichkeiten, die Splunk Ihnen bietet? Hier folgen einige weitere Links zur Online-Dokumentation von Splunk.</p>
+          <ul>
+            <li><b>Hinzufügen weiterer Benutzer</b>: Erfahren Sie <a href="${generateSelfHelpLink('gettingstarted.users')}" target="_blank" title="Splunk-Hilfe">hier</a>, wie Sie weitere Benutzer hinzufügen und Zugriffsberechtigungen für sie festlegen. <b>Hinweis</b>: Diese Funktionalität ist bei Verwendung von Splunk Free nicht verfügbar. Wenn Sie eine Testversion von Splunk Enterprise nutzen, können Sie nach Ablauf des Testzeitraums nicht mehr auf diese Funktion zugreifen.</li>
+            <li><b>Einrichten einer verteilten Suche</b>: <a href="${generateSelfHelpLink('gettingstarted.distsearch')}" target="_blank" title="Splunk-Hilfe">Hier</a> wird beschrieben, wie Sie die Verarbeitung mithilfe mehrerer Instanzen von Splunk verteilen und in allen diesen Instanzen suchen.</li>
+            <li><b>Erstellen eigener Apps</b>: Informationen dazu, wie Sie Apps speziell für die Anforderungen Ihrer Organisation erstellen, finden Sie <a href="${generateSelfHelpLink('gettingstarted.apps')}" target="_blank" title="Splunk-Hilfe">hier</a>.</li>
+        </ul>
+    </div>
+</div><!-- wrapper -->
+
+
+
+
+
+
+

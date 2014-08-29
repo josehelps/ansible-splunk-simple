@@ -1,0 +1,71 @@
+# Copyright (C) 2009 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2009-09-14 18:55-0700\n"
+"PO-Revision-Date: 2012-11-05 14:41-0000\n"
+"Last-Translator: Lisa Newnham <lisan@iotals.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:59
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:142
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:145
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:147
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:339
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:452
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:498
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:499
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:500
+msgid "Splunk help"
+msgstr "Splunk 帮助"
+
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:59
+msgid "Developer Manual"
+msgstr "开发人员手册"
+
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:142
+msgid "scripted input"
+msgstr "脚本式输入"
+
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:145
+msgid "file system change monitoring"
+msgstr "文件系统更改监视"
+
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:147
+msgid "Splunk forwarders"
+msgstr "Splunk 转发器"
+
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:339
+msgid "Knowledge Manager manual"
+msgstr "知识管理器手册"
+
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:452
+msgid "User Manual"
+msgstr "用户手册"
+
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:498
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:499
+#: /opt/splunk/etc/apps/gettingstarted/appserver/static/index.html:500
+msgid "here"
+msgstr "此处"
+
+#: /opt/splunk/etc/apps/gettingstarted/default/app.conf:2
+msgid "Getting started"
+msgstr "入门"
+
+#: /opt/splunk/etc/apps/gettingstarted/default/app.conf:8
+msgid "Get started with Splunk.  This app introduces you to many of Splunk's features.  You'll learn how to use Splunk to index data, search and investigate, add knowledge, monitor and alert, report and analyze.'"
+msgstr "Splunk 入门。此应用向您介绍了 Splunk 的许多功能。让您了解如何使用 Splunk 建立数据索引、搜索与调查、添加知识、监视与告警、报告与分析。"
+

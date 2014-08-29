@@ -1,0 +1,52 @@
+<%page expression_filter="h"/>
+<%namespace name="lib" file="//lib.html" import="*"/>
+<html>
+    <head>
+        <link href='https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="${make_url(['/static/app/SA-Utils/stylesheets/bootstrap.css'])}" type="text/css" />
+        <link rel="stylesheet" href="${make_url(['/static/app/SA-Utils/stylesheets/bootstrap-glyphicons.css'])}" type="text/css" />
+        <link rel="stylesheet/less" type="text/css" href="${make_url(['/static/app/SA-Utils/stylesheets/sprites.less'])}" />
+        <link rel="stylesheet" href="${make_url(['/static/app/SA-Utils/stylesheets/style.css'])}" type="text/css" />
+
+        <script type="text/javascript" src="${make_url(['/static/js/i18n.js'])}"></script>
+        <script type="text/javascript" src="${make_url(['/static/js/splunk.js'])}"></script>
+        <script type="text/javascript" src="${make_url(['/static/js/util.js'])}"></script>
+        
+        <script src="${make_url(['/static/app/SA-Utils/scripts/contrib/less.js'])}" type="text/javascript"></script>
+        <script src="${make_url(['/static/app/SA-Utils/scripts/contrib/require-jquery.js'])}" type="text/javascript"></script>
+        <script src="${make_url(['/static/app/SA-Utils/scripts/main.js'])}" type="text/javascript"></script>
+    </head>
+
+    <body s:app="${app}">
+        ${csrf_hidden_input()}
+        
+        <div id="alerts">
+        </div>
+        <div id="toolBar">
+            <div class="container" id="control_buttons">
+                <button id="cancelButton">cancel</button>
+                <button id="saveButton">save</button>
+            </div>
+            <div class="container" id="unused_views_container">
+                <div class="name">Unused Reports</div>
+                <div id="unused_views">
+                </div>
+            </div>
+            <div class="container" id="unused_anchors_container">
+                <div class="name">Unused Links</div>
+                <input type="text" id="addAnchor" placeholder="add anchor" />
+                <div id="unused_anchors">
+                </div>
+            </div>
+
+            <div class="container" id="add_dividers_container">
+                <div class="name">Add Dividers</div>
+            </div>
+        </div>
+
+        <div class="container" id="view_container">
+
+        </div>
+
+    </body>
+</html>

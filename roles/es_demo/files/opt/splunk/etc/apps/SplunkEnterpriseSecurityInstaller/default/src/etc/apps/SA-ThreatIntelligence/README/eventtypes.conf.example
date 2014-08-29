@@ -1,0 +1,6 @@
+
+## A Notable Event Suppression
+[notable_suppression-my first suppression]
+disabled = 0   
+search = index=notable source="Threat - Watchlisted Event Detected - Rule" _time>0 _time<1311031613 user=billybob
+description = Supress watchlisted events for user billybob

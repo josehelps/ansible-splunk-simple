@@ -1,0 +1,17 @@
+Fortinet Add-on
+----------------------------------------
+	Author: Splunk
+	Version/Date: 11/03/2010 11:20 pm
+	Source type(s): fortinet
+	Input requirements: Data must be source typed as 'fortinet'
+	Has index-time operations: true, this TA must be placed on indexers
+	Supported product(s): Fortinet Fortigate Firewall
+
+Using this Add-on:
+----------------------------------------
+	Configuration: Manual
+	Ports for automatic configuration: None
+	Scripted input setup: Not applicable
+	
+
+Copyright (C) 2009-2013 Splunk Inc. All Rights Reserved.

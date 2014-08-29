@@ -1,0 +1,57 @@
+<form script="traffic_size_analysis.js" stylesheet="traffic_size_analysis.css" >
+	<label>Traffic Size Analysis</label>
+	
+	<fieldset autoRun="true" submitButton="true">
+	
+	    <input type="dropdown" token="Z_form">
+            <label>Standard Deviation Index</label>
+            <choice value="">All</choice>
+            <populatingSearch fieldForValue="stdev" fieldForLabel="stdev_label">| `standard_deviations`</populatingSearch>
+            <default></default>
+        </input>
+        
+		<input type="time">
+			<default>Last 24 hours</default>
+		</input>
+		
+        <html id="ppf_html">
+        	<div id="ppf"></div>
+        </html>
+	</fieldset>
+	
+	<!-- Key indicators -->
+	<row>
+		<html id="element1">
+			<div class="key-indicators" data-group-name="traffic_size"></div>
+		</html>
+	</row>
+
+	<row>
+        <chart id="element2">
+            <title>Traffic Size Anomalies Over Time</title>
+            
+            <searchTemplate>| tstats `summariesonly` count from datamodel=Network_Traffic where $Z$ by _time,All_Traffic.src,All_Traffic.transport span=10m | `drop_dm_object_name("All_Traffic")` | `per_panel_filter("ppf_traffic_size","src")` | timechart minspan=10m sum(count) by transport</searchTemplate>
+            
+            <option name="charting.axisTitleX.text">time</option>
+            <option name="charting.axisTitleY.text">count</option>
+            <option name="charting.chart">line</option>
+            <option name="charting.chart.nullValueMode">zero</option>
+            
+            <drilldown>
+				<link>search?q=| `datamodel("Network_Traffic", "All_Traffic")` | search $Z$ All_Traffic.transport="$click.name2$" | `drop_dm_object_name("Network_Traffic")`&amp;earliest=$earliest$&amp;latest=$latest$</link>
+			</drilldown>
+        </chart>
+    </row>
+    
+    <row>
+    	<table id="table1">
+			<title>Traffic Size Details</title>
+			
+			<searchTemplate>| tstats `summariesonly` max(_time) as lastTime,min(All_Traffic.bytes) as min_bytes,avg(All_Traffic.bytes) as mean_bytes,max(All_Traffic.bytes) as max_bytes,dc(All_Traffic.dest) as dc(dest),count from datamodel=Network_Traffic where $Z$ by All_Traffic.src | `drop_dm_object_name("All_Traffic")` | appendcols [inputlookup append=T start=0 max=1 traffic_bytes_tracker | rename mean_bytes as tracker_mean | fields tracker_mean,stdev] | filldown tracker_mean,stdev | eval Z=round(((mean_bytes-tracker_mean)/stdev),2) | `per_panel_filter("ppf_traffic_size","src")` | rename ppf_filter as filter | eval bytes=if(min_bytes==mean_bytes AND mean_bytes==max_bytes,floor(min_bytes),"min: ".floor(min_bytes)."|avg: ".floor(mean_bytes)."|max: ".floor(max_bytes)) | `makemv(bytes)` | sort - filter,Z | `uitime(lastTime)` | table src,filter,bytes,dc(dest),count,Z,lastTime</searchTemplate>
+			
+			<drilldown>
+				<link>search?q=| `datamodel("Network_Traffic", "All_Traffic")` | search $Z$ All_Traffic.src="$row.src$" | `drop_dm_object_name("Network_Traffic")`&amp;earliest=$earliest$&amp;latest=$latest$</link>
+			</drilldown>
+		</table>
+	</row>
+</form>

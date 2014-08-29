@@ -1,0 +1,27 @@
+<view template="dashboard.html" isDashboard="false">
+  
+  <label>Incident Review Settings</label>
+  
+  <module name="AccountBar" layoutPanel="appHeader"/>
+  <module name="AppBar" layoutPanel="navigationHeader"/>
+  <module name="Message" layoutPanel="messaging">
+    <param name="filter">*</param>
+    <param name="clearOnJobDispatch">False</param>
+    <param name="maxSize">2</param>
+  </module>
+  
+  <module name="BreadCrumb" layoutPanel="viewHeader">
+    <param name="options">
+      <list>
+        <param name="view">ess_configuration</param>
+        <param name="label">Configure</param>
+      </list>
+      <list>
+        <param name="label">Incident Review Settings</param>
+      </list>
+    </param>
+  </module>
+  
+  <module name="LogReviewConfig" layoutPanel="panel_row2_col1"></module>
+
+</view>
