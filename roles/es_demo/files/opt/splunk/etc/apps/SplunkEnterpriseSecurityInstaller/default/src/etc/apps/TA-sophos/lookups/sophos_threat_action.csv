@@ -1,9 +1,0 @@
-Status,Action,action
-Cleanable,,allowed
-Not cleanable,,deferred
-Resolved,,blocked
-Threat type not cleanable,,deferred
-,Acknowledged,allowed
-,Blocked,blocked
-,None,deferred
-

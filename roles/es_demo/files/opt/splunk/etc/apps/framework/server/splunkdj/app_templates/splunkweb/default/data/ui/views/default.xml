@@ -1,1 +1,0 @@
-<view template="{{app_name}}:/templates/redirect.tmpl" isVisible="false"><label>Home</label></view>

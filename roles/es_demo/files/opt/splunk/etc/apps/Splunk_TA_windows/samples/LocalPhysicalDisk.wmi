@@ -1,8 +1,0 @@
-20110415100017.910471
-CurrentDiskQueueLength=0
-DiskBytesPersec=0
-Name=_Total
-PercentDiskReadTime=0
-PercentDiskTime=0
-PercentDiskWriteTime=0
-wmi_type=LocalPhysicalDisk

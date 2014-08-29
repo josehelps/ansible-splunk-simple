@@ -1,7 +1,0 @@
-status,label,description,disabled,default,selected,hidden,end
-1,New,Event has not been reviewed,0,1,0,0,0
-0,Unassigned,An error is preventing the issue from having a valid status assignment,0,0,0,0,0
-3,Pending,Event closure is pending some action,0,0,0,0,0
-2,In Progress,Investigation or response is in-process,0,0,0,0,0
-5,Closed,Issue has been resolved and verified,0,0,0,0,1
-4,Resolved,The issue has been resolved and awaits verification,0,0,0,0,0

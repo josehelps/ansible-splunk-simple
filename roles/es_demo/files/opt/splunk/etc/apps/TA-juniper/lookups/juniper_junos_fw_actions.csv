@@ -1,4 +1,0 @@
-message_tag,action
-RT_FLOW_SESSION_CREATE,allowed
-APPTRACK_SESSION_VOL_UPDATE,allowed
-RT_FLOW_SESSION_DENY,blocked

@@ -1,6 +1,0 @@
-sourcetype,vendor,product
-*:Security,Microsoft,Windows
-*:System,Microsoft,Windows
-WindowsUpdateLog,Microsoft,Windows
-WMI:InstalledUpdates,Microsoft,Windows
-DhcpSrvLog,Microsoft,Windows

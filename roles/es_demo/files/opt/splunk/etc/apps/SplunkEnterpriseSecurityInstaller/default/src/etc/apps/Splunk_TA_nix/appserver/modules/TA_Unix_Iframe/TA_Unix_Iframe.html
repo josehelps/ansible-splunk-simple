@@ -1,8 +1,0 @@
-<%page expression_filter="h" args="module"/>
-<%
-import logging
-logger = logging.getLogger('splunk.appserver.lib.i18n')
-
-src = make_url(['custom', APP['id'], 'taunixsetup', APP['id'], 'setup']) 
-%>
-<iframe src="${src | n}" scrolling="no" frameborder="0" s:src="${src | n}"></iframe>

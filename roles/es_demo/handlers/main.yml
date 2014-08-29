@@ -1,2 +1,0 @@
-- name: restart splunk
-  service: name=splunk state=restarted

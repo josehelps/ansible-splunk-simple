@@ -1,7 +1,0 @@
-[deployment-client]
-disabled = false
-#clientName = <clientName>
-phoneHomeIntervalInSecs = 86400
-
-[target-broker:deploymentServer]
-targetUri = <deploymentServerName>:8089

@@ -1,8 +1,0 @@
-sourcetype,transport
-bro_ssh,tcp
-bro_ftp,tcp
-bro_smtp,tcp
-bro_ssl,tcp
-bro_smtp_entities,tcp
-bro_http,tcp
-bro_dhcp,udp

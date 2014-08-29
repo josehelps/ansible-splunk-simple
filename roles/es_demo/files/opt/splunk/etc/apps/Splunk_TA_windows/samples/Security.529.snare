@@ -1,1 +1,0 @@
-PROD-POS01.acmetech.com	MSWinEventLog	1	Security	29	Fri Sep 04 17:44:54 2009	529	Security	SYSTEM	User	Failure Audit	PROD-POS01	Logon/Logoff		Logon Failure:     Reason: Unknown user name or bad password     User Name: posdadmin@acmetech.com     Domain:      Logon Type: 11     Logon Process: User32       Authentication Package: Negotiate     Workstation Name: PROD-POS01  	20

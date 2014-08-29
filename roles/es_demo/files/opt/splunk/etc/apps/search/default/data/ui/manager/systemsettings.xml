@@ -1,1 +1,0 @@
-<endpoint name="systemsettings">  <header></header>  <menu name="system_configurations">    <label>System settings</label>    <url>/manager/%(namespace)s/systemsettings</url>    <description>Manage system settings including ports, host name, index path, email server, and system logging.</description>    <order>1</order>    <id>system-settings</id>  </menu></endpoint>

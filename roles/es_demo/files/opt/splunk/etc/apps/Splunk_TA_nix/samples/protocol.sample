@@ -1,5 +1,0 @@
-***SPLUNK*** source=protocol sourcetype=protocol host=@host index=os
-
-IPdropped   TCPrexmits   TCPreorder   TCPpktRecv   TCPpktSent   UDPpktLost  UDPunkPort   UDPpktRecv   UDPpktSent
-@IPdropped  @TCPrexmits  @TCPreorder  @TCPpktRecv  @TCPpktSent  @UDPpktLost @UDPunkPort  @UDPpktRecv  @UDPpktSent
-

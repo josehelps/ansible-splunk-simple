@@ -1,7 +1,0 @@
-vendor_action,action
-allow,allowed
-block,blocked
-deny,blocked
-drop,blocked
-Succeeded,success
-Failed,failure

@@ -1,9 +1,0 @@
-sourcetype,vendor,product,ids_type
-pan:config,PaloAlto,Firewall,
-pan:system,PaloAlto,Firewall,
-pan:threat,PaloAlto,Firewall,network
-pan:traffic,PaloAlto,Firewall,
-pan_config,PaloAlto,Firewall,
-pan_system,PaloAlto,Firewall,
-pan_threat,PaloAlto,Firewall,network
-pan_traffic,PaloAlto,Firewall,

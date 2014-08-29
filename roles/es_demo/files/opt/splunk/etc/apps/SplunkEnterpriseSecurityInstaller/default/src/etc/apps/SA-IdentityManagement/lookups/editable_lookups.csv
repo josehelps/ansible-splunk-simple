@@ -1,6 +1,0 @@
-SA-IdentityManagement/categories.csv,Categories,Categories that apply to assets and identities
-SA-IdentityManagement/assets.csv,Assets,List of assets that will be matched to incoming events
-SA-IdentityManagement/identities.csv,Identities,List of identities that will be matched to incoming events
-SA-IdentityManagement/administrative_identities.csv,Administrative Identities,List of commonly used administrative identities
-SA-IdentityManagement/demo_assets.csv,Demonstration Assets,List of demonstration assets
-SA-IdentityManagement/demo_identities.csv,Demonstration Identities,List of demonstration identities

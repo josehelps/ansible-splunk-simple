@@ -1,9 +1,0 @@
----
-# This playbook contains common tasks in this role
-
-- include: files.yml
-- include: apt.yml
-- include: web.yml
-- include: security.yml
-- include: first_time.yml
-- include: install_es_demo.yml

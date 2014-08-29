@@ -1,3 +1,0 @@
-# Prevent normal users from sharing their preferences.
-[user-prefs]
-access = read : [ * ], write : [ admin ]

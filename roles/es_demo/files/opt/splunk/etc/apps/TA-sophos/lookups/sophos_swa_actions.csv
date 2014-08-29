@@ -1,8 +1,0 @@
-act,action
-1,Allowed
--1,Blocked
-2,Warned and user proceeded
--2,Warned
-3,User proceeded
--3,User proceeded and blocked
--,error
