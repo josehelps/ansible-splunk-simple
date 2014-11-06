@@ -1,17 +1,3 @@
-#my stuff
-alias elastic='ssh drac0@elastic.josehelps.com'
-alias raspberry='ssh pi@10.0.0.200'
-alias homerouter='ssh -p 9999 root@home.josehelps.com'
-alias cymru='sh cymru'
-alias flytrap='ssh drac0@199.180.255.97'
-alias indicatorintel='ssh -i /home/drac0/Dropbox/PASSWORDS/indicatorintel.pem ubuntu@107.22.220.213'
-#alias flyanalysis='ssh vz@208.110.69.194'
-alias flyanalysis='ssh root@67.202.108.205'
-alias flysensor='ssh drac0@199.180.255.97'
-alias homeserver='ssh -p 2222 divious1@home.josehelps.com'
-alias homservergui='ssh -p 2222 -l divious1 -X -v home.josehelps.com'
-alias nova='ssh jh1798@scis.nova.edu'
-alias activate='. venv/bin/activate'
 #actiavate ansible
 alias activate_ansible='source /opt/ansible/hacking/env-setup'
 
