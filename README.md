@@ -17,7 +17,16 @@ This ansible package expectes your servers to be ubuntu base OS. The splunk bina
 
 ## Installing Ansible
 
-* git clone ansible from `https://github.com/ansible/ansible`
+`cd /opt
+git clone https://github.com/ansible/ansible
+cd ansible
+git submodule update --init lib/ansible/modules/extras
+git submodule update --init lib/ansible/modules/core
+mkdir /etc/ansible
+cd /etc/ansible
+vim hosts -- add your hosts
+source /opt/ansible/hacking/env-setup
+ansible-playbook playbooks/common.yml --list-tasks`
 
 ## Ansible Structure
 ![ansible\_structure](images/Ansible.png)
