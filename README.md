@@ -3,6 +3,13 @@ ansible-splunk-simple
 
 Simple Splunk deployment using Ansible, see [Splunk Blog Post](http://blogs.splunk.com/2014/07/12/deploying-splunk-securely-with-ansible-config-management-part-1/) for more information. 
 
+## Features
+* built and maintain a complete splunk enviroment in minutes
+* adhere by all splunk best practices and OS hardening procedures
+* distro agnostic
+* runs splunk as splunk user
+* can manage your entire splunk installation from one place
+
 ## TODOs
 
 * read me for each role
@@ -11,7 +18,7 @@ Simple Splunk deployment using Ansible, see [Splunk Blog Post](http://blogs.splu
 
 ## Expectations
 
-This ansible package expectes your servers to be ubuntu base OS. The splunk binaries currently set are *Splunk 6.1.2* located under
+This ansible package expectes your servers to be ubuntu base OS. The splunk binaries currently set are *Splunk 6.2* located under
 `playbooks/splunk_binaries`
 
 ## Installing Ansible
