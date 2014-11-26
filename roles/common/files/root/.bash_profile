@@ -85,4 +85,5 @@ alias du='du -ch'
 
 #add path
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-export PS1="\[\e[01;31m\]\u\[\e[0m\]\[\e[01;37m\]@\[\e[0m\]\[\e[01;32m\]\h\[\e[0m\]\[\e[01;37m\]:\[\e[0m\]\[\e[01;32m\]\w\[\e[0m\]\[\e[01;37m\]\\$\[\e[0m\]"
+export PS1="\[\e[01;36m\]\u\[\e[0m\]\[\e[01;37m\]@\[\e[0m\]\[\e[01;32m\]\h\[\e[0m\]\[\e[01;37m\]:\[\e[0m\]\[\e[01;32m\]\w\[\e[0m\]\[\e[01;37m\]\\$\[\e[0m\]"
+

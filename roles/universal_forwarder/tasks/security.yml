@@ -1,0 +1,28 @@
+---
+# This playbook sets up basic splunk security 
+- name: copy splunk passwd file
+  tags:
+   - install
+   - security
+  copy: src=splunk_creds/{{splunk_passwd}} dest=/opt/splunk/etc owner=splunk group=splunk mode=700
+
+
+- name: create certs folder
+  tags:
+   - install
+   - security
+  file: path=/opt/splunk/certs owner=splunk group=splunk mode=700 state=directory
+
+- name: copy ca+server cert for webserver
+  tags:
+   - install
+   - security
+  copy: src=splunk_creds/{{splunk_ca}} dest=/opt/splunk/certs owner=splunk group=splunk mode=700
+
+- name: copy server-key.pem for webserver 
+  tags:
+   - install
+   - security
+  copy: src=splunk_creds/{{splunk_pem}} dest=/opt/splunk/certs owner=splunk group=splunk mode=700
+
+notify: restart splunk

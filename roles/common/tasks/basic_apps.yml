@@ -1,0 +1,76 @@
+---
+# This playbook install the apps required in a server
+
+#CENTOS SPECIFIC APPS
+
+- name: Install EPEL
+  tags:
+   - centos
+   - install
+  command: rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+  when: ansible_distribution == "CentOS"
+  ignore_errors: yes
+
+
+- name: install selinux bindings if centos node 
+  tags:
+    - centos
+    - install
+  yum: name=libselinux-python state=present
+  when: ansible_distribution == "CentOS"
+
+- name: install security controls centos
+  tags:
+   - configuration
+   - security
+   - centos
+  yum: name={{ item }} state=present
+  with_items:
+   - chkrootkit
+   - rkhunter
+   - clamav
+   - fail2ban
+  when: ansible_distribution == "CentOS"
+   
+- name: install basic utilities centos
+  tags:
+   - configuration
+   - centos
+  yum: name={{ item }} state=present
+  with_items:
+   - vim
+   - screen
+   - iotop
+   - htop
+   - ioping
+   - ntp
+  when: ansible_distribution == "CentOS"
+
+#DEBIAN SPECIFIC APPS
+
+- name: install security controls debian
+  tags:
+   - configuration
+   - security
+  apt: name={{ item }} state=present
+  with_items:
+   - chkrootkit
+   - rkhunter
+   - clamav
+   - fail2ban
+  when: ansible_distribution == "Debian" or ansible_distribution == "Ubuntu" 
+  
+
+- name: install basic utilities debian
+  tags:
+   - configuration
+  apt: name={{ item }} state=present
+  with_items:
+   - vim
+   - screen
+   - iotop
+   - htop
+   - ioping
+   - ntp
+  when: ansible_distribution == "Debian" or ansible_distribution == "Ubuntu"
+

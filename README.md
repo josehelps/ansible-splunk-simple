@@ -7,8 +7,7 @@ Simple Splunk deployment using Ansible, see [Splunk Blog Post](http://blogs.splu
 
 * read me for each role
 * add roles to ansible galaxy
-* make splunk not run under root
-* Finish UF, license\_master, cluster\_master, indexer roles
+* Finish license\_master, cluster\_master
 
 ## Expectations
 

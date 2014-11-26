@@ -13,9 +13,3 @@
    - security
   copy: src=etc/ssh/sshd_config dest=/etc/ssh/sshd_config owner=root group=root mode=644
   notify: restart ssh
-  
-- name: ensure ssh is running
-  service: name=ssh state=started
-
-  
-

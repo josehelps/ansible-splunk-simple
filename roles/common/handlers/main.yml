@@ -1,5 +1,15 @@
 - name: restart ssh
   service: name=ssh state=restarted
+  when: ansible_distribution == "Debian" or ansible_distribution == "Ubuntu" 
 
 - name: restart ntp
   service: name=ntp state=restarted
+  when: ansible_distribution == "Debian" or ansible_distribution == "Ubuntu"
+
+- name: restart ssh
+  service: name=sshd state=restarted
+  when: ansible_distribution == "CentOS"
+
+- name: restart ntp
+  service: name=ntpd state=restarted
+  when: ansible_distribution == "CentOS"

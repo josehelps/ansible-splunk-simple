@@ -1,9 +1,7 @@
 Role Name
 ========
 
-## INCOMPLETE ROLE 
-
-Build a splunk cluster master intances 
+A brief description of the role goes here.
 
 Requirements
 ------------

@@ -1,5 +1,9 @@
 ---
 # This playbook contains common tasks in this role
 
-- include: files.yml
-- include: apt.yml
+- include: indexer.yml
+- include: indexes.yml
+- include: web.yml
+- include: security.yml
+- include: inputs.yml
+- include: outputs.yml

@@ -1,38 +1,41 @@
 ---
-# This playbook install a basic user with its bash_profile and login keys
+# This playbook install a basic user with the login keys
 - name: create splunk-admin
   tags: 
    - configuration
    - security
   user: name=splunk-admin shell=/bin/bash state=present password={{user_pass}}
 
-- name: copy splunk-admin bash_profile
-  tags:
-   - configuration
-   - security
-  copy: src=home/splunk-admin/.bash_profile dest=/home/splunk-admin/.bash_profile owner=splunk-admin group=splunk-admin mode=744
-
-- name: copy splunk-admin vimr
-  tags:
-   - configuration
-   - security
-  copy: src=home/splunk-admin/.vimrc dest=/home/splunk-admin/.vimrc owner=splunk-admin group=splunk-admin mode=744
-
-- name: copy root pub key (if is first time run)
-  authorized_key: user=root key="{{ lookup('file', '/root/.ssh/id_rsa.pub') }}"
+- name: copy splunk-admin authorize_keys
+  authorized_key: user=splunk-admin key="{{ lookup('file', 'splunk_creds/splunk-admin.pub') }}"
   tags:
    - configuration
    - security
 
-- name: copy splunk-admin pub key
-  authorized_key: user=splunk-admin key="{{ lookup('file', '/etc/ansible/playbooks/splunk_creds/splunk-admin.pub') }}"
+- name: copy root authorize_keys
+  authorized_key: user=root key="{{ lookup('file', 'splunk_creds/splunk-admin.pub') }}"
   tags:
    - configuration
    - security
 
-- name: copy root .bash_profile 
+- name: copy .bash_profile for splunk-admin
   tags:
    - configuration
-  copy: src=root/.bash_profile dest=/root/.bash_profile owner=root group=root mode=700
+  copy: src=home/splunk-admin/.bash_profile dest=/home/splunk-admin/.bash_profile owner=splunk-admin group=splunk-admin mode=644
+
+- name: copy .bash_profile for root
+  tags:
+   - configuration
+  copy: src=root/.bash_profile dest=/root/.bash_profile owner=root group=root mode=644
+
+- name: copy .vimrc for splunk-admin
+  tags:
+   - configuration
+  copy: src=home/splunk-admin/.vimrc dest=/home/splunk-admin/.vimrc owner=splunk-admin group=splunk-admin mode=644
+
+- name: copy .vimrc for root
+  tags:
+   - configuration
+  copy: src=root/.vimrc dest=/root/.vimrc owner=root group=root mode=644
 
 

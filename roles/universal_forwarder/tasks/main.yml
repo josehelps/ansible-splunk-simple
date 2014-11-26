@@ -1,0 +1,7 @@
+---
+# This playbook contains common tasks in this role
+
+- include: forwarder.yml
+- include: security.yml
+- include: outputs.conf
+- include: inputs.conf

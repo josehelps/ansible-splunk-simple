@@ -1,0 +1,10 @@
+---
+# This playbook deploys all sub playbooks
+
+- name: apply common configuration to all nodes
+  hosts: indexer
+  user: root
+
+  roles:
+    - common
+    - indexer
