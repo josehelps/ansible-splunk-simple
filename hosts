@@ -13,7 +13,6 @@
 # servers that are meant to be indexers, will also have the common config applied.
 [indexer]
 
-
 # servers that are meant to be license masters, will also have the common config applied. NOT COMPLETD
 [license_master]
 
