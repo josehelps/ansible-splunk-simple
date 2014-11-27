@@ -4,3 +4,5 @@
 - include: splunk.yml
 - include: web.yml
 - include: security.yml
+- name: Finished
+  debug: msg="Access your freshly configure splunk instance at https://{{ inventory_hostname }}:8443"
