@@ -1,11 +1,9 @@
 ---
 # This playbook setups splunk web service 
-- name: copy web.conf
+- name: copy web.conf 
   tags:
    - install
    - web
   copy: src=opt/splunk/etc/system/local/web.conf dest=/opt/splunk/etc/system/local owner=splunk group=splunk mode=700 
-  notify: restart splunk
-
-
-
+  notify:
+    - restart splunk

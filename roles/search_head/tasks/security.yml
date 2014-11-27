@@ -1,4 +1,3 @@
----
 # This playbook sets up basic splunk security 
 - name: copy splunk passwd file
   tags:
@@ -39,4 +38,5 @@
    - install
    - security
   copy: src=opt/splunk/etc/system/local/authentication.conf dest=/opt/splunk/etc/system/local owner=splunk group=splunk mode=700
-  notify: restart splunk
+  notify:
+    - restart splunk
