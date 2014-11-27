@@ -3,14 +3,24 @@
 
 #CENTOS SPECIFIC APPS
 
-- name: Install EPEL
+- debug: msg="{{ansible_distribution_version.split('.')[0]}}"
+
+- name: Install EPEL on CentOS6
   tags:
    - centos
    - install
   command: rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
-  when: ansible_distribution == "CentOS"
+  when: ansible_distribution == "CentOS" and ansible_distribution_version.split('.')[0] == "6"
   ignore_errors: yes
 
+
+- name: Install EPEL on CentOS7
+  tags:
+   - centos
+   - install
+  yum: name=epel-release state=present
+  when: ansible_distribution == "CentOS" and ansible_distribution_version.split('.')[0] == "7"
+  ignore_errors: yes
 
 - name: install selinux bindings if centos node 
   tags:
@@ -31,6 +41,7 @@
    - clamav
    - fail2ban
   when: ansible_distribution == "CentOS"
+  ignore_errors: yes
    
 - name: install basic utilities centos
   tags:
