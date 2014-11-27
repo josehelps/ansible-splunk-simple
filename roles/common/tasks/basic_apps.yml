@@ -3,8 +3,6 @@
 
 #CENTOS SPECIFIC APPS
 
-- debug: msg="{{ansible_distribution_version.split('.')[0]}}"
-
 - name: Install EPEL on CentOS6
   tags:
    - centos
